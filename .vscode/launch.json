@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "turoudi frontend",
+        "request": "launch",
+        "type": "dart",
+        "flutterMode": "debug",
+        "program": "lib/main.dart",
+        "args": [
+        "--dart-define=devMode=true"
+      ],
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "FLUTTER_ROOT": "${env:FLUTTER_ROOT}",
+        }
+      }
+    ]
+  }
+  
