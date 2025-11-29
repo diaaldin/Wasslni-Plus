@@ -1,94 +1,306 @@
-# Let's started
+# Turoudi - Package Delivery App
 
-1. Clone the repo.
-2. Run flutter pub get
-3. Open simulator
-4. Run `futter run` or open `[Run and Debug] from left menu`
+![Flutter](https://img.shields.io/badge/Flutter-3.24.5-blue.svg)
+![Dart](https://img.shields.io/badge/Dart-3.5.4-blue.svg)
+![License](https://img.shields.io/badge/license-Proprietary-red.svg)
+
+## 📖 Overview
+
+**Turoudi** is a comprehensive package delivery management application built with Flutter. The app supports multi-role functionality including Admin, Manager, Merchant, Courier, and Customer roles, each with tailored interfaces and capabilities. The platform facilitates efficient package tracking, delivery management, and real-time status updates.
+
+### Key Features
+
+- 🔐 **Multi-role Authentication**: Separate interfaces for Admin, Manager, Merchant, Courier, and Customer
+- 📦 **Package Management**: Create, track, and manage parcels with barcode support
+- 🚚 **Delivery Tracking**: Real-time status updates with progress visualization
+- 🌍 **Regional Pricing**: Dynamic pricing based on delivery regions (القدس, الضفة, الداخل)
+- 🌐 **Multi-language Support**: Arabic, English, and Hebrew localization
+- 🌙 **Dark Mode**: Full dark/light theme support
+- 📱 **Offline Detection**: Network-aware wrapper for connectivity monitoring
+- 💳 **Cost Calculation**: Automatic calculation of delivery fees and total costs
+
+### User Roles
+
+1. **Admin**: System-wide control and oversight
+2. **Manager**: Branch or region management
+3. **Merchant**: Shop owners who send parcels
+4. **Courier**: Delivery personnel responsible for transporting parcels
+5. **Customer**: Recipients of parcels
+
+## 🏗️ Architecture
+
+### Project Structure
+
 ```
-Flutter 3.24.5 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision dec2ee5c1f (4 days ago) • 2024-11-13 11:13:06 -0800
-Engine • revision a18df97ca5
-Tools • Dart 3.5.4 • DevTools 2.37.3
+lib/
+├── flow/                      # Main application flows
+│   ├── admin/                 # Admin-specific screens
+│   ├── manager/               # Manager-specific screens
+│   ├── merchant/              # Merchant-specific screens
+│   │   └── parcel/           # Parcel management pages
+│   ├── courier/               # Courier-specific screens
+│   ├── customer/              # Customer-specific screens
+│   └── common/                # Shared screens (settings, privacy policy)
+├── models/                    # Data models
+│   └── user/                 # User-related models and enums
+├── provider/                  # State management
+│   └── app_settings_providor.dart
+├── widgets/                   # Reusable UI components
+│   ├── fields/               # Custom form fields
+│   ├── molecules/            # Composite UI components
+│   └── language/             # Language switching components
+├── l10n/                     # Localization files
+│   ├── intl_ar.arb          # Arabic translations
+│   ├── intl_en.arb          # English translations
+│   └── intl_he.arb          # Hebrew translations
+├── generated/                # Auto-generated files
+├── app_styles.dart           # Global styles and theme
+├── config.dart               # App configuration
+└── main.dart                 # Application entry point
 ```
-# firebase tool
- ```                                                    │
-   │                Update available 13.25.0 → 13.27.0                 │
-   │          To update to the latest version using npm, run           │
-   │                   npm install -g firebase-tools                   |
+
+### Technology Stack
+
+- **Framework**: Flutter 3.24.5
+- **Language**: Dart 3.5.4
+- **State Management**: Provider
+- **Localization**: intl & flutter_localizations
+- **UI Components**: Material Design 3
+- **Connectivity**: connectivity_plus
+
+### Dependencies
+
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  provider: ^6.0.0
+  intl: ^0.19.0
+  dropdown_search: ^5.0.3
+  connectivity_plus: ^5.0.2
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  intl_utils: ^2.0.0
+  flutter_lints: ^4.0.0
 ```
-   
-## Add a new pacakge
-1. Add the package in pubspec.yaml file
-2. Run `flutter pub get
 
-## Conflict in pckage
-1. `flutter clean` or `flutter pub cache repair`
-2. `flutter pub get`
+## 🚀 Getting Started
 
-## Add a new word to dicionaries
-1. Open `/lib/l10n/intl_ar.arb` and `/lib/l10n/intl_en.arb`
-2. Add the new word with translation
-3. Run `dart run intl_utiles:generate` or `flutter pub run intl_utils:generate`
+### Prerequisites
 
-## Install and run the FlutterFire CLI
-- From any directory, run this command: `dart pub global activate flutterfire_cli`
+- Flutter SDK 3.24.5 or higher
+- Dart SDK 3.5.4 or higher
+- Android Studio / Xcode (for mobile development)
+- Node.js 18.19.1+ & npm 8.19.4+ (for Firebase Cloud Functions)
+- Firebase CLI 13.27.0+ (for Firebase integration)
 
-- Then, at the root of your Flutter project directory, run this command: `flutterfire configure --project=groomly-e3370`
+### Installation
 
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd turoudi
+   ```
 
-## If needed, run pod install with Rosetta (Apple M1) if you use windows skipe step 1:
-1. `arch -x86_64 /usr/bin/env bash`
-2. `cd ios`
-3. `pod install`
-4. flutter run or through debug butotn in left menu vscode
+2. **Install dependencies**
+   ```bash
+   flutter pub get
+   ```
 
-## Clean the Project (if issues persist)
-### `Sometimes, you might need to clear out old cached data and pods:
-1. `flutter clean`
-2. `rm -rf ios/Pods` or `rm -rf Pods`
-3. `rm ios/Podfile.lock` or `rm Podfile.lock`
-4. `arch -x86_64 /usr/bin/env bash` (M1)
-4. `cd ios`
-5. `pod install` or `arch -x86_64 pod install`
+3. **Generate localization files**
+   ```bash
+   dart run intl_utils:generate
+   # or
+   flutter pub run intl_utils:generate
+   ```
 
-# Run the following command to create a release build for iOS:
-`flutter build ios --release`
+4. **Run the application**
+   ```bash
+   flutter run
+   # or use the [Run and Debug] menu in VS Code
+   ```
 
-# Change icon 
-1. `flutter pub add flutter_launcher_icons`
-2. `dart run flutter_luncher_icons`
+## 📱 Development
 
-# Release iOS version through testFlight app
-1. open xCode -> Product(tab) -> Archive (buildin g ...)
-2. open organizr (open default)
-3. Distribute App (testFlight or direct to apple store)
-4. contine woth apple.developer
+### Adding New Packages
 
-# Release Android version 
-- JAVA VERSSION 17.0.13  
-gradle.properties file should contains
-`org.gradle.java.home=/Library/Java/JavaVirtualMachines/openjdk-17.jdk/Contents/Home`
-- gradle verssion 8.0
-gradle-wrapper.properties file
-`distributionUrl=https\://services.gradle.org/distributions/gradle-8.0-bin.zip`
-- `flutter clean`
-- `cd android`
-- `./gradlew clean`
-- `./gradlew --stop`
-- `./gradlew build`
-- or `./gradlew clean build`
-- `./gradlew -v`
+1. Add the package to `pubspec.yaml`
+2. Run `flutter pub get`
 
-- [optiona] `./gradlew wrapper --gradle-version 8.0`
-- `./gradlew build`
-- [optiona] `flutter doctor --verbose` Ensure Flutter is using the same Java version
-- `flutter build apk --release` or `flutter build apk --debug`
-- `flutter build appbundle --release`
-# Publish to Google play we need 
-1. ### Generate a Keystore 
- `keytool -genkey -v -keystore ~/my-release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias keyAlias`
-2. ### Update build.gradle with your keystore details: In android/app/build.gradle, add:
+### Resolving Package Conflicts
+
+```bash
+flutter clean
+# or
+flutter pub cache repair
+flutter pub get
 ```
+
+### Adding New Translations
+
+1. Open `/lib/l10n/intl_ar.arb`, `/lib/l10n/intl_en.arb`, and `/lib/l10n/intl_he.arb`
+2. Add the new translation keys with their respective translations
+3. Run the localization generator:
+   ```bash
+   dart run intl_utils:generate
+   # or
+   flutter pub run intl_utils:generate
+   ```
+
+## 🔥 Firebase Integration
+
+### Install and Configure FlutterFire CLI
+
+1. **Activate FlutterFire CLI globally**
+   ```bash
+   dart pub global activate flutterfire_cli
+   ```
+
+2. **Configure Firebase for your project**
+   ```bash
+   flutterfire configure --project=<your-firebase-project-id>
+   ```
+
+### Firebase Tools
+
+Update Firebase tools to the latest version:
+```bash
+npm install -g firebase-tools
+```
+
+### Cloud Functions
+
+- **Node.js Version**: 18.19.1
+- **NPM Version**: 8.19.4
+
+#### Test Functions Locally
+```bash
+firebase emulators:start
+```
+
+#### View Function Logs
+```bash
+firebase functions:log
+```
+
+#### Deploy Functions
+```bash
+firebase deploy --only functions
+```
+
+## 🍎 iOS Development
+
+### Install Pods (Apple M1 with Rosetta)
+
+```bash
+# For Apple M1 users
+arch -x86_64 /usr/bin/env bash
+cd ios
+pod install
+flutter run
+```
+
+### Clean iOS Build
+
+If you encounter issues:
+
+```bash
+flutter clean
+rm -rf ios/Pods
+rm ios/Podfile.lock
+arch -x86_64 /usr/bin/env bash  # For M1 Macs
+cd ios
+pod install
+# or
+arch -x86_64 pod install  # For M1 Macs
+```
+
+### Build for Release
+
+```bash
+flutter build ios --release
+```
+
+### Release to TestFlight
+
+1. Open Xcode → Product → Archive (wait for build)
+2. Open Organizer (opens automatically)
+3. Click "Distribute App" → Select TestFlight or App Store
+4. Continue with Apple Developer account
+
+### Run as Production in Xcode
+
+1. Open Xcode → Product → Scheme → Edit Scheme
+2. In Run → Info → Set Build Configuration to **Release**
+
+## 🤖 Android Development
+
+### Prerequisites
+
+- **Java Version**: 17.0.13
+- **Gradle Version**: 8.0
+
+### Configure Java Home
+
+Add to `gradle.properties`:
+```properties
+org.gradle.java.home=/Library/Java/JavaVirtualMachines/openjdk-17.jdk/Contents/Home
+```
+
+### Configure Gradle
+
+Update `gradle-wrapper.properties`:
+```properties
+distributionUrl=https\://services.gradle.org/distributions/gradle-8.0-bin.zip
+```
+
+### Build Commands
+
+```bash
+flutter clean
+cd android
+./gradlew clean
+./gradlew --stop
+./gradlew build
+# or
+./gradlew clean build
+
+# Check Gradle version
+./gradlew -v
+
+# Optional: Update Gradle wrapper
+./gradlew wrapper --gradle-version 8.0
+
+# Verify Flutter setup
+flutter doctor --verbose
+
+# Build APK
+flutter build apk --release
+# or
+flutter build apk --debug
+
+# Build App Bundle
+flutter build appbundle --release
+```
+
+## 🔑 Publishing
+
+### Generate Keystore for Google Play
+
+```bash
+keytool -genkey -v -keystore ~/my-release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias keyAlias
+```
+
+### Configure Signing in build.gradle
+
+Add to `android/app/build.gradle`:
+
+```gradle
 android {
     ...
     signingConfigs {
@@ -105,62 +317,103 @@ android {
         }
     }
 }
-
 ```
-- Generating a keystore is necessary for creating a signed APK, which is required for publishing your app on the Google Play Store or distributing it securely. Here’s a breakdown of why and when you need a keystore:
 
-# Cloud Funciton 
-- node 18.19.1
-- npm 8.19.4
-- Ensure everything works locally before deploying: `firebase emulators:start`
-- check logs details  `firebase functions:log`
-- `firebase deploy --only functions`
+## 📦 Version Management
 
+### Using the Version Package
 
-# Add version
-You can use the version package to manage versions automatically:
-- `flutter pub add version`
+```bash
+flutter pub add version
+flutter pub run version:increment --build
+```
 
-- `flutter pub run version:increment --build`
+### Manual Version Update Steps
 
-- steps to increase build
-   - `flutter clean`
-   - `flutter pub get`
-   - `arch -x86_64 pod install`
-   - reopen xcode - write there in console versiona and build
-   - pubspec.yaml
-   - build.gradle
-   ```
-    versionCode 54
-    versionName "5.2.34"
-   ```
-   - AppFrameworkInfo.plist
-   ```
-    <key>CFBundleShortVersionString</key>
-    <string>5.2.34</string>
-    <key>CFBundleVersion</key>
-    <string>54.0</string>
+1. **Clean and prepare**
+   ```bash
+   flutter clean
+   flutter pub get
+   arch -x86_64 pod install  # For iOS on M1
    ```
 
-# steps to rebuild android
--   export JAVA_HOME=$(/usr/libexec/java_home -v 17)
-    export PATH=$JAVA_HOME/bin:$PATH
--   rm -rf ~/.gradle/caches
-    rm -rf ~/.gradle/kotlin-dsl
-    rm -rf ~/.gradle/daemon
-    rm -rf ~/.gradle/native
--   rm -rf android/.gradle
--   flutter clean
--   flutter pub get
--   ./gradlew clean
--   flutter build appbundle --release
+2. **Update version in files**:
+   - `pubspec.yaml`
+   - `android/app/build.gradle`:
+     ```gradle
+     versionCode 54
+     versionName "5.2.34"
+     ```
+   - `ios/Flutter/AppFrameworkInfo.plist`:
+     ```xml
+     <key>CFBundleShortVersionString</key>
+     <string>5.2.34</string>
+     <key>CFBundleVersion</key>
+     <string>54.0</string>
+     ```
 
+3. **Rebuild in Xcode** and verify version numbers
 
-# IF Sundenlly the compiler ot flutter stopping to work
-- open flutter folder `ahmadsabbah/dev/flutter` in terminal
-- `git status`
-- `git reset --hard or git stash(if you want the changes)`
+## 🔧 Troubleshooting
 
-# How to run as production
-- Open Xcode -> Product -> Scheme -> Edit Schema
-- In Run (Menu) -> Info (tab) -> Set Build Configuration Release
+### Clean Rebuild for Android
+
+```bash
+export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+export PATH=$JAVA_HOME/bin:$PATH
+
+rm -rf ~/.gradle/caches
+rm -rf ~/.gradle/kotlin-dsl
+rm -rf ~/.gradle/daemon
+rm -rf ~/.gradle/native
+
+rm -rf android/.gradle
+
+flutter clean
+flutter pub get
+
+cd android
+./gradlew clean
+
+flutter build appbundle --release
+```
+
+### Flutter Compiler Issues
+
+If Flutter stops working:
+
+```bash
+cd <path-to-flutter-installation>  # e.g., ~/dev/flutter
+git status
+git reset --hard
+# or
+git stash  # if you want to keep changes
+```
+
+### Change App Icon
+
+```bash
+flutter pub add flutter_launcher_icons
+dart run flutter_launcher_icons
+```
+
+## 🌐 Supported Platforms
+
+- ✅ Android
+- ✅ iOS
+- ✅ Web
+- ✅ macOS
+- ✅ Linux
+- ✅ Windows
+
+## 📝 License
+
+This project is proprietary software. All rights reserved.
+
+## 📧 Support
+
+For issues, questions, or support requests, please contact the development team or open an issue in the repository.
+
+---
+
+**Built with ❤️ using Flutter**

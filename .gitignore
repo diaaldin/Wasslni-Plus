@@ -45,3 +45,28 @@ app.*.map.json
 ios/Flutter/
 # iOS build output
 ios/Build/
+
+# Firebase
+firebase_options.dart
+.firebaserc
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+.firebase/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Secrets and keys
+*.jks
+*.keystore
+*.p12
+*.key
+google-services.json
+GoogleService-Info.plist
+
+# Local configuration
+local.properties
+key.properties
