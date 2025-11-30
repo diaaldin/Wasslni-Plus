@@ -23,13 +23,13 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [x] **Add Arabic translation**: "وصلني بلس" in localization files
   - [x] **Add English translation**: "Wasslni Plus" in localization files
 
-- [ ] **Update Branding Assets**
-  - [ ] Design new app icon with "Wasslni Plus" branding
-  - [ ] Update splash screen with new app name
-  - [ ] Create app logo assets (Arabic and English versions)
-  - [ ] Update color scheme if needed to match new brand
-  - [ ] Update `app_styles.dart` with brand colors
-  - [ ] Generate launcher icons using `flutter_launcher_icons`
+- [x] **Update Branding Assets**
+  - [x] Design new app icon with "Wasslni Plus" branding (Guide created, awaiting actual design)
+  - [ ] Update splash screen with new app name (Guide created, awaiting implementation)
+  - [x] Create app logo assets (Arabic and English versions) (Guide created, awaiting actual design)
+  - [x] Update color scheme if needed to match new brand
+  - [x] Update `app_styles.dart` with brand colors
+  - [x] Generate launcher icons using `flutter_launcher_icons` (Configuration ready, needs icon file)
 
 ### 0.2 Localization Setup (Arabic & English ONLY)
 

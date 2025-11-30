@@ -11,12 +11,12 @@ class AppStyles {
     return hslColor.withLightness(adjustedLightness).toColor();
   }
 
-  // Colors
-  static const Color darkSurfaceColor = Color(0xFF2C2C2C);
+  // Wasslni Plus Brand Colors
+  static const Color darkSurfaceColor = Color(0xFF1A1A1A); // Darker surface for better contrast
   static const Color primaryColor =
-      Color(0xFF64B5F6); // Light Blue 400 (Dusty Sky Blue)
+      Color(0xFF00BCD4); // Vibrant Teal/Cyan - represents speed and reliability
   static const Color secondaryColor =
-      Color(0xFFFFA726); // Orange 400 (Soft Orange)
+      Color(0xFFFF9800); // Vibrant Orange - represents energy and action
 
   static Color get primaryColor100 => adjustColor(primaryColor, amount: 0.3);
   static Color get primaryColor200 => adjustColor(primaryColor, amount: 0.2);
