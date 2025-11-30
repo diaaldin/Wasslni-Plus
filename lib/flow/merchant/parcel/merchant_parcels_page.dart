@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:turoudi/flow/common/settings/parcel/parcel_details_card.dart';
+import 'package:wasslni_plus/flow/common/settings/parcel/parcel_details_card.dart';
 
 class MerchantParcelsPage extends StatefulWidget {
   const MerchantParcelsPage({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:turoudi/app_styles.dart';
-import 'package:turoudi/generated/l10n.dart';
-import 'package:turoudi/widgets/join_us.dart';
+import 'package:wasslni_plus/app_styles.dart';
+import 'package:wasslni_plus/generated/l10n.dart';
+import 'package:wasslni_plus/widgets/join_us.dart';
 
 class JoinUsButton extends StatelessWidget {
   const JoinUsButton({super.key});

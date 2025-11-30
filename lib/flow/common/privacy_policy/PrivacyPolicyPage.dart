@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:turoudi/generated/l10n.dart';
+import 'package:wasslni_plus/generated/l10n.dart';
 import '../../../widgets/InfoSection .dart';
 
 class PrivacyPolicyPage extends StatelessWidget {

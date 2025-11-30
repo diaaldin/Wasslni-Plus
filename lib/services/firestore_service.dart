@@ -1,7 +1,7 @@
 // lib/services/firestore_service.dart
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:turoudi/models/parcel_model.dart';
-import 'package:turoudi/models/user/user_model.dart';
+import 'package:wasslni_plus/models/parcel_model.dart';
+import 'package:wasslni_plus/models/user/user_model.dart';
 
 class FirestoreService {
   static final FirestoreService _instance = FirestoreService._internal();

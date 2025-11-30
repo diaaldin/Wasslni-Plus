@@ -28,6 +28,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "add_parcel": MessageLookupByLibrary.simpleMessage("إضافة طرد"),
     "address": MessageLookupByLibrary.simpleMessage("العنوان, مدينة - شارع"),
     "alt_phone": MessageLookupByLibrary.simpleMessage("رقم بديل (اختياري)"),
+    "app_name": MessageLookupByLibrary.simpleMessage("وصلني بلس"),
+    "app_tagline": MessageLookupByLibrary.simpleMessage("توصيل سريع وموثوق"),
     "attach_barcode": MessageLookupByLibrary.simpleMessage("أرفق باركود"),
     "barcode_label": m0,
     "choose_region_warning": MessageLookupByLibrary.simpleMessage(
@@ -117,6 +119,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "validation_phone_required": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال رقم الهاتف",
+    ),
+    "welcome_to_app": MessageLookupByLibrary.simpleMessage(
+      "مرحباً بك في وصلني بلس",
     ),
   };
 }

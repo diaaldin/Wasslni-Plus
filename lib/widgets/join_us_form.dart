@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:turoudi/generated/l10n.dart';
-import 'package:turoudi/widgets/phone_input_field.dart';
+import 'package:wasslni_plus/generated/l10n.dart';
+import 'package:wasslni_plus/widgets/phone_input_field.dart';
 
 class JoinUsForm extends StatelessWidget {
   const JoinUsForm({super.key});

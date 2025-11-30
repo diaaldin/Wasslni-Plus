@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:turoudi/app_styles.dart';
-import 'package:turoudi/generated/l10n.dart';
-import 'package:turoudi/widgets/join_us_button.dart';
-import 'package:turoudi/widgets/login_button.dart';
-import 'package:turoudi/widgets/password_input_field.dart';
-import 'package:turoudi/widgets/phone_input_field.dart';
+import 'package:wasslni_plus/app_styles.dart';
+import 'package:wasslni_plus/generated/l10n.dart';
+import 'package:wasslni_plus/widgets/join_us_button.dart';
+import 'package:wasslni_plus/widgets/login_button.dart';
+import 'package:wasslni_plus/widgets/password_input_field.dart';
+import 'package:wasslni_plus/widgets/phone_input_field.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -37,9 +37,9 @@ class _LoginFormState extends State<LoginForm> {
         key: _formKey,
         child: Column(
           children: [
-            const Text(
-              "Turoudi",
-              style: TextStyle(
+            Text(
+              s.app_name,
+              style: const TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
                 color: AppStyles.primaryColor,

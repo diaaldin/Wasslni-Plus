@@ -1,4 +1,4 @@
-# 📦 Turoudi Project - Documentation Summary
+# 📦 Wasslni Plus Project - Documentation Summary
 
 ## 📚 Documentation Files Created
 
@@ -70,7 +70,7 @@ Complete Firestore service layer:
 
 ### ✅ Completed
 - Basic Flutter app structure
-- Multi-language support (Arabic, English, Hebrew)
+- Multi-language support (Arabic, English)
 - Multi-role architecture placeholders
 - Merchant parcel creation UI
 - Merchant parcel list UI with tabs

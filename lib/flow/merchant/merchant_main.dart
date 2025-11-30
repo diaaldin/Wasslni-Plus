@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:turoudi/app_styles.dart';
-import 'package:turoudi/flow/common/settings/settings_main.dart';
-import 'package:turoudi/flow/merchant/parcel/add_paracel_page.dart';
-import 'package:turoudi/flow/merchant/parcel/merchant_parcels_page.dart';
-import 'package:turoudi/generated/l10n.dart';
-import 'package:turoudi/provider/app_settings_providor.dart';
-import 'package:turoudi/widgets/molecules/bottom_tab_item.dart';
+import 'package:wasslni_plus/app_styles.dart';
+import 'package:wasslni_plus/flow/common/settings/settings_main.dart';
+import 'package:wasslni_plus/flow/merchant/parcel/add_paracel_page.dart';
+import 'package:wasslni_plus/flow/merchant/parcel/merchant_parcels_page.dart';
+import 'package:wasslni_plus/generated/l10n.dart';
+import 'package:wasslni_plus/provider/app_settings_providor.dart';
+import 'package:wasslni_plus/widgets/molecules/bottom_tab_item.dart';
 
 class MerchantMainScreen extends StatefulWidget {
   const MerchantMainScreen({super.key});

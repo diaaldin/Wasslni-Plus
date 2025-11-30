@@ -1,6 +1,6 @@
 // parcel_detail_card.dart
 import 'package:flutter/material.dart';
-import 'package:turoudi/flow/common/settings/parcel/parcel_progress_bar.dart';
+import 'package:wasslni_plus/flow/common/settings/parcel/parcel_progress_bar.dart';
 
 class ParcelDetailCard extends StatelessWidget {
   final Map<String, dynamic> parcel;

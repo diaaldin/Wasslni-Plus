@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:turoudi/app_styles.dart';
-import 'package:turoudi/generated/l10n.dart';
-import 'package:turoudi/main.dart';
+import 'package:wasslni_plus/app_styles.dart';
+import 'package:wasslni_plus/generated/l10n.dart';
+import 'package:wasslni_plus/main.dart';
 
 class LoginButton extends StatelessWidget {
   final GlobalKey<FormState> formKey;

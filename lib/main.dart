@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
-import 'package:turoudi/app_styles.dart';
-import 'package:turoudi/flow/admin/admin_main.dart';
-import 'package:turoudi/flow/courier/courier_main.dart';
-import 'package:turoudi/flow/customer/customer_main.dart';
-import 'package:turoudi/flow/manager/manager_main.dart';
-import 'package:turoudi/generated/l10n.dart';
-import 'package:turoudi/flow/merchant/merchant_main.dart';
-import 'package:turoudi/models/user/consts.dart';
-import 'package:turoudi/provider/app_settings_providor.dart';
-import 'package:turoudi/widgets/NetworkAwareWrapper.dart';
-import 'package:turoudi/widgets/log_in.dart';
+import 'package:wasslni_plus/app_styles.dart';
+import 'package:wasslni_plus/flow/admin/admin_main.dart';
+import 'package:wasslni_plus/flow/courier/courier_main.dart';
+import 'package:wasslni_plus/flow/customer/customer_main.dart';
+import 'package:wasslni_plus/flow/manager/manager_main.dart';
+import 'package:wasslni_plus/generated/l10n.dart';
+import 'package:wasslni_plus/flow/merchant/merchant_main.dart';
+import 'package:wasslni_plus/models/user/consts.dart';
+import 'package:wasslni_plus/provider/app_settings_providor.dart';
+import 'package:wasslni_plus/widgets/NetworkAwareWrapper.dart';
+import 'package:wasslni_plus/widgets/log_in.dart';
 
 void main() {
   runApp(
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
     final appSettings = Provider.of<AppSettingsProvidor>(context);
 
     return MaterialApp(
-      title: 'Turoudi',
+      title: 'Wasslni Plus',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: AppStyles.primaryColor),

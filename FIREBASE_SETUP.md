@@ -1,6 +1,6 @@
 # Firebase Integration Quick Start Guide
 
-This guide will help you quickly set up Firebase for the Turoudi app.
+This guide will help you quickly set up Firebase for the Wasslni Plus app.
 
 ## 🚀 Step-by-Step Firebase Setup
 
@@ -8,7 +8,7 @@ This guide will help you quickly set up Firebase for the Turoudi app.
 
 1. Go to [Firebase Console](https://console.firebase.google.com/)
 2. Click "Add project" or "Create a project"
-3. Enter project name: `turoudi` (or your preferred name)
+3. Enter project name: `wasslni-plus` (or your preferred name)
 4. Disable Google Analytics (optional, can enable later)
 5. Click "Create project"
 
@@ -78,7 +78,7 @@ flutter pub get
 Run this command in your project root:
 
 ```bash
-flutterfire configure --project=turoudi
+flutterfire configure --project=wasslni-plus
 ```
 
 This will:
@@ -261,7 +261,6 @@ class FirebaseService {
         'name': 'القدس',
         'nameAr': 'القدس',
         'nameEn': 'Jerusalem',
-        'nameHe': 'ירושלים',
         'deliveryFee': 30,
         'isActive': true,
         'estimatedDeliveryDays': 1,
@@ -270,7 +269,6 @@ class FirebaseService {
         'name': 'الضفة',
         'nameAr': 'الضفة',
         'nameEn': 'West Bank',
-        'nameHe': 'הגדה',
         'deliveryFee': 20,
         'isActive': true,
         'estimatedDeliveryDays': 1,
@@ -279,7 +277,6 @@ class FirebaseService {
         'name': 'الداخل',
         'nameAr': 'الداخل',
         'nameEn': 'Inside',
-        'nameHe': 'הפנים',
         'deliveryFee': 70,
         'isActive': true,
         'estimatedDeliveryDays': 2,

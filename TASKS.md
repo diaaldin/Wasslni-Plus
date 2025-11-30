@@ -12,16 +12,16 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
 
 ### 0.1 App Renaming & Configuration
 
-- [ ] **Rename App to "Wasslni Plus"**
-  - [ ] Update `pubspec.yaml`: Change `name` from `turoudi` to `wasslni_plus`
-  - [ ] Update package name in all import statements
+- [x] **Rename App to "Wasslni Plus"**
+  - [x] Update `pubspec.yaml`: Change `name` from `turoudi` to `wasslni_plus`
+  - [x] Update package name in all import statements
   - [ ] Rename project folder from `turoudi` to `wasslni_plus` (optional but recommended)
-  - [ ] Update `AndroidManifest.xml`: Change `android:label` to "Wasslni Plus"
-  - [ ] Update iOS `Info.plist`: Change `CFBundleDisplayName` to "Wasslni Plus"
-  - [ ] Update iOS `Runner.xcodeproj`: Change product name
-  - [ ] Update app display name in all platform configs
-  - [ ] **Add Arabic translation**: "وصلني بلس" in localization files
-  - [ ] **Add English translation**: "Wasslni Plus" in localization files
+  - [x] Update `AndroidManifest.xml`: Change `android:label` to "Wasslni Plus"
+  - [x] Update iOS `Info.plist`: Change `CFBundleDisplayName` to "Wasslni Plus"
+  - [x] Update iOS `Runner.xcodeproj`: Change product name
+  - [x] Update app display name in all platform configs
+  - [x] **Add Arabic translation**: "وصلني بلس" in localization files
+  - [x] **Add English translation**: "Wasslni Plus" in localization files
 
 - [ ] **Update Branding Assets**
   - [ ] Design new app icon with "Wasslni Plus" branding
@@ -33,48 +33,48 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
 
 ### 0.2 Localization Setup (Arabic & English ONLY)
 
-- [ ] **Remove Hebrew Support**
-  - [ ] Delete `lib/l10n/intl_he.arb` file
-  - [ ] Update supported locales to only Arabic and English
-  - [ ] Remove Hebrew from language switcher UI
-  - [ ] Clean up any Hebrew-specific code
+- [x] **Remove Hebrew Support**
+  - [x] Delete `lib/l10n/intl_he.arb` file
+  - [x] Update supported locales to only Arabic and English
+  - [x] Remove Hebrew from language switcher UI
+  - [x] Clean up any Hebrew-specific code
 
-- [ ] **Verify Arabic & English Localization Files**
-  - [ ] Review `lib/l10n/intl_ar.arb` for completeness
-  - [ ] Review `lib/l10n/intl_en.arb` for completeness
-  - [ ] Ensure all existing keys have both Arabic and English translations
-  - [ ] Add missing translations for existing UI elements
-  - [ ] Test language switching between Arabic and English
-  - [ ] Set Arabic as default language
-  - [ ] Ensure RTL (Right-to-Left) support for Arabic
-  - [ ] Test LTR (Left-to-Right) for English
+- [x] **Verify Arabic & English Localization Files**
+  - [x] Review `lib/l10n/intl_ar.arb` for completeness
+  - [x] Review `lib/l10n/intl_en.arb` for completeness
+  - [x] Ensure all existing keys have both Arabic and English translations
+  - [x] Add missing translations for existing UI elements
+  - [x] Test language switching between Arabic and English
+  - [x] Set Arabic as default language
+  - [x] Ensure RTL (Right-to-Left) support for Arabic
+  - [x] Test LTR (Left-to-Right) for English
 
-- [ ] **Add New Translation Keys for App Name**
-  - [ ] Add `app_name`: "Wasslni Plus" (en) / "وصلني بلس" (ar)
-  - [ ] Add `app_tagline`: "Fast & Reliable Delivery" (en) / "توصيل سريع وموثوق" (ar)
-  - [ ] Add `welcome_to_app`: "Welcome to Wasslni Plus" (en) / "مرحباً بك في وصلني بلس" (ar)
-  - [ ] Run `dart run intl_utils:generate` to generate localization classes
+- [x] **Add New Translation Keys for App Name**
+  - [x] Add `app_name`: "Wasslni Plus" (en) / "وصلني بلس" (ar)
+  - [x] Add `app_tagline`: "Fast & Reliable Delivery" (en) / "توصيل سريع وموثوق" (ar)
+  - [x] Add `welcome_to_app`: "Welcome to Wasslni Plus" (en) / "مرحباً بك في وصلني بلس" (ar)
+  - [x] Run `dart run intl_utils:generate` to generate localization classes
 
 ### 0.3 Documentation Updates
 
-- [ ] **Update All Documentation Files**
-  - [ ] Update README.md: Replace "Turoudi" with "Wasslni Plus"
-  - [ ] Update FIREBASE_SETUP.md: Replace project references
-  - [ ] Update DOCUMENTATION_SUMMARY.md: Update app name
-  - [ ] Add note about Arabic/English-only support
-  - [ ] Update Firebase project configuration instructions
+- [x] **Update All Documentation Files**
+  - [x] Update README.md: Replace "Turoudi" with "Wasslni Plus"
+  - [x] Update FIREBASE_SETUP.md: Replace project references
+  - [x] Update DOCUMENTATION_SUMMARY.md: Update app name
+  - [x] Add note about Arabic/English-only support
+  - [x] Update Firebase project configuration instructions
 
-- [ ] **Update Code Comments**
-  - [ ] Search and replace "Turoudi" with "Wasslni Plus" in code comments
-  - [ ] Update file headers if any
+- [x] **Update Code Comments**
+  - [x] Search and replace "Turoudi" with "Wasslni Plus" in code comments
+  - [x] Update file headers if any
 
 ### 0.4 Translation Requirements Documentation
 
-- [ ] **Create Translation Guidelines Document**
-  - [ ] Document naming conventions for translation keys
-  - [ ] Create list of all UI text that needs translation
-  - [ ] Define translation workflow for new features
-  - [ ] Add examples of good Arabic/English translations
+- [x] **Create Translation Guidelines Document**
+  - [x] Document naming conventions for translation keys
+  - [x] Create list of all UI text that needs translation
+  - [x] Define translation workflow for new features
+  - [x] Add examples of good Arabic/English translations
   - [ ] Display branch-specific metrics
   - [ ] Add courier performance tracking
   - [ ] Implement parcel flow visualization

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:turoudi/app_styles.dart';
-import 'package:turoudi/generated/l10n.dart';
-import 'package:turoudi/widgets/fields/dropdown_search.dart';
-import 'package:turoudi/widgets/fields/editable_field.dart';
-import 'package:turoudi/widgets/fields/read_only_field.dart';
+import 'package:wasslni_plus/app_styles.dart';
+import 'package:wasslni_plus/generated/l10n.dart';
+import 'package:wasslni_plus/widgets/fields/dropdown_search.dart';
+import 'package:wasslni_plus/widgets/fields/editable_field.dart';
+import 'package:wasslni_plus/widgets/fields/read_only_field.dart';
 
 class AddParcelPage extends StatefulWidget {
   const AddParcelPage({super.key});

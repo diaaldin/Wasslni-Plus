@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
-import 'package:turoudi/generated/l10n.dart';
+import 'package:wasslni_plus/generated/l10n.dart';
 
 class NetworkAwareWrapper extends StatefulWidget {
   final Widget child;

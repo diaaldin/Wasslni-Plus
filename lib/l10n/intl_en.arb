@@ -22,7 +22,7 @@
   "parcels": "Parcels",
   "settings": "Settings",
   "notifications": "Notifications",
-  "general_serach_hint": "Serach...",
+  "general_serach_hint": "Search...",
   "clear_selection": "Clear selection",
   "add_parcel": "Add Parcel",
   "recipient_name": "Recipient Name",
@@ -55,5 +55,8 @@
   "logout": "Logout",
   "validation_phone_required": "Please enter your phone number",
   "no_internet_connection": "⚠ No internet connection",
-  "validation_phone_invalid": "Phone number must be exactly 10 digits"
+  "validation_phone_invalid": "Phone number must be exactly 10 digits",
+  "app_name": "Wasslni Plus",
+  "app_tagline": "Fast & Reliable Delivery",
+  "welcome_to_app": "Welcome to Wasslni Plus"
 }

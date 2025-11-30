@@ -1,4 +1,4 @@
-# Turoudi - Package Delivery App
+# Wasslni Plus - Package Delivery App
 
 ![Flutter](https://img.shields.io/badge/Flutter-3.24.5-blue.svg)
 ![Dart](https://img.shields.io/badge/Dart-3.5.4-blue.svg)
@@ -6,7 +6,7 @@
 
 ## 📖 Overview
 
-**Turoudi** is a comprehensive package delivery management application built with Flutter. The app supports multi-role functionality including Admin, Manager, Merchant, Courier, and Customer roles, each with tailored interfaces and capabilities. The platform facilitates efficient package tracking, delivery management, and real-time status updates.
+**Wasslni Plus** is a comprehensive package delivery management application built with Flutter. The app supports multi-role functionality including Admin, Manager, Merchant, Courier, and Customer roles, each with tailored interfaces and capabilities. The platform facilitates efficient package tracking, delivery management, and real-time status updates.
 
 ### Key Features
 
@@ -14,7 +14,7 @@
 - 📦 **Package Management**: Create, track, and manage parcels with barcode support
 - 🚚 **Delivery Tracking**: Real-time status updates with progress visualization
 - 🌍 **Regional Pricing**: Dynamic pricing based on delivery regions (القدس, الضفة, الداخل)
-- 🌐 **Multi-language Support**: Arabic, English, and Hebrew localization
+- 🌐 **Multi-language Support**: Arabic (Primary) and English localization
 - 🌙 **Dark Mode**: Full dark/light theme support
 - 📱 **Offline Detection**: Network-aware wrapper for connectivity monitoring
 - 💳 **Cost Calculation**: Automatic calculation of delivery fees and total costs
@@ -51,8 +51,7 @@ lib/
 │   └── language/             # Language switching components
 ├── l10n/                     # Localization files
 │   ├── intl_ar.arb          # Arabic translations
-│   ├── intl_en.arb          # English translations
-│   └── intl_he.arb          # Hebrew translations
+│   └── intl_en.arb          # English translations
 ├── generated/                # Auto-generated files
 ├── app_styles.dart           # Global styles and theme
 ├── config.dart               # App configuration
@@ -143,7 +142,7 @@ flutter pub get
 
 ### Adding New Translations
 
-1. Open `/lib/l10n/intl_ar.arb`, `/lib/l10n/intl_en.arb`, and `/lib/l10n/intl_he.arb`
+1. Open `/lib/l10n/intl_ar.arb` and `/lib/l10n/intl_en.arb`
 2. Add the new translation keys with their respective translations
 3. Run the localization generator:
    ```bash

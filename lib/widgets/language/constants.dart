@@ -4,10 +4,9 @@ import 'package:flutter/material.dart';
 
 // Define a constant list of supported locales
 const List<Locale> supportedLocales = [
-  Locale('en'), // English
   Locale('ar'), // Arabic
-  Locale('he'), // Arabic
+  Locale('en'), // English
 ];
 
 // Define the corresponding names for the locales
-const List<String> localeNames = ['English', 'العربية', 'עברית'];
+const List<String> localeNames = ['العربية', 'English'];

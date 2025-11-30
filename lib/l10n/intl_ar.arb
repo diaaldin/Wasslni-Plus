@@ -55,5 +55,8 @@
   "submit": "إرسال",
   "validation_phone_required": "يرجى إدخال رقم الهاتف",
   "validation_phone_invalid": "يجب أن يتكون الرقم من 10 أرقام إنجليزية",
-  "noInternetConnection": "⚠ لا يوجد اتصال بالإنترنت"
+  "noInternetConnection": "⚠ لا يوجد اتصال بالإنترنت",
+  "app_name": "وصلني بلس",
+  "app_tagline": "توصيل سريع وموثوق",
+  "welcome_to_app": "مرحباً بك في وصلني بلس"
 }

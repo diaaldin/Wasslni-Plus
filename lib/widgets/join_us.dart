@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:turoudi/generated/l10n.dart';
-import 'package:turoudi/widgets/join_us_description.dart';
-import 'package:turoudi/widgets/join_us_form.dart';
-import 'package:turoudi/widgets/policy_checkbox_row.dart';
-import 'package:turoudi/widgets/primary_buttom.dart';
+import 'package:wasslni_plus/generated/l10n.dart';
+import 'package:wasslni_plus/widgets/join_us_description.dart';
+import 'package:wasslni_plus/widgets/join_us_form.dart';
+import 'package:wasslni_plus/widgets/policy_checkbox_row.dart';
+import 'package:wasslni_plus/widgets/primary_buttom.dart';
 
 class JoinUs extends StatefulWidget {
   const JoinUs({super.key});

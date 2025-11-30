@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
-import 'package:turoudi/app_styles.dart';
-import 'package:turoudi/generated/l10n.dart';
-import 'package:turoudi/provider/app_settings_providor.dart';
-import 'package:turoudi/flow/common/privacy_policy/PrivacyPolicyPage.dart';
-import 'package:turoudi/widgets/language/language_dropdown.dart';
-import 'package:turoudi/widgets/log_in.dart';
-import 'package:turoudi/widgets/molecules/custom_list_tile.dart';
-import 'package:turoudi/widgets/molecules/custom_switch_tile.dart';
+import 'package:wasslni_plus/app_styles.dart';
+import 'package:wasslni_plus/generated/l10n.dart';
+import 'package:wasslni_plus/provider/app_settings_providor.dart';
+import 'package:wasslni_plus/flow/common/privacy_policy/PrivacyPolicyPage.dart';
+import 'package:wasslni_plus/widgets/language/language_dropdown.dart';
+import 'package:wasslni_plus/widgets/log_in.dart';
+import 'package:wasslni_plus/widgets/molecules/custom_list_tile.dart';
+import 'package:wasslni_plus/widgets/molecules/custom_switch_tile.dart';
 
 class SettingsMain extends StatefulWidget {
   const SettingsMain({super.key});

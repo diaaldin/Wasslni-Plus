@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:turoudi/app_styles.dart';
+import 'package:wasslni_plus/app_styles.dart';
 
 class EditableField extends StatelessWidget {
   final String label;

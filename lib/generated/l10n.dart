@@ -245,10 +245,10 @@ class S {
     );
   }
 
-  /// `Serach...`
+  /// `Search...`
   String get general_serach_hint {
     return Intl.message(
-      'Serach...',
+      'Search...',
       name: 'general_serach_hint',
       desc: '',
       args: [],
@@ -529,6 +529,31 @@ class S {
       args: [],
     );
   }
+
+  /// `Wasslni Plus`
+  String get app_name {
+    return Intl.message('Wasslni Plus', name: 'app_name', desc: '', args: []);
+  }
+
+  /// `Fast & Reliable Delivery`
+  String get app_tagline {
+    return Intl.message(
+      'Fast & Reliable Delivery',
+      name: 'app_tagline',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome to Wasslni Plus`
+  String get welcome_to_app {
+    return Intl.message(
+      'Welcome to Wasslni Plus',
+      name: 'welcome_to_app',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -538,7 +563,6 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
       Locale.fromSubtags(languageCode: 'ar'),
-      Locale.fromSubtags(languageCode: 'he'),
     ];
   }
 

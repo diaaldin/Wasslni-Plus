@@ -30,6 +30,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "alt_phone": MessageLookupByLibrary.simpleMessage(
       "Alternate Phone (Optional)",
     ),
+    "app_name": MessageLookupByLibrary.simpleMessage("Wasslni Plus"),
+    "app_tagline": MessageLookupByLibrary.simpleMessage(
+      "Fast & Reliable Delivery",
+    ),
     "attach_barcode": MessageLookupByLibrary.simpleMessage("Attach Barcode"),
     "barcode_label": m0,
     "choose_region_warning": MessageLookupByLibrary.simpleMessage(
@@ -67,7 +71,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "enter_recipient_name": MessageLookupByLibrary.simpleMessage(
       "Please enter recipient name",
     ),
-    "general_serach_hint": MessageLookupByLibrary.simpleMessage("Serach..."),
+    "general_serach_hint": MessageLookupByLibrary.simpleMessage("Search..."),
     "invalid_phone": MessageLookupByLibrary.simpleMessage(
       "Invalid phone number",
     ),
@@ -126,6 +130,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "validation_phone_required": MessageLookupByLibrary.simpleMessage(
       "Please enter your phone number",
+    ),
+    "welcome_to_app": MessageLookupByLibrary.simpleMessage(
+      "Welcome to Wasslni Plus",
     ),
   };
 }

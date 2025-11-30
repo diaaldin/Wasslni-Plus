@@ -1,6 +1,6 @@
 // lib/models/user/user_model.dart
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:turoudi/models/user/consts.dart';
+import 'package:wasslni_plus/models/user/consts.dart';
 
 class UserModel {
   final String? uid;
