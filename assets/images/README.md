@@ -62,8 +62,8 @@ This folder contains logo assets for use within the app (splash screens, login s
 - English: Use fonts like Poppins, Inter, Montserrat
 
 ### Color Usage:
-- **Primary**: #00BCD4 (Teal/Cyan) - 60% of logo
-- **Accent**: #FF9800 (Orange) - 30% of logo
+- **Primary**: #1976D2 (Deep Blue) - 60% of logo
+- **Accent**: #03A9F4 (Sky Blue) - 30% of logo
 - **Neutral**: Black/White - 10% of logo
 
 ### Style:

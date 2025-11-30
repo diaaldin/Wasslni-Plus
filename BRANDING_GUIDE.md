@@ -9,17 +9,17 @@
 
 ### Primary Color Palette
 
-#### Primary - Vibrant Teal/Cyan
-- **Hex**: `#00BCD4`
-- **RGB**: `0, 188, 212`
+#### Primary - Deep Blue
+- **Hex**: `#1976D2`
+- **RGB**: `25, 118, 210`
 - **Usage**: Primary buttons, headers, active states, links
-- **Meaning**: Speed, reliability, trust, modernity
+- **Meaning**: Trust, professionalism, stability, reliability
 
-#### Secondary - Vibrant Orange  
-- **Hex**: `#FF9800`
-- **RGB**: `255, 152, 0`
+#### Secondary - Sky Blue  
+- **Hex**: `#03A9F4`
+- **RGB**: `3, 169, 244`
 - **Usage**: Call-to-action buttons, highlights, notifications, accents
-- **Meaning**: Energy, action, urgency, warmth
+- **Meaning**: Clarity, friendliness, openness, freshness
 
 ### Supporting Colors
 
@@ -41,11 +41,11 @@
 ### Status Colors
 
 #### Success/Delivered
-- **Hex**: `#00BCD4` (Primary color)
+- **Hex**: `#1976D2` (Primary color)
 - **Usage**: Delivered status, success messages
 
 #### Warning/Pending
-- **Hex**: `#FF9800` (Secondary color)
+- **Hex**: `#03A9F4` (Secondary color)
 - **Usage**: Pending deliveries, warnings
 
 #### Error/Cancelled
@@ -112,7 +112,7 @@
 - **Size**: 512x512px minimum
 - **Style**: Modern, minimalist
 - **Elements**: Package/box with speed indicator
-- **Colors**: Primary (#00BCD4) and Secondary (#FF9800)
+- **Colors**: Primary (#1976D2) and Secondary (#03A9F4)
 
 #### Logotype (Text + Icon)
 - **Arabic Version**: "وصلني بلس" + Icon
@@ -134,7 +134,7 @@ Choose one of these concepts or create a hybrid:
 1. **Package with Arrow**
    - Stylized box/package
    - Speed arrow integrated into design
-   - Gradient from teal to orange
+   - Gradient from deep blue to sky blue
 
 2. **Abstract "W+" Letter mark**
    - Modern typography
@@ -189,7 +189,7 @@ Choose one of these concepts or create a hybrid:
 ### Buttons
 
 #### Primary Button
-- Background: Primary Color (#00BCD4)
+- Background: Primary Color (#1976D2)
 - Text: White
 - Height: 48px
 - Border Radius: 8px
@@ -203,7 +203,7 @@ Choose one of these concepts or create a hybrid:
 - Border Radius: 8px
 
 #### Action Button
-- Background: Secondary Color (#FF9800)
+- Background: Secondary Color (#03A9F4)
 - Text: White
 - Height: 48px
 - Border Radius: 8px

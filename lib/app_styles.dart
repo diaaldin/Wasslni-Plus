@@ -14,9 +14,9 @@ class AppStyles {
   // Wasslni Plus Brand Colors
   static const Color darkSurfaceColor = Color(0xFF1A1A1A); // Darker surface for better contrast
   static const Color primaryColor =
-      Color(0xFF00BCD4); // Vibrant Teal/Cyan - represents speed and reliability
+      Color(0xFF1976D2); // Deep Blue - represents trust and professionalism
   static const Color secondaryColor =
-      Color(0xFFFF9800); // Vibrant Orange - represents energy and action
+      Color(0xFF03A9F4); // Sky Blue - represents clarity and friendliness
 
   static Color get primaryColor100 => adjustColor(primaryColor, amount: 0.3);
   static Color get primaryColor200 => adjustColor(primaryColor, amount: 0.2);

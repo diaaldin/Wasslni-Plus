@@ -58,10 +58,7 @@ dev_dependencies:
   flutter_lints: ^4.0.0
 
 # For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
-
-# The following section is specific to Flutter packages.
-flutter:
+# following page: https://dart.dev/tools/pub/specflutter:
   generate: true
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
@@ -105,7 +102,7 @@ flutter_launcher_icons:
   android: true
   ios: true
   image_path: "assets/icons/app_icon.png"
-  adaptive_icon_background: "#00BCD4"
+  adaptive_icon_background: "#1976D2"
   adaptive_icon_foreground: "assets/icons/app_icon_foreground.png"
   remove_alpha_ios: true
   web:

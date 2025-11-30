@@ -10,8 +10,8 @@ This folder contains the app icon assets for Wasslni Plus.
 - **Design Guidelines:**
   - Modern package delivery box or parcel icon
   - Incorporate speed/motion elements (arrows, speed lines)
-  - Primary color: Teal/Cyan (#00BCD4)
-  - Accent color: Orange (#FF9800)
+  - Primary color: Deep Blue (#1976D2)
+  - Accent color: Sky Blue (#03A9F4)
   - Clean, minimalist design
   - Should work well at small sizes
 
@@ -29,8 +29,8 @@ The icon should represent:
 - **Modern tech** - Clean, contemporary design
 
 ## Color Scheme:
-- Primary: #00BCD4 (Vibrant Teal/Cyan)
-- Secondary: #FF9800 (Vibrant Orange)
+- Primary: #1976D2 (Deep Blue)
+- Secondary: #03A9F4 (Sky Blue)
 - Background: White or transparent
 - Consider using gradient effects for depth
 
@@ -53,4 +53,4 @@ The icon should represent:
 2. A delivery truck with motion lines
 3. Abstract "W" or "W+" lettermark with package elements
 4. A package with a checkmark (representing delivered)
-5. Minimalist box icon with teal-to-orange gradient
+5. Minimalist box icon with deep blue-to-sky blue gradient
