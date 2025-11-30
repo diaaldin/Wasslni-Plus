@@ -554,6 +554,111 @@ class S {
       args: [],
     );
   }
+
+  /// `Email`
+  String get email {
+    return Intl.message('Email', name: 'email', desc: '', args: []);
+  }
+
+  /// `Please enter email`
+  String get enter_email {
+    return Intl.message(
+      'Please enter email',
+      name: 'enter_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid email address`
+  String get invalid_email {
+    return Intl.message(
+      'Invalid email address',
+      name: 'invalid_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter password`
+  String get enter_password {
+    return Intl.message(
+      'Please enter password',
+      name: 'enter_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register`
+  String get register {
+    return Intl.message('Register', name: 'register', desc: '', args: []);
+  }
+
+  /// `Role`
+  String get role {
+    return Intl.message('Role', name: 'role', desc: '', args: []);
+  }
+
+  /// `Merchant`
+  String get merchant {
+    return Intl.message('Merchant', name: 'merchant', desc: '', args: []);
+  }
+
+  /// `Courier`
+  String get courier {
+    return Intl.message('Courier', name: 'courier', desc: '', args: []);
+  }
+
+  /// `Customer`
+  String get customer {
+    return Intl.message('Customer', name: 'customer', desc: '', args: []);
+  }
+
+  /// `Login Failed`
+  String get login_failed {
+    return Intl.message(
+      'Login Failed',
+      name: 'login_failed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Registration Failed`
+  String get registration_failed {
+    return Intl.message(
+      'Registration Failed',
+      name: 'registration_failed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Success`
+  String get success {
+    return Intl.message('Success', name: 'success', desc: '', args: []);
+  }
+
+  /// `Already have an account? Login`
+  String get already_have_account {
+    return Intl.message(
+      'Already have an account? Login',
+      name: 'already_have_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't have an account? Register`
+  String get dont_have_account {
+    return Intl.message(
+      'Don\'t have an account? Register',
+      name: 'dont_have_account',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

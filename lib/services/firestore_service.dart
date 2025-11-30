@@ -12,9 +12,12 @@ class FirestoreService {
 
   // Collections
   CollectionReference get _usersCollection => _firestore.collection('users');
-  CollectionReference get _parcelsCollection => _firestore.collection('parcels');
-  CollectionReference get _regionsCollection => _firestore.collection('regions');
-  CollectionReference get _notificationsCollection => _firestore.collection('notifications');
+  CollectionReference get _parcelsCollection =>
+      _firestore.collection('parcels');
+  CollectionReference get _regionsCollection =>
+      _firestore.collection('regions');
+  CollectionReference get _notificationsCollection =>
+      _firestore.collection('notifications');
 
   // ========== USER OPERATIONS ==========
 
@@ -75,7 +78,7 @@ class FirestoreService {
           .where('role', isEqualTo: role)
           .where('status', isEqualTo: 'active')
           .get();
-      
+
       return querySnapshot.docs
           .map((doc) => UserModel.fromFirestore(doc))
           .toList();
@@ -193,7 +196,7 @@ class FirestoreService {
           .where('isDeleted', isEqualTo: false)
           .orderBy('createdAt', descending: true)
           .get();
-      
+
       return querySnapshot.docs
           .map((doc) => ParcelModel.fromFirestore(doc))
           .toList();
@@ -222,7 +225,7 @@ class FirestoreService {
           .where('isDeleted', isEqualTo: false)
           .orderBy('createdAt', descending: true)
           .get();
-      
+
       return querySnapshot.docs
           .map((doc) => ParcelModel.fromFirestore(doc))
           .toList();
@@ -251,7 +254,7 @@ class FirestoreService {
           .where('isDeleted', isEqualTo: false)
           .orderBy('createdAt', descending: true)
           .get();
-      
+
       return querySnapshot.docs
           .map((doc) => ParcelModel.fromFirestore(doc))
           .toList();
@@ -268,7 +271,7 @@ class FirestoreService {
           .where('isDeleted', isEqualTo: false)
           .orderBy('createdAt', descending: true)
           .get();
-      
+
       return querySnapshot.docs
           .map((doc) => ParcelModel.fromFirestore(doc))
           .toList();
@@ -285,7 +288,7 @@ class FirestoreService {
           .where('isDeleted', isEqualTo: false)
           .limit(1)
           .get();
-      
+
       if (querySnapshot.docs.isNotEmpty) {
         return ParcelModel.fromFirestore(querySnapshot.docs.first);
       }
@@ -300,10 +303,9 @@ class FirestoreService {
   /// Get all regions
   Future<List<Map<String, dynamic>>> getAllRegions() async {
     try {
-      final querySnapshot = await _regionsCollection
-          .where('isActive', isEqualTo: true)
-          .get();
-      
+      final querySnapshot =
+          await _regionsCollection.where('isActive', isEqualTo: true).get();
+
       return querySnapshot.docs
           .map((doc) => {'id': doc.id, ...doc.data() as Map<String, dynamic>})
           .toList();
@@ -329,9 +331,12 @@ class FirestoreService {
           .where('name', isEqualTo: regionName)
           .limit(1)
           .get();
-      
+
       if (querySnapshot.docs.isNotEmpty) {
-        return (querySnapshot.docs.first.data() as Map<String, dynamic>)['deliveryFee']?.toDouble() ?? 0.0;
+        return (querySnapshot.docs.first.data()
+                    as Map<String, dynamic>)['deliveryFee']
+                ?.toDouble() ??
+            0.0;
       }
       return 0.0;
     } catch (e) {
@@ -381,7 +386,9 @@ class FirestoreService {
   /// Mark notification as read
   Future<void> markNotificationAsRead(String notificationId) async {
     try {
-      await _notificationsCollection.doc(notificationId).update({'isRead': true});
+      await _notificationsCollection
+          .doc(notificationId)
+          .update({'isRead': true});
     } catch (e) {
       throw Exception('Failed to mark notification as read: $e');
     }
@@ -433,8 +440,9 @@ class FirestoreService {
 
       final batch = _firestore.batch();
       for (var region in regions) {
-        final docRef = _regionsCollection.doc();
-        batch.set(docRef, region);
+        // Use English name as ID to prevent duplicates
+        final docRef = _regionsCollection.doc(region['nameEn'] as String);
+        batch.set(docRef, region, SetOptions(merge: true));
       }
       await batch.commit();
     } catch (e) {
@@ -450,11 +458,11 @@ class FirestoreService {
     while (attempts < maxAttempts) {
       final barcode = DateTime.now().millisecondsSinceEpoch.toString();
       final existing = await searchParcelByBarcode(barcode);
-      
+
       if (existing == null) {
         return barcode;
       }
-      
+
       attempts++;
       await Future.delayed(const Duration(milliseconds: 10));
     }

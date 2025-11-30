@@ -27,6 +27,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "acceptPolicyStart": MessageLookupByLibrary.simpleMessage("أوافق على "),
     "add_parcel": MessageLookupByLibrary.simpleMessage("إضافة طرد"),
     "address": MessageLookupByLibrary.simpleMessage("العنوان, مدينة - شارع"),
+    "already_have_account": MessageLookupByLibrary.simpleMessage(
+      "لديك حساب بالفعل؟ تسجيل الدخول",
+    ),
     "alt_phone": MessageLookupByLibrary.simpleMessage("رقم بديل (اختياري)"),
     "app_name": MessageLookupByLibrary.simpleMessage("وصلني بلس"),
     "app_tagline": MessageLookupByLibrary.simpleMessage("توصيل سريع وموثوق"),
@@ -39,6 +42,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "contact_support": MessageLookupByLibrary.simpleMessage(
       "لمزيد من التفاصيل، لا تتردد في الاتصال بفريق الدعم لدينا.",
     ),
+    "courier": MessageLookupByLibrary.simpleMessage("مندوب توصيل"),
+    "customer": MessageLookupByLibrary.simpleMessage("زبون"),
     "dark_mode": MessageLookupByLibrary.simpleMessage("وضع الليل"),
     "dataPolicy": MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),
     "data_collection": MessageLookupByLibrary.simpleMessage("جمع البيانات"),
@@ -59,8 +64,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "data_usage_desc": MessageLookupByLibrary.simpleMessage(
       "يتم استخدام البيانات التي نجمعها فقط لتحسين وظائف التطبيق لدينا، وضمان الأمان، والامتثال للالتزامات القانونية.",
     ),
+    "dont_have_account": MessageLookupByLibrary.simpleMessage(
+      "ليس لديك حساب؟ تسجيل جديد",
+    ),
+    "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "enter_address": MessageLookupByLibrary.simpleMessage(
       "أدخل العنوان (مدينة - شارع)",
+    ),
+    "enter_email": MessageLookupByLibrary.simpleMessage(
+      "الرجاء إدخال البريد الإلكتروني",
+    ),
+    "enter_password": MessageLookupByLibrary.simpleMessage(
+      "الرجاء إدخال كلمة المرور",
     ),
     "enter_phone": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال رقم المستلم",
@@ -70,6 +85,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "الرجاء إدخال اسم المستلم",
     ),
     "general_serach_hint": MessageLookupByLibrary.simpleMessage("بحث..."),
+    "invalid_email": MessageLookupByLibrary.simpleMessage(
+      "بريد إلكتروني غير صالح",
+    ),
     "invalid_phone": MessageLookupByLibrary.simpleMessage("رقم غير صالح"),
     "invalid_price": MessageLookupByLibrary.simpleMessage(
       "السعر يجب أن يكون رقمًا أكبر من أو يساوي 0",
@@ -80,8 +98,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "language": MessageLookupByLibrary.simpleMessage("اللغة"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "login_failed": MessageLookupByLibrary.simpleMessage("فشل تسجيل الدخول"),
     "logout": MessageLookupByLibrary.simpleMessage("تسجيل خروج"),
     "main": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+    "merchant": MessageLookupByLibrary.simpleMessage("تاجر"),
     "merchant_dashboard": MessageLookupByLibrary.simpleMessage("لوحة التاجر"),
     "message": MessageLookupByLibrary.simpleMessage("الرسالة"),
     "name": MessageLookupByLibrary.simpleMessage("الاسم"),
@@ -100,9 +120,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "recipient_name": MessageLookupByLibrary.simpleMessage("اسم المستلم"),
     "recipient_phone": MessageLookupByLibrary.simpleMessage("رقم المستلم"),
     "region": MessageLookupByLibrary.simpleMessage("المنطقة"),
+    "register": MessageLookupByLibrary.simpleMessage("تسجيل جديد"),
+    "registration_failed": MessageLookupByLibrary.simpleMessage("فشل التسجيل"),
+    "role": MessageLookupByLibrary.simpleMessage("الدور"),
     "save_parcel": MessageLookupByLibrary.simpleMessage("حفظ الطرد"),
     "settings": MessageLookupByLibrary.simpleMessage("الاعدادات"),
     "submit": MessageLookupByLibrary.simpleMessage("إرسال"),
+    "success": MessageLookupByLibrary.simpleMessage("نجاح"),
     "sunny_mode": MessageLookupByLibrary.simpleMessage("وضع النهار"),
     "thank_you": MessageLookupByLibrary.simpleMessage(
       "نشكرك على ثقتك بنا فيما يتعلق بمعلوماتك. نحن نسعى جاهدين للحفاظ على بياناتك آمنة وشفافة.",

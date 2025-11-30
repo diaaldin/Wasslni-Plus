@@ -58,5 +58,19 @@
   "noInternetConnection": "⚠ لا يوجد اتصال بالإنترنت",
   "app_name": "وصلني بلس",
   "app_tagline": "توصيل سريع وموثوق",
-  "welcome_to_app": "مرحباً بك في وصلني بلس"
+  "welcome_to_app": "مرحباً بك في وصلني بلس",
+  "email": "البريد الإلكتروني",
+  "enter_email": "الرجاء إدخال البريد الإلكتروني",
+  "invalid_email": "بريد إلكتروني غير صالح",
+  "enter_password": "الرجاء إدخال كلمة المرور",
+  "register": "تسجيل جديد",
+  "role": "الدور",
+  "merchant": "تاجر",
+  "courier": "مندوب توصيل",
+  "customer": "زبون",
+  "login_failed": "فشل تسجيل الدخول",
+  "registration_failed": "فشل التسجيل",
+  "success": "نجاح",
+  "already_have_account": "لديك حساب بالفعل؟ تسجيل الدخول",
+  "dont_have_account": "ليس لديك حساب؟ تسجيل جديد"
 }

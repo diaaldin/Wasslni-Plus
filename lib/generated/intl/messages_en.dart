@@ -27,6 +27,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "acceptPolicyStart": MessageLookupByLibrary.simpleMessage("I accept the "),
     "add_parcel": MessageLookupByLibrary.simpleMessage("Add Parcel"),
     "address": MessageLookupByLibrary.simpleMessage("Address, City - Street"),
+    "already_have_account": MessageLookupByLibrary.simpleMessage(
+      "Already have an account? Login",
+    ),
     "alt_phone": MessageLookupByLibrary.simpleMessage(
       "Alternate Phone (Optional)",
     ),
@@ -43,6 +46,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "contact_support": MessageLookupByLibrary.simpleMessage(
       "For more details, feel free to contact our support team.",
     ),
+    "courier": MessageLookupByLibrary.simpleMessage("Courier"),
+    "customer": MessageLookupByLibrary.simpleMessage("Customer"),
     "dark_mode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
     "dataPolicy": MessageLookupByLibrary.simpleMessage("Data Policy"),
     "data_collection": MessageLookupByLibrary.simpleMessage("Data Collection"),
@@ -61,8 +66,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "data_usage_desc": MessageLookupByLibrary.simpleMessage(
       "Collected data is used solely to enhance app functionality, ensure security, and meet legal obligations.",
     ),
+    "dont_have_account": MessageLookupByLibrary.simpleMessage(
+      "Don\'t have an account? Register",
+    ),
+    "email": MessageLookupByLibrary.simpleMessage("Email"),
     "enter_address": MessageLookupByLibrary.simpleMessage(
       "Enter the address (City - Street)",
+    ),
+    "enter_email": MessageLookupByLibrary.simpleMessage("Please enter email"),
+    "enter_password": MessageLookupByLibrary.simpleMessage(
+      "Please enter password",
     ),
     "enter_phone": MessageLookupByLibrary.simpleMessage(
       "Please enter recipient phone",
@@ -72,6 +85,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please enter recipient name",
     ),
     "general_serach_hint": MessageLookupByLibrary.simpleMessage("Search..."),
+    "invalid_email": MessageLookupByLibrary.simpleMessage(
+      "Invalid email address",
+    ),
     "invalid_phone": MessageLookupByLibrary.simpleMessage(
       "Invalid phone number",
     ),
@@ -84,8 +100,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "language": MessageLookupByLibrary.simpleMessage("Language"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
+    "login_failed": MessageLookupByLibrary.simpleMessage("Login Failed"),
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
     "main": MessageLookupByLibrary.simpleMessage("Main"),
+    "merchant": MessageLookupByLibrary.simpleMessage("Merchant"),
     "merchant_dashboard": MessageLookupByLibrary.simpleMessage(
       "Merchant Dashboard",
     ),
@@ -111,9 +129,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "recipient_name": MessageLookupByLibrary.simpleMessage("Recipient Name"),
     "recipient_phone": MessageLookupByLibrary.simpleMessage("Recipient Phone"),
     "region": MessageLookupByLibrary.simpleMessage("Region"),
+    "register": MessageLookupByLibrary.simpleMessage("Register"),
+    "registration_failed": MessageLookupByLibrary.simpleMessage(
+      "Registration Failed",
+    ),
+    "role": MessageLookupByLibrary.simpleMessage("Role"),
     "save_parcel": MessageLookupByLibrary.simpleMessage("Save Parcel"),
     "settings": MessageLookupByLibrary.simpleMessage("Settings"),
     "submit": MessageLookupByLibrary.simpleMessage("Submit"),
+    "success": MessageLookupByLibrary.simpleMessage("Success"),
     "sunny_mode": MessageLookupByLibrary.simpleMessage("Sunny Mode"),
     "thank_you": MessageLookupByLibrary.simpleMessage(
       "Thank you for trusting us with your information. We strive to keep your data safe and transparent.",

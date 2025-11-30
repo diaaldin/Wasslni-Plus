@@ -58,5 +58,19 @@
   "validation_phone_invalid": "Phone number must be exactly 10 digits",
   "app_name": "Wasslni Plus",
   "app_tagline": "Fast & Reliable Delivery",
-  "welcome_to_app": "Welcome to Wasslni Plus"
+  "welcome_to_app": "Welcome to Wasslni Plus",
+  "email": "Email",
+  "enter_email": "Please enter email",
+  "invalid_email": "Invalid email address",
+  "enter_password": "Please enter password",
+  "register": "Register",
+  "role": "Role",
+  "merchant": "Merchant",
+  "courier": "Courier",
+  "customer": "Customer",
+  "login_failed": "Login Failed",
+  "registration_failed": "Registration Failed",
+  "success": "Success",
+  "already_have_account": "Already have an account? Login",
+  "dont_have_account": "Don't have an account? Register"
 }

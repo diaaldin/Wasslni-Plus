@@ -276,13 +276,14 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
 
 ### 2.1 Firebase Setup
 
-- [ ] **Initial Configuration**
-  - [ ] Create Firebase project
-  - [ ] Configure FlutterFire for Android
-  - [ ] Configure FlutterFire for iOS
-  - [ ] Configure FlutterFire for Web
-  - [ ] Set up Firebase Authentication
-  - [ ] Set up Cloud Firestore
+- [x] **Initial Configuration**
+  - [x] Create Firebase project
+  - [x] Configure FlutterFire for Android
+  - [x] Configure FlutterFire for iOS
+  - [x] Configure FlutterFire for Web
+  - [x] Firebase Core initialized in main.dart
+  - [x] Created AuthService for authentication
+  - [x] Created FirestoreService for database operations
   - [ ] Set up Cloud Storage
   - [ ] Set up Firebase Cloud Messaging (FCM)
   - [ ] Set up Firebase Analytics
@@ -292,24 +293,25 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [ ] Write Firestore security rules
   - [ ] Write Storage security rules
   - [ ] Test security rules with all user roles
-  - [ ] Implement role-based access control
+  - [ ] Create logout functionality
+  - [ ] Handle auth state changes
+  - [ ] Implement session timeout
 
 ### 2.2 Authentication
 
-- [ ] **Firebase Auth Integration**
-  - [ ] Implement phone authentication
-  - [ ] Add email/password authentication
-  - [ ] Implement Google Sign-In
-  - [ ] Add Apple Sign-In (iOS)
-  - [ ] Create password reset flow
-  - [ ] Implement email verification
-  - [ ] Add phone number verification
+- [x] **Task #8: Implement Firebase Authentication**
+  - [x] Create login page (email/password, phone)
+  - [x] Create registration page (with role selection)
+  - [x] Implement password reset flow
+  - [x] Translate all auth messages (Arabic/English)
+  - [x] Implement user registration and login
+  - [x] Create user profile on registration
 
 - [ ] **User Session Management**
-  - [ ] Implement auto-login on app start
+  - [x] Implement auto-login on app start (via AuthenticationHandler)
   - [ ] Add token refresh logic
   - [ ] Create logout functionality
-  - [ ] Handle auth state changes
+  - [x] Handle auth state changes
   - [ ] Implement session timeout
 
 ### 2.3 Firestore Database Structure
