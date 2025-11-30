@@ -75,9 +75,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [x] Create list of all UI text that needs translation
   - [x] Define translation workflow for new features
   - [x] Add examples of good Arabic/English translations
-  - [ ] Display branch-specific metrics
-  - [ ] Add courier performance tracking
-  - [ ] Implement parcel flow visualization
+
 
 - [ ] **Courier Management**
   - [ ] Create courier assignment interface
