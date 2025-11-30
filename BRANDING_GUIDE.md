@@ -291,18 +291,18 @@ Choose one of these concepts or create a hybrid:
 ### Required Assets
 
 #### Icons
-- [ ] app_icon.png (1024x1024px)
-- [ ] app_icon_foreground.png (1024x1024px, for Android adaptive)
-- [ ] App icons for all platforms (auto-generated)
+- [x] app_icon.png (1024x1024px)
+- [x] app_icon_foreground.png (1024x1024px, for Android adaptive)
+- [x] App icons for all platforms (auto-generated)
 
 #### Logos
-- [ ] logo_ar.png (Arabic version with text)
-- [ ] logo_en.png (English version with text)
-- [ ] logo_icon_only.png (Icon without text)
+- [x] logo_ar.png (Arabic version with text)
+- [x] logo_en.png (English version with text)
+- [x] logo_icon_only.png (Icon without text)
 
 #### Splash Screens
-- [ ] splash_bg.png (Background for splash)
-- [ ] splash_logo.png (Logo for splash screen)
+- [x] splash_bg.png (Background for splash)
+- [x] splash_logo.png (Logo for splash screen)
 
 #### Onboarding/Welcome
 - [ ] welcome_delivery.png
