@@ -3,7 +3,9 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:wasslni_plus/services/auth_service.dart';
+import 'package:wasslni_plus/services/fcm_service.dart';
 import 'package:wasslni_plus/models/user/user_model.dart';
 import 'firebase_options.dart';
 import 'package:wasslni_plus/app_styles.dart';
@@ -27,6 +29,12 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  // Set up background message handler
+  FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
+
+  // Initialize FCM
+  await FCMService().initialize();
 
   runApp(
     ChangeNotifierProvider(
