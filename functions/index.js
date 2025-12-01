@@ -138,6 +138,182 @@ exports.onReviewCreated = onDocumentCreated("reviews/{reviewId}", async (event) 
     });
 });
 
+// ==========================================
+// CALLABLE FUNCTIONS
+// ==========================================
+
+const { onCall, HttpsError } = require("firebase-functions/v2/https");
+
+/**
+ * Callable: Generate Reports
+ * Generates a report for a specific date range and type.
+ */
+exports.generateReports = onCall(async (request) => {
+    // Check authentication
+    if (!request.auth) {
+        throw new HttpsError('unauthenticated', 'The function must be called while authenticated.');
+    }
+
+    // Check role (admin or manager only)
+    const uid = request.auth.uid;
+    const userDoc = await db.collection('users').doc(uid).get();
+    const userData = userDoc.data();
+
+    if (userData.role !== 'admin' && userData.role !== 'manager') {
+        throw new HttpsError('permission-denied', 'Only admins and managers can generate reports.');
+    }
+
+    const { type, startDate, endDate } = request.data;
+    logger.info(`Generating ${type} report from ${startDate} to ${endDate} for user ${uid}`);
+
+    // Placeholder logic for report generation
+    // In a real app, this would query Firestore, aggregate data, and maybe generate a PDF or CSV
+
+    const reportData = {
+        generatedAt: new Date().toISOString(),
+        type: type,
+        period: { start: startDate, end: endDate },
+        summary: {
+            totalParcels: 150, // Mock data
+            delivered: 120,
+            pending: 30,
+            revenue: 5000
+        },
+        url: "https://example.com/reports/report-123.pdf" // Mock URL
+    };
+
+    return reportData;
+});
+
+/**
+ * Callable: Assign Optimal Courier
+ * Finds and assigns the best courier for a parcel.
+ */
+exports.assignOptimalCourier = onCall(async (request) => {
+    if (!request.auth) {
+        throw new HttpsError('unauthenticated', 'The function must be called while authenticated.');
+    }
+
+    const { parcelId } = request.data;
+    logger.info(`Assigning optimal courier for parcel ${parcelId}`);
+
+    const parcelRef = db.collection('parcels').doc(parcelId);
+    const parcelDoc = await parcelRef.get();
+
+    if (!parcelDoc.exists) {
+        throw new HttpsError('not-found', 'Parcel not found.');
+    }
+
+    const parcelData = parcelDoc.data();
+    if (parcelData.courierId) {
+        return { success: false, message: 'Parcel already assigned.' };
+    }
+
+    // Logic to find optimal courier
+    // 1. Query couriers in the same region
+    // 2. Filter by availability (isActive: true)
+    // 3. Sort by rating or proximity (mocking logic here)
+
+    const region = parcelData.deliveryRegion;
+    const couriersSnapshot = await db.collection('users')
+        .where('role', '==', 'courier')
+        .where('status', '==', 'active')
+        .where('workingRegions', 'array-contains', region)
+        .limit(5)
+        .get();
+
+    if (couriersSnapshot.empty) {
+        return { success: false, message: 'No available couriers in this region.' };
+    }
+
+    // Simple selection: pick the one with highest rating
+    let bestCourier = null;
+    let maxRating = -1;
+
+    couriersSnapshot.forEach(doc => {
+        const data = doc.data();
+        const rating = data.rating || 0;
+        if (rating > maxRating) {
+            maxRating = rating;
+            bestCourier = doc;
+        }
+    });
+
+    if (bestCourier) {
+        await parcelRef.update({
+            courierId: bestCourier.id,
+            status: 'assigned', // Assuming 'assigned' is a valid status
+            updatedAt: admin.firestore.FieldValue.serverTimestamp()
+        });
+
+        // Notify courier
+        const payload = {
+            notification: {
+                title: 'New Parcel Assigned',
+                body: `You have been assigned a new parcel: ${parcelData.barcode || parcelId}`,
+            },
+            data: {
+                type: 'new_parcel_assignment',
+                parcelId: parcelId,
+                click_action: 'FLUTTER_NOTIFICATION_CLICK',
+            }
+        };
+        await sendNotificationToUser(bestCourier.id, payload);
+
+        return { success: true, courierId: bestCourier.id, courierName: bestCourier.data().name };
+    }
+
+    return { success: false, message: 'Could not determine optimal courier.' };
+});
+
+/**
+ * Callable: Send Bulk Notifications
+ * Sends a notification to a list of users or a topic.
+ */
+exports.sendBulkNotifications = onCall(async (request) => {
+    if (!request.auth) {
+        throw new HttpsError('unauthenticated', 'The function must be called while authenticated.');
+    }
+
+    // Check admin role
+    const uid = request.auth.uid;
+    const userDoc = await db.collection('users').doc(uid).get();
+    if (userDoc.data().role !== 'admin') {
+        throw new HttpsError('permission-denied', 'Only admins can send bulk notifications.');
+    }
+
+    const { title, body, targetRole, targetRegion } = request.data;
+    logger.info(`Sending bulk notification: ${title} to role: ${targetRole}, region: ${targetRegion}`);
+
+    let topic = 'all_users';
+    if (targetRole) {
+        topic = `role_${targetRole}`;
+    } else if (targetRegion) {
+        topic = `region_${targetRegion}`;
+    }
+
+    const message = {
+        notification: {
+            title: title,
+            body: body,
+        },
+        topic: topic,
+        data: {
+            type: 'system_announcement',
+            click_action: 'FLUTTER_NOTIFICATION_CLICK',
+        }
+    };
+
+    try {
+        const response = await admin.messaging().send(message);
+        logger.info('Successfully sent message:', response);
+        return { success: true, messageId: response };
+    } catch (error) {
+        logger.error('Error sending message:', error);
+        throw new HttpsError('internal', 'Error sending notification.');
+    }
+});
+
 /**
  * Helper function to send notification to a user
  */

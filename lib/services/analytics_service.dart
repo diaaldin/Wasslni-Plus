@@ -20,9 +20,9 @@ class AnalyticsService {
       // Initialize Crashlytics
       await _initializeCrashlytics();
 
-      print('Analytics and Crashlytics initialized successfully');
+      debugPrint('Analytics and Crashlytics initialized successfully');
     } catch (e) {
-      print('Error initializing Analytics/Crashlytics: $e');
+      debugPrint('Error initializing Analytics/Crashlytics: $e');
     }
   }
 
@@ -51,7 +51,7 @@ class AnalyticsService {
       await _analytics.setUserId(id: userId);
       await FirebaseCrashlytics.instance.setUserIdentifier(userId);
     } catch (e) {
-      print('Error setting user ID: $e');
+      debugPrint('Error setting user ID: $e');
     }
   }
 
@@ -79,7 +79,7 @@ class AnalyticsService {
         await FirebaseCrashlytics.instance.setCustomKey('user_region', region);
       }
     } catch (e) {
-      print('Error setting user properties: $e');
+      debugPrint('Error setting user properties: $e');
     }
   }
 
@@ -89,7 +89,7 @@ class AnalyticsService {
       await _analytics.setUserId(id: null);
       await FirebaseCrashlytics.instance.setUserIdentifier('');
     } catch (e) {
-      print('Error clearing user data: $e');
+      debugPrint('Error clearing user data: $e');
     }
   }
 
@@ -106,7 +106,7 @@ class AnalyticsService {
         screenClass: screenClass ?? screenName,
       );
     } catch (e) {
-      print('Error logging screen view: $e');
+      debugPrint('Error logging screen view: $e');
     }
   }
 
@@ -117,7 +117,7 @@ class AnalyticsService {
     try {
       await _analytics.logLogin(loginMethod: method);
     } catch (e) {
-      print('Error logging login: $e');
+      debugPrint('Error logging login: $e');
     }
   }
 
@@ -126,7 +126,7 @@ class AnalyticsService {
     try {
       await _analytics.logSignUp(signUpMethod: method);
     } catch (e) {
-      print('Error logging signup: $e');
+      debugPrint('Error logging signup: $e');
     }
   }
 
@@ -150,7 +150,7 @@ class AnalyticsService {
         },
       );
     } catch (e) {
-      print('Error logging parcel creation: $e');
+      debugPrint('Error logging parcel creation: $e');
     }
   }
 
@@ -172,7 +172,7 @@ class AnalyticsService {
         },
       );
     } catch (e) {
-      print('Error logging parcel status change: $e');
+      debugPrint('Error logging parcel status change: $e');
     }
   }
 
@@ -192,7 +192,7 @@ class AnalyticsService {
         },
       );
     } catch (e) {
-      print('Error logging parcel delivery: $e');
+      debugPrint('Error logging parcel delivery: $e');
     }
   }
 
@@ -212,7 +212,7 @@ class AnalyticsService {
         },
       );
     } catch (e) {
-      print('Error logging courier assignment: $e');
+      debugPrint('Error logging courier assignment: $e');
     }
   }
 
@@ -236,7 +236,7 @@ class AnalyticsService {
         },
       );
     } catch (e) {
-      print('Error logging review submission: $e');
+      debugPrint('Error logging review submission: $e');
     }
   }
 
@@ -247,7 +247,7 @@ class AnalyticsService {
     try {
       await _analytics.logSearch(searchTerm: searchTerm);
     } catch (e) {
-      print('Error logging search: $e');
+      debugPrint('Error logging search: $e');
     }
   }
 
@@ -268,7 +268,7 @@ class AnalyticsService {
         fatal: fatal,
       );
     } catch (e) {
-      print('Error logging error: $e');
+      debugPrint('Error logging error: $e');
     }
   }
 
@@ -277,7 +277,7 @@ class AnalyticsService {
     try {
       await FirebaseCrashlytics.instance.log(message);
     } catch (e) {
-      print('Error logging message: $e');
+      debugPrint('Error logging message: $e');
     }
   }
 
@@ -286,7 +286,7 @@ class AnalyticsService {
     try {
       await FirebaseCrashlytics.instance.setCustomKey(key, value);
     } catch (e) {
-      print('Error setting custom key: $e');
+      debugPrint('Error setting custom key: $e');
     }
   }
 
@@ -303,7 +303,7 @@ class AnalyticsService {
         parameters: parameters?.cast<String, Object>(),
       );
     } catch (e) {
-      print('Error logging custom event: $e');
+      debugPrint('Error logging custom event: $e');
     }
   }
 }

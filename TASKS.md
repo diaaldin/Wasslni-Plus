@@ -523,10 +523,10 @@ Create server-side logic for:
   - [x] On review created → update courier rating
 
 - [ ] **Callable Functions**
-  - [ ] Generate daily/weekly/monthly reports
-  - [ ] Assign optimal courier to parcel
+  - [x] Generate daily/weekly/monthly reports
+  - [x] Assign optimal courier to parcel
   - [ ] Calculate route optimization
-  - [ ] Send bulk notifications
+  - [x] Send bulk notifications
   - [ ] Process refunds/payments (if applicable)
 
 - [ ] **Scheduled Functions**
