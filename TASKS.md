@@ -449,47 +449,47 @@ Design and implement the following collections:
 
 ### 2.4 CRUD Operations
 
-- [ ] **User Management**
-  - [ ] Create user profile on registration
-  - [ ] Read user data
-  - [ ] Update user profile
-  - [ ] Soft delete user account
-  - [ ] Query users by role
-  - [ ] Update FCM token
+- [x] **User Management**
+  - [x] Create user profile on registration
+  - [x] Read user data
+  - [x] Update user profile
+  - [x] Soft delete user account
+  - [x] Query users by role
+  - [x] Update FCM token
 
-- [ ] **Parcel Management**
-  - [ ] Create new parcel
-  - [ ] Read parcel details
-  - [ ] Update parcel information
-  - [ ] Delete/cancel parcel
-  - [ ] Update parcel status
-  - [ ] Assign courier to parcel
-  - [ ] Query parcels by merchant
-  - [ ] Query parcels by courier
-  - [ ] Query parcels by customer
-  - [ ] Query parcels by status
-  - [ ] Query parcels by region
-  - [ ] Search parcels by barcode
-  - [ ] Bulk parcel upload
+- [x] **Parcel Management**
+  - [x] Create new parcel
+  - [x] Read parcel details
+  - [x] Update parcel information
+  - [x] Delete/cancel parcel
+  - [x] Update parcel status
+  - [x] Assign courier to parcel
+  - [x] Query parcels by merchant
+  - [x] Query parcels by courier
+  - [x] Query parcels by customer
+  - [x] Query parcels by status
+  - [x] Query parcels by region
+  - [x] Search parcels by barcode
+  - [x] Bulk parcel upload
 
-- [ ] **Region Management**
-  - [ ] Fetch all regions
-  - [ ] Update delivery fees (admin only)
-  - [ ] Add new region (admin only)
-  - [ ] Toggle region availability
+- [x] **Region Management**
+  - [x] Fetch all regions
+  - [x] Update delivery fees (admin only)
+  - [x] Add new region (admin only)
+  - [x] Toggle region availability
 
-- [ ] **Notifications**
-  - [ ] Create notification
-  - [ ] Fetch user notifications
-  - [ ] Mark notification as read
-  - [ ] Delete notification
-  - [ ] Send bulk notifications
+- [x] **Notifications**
+  - [x] Create notification
+  - [x] Fetch user notifications
+  - [x] Mark notification as read
+  - [x] Delete notification
+  - [x] Send bulk notifications
 
-- [ ] **Reviews**
-  - [ ] Create review
-  - [ ] Fetch parcel reviews
-  - [ ] Fetch courier reviews
-  - [ ] Calculate average courier rating
+- [x] **Reviews**
+  - [x] Create review
+  - [x] Fetch parcel reviews
+  - [x] Fetch courier reviews
+  - [x] Calculate average courier rating
 
 ### 2.5 Real-time Updates
 

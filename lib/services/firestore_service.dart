@@ -94,6 +94,15 @@ class FirestoreService {
     }
   }
 
+  /// Update FCM token
+  Future<void> updateUserFcmToken(String uid, String token) async {
+    try {
+      await _usersCollection.doc(uid).update({'fcmToken': token});
+    } catch (e) {
+      throw Exception('Failed to update FCM token: $e');
+    }
+  }
+
   // ========== PARCEL OPERATIONS ==========
 
   /// Create a new parcel
@@ -103,6 +112,20 @@ class FirestoreService {
       return docRef.id;
     } catch (e) {
       throw Exception('Failed to create parcel: $e');
+    }
+  }
+
+  /// Batch create parcels (Bulk upload)
+  Future<void> batchCreateParcels(List<ParcelModel> parcels) async {
+    try {
+      final batch = _firestore.batch();
+      for (var parcel in parcels) {
+        final docRef = _parcelsCollection.doc(); // Auto-ID
+        batch.set(docRef, parcel.toMap());
+      }
+      await batch.commit();
+    } catch (e) {
+      throw Exception('Failed to batch create parcels: $e');
     }
   }
 
@@ -253,6 +276,23 @@ class FirestoreService {
             .toList());
   }
 
+  /// Get parcels by customer
+  Future<List<ParcelModel>> getParcelsByCustomer(String customerId) async {
+    try {
+      final querySnapshot = await _parcelsCollection
+          .where('customerId', isEqualTo: customerId)
+          .where('isDeleted', isEqualTo: false)
+          .orderBy('createdAt', descending: true)
+          .get();
+
+      return querySnapshot.docs
+          .map((doc) => ParcelModel.fromFirestore(doc))
+          .toList();
+    } catch (e) {
+      throw Exception('Failed to get parcels by customer: $e');
+    }
+  }
+
   /// Get parcels by status
   Future<List<ParcelModel>> getParcelsByStatus(ParcelStatus status) async {
     try {
@@ -318,6 +358,25 @@ class FirestoreService {
           .toList();
     } catch (e) {
       throw Exception('Failed to get regions: $e');
+    }
+  }
+
+  /// Create region (Admin)
+  Future<void> createRegion(RegionModel region) async {
+    try {
+      // Use English name as ID
+      await _regionsCollection.doc(region.nameEn).set(region.toMap());
+    } catch (e) {
+      throw Exception('Failed to create region: $e');
+    }
+  }
+
+  /// Update region (Admin)
+  Future<void> updateRegion(String regionId, Map<String, dynamic> data) async {
+    try {
+      await _regionsCollection.doc(regionId).update(data);
+    } catch (e) {
+      throw Exception('Failed to update region: $e');
     }
   }
 
@@ -400,6 +459,9 @@ class FirestoreService {
   Future<void> createReview(ReviewModel review) async {
     try {
       await _reviewsCollection.add(review.toMap());
+
+      // Update courier rating
+      await _updateCourierRating(review.courierId);
     } catch (e) {
       throw Exception('Failed to create review: $e');
     }
@@ -418,6 +480,40 @@ class FirestoreService {
           .toList();
     } catch (e) {
       throw Exception('Failed to get reviews by courier: $e');
+    }
+  }
+
+  /// Get reviews by parcel
+  Future<List<ReviewModel>> getReviewsByParcel(String parcelId) async {
+    try {
+      final querySnapshot =
+          await _reviewsCollection.where('parcelId', isEqualTo: parcelId).get();
+
+      return querySnapshot.docs
+          .map((doc) => ReviewModel.fromFirestore(doc))
+          .toList();
+    } catch (e) {
+      throw Exception('Failed to get reviews by parcel: $e');
+    }
+  }
+
+  /// Update courier rating (Internal helper)
+  Future<void> _updateCourierRating(String courierId) async {
+    try {
+      final reviews = await getReviewsByCourier(courierId);
+      if (reviews.isEmpty) return;
+
+      final totalRating =
+          reviews.fold(0.0, (sum, review) => sum + review.rating);
+      final averageRating = totalRating / reviews.length;
+
+      await updateUser(courierId, {
+        'rating': averageRating,
+        'totalDeliveries':
+            FieldValue.increment(0), // Just to ensure field exists
+      });
+    } catch (e) {
+      print('Error updating courier rating: $e');
     }
   }
 
