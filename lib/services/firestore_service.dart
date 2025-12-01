@@ -1,7 +1,10 @@
-// lib/services/firestore_service.dart
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:wasslni_plus/models/parcel_model.dart';
 import 'package:wasslni_plus/models/user/user_model.dart';
+import 'package:wasslni_plus/models/region_model.dart';
+import 'package:wasslni_plus/models/notification_model.dart';
+import 'package:wasslni_plus/models/review_model.dart';
+import 'package:wasslni_plus/models/analytics_model.dart';
 
 class FirestoreService {
   static final FirestoreService _instance = FirestoreService._internal();
@@ -18,6 +21,10 @@ class FirestoreService {
       _firestore.collection('regions');
   CollectionReference get _notificationsCollection =>
       _firestore.collection('notifications');
+  CollectionReference get _reviewsCollection =>
+      _firestore.collection('reviews');
+  CollectionReference get _analyticsCollection =>
+      _firestore.collection('analytics');
 
   // ========== USER OPERATIONS ==========
 
@@ -301,13 +308,13 @@ class FirestoreService {
   // ========== REGION OPERATIONS ==========
 
   /// Get all regions
-  Future<List<Map<String, dynamic>>> getAllRegions() async {
+  Future<List<RegionModel>> getAllRegions() async {
     try {
       final querySnapshot =
           await _regionsCollection.where('isActive', isEqualTo: true).get();
 
       return querySnapshot.docs
-          .map((doc) => {'id': doc.id, ...doc.data() as Map<String, dynamic>})
+          .map((doc) => RegionModel.fromFirestore(doc))
           .toList();
     } catch (e) {
       throw Exception('Failed to get regions: $e');
@@ -315,12 +322,12 @@ class FirestoreService {
   }
 
   /// Stream all regions (real-time)
-  Stream<List<Map<String, dynamic>>> streamAllRegions() {
+  Stream<List<RegionModel>> streamAllRegions() {
     return _regionsCollection
         .where('isActive', isEqualTo: true)
         .snapshots()
         .map((snapshot) => snapshot.docs
-            .map((doc) => {'id': doc.id, ...doc.data() as Map<String, dynamic>})
+            .map((doc) => RegionModel.fromFirestore(doc))
             .toList());
   }
 
@@ -347,39 +354,23 @@ class FirestoreService {
   // ========== NOTIFICATION OPERATIONS ==========
 
   /// Create notification
-  Future<void> createNotification({
-    required String userId,
-    required String title,
-    required String body,
-    String type = 'info',
-    String? relatedParcelId,
-    String? actionUrl,
-  }) async {
+  Future<void> createNotification(NotificationModel notification) async {
     try {
-      await _notificationsCollection.add({
-        'userId': userId,
-        'title': title,
-        'body': body,
-        'type': type,
-        'isRead': false,
-        'relatedParcelId': relatedParcelId,
-        'actionUrl': actionUrl,
-        'createdAt': FieldValue.serverTimestamp(),
-      });
+      await _notificationsCollection.add(notification.toMap());
     } catch (e) {
       throw Exception('Failed to create notification: $e');
     }
   }
 
   /// Get user notifications
-  Stream<List<Map<String, dynamic>>> streamUserNotifications(String userId) {
+  Stream<List<NotificationModel>> streamUserNotifications(String userId) {
     return _notificationsCollection
         .where('userId', isEqualTo: userId)
         .orderBy('createdAt', descending: true)
         .limit(50)
         .snapshots()
         .map((snapshot) => snapshot.docs
-            .map((doc) => {'id': doc.id, ...doc.data() as Map<String, dynamic>})
+            .map((doc) => NotificationModel.fromFirestore(doc))
             .toList());
   }
 
@@ -403,46 +394,85 @@ class FirestoreService {
     }
   }
 
+  // ========== REVIEW OPERATIONS ==========
+
+  /// Create review
+  Future<void> createReview(ReviewModel review) async {
+    try {
+      await _reviewsCollection.add(review.toMap());
+    } catch (e) {
+      throw Exception('Failed to create review: $e');
+    }
+  }
+
+  /// Get reviews by courier
+  Future<List<ReviewModel>> getReviewsByCourier(String courierId) async {
+    try {
+      final querySnapshot = await _reviewsCollection
+          .where('courierId', isEqualTo: courierId)
+          .orderBy('createdAt', descending: true)
+          .get();
+
+      return querySnapshot.docs
+          .map((doc) => ReviewModel.fromFirestore(doc))
+          .toList();
+    } catch (e) {
+      throw Exception('Failed to get reviews by courier: $e');
+    }
+  }
+
+  // ========== ANALYTICS OPERATIONS ==========
+
+  /// Get daily analytics
+  Future<AnalyticsModel?> getDailyAnalytics(String date) async {
+    try {
+      final doc = await _analyticsCollection.doc(date).get();
+      if (doc.exists) {
+        return AnalyticsModel.fromFirestore(doc);
+      }
+      return null;
+    } catch (e) {
+      throw Exception('Failed to get daily analytics: $e');
+    }
+  }
+
   // ========== UTILITY OPERATIONS ==========
 
   /// Initialize default regions (run once on app setup)
   Future<void> initializeDefaultRegions() async {
     try {
       final regions = [
-        {
-          'name': 'القدس',
-          'nameAr': 'القدس',
-          'nameEn': 'Jerusalem',
-          'nameHe': 'ירושלים',
-          'deliveryFee': 30,
-          'isActive': true,
-          'estimatedDeliveryDays': 1,
-        },
-        {
-          'name': 'الضفة',
-          'nameAr': 'الضفة',
-          'nameEn': 'West Bank',
-          'nameHe': 'הגדה',
-          'deliveryFee': 20,
-          'isActive': true,
-          'estimatedDeliveryDays': 1,
-        },
-        {
-          'name': 'الداخل',
-          'nameAr': 'الداخل',
-          'nameEn': 'Inside',
-          'nameHe': 'הפנים',
-          'deliveryFee': 70,
-          'isActive': true,
-          'estimatedDeliveryDays': 2,
-        },
+        RegionModel(
+          name: 'القدس',
+          nameAr: 'القدس',
+          nameEn: 'Jerusalem',
+          deliveryFee: 30,
+          isActive: true,
+          estimatedDeliveryDays: 1,
+        ),
+        RegionModel(
+          name: 'الضفة',
+          nameAr: 'الضفة',
+          nameEn: 'West Bank',
+          deliveryFee: 20,
+          isActive: true,
+          estimatedDeliveryDays: 1,
+        ),
+        RegionModel(
+          name: 'الداخل',
+          nameAr: 'الداخل',
+          nameEn: 'Inside',
+          deliveryFee: 70,
+          isActive: true,
+          estimatedDeliveryDays: 2,
+        ),
       ];
 
       final batch = _firestore.batch();
       for (var region in regions) {
         // Use English name as ID to prevent duplicates
-        final docRef = _regionsCollection.doc(region['nameEn'] as String);
-        batch.set(docRef, region, SetOptions(merge: true));
+        final docRef = _regionsCollection.doc(region.nameEn);
+        batch.set(docRef, region.toMap(), SetOptions(merge: true));
       }
       await batch.commit();
     } catch (e) {

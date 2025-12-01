@@ -318,7 +318,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
 
 Design and implement the following collections:
 
-- [ ] **Users Collection**
+- [x] **Users Collection**
   ```
   users/{userId}
     - uid: string
@@ -352,7 +352,7 @@ Design and implement the following collections:
     - branchId: string
   ```
 
-- [ ] **Parcels Collection**
+- [x] **Parcels Collection**
   ```
   parcels/{parcelId}
     - barcode: string (unique)
@@ -396,7 +396,7 @@ Design and implement the following collections:
     - isDeleted: boolean
   ```
 
-- [ ] **Regions Collection**
+- [x] **Regions Collection**
   ```
   regions/{regionId}
     - name: string
@@ -408,7 +408,7 @@ Design and implement the following collections:
     - estimatedDeliveryDays: number
   ```
 
-- [ ] **Notifications Collection**
+- [x] **Notifications Collection**
   ```
   notifications/{notificationId}
     - userId: string (ref to users)
@@ -421,7 +421,7 @@ Design and implement the following collections:
     - actionUrl: string (optional)
   ```
 
-- [ ] **Reviews Collection**
+- [x] **Reviews Collection**
   ```
   reviews/{reviewId}
     - parcelId: string (ref to parcels)
@@ -433,7 +433,7 @@ Design and implement the following collections:
     - createdAt: timestamp
   ```
 
-- [ ] **Analytics Collection** (for admin/manager dashboards)
+- [x] **Analytics Collection** (for admin/manager dashboards)
   ```
   analytics/daily/{date}
     - totalParcels: number
