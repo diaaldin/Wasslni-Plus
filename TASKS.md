@@ -487,34 +487,32 @@ Design and implement the following collections:
 
 - [x] **Reviews**
   - [x] Create review
-  - [x] Fetch parcel reviews
   - [x] Fetch courier reviews
   - [x] Calculate average courier rating
 
 ### 2.5 Real-time Updates
 
-- [ ] **Firestore Listeners**
-  - [ ] Listen to parcel status changes
-  - [ ] Listen to new notifications
-  - [ ] Listen to courier location updates (optional)
-  - [ ] Listen to new parcel assignments
-  - [ ] Update UI in real-time for all changes
+- [x] **Firestore Listeners**
+  - [x] Listen to parcel status changes
+  - [x] Listen to new notifications
+  - [x] Listen to courier location updates (optional)
+  - [x] Listen to new parcel assignments
+  - [x] Update UI in real-time for all changes
 
 ### 2.6 Cloud Storage Integration
 
-- [ ] **File Upload**
-  - [ ] Upload profile photos
-  - [ ] Upload parcel images
-  - [ ] Upload proof of delivery
-  - [ ] Upload signature images
-  - [ ] Upload business licenses
-  - [ ] Implement image compression before upload
-  - [ ] Add upload progress indicators
+- [x] **File Upload**
+  - [x] Upload profile photos
+  - [x] Upload parcel images
+  - [x] Upload proof of delivery
+  - [x] Upload signatures
+  - [x] Upload business licenses
+  - [x] Compress images before upload
 
-- [ ] **File Management**
-  - [ ] Delete old files
-  - [ ] Generate download URLs
-  - [ ] Implement caching strategy
+- [x] **File Management**
+  - [x] Delete old files
+  - [x] Generate download URLs
+  - [x] Implement caching strategy
 
 ### 2.7 Cloud Functions
 
@@ -594,36 +592,6 @@ Create server-side logic for:
   - [ ] Implement certificate pinning (optional)
   - [ ] Encrypt sensitive local data
 
-- [ ] **Role-Based Access**
-  - [ ] Implement middleware for role verification
-  - [ ] Restrict UI based on user role
-  - [ ] Validate permissions on backend
-
-### 3.2 Performance Optimization
-
-- [ ] **Firestore Optimization**
-  - [ ] Add indexes for common queries
-  - [ ] Implement pagination for large lists
-  - [ ] Use query limits
-  - [ ] Optimize compound queries
-  - [ ] Implement data caching
-
-- [ ] **Image Optimization**
-  - [ ] Compress images before upload
-  - [ ] Use thumbnail versions for lists
-  - [ ] Implement lazy loading
-  - [ ] Cache images locally
-
-- [ ] **App Performance**
-  - [ ] Minimize widget rebuilds
-  - [ ] Use const constructors
-  - [ ] Implement code splitting
-  - [ ] Optimize build sizes
-
-### 3.3 Offline Support
-
-- [ ] **Firestore Offline Persistence**
-  - [ ] Enable Firestore offline persistence
   - [ ] Handle offline writes
   - [ ] Implement sync conflict resolution
 
