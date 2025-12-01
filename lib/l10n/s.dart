@@ -456,6 +456,90 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Welcome to Wasslni Plus'**
   String get welcome_to_app;
+
+  /// No description provided for @email.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get email;
+
+  /// No description provided for @enter_email.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter email'**
+  String get enter_email;
+
+  /// No description provided for @invalid_email.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid email address'**
+  String get invalid_email;
+
+  /// No description provided for @enter_password.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter password'**
+  String get enter_password;
+
+  /// No description provided for @register.
+  ///
+  /// In en, this message translates to:
+  /// **'Register'**
+  String get register;
+
+  /// No description provided for @role.
+  ///
+  /// In en, this message translates to:
+  /// **'Role'**
+  String get role;
+
+  /// No description provided for @merchant.
+  ///
+  /// In en, this message translates to:
+  /// **'Merchant'**
+  String get merchant;
+
+  /// No description provided for @courier.
+  ///
+  /// In en, this message translates to:
+  /// **'Courier'**
+  String get courier;
+
+  /// No description provided for @customer.
+  ///
+  /// In en, this message translates to:
+  /// **'Customer'**
+  String get customer;
+
+  /// No description provided for @login_failed.
+  ///
+  /// In en, this message translates to:
+  /// **'Login Failed'**
+  String get login_failed;
+
+  /// No description provided for @registration_failed.
+  ///
+  /// In en, this message translates to:
+  /// **'Registration Failed'**
+  String get registration_failed;
+
+  /// No description provided for @success.
+  ///
+  /// In en, this message translates to:
+  /// **'Success'**
+  String get success;
+
+  /// No description provided for @already_have_account.
+  ///
+  /// In en, this message translates to:
+  /// **'Already have an account? Login'**
+  String get already_have_account;
+
+  /// No description provided for @dont_have_account.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t have an account? Register'**
+  String get dont_have_account;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

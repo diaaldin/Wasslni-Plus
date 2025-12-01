@@ -199,4 +199,46 @@ class SAr extends S {
 
   @override
   String get welcome_to_app => 'مرحباً بك في وصلني بلس';
+
+  @override
+  String get email => 'البريد الإلكتروني';
+
+  @override
+  String get enter_email => 'الرجاء إدخال البريد الإلكتروني';
+
+  @override
+  String get invalid_email => 'بريد إلكتروني غير صالح';
+
+  @override
+  String get enter_password => 'الرجاء إدخال كلمة المرور';
+
+  @override
+  String get register => 'تسجيل جديد';
+
+  @override
+  String get role => 'الدور';
+
+  @override
+  String get merchant => 'تاجر';
+
+  @override
+  String get courier => 'مندوب توصيل';
+
+  @override
+  String get customer => 'زبون';
+
+  @override
+  String get login_failed => 'فشل تسجيل الدخول';
+
+  @override
+  String get registration_failed => 'فشل التسجيل';
+
+  @override
+  String get success => 'نجاح';
+
+  @override
+  String get already_have_account => 'لديك حساب بالفعل؟ تسجيل الدخول';
+
+  @override
+  String get dont_have_account => 'ليس لديك حساب؟ تسجيل جديد';
 }

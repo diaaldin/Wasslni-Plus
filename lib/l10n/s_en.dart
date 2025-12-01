@@ -200,4 +200,46 @@ class SEn extends S {
 
   @override
   String get welcome_to_app => 'Welcome to Wasslni Plus';
+
+  @override
+  String get email => 'Email';
+
+  @override
+  String get enter_email => 'Please enter email';
+
+  @override
+  String get invalid_email => 'Invalid email address';
+
+  @override
+  String get enter_password => 'Please enter password';
+
+  @override
+  String get register => 'Register';
+
+  @override
+  String get role => 'Role';
+
+  @override
+  String get merchant => 'Merchant';
+
+  @override
+  String get courier => 'Courier';
+
+  @override
+  String get customer => 'Customer';
+
+  @override
+  String get login_failed => 'Login Failed';
+
+  @override
+  String get registration_failed => 'Registration Failed';
+
+  @override
+  String get success => 'Success';
+
+  @override
+  String get already_have_account => 'Already have an account? Login';
+
+  @override
+  String get dont_have_account => 'Don\'t have an account? Register';
 }
