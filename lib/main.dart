@@ -17,6 +17,7 @@ import 'package:wasslni_plus/models/user/consts.dart';
 import 'package:wasslni_plus/provider/app_settings_providor.dart';
 import 'package:wasslni_plus/widgets/NetworkAwareWrapper.dart';
 import 'package:wasslni_plus/widgets/log_in.dart';
+import 'package:wasslni_plus/widgets/session_timeout_manager.dart';
 
 void main() async {
   // Ensure Flutter binding is initialized
@@ -59,7 +60,7 @@ class MyApp extends StatelessWidget {
       ],
       supportedLocales: S.delegate.supportedLocales,
       locale: appSettings.locale,
-      home: const NetworkAwareWrapper(child: LoginPage()),
+      home: const AuthenticationHandler(),
     );
   }
 }
@@ -69,8 +70,7 @@ class AuthenticationHandler extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final authService =
-        AuthService(); // Ensure AuthService is imported or available
+    final authService = AuthService();
 
     return StreamBuilder<User?>(
       stream: authService.authStateChanges,
@@ -101,11 +101,13 @@ class AuthenticationHandler extends StatelessWidget {
             final user = userSnapshot.data;
             if (user == null) {
               // User authenticated in Firebase but no Firestore profile.
-              // This shouldn't happen with our registration flow, but handle it safely.
               return const NetworkAwareWrapper(child: LoginPage());
             }
 
-            return _getMainScreenBasedOnRole(user.role);
+            // Wrap authenticated content with SessionTimeoutManager
+            return SessionTimeoutManager(
+              child: _getMainScreenBasedOnRole(user.role),
+            );
           },
         );
       },
