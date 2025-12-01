@@ -72,5 +72,8 @@
   "registration_failed": "Registration Failed",
   "success": "Success",
   "already_have_account": "Already have an account? Login",
-  "dont_have_account": "Don't have an account? Register"
+  "dont_have_account": "Don't have an account? Register",
+  "logout_confirmation": "Are you sure you want to logout?",
+  "cancel": "Cancel",
+  "logout_error": "Error logging out. Please try again."
 }

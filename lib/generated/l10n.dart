@@ -659,6 +659,31 @@ class S {
       args: [],
     );
   }
+
+  /// `Are you sure you want to logout?`
+  String get logout_confirmation {
+    return Intl.message(
+      'Are you sure you want to logout?',
+      name: 'logout_confirmation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message('Cancel', name: 'cancel', desc: '', args: []);
+  }
+
+  /// `Error logging out. Please try again.`
+  String get logout_error {
+    return Intl.message(
+      'Error logging out. Please try again.',
+      name: 'logout_error',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

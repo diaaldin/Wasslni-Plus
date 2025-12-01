@@ -310,7 +310,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
 - [ ] **User Session Management**
   - [x] Implement auto-login on app start (via AuthenticationHandler)
   - [ ] Add token refresh logic
-  - [ ] Create logout functionality
+  - [x] Create logout functionality
   - [x] Handle auth state changes
   - [ ] Implement session timeout
 

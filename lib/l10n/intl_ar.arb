@@ -72,5 +72,8 @@
   "registration_failed": "فشل التسجيل",
   "success": "نجاح",
   "already_have_account": "لديك حساب بالفعل؟ تسجيل الدخول",
-  "dont_have_account": "ليس لديك حساب؟ تسجيل جديد"
+  "dont_have_account": "ليس لديك حساب؟ تسجيل جديد",
+  "logout_confirmation": "هل أنت متأكد من تسجيل الخروج؟",
+  "cancel": "إلغاء",
+  "logout_error": "خطأ في تسجيل الخروج. يرجى المحاولة مرة أخرى."
 }

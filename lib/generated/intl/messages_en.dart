@@ -39,6 +39,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "attach_barcode": MessageLookupByLibrary.simpleMessage("Attach Barcode"),
     "barcode_label": m0,
+    "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "choose_region_warning": MessageLookupByLibrary.simpleMessage(
       "Please select a region",
     ),
@@ -102,6 +103,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "login_failed": MessageLookupByLibrary.simpleMessage("Login Failed"),
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+    "logout_confirmation": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to logout?",
+    ),
+    "logout_error": MessageLookupByLibrary.simpleMessage(
+      "Error logging out. Please try again.",
+    ),
     "main": MessageLookupByLibrary.simpleMessage("Main"),
     "merchant": MessageLookupByLibrary.simpleMessage("Merchant"),
     "merchant_dashboard": MessageLookupByLibrary.simpleMessage(

@@ -9,6 +9,7 @@ import 'package:wasslni_plus/widgets/language/language_dropdown.dart';
 import 'package:wasslni_plus/widgets/log_in.dart';
 import 'package:wasslni_plus/widgets/molecules/custom_list_tile.dart';
 import 'package:wasslni_plus/widgets/molecules/custom_switch_tile.dart';
+import 'package:wasslni_plus/services/auth_service.dart';
 
 class SettingsMain extends StatefulWidget {
   const SettingsMain({super.key});
@@ -60,6 +61,78 @@ class SettingsMainState extends State<SettingsMain> {
     //     context, newIsDarkMode); // Save the preference to Firebase
   }
 
+  Future<void> _handleLogout() async {
+    final authService = AuthService();
+
+    // Show confirmation dialog
+    final bool? confirm = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(S.of(context).logout),
+        content: Text(S.of(context).logout_confirmation ??
+            'Are you sure you want to logout?'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, false),
+            child: Text(S.of(context).cancel ?? 'Cancel'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(context, true),
+            child: Text(S.of(context).logout),
+          ),
+        ],
+      ),
+    );
+
+    if (confirm != true) return;
+
+    try {
+      // Show loading indicator
+      if (mounted) {
+        showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (context) => const Center(
+            child: CircularProgressIndicator(),
+          ),
+        );
+      }
+
+      // Sign out from Firebase
+      await authService.signOut();
+
+      // Close loading dialog
+      if (mounted) {
+        Navigator.pop(context);
+      }
+
+      // Navigate to login page and clear navigation stack
+      if (mounted) {
+        Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(builder: (context) => const LoginPage()),
+          (route) => false,
+        );
+      }
+    } catch (e) {
+      // Close loading dialog
+      if (mounted) {
+        Navigator.pop(context);
+      }
+
+      // Show error message
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content:
+                Text(S.of(context).logout_error ?? 'Error logging out: $e'),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final settingsModel = Provider.of<AppSettingsProvidor>(context);
@@ -103,12 +176,7 @@ class SettingsMainState extends State<SettingsMain> {
             icon: Icons.logout,
             title: S.of(context).logout,
             color: AppStyles.primaryColor,
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const LoginPage()),
-              );
-            },
+            onTap: _handleLogout,
           ),
         ],
       ),

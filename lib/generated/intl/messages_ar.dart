@@ -35,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "app_tagline": MessageLookupByLibrary.simpleMessage("توصيل سريع وموثوق"),
     "attach_barcode": MessageLookupByLibrary.simpleMessage("أرفق باركود"),
     "barcode_label": m0,
+    "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "choose_region_warning": MessageLookupByLibrary.simpleMessage(
       "يرجى اختيار المنطقة",
     ),
@@ -100,6 +101,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "login_failed": MessageLookupByLibrary.simpleMessage("فشل تسجيل الدخول"),
     "logout": MessageLookupByLibrary.simpleMessage("تسجيل خروج"),
+    "logout_confirmation": MessageLookupByLibrary.simpleMessage(
+      "هل أنت متأكد من تسجيل الخروج؟",
+    ),
+    "logout_error": MessageLookupByLibrary.simpleMessage(
+      "خطأ في تسجيل الخروج. يرجى المحاولة مرة أخرى.",
+    ),
     "main": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "merchant": MessageLookupByLibrary.simpleMessage("تاجر"),
     "merchant_dashboard": MessageLookupByLibrary.simpleMessage("لوحة التاجر"),
