@@ -314,6 +314,134 @@ exports.sendBulkNotifications = onCall(async (request) => {
     }
 });
 
+// ==========================================
+// SCHEDULED FUNCTIONS
+// ==========================================
+
+const { onSchedule } = require("firebase-functions/v2/scheduler");
+
+/**
+ * Scheduled: Daily Analytics Aggregation
+ * Runs every day at midnight to aggregate daily stats.
+ */
+exports.dailyAnalytics = onSchedule("every day 00:00", async (event) => {
+    logger.info("Running daily analytics aggregation...");
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const yesterday = new Date(today);
+    yesterday.setDate(yesterday.getDate() - 1);
+
+    // Query parcels created yesterday
+    const parcelsSnapshot = await db.collection('parcels')
+        .where('createdAt', '>=', admin.firestore.Timestamp.fromDate(yesterday))
+        .where('createdAt', '<', admin.firestore.Timestamp.fromDate(today))
+        .get();
+
+    const totalParcels = parcelsSnapshot.size;
+    let deliveredCount = 0;
+    let revenue = 0;
+
+    parcelsSnapshot.forEach(doc => {
+        const data = doc.data();
+        if (data.status === 'delivered') {
+            deliveredCount++;
+        }
+        revenue += (data.deliveryFee || 0);
+    });
+
+    // Save daily stats
+    const statsRef = db.collection('analytics').doc(`daily_${yesterday.toISOString().split('T')[0]}`);
+    await statsRef.set({
+        date: yesterday,
+        totalParcels: totalParcels,
+        deliveredCount: deliveredCount,
+        revenue: revenue,
+        createdAt: admin.firestore.FieldValue.serverTimestamp()
+    });
+
+    logger.info(`Daily analytics saved: ${totalParcels} parcels, ${deliveredCount} delivered, $${revenue} revenue.`);
+});
+
+/**
+ * Scheduled: Cleanup Notifications
+ * Runs every Sunday at 3 AM to delete notifications older than 30 days.
+ */
+exports.cleanupNotifications = onSchedule("every sunday 03:00", async (event) => {
+    logger.info("Running notification cleanup...");
+
+    const thirtyDaysAgo = new Date();
+    thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+
+    const snapshot = await db.collection('notifications')
+        .where('createdAt', '<', admin.firestore.Timestamp.fromDate(thirtyDaysAgo))
+        .limit(500) // Limit batch size
+        .get();
+
+    if (snapshot.empty) {
+        logger.info("No old notifications to delete.");
+        return;
+    }
+
+    const batch = db.batch();
+    snapshot.docs.forEach(doc => {
+        batch.delete(doc.ref);
+    });
+
+    await batch.commit();
+    logger.info(`Deleted ${snapshot.size} old notifications.`);
+});
+
+/**
+ * Scheduled: Send Delivery Reminders
+ * Runs every day at 8 AM to send reminders for parcels scheduled for today.
+ */
+exports.sendDeliveryReminders = onSchedule("every day 08:00", async (event) => {
+    logger.info("Sending delivery reminders...");
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+
+    // Find parcels scheduled for delivery today
+    // Assuming 'scheduledDate' field exists
+    const snapshot = await db.collection('parcels')
+        .where('scheduledDate', '>=', admin.firestore.Timestamp.fromDate(today))
+        .where('scheduledDate', '<', admin.firestore.Timestamp.fromDate(tomorrow))
+        .where('status', 'in', ['pending', 'picked_up', 'out_for_delivery'])
+        .get();
+
+    if (snapshot.empty) {
+        logger.info("No scheduled deliveries for today.");
+        return;
+    }
+
+    const promises = [];
+    snapshot.forEach(doc => {
+        const data = doc.data();
+
+        // Notify Customer
+        if (data.customerId) {
+            const payload = {
+                notification: {
+                    title: 'Delivery Reminder',
+                    body: `Your parcel ${data.barcode || doc.id} is scheduled for delivery today.`,
+                },
+                data: {
+                    type: 'delivery_reminder',
+                    parcelId: doc.id,
+                    click_action: 'FLUTTER_NOTIFICATION_CLICK',
+                }
+            };
+            promises.push(sendNotificationToUser(data.customerId, payload));
+        }
+    });
+
+    await Promise.all(promises);
+    logger.info(`Sent reminders for ${snapshot.size} parcels.`);
+});
+
 /**
  * Helper function to send notification to a user
  */

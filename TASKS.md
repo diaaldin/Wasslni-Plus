@@ -530,9 +530,9 @@ Create server-side logic for:
   - [ ] Process refunds/payments (if applicable)
 
 - [ ] **Scheduled Functions**
-  - [ ] Daily analytics aggregation
-  - [ ] Clean up old notifications
-  - [ ] Send delivery reminders
+  - [x] Daily analytics aggregation
+  - [x] Clean up old notifications
+  - [x] Send delivery reminders
   - [ ] Generate performance reports
 
 ### 2.8 Push Notifications (FCM)
