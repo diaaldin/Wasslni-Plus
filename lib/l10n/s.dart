@@ -540,6 +540,24 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Don\'t have an account? Register'**
   String get dont_have_account;
+
+  /// No description provided for @logout_confirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to logout?'**
+  String get logout_confirmation;
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @logout_error.
+  ///
+  /// In en, this message translates to:
+  /// **'Error logging out. Please try again.'**
+  String get logout_error;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

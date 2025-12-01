@@ -241,4 +241,13 @@ class SAr extends S {
 
   @override
   String get dont_have_account => 'ليس لديك حساب؟ تسجيل جديد';
+
+  @override
+  String get logout_confirmation => 'هل أنت متأكد من تسجيل الخروج؟';
+
+  @override
+  String get cancel => 'إلغاء';
+
+  @override
+  String get logout_error => 'خطأ في تسجيل الخروج. يرجى المحاولة مرة أخرى.';
 }

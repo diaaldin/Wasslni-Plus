@@ -284,7 +284,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [x] Firebase Core initialized in main.dart
   - [x] Created AuthService for authentication
   - [x] Created FirestoreService for database operations
-  - [ ] Set up Cloud Storage
+  - [x] Set up Cloud Storage
   - [ ] Set up Firebase Cloud Messaging (FCM)
   - [ ] Set up Firebase Analytics
   - [ ] Set up Crashlytics

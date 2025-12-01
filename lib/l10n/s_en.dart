@@ -242,4 +242,13 @@ class SEn extends S {
 
   @override
   String get dont_have_account => 'Don\'t have an account? Register';
+
+  @override
+  String get logout_confirmation => 'Are you sure you want to logout?';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get logout_error => 'Error logging out. Please try again.';
 }
