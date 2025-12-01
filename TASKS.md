@@ -516,11 +516,11 @@ Design and implement the following collections:
 Create server-side logic for:
 
 - [ ] **Trigger Functions**
-  - [ ] On parcel status change → send notification to relevant users
-  - [ ] On parcel created → assign barcode if not provided
+  - [x] On parcel status change → send notification to relevant users
+  - [x] On parcel created → assign barcode if not provided
   - [ ] On parcel delivered → update merchant stats
   - [ ] On user created → send welcome email/SMS
-  - [ ] On review created → update courier rating
+  - [x] On review created → update courier rating
 
 - [ ] **Callable Functions**
   - [ ] Generate daily/weekly/monthly reports
