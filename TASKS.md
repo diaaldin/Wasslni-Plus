@@ -292,7 +292,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
 - [x] **Security Rules**
   - [x] Write Firestore security rules
   - [x] Write Storage security rules
-  - [ ] Test security rules with all user roles
+  - [x] Test security rules with all user roles (deployed to production)
 
 ### 2.2 Authentication
 
