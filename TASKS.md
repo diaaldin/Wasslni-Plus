@@ -286,8 +286,8 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [x] Created FirestoreService for database operations
   - [x] Set up Cloud Storage
   - [x] Set up Firebase Cloud Messaging (FCM)
-  - [ ] Set up Firebase Analytics
-  - [ ] Set up Crashlytics
+  - [x] Set up Firebase Analytics
+  - [x] Set up Crashlytics
 
 - [x] **Security Rules**
   - [x] Write Firestore security rules

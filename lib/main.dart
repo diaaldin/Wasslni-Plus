@@ -6,6 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:wasslni_plus/services/auth_service.dart';
 import 'package:wasslni_plus/services/fcm_service.dart';
+import 'package:wasslni_plus/services/analytics_service.dart';
 import 'package:wasslni_plus/models/user/user_model.dart';
 import 'firebase_options.dart';
 import 'package:wasslni_plus/app_styles.dart';
@@ -36,6 +37,9 @@ void main() async {
   // Initialize FCM
   await FCMService().initialize();
 
+  // Initialize Analytics & Crashlytics
+  await AnalyticsService().initialize();
+
   runApp(
     ChangeNotifierProvider(
       create: (_) => AppSettingsProvidor(),
@@ -60,6 +64,9 @@ class MyApp extends StatelessWidget {
       ),
       darkTheme: ThemeData.dark(),
       themeMode: appSettings.isDarkMode ? ThemeMode.dark : ThemeMode.light,
+      navigatorObservers: [
+        AnalyticsService().observer,
+      ],
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
