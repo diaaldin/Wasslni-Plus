@@ -1,0 +1,139 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function getUserData() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+    
+    function hasRole(role) {
+      return isAuthenticated() && getUserData().role == role;
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    function isActive() {
+      return isAuthenticated() && getUserData().status == 'active';
+    }
+    
+    // Users Collection
+    match /users/{userId} {
+      // Anyone can read their own user document
+      allow read: if isOwner(userId);
+      
+      // Users can update their own profile (except role and status)
+      allow update: if isOwner(userId) 
+                    && !request.resource.data.diff(resource.data).affectedKeys().hasAny(['role', 'status']);
+      
+      // Only admins can create users (or during registration via backend)
+      allow create: if hasRole('admin');
+      
+      // Only admins can delete users
+      allow delete: if hasRole('admin');
+      
+      // Admins and managers can read all users
+      allow read: if hasRole('admin') || hasRole('manager');
+      
+      // Admins can update any user
+      allow update: if hasRole('admin');
+    }
+    
+    // Parcels Collection
+    match /parcels/{parcelId} {
+      // Merchants can read their own parcels
+      allow read: if isActive() && (
+        resource.data.merchantId == request.auth.uid ||
+        resource.data.courierId == request.auth.uid ||
+        resource.data.customerId == request.auth.uid ||
+        hasRole('admin') ||
+        hasRole('manager')
+      );
+      
+      // Merchants can create parcels
+      allow create: if isActive() && (
+        hasRole('merchant') && request.resource.data.merchantId == request.auth.uid
+      );
+      
+      // Merchants can update their own parcels (if not assigned to courier yet)
+      // Couriers can update parcels assigned to them (status, delivery details)
+      // Admins and managers can update any parcel
+      allow update: if isActive() && (
+        (hasRole('merchant') && resource.data.merchantId == request.auth.uid && resource.data.courierId == null) ||
+        (hasRole('courier') && resource.data.courierId == request.auth.uid) ||
+        hasRole('admin') ||
+        hasRole('manager')
+      );
+      
+      // Only merchants can soft-delete their own parcels (set isDeleted = true)
+      // Admins can delete any parcel
+      allow update: if isActive() && (
+        (hasRole('merchant') && resource.data.merchantId == request.auth.uid && request.resource.data.isDeleted == true) ||
+        hasRole('admin')
+      );
+      
+      // Hard delete only for admins
+      allow delete: if hasRole('admin');
+    }
+    
+    // Regions Collection
+    match /regions/{regionId} {
+      // Everyone can read active regions
+      allow read: if resource.data.isActive == true;
+      
+      // Only admins can create, update, or delete regions
+      allow create, update, delete: if hasRole('admin');
+    }
+    
+    // Notifications Collection
+    match /notifications/{notificationId} {
+      // Users can read their own notifications
+      allow read: if isAuthenticated() && resource.data.userId == request.auth.uid;
+      
+      // Users can update their own notifications (mark as read)
+      allow update: if isAuthenticated() && resource.data.userId == request.auth.uid
+                    && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['isRead']);
+      
+      // Users can delete their own notifications
+      allow delete: if isAuthenticated() && resource.data.userId == request.auth.uid;
+      
+      // System/admins can create notifications for any user
+      allow create: if hasRole('admin') || hasRole('manager');
+    }
+    
+    // Reviews Collection
+    match /reviews/{reviewId} {
+      // Customers can read reviews they created
+      // Couriers can read reviews about them
+      // Admins and managers can read all reviews
+      allow read: if isAuthenticated() && (
+        resource.data.customerId == request.auth.uid ||
+        resource.data.courierId == request.auth.uid ||
+        hasRole('admin') ||
+        hasRole('manager')
+      );
+      
+      // Only customers can create reviews for their own deliveries
+      allow create: if isActive() && hasRole('customer') 
+                    && request.resource.data.customerId == request.auth.uid;
+      
+      // Reviews cannot be updated or deleted (immutable)
+      allow update, delete: if false;
+    }
+    
+    // Analytics Collection
+    match /analytics/{date} {
+      // Only admins and managers can read analytics
+      allow read: if hasRole('admin') || hasRole('manager');
+      
+      // Only system/cloud functions can write analytics
+      allow write: if false;
+    }
+  }
+}
