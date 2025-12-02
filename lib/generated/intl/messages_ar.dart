@@ -36,6 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "attach_barcode": MessageLookupByLibrary.simpleMessage("أرفق باركود"),
     "barcode_label": m0,
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
+    "cancelled": MessageLookupByLibrary.simpleMessage("ملغى"),
     "choose_region_warning": MessageLookupByLibrary.simpleMessage(
       "يرجى اختيار المنطقة",
     ),
@@ -65,6 +66,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "data_usage_desc": MessageLookupByLibrary.simpleMessage(
       "يتم استخدام البيانات التي نجمعها فقط لتحسين وظائف التطبيق لدينا، وضمان الأمان، والامتثال للالتزامات القانونية.",
     ),
+    "delivered": MessageLookupByLibrary.simpleMessage("تم التوصيل"),
+    "delivery_region": MessageLookupByLibrary.simpleMessage("منطقة التوصيل"),
     "dont_have_account": MessageLookupByLibrary.simpleMessage(
       "ليس لديك حساب؟ تسجيل جديد",
     ),
@@ -86,6 +89,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "الرجاء إدخال اسم المستلم",
     ),
     "general_serach_hint": MessageLookupByLibrary.simpleMessage("بحث..."),
+    "in_transit": MessageLookupByLibrary.simpleMessage("في الطريق"),
     "invalid_email": MessageLookupByLibrary.simpleMessage(
       "بريد إلكتروني غير صالح",
     ),
@@ -111,7 +115,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "merchant": MessageLookupByLibrary.simpleMessage("تاجر"),
     "merchant_dashboard": MessageLookupByLibrary.simpleMessage("لوحة التاجر"),
     "message": MessageLookupByLibrary.simpleMessage("الرسالة"),
+    "monthly_revenue": MessageLookupByLibrary.simpleMessage(
+      "الإيرادات الشهرية",
+    ),
     "name": MessageLookupByLibrary.simpleMessage("الاسم"),
+    "no_internet_connection": MessageLookupByLibrary.simpleMessage(
+      "⚠ لا يوجد اتصال بالإنترنت",
+    ),
+    "no_parcels_yet": MessageLookupByLibrary.simpleMessage("لا توجد طرود بعد"),
     "notifications": MessageLookupByLibrary.simpleMessage("الإشعارات"),
     "parcel_description": MessageLookupByLibrary.simpleMessage("وصف الطرد"),
     "parcel_price": MessageLookupByLibrary.simpleMessage(
@@ -119,11 +130,14 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "parcels": MessageLookupByLibrary.simpleMessage("الطرود"),
     "password": MessageLookupByLibrary.simpleMessage("الرقم السري"),
+    "pending": MessageLookupByLibrary.simpleMessage("قيد الانتظار"),
     "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "privacy_intro": MessageLookupByLibrary.simpleMessage(
       "نحن ملتزمون بحماية خصوصية بياناتك وأمانها. توضح سياسة البيانات هذه كيفية تعاملنا مع بياناتك الشخصية.",
     ),
     "privacy_policy": MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),
+    "recent_parcels": MessageLookupByLibrary.simpleMessage("الطرود الأخيرة"),
+    "recipient": MessageLookupByLibrary.simpleMessage("المستلم"),
     "recipient_name": MessageLookupByLibrary.simpleMessage("اسم المستلم"),
     "recipient_phone": MessageLookupByLibrary.simpleMessage("رقم المستلم"),
     "region": MessageLookupByLibrary.simpleMessage("المنطقة"),
@@ -151,6 +165,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "validation_phone_required": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال رقم الهاتف",
     ),
+    "view_all": MessageLookupByLibrary.simpleMessage("عرض الكل"),
     "welcome_to_app": MessageLookupByLibrary.simpleMessage(
       "مرحباً بك في وصلني بلس",
     ),

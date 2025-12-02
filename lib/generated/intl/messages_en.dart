@@ -40,6 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "attach_barcode": MessageLookupByLibrary.simpleMessage("Attach Barcode"),
     "barcode_label": m0,
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+    "cancelled": MessageLookupByLibrary.simpleMessage("Cancelled"),
     "choose_region_warning": MessageLookupByLibrary.simpleMessage(
       "Please select a region",
     ),
@@ -67,6 +68,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "data_usage_desc": MessageLookupByLibrary.simpleMessage(
       "Collected data is used solely to enhance app functionality, ensure security, and meet legal obligations.",
     ),
+    "delivered": MessageLookupByLibrary.simpleMessage("Delivered"),
+    "delivery_region": MessageLookupByLibrary.simpleMessage("Delivery Region"),
     "dont_have_account": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? Register",
     ),
@@ -86,6 +89,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please enter recipient name",
     ),
     "general_serach_hint": MessageLookupByLibrary.simpleMessage("Search..."),
+    "in_transit": MessageLookupByLibrary.simpleMessage("In Transit"),
     "invalid_email": MessageLookupByLibrary.simpleMessage(
       "Invalid email address",
     ),
@@ -115,10 +119,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Merchant Dashboard",
     ),
     "message": MessageLookupByLibrary.simpleMessage("Message"),
+    "monthly_revenue": MessageLookupByLibrary.simpleMessage("Monthly Revenue"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "no_internet_connection": MessageLookupByLibrary.simpleMessage(
       "⚠ No internet connection",
     ),
+    "no_parcels_yet": MessageLookupByLibrary.simpleMessage("No parcels yet"),
     "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
     "parcel_description": MessageLookupByLibrary.simpleMessage(
       "Parcel Description",
@@ -128,11 +134,14 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "parcels": MessageLookupByLibrary.simpleMessage("Parcels"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "pending": MessageLookupByLibrary.simpleMessage("Pending"),
     "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "privacy_intro": MessageLookupByLibrary.simpleMessage(
       "We are committed to protecting your data privacy and security. This policy explains how we handle your personal information.",
     ),
     "privacy_policy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
+    "recent_parcels": MessageLookupByLibrary.simpleMessage("Recent Parcels"),
+    "recipient": MessageLookupByLibrary.simpleMessage("Recipient"),
     "recipient_name": MessageLookupByLibrary.simpleMessage("Recipient Name"),
     "recipient_phone": MessageLookupByLibrary.simpleMessage("Recipient Phone"),
     "region": MessageLookupByLibrary.simpleMessage("Region"),
@@ -162,6 +171,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "validation_phone_required": MessageLookupByLibrary.simpleMessage(
       "Please enter your phone number",
     ),
+    "view_all": MessageLookupByLibrary.simpleMessage("View All"),
     "welcome_to_app": MessageLookupByLibrary.simpleMessage(
       "Welcome to Wasslni Plus",
     ),

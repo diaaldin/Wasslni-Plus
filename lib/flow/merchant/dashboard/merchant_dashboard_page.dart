@@ -3,7 +3,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:wasslni_plus/app_styles.dart';
 import 'package:wasslni_plus/generated/l10n.dart';
 import 'package:wasslni_plus/services/auth_service.dart';
-import 'package:wasslni_plus/services/firestore_service.dart';
 import 'package:wasslni_plus/models/parcel_model.dart';
 
 class MerchantDashboardPage extends StatefulWidget {
@@ -14,7 +13,6 @@ class MerchantDashboardPage extends StatefulWidget {
 }
 
 class _MerchantDashboardPageState extends State<MerchantDashboardPage> {
-  final FirestoreService _firestoreService = FirestoreService();
   final AuthService _authService = AuthService();
 
   bool _isLoading = true;
@@ -60,19 +58,20 @@ class _MerchantDashboardPageState extends State<MerchantDashboardPage> {
       for (var parcel in parcels) {
         // Count by status
         switch (parcel.status) {
-          case ParcelStatus.pending:
-          case ParcelStatus.created:
+          case ParcelStatus.awaitingLabel:
+          case ParcelStatus.readyToShip:
             pending++;
             break;
-          case ParcelStatus.pickedUp:
+          case ParcelStatus.enRouteDistributor:
+          case ParcelStatus.atWarehouse:
           case ParcelStatus.outForDelivery:
             inTransit++;
             break;
           case ParcelStatus.delivered:
             delivered++;
             // Add to revenue if delivered this month
-            if (parcel.deliveredAt != null &&
-                parcel.deliveredAt!.isAfter(startOfMonth)) {
+            if (parcel.actualDeliveryTime != null &&
+                parcel.actualDeliveryTime!.isAfter(startOfMonth)) {
               revenue += parcel.deliveryFee;
             }
             break;
@@ -158,7 +157,7 @@ class _MerchantDashboardPageState extends State<MerchantDashboardPage> {
                     color: Colors.green,
                   ),
                 ),
-                const SizedBox(height: 12),
+                const SizedBox(width: 12),
                 Expanded(
                   child: _buildStatCard(
                     title: tr.monthly_revenue,
@@ -274,12 +273,13 @@ class _MerchantDashboardPageState extends State<MerchantDashboardPage> {
     String statusText;
 
     switch (parcel.status) {
-      case ParcelStatus.pending:
-      case ParcelStatus.created:
+      case ParcelStatus.awaitingLabel:
+      case ParcelStatus.readyToShip:
         statusColor = Colors.orange;
         statusText = tr.pending;
         break;
-      case ParcelStatus.pickedUp:
+      case ParcelStatus.enRouteDistributor:
+      case ParcelStatus.atWarehouse:
       case ParcelStatus.outForDelivery:
         statusColor = Colors.blue;
         statusText = tr.in_transit;
@@ -292,6 +292,10 @@ class _MerchantDashboardPageState extends State<MerchantDashboardPage> {
         statusColor = Colors.red;
         statusText = tr.cancelled;
         break;
+      case ParcelStatus.returned:
+        statusColor = Colors.red.shade300;
+        statusText = 'Returned';
+        break;
       default:
         statusColor = Colors.grey;
         statusText = parcel.status.name;
@@ -301,7 +305,7 @@ class _MerchantDashboardPageState extends State<MerchantDashboardPage> {
       margin: const EdgeInsets.only(bottom: 12),
       child: ListTile(
         leading: CircleAvatar(
-          backgroundColor: statusColor.withOpacity(0.2),
+          backgroundColor: statusColor.withValues(alpha: 0.2),
           child: Icon(Icons.inventory_2, color: statusColor),
         ),
         title: Text(
@@ -319,7 +323,7 @@ class _MerchantDashboardPageState extends State<MerchantDashboardPage> {
         trailing: Container(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
           decoration: BoxDecoration(
-            color: statusColor.withOpacity(0.1),
+            color: statusColor.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(12),
           ),
           child: Text(

@@ -28,10 +28,9 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name =
-        (locale.countryCode?.isEmpty ?? false)
-            ? locale.languageCode
-            : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false)
+        ? locale.languageCode
+        : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -680,6 +679,76 @@ class S {
     return Intl.message(
       'Error logging out. Please try again.',
       name: 'logout_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pending`
+  String get pending {
+    return Intl.message('Pending', name: 'pending', desc: '', args: []);
+  }
+
+  /// `In Transit`
+  String get in_transit {
+    return Intl.message('In Transit', name: 'in_transit', desc: '', args: []);
+  }
+
+  /// `Delivered`
+  String get delivered {
+    return Intl.message('Delivered', name: 'delivered', desc: '', args: []);
+  }
+
+  /// `Cancelled`
+  String get cancelled {
+    return Intl.message('Cancelled', name: 'cancelled', desc: '', args: []);
+  }
+
+  /// `Monthly Revenue`
+  String get monthly_revenue {
+    return Intl.message(
+      'Monthly Revenue',
+      name: 'monthly_revenue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recent Parcels`
+  String get recent_parcels {
+    return Intl.message(
+      'Recent Parcels',
+      name: 'recent_parcels',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View All`
+  String get view_all {
+    return Intl.message('View All', name: 'view_all', desc: '', args: []);
+  }
+
+  /// `No parcels yet`
+  String get no_parcels_yet {
+    return Intl.message(
+      'No parcels yet',
+      name: 'no_parcels_yet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recipient`
+  String get recipient {
+    return Intl.message('Recipient', name: 'recipient', desc: '', args: []);
+  }
+
+  /// `Delivery Region`
+  String get delivery_region {
+    return Intl.message(
+      'Delivery Region',
+      name: 'delivery_region',
       desc: '',
       args: [],
     );
