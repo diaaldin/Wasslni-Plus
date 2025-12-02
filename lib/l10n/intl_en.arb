@@ -75,5 +75,15 @@
   "dont_have_account": "Don't have an account? Register",
   "logout_confirmation": "Are you sure you want to logout?",
   "cancel": "Cancel",
-  "logout_error": "Error logging out. Please try again."
+  "logout_error": "Error logging out. Please try again.",
+  "pending": "Pending",
+  "in_transit": "In Transit",
+  "delivered": "Delivered",
+  "cancelled": "Cancelled",
+  "monthly_revenue": "Monthly Revenue",
+  "recent_parcels": "Recent Parcels",
+  "view_all": "View All",
+  "no_parcels_yet": "No parcels yet",
+  "recipient": "Recipient",
+  "delivery_region": "Delivery Region"
 }

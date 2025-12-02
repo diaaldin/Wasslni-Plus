@@ -91,12 +91,12 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
 
 ### 1.4 Merchant Dashboard (Enhance Existing)
 
-- [ ] **Merchant Main Page**
-  - [ ] Replace placeholder with actual dashboard
-  - [ ] Add quick stats (pending, in-transit, delivered)
-  - [ ] Display recent parcels list
-  - [ ] Add revenue tracking
-  - [ ] Implement monthly delivery summary
+- [x] **Merchant Main Page**
+  - [x] Replace placeholder with actual dashboard
+  - [x] Add quick stats (pending, in-transit, delivered)
+  - [x] Display recent parcels list
+  - [x] Add revenue tracking
+  - [x] Implement monthly delivery summary
 
 - [ ] **Parcels Management (Enhance)**
   - [ ] Add bulk parcel upload (CSV/Excel)

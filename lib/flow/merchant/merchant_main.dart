@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wasslni_plus/app_styles.dart';
 import 'package:wasslni_plus/flow/common/settings/settings_main.dart';
+import 'package:wasslni_plus/flow/merchant/dashboard/merchant_dashboard_page.dart';
 import 'package:wasslni_plus/flow/merchant/parcel/add_paracel_page.dart';
 import 'package:wasslni_plus/flow/merchant/parcel/merchant_parcels_page.dart';
 import 'package:wasslni_plus/generated/l10n.dart';
@@ -65,7 +66,7 @@ class _MerchantMainScreenState extends State<MerchantMainScreen> {
     final tr = S.of(context);
 
     final List<Widget> tabs = [
-      const Center(child: Text('Merchant Main page')),
+      const MerchantDashboardPage(),
       const MerchantParcelsPage(),
       const Center(child: Text('Merchant Notifications page')),
       const SettingsMain(),

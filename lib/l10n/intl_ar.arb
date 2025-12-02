@@ -55,7 +55,7 @@
   "submit": "إرسال",
   "validation_phone_required": "يرجى إدخال رقم الهاتف",
   "validation_phone_invalid": "يجب أن يتكون الرقم من 10 أرقام إنجليزية",
-  "noInternetConnection": "⚠ لا يوجد اتصال بالإنترنت",
+  "no_internet_connection": "⚠ لا يوجد اتصال بالإنترنت",
   "app_name": "وصلني بلس",
   "app_tagline": "توصيل سريع وموثوق",
   "welcome_to_app": "مرحباً بك في وصلني بلس",
@@ -75,5 +75,15 @@
   "dont_have_account": "ليس لديك حساب؟ تسجيل جديد",
   "logout_confirmation": "هل أنت متأكد من تسجيل الخروج؟",
   "cancel": "إلغاء",
-  "logout_error": "خطأ في تسجيل الخروج. يرجى المحاولة مرة أخرى."
+  "logout_error": "خطأ في تسجيل الخروج. يرجى المحاولة مرة أخرى.",
+  "pending": "قيد الانتظار",
+  "in_transit": "في الطريق",
+  "delivered": "تم التوصيل",
+  "cancelled": "ملغى",
+  "monthly_revenue": "الإيرادات الشهرية",
+  "recent_parcels": "الطرود الأخيرة",
+  "view_all": "عرض الكل",
+  "no_parcels_yet": "لا توجد طرود بعد",
+  "recipient": "المستلم",
+  "delivery_region": "منطقة التوصيل"
 }
