@@ -537,34 +537,34 @@ Create server-side logic for:
 
 ### 2.8 Push Notifications (FCM)
 
-- [ ] **Setup**
-  - [ ] Configure FCM for Android
-  - [ ] Configure FCM for iOS  (APNs)
-  - [ ] Handle foreground notifications
-  - [ ] Handle background notifications
-  - [ ] Implement notification tap handling
+- [x] **Setup**
+  - [ ] Configure FCM for Android (requires google-services.json)
+  - [ ] Configure FCM for iOS (requires GoogleService-Info.plist & APNs)
+  - [x] Handle foreground notifications
+  - [x] Handle background notifications
+  - [x] Implement notification tap handling
 
-- [ ] **Notification Types**
-  - [ ] Parcel status change notifications
-  - [ ] New parcel assignment (courier)
-  - [ ] Delivery reminders
-  - [ ] Promotional notifications
-  - [ ] System announcements
+- [x] **Notification Types**
+  - [x] Parcel status change notifications
+  - [x] New parcel assignment (courier)
+  - [x] Delivery reminders
+  - [x] Promotional notifications
+  - [x] System announcements
 
 ### 2.9 Analytics & Monitoring
 
-- [ ] **Firebase Analytics**
-  - [ ] Track screen views
-  - [ ] Track user actions (create parcel, update status, etc.)
-  - [ ] Track conversion events
-  - [ ] Create custom events
-  - [ ] Set user properties
+- [x] **Firebase Analytics**
+  - [x] Track screen views
+  - [x] Track user actions (create parcel, update status, etc.)
+  - [x] Track conversion events
+  - [x] Create custom events
+  - [x] Set user properties
 
-- [ ] **Crashlytics**
-  - [ ] Enable Crashlytics
-  - [ ] Add custom crash logs
-  - [ ] Monitor crash-free users
-  - [ ] Set up crash alerts
+- [x] **Crashlytics**
+  - [x] Enable Crashlytics
+  - [x] Add custom crash logs
+  - [x] Monitor crash-free users
+  - [x] Set up crash alerts
 
 - [ ] **Performance Monitoring**
   - [ ] Enable Performance Monitoring
