@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "acceptPolicyStart": MessageLookupByLibrary.simpleMessage("أوافق على "),
     "add_parcel": MessageLookupByLibrary.simpleMessage("إضافة طرد"),
     "address": MessageLookupByLibrary.simpleMessage("العنوان, مدينة - شارع"),
+    "all": MessageLookupByLibrary.simpleMessage("الكل"),
     "already_have_account": MessageLookupByLibrary.simpleMessage(
       "لديك حساب بالفعل؟ تسجيل الدخول",
     ),
@@ -66,6 +67,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "data_usage_desc": MessageLookupByLibrary.simpleMessage(
       "يتم استخدام البيانات التي نجمعها فقط لتحسين وظائف التطبيق لدينا، وضمان الأمان، والامتثال للالتزامات القانونية.",
     ),
+    "delete": MessageLookupByLibrary.simpleMessage("حذف"),
     "delivered": MessageLookupByLibrary.simpleMessage("تم التوصيل"),
     "delivery_region": MessageLookupByLibrary.simpleMessage("منطقة التوصيل"),
     "dont_have_account": MessageLookupByLibrary.simpleMessage(
@@ -112,6 +114,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "خطأ في تسجيل الخروج. يرجى المحاولة مرة أخرى.",
     ),
     "main": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+    "mark_all_read": MessageLookupByLibrary.simpleMessage("تحديد الكل كمقروء"),
     "merchant": MessageLookupByLibrary.simpleMessage("تاجر"),
     "merchant_dashboard": MessageLookupByLibrary.simpleMessage("لوحة التاجر"),
     "message": MessageLookupByLibrary.simpleMessage("الرسالة"),
@@ -122,6 +125,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "no_internet_connection": MessageLookupByLibrary.simpleMessage(
       "⚠ لا يوجد اتصال بالإنترنت",
     ),
+    "no_notifications": MessageLookupByLibrary.simpleMessage("لا توجد إشعارات"),
     "no_parcels_yet": MessageLookupByLibrary.simpleMessage("لا توجد طرود بعد"),
     "notifications": MessageLookupByLibrary.simpleMessage("الإشعارات"),
     "parcel_description": MessageLookupByLibrary.simpleMessage("وصف الطرد"),
@@ -155,6 +159,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "total_price_label": MessageLookupByLibrary.simpleMessage(
       "السعر الإجمالي (مع التوصيل)",
     ),
+    "unread": MessageLookupByLibrary.simpleMessage("غير مقروء"),
     "user_rights": MessageLookupByLibrary.simpleMessage("حقوق المستخدم"),
     "user_rights_desc": MessageLookupByLibrary.simpleMessage(
       "لديك الحق في الوصول إلى بياناتك وتعديلها وحذفها. يرجى التواصل معنا إذا كانت لديك أي مخاوف أو طلبات.",

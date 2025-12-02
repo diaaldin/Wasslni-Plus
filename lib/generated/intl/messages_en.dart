@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "acceptPolicyStart": MessageLookupByLibrary.simpleMessage("I accept the "),
     "add_parcel": MessageLookupByLibrary.simpleMessage("Add Parcel"),
     "address": MessageLookupByLibrary.simpleMessage("Address, City - Street"),
+    "all": MessageLookupByLibrary.simpleMessage("All"),
     "already_have_account": MessageLookupByLibrary.simpleMessage(
       "Already have an account? Login",
     ),
@@ -68,6 +69,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "data_usage_desc": MessageLookupByLibrary.simpleMessage(
       "Collected data is used solely to enhance app functionality, ensure security, and meet legal obligations.",
     ),
+    "delete": MessageLookupByLibrary.simpleMessage("Delete"),
     "delivered": MessageLookupByLibrary.simpleMessage("Delivered"),
     "delivery_region": MessageLookupByLibrary.simpleMessage("Delivery Region"),
     "dont_have_account": MessageLookupByLibrary.simpleMessage(
@@ -114,6 +116,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Error logging out. Please try again.",
     ),
     "main": MessageLookupByLibrary.simpleMessage("Main"),
+    "mark_all_read": MessageLookupByLibrary.simpleMessage("Mark all as read"),
     "merchant": MessageLookupByLibrary.simpleMessage("Merchant"),
     "merchant_dashboard": MessageLookupByLibrary.simpleMessage(
       "Merchant Dashboard",
@@ -123,6 +126,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "no_internet_connection": MessageLookupByLibrary.simpleMessage(
       "⚠ No internet connection",
+    ),
+    "no_notifications": MessageLookupByLibrary.simpleMessage(
+      "No notifications",
     ),
     "no_parcels_yet": MessageLookupByLibrary.simpleMessage("No parcels yet"),
     "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
@@ -161,6 +167,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "total_price_label": MessageLookupByLibrary.simpleMessage(
       "Total Price (with delivery)",
     ),
+    "unread": MessageLookupByLibrary.simpleMessage("Unread"),
     "user_rights": MessageLookupByLibrary.simpleMessage("User Rights"),
     "user_rights_desc": MessageLookupByLibrary.simpleMessage(
       "You have the right to access, modify, and delete your data. Contact us for any concerns or requests.",

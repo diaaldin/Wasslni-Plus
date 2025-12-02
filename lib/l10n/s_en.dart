@@ -251,4 +251,49 @@ class SEn extends S {
 
   @override
   String get logout_error => 'Error logging out. Please try again.';
+
+  @override
+  String get pending => 'Pending';
+
+  @override
+  String get in_transit => 'In Transit';
+
+  @override
+  String get delivered => 'Delivered';
+
+  @override
+  String get cancelled => 'Cancelled';
+
+  @override
+  String get monthly_revenue => 'Monthly Revenue';
+
+  @override
+  String get recent_parcels => 'Recent Parcels';
+
+  @override
+  String get view_all => 'View All';
+
+  @override
+  String get no_parcels_yet => 'No parcels yet';
+
+  @override
+  String get recipient => 'Recipient';
+
+  @override
+  String get delivery_region => 'Delivery Region';
+
+  @override
+  String get mark_all_read => 'Mark all as read';
+
+  @override
+  String get no_notifications => 'No notifications';
+
+  @override
+  String get all => 'All';
+
+  @override
+  String get unread => 'Unread';
+
+  @override
+  String get delete => 'Delete';
 }

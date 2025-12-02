@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:wasslni_plus/app_styles.dart';
 import 'package:wasslni_plus/flow/common/settings/settings_main.dart';
 import 'package:wasslni_plus/flow/merchant/dashboard/merchant_dashboard_page.dart';
+import 'package:wasslni_plus/flow/merchant/notifications/merchant_notifications_page.dart';
 import 'package:wasslni_plus/flow/merchant/parcel/add_paracel_page.dart';
 import 'package:wasslni_plus/flow/merchant/parcel/merchant_parcels_page.dart';
 import 'package:wasslni_plus/generated/l10n.dart';
@@ -68,7 +69,7 @@ class _MerchantMainScreenState extends State<MerchantMainScreen> {
     final List<Widget> tabs = [
       const MerchantDashboardPage(),
       const MerchantParcelsPage(),
-      const Center(child: Text('Merchant Notifications page')),
+      const MerchantNotificationsPage(),
       const SettingsMain(),
     ];
 

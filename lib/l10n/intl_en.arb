@@ -85,5 +85,10 @@
   "view_all": "View All",
   "no_parcels_yet": "No parcels yet",
   "recipient": "Recipient",
-  "delivery_region": "Delivery Region"
+  "delivery_region": "Delivery Region",
+  "mark_all_read": "Mark all as read",
+  "no_notifications": "No notifications",
+  "all": "All",
+  "unread": "Unread",
+  "delete": "Delete"
 }

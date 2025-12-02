@@ -558,6 +558,96 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Error logging out. Please try again.'**
   String get logout_error;
+
+  /// No description provided for @pending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get pending;
+
+  /// No description provided for @in_transit.
+  ///
+  /// In en, this message translates to:
+  /// **'In Transit'**
+  String get in_transit;
+
+  /// No description provided for @delivered.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivered'**
+  String get delivered;
+
+  /// No description provided for @cancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancelled'**
+  String get cancelled;
+
+  /// No description provided for @monthly_revenue.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly Revenue'**
+  String get monthly_revenue;
+
+  /// No description provided for @recent_parcels.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent Parcels'**
+  String get recent_parcels;
+
+  /// No description provided for @view_all.
+  ///
+  /// In en, this message translates to:
+  /// **'View All'**
+  String get view_all;
+
+  /// No description provided for @no_parcels_yet.
+  ///
+  /// In en, this message translates to:
+  /// **'No parcels yet'**
+  String get no_parcels_yet;
+
+  /// No description provided for @recipient.
+  ///
+  /// In en, this message translates to:
+  /// **'Recipient'**
+  String get recipient;
+
+  /// No description provided for @delivery_region.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery Region'**
+  String get delivery_region;
+
+  /// No description provided for @mark_all_read.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark all as read'**
+  String get mark_all_read;
+
+  /// No description provided for @no_notifications.
+  ///
+  /// In en, this message translates to:
+  /// **'No notifications'**
+  String get no_notifications;
+
+  /// No description provided for @all.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get all;
+
+  /// No description provided for @unread.
+  ///
+  /// In en, this message translates to:
+  /// **'Unread'**
+  String get unread;
+
+  /// No description provided for @delete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get delete;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

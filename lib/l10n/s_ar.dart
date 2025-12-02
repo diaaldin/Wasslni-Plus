@@ -185,7 +185,7 @@ class SAr extends S {
   String get validation_phone_required => 'يرجى إدخال رقم الهاتف';
 
   @override
-  String get no_internet_connection => '⚠ No internet connection';
+  String get no_internet_connection => '⚠ لا يوجد اتصال بالإنترنت';
 
   @override
   String get validation_phone_invalid =>
@@ -250,4 +250,49 @@ class SAr extends S {
 
   @override
   String get logout_error => 'خطأ في تسجيل الخروج. يرجى المحاولة مرة أخرى.';
+
+  @override
+  String get pending => 'قيد الانتظار';
+
+  @override
+  String get in_transit => 'في الطريق';
+
+  @override
+  String get delivered => 'تم التوصيل';
+
+  @override
+  String get cancelled => 'ملغى';
+
+  @override
+  String get monthly_revenue => 'الإيرادات الشهرية';
+
+  @override
+  String get recent_parcels => 'الطرود الأخيرة';
+
+  @override
+  String get view_all => 'عرض الكل';
+
+  @override
+  String get no_parcels_yet => 'لا توجد طرود بعد';
+
+  @override
+  String get recipient => 'المستلم';
+
+  @override
+  String get delivery_region => 'منطقة التوصيل';
+
+  @override
+  String get mark_all_read => 'تحديد الكل كمقروء';
+
+  @override
+  String get no_notifications => 'لا توجد إشعارات';
+
+  @override
+  String get all => 'الكل';
+
+  @override
+  String get unread => 'غير مقروء';
+
+  @override
+  String get delete => 'حذف';
 }

@@ -753,6 +753,41 @@ class S {
       args: [],
     );
   }
+
+  /// `Mark all as read`
+  String get mark_all_read {
+    return Intl.message(
+      'Mark all as read',
+      name: 'mark_all_read',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No notifications`
+  String get no_notifications {
+    return Intl.message(
+      'No notifications',
+      name: 'no_notifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All`
+  String get all {
+    return Intl.message('All', name: 'all', desc: '', args: []);
+  }
+
+  /// `Unread`
+  String get unread {
+    return Intl.message('Unread', name: 'unread', desc: '', args: []);
+  }
+
+  /// `Delete`
+  String get delete {
+    return Intl.message('Delete', name: 'delete', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

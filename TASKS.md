@@ -115,10 +115,10 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [ ] Create delivery instructions field
   - [ ] Add recipient signature requirement option
 
-- [ ] **Notifications Page**
-  - [ ] Build notification list view
-  - [ ] Add notification filtering
-  - [ ] Implement mark as read/unread
+- [x] **Notifications Page**
+  - [x] Build notification list view
+  - [x] Add notification filtering
+  - [x] Implement mark as read/unread
   - [ ] Create notification settings
 
 - [ ] **Reports & Analytics**

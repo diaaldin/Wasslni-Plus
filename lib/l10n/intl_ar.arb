@@ -85,5 +85,10 @@
   "view_all": "عرض الكل",
   "no_parcels_yet": "لا توجد طرود بعد",
   "recipient": "المستلم",
-  "delivery_region": "منطقة التوصيل"
+  "delivery_region": "منطقة التوصيل",
+  "mark_all_read": "تحديد الكل كمقروء",
+  "no_notifications": "لا توجد إشعارات",
+  "all": "الكل",
+  "unread": "غير مقروء",
+  "delete": "حذف"
 }
