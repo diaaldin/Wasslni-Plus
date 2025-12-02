@@ -1,4 +1,4 @@
-package com.example.turoudi
+package com.example.wasslni_plus
 
 import io.flutter.embedding.android.FlutterActivity
 
