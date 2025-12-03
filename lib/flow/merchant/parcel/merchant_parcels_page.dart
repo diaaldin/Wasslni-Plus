@@ -4,6 +4,7 @@ import 'package:wasslni_plus/flow/common/settings/parcel/parcel_details_card.dar
 import 'package:wasslni_plus/flow/merchant/parcel/add_paracel_page.dart';
 import 'package:wasslni_plus/models/parcel_model.dart';
 import 'package:wasslni_plus/services/firestore_service.dart';
+import 'package:wasslni_plus/flow/merchant/parcel/parcel_details_page.dart';
 
 class MerchantParcelsPage extends StatefulWidget {
   const MerchantParcelsPage({super.key});
@@ -174,7 +175,7 @@ class _MerchantParcelsPageState extends State<MerchantParcelsPage>
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (_) => AddParcelPage(parcel: parcels[index]),
+              builder: (_) => ParcelDetailsPage(parcel: parcels[index]),
             ),
           );
         },

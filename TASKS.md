@@ -102,7 +102,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [ ] Add bulk parcel upload (CSV/Excel)
   - [x] Implement parcel editing functionality
   - [x] Add parcel cancellation with reason
-  - [ ] Create parcel history/timeline view
+  - [x] Create parcel history/timeline view
   - [ ] Add print label/receipt functionality
   - [x] Implement advanced filters (search, status, region)
   - [ ] Add export to PDF/Excel
