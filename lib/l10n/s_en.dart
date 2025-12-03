@@ -296,4 +296,59 @@ class SEn extends S {
 
   @override
   String get delete => 'Delete';
+
+  @override
+  String get edit_parcel => 'Edit Parcel';
+
+  @override
+  String get update_parcel => 'Update Parcel';
+
+  @override
+  String get cancel_parcel => 'Cancel Parcel';
+
+  @override
+  String get confirm_cancel_parcel =>
+      'Are you sure you want to cancel this parcel?';
+
+  @override
+  String get cancellation_reason => 'Cancellation Reason';
+
+  @override
+  String get yes_cancel => 'Yes, Cancel';
+
+  @override
+  String get no => 'No';
+
+  @override
+  String get parcel_updated_success => 'Parcel updated successfully';
+
+  @override
+  String get parcel_created_success => 'Parcel created successfully';
+
+  @override
+  String get parcel_cancelled_success => 'Parcel cancelled successfully';
+
+  @override
+  String error_occurred(Object error) {
+    return 'Error: $error';
+  }
+
+  @override
+  String get parcel_details => 'Parcel Details';
+
+  @override
+  String status_label(Object status) {
+    return 'Status: $status';
+  }
+
+  @override
+  String get delivery_fee => 'Delivery Fee';
+
+  @override
+  String get history => 'History';
+
+  @override
+  String note_label(Object note) {
+    return 'Note: $note';
+  }
 }

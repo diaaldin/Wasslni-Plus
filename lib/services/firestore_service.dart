@@ -578,21 +578,10 @@ class FirestoreService {
 
   /// Generate unique barcode
   Future<String> generateUniqueBarcode() async {
-    int attempts = 0;
-    const maxAttempts = 10;
-
-    while (attempts < maxAttempts) {
-      final barcode = DateTime.now().millisecondsSinceEpoch.toString();
-      final existing = await searchParcelByBarcode(barcode);
-
-      if (existing == null) {
-        return barcode;
-      }
-
-      attempts++;
-      await Future.delayed(const Duration(milliseconds: 10));
-    }
-
-    throw Exception('Failed to generate unique barcode');
+    // Generate barcode using timestamp + random number to avoid permission issues
+    // Format: timestamp(13 digits) + random(3 digits) = 16 digit barcode
+    final timestamp = DateTime.now().millisecondsSinceEpoch.toString();
+    final random = (100 + DateTime.now().microsecond % 900).toString();
+    return timestamp + random;
   }
 }

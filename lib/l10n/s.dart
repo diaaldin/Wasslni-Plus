@@ -648,6 +648,102 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Delete'**
   String get delete;
+
+  /// No description provided for @edit_parcel.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Parcel'**
+  String get edit_parcel;
+
+  /// No description provided for @update_parcel.
+  ///
+  /// In en, this message translates to:
+  /// **'Update Parcel'**
+  String get update_parcel;
+
+  /// No description provided for @cancel_parcel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel Parcel'**
+  String get cancel_parcel;
+
+  /// No description provided for @confirm_cancel_parcel.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to cancel this parcel?'**
+  String get confirm_cancel_parcel;
+
+  /// No description provided for @cancellation_reason.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancellation Reason'**
+  String get cancellation_reason;
+
+  /// No description provided for @yes_cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes, Cancel'**
+  String get yes_cancel;
+
+  /// No description provided for @no.
+  ///
+  /// In en, this message translates to:
+  /// **'No'**
+  String get no;
+
+  /// No description provided for @parcel_updated_success.
+  ///
+  /// In en, this message translates to:
+  /// **'Parcel updated successfully'**
+  String get parcel_updated_success;
+
+  /// No description provided for @parcel_created_success.
+  ///
+  /// In en, this message translates to:
+  /// **'Parcel created successfully'**
+  String get parcel_created_success;
+
+  /// No description provided for @parcel_cancelled_success.
+  ///
+  /// In en, this message translates to:
+  /// **'Parcel cancelled successfully'**
+  String get parcel_cancelled_success;
+
+  /// No description provided for @error_occurred.
+  ///
+  /// In en, this message translates to:
+  /// **'Error: {error}'**
+  String error_occurred(Object error);
+
+  /// No description provided for @parcel_details.
+  ///
+  /// In en, this message translates to:
+  /// **'Parcel Details'**
+  String get parcel_details;
+
+  /// No description provided for @status_label.
+  ///
+  /// In en, this message translates to:
+  /// **'Status: {status}'**
+  String status_label(Object status);
+
+  /// No description provided for @delivery_fee.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery Fee'**
+  String get delivery_fee;
+
+  /// No description provided for @history.
+  ///
+  /// In en, this message translates to:
+  /// **'History'**
+  String get history;
+
+  /// No description provided for @note_label.
+  ///
+  /// In en, this message translates to:
+  /// **'Note: {note}'**
+  String note_label(Object note);
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

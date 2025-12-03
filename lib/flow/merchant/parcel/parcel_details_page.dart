@@ -12,24 +12,25 @@ class ParcelDetailsPage extends StatelessWidget {
 
   const ParcelDetailsPage({super.key, required this.parcel});
 
-  String _getStatusString(ParcelStatus status) {
+  String _getStatusString(BuildContext context, ParcelStatus status) {
+    final tr = S.of(context);
     switch (status) {
       case ParcelStatus.awaitingLabel:
-        return 'بانتظار الملصق';
+        return tr.pending;
       case ParcelStatus.readyToShip:
-        return 'جاهز للارسال';
+        return 'Ready to Ship';
       case ParcelStatus.enRouteDistributor:
-        return 'في الطريق للموزع';
+        return 'En Route to Distributor';
       case ParcelStatus.atWarehouse:
-        return 'مخزن الموزع';
+        return 'At Warehouse';
       case ParcelStatus.outForDelivery:
-        return 'في الطريق للزبون';
+        return tr.in_transit;
       case ParcelStatus.delivered:
-        return 'تم التوصيل';
+        return tr.delivered;
       case ParcelStatus.returned:
-        return 'طرد راجع';
+        return 'Returned';
       case ParcelStatus.cancelled:
-        return 'ملغي';
+        return tr.cancelled;
     }
   }
 
@@ -77,7 +78,7 @@ class ParcelDetailsPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Status: ${_getStatusString(parcel.status)}',
+                          'Status: ${_getStatusString(context, parcel.status)}',
                           style: const TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 16),
                         ),
@@ -91,7 +92,7 @@ class ParcelDetailsPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     ParcelProgressBar(
-                      currentStatus: _getStatusString(parcel.status),
+                      currentStatus: _getStatusString(context, parcel.status),
                       returnReason: parcel.returnReason,
                     ),
                   ],
@@ -178,7 +179,7 @@ class ParcelDetailsPage extends StatelessWidget {
                   return ListTile(
                     leading: const Icon(Icons.history,
                         color: AppStyles.primaryColor),
-                    title: Text(_getStatusString(history.status)),
+                    title: Text(_getStatusString(context, history.status)),
                     subtitle: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

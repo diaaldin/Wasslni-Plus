@@ -8,6 +8,7 @@ import 'package:wasslni_plus/services/firestore_service.dart';
 import 'package:wasslni_plus/widgets/fields/dropdown_search.dart';
 import 'package:wasslni_plus/widgets/fields/editable_field.dart';
 import 'package:wasslni_plus/widgets/fields/read_only_field.dart';
+import 'package:wasslni_plus/flow/common/barcode_scanner_page.dart';
 
 class AddParcelPage extends StatefulWidget {
   final ParcelModel? parcel;
@@ -32,6 +33,8 @@ class _AddParcelPageState extends State<AddParcelPage> {
   String? barcode;
   int? finalTotal;
   bool _regionHasError = false;
+  String _phoneCountryCode = '+972';
+  String _altPhoneCountryCode = '+972';
 
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
@@ -53,8 +56,46 @@ class _AddParcelPageState extends State<AddParcelPage> {
   void _initializeEditMode() {
     final parcel = widget.parcel!;
     _nameController.text = parcel.recipientName;
-    _phoneController.text = parcel.recipientPhone;
-    _altPhoneController.text = parcel.recipientAltPhone ?? '';
+
+    // Extract country code from phone number and add leading 0
+    if (parcel.recipientPhone.startsWith('+972')) {
+      _phoneCountryCode = '+972';
+      final phoneWithoutCode = parcel.recipientPhone.substring(4);
+      // Add leading 0 if not present
+      _phoneController.text = phoneWithoutCode.startsWith('0')
+          ? phoneWithoutCode
+          : '0$phoneWithoutCode';
+    } else if (parcel.recipientPhone.startsWith('+970')) {
+      _phoneCountryCode = '+970';
+      final phoneWithoutCode = parcel.recipientPhone.substring(4);
+      // Add leading 0 if not present
+      _phoneController.text = phoneWithoutCode.startsWith('0')
+          ? phoneWithoutCode
+          : '0$phoneWithoutCode';
+    } else {
+      _phoneController.text = parcel.recipientPhone;
+    }
+
+    // Extract country code from alt phone number and add leading 0
+    if (parcel.recipientAltPhone != null) {
+      if (parcel.recipientAltPhone!.startsWith('+972')) {
+        _altPhoneCountryCode = '+972';
+        final phoneWithoutCode = parcel.recipientAltPhone!.substring(4);
+        // Add leading 0 if not present
+        _altPhoneController.text = phoneWithoutCode.startsWith('0')
+            ? phoneWithoutCode
+            : '0$phoneWithoutCode';
+      } else if (parcel.recipientAltPhone!.startsWith('+970')) {
+        _altPhoneCountryCode = '+970';
+        final phoneWithoutCode = parcel.recipientAltPhone!.substring(4);
+        // Add leading 0 if not present
+        _altPhoneController.text = phoneWithoutCode.startsWith('0')
+            ? phoneWithoutCode
+            : '0$phoneWithoutCode';
+      } else {
+        _altPhoneController.text = parcel.recipientAltPhone ?? '';
+      }
+    }
     _descController.text = parcel.description ?? '';
     _parcelPriceController.text = parcel.parcelPrice.toInt().toString();
     _addressController.text = parcel.deliveryAddress;
@@ -109,18 +150,24 @@ class _AddParcelPageState extends State<AddParcelPage> {
       final parcelPrice = double.parse(_parcelPriceController.text);
       final deliveryFee = regionPrices[selectedRegion]!.toDouble();
 
-      // Generate barcode if not exists
+      // Use barcode if provided, otherwise generate one
       final parcelBarcode =
           barcode ?? await _firestoreService.generateUniqueBarcode();
+
+      // Remove leading 0 from phone numbers before saving
+      String formatPhoneNumber(String phone) {
+        return phone.startsWith('0') ? phone.substring(1) : phone;
+      }
 
       final parcelData = ParcelModel(
         id: widget.parcel?.id,
         barcode: parcelBarcode,
         merchantId: user.uid,
         recipientName: _nameController.text,
-        recipientPhone: _phoneController.text,
+        recipientPhone:
+            _phoneCountryCode + formatPhoneNumber(_phoneController.text),
         recipientAltPhone: _altPhoneController.text.isNotEmpty
-            ? _altPhoneController.text
+            ? _altPhoneCountryCode + formatPhoneNumber(_altPhoneController.text)
             : null,
         deliveryAddress: _addressController.text,
         deliveryRegion: selectedRegion!,
@@ -142,7 +189,7 @@ class _AddParcelPageState extends State<AddParcelPage> {
         );
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Parcel updated successfully')),
+            SnackBar(content: Text(S.of(context).parcel_updated_success)),
           );
         }
       } else {
@@ -150,7 +197,7 @@ class _AddParcelPageState extends State<AddParcelPage> {
         await _firestoreService.createParcel(parcelData);
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Parcel created successfully')),
+            SnackBar(content: Text(S.of(context).parcel_created_success)),
           );
         }
       }
@@ -159,9 +206,14 @@ class _AddParcelPageState extends State<AddParcelPage> {
         Navigator.pop(context);
       }
     } catch (e) {
+      print('Error submitting parcel: $e'); // Debug log
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Error: $e')),
+          SnackBar(
+            content: Text(S.of(context).error_occurred(e.toString())),
+            backgroundColor: Colors.red,
+            duration: const Duration(seconds: 5),
+          ),
         );
       }
     } finally {
@@ -178,7 +230,7 @@ class _AddParcelPageState extends State<AddParcelPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(isEdit ? 'Edit Parcel' : tr.add_parcel),
+        title: Text(isEdit ? tr.edit_parcel : tr.add_parcel),
         backgroundColor: AppStyles.primaryColor,
       ),
       body: _isLoading
@@ -200,30 +252,139 @@ class _AddParcelPageState extends State<AddParcelPage> {
                         return null;
                       },
                     ),
-                    EditableField(
-                      label: tr.recipient_phone,
-                      controller: _phoneController,
-                      isEditMode: true,
-                      forceLTR: true,
-                      inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                      keyboardType: TextInputType.phone,
-                      validator: (value) {
-                        if (value == null || value.trim().isEmpty) {
-                          return tr.enter_phone;
-                        }
-                        if (!RegExp(r'^\d{7,15}$').hasMatch(value)) {
-                          return tr.invalid_phone;
-                        }
-                        return null;
-                      },
+                    // Phone number with country code dropdown
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 8, top: 16),
+                          child: Text(
+                            tr.recipient_phone,
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              color:
+                                  Theme.of(context).textTheme.bodyLarge?.color,
+                            ),
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            Container(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 12),
+                              decoration: BoxDecoration(
+                                border: Border.all(color: Colors.grey),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: DropdownButton<String>(
+                                value: _phoneCountryCode,
+                                underline: const SizedBox(),
+                                items: ['+972', '+970'].map((code) {
+                                  return DropdownMenuItem(
+                                    value: code,
+                                    child: Text(code),
+                                  );
+                                }).toList(),
+                                onChanged: (value) {
+                                  setState(() {
+                                    _phoneCountryCode = value!;
+                                  });
+                                },
+                              ),
+                            ),
+                            const SizedBox(width: 8),
+                            Expanded(
+                              child: TextFormField(
+                                controller: _phoneController,
+                                keyboardType: TextInputType.phone,
+                                textDirection: TextDirection.ltr,
+                                inputFormatters: [
+                                  FilteringTextInputFormatter.digitsOnly
+                                ],
+                                decoration: InputDecoration(
+                                  hintText: '0521234567',
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                ),
+                                validator: (value) {
+                                  if (value == null || value.trim().isEmpty) {
+                                    return tr.enter_phone;
+                                  }
+                                  // Must be 10 digits starting with 05
+                                  if (!RegExp(r'^05\d{8}$').hasMatch(value)) {
+                                    return 'Phone must be 10 digits starting with 05';
+                                  }
+                                  return null;
+                                },
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
-                    EditableField(
-                      label: tr.alt_phone,
-                      controller: _altPhoneController,
-                      isEditMode: true,
-                      forceLTR: true,
-                      inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                      keyboardType: TextInputType.phone,
+                    // Alternate phone number with country code dropdown
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 8, top: 16),
+                          child: Text(
+                            tr.alt_phone,
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              color:
+                                  Theme.of(context).textTheme.bodyLarge?.color,
+                            ),
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            Container(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 12),
+                              decoration: BoxDecoration(
+                                border: Border.all(color: Colors.grey),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: DropdownButton<String>(
+                                value: _altPhoneCountryCode,
+                                underline: const SizedBox(),
+                                items: ['+972', '+970'].map((code) {
+                                  return DropdownMenuItem(
+                                    value: code,
+                                    child: Text(code),
+                                  );
+                                }).toList(),
+                                onChanged: (value) {
+                                  setState(() {
+                                    _altPhoneCountryCode = value!;
+                                  });
+                                },
+                              ),
+                            ),
+                            const SizedBox(width: 8),
+                            Expanded(
+                              child: TextFormField(
+                                controller: _altPhoneController,
+                                keyboardType: TextInputType.phone,
+                                textDirection: TextDirection.ltr,
+                                inputFormatters: [
+                                  FilteringTextInputFormatter.digitsOnly
+                                ],
+                                decoration: InputDecoration(
+                                  hintText: '0521234567',
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                     const SizedBox(height: 16),
                     DropdownSerach(
@@ -293,8 +454,19 @@ class _AddParcelPageState extends State<AddParcelPage> {
                     ),
                     const SizedBox(height: 16),
                     OutlinedButton.icon(
-                      onPressed: () {
-                        // TODO: barcode scanning
+                      onPressed: () async {
+                        final scannedBarcode = await Navigator.push<String>(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => const BarcodeScannerPage(),
+                          ),
+                        );
+
+                        if (scannedBarcode != null) {
+                          setState(() {
+                            barcode = scannedBarcode;
+                          });
+                        }
                       },
                       icon: const Icon(Icons.qr_code_scanner_outlined),
                       label: Text(tr.attach_barcode),
@@ -321,7 +493,7 @@ class _AddParcelPageState extends State<AddParcelPage> {
                         padding: const EdgeInsets.symmetric(vertical: 16),
                       ),
                       child: Text(
-                        isEdit ? 'Update Parcel' : tr.save_parcel,
+                        isEdit ? tr.update_parcel : tr.save_parcel,
                         style: const TextStyle(fontSize: 16),
                       ),
                     ),
@@ -334,8 +506,8 @@ class _AddParcelPageState extends State<AddParcelPage> {
                           side: const BorderSide(color: Colors.red),
                           padding: const EdgeInsets.symmetric(vertical: 16),
                         ),
-                        child: const Text(
-                          'Cancel Parcel',
+                        child: Text(
+                          tr.cancel_parcel,
                           style: TextStyle(fontSize: 16),
                         ),
                       ),
@@ -352,17 +524,17 @@ class _AddParcelPageState extends State<AddParcelPage> {
     final shouldCancel = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Cancel Parcel'),
+        title: Text(S.of(context).cancel_parcel),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text('Are you sure you want to cancel this parcel?'),
+            Text(S.of(context).confirm_cancel_parcel),
             const SizedBox(height: 16),
             TextField(
               controller: reasonController,
-              decoration: const InputDecoration(
-                labelText: 'Cancellation Reason',
-                border: OutlineInputBorder(),
+              decoration: InputDecoration(
+                labelText: S.of(context).cancellation_reason,
+                border: const OutlineInputBorder(),
               ),
               maxLines: 2,
             ),
@@ -371,12 +543,12 @@ class _AddParcelPageState extends State<AddParcelPage> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context, false),
-            child: const Text('No'),
+            child: Text(S.of(context).no),
           ),
           TextButton(
             onPressed: () => Navigator.pop(context, true),
             style: TextButton.styleFrom(foregroundColor: Colors.red),
-            child: const Text('Yes, Cancel'),
+            child: Text(S.of(context).yes_cancel),
           ),
         ],
       ),
@@ -403,14 +575,14 @@ class _AddParcelPageState extends State<AddParcelPage> {
 
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Parcel cancelled successfully')),
+            SnackBar(content: Text(S.of(context).parcel_cancelled_success)),
           );
           Navigator.pop(context);
         }
       } catch (e) {
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Error: $e')),
+            SnackBar(content: Text(S.of(context).error_occurred(e.toString()))),
           );
         }
       } finally {

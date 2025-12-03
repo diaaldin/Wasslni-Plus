@@ -788,6 +788,146 @@ class S {
   String get delete {
     return Intl.message('Delete', name: 'delete', desc: '', args: []);
   }
+
+  /// `Edit Parcel`
+  String get edit_parcel {
+    return Intl.message('Edit Parcel', name: 'edit_parcel', desc: '', args: []);
+  }
+
+  /// `Update Parcel`
+  String get update_parcel {
+    return Intl.message(
+      'Update Parcel',
+      name: 'update_parcel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel Parcel`
+  String get cancel_parcel {
+    return Intl.message(
+      'Cancel Parcel',
+      name: 'cancel_parcel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to cancel this parcel?`
+  String get confirm_cancel_parcel {
+    return Intl.message(
+      'Are you sure you want to cancel this parcel?',
+      name: 'confirm_cancel_parcel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancellation Reason`
+  String get cancellation_reason {
+    return Intl.message(
+      'Cancellation Reason',
+      name: 'cancellation_reason',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yes, Cancel`
+  String get yes_cancel {
+    return Intl.message('Yes, Cancel', name: 'yes_cancel', desc: '', args: []);
+  }
+
+  /// `No`
+  String get no {
+    return Intl.message('No', name: 'no', desc: '', args: []);
+  }
+
+  /// `Parcel updated successfully`
+  String get parcel_updated_success {
+    return Intl.message(
+      'Parcel updated successfully',
+      name: 'parcel_updated_success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Parcel created successfully`
+  String get parcel_created_success {
+    return Intl.message(
+      'Parcel created successfully',
+      name: 'parcel_created_success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Parcel cancelled successfully`
+  String get parcel_cancelled_success {
+    return Intl.message(
+      'Parcel cancelled successfully',
+      name: 'parcel_cancelled_success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error: {error}`
+  String error_occurred(Object error) {
+    return Intl.message(
+      'Error: $error',
+      name: 'error_occurred',
+      desc: '',
+      args: [error],
+    );
+  }
+
+  /// `Parcel Details`
+  String get parcel_details {
+    return Intl.message(
+      'Parcel Details',
+      name: 'parcel_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Status: {status}`
+  String status_label(Object status) {
+    return Intl.message(
+      'Status: $status',
+      name: 'status_label',
+      desc: '',
+      args: [status],
+    );
+  }
+
+  /// `Delivery Fee`
+  String get delivery_fee {
+    return Intl.message(
+      'Delivery Fee',
+      name: 'delivery_fee',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `History`
+  String get history {
+    return Intl.message('History', name: 'history', desc: '', args: []);
+  }
+
+  /// `Note: {note}`
+  String note_label(Object note) {
+    return Intl.message(
+      'Note: $note',
+      name: 'note_label',
+      desc: '',
+      args: [note],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

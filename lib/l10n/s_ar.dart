@@ -295,4 +295,58 @@ class SAr extends S {
 
   @override
   String get delete => 'حذف';
+
+  @override
+  String get edit_parcel => 'تعديل الطرد';
+
+  @override
+  String get update_parcel => 'تحديث الطرد';
+
+  @override
+  String get cancel_parcel => 'إلغاء الطرد';
+
+  @override
+  String get confirm_cancel_parcel => 'هل أنت متأكد من إلغاء هذا الطرد؟';
+
+  @override
+  String get cancellation_reason => 'سبب الإلغاء';
+
+  @override
+  String get yes_cancel => 'نعم، إلغاء';
+
+  @override
+  String get no => 'لا';
+
+  @override
+  String get parcel_updated_success => 'تم تحديث الطرد بنجاح';
+
+  @override
+  String get parcel_created_success => 'تم إنشاء الطرد بنجاح';
+
+  @override
+  String get parcel_cancelled_success => 'تم إلغاء الطرد بنجاح';
+
+  @override
+  String error_occurred(Object error) {
+    return 'حدث خطأ: $error';
+  }
+
+  @override
+  String get parcel_details => 'تفاصيل الطرد';
+
+  @override
+  String status_label(Object status) {
+    return 'الحالة: $status';
+  }
+
+  @override
+  String get delivery_fee => 'رسوم التوصيل';
+
+  @override
+  String get history => 'السجل';
+
+  @override
+  String note_label(Object note) {
+    return 'ملاحظة: $note';
+  }
 }

@@ -22,6 +22,12 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(code) => "الباركود: ${code}";
 
+  static String m1(error) => "حدث خطأ: ${error}";
+
+  static String m2(note) => "ملاحظة: ${note}";
+
+  static String m3(status) => "الحالة: ${status}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "acceptPolicyStart": MessageLookupByLibrary.simpleMessage("أوافق على "),
@@ -37,11 +43,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "attach_barcode": MessageLookupByLibrary.simpleMessage("أرفق باركود"),
     "barcode_label": m0,
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
+    "cancel_parcel": MessageLookupByLibrary.simpleMessage("إلغاء الطرد"),
+    "cancellation_reason": MessageLookupByLibrary.simpleMessage("سبب الإلغاء"),
     "cancelled": MessageLookupByLibrary.simpleMessage("ملغى"),
     "choose_region_warning": MessageLookupByLibrary.simpleMessage(
       "يرجى اختيار المنطقة",
     ),
     "clear_selection": MessageLookupByLibrary.simpleMessage("مسح الاختيار"),
+    "confirm_cancel_parcel": MessageLookupByLibrary.simpleMessage(
+      "هل أنت متأكد من إلغاء هذا الطرد؟",
+    ),
     "contact_support": MessageLookupByLibrary.simpleMessage(
       "لمزيد من التفاصيل، لا تتردد في الاتصال بفريق الدعم لدينا.",
     ),
@@ -69,10 +80,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "delete": MessageLookupByLibrary.simpleMessage("حذف"),
     "delivered": MessageLookupByLibrary.simpleMessage("تم التوصيل"),
+    "delivery_fee": MessageLookupByLibrary.simpleMessage("رسوم التوصيل"),
     "delivery_region": MessageLookupByLibrary.simpleMessage("منطقة التوصيل"),
     "dont_have_account": MessageLookupByLibrary.simpleMessage(
       "ليس لديك حساب؟ تسجيل جديد",
     ),
+    "edit_parcel": MessageLookupByLibrary.simpleMessage("تعديل الطرد"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "enter_address": MessageLookupByLibrary.simpleMessage(
       "أدخل العنوان (مدينة - شارع)",
@@ -90,7 +103,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "enter_recipient_name": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال اسم المستلم",
     ),
+    "error_occurred": m1,
     "general_serach_hint": MessageLookupByLibrary.simpleMessage("بحث..."),
+    "history": MessageLookupByLibrary.simpleMessage("السجل"),
     "in_transit": MessageLookupByLibrary.simpleMessage("في الطريق"),
     "invalid_email": MessageLookupByLibrary.simpleMessage(
       "بريد إلكتروني غير صالح",
@@ -122,15 +137,27 @@ class MessageLookup extends MessageLookupByLibrary {
       "الإيرادات الشهرية",
     ),
     "name": MessageLookupByLibrary.simpleMessage("الاسم"),
+    "no": MessageLookupByLibrary.simpleMessage("لا"),
     "no_internet_connection": MessageLookupByLibrary.simpleMessage(
       "⚠ لا يوجد اتصال بالإنترنت",
     ),
     "no_notifications": MessageLookupByLibrary.simpleMessage("لا توجد إشعارات"),
     "no_parcels_yet": MessageLookupByLibrary.simpleMessage("لا توجد طرود بعد"),
+    "note_label": m2,
     "notifications": MessageLookupByLibrary.simpleMessage("الإشعارات"),
+    "parcel_cancelled_success": MessageLookupByLibrary.simpleMessage(
+      "تم إلغاء الطرد بنجاح",
+    ),
+    "parcel_created_success": MessageLookupByLibrary.simpleMessage(
+      "تم إنشاء الطرد بنجاح",
+    ),
     "parcel_description": MessageLookupByLibrary.simpleMessage("وصف الطرد"),
+    "parcel_details": MessageLookupByLibrary.simpleMessage("تفاصيل الطرد"),
     "parcel_price": MessageLookupByLibrary.simpleMessage(
       "سعر الطرد (بدون التوصيل)",
+    ),
+    "parcel_updated_success": MessageLookupByLibrary.simpleMessage(
+      "تم تحديث الطرد بنجاح",
     ),
     "parcels": MessageLookupByLibrary.simpleMessage("الطرود"),
     "password": MessageLookupByLibrary.simpleMessage("الرقم السري"),
@@ -150,6 +177,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "role": MessageLookupByLibrary.simpleMessage("الدور"),
     "save_parcel": MessageLookupByLibrary.simpleMessage("حفظ الطرد"),
     "settings": MessageLookupByLibrary.simpleMessage("الاعدادات"),
+    "status_label": m3,
     "submit": MessageLookupByLibrary.simpleMessage("إرسال"),
     "success": MessageLookupByLibrary.simpleMessage("نجاح"),
     "sunny_mode": MessageLookupByLibrary.simpleMessage("وضع النهار"),
@@ -160,6 +188,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "السعر الإجمالي (مع التوصيل)",
     ),
     "unread": MessageLookupByLibrary.simpleMessage("غير مقروء"),
+    "update_parcel": MessageLookupByLibrary.simpleMessage("تحديث الطرد"),
     "user_rights": MessageLookupByLibrary.simpleMessage("حقوق المستخدم"),
     "user_rights_desc": MessageLookupByLibrary.simpleMessage(
       "لديك الحق في الوصول إلى بياناتك وتعديلها وحذفها. يرجى التواصل معنا إذا كانت لديك أي مخاوف أو طلبات.",
@@ -174,5 +203,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "welcome_to_app": MessageLookupByLibrary.simpleMessage(
       "مرحباً بك في وصلني بلس",
     ),
+    "yes_cancel": MessageLookupByLibrary.simpleMessage("نعم، إلغاء"),
   };
 }

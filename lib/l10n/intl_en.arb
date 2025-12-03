@@ -90,5 +90,21 @@
   "no_notifications": "No notifications",
   "all": "All",
   "unread": "Unread",
-  "delete": "Delete"
+  "delete": "Delete",
+  "edit_parcel": "Edit Parcel",
+  "update_parcel": "Update Parcel",
+  "cancel_parcel": "Cancel Parcel",
+  "confirm_cancel_parcel": "Are you sure you want to cancel this parcel?",
+  "cancellation_reason": "Cancellation Reason",
+  "yes_cancel": "Yes, Cancel",
+  "no": "No",
+  "parcel_updated_success": "Parcel updated successfully",
+  "parcel_created_success": "Parcel created successfully",
+  "parcel_cancelled_success": "Parcel cancelled successfully",
+  "error_occurred": "Error: {error}",
+  "parcel_details": "Parcel Details",
+  "status_label": "Status: {status}",
+  "delivery_fee": "Delivery Fee",
+  "history": "History",
+  "note_label": "Note: {note}"
 }

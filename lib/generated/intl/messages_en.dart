@@ -22,6 +22,12 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(code) => "Barcode: ${code}";
 
+  static String m1(error) => "Error: ${error}";
+
+  static String m2(note) => "Note: ${note}";
+
+  static String m3(status) => "Status: ${status}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "acceptPolicyStart": MessageLookupByLibrary.simpleMessage("I accept the "),
@@ -41,11 +47,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "attach_barcode": MessageLookupByLibrary.simpleMessage("Attach Barcode"),
     "barcode_label": m0,
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+    "cancel_parcel": MessageLookupByLibrary.simpleMessage("Cancel Parcel"),
+    "cancellation_reason": MessageLookupByLibrary.simpleMessage(
+      "Cancellation Reason",
+    ),
     "cancelled": MessageLookupByLibrary.simpleMessage("Cancelled"),
     "choose_region_warning": MessageLookupByLibrary.simpleMessage(
       "Please select a region",
     ),
     "clear_selection": MessageLookupByLibrary.simpleMessage("Clear selection"),
+    "confirm_cancel_parcel": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to cancel this parcel?",
+    ),
     "contact_support": MessageLookupByLibrary.simpleMessage(
       "For more details, feel free to contact our support team.",
     ),
@@ -71,10 +84,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "delete": MessageLookupByLibrary.simpleMessage("Delete"),
     "delivered": MessageLookupByLibrary.simpleMessage("Delivered"),
+    "delivery_fee": MessageLookupByLibrary.simpleMessage("Delivery Fee"),
     "delivery_region": MessageLookupByLibrary.simpleMessage("Delivery Region"),
     "dont_have_account": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? Register",
     ),
+    "edit_parcel": MessageLookupByLibrary.simpleMessage("Edit Parcel"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "enter_address": MessageLookupByLibrary.simpleMessage(
       "Enter the address (City - Street)",
@@ -90,7 +105,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "enter_recipient_name": MessageLookupByLibrary.simpleMessage(
       "Please enter recipient name",
     ),
+    "error_occurred": m1,
     "general_serach_hint": MessageLookupByLibrary.simpleMessage("Search..."),
+    "history": MessageLookupByLibrary.simpleMessage("History"),
     "in_transit": MessageLookupByLibrary.simpleMessage("In Transit"),
     "invalid_email": MessageLookupByLibrary.simpleMessage(
       "Invalid email address",
@@ -124,6 +141,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "message": MessageLookupByLibrary.simpleMessage("Message"),
     "monthly_revenue": MessageLookupByLibrary.simpleMessage("Monthly Revenue"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
+    "no": MessageLookupByLibrary.simpleMessage("No"),
     "no_internet_connection": MessageLookupByLibrary.simpleMessage(
       "⚠ No internet connection",
     ),
@@ -131,12 +149,23 @@ class MessageLookup extends MessageLookupByLibrary {
       "No notifications",
     ),
     "no_parcels_yet": MessageLookupByLibrary.simpleMessage("No parcels yet"),
+    "note_label": m2,
     "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
+    "parcel_cancelled_success": MessageLookupByLibrary.simpleMessage(
+      "Parcel cancelled successfully",
+    ),
+    "parcel_created_success": MessageLookupByLibrary.simpleMessage(
+      "Parcel created successfully",
+    ),
     "parcel_description": MessageLookupByLibrary.simpleMessage(
       "Parcel Description",
     ),
+    "parcel_details": MessageLookupByLibrary.simpleMessage("Parcel Details"),
     "parcel_price": MessageLookupByLibrary.simpleMessage(
       "Parcel Price (without delivery)",
+    ),
+    "parcel_updated_success": MessageLookupByLibrary.simpleMessage(
+      "Parcel updated successfully",
     ),
     "parcels": MessageLookupByLibrary.simpleMessage("Parcels"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
@@ -158,6 +187,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "role": MessageLookupByLibrary.simpleMessage("Role"),
     "save_parcel": MessageLookupByLibrary.simpleMessage("Save Parcel"),
     "settings": MessageLookupByLibrary.simpleMessage("Settings"),
+    "status_label": m3,
     "submit": MessageLookupByLibrary.simpleMessage("Submit"),
     "success": MessageLookupByLibrary.simpleMessage("Success"),
     "sunny_mode": MessageLookupByLibrary.simpleMessage("Sunny Mode"),
@@ -168,6 +198,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Total Price (with delivery)",
     ),
     "unread": MessageLookupByLibrary.simpleMessage("Unread"),
+    "update_parcel": MessageLookupByLibrary.simpleMessage("Update Parcel"),
     "user_rights": MessageLookupByLibrary.simpleMessage("User Rights"),
     "user_rights_desc": MessageLookupByLibrary.simpleMessage(
       "You have the right to access, modify, and delete your data. Contact us for any concerns or requests.",
@@ -182,5 +213,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "welcome_to_app": MessageLookupByLibrary.simpleMessage(
       "Welcome to Wasslni Plus",
     ),
+    "yes_cancel": MessageLookupByLibrary.simpleMessage("Yes, Cancel"),
   };
 }

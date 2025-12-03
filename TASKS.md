@@ -108,7 +108,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [ ] Add export to PDF/Excel
 
 - [ ] **Add Parcel Page (Enhance)**
-  - [ ] Connect barcode scanner functionality
+  - [x] Connect barcode scanner functionality
   - [ ] Add image upload for parcel
   - [ ] Implement package weight/dimensions fields
   - [ ] Add delivery time slot selection

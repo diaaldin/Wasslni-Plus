@@ -90,5 +90,21 @@
   "no_notifications": "لا توجد إشعارات",
   "all": "الكل",
   "unread": "غير مقروء",
-  "delete": "حذف"
+  "delete": "حذف",
+  "edit_parcel": "تعديل الطرد",
+  "update_parcel": "تحديث الطرد",
+  "cancel_parcel": "إلغاء الطرد",
+  "confirm_cancel_parcel": "هل أنت متأكد من إلغاء هذا الطرد؟",
+  "cancellation_reason": "سبب الإلغاء",
+  "yes_cancel": "نعم، إلغاء",
+  "no": "لا",
+  "parcel_updated_success": "تم تحديث الطرد بنجاح",
+  "parcel_created_success": "تم إنشاء الطرد بنجاح",
+  "parcel_cancelled_success": "تم إلغاء الطرد بنجاح",
+  "error_occurred": "حدث خطأ: {error}",
+  "parcel_details": "تفاصيل الطرد",
+  "status_label": "الحالة: {status}",
+  "delivery_fee": "رسوم التوصيل",
+  "history": "السجل",
+  "note_label": "ملاحظة: {note}"
 }
