@@ -1173,6 +1173,76 @@ class S {
   String get date_range {
     return Intl.message('Date Range', name: 'date_range', desc: '', args: []);
   }
+
+  /// `Bulk Upload`
+  String get bulk_upload {
+    return Intl.message('Bulk Upload', name: 'bulk_upload', desc: '', args: []);
+  }
+
+  /// `Upload CSV File`
+  String get upload_csv {
+    return Intl.message(
+      'Upload CSV File',
+      name: 'upload_csv',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Download Template`
+  String get download_template {
+    return Intl.message(
+      'Download Template',
+      name: 'download_template',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select File`
+  String get select_file {
+    return Intl.message('Select File', name: 'select_file', desc: '', args: []);
+  }
+
+  /// `Upload completed successfully`
+  String get upload_success {
+    return Intl.message(
+      'Upload completed successfully',
+      name: 'upload_success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upload failed`
+  String get upload_error {
+    return Intl.message(
+      'Upload failed',
+      name: 'upload_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Processing file...`
+  String get processing_file {
+    return Intl.message(
+      'Processing file...',
+      name: 'processing_file',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Parcels imported`
+  String get parcels_imported {
+    return Intl.message(
+      'Parcels imported',
+      name: 'parcels_imported',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

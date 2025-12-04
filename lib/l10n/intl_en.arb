@@ -137,5 +137,13 @@
   "export_error": "Export failed",
   "parcels_report": "Parcels Report",
   "total_parcels": "Total Parcels",
-  "date_range": "Date Range"
+  "date_range": "Date Range",
+  "bulk_upload": "Bulk Upload",
+  "upload_csv": "Upload CSV File",
+  "download_template": "Download Template",
+  "select_file": "Select File",
+  "upload_success": "Upload completed successfully",
+  "upload_error": "Upload failed",
+  "processing_file": "Processing file...",
+  "parcels_imported": "Parcels imported"
 }

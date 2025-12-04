@@ -99,7 +99,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [x] Implement monthly delivery summary
 
 - [ ] **Parcels Management (Enhance)**
-  - [ ] Add bulk parcel upload (CSV/Excel)
+  - [x] Add bulk parcel upload (CSV/Excel)
   - [x] Implement parcel editing functionality
   - [x] Add parcel cancellation with reason
   - [x] Create parcel history/timeline view

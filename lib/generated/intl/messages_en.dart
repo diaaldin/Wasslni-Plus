@@ -49,6 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "attach_barcode": MessageLookupByLibrary.simpleMessage("Attach Barcode"),
     "barcode_label": m0,
+    "bulk_upload": MessageLookupByLibrary.simpleMessage("Bulk Upload"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "cancel_parcel": MessageLookupByLibrary.simpleMessage("Cancel Parcel"),
     "cancellation_reason": MessageLookupByLibrary.simpleMessage(
@@ -99,6 +100,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "dimensions": MessageLookupByLibrary.simpleMessage("Dimensions (cm)"),
     "dont_have_account": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? Register",
+    ),
+    "download_template": MessageLookupByLibrary.simpleMessage(
+      "Download Template",
     ),
     "edit_parcel": MessageLookupByLibrary.simpleMessage("Edit Parcel"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
@@ -194,6 +198,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Parcel updated successfully",
     ),
     "parcels": MessageLookupByLibrary.simpleMessage("Parcels"),
+    "parcels_imported": MessageLookupByLibrary.simpleMessage(
+      "Parcels imported",
+    ),
     "parcels_report": MessageLookupByLibrary.simpleMessage("Parcels Report"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "pending": MessageLookupByLibrary.simpleMessage("Pending"),
@@ -204,6 +211,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "We are committed to protecting your data privacy and security. This policy explains how we handle your personal information.",
     ),
     "privacy_policy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
+    "processing_file": MessageLookupByLibrary.simpleMessage(
+      "Processing file...",
+    ),
     "recent_parcels": MessageLookupByLibrary.simpleMessage("Recent Parcels"),
     "recipient": MessageLookupByLibrary.simpleMessage("Recipient"),
     "recipient_name": MessageLookupByLibrary.simpleMessage("Recipient Name"),
@@ -219,6 +229,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "role": MessageLookupByLibrary.simpleMessage("Role"),
     "save_parcel": MessageLookupByLibrary.simpleMessage("Save Parcel"),
     "scan_to_track": MessageLookupByLibrary.simpleMessage("Scan to Track"),
+    "select_file": MessageLookupByLibrary.simpleMessage("Select File"),
     "settings": MessageLookupByLibrary.simpleMessage("Settings"),
     "shipping_label": MessageLookupByLibrary.simpleMessage("Shipping Label"),
     "signature_description": MessageLookupByLibrary.simpleMessage(
@@ -238,6 +249,11 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "unread": MessageLookupByLibrary.simpleMessage("Unread"),
     "update_parcel": MessageLookupByLibrary.simpleMessage("Update Parcel"),
+    "upload_csv": MessageLookupByLibrary.simpleMessage("Upload CSV File"),
+    "upload_error": MessageLookupByLibrary.simpleMessage("Upload failed"),
+    "upload_success": MessageLookupByLibrary.simpleMessage(
+      "Upload completed successfully",
+    ),
     "user_rights": MessageLookupByLibrary.simpleMessage("User Rights"),
     "user_rights_desc": MessageLookupByLibrary.simpleMessage(
       "You have the right to access, modify, and delete your data. Contact us for any concerns or requests.",

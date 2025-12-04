@@ -445,4 +445,28 @@ class SEn extends S {
 
   @override
   String get date_range => 'Date Range';
+
+  @override
+  String get bulk_upload => 'Bulk Upload';
+
+  @override
+  String get upload_csv => 'Upload CSV File';
+
+  @override
+  String get download_template => 'Download Template';
+
+  @override
+  String get select_file => 'Select File';
+
+  @override
+  String get upload_success => 'Upload completed successfully';
+
+  @override
+  String get upload_error => 'Upload failed';
+
+  @override
+  String get processing_file => 'Processing file...';
+
+  @override
+  String get parcels_imported => 'Parcels imported';
 }

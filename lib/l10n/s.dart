@@ -930,6 +930,54 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Date Range'**
   String get date_range;
+
+  /// No description provided for @bulk_upload.
+  ///
+  /// In en, this message translates to:
+  /// **'Bulk Upload'**
+  String get bulk_upload;
+
+  /// No description provided for @upload_csv.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload CSV File'**
+  String get upload_csv;
+
+  /// No description provided for @download_template.
+  ///
+  /// In en, this message translates to:
+  /// **'Download Template'**
+  String get download_template;
+
+  /// No description provided for @select_file.
+  ///
+  /// In en, this message translates to:
+  /// **'Select File'**
+  String get select_file;
+
+  /// No description provided for @upload_success.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload completed successfully'**
+  String get upload_success;
+
+  /// No description provided for @upload_error.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload failed'**
+  String get upload_error;
+
+  /// No description provided for @processing_file.
+  ///
+  /// In en, this message translates to:
+  /// **'Processing file...'**
+  String get processing_file;
+
+  /// No description provided for @parcels_imported.
+  ///
+  /// In en, this message translates to:
+  /// **'Parcels imported'**
+  String get parcels_imported;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

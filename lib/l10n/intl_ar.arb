@@ -137,5 +137,13 @@
   "export_error": "فشل التصدير",
   "parcels_report": "تقرير الطرود",
   "total_parcels": "إجمالي الطرود",
-  "date_range": "نطاق التاريخ"
+  "date_range": "نطاق التاريخ",
+  "bulk_upload": "رفع جماعي",
+  "upload_csv": "رفع ملف CSV",
+  "download_template": "تنزيل النموذج",
+  "select_file": "اختر ملف",
+  "upload_success": "تم الرفع بنجاح",
+  "upload_error": "فشل الرفع",
+  "processing_file": "جاري معالجة الملف...",
+  "parcels_imported": "تم استيراد الطرود"
 }

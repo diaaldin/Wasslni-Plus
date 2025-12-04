@@ -45,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "app_tagline": MessageLookupByLibrary.simpleMessage("توصيل سريع وموثوق"),
     "attach_barcode": MessageLookupByLibrary.simpleMessage("أرفق باركود"),
     "barcode_label": m0,
+    "bulk_upload": MessageLookupByLibrary.simpleMessage("رفع جماعي"),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "cancel_parcel": MessageLookupByLibrary.simpleMessage("إلغاء الطرد"),
     "cancellation_reason": MessageLookupByLibrary.simpleMessage("سبب الإلغاء"),
@@ -96,6 +97,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "dont_have_account": MessageLookupByLibrary.simpleMessage(
       "ليس لديك حساب؟ تسجيل جديد",
     ),
+    "download_template": MessageLookupByLibrary.simpleMessage("تنزيل النموذج"),
     "edit_parcel": MessageLookupByLibrary.simpleMessage("تعديل الطرد"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "enter_address": MessageLookupByLibrary.simpleMessage(
@@ -184,6 +186,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "تم تحديث الطرد بنجاح",
     ),
     "parcels": MessageLookupByLibrary.simpleMessage("الطرود"),
+    "parcels_imported": MessageLookupByLibrary.simpleMessage(
+      "تم استيراد الطرود",
+    ),
     "parcels_report": MessageLookupByLibrary.simpleMessage("تقرير الطرود"),
     "password": MessageLookupByLibrary.simpleMessage("الرقم السري"),
     "pending": MessageLookupByLibrary.simpleMessage("قيد الانتظار"),
@@ -194,6 +199,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "نحن ملتزمون بحماية خصوصية بياناتك وأمانها. توضح سياسة البيانات هذه كيفية تعاملنا مع بياناتك الشخصية.",
     ),
     "privacy_policy": MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),
+    "processing_file": MessageLookupByLibrary.simpleMessage(
+      "جاري معالجة الملف...",
+    ),
     "recent_parcels": MessageLookupByLibrary.simpleMessage("الطرود الأخيرة"),
     "recipient": MessageLookupByLibrary.simpleMessage("المستلم"),
     "recipient_name": MessageLookupByLibrary.simpleMessage("اسم المستلم"),
@@ -207,6 +215,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "role": MessageLookupByLibrary.simpleMessage("الدور"),
     "save_parcel": MessageLookupByLibrary.simpleMessage("حفظ الطرد"),
     "scan_to_track": MessageLookupByLibrary.simpleMessage("امسح للتتبع"),
+    "select_file": MessageLookupByLibrary.simpleMessage("اختر ملف"),
     "settings": MessageLookupByLibrary.simpleMessage("الاعدادات"),
     "shipping_label": MessageLookupByLibrary.simpleMessage("ملصق الشحن"),
     "signature_description": MessageLookupByLibrary.simpleMessage(
@@ -226,6 +235,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "unread": MessageLookupByLibrary.simpleMessage("غير مقروء"),
     "update_parcel": MessageLookupByLibrary.simpleMessage("تحديث الطرد"),
+    "upload_csv": MessageLookupByLibrary.simpleMessage("رفع ملف CSV"),
+    "upload_error": MessageLookupByLibrary.simpleMessage("فشل الرفع"),
+    "upload_success": MessageLookupByLibrary.simpleMessage("تم الرفع بنجاح"),
     "user_rights": MessageLookupByLibrary.simpleMessage("حقوق المستخدم"),
     "user_rights_desc": MessageLookupByLibrary.simpleMessage(
       "لديك الحق في الوصول إلى بياناتك وتعديلها وحذفها. يرجى التواصل معنا إذا كانت لديك أي مخاوف أو طلبات.",

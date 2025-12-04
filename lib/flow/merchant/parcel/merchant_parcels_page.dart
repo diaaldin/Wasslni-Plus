@@ -7,6 +7,9 @@ import 'package:wasslni_plus/services/firestore_service.dart';
 import 'package:wasslni_plus/flow/merchant/parcel/parcel_details_page.dart';
 import 'package:wasslni_plus/services/export_service.dart';
 import 'package:wasslni_plus/generated/l10n.dart';
+import 'package:wasslni_plus/services/bulk_upload_service.dart';
+import 'dart:io';
+import 'package:path_provider/path_provider.dart';
 
 class MerchantParcelsPage extends StatefulWidget {
   const MerchantParcelsPage({super.key});
@@ -107,6 +110,133 @@ class _MerchantParcelsPageState extends State<MerchantParcelsPage>
         .toList();
   }
 
+  /// Download CSV template
+  Future<void> _downloadTemplate() async {
+    final tr = S.of(context);
+    try {
+      final csvContent = BulkUploadService.generateTemplate();
+
+      // Get downloads directory
+      final directory = await getDownloadsDirectory() ??
+          await getApplicationDocumentsDirectory();
+      final file = File('${directory.path}/parcels_template.csv');
+
+      await file.writeAsString(csvContent);
+
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('${tr.download_template}: ${file.path}')),
+        );
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Error: $e')),
+        );
+      }
+    }
+  }
+
+  /// Upload bulk parcels from CSV
+  Future<void> _uploadBulkParcels() async {
+    final tr = S.of(context);
+    final user = FirebaseAuth.instance.currentUser;
+
+    if (user == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Please log in')),
+      );
+      return;
+    }
+
+    try {
+      // Pick CSV file
+      final file = await BulkUploadService.pickCsvFile();
+      if (file == null) return;
+
+      // Show processing dialog
+      if (mounted) {
+        showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (context) => AlertDialog(
+            content: Row(
+              children: [
+                const CircularProgressIndicator(),
+                const SizedBox(width: 16),
+                Text(tr.processing_file),
+              ],
+            ),
+          ),
+        );
+      }
+
+      // Process file
+      final uploadService = BulkUploadService();
+      final result = await uploadService.uploadParcelsFromCsv(file, user.uid);
+
+      // Close processing dialog
+      if (mounted) {
+        Navigator.of(context).pop();
+      }
+
+      // Show result dialog
+      if (mounted) {
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text(tr.bulk_upload),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('${tr.parcels_imported}: ${result.successCount}'),
+                if (result.failureCount > 0)
+                  Text('Failed: ${result.failureCount}',
+                      style: const TextStyle(color: Colors.red)),
+                if (result.hasErrors) ...[
+                  const SizedBox(height: 16),
+                  const Text('Errors:',
+                      style: TextStyle(fontWeight: FontWeight.bold)),
+                  const SizedBox(height: 8),
+                  Container(
+                    constraints: const BoxConstraints(maxHeight: 200),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: result.errors
+                            .map((e) => Text('• $e',
+                                style: const TextStyle(fontSize: 12)))
+                            .toList(),
+                      ),
+                    ),
+                  ),
+                ],
+              ],
+            ),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.of(context).pop(),
+                child: const Text('OK'),
+              ),
+            ],
+          ),
+        );
+      }
+    } catch (e) {
+      // Close processing dialog if open
+      if (mounted && Navigator.of(context).canPop()) {
+        Navigator.of(context).pop();
+      }
+
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('${tr.upload_error}: $e')),
+        );
+      }
+    }
+  }
+
   Widget buildFilterHeader(List<ParcelModel> parcelsToExport) {
     final tr = S.of(context);
     return Padding(
@@ -165,6 +295,47 @@ class _MerchantParcelsPageState extends State<MerchantParcelsPage>
             children: [
               Text('${tr.total_parcels}: ${parcelsToExport.length}'),
               const Spacer(),
+              // Bulk Upload Button
+              PopupMenuButton<String>(
+                icon: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(Icons.upload_file),
+                    const SizedBox(width: 4),
+                    Text(tr.bulk_upload),
+                  ],
+                ),
+                onSelected: (value) async {
+                  if (value == 'template') {
+                    await _downloadTemplate();
+                  } else if (value == 'upload') {
+                    await _uploadBulkParcels();
+                  }
+                },
+                itemBuilder: (context) => [
+                  PopupMenuItem(
+                    value: 'template',
+                    child: Row(
+                      children: [
+                        const Icon(Icons.download, color: Colors.blue),
+                        const SizedBox(width: 8),
+                        Text(tr.download_template),
+                      ],
+                    ),
+                  ),
+                  PopupMenuItem(
+                    value: 'upload',
+                    child: Row(
+                      children: [
+                        const Icon(Icons.upload, color: Colors.green),
+                        const SizedBox(width: 8),
+                        Text(tr.upload_csv),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(width: 8),
               PopupMenuButton<String>(
                 icon: Row(
                   mainAxisSize: MainAxisSize.min,

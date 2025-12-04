@@ -442,4 +442,28 @@ class SAr extends S {
 
   @override
   String get date_range => 'نطاق التاريخ';
+
+  @override
+  String get bulk_upload => 'رفع جماعي';
+
+  @override
+  String get upload_csv => 'رفع ملف CSV';
+
+  @override
+  String get download_template => 'تنزيل النموذج';
+
+  @override
+  String get select_file => 'اختر ملف';
+
+  @override
+  String get upload_success => 'تم الرفع بنجاح';
+
+  @override
+  String get upload_error => 'فشل الرفع';
+
+  @override
+  String get processing_file => 'جاري معالجة الملف...';
+
+  @override
+  String get parcels_imported => 'تم استيراد الطرود';
 }
