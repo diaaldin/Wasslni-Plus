@@ -240,11 +240,16 @@ class FirestoreService {
     return _parcelsCollection
         .where('merchantId', isEqualTo: merchantId)
         .where('isDeleted', isEqualTo: false)
-        .orderBy('createdAt', descending: true)
+        // Removed orderBy to avoid composite index requirement
+        // We'll sort in memory instead
         .snapshots()
-        .map((snapshot) => snapshot.docs
-            .map((doc) => ParcelModel.fromFirestore(doc))
-            .toList());
+        .map((snapshot) {
+      final parcels =
+          snapshot.docs.map((doc) => ParcelModel.fromFirestore(doc)).toList();
+      // Sort in memory by createdAt descending
+      parcels.sort((a, b) => b.createdAt.compareTo(a.createdAt));
+      return parcels;
+    });
   }
 
   /// Get parcels by courier
