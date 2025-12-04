@@ -57,6 +57,10 @@ dependencies:
   # Printing & PDF
   printing: ^5.12.0
   pdf: ^3.10.8
+  
+  # File sharing & export
+  share_plus: ^7.2.2
+  path_provider: ^2.1.2
 
 dev_dependencies:
   flutter_test:

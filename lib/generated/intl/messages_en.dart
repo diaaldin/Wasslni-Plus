@@ -85,6 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "data_usage_desc": MessageLookupByLibrary.simpleMessage(
       "Collected data is used solely to enhance app functionality, ensure security, and meet legal obligations.",
     ),
+    "date_range": MessageLookupByLibrary.simpleMessage("Date Range"),
     "delete": MessageLookupByLibrary.simpleMessage("Delete"),
     "delivered": MessageLookupByLibrary.simpleMessage("Delivered"),
     "delivery_fee": MessageLookupByLibrary.simpleMessage("Delivery Fee"),
@@ -117,6 +118,13 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "error_occurred": m1,
     "evening": MessageLookupByLibrary.simpleMessage("Evening (5PM - 9PM)"),
+    "export": MessageLookupByLibrary.simpleMessage("Export"),
+    "export_error": MessageLookupByLibrary.simpleMessage("Export failed"),
+    "export_excel": MessageLookupByLibrary.simpleMessage("Export to Excel"),
+    "export_pdf": MessageLookupByLibrary.simpleMessage("Export to PDF"),
+    "export_success": MessageLookupByLibrary.simpleMessage(
+      "Export completed successfully",
+    ),
     "from": MessageLookupByLibrary.simpleMessage("From"),
     "general_serach_hint": MessageLookupByLibrary.simpleMessage("Search..."),
     "height": MessageLookupByLibrary.simpleMessage("Height"),
@@ -186,6 +194,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Parcel updated successfully",
     ),
     "parcels": MessageLookupByLibrary.simpleMessage("Parcels"),
+    "parcels_report": MessageLookupByLibrary.simpleMessage("Parcels Report"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "pending": MessageLookupByLibrary.simpleMessage("Pending"),
     "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
@@ -223,6 +232,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Thank you for trusting us with your information. We strive to keep your data safe and transparent.",
     ),
     "to": MessageLookupByLibrary.simpleMessage("To"),
+    "total_parcels": MessageLookupByLibrary.simpleMessage("Total Parcels"),
     "total_price_label": MessageLookupByLibrary.simpleMessage(
       "Total Price (with delivery)",
     ),

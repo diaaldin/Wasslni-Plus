@@ -1103,6 +1103,76 @@ class S {
       args: [],
     );
   }
+
+  /// `Export`
+  String get export {
+    return Intl.message('Export', name: 'export', desc: '', args: []);
+  }
+
+  /// `Export to PDF`
+  String get export_pdf {
+    return Intl.message(
+      'Export to PDF',
+      name: 'export_pdf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Export to Excel`
+  String get export_excel {
+    return Intl.message(
+      'Export to Excel',
+      name: 'export_excel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Export completed successfully`
+  String get export_success {
+    return Intl.message(
+      'Export completed successfully',
+      name: 'export_success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Export failed`
+  String get export_error {
+    return Intl.message(
+      'Export failed',
+      name: 'export_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Parcels Report`
+  String get parcels_report {
+    return Intl.message(
+      'Parcels Report',
+      name: 'parcels_report',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total Parcels`
+  String get total_parcels {
+    return Intl.message(
+      'Total Parcels',
+      name: 'total_parcels',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date Range`
+  String get date_range {
+    return Intl.message('Date Range', name: 'date_range', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -5,6 +5,8 @@ import 'package:wasslni_plus/flow/merchant/parcel/add_paracel_page.dart';
 import 'package:wasslni_plus/models/parcel_model.dart';
 import 'package:wasslni_plus/services/firestore_service.dart';
 import 'package:wasslni_plus/flow/merchant/parcel/parcel_details_page.dart';
+import 'package:wasslni_plus/services/export_service.dart';
+import 'package:wasslni_plus/generated/l10n.dart';
 
 class MerchantParcelsPage extends StatefulWidget {
   const MerchantParcelsPage({super.key});
@@ -105,7 +107,8 @@ class _MerchantParcelsPageState extends State<MerchantParcelsPage>
         .toList();
   }
 
-  Widget buildFilterHeader() {
+  Widget buildFilterHeader(List<ParcelModel> parcelsToExport) {
+    final tr = S.of(context);
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
@@ -154,6 +157,76 @@ class _MerchantParcelsPageState extends State<MerchantParcelsPage>
                     selectedStatus = null;
                   }),
                 ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Text('${tr.total_parcels}: ${parcelsToExport.length}'),
+              const Spacer(),
+              PopupMenuButton<String>(
+                icon: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(Icons.download),
+                    const SizedBox(width: 4),
+                    Text(tr.export),
+                  ],
+                ),
+                onSelected: (value) async {
+                  if (parcelsToExport.isEmpty) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('No parcels to export')),
+                    );
+                    return;
+                  }
+
+                  try {
+                    if (value == 'pdf') {
+                      await ExportService.exportToPdf(
+                        parcelsToExport,
+                        title: tr.parcels_report,
+                      );
+                    } else if (value == 'excel') {
+                      await ExportService.exportAndShareCsv(parcelsToExport);
+                    }
+                    if (mounted) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text(tr.export_success)),
+                      );
+                    }
+                  } catch (e) {
+                    if (mounted) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text('${tr.export_error}: $e')),
+                      );
+                    }
+                  }
+                },
+                itemBuilder: (context) => [
+                  PopupMenuItem(
+                    value: 'pdf',
+                    child: Row(
+                      children: [
+                        const Icon(Icons.picture_as_pdf, color: Colors.red),
+                        const SizedBox(width: 8),
+                        Text(tr.export_pdf),
+                      ],
+                    ),
+                  ),
+                  PopupMenuItem(
+                    value: 'excel',
+                    child: Row(
+                      children: [
+                        const Icon(Icons.table_chart, color: Colors.green),
+                        const SizedBox(width: 8),
+                        Text(tr.export_excel),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ],
@@ -226,13 +299,13 @@ class _MerchantParcelsPageState extends State<MerchantParcelsPage>
                   children: [
                     Column(
                       children: [
-                        buildFilterHeader(),
+                        buildFilterHeader(preparingParcels),
                         Expanded(child: buildParcelList(preparingParcels)),
                       ],
                     ),
                     Column(
                       children: [
-                        buildFilterHeader(),
+                        buildFilterHeader(deliveryParcels),
                         Expanded(child: buildParcelList(deliveryParcels)),
                       ],
                     ),

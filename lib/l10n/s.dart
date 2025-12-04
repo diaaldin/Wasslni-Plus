@@ -882,6 +882,54 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Scan to Track'**
   String get scan_to_track;
+
+  /// No description provided for @export.
+  ///
+  /// In en, this message translates to:
+  /// **'Export'**
+  String get export;
+
+  /// No description provided for @export_pdf.
+  ///
+  /// In en, this message translates to:
+  /// **'Export to PDF'**
+  String get export_pdf;
+
+  /// No description provided for @export_excel.
+  ///
+  /// In en, this message translates to:
+  /// **'Export to Excel'**
+  String get export_excel;
+
+  /// No description provided for @export_success.
+  ///
+  /// In en, this message translates to:
+  /// **'Export completed successfully'**
+  String get export_success;
+
+  /// No description provided for @export_error.
+  ///
+  /// In en, this message translates to:
+  /// **'Export failed'**
+  String get export_error;
+
+  /// No description provided for @parcels_report.
+  ///
+  /// In en, this message translates to:
+  /// **'Parcels Report'**
+  String get parcels_report;
+
+  /// No description provided for @total_parcels.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Parcels'**
+  String get total_parcels;
+
+  /// No description provided for @date_range.
+  ///
+  /// In en, this message translates to:
+  /// **'Date Range'**
+  String get date_range;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

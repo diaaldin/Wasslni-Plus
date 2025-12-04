@@ -418,4 +418,28 @@ class SAr extends S {
 
   @override
   String get scan_to_track => 'امسح للتتبع';
+
+  @override
+  String get export => 'تصدير';
+
+  @override
+  String get export_pdf => 'تصدير إلى PDF';
+
+  @override
+  String get export_excel => 'تصدير إلى Excel';
+
+  @override
+  String get export_success => 'تم التصدير بنجاح';
+
+  @override
+  String get export_error => 'فشل التصدير';
+
+  @override
+  String get parcels_report => 'تقرير الطرود';
+
+  @override
+  String get total_parcels => 'إجمالي الطرود';
+
+  @override
+  String get date_range => 'نطاق التاريخ';
 }

@@ -105,7 +105,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [x] Create parcel history/timeline view
   - [x] Add print label/receipt functionality
   - [x] Implement advanced filters (search, status, region)
-  - [ ] Add export to PDF/Excel
+  - [x] Add export to PDF/Excel
 
 - [ ] **Add Parcel Page (Enhance)**
   - [x] Connect barcode scanner functionality

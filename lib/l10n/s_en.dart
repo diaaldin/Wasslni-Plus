@@ -421,4 +421,28 @@ class SEn extends S {
 
   @override
   String get scan_to_track => 'Scan to Track';
+
+  @override
+  String get export => 'Export';
+
+  @override
+  String get export_pdf => 'Export to PDF';
+
+  @override
+  String get export_excel => 'Export to Excel';
+
+  @override
+  String get export_success => 'Export completed successfully';
+
+  @override
+  String get export_error => 'Export failed';
+
+  @override
+  String get parcels_report => 'Parcels Report';
+
+  @override
+  String get total_parcels => 'Total Parcels';
+
+  @override
+  String get date_range => 'Date Range';
 }

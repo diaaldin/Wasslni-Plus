@@ -129,5 +129,13 @@
   "from": "From",
   "to": "To",
   "parcel_info": "Parcel Information",
-  "scan_to_track": "Scan to Track"
+  "scan_to_track": "Scan to Track",
+  "export": "Export",
+  "export_pdf": "Export to PDF",
+  "export_excel": "Export to Excel",
+  "export_success": "Export completed successfully",
+  "export_error": "Export failed",
+  "parcels_report": "Parcels Report",
+  "total_parcels": "Total Parcels",
+  "date_range": "Date Range"
 }

@@ -129,5 +129,13 @@
   "from": "من",
   "to": "إلى",
   "parcel_info": "معلومات الطرد",
-  "scan_to_track": "امسح للتتبع"
+  "scan_to_track": "امسح للتتبع",
+  "export": "تصدير",
+  "export_pdf": "تصدير إلى PDF",
+  "export_excel": "تصدير إلى Excel",
+  "export_success": "تم التصدير بنجاح",
+  "export_error": "فشل التصدير",
+  "parcels_report": "تقرير الطرود",
+  "total_parcels": "إجمالي الطرود",
+  "date_range": "نطاق التاريخ"
 }
