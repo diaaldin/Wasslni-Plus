@@ -122,5 +122,12 @@
   "evening": "مساءً (5م - 9م)",
   "anytime": "أي وقت",
   "requires_signature": "يتطلب توقيع المستلم",
-  "signature_description": "يجب على المندوب جمع التوقيع عند التسليم"
+  "signature_description": "يجب على المندوب جمع التوقيع عند التسليم",
+  "print_label": "طباعة الملصق",
+  "print_receipt": "طباعة الإيصال",
+  "shipping_label": "ملصق الشحن",
+  "from": "من",
+  "to": "إلى",
+  "parcel_info": "معلومات الطرد",
+  "scan_to_track": "امسح للتتبع"
 }

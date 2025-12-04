@@ -840,6 +840,48 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Courier must collect signature on delivery'**
   String get signature_description;
+
+  /// No description provided for @print_label.
+  ///
+  /// In en, this message translates to:
+  /// **'Print Label'**
+  String get print_label;
+
+  /// No description provided for @print_receipt.
+  ///
+  /// In en, this message translates to:
+  /// **'Print Receipt'**
+  String get print_receipt;
+
+  /// No description provided for @shipping_label.
+  ///
+  /// In en, this message translates to:
+  /// **'Shipping Label'**
+  String get shipping_label;
+
+  /// No description provided for @from.
+  ///
+  /// In en, this message translates to:
+  /// **'From'**
+  String get from;
+
+  /// No description provided for @to.
+  ///
+  /// In en, this message translates to:
+  /// **'To'**
+  String get to;
+
+  /// No description provided for @parcel_info.
+  ///
+  /// In en, this message translates to:
+  /// **'Parcel Information'**
+  String get parcel_info;
+
+  /// No description provided for @scan_to_track.
+  ///
+  /// In en, this message translates to:
+  /// **'Scan to Track'**
+  String get scan_to_track;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

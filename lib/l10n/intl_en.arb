@@ -122,5 +122,12 @@
   "evening": "Evening (5PM - 9PM)",
   "anytime": "Any Time",
   "requires_signature": "Requires Recipient Signature",
-  "signature_description": "Courier must collect signature on delivery"
+  "signature_description": "Courier must collect signature on delivery",
+  "print_label": "Print Label",
+  "print_receipt": "Print Receipt",
+  "shipping_label": "Shipping Label",
+  "from": "From",
+  "to": "To",
+  "parcel_info": "Parcel Information",
+  "scan_to_track": "Scan to Track"
 }

@@ -103,7 +103,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [x] Implement parcel editing functionality
   - [x] Add parcel cancellation with reason
   - [x] Create parcel history/timeline view
-  - [ ] Add print label/receipt functionality
+  - [x] Add print label/receipt functionality
   - [x] Implement advanced filters (search, status, region)
   - [ ] Add export to PDF/Excel
 

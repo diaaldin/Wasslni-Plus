@@ -53,6 +53,10 @@ dependencies:
   firebase_crashlytics: ^4.1.3
   image_picker: ^1.0.7
   mobile_scanner: ^7.1.3
+  
+  # Printing & PDF
+  printing: ^5.12.0
+  pdf: ^3.10.8
 
 dev_dependencies:
   flutter_test:

@@ -6,6 +6,7 @@ import 'package:wasslni_plus/flow/merchant/parcel/add_paracel_page.dart';
 import 'package:wasslni_plus/generated/l10n.dart';
 import 'package:wasslni_plus/models/parcel_model.dart';
 import 'package:wasslni_plus/widgets/fields/read_only_field.dart';
+import 'package:wasslni_plus/services/print_label_service.dart';
 
 class ParcelDetailsPage extends StatelessWidget {
   final ParcelModel parcel;
@@ -44,6 +45,39 @@ class ParcelDetailsPage extends StatelessWidget {
         title: const Text('Parcel Details'),
         backgroundColor: AppStyles.primaryColor,
         actions: [
+          // Print menu
+          PopupMenuButton<String>(
+            icon: const Icon(Icons.print),
+            onSelected: (value) async {
+              if (value == 'label') {
+                await PrintLabelService.printShippingLabel(parcel);
+              } else if (value == 'receipt') {
+                await PrintLabelService.printReceipt(parcel);
+              }
+            },
+            itemBuilder: (context) => [
+              PopupMenuItem(
+                value: 'label',
+                child: Row(
+                  children: [
+                    const Icon(Icons.label_outline),
+                    const SizedBox(width: 8),
+                    Text(tr.print_label),
+                  ],
+                ),
+              ),
+              PopupMenuItem(
+                value: 'receipt',
+                child: Row(
+                  children: [
+                    const Icon(Icons.receipt_long),
+                    const SizedBox(width: 8),
+                    Text(tr.print_receipt),
+                  ],
+                ),
+              ),
+            ],
+          ),
           if (parcel.status != ParcelStatus.delivered &&
               parcel.status != ParcelStatus.cancelled &&
               parcel.status != ParcelStatus.returned)

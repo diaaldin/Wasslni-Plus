@@ -397,4 +397,25 @@ class SAr extends S {
 
   @override
   String get signature_description => 'يجب على المندوب جمع التوقيع عند التسليم';
+
+  @override
+  String get print_label => 'طباعة الملصق';
+
+  @override
+  String get print_receipt => 'طباعة الإيصال';
+
+  @override
+  String get shipping_label => 'ملصق الشحن';
+
+  @override
+  String get from => 'من';
+
+  @override
+  String get to => 'إلى';
+
+  @override
+  String get parcel_info => 'معلومات الطرد';
+
+  @override
+  String get scan_to_track => 'امسح للتتبع';
 }

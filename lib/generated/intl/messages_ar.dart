@@ -115,6 +115,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "error_occurred": m1,
     "evening": MessageLookupByLibrary.simpleMessage("مساءً (5م - 9م)"),
+    "from": MessageLookupByLibrary.simpleMessage("من"),
     "general_serach_hint": MessageLookupByLibrary.simpleMessage("بحث..."),
     "height": MessageLookupByLibrary.simpleMessage("الارتفاع"),
     "history": MessageLookupByLibrary.simpleMessage("السجل"),
@@ -169,6 +170,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "parcel_description": MessageLookupByLibrary.simpleMessage("وصف الطرد"),
     "parcel_details": MessageLookupByLibrary.simpleMessage("تفاصيل الطرد"),
+    "parcel_info": MessageLookupByLibrary.simpleMessage("معلومات الطرد"),
     "parcel_price": MessageLookupByLibrary.simpleMessage(
       "سعر الطرد (بدون التوصيل)",
     ),
@@ -179,6 +181,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "password": MessageLookupByLibrary.simpleMessage("الرقم السري"),
     "pending": MessageLookupByLibrary.simpleMessage("قيد الانتظار"),
     "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "print_label": MessageLookupByLibrary.simpleMessage("طباعة الملصق"),
+    "print_receipt": MessageLookupByLibrary.simpleMessage("طباعة الإيصال"),
     "privacy_intro": MessageLookupByLibrary.simpleMessage(
       "نحن ملتزمون بحماية خصوصية بياناتك وأمانها. توضح سياسة البيانات هذه كيفية تعاملنا مع بياناتك الشخصية.",
     ),
@@ -195,7 +199,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "role": MessageLookupByLibrary.simpleMessage("الدور"),
     "save_parcel": MessageLookupByLibrary.simpleMessage("حفظ الطرد"),
+    "scan_to_track": MessageLookupByLibrary.simpleMessage("امسح للتتبع"),
     "settings": MessageLookupByLibrary.simpleMessage("الاعدادات"),
+    "shipping_label": MessageLookupByLibrary.simpleMessage("ملصق الشحن"),
     "signature_description": MessageLookupByLibrary.simpleMessage(
       "يجب على المندوب جمع التوقيع عند التسليم",
     ),
@@ -206,6 +212,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "thank_you": MessageLookupByLibrary.simpleMessage(
       "نشكرك على ثقتك بنا فيما يتعلق بمعلوماتك. نحن نسعى جاهدين للحفاظ على بياناتك آمنة وشفافة.",
     ),
+    "to": MessageLookupByLibrary.simpleMessage("إلى"),
     "total_price_label": MessageLookupByLibrary.simpleMessage(
       "السعر الإجمالي (مع التوصيل)",
     ),

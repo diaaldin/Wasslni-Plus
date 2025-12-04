@@ -1048,6 +1048,61 @@ class S {
       args: [],
     );
   }
+
+  /// `Print Label`
+  String get print_label {
+    return Intl.message('Print Label', name: 'print_label', desc: '', args: []);
+  }
+
+  /// `Print Receipt`
+  String get print_receipt {
+    return Intl.message(
+      'Print Receipt',
+      name: 'print_receipt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Shipping Label`
+  String get shipping_label {
+    return Intl.message(
+      'Shipping Label',
+      name: 'shipping_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `From`
+  String get from {
+    return Intl.message('From', name: 'from', desc: '', args: []);
+  }
+
+  /// `To`
+  String get to {
+    return Intl.message('To', name: 'to', desc: '', args: []);
+  }
+
+  /// `Parcel Information`
+  String get parcel_info {
+    return Intl.message(
+      'Parcel Information',
+      name: 'parcel_info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Scan to Track`
+  String get scan_to_track {
+    return Intl.message(
+      'Scan to Track',
+      name: 'scan_to_track',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

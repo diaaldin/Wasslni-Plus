@@ -117,6 +117,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "error_occurred": m1,
     "evening": MessageLookupByLibrary.simpleMessage("Evening (5PM - 9PM)"),
+    "from": MessageLookupByLibrary.simpleMessage("From"),
     "general_serach_hint": MessageLookupByLibrary.simpleMessage("Search..."),
     "height": MessageLookupByLibrary.simpleMessage("Height"),
     "history": MessageLookupByLibrary.simpleMessage("History"),
@@ -177,6 +178,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Parcel Description",
     ),
     "parcel_details": MessageLookupByLibrary.simpleMessage("Parcel Details"),
+    "parcel_info": MessageLookupByLibrary.simpleMessage("Parcel Information"),
     "parcel_price": MessageLookupByLibrary.simpleMessage(
       "Parcel Price (without delivery)",
     ),
@@ -187,6 +189,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "pending": MessageLookupByLibrary.simpleMessage("Pending"),
     "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
+    "print_label": MessageLookupByLibrary.simpleMessage("Print Label"),
+    "print_receipt": MessageLookupByLibrary.simpleMessage("Print Receipt"),
     "privacy_intro": MessageLookupByLibrary.simpleMessage(
       "We are committed to protecting your data privacy and security. This policy explains how we handle your personal information.",
     ),
@@ -205,7 +209,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "role": MessageLookupByLibrary.simpleMessage("Role"),
     "save_parcel": MessageLookupByLibrary.simpleMessage("Save Parcel"),
+    "scan_to_track": MessageLookupByLibrary.simpleMessage("Scan to Track"),
     "settings": MessageLookupByLibrary.simpleMessage("Settings"),
+    "shipping_label": MessageLookupByLibrary.simpleMessage("Shipping Label"),
     "signature_description": MessageLookupByLibrary.simpleMessage(
       "Courier must collect signature on delivery",
     ),
@@ -216,6 +222,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "thank_you": MessageLookupByLibrary.simpleMessage(
       "Thank you for trusting us with your information. We strive to keep your data safe and transparent.",
     ),
+    "to": MessageLookupByLibrary.simpleMessage("To"),
     "total_price_label": MessageLookupByLibrary.simpleMessage(
       "Total Price (with delivery)",
     ),

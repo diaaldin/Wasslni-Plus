@@ -400,4 +400,25 @@ class SEn extends S {
   @override
   String get signature_description =>
       'Courier must collect signature on delivery';
+
+  @override
+  String get print_label => 'Print Label';
+
+  @override
+  String get print_receipt => 'Print Receipt';
+
+  @override
+  String get shipping_label => 'Shipping Label';
+
+  @override
+  String get from => 'From';
+
+  @override
+  String get to => 'To';
+
+  @override
+  String get parcel_info => 'Parcel Information';
+
+  @override
+  String get scan_to_track => 'Scan to Track';
 }
