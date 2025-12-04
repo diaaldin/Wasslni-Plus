@@ -45,6 +45,10 @@ class _AddParcelPageState extends State<AddParcelPage> {
   List<String> _existingImageUrls = [];
   bool _isUploadingImages = false;
 
+  // Delivery time slot options: 'morning', 'afternoon', 'evening', 'anytime'
+  String? _selectedTimeSlot;
+  bool _requiresSignature = false;
+
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _altPhoneController = TextEditingController();
@@ -171,6 +175,21 @@ class _AddParcelPageState extends State<AddParcelPage> {
     }
     _deliveryInstructionsController.text = parcel.deliveryInstructions ?? '';
     _existingImageUrls = List.from(parcel.imageUrls);
+    _requiresSignature = parcel.requiresSignature;
+
+    // Infer time slot from estimatedDeliveryTime
+    if (parcel.estimatedDeliveryTime != null) {
+      final hour = parcel.estimatedDeliveryTime!.hour;
+      if (hour >= 9 && hour < 12) {
+        _selectedTimeSlot = 'morning';
+      } else if (hour >= 12 && hour < 17) {
+        _selectedTimeSlot = 'afternoon';
+      } else if (hour >= 17 && hour < 21) {
+        _selectedTimeSlot = 'evening';
+      } else {
+        _selectedTimeSlot = 'anytime';
+      }
+    }
 
     _updateTotalPrice();
   }
@@ -260,6 +279,31 @@ class _AddParcelPageState extends State<AddParcelPage> {
 
       final finalImageUrls = [..._existingImageUrls, ...newImageUrls];
 
+      // Calculate estimated delivery time based on time slot
+      DateTime? estimatedDeliveryTime;
+      if (_selectedTimeSlot != null) {
+        final tomorrow = DateTime.now().add(const Duration(days: 1));
+        switch (_selectedTimeSlot) {
+          case 'morning':
+            estimatedDeliveryTime =
+                DateTime(tomorrow.year, tomorrow.month, tomorrow.day, 10, 0);
+            break;
+          case 'afternoon':
+            estimatedDeliveryTime =
+                DateTime(tomorrow.year, tomorrow.month, tomorrow.day, 14, 0);
+            break;
+          case 'evening':
+            estimatedDeliveryTime =
+                DateTime(tomorrow.year, tomorrow.month, tomorrow.day, 19, 0);
+            break;
+          case 'anytime':
+          default:
+            estimatedDeliveryTime =
+                DateTime(tomorrow.year, tomorrow.month, tomorrow.day, 12, 0);
+            break;
+        }
+      }
+
       final parcelData = ParcelModel(
         id: widget.parcel?.id,
         barcode: parcelBarcode,
@@ -280,6 +324,8 @@ class _AddParcelPageState extends State<AddParcelPage> {
         deliveryInstructions: _deliveryInstructionsController.text.isNotEmpty
             ? _deliveryInstructionsController.text
             : null,
+        estimatedDeliveryTime: estimatedDeliveryTime,
+        requiresSignature: _requiresSignature,
         parcelPrice: parcelPrice,
         deliveryFee: deliveryFee,
         totalPrice: parcelPrice + deliveryFee,
@@ -753,6 +799,78 @@ class _AddParcelPageState extends State<AddParcelPage> {
                           ],
                         ),
                       ),
+
+                    const SizedBox(height: 16),
+
+                    // Delivery Time Slot Dropdown
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 8),
+                      child: Text(
+                        tr.delivery_time_slot,
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          color: Theme.of(context).textTheme.bodyLarge?.color,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 12),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.grey),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: DropdownButton<String>(
+                        value: _selectedTimeSlot,
+                        isExpanded: true,
+                        underline: const SizedBox(),
+                        hint: Text(tr.anytime),
+                        items: [
+                          DropdownMenuItem(
+                            value: 'morning',
+                            child: Text(tr.morning),
+                          ),
+                          DropdownMenuItem(
+                            value: 'afternoon',
+                            child: Text(tr.afternoon),
+                          ),
+                          DropdownMenuItem(
+                            value: 'evening',
+                            child: Text(tr.evening),
+                          ),
+                          DropdownMenuItem(
+                            value: 'anytime',
+                            child: Text(tr.anytime),
+                          ),
+                        ],
+                        onChanged: (value) {
+                          setState(() {
+                            _selectedTimeSlot = value;
+                          });
+                        },
+                      ),
+                    ),
+
+                    // Requires Signature Checkbox
+                    const SizedBox(height: 16),
+                    CheckboxListTile(
+                      value: _requiresSignature,
+                      onChanged: (value) {
+                        setState(() {
+                          _requiresSignature = value ?? false;
+                        });
+                      },
+                      title: Text(tr.requires_signature),
+                      subtitle: Text(
+                        tr.signature_description,
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Theme.of(context).textTheme.bodySmall?.color,
+                        ),
+                      ),
+                      controlAffinity: ListTileControlAffinity.leading,
+                      contentPadding: EdgeInsets.zero,
+                    ),
 
                     const SizedBox(height: 16),
                     OutlinedButton.icon(

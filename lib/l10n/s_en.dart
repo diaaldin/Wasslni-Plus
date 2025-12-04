@@ -378,4 +378,26 @@ class SEn extends S {
 
   @override
   String get add_image => 'Add Image';
+
+  @override
+  String get delivery_time_slot => 'Preferred Delivery Time';
+
+  @override
+  String get morning => 'Morning (9AM - 12PM)';
+
+  @override
+  String get afternoon => 'Afternoon (12PM - 5PM)';
+
+  @override
+  String get evening => 'Evening (5PM - 9PM)';
+
+  @override
+  String get anytime => 'Any Time';
+
+  @override
+  String get requires_signature => 'Requires Recipient Signature';
+
+  @override
+  String get signature_description =>
+      'Courier must collect signature on delivery';
 }

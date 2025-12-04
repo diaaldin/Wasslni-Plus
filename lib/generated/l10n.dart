@@ -983,6 +983,71 @@ class S {
   String get add_image {
     return Intl.message('Add Image', name: 'add_image', desc: '', args: []);
   }
+
+  /// `Preferred Delivery Time`
+  String get delivery_time_slot {
+    return Intl.message(
+      'Preferred Delivery Time',
+      name: 'delivery_time_slot',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Morning (9AM - 12PM)`
+  String get morning {
+    return Intl.message(
+      'Morning (9AM - 12PM)',
+      name: 'morning',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Afternoon (12PM - 5PM)`
+  String get afternoon {
+    return Intl.message(
+      'Afternoon (12PM - 5PM)',
+      name: 'afternoon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Evening (5PM - 9PM)`
+  String get evening {
+    return Intl.message(
+      'Evening (5PM - 9PM)',
+      name: 'evening',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Any Time`
+  String get anytime {
+    return Intl.message('Any Time', name: 'anytime', desc: '', args: []);
+  }
+
+  /// `Requires Recipient Signature`
+  String get requires_signature {
+    return Intl.message(
+      'Requires Recipient Signature',
+      name: 'requires_signature',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Courier must collect signature on delivery`
+  String get signature_description {
+    return Intl.message(
+      'Courier must collect signature on delivery',
+      name: 'signature_description',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -115,5 +115,12 @@
   "delivery_instructions": "تعليمات التوصيل (اختياري)",
   "optional": "اختياري",
   "images": "الصور",
-  "add_image": "إضافة صورة"
+  "add_image": "إضافة صورة",
+  "delivery_time_slot": "وقت التوصيل المفضل",
+  "morning": "صباحاً (9ص - 12م)",
+  "afternoon": "ظهراً (12م - 5م)",
+  "evening": "مساءً (5م - 9م)",
+  "anytime": "أي وقت",
+  "requires_signature": "يتطلب توقيع المستلم",
+  "signature_description": "يجب على المندوب جمع التوقيع عند التسليم"
 }

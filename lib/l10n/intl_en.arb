@@ -115,5 +115,12 @@
   "delivery_instructions": "Delivery Instructions (Optional)",
   "optional": "Optional",
   "images": "Images",
-  "add_image": "Add Image"
+  "add_image": "Add Image",
+  "delivery_time_slot": "Preferred Delivery Time",
+  "morning": "Morning (9AM - 12PM)",
+  "afternoon": "Afternoon (12PM - 5PM)",
+  "evening": "Evening (5PM - 9PM)",
+  "anytime": "Any Time",
+  "requires_signature": "Requires Recipient Signature",
+  "signature_description": "Courier must collect signature on delivery"
 }

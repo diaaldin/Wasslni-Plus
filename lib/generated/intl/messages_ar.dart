@@ -34,11 +34,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "add_image": MessageLookupByLibrary.simpleMessage("إضافة صورة"),
     "add_parcel": MessageLookupByLibrary.simpleMessage("إضافة طرد"),
     "address": MessageLookupByLibrary.simpleMessage("العنوان, مدينة - شارع"),
+    "afternoon": MessageLookupByLibrary.simpleMessage("ظهراً (12م - 5م)"),
     "all": MessageLookupByLibrary.simpleMessage("الكل"),
     "already_have_account": MessageLookupByLibrary.simpleMessage(
       "لديك حساب بالفعل؟ تسجيل الدخول",
     ),
     "alt_phone": MessageLookupByLibrary.simpleMessage("رقم بديل (اختياري)"),
+    "anytime": MessageLookupByLibrary.simpleMessage("أي وقت"),
     "app_name": MessageLookupByLibrary.simpleMessage("وصلني بلس"),
     "app_tagline": MessageLookupByLibrary.simpleMessage("توصيل سريع وموثوق"),
     "attach_barcode": MessageLookupByLibrary.simpleMessage("أرفق باركود"),
@@ -86,6 +88,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "تعليمات التوصيل (اختياري)",
     ),
     "delivery_region": MessageLookupByLibrary.simpleMessage("منطقة التوصيل"),
+    "delivery_time_slot": MessageLookupByLibrary.simpleMessage(
+      "وقت التوصيل المفضل",
+    ),
     "dimensions": MessageLookupByLibrary.simpleMessage("الأبعاد (سم)"),
     "dont_have_account": MessageLookupByLibrary.simpleMessage(
       "ليس لديك حساب؟ تسجيل جديد",
@@ -109,6 +114,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "الرجاء إدخال اسم المستلم",
     ),
     "error_occurred": m1,
+    "evening": MessageLookupByLibrary.simpleMessage("مساءً (5م - 9م)"),
     "general_serach_hint": MessageLookupByLibrary.simpleMessage("بحث..."),
     "height": MessageLookupByLibrary.simpleMessage("الارتفاع"),
     "history": MessageLookupByLibrary.simpleMessage("السجل"),
@@ -144,6 +150,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "monthly_revenue": MessageLookupByLibrary.simpleMessage(
       "الإيرادات الشهرية",
     ),
+    "morning": MessageLookupByLibrary.simpleMessage("صباحاً (9ص - 12م)"),
     "name": MessageLookupByLibrary.simpleMessage("الاسم"),
     "no": MessageLookupByLibrary.simpleMessage("لا"),
     "no_internet_connection": MessageLookupByLibrary.simpleMessage(
@@ -183,9 +190,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "region": MessageLookupByLibrary.simpleMessage("المنطقة"),
     "register": MessageLookupByLibrary.simpleMessage("تسجيل جديد"),
     "registration_failed": MessageLookupByLibrary.simpleMessage("فشل التسجيل"),
+    "requires_signature": MessageLookupByLibrary.simpleMessage(
+      "يتطلب توقيع المستلم",
+    ),
     "role": MessageLookupByLibrary.simpleMessage("الدور"),
     "save_parcel": MessageLookupByLibrary.simpleMessage("حفظ الطرد"),
     "settings": MessageLookupByLibrary.simpleMessage("الاعدادات"),
+    "signature_description": MessageLookupByLibrary.simpleMessage(
+      "يجب على المندوب جمع التوقيع عند التسليم",
+    ),
     "status_label": m3,
     "submit": MessageLookupByLibrary.simpleMessage("إرسال"),
     "success": MessageLookupByLibrary.simpleMessage("نجاح"),

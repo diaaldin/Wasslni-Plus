@@ -2,14 +2,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 enum ParcelStatus {
-  awaitingLabel,      // بانتظار الملصق
-  readyToShip,        // جاهز للارسال
+  awaitingLabel, // بانتظار الملصق
+  readyToShip, // جاهز للارسال
   enRouteDistributor, // في الطريق للموزع
-  atWarehouse,        // مخزن الموزع
-  outForDelivery,     // في الطريق للزبون
-  delivered,          // تم التوصيل
-  returned,           // طرد راجع
-  cancelled,          // ملغي
+  atWarehouse, // مخزن الموزع
+  outForDelivery, // في الطريق للزبون
+  delivered, // تم التوصيل
+  returned, // طرد راجع
+  cancelled, // ملغي
 }
 
 class ParcelModel {
@@ -48,6 +48,7 @@ class ParcelModel {
   final String? deliveryInstructions;
   final String? returnReason;
   final String? failureReason;
+  final bool requiresSignature;
 
   // Metadata
   final DateTime createdAt;
@@ -82,6 +83,7 @@ class ParcelModel {
     this.deliveryInstructions,
     this.returnReason,
     this.failureReason,
+    this.requiresSignature = false,
     required this.createdAt,
     required this.updatedAt,
     this.isDeleted = false,
@@ -108,11 +110,11 @@ class ParcelModel {
       'totalPrice': totalPrice,
       'status': status.name,
       'statusHistory': statusHistory.map((h) => h.toMap()).toList(),
-      'estimatedDeliveryTime': estimatedDeliveryTime != null 
-          ? Timestamp.fromDate(estimatedDeliveryTime!) 
+      'estimatedDeliveryTime': estimatedDeliveryTime != null
+          ? Timestamp.fromDate(estimatedDeliveryTime!)
           : null,
-      'actualDeliveryTime': actualDeliveryTime != null 
-          ? Timestamp.fromDate(actualDeliveryTime!) 
+      'actualDeliveryTime': actualDeliveryTime != null
+          ? Timestamp.fromDate(actualDeliveryTime!)
           : null,
       'proofOfDeliveryUrl': proofOfDeliveryUrl,
       'signatureUrl': signatureUrl,
@@ -120,6 +122,7 @@ class ParcelModel {
       'deliveryInstructions': deliveryInstructions,
       'returnReason': returnReason,
       'failureReason': failureReason,
+      'requiresSignature': requiresSignature,
       'createdAt': Timestamp.fromDate(createdAt),
       'updatedAt': Timestamp.fromDate(updatedAt),
       'isDeleted': isDeleted,
@@ -129,7 +132,7 @@ class ParcelModel {
   // Create ParcelModel from Firestore DocumentSnapshot
   factory ParcelModel.fromFirestore(DocumentSnapshot doc) {
     final data = doc.data() as Map<String, dynamic>;
-    
+
     return ParcelModel(
       id: doc.id,
       barcode: data['barcode'] ?? '',
@@ -143,8 +146,8 @@ class ParcelModel {
       deliveryRegion: data['deliveryRegion'] ?? '',
       description: data['description'],
       weight: data['weight']?.toDouble(),
-      dimensions: data['dimensions'] != null 
-          ? Map<String, double>.from(data['dimensions']) 
+      dimensions: data['dimensions'] != null
+          ? Map<String, double>.from(data['dimensions'])
           : null,
       imageUrls: List<String>.from(data['imageUrls'] ?? []),
       parcelPrice: (data['parcelPrice'] ?? 0).toDouble(),
@@ -155,7 +158,8 @@ class ParcelModel {
               ?.map((h) => StatusHistory.fromMap(h))
               .toList() ??
           [],
-      estimatedDeliveryTime: (data['estimatedDeliveryTime'] as Timestamp?)?.toDate(),
+      estimatedDeliveryTime:
+          (data['estimatedDeliveryTime'] as Timestamp?)?.toDate(),
       actualDeliveryTime: (data['actualDeliveryTime'] as Timestamp?)?.toDate(),
       proofOfDeliveryUrl: data['proofOfDeliveryUrl'],
       signatureUrl: data['signatureUrl'],
@@ -163,6 +167,7 @@ class ParcelModel {
       deliveryInstructions: data['deliveryInstructions'],
       returnReason: data['returnReason'],
       failureReason: data['failureReason'],
+      requiresSignature: data['requiresSignature'] ?? false,
       createdAt: (data['createdAt'] as Timestamp).toDate(),
       updatedAt: (data['updatedAt'] as Timestamp).toDate(),
       isDeleted: data['isDeleted'] ?? false,
@@ -220,6 +225,7 @@ class ParcelModel {
     String? deliveryInstructions,
     String? returnReason,
     String? failureReason,
+    bool? requiresSignature,
     DateTime? createdAt,
     DateTime? updatedAt,
     bool? isDeleted,
@@ -244,7 +250,8 @@ class ParcelModel {
       totalPrice: totalPrice ?? this.totalPrice,
       status: status ?? this.status,
       statusHistory: statusHistory ?? this.statusHistory,
-      estimatedDeliveryTime: estimatedDeliveryTime ?? this.estimatedDeliveryTime,
+      estimatedDeliveryTime:
+          estimatedDeliveryTime ?? this.estimatedDeliveryTime,
       actualDeliveryTime: actualDeliveryTime ?? this.actualDeliveryTime,
       proofOfDeliveryUrl: proofOfDeliveryUrl ?? this.proofOfDeliveryUrl,
       signatureUrl: signatureUrl ?? this.signatureUrl,
@@ -252,6 +259,7 @@ class ParcelModel {
       deliveryInstructions: deliveryInstructions ?? this.deliveryInstructions,
       returnReason: returnReason ?? this.returnReason,
       failureReason: failureReason ?? this.failureReason,
+      requiresSignature: requiresSignature ?? this.requiresSignature,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
       isDeleted: isDeleted ?? this.isDeleted,

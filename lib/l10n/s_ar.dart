@@ -376,4 +376,25 @@ class SAr extends S {
 
   @override
   String get add_image => 'إضافة صورة';
+
+  @override
+  String get delivery_time_slot => 'وقت التوصيل المفضل';
+
+  @override
+  String get morning => 'صباحاً (9ص - 12م)';
+
+  @override
+  String get afternoon => 'ظهراً (12م - 5م)';
+
+  @override
+  String get evening => 'مساءً (5م - 9م)';
+
+  @override
+  String get anytime => 'أي وقت';
+
+  @override
+  String get requires_signature => 'يتطلب توقيع المستلم';
+
+  @override
+  String get signature_description => 'يجب على المندوب جمع التوقيع عند التسليم';
 }

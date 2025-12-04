@@ -34,6 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "add_image": MessageLookupByLibrary.simpleMessage("Add Image"),
     "add_parcel": MessageLookupByLibrary.simpleMessage("Add Parcel"),
     "address": MessageLookupByLibrary.simpleMessage("Address, City - Street"),
+    "afternoon": MessageLookupByLibrary.simpleMessage("Afternoon (12PM - 5PM)"),
     "all": MessageLookupByLibrary.simpleMessage("All"),
     "already_have_account": MessageLookupByLibrary.simpleMessage(
       "Already have an account? Login",
@@ -41,6 +42,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "alt_phone": MessageLookupByLibrary.simpleMessage(
       "Alternate Phone (Optional)",
     ),
+    "anytime": MessageLookupByLibrary.simpleMessage("Any Time"),
     "app_name": MessageLookupByLibrary.simpleMessage("Wasslni Plus"),
     "app_tagline": MessageLookupByLibrary.simpleMessage(
       "Fast & Reliable Delivery",
@@ -90,6 +92,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Delivery Instructions (Optional)",
     ),
     "delivery_region": MessageLookupByLibrary.simpleMessage("Delivery Region"),
+    "delivery_time_slot": MessageLookupByLibrary.simpleMessage(
+      "Preferred Delivery Time",
+    ),
     "dimensions": MessageLookupByLibrary.simpleMessage("Dimensions (cm)"),
     "dont_have_account": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? Register",
@@ -111,6 +116,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please enter recipient name",
     ),
     "error_occurred": m1,
+    "evening": MessageLookupByLibrary.simpleMessage("Evening (5PM - 9PM)"),
     "general_serach_hint": MessageLookupByLibrary.simpleMessage("Search..."),
     "height": MessageLookupByLibrary.simpleMessage("Height"),
     "history": MessageLookupByLibrary.simpleMessage("History"),
@@ -148,6 +154,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "message": MessageLookupByLibrary.simpleMessage("Message"),
     "monthly_revenue": MessageLookupByLibrary.simpleMessage("Monthly Revenue"),
+    "morning": MessageLookupByLibrary.simpleMessage("Morning (9AM - 12PM)"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "no": MessageLookupByLibrary.simpleMessage("No"),
     "no_internet_connection": MessageLookupByLibrary.simpleMessage(
@@ -193,9 +200,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "registration_failed": MessageLookupByLibrary.simpleMessage(
       "Registration Failed",
     ),
+    "requires_signature": MessageLookupByLibrary.simpleMessage(
+      "Requires Recipient Signature",
+    ),
     "role": MessageLookupByLibrary.simpleMessage("Role"),
     "save_parcel": MessageLookupByLibrary.simpleMessage("Save Parcel"),
     "settings": MessageLookupByLibrary.simpleMessage("Settings"),
+    "signature_description": MessageLookupByLibrary.simpleMessage(
+      "Courier must collect signature on delivery",
+    ),
     "status_label": m3,
     "submit": MessageLookupByLibrary.simpleMessage("Submit"),
     "success": MessageLookupByLibrary.simpleMessage("Success"),

@@ -798,6 +798,48 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Add Image'**
   String get add_image;
+
+  /// No description provided for @delivery_time_slot.
+  ///
+  /// In en, this message translates to:
+  /// **'Preferred Delivery Time'**
+  String get delivery_time_slot;
+
+  /// No description provided for @morning.
+  ///
+  /// In en, this message translates to:
+  /// **'Morning (9AM - 12PM)'**
+  String get morning;
+
+  /// No description provided for @afternoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Afternoon (12PM - 5PM)'**
+  String get afternoon;
+
+  /// No description provided for @evening.
+  ///
+  /// In en, this message translates to:
+  /// **'Evening (5PM - 9PM)'**
+  String get evening;
+
+  /// No description provided for @anytime.
+  ///
+  /// In en, this message translates to:
+  /// **'Any Time'**
+  String get anytime;
+
+  /// No description provided for @requires_signature.
+  ///
+  /// In en, this message translates to:
+  /// **'Requires Recipient Signature'**
+  String get requires_signature;
+
+  /// No description provided for @signature_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Courier must collect signature on delivery'**
+  String get signature_description;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

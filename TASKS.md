@@ -111,9 +111,9 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [x] Connect barcode scanner functionality
   - [x] Add image upload for parcel
   - [x] Implement package weight/dimensions fields
-  - [ ] Add delivery time slot selection
+  - [x] Add delivery time slot selection
   - [x] Create delivery instructions field
-  - [ ] Add recipient signature requirement option
+  - [x] Add recipient signature requirement option
 
 - [x] **Notifications Page**
   - [x] Build notification list view
