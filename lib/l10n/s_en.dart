@@ -523,4 +523,10 @@ class SEn extends S {
 
   @override
   String get no_data_available => 'No data available';
+
+  @override
+  String get top_customers => 'Top Customers';
+
+  @override
+  String get parcels_delivered => 'Parcels Delivered';
 }

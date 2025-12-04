@@ -520,4 +520,10 @@ class SAr extends S {
 
   @override
   String get no_data_available => 'لا توجد بيانات متاحة';
+
+  @override
+  String get top_customers => 'أفضل العملاء';
+
+  @override
+  String get parcels_delivered => 'الطرود التي تم توصيلها';
 }

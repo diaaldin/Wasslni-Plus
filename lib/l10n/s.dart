@@ -1086,6 +1086,18 @@ abstract class S {
   /// In en, this message translates to:
   /// **'No data available'**
   String get no_data_available;
+
+  /// No description provided for @top_customers.
+  ///
+  /// In en, this message translates to:
+  /// **'Top Customers'**
+  String get top_customers;
+
+  /// No description provided for @parcels_delivered.
+  ///
+  /// In en, this message translates to:
+  /// **'Parcels Delivered'**
+  String get parcels_delivered;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

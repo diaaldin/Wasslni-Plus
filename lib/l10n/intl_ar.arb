@@ -163,5 +163,7 @@
   "delivery_fees_collected": "رسوم التوصيل المحصلة",
   "success_rate_trend": "اتجاه معدل النجاح",
   "weekly_success_rate": "معدل النجاح الأسبوعي",
-  "no_data_available": "لا توجد بيانات متاحة"
+  "no_data_available": "لا توجد بيانات متاحة",
+  "top_customers": "أفضل العملاء",
+  "parcels_delivered": "الطرود التي تم توصيلها"
 }

@@ -121,11 +121,11 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [x] Implement mark as read/unread
   - [ ] Create notification settings
 
-- [  ] **Reports & Analytics**
+- [x] **Reports & Analytics**
   - [x] Create monthly delivery report
   - [x] Add revenue breakdown by region
   - [x] Implement delivery success rate chart
-  - [ ] Add top customers list
+  - [x] Add top customers list
 
 ### 1.5 Courier Dashboard
 

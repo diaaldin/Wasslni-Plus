@@ -215,6 +215,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Parcel updated successfully",
     ),
     "parcels": MessageLookupByLibrary.simpleMessage("Parcels"),
+    "parcels_delivered": MessageLookupByLibrary.simpleMessage(
+      "Parcels Delivered",
+    ),
     "parcels_imported": MessageLookupByLibrary.simpleMessage(
       "Parcels imported",
     ),
@@ -278,6 +281,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Thank you for trusting us with your information. We strive to keep your data safe and transparent.",
     ),
     "to": MessageLookupByLibrary.simpleMessage("To"),
+    "top_customers": MessageLookupByLibrary.simpleMessage("Top Customers"),
     "total_deliveries": MessageLookupByLibrary.simpleMessage(
       "Total Deliveries",
     ),

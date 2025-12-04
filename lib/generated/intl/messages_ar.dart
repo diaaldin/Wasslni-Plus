@@ -203,6 +203,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "تم تحديث الطرد بنجاح",
     ),
     "parcels": MessageLookupByLibrary.simpleMessage("الطرود"),
+    "parcels_delivered": MessageLookupByLibrary.simpleMessage(
+      "الطرود التي تم توصيلها",
+    ),
     "parcels_imported": MessageLookupByLibrary.simpleMessage(
       "تم استيراد الطرود",
     ),
@@ -264,6 +267,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "نشكرك على ثقتك بنا فيما يتعلق بمعلوماتك. نحن نسعى جاهدين للحفاظ على بياناتك آمنة وشفافة.",
     ),
     "to": MessageLookupByLibrary.simpleMessage("إلى"),
+    "top_customers": MessageLookupByLibrary.simpleMessage("أفضل العملاء"),
     "total_deliveries": MessageLookupByLibrary.simpleMessage(
       "إجمالي التوصيلات",
     ),

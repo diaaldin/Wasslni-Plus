@@ -1413,6 +1413,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Top Customers`
+  String get top_customers {
+    return Intl.message(
+      'Top Customers',
+      name: 'top_customers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Parcels Delivered`
+  String get parcels_delivered {
+    return Intl.message(
+      'Parcels Delivered',
+      name: 'parcels_delivered',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

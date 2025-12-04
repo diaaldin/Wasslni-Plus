@@ -163,5 +163,7 @@
   "delivery_fees_collected": "Delivery Fees Collected",
   "success_rate_trend": "Success Rate Trend",
   "weekly_success_rate": "Weekly Success Rate",
-  "no_data_available": "No data available"
+  "no_data_available": "No data available",
+  "top_customers": "Top Customers",
+  "parcels_delivered": "Parcels Delivered"
 }

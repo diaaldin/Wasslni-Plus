@@ -105,6 +105,10 @@ class _MonthlyReportPageState extends State<MonthlyReportPage> {
                   _buildSuccessRateChart(tr),
                   const SizedBox(height: 24),
 
+                  // Top Customers
+                  _buildTopCustomers(tr),
+                  const SizedBox(height: 24),
+
                   // Performance Metrics
                   _buildPerformanceMetrics(tr),
                 ],
@@ -684,6 +688,107 @@ class _MonthlyReportPageState extends State<MonthlyReportPage> {
             Text(
               tr.weekly_success_rate,
               style: TextStyle(fontSize: 12, color: Colors.grey[600]),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTopCustomers(S tr) {
+    // Group delivered parcels by recipient phone (unique identifier)
+    final customerData = <String, Map<String, dynamic>>{};
+
+    for (var parcel in _parcels) {
+      if (parcel.status != ParcelStatus.delivered) continue;
+
+      final phone = parcel.recipientPhone;
+      if (!customerData.containsKey(phone)) {
+        customerData[phone] = {
+          'name': parcel.recipientName,
+          'phone': phone,
+          'count': 0,
+          'totalSpent': 0.0,
+        };
+      }
+
+      customerData[phone]!['count'] = customerData[phone]!['count'] + 1;
+      customerData[phone]!['totalSpent'] =
+          customerData[phone]!['totalSpent'] + parcel.totalPrice;
+    }
+
+    if (customerData.isEmpty) {
+      return Card(
+        child: Padding(
+          padding: const EdgeInsets.all(32),
+          child: Center(child: Text(tr.no_data_available)),
+        ),
+      );
+    }
+
+    // Sort by count descending
+    final sortedCustomers = customerData.values.toList()
+      ..sort((a, b) => b['count'].compareTo(a['count']));
+
+    // Take top 5
+    final topCustomers = sortedCustomers.take(5).toList();
+
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              tr.top_customers,
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 16),
+            ListView.separated(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: topCustomers.length,
+              separatorBuilder: (context, index) => const Divider(),
+              itemBuilder: (context, index) {
+                final customer = topCustomers[index];
+                return ListTile(
+                  leading: CircleAvatar(
+                    backgroundColor: AppStyles.primaryColor.withOpacity(0.1),
+                    child: Text(
+                      '${index + 1}',
+                      style: TextStyle(
+                        color: AppStyles.primaryColor,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  title: Text(
+                    customer['name'],
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  subtitle: Text(customer['phone']),
+                  trailing: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        '${customer['count']} ${tr.parcels_delivered}',
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12,
+                        ),
+                      ),
+                      Text(
+                        '₪${(customer['totalSpent'] as double).toStringAsFixed(2)}',
+                        style: TextStyle(
+                          color: Colors.green,
+                          fontSize: 12,
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              },
             ),
           ],
         ),
