@@ -123,7 +123,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
 
 - [  ] **Reports & Analytics**
   - [x] Create monthly delivery report
-  - [ ] Add revenue breakdown by region
+  - [x] Add revenue breakdown by region
   - [ ] Implement delivery success rate chart
   - [ ] Add top customers list
 

@@ -97,6 +97,10 @@ class _MonthlyReportPageState extends State<MonthlyReportPage> {
                   _buildRevenueOverview(tr),
                   const SizedBox(height: 24),
 
+                  // Revenue by Region
+                  _buildRevenueByRegion(tr),
+                  const SizedBox(height: 24),
+
                   // Performance Metrics
                   _buildPerformanceMetrics(tr),
                 ],
@@ -388,6 +392,132 @@ class _MonthlyReportPageState extends State<MonthlyReportPage> {
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildRevenueByRegion(S tr) {
+    // Calculate revenue by region for delivered parcels only
+    final deliveredParcels =
+        _parcels.where((p) => p.status == ParcelStatus.delivered);
+
+    double revenueDakhel = 0;
+    double revenueQuds = 0;
+    double revenueDaffa = 0;
+    int countDakhel = 0;
+    int countQuds = 0;
+    int countDaffa = 0;
+
+    for (var parcel in deliveredParcels) {
+      switch (parcel.deliveryRegion) {
+        case 'الداخل':
+          revenueDakhel += parcel.deliveryFee;
+          countDakhel++;
+          break;
+        case 'القدس':
+          revenueQuds += parcel.deliveryFee;
+          countQuds++;
+          break;
+        case 'الضفة':
+          revenueDaffa += parcel.deliveryFee;
+          countDaffa++;
+          break;
+      }
+    }
+
+    final maxRevenue = [revenueDakhel, revenueQuds, revenueDaffa]
+        .reduce((a, b) => a > b ? a : b);
+
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Revenue by Region',
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 20),
+            if (deliveredParcels.isEmpty)
+              const Center(
+                child: Padding(
+                  padding: EdgeInsets.all(32),
+                  child: Text('No delivered parcels this month'),
+                ),
+              )
+            else ...[
+              _buildRegionRevenueBar('الداخل', revenueDakhel, countDakhel,
+                  maxRevenue, Colors.blue),
+              const SizedBox(height: 16),
+              _buildRegionRevenueBar(
+                  'القدس', revenueQuds, countQuds, maxRevenue, Colors.purple),
+              const SizedBox(height: 16),
+              _buildRegionRevenueBar(
+                  'الضفة', revenueDaffa, countDaffa, maxRevenue, Colors.teal),
+            ],
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildRegionRevenueBar(String region, double revenue, int count,
+      double maxRevenue, Color color) {
+    final percentage = maxRevenue > 0 ? (revenue / maxRevenue) : 0.0;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              region,
+              style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+            ),
+            Text(
+              '₪${revenue.toStringAsFixed(2)}',
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
+                color: color,
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 8),
+        Stack(
+          children: [
+            Container(
+              height: 24,
+              decoration: BoxDecoration(
+                color: Colors.grey[200],
+                borderRadius: BorderRadius.circular(12),
+              ),
+            ),
+            FractionallySizedBox(
+              widthFactor: percentage,
+              child: Container(
+                height: 24,
+                decoration: BoxDecoration(
+                  color: color,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Center(
+                  child: Text(
+                    '$count parcels',
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 10,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 
