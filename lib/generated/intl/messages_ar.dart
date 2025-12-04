@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "acceptPolicyStart": MessageLookupByLibrary.simpleMessage("أوافق على "),
+    "add_image": MessageLookupByLibrary.simpleMessage("إضافة صورة"),
     "add_parcel": MessageLookupByLibrary.simpleMessage("إضافة طرد"),
     "address": MessageLookupByLibrary.simpleMessage("العنوان, مدينة - شارع"),
     "all": MessageLookupByLibrary.simpleMessage("الكل"),
@@ -81,7 +82,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "delete": MessageLookupByLibrary.simpleMessage("حذف"),
     "delivered": MessageLookupByLibrary.simpleMessage("تم التوصيل"),
     "delivery_fee": MessageLookupByLibrary.simpleMessage("رسوم التوصيل"),
+    "delivery_instructions": MessageLookupByLibrary.simpleMessage(
+      "تعليمات التوصيل (اختياري)",
+    ),
     "delivery_region": MessageLookupByLibrary.simpleMessage("منطقة التوصيل"),
+    "dimensions": MessageLookupByLibrary.simpleMessage("الأبعاد (سم)"),
     "dont_have_account": MessageLookupByLibrary.simpleMessage(
       "ليس لديك حساب؟ تسجيل جديد",
     ),
@@ -105,7 +110,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "error_occurred": m1,
     "general_serach_hint": MessageLookupByLibrary.simpleMessage("بحث..."),
+    "height": MessageLookupByLibrary.simpleMessage("الارتفاع"),
     "history": MessageLookupByLibrary.simpleMessage("السجل"),
+    "images": MessageLookupByLibrary.simpleMessage("الصور"),
     "in_transit": MessageLookupByLibrary.simpleMessage("في الطريق"),
     "invalid_email": MessageLookupByLibrary.simpleMessage(
       "بريد إلكتروني غير صالح",
@@ -119,6 +126,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "هذه الصفحة مخصصة لأصحاب الأعمال الذين يرغبون في الانضمام إلينا.",
     ),
     "language": MessageLookupByLibrary.simpleMessage("اللغة"),
+    "length": MessageLookupByLibrary.simpleMessage("الطول"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "login_failed": MessageLookupByLibrary.simpleMessage("فشل تسجيل الدخول"),
     "logout": MessageLookupByLibrary.simpleMessage("تسجيل خروج"),
@@ -145,6 +153,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "no_parcels_yet": MessageLookupByLibrary.simpleMessage("لا توجد طرود بعد"),
     "note_label": m2,
     "notifications": MessageLookupByLibrary.simpleMessage("الإشعارات"),
+    "optional": MessageLookupByLibrary.simpleMessage("اختياري"),
     "parcel_cancelled_success": MessageLookupByLibrary.simpleMessage(
       "تم إلغاء الطرد بنجاح",
     ),
@@ -200,9 +209,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "يرجى إدخال رقم الهاتف",
     ),
     "view_all": MessageLookupByLibrary.simpleMessage("عرض الكل"),
+    "weight": MessageLookupByLibrary.simpleMessage("الوزن (كجم)"),
     "welcome_to_app": MessageLookupByLibrary.simpleMessage(
       "مرحباً بك في وصلني بلس",
     ),
+    "width": MessageLookupByLibrary.simpleMessage("العرض"),
     "yes_cancel": MessageLookupByLibrary.simpleMessage("نعم، إلغاء"),
   };
 }

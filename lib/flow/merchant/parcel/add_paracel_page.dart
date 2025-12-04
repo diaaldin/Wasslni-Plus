@@ -9,6 +9,9 @@ import 'package:wasslni_plus/widgets/fields/dropdown_search.dart';
 import 'package:wasslni_plus/widgets/fields/editable_field.dart';
 import 'package:wasslni_plus/widgets/fields/read_only_field.dart';
 import 'package:wasslni_plus/flow/common/barcode_scanner_page.dart';
+import 'dart:io';
+import 'package:image_picker/image_picker.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
 class AddParcelPage extends StatefulWidget {
   final ParcelModel? parcel;
@@ -34,7 +37,13 @@ class _AddParcelPageState extends State<AddParcelPage> {
   int? finalTotal;
   bool _regionHasError = false;
   String _phoneCountryCode = '+972';
+
   String _altPhoneCountryCode = '+972';
+
+  final ImagePicker _picker = ImagePicker();
+  List<XFile> _selectedImages = [];
+  List<String> _existingImageUrls = [];
+  bool _isUploadingImages = false;
 
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
@@ -42,6 +51,12 @@ class _AddParcelPageState extends State<AddParcelPage> {
   final TextEditingController _descController = TextEditingController();
   final TextEditingController _parcelPriceController = TextEditingController();
   final TextEditingController _addressController = TextEditingController();
+  final TextEditingController _weightController = TextEditingController();
+  final TextEditingController _lengthController = TextEditingController();
+  final TextEditingController _widthController = TextEditingController();
+  final TextEditingController _heightController = TextEditingController();
+  final TextEditingController _deliveryInstructionsController =
+      TextEditingController();
 
   @override
   void initState() {
@@ -51,6 +66,51 @@ class _AddParcelPageState extends State<AddParcelPage> {
     if (widget.parcel != null) {
       _initializeEditMode();
     }
+  }
+
+  Future<void> _pickImage() async {
+    try {
+      final List<XFile> images = await _picker.pickMultiImage();
+      if (images.isNotEmpty) {
+        setState(() {
+          _selectedImages.addAll(images);
+        });
+      }
+    } catch (e) {
+      debugPrint('Error picking images: $e');
+    }
+  }
+
+  void _removeImage(int index) {
+    setState(() {
+      _selectedImages.removeAt(index);
+    });
+  }
+
+  void _removeExistingImage(int index) {
+    setState(() {
+      _existingImageUrls.removeAt(index);
+    });
+  }
+
+  Future<List<String>> _uploadImages() async {
+    List<String> uploadedUrls = [];
+
+    for (var image in _selectedImages) {
+      try {
+        final ref = FirebaseStorage.instance
+            .ref()
+            .child('parcel_images')
+            .child('${DateTime.now().millisecondsSinceEpoch}_${image.name}');
+
+        await ref.putFile(File(image.path));
+        final url = await ref.getDownloadURL();
+        uploadedUrls.add(url);
+      } catch (e) {
+        debugPrint('Error uploading image: $e');
+      }
+    }
+    return uploadedUrls;
   }
 
   void _initializeEditMode() {
@@ -101,6 +161,17 @@ class _AddParcelPageState extends State<AddParcelPage> {
     _addressController.text = parcel.deliveryAddress;
     selectedRegion = parcel.deliveryRegion;
     barcode = parcel.barcode;
+
+    // Initialize weight and dimensions
+    _weightController.text = parcel.weight?.toString() ?? '';
+    if (parcel.dimensions != null) {
+      _lengthController.text = parcel.dimensions!['length']?.toString() ?? '';
+      _widthController.text = parcel.dimensions!['width']?.toString() ?? '';
+      _heightController.text = parcel.dimensions!['height']?.toString() ?? '';
+    }
+    _deliveryInstructionsController.text = parcel.deliveryInstructions ?? '';
+    _existingImageUrls = List.from(parcel.imageUrls);
+
     _updateTotalPrice();
   }
 
@@ -122,6 +193,11 @@ class _AddParcelPageState extends State<AddParcelPage> {
     _descController.dispose();
     _parcelPriceController.dispose();
     _addressController.dispose();
+    _weightController.dispose();
+    _lengthController.dispose();
+    _widthController.dispose();
+    _heightController.dispose();
+    _deliveryInstructionsController.dispose();
     super.dispose();
   }
 
@@ -159,6 +235,31 @@ class _AddParcelPageState extends State<AddParcelPage> {
         return phone.startsWith('0') ? phone.substring(1) : phone;
       }
 
+      // Parse optional fields
+      final weight = _weightController.text.isNotEmpty
+          ? double.tryParse(_weightController.text)
+          : null;
+
+      Map<String, double>? dimensions;
+      if (_lengthController.text.isNotEmpty ||
+          _widthController.text.isNotEmpty ||
+          _heightController.text.isNotEmpty) {
+        dimensions = {
+          'length': double.tryParse(_lengthController.text) ?? 0.0,
+          'width': double.tryParse(_widthController.text) ?? 0.0,
+          'height': double.tryParse(_heightController.text) ?? 0.0,
+        };
+      }
+
+      // Upload images
+      List<String> newImageUrls = [];
+      if (_selectedImages.isNotEmpty) {
+        // Show uploading indicator if needed, though _isLoading covers the whole process
+        newImageUrls = await _uploadImages();
+      }
+
+      final finalImageUrls = [..._existingImageUrls, ...newImageUrls];
+
       final parcelData = ParcelModel(
         id: widget.parcel?.id,
         barcode: parcelBarcode,
@@ -173,6 +274,12 @@ class _AddParcelPageState extends State<AddParcelPage> {
         deliveryRegion: selectedRegion!,
         description:
             _descController.text.isNotEmpty ? _descController.text : null,
+        weight: weight,
+        dimensions: dimensions,
+        imageUrls: finalImageUrls,
+        deliveryInstructions: _deliveryInstructionsController.text.isNotEmpty
+            ? _deliveryInstructionsController.text
+            : null,
         parcelPrice: parcelPrice,
         deliveryFee: deliveryFee,
         totalPrice: parcelPrice + deliveryFee,
@@ -452,6 +559,201 @@ class _AddParcelPageState extends State<AddParcelPage> {
                       isEditMode: true,
                       maxLines: 4,
                     ),
+                    const SizedBox(height: 16),
+
+                    // Weight Field
+                    EditableField(
+                      label: tr.weight,
+                      controller: _weightController,
+                      isEditMode: true,
+                      forceLTR: true,
+                      keyboardType:
+                          const TextInputType.numberWithOptions(decimal: true),
+                      inputFormatters: [
+                        FilteringTextInputFormatter.allow(RegExp(r'^\d*\.?\d*'))
+                      ],
+                    ),
+
+                    // Dimensions Row
+                    Padding(
+                      padding: const EdgeInsets.only(top: 16, bottom: 8),
+                      child: Text(
+                        tr.dimensions,
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          color: Theme.of(context).textTheme.bodyLarge?.color,
+                        ),
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: EditableField(
+                            label: tr.length,
+                            controller: _lengthController,
+                            isEditMode: true,
+                            forceLTR: true,
+                            keyboardType: const TextInputType.numberWithOptions(
+                                decimal: true),
+                            inputFormatters: [
+                              FilteringTextInputFormatter.allow(
+                                  RegExp(r'^\d*\.?\d*'))
+                            ],
+                          ),
+                        ),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: EditableField(
+                            label: tr.width,
+                            controller: _widthController,
+                            isEditMode: true,
+                            forceLTR: true,
+                            keyboardType: const TextInputType.numberWithOptions(
+                                decimal: true),
+                            inputFormatters: [
+                              FilteringTextInputFormatter.allow(
+                                  RegExp(r'^\d*\.?\d*'))
+                            ],
+                          ),
+                        ),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: EditableField(
+                            label: tr.height,
+                            controller: _heightController,
+                            isEditMode: true,
+                            forceLTR: true,
+                            keyboardType: const TextInputType.numberWithOptions(
+                                decimal: true),
+                            inputFormatters: [
+                              FilteringTextInputFormatter.allow(
+                                  RegExp(r'^\d*\.?\d*'))
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    // Delivery Instructions
+                    const SizedBox(height: 16),
+                    EditableField(
+                      label: tr.delivery_instructions,
+                      controller: _deliveryInstructionsController,
+                      isEditMode: true,
+                      maxLines: 2,
+                    ),
+
+                    // Images Section
+                    Padding(
+                      padding: const EdgeInsets.only(top: 16, bottom: 8),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            tr.images,
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              color:
+                                  Theme.of(context).textTheme.bodyLarge?.color,
+                            ),
+                          ),
+                          TextButton.icon(
+                            onPressed: _pickImage,
+                            icon: const Icon(Icons.add_photo_alternate),
+                            label: Text(tr.add_image),
+                          ),
+                        ],
+                      ),
+                    ),
+                    if (_existingImageUrls.isNotEmpty ||
+                        _selectedImages.isNotEmpty)
+                      SizedBox(
+                        height: 100,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            ..._existingImageUrls.asMap().entries.map((entry) {
+                              return Stack(
+                                children: [
+                                  Container(
+                                    margin: const EdgeInsets.only(right: 8),
+                                    width: 100,
+                                    height: 100,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(8),
+                                      image: DecorationImage(
+                                        image: NetworkImage(entry.value),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    top: 4,
+                                    right: 12,
+                                    child: GestureDetector(
+                                      onTap: () =>
+                                          _removeExistingImage(entry.key),
+                                      child: Container(
+                                        padding: const EdgeInsets.all(4),
+                                        decoration: const BoxDecoration(
+                                          color: Colors.red,
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: const Icon(
+                                          Icons.close,
+                                          size: 16,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              );
+                            }),
+                            ..._selectedImages.asMap().entries.map((entry) {
+                              return Stack(
+                                children: [
+                                  Container(
+                                    margin: const EdgeInsets.only(right: 8),
+                                    width: 100,
+                                    height: 100,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(8),
+                                      image: DecorationImage(
+                                        image:
+                                            FileImage(File(entry.value.path)),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                  Positioned(
+                                    top: 4,
+                                    right: 12,
+                                    child: GestureDetector(
+                                      onTap: () => _removeImage(entry.key),
+                                      child: Container(
+                                        padding: const EdgeInsets.all(4),
+                                        decoration: const BoxDecoration(
+                                          color: Colors.red,
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: const Icon(
+                                          Icons.close,
+                                          size: 16,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              );
+                            }),
+                          ],
+                        ),
+                      ),
+
                     const SizedBox(height: 16),
                     OutlinedButton.icon(
                       onPressed: () async {

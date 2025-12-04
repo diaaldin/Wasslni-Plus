@@ -744,6 +744,60 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Note: {note}'**
   String note_label(Object note);
+
+  /// No description provided for @weight.
+  ///
+  /// In en, this message translates to:
+  /// **'Weight (kg)'**
+  String get weight;
+
+  /// No description provided for @dimensions.
+  ///
+  /// In en, this message translates to:
+  /// **'Dimensions (cm)'**
+  String get dimensions;
+
+  /// No description provided for @length.
+  ///
+  /// In en, this message translates to:
+  /// **'Length'**
+  String get length;
+
+  /// No description provided for @width.
+  ///
+  /// In en, this message translates to:
+  /// **'Width'**
+  String get width;
+
+  /// No description provided for @height.
+  ///
+  /// In en, this message translates to:
+  /// **'Height'**
+  String get height;
+
+  /// No description provided for @delivery_instructions.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery Instructions (Optional)'**
+  String get delivery_instructions;
+
+  /// No description provided for @optional.
+  ///
+  /// In en, this message translates to:
+  /// **'Optional'**
+  String get optional;
+
+  /// No description provided for @images.
+  ///
+  /// In en, this message translates to:
+  /// **'Images'**
+  String get images;
+
+  /// No description provided for @add_image.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Image'**
+  String get add_image;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

@@ -928,6 +928,61 @@ class S {
       args: [note],
     );
   }
+
+  /// `Weight (kg)`
+  String get weight {
+    return Intl.message('Weight (kg)', name: 'weight', desc: '', args: []);
+  }
+
+  /// `Dimensions (cm)`
+  String get dimensions {
+    return Intl.message(
+      'Dimensions (cm)',
+      name: 'dimensions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Length`
+  String get length {
+    return Intl.message('Length', name: 'length', desc: '', args: []);
+  }
+
+  /// `Width`
+  String get width {
+    return Intl.message('Width', name: 'width', desc: '', args: []);
+  }
+
+  /// `Height`
+  String get height {
+    return Intl.message('Height', name: 'height', desc: '', args: []);
+  }
+
+  /// `Delivery Instructions (Optional)`
+  String get delivery_instructions {
+    return Intl.message(
+      'Delivery Instructions (Optional)',
+      name: 'delivery_instructions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Optional`
+  String get optional {
+    return Intl.message('Optional', name: 'optional', desc: '', args: []);
+  }
+
+  /// `Images`
+  String get images {
+    return Intl.message('Images', name: 'images', desc: '', args: []);
+  }
+
+  /// `Add Image`
+  String get add_image {
+    return Intl.message('Add Image', name: 'add_image', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -349,4 +349,31 @@ class SAr extends S {
   String note_label(Object note) {
     return 'ملاحظة: $note';
   }
+
+  @override
+  String get weight => 'الوزن (كجم)';
+
+  @override
+  String get dimensions => 'الأبعاد (سم)';
+
+  @override
+  String get length => 'الطول';
+
+  @override
+  String get width => 'العرض';
+
+  @override
+  String get height => 'الارتفاع';
+
+  @override
+  String get delivery_instructions => 'تعليمات التوصيل (اختياري)';
+
+  @override
+  String get optional => 'اختياري';
+
+  @override
+  String get images => 'الصور';
+
+  @override
+  String get add_image => 'إضافة صورة';
 }

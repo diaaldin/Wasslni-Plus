@@ -106,5 +106,14 @@
   "status_label": "Status: {status}",
   "delivery_fee": "Delivery Fee",
   "history": "History",
-  "note_label": "Note: {note}"
+  "note_label": "Note: {note}",
+  "weight": "Weight (kg)",
+  "dimensions": "Dimensions (cm)",
+  "length": "Length",
+  "width": "Width",
+  "height": "Height",
+  "delivery_instructions": "Delivery Instructions (Optional)",
+  "optional": "Optional",
+  "images": "Images",
+  "add_image": "Add Image"
 }

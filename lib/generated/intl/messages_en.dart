@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "acceptPolicyStart": MessageLookupByLibrary.simpleMessage("I accept the "),
+    "add_image": MessageLookupByLibrary.simpleMessage("Add Image"),
     "add_parcel": MessageLookupByLibrary.simpleMessage("Add Parcel"),
     "address": MessageLookupByLibrary.simpleMessage("Address, City - Street"),
     "all": MessageLookupByLibrary.simpleMessage("All"),
@@ -85,7 +86,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "delete": MessageLookupByLibrary.simpleMessage("Delete"),
     "delivered": MessageLookupByLibrary.simpleMessage("Delivered"),
     "delivery_fee": MessageLookupByLibrary.simpleMessage("Delivery Fee"),
+    "delivery_instructions": MessageLookupByLibrary.simpleMessage(
+      "Delivery Instructions (Optional)",
+    ),
     "delivery_region": MessageLookupByLibrary.simpleMessage("Delivery Region"),
+    "dimensions": MessageLookupByLibrary.simpleMessage("Dimensions (cm)"),
     "dont_have_account": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? Register",
     ),
@@ -107,7 +112,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "error_occurred": m1,
     "general_serach_hint": MessageLookupByLibrary.simpleMessage("Search..."),
+    "height": MessageLookupByLibrary.simpleMessage("Height"),
     "history": MessageLookupByLibrary.simpleMessage("History"),
+    "images": MessageLookupByLibrary.simpleMessage("Images"),
     "in_transit": MessageLookupByLibrary.simpleMessage("In Transit"),
     "invalid_email": MessageLookupByLibrary.simpleMessage(
       "Invalid email address",
@@ -123,6 +130,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "This page is for business owners who want to join us.",
     ),
     "language": MessageLookupByLibrary.simpleMessage("Language"),
+    "length": MessageLookupByLibrary.simpleMessage("Length"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "login_failed": MessageLookupByLibrary.simpleMessage("Login Failed"),
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
@@ -151,6 +159,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "no_parcels_yet": MessageLookupByLibrary.simpleMessage("No parcels yet"),
     "note_label": m2,
     "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
+    "optional": MessageLookupByLibrary.simpleMessage("Optional"),
     "parcel_cancelled_success": MessageLookupByLibrary.simpleMessage(
       "Parcel cancelled successfully",
     ),
@@ -210,9 +219,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please enter your phone number",
     ),
     "view_all": MessageLookupByLibrary.simpleMessage("View All"),
+    "weight": MessageLookupByLibrary.simpleMessage("Weight (kg)"),
     "welcome_to_app": MessageLookupByLibrary.simpleMessage(
       "Welcome to Wasslni Plus",
     ),
+    "width": MessageLookupByLibrary.simpleMessage("Width"),
     "yes_cancel": MessageLookupByLibrary.simpleMessage("Yes, Cancel"),
   };
 }

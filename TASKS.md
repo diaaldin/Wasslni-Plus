@@ -109,10 +109,10 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
 
 - [ ] **Add Parcel Page (Enhance)**
   - [x] Connect barcode scanner functionality
-  - [ ] Add image upload for parcel
-  - [ ] Implement package weight/dimensions fields
+  - [x] Add image upload for parcel
+  - [x] Implement package weight/dimensions fields
   - [ ] Add delivery time slot selection
-  - [ ] Create delivery instructions field
+  - [x] Create delivery instructions field
   - [ ] Add recipient signature requirement option
 
 - [x] **Notifications Page**

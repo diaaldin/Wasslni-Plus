@@ -351,4 +351,31 @@ class SEn extends S {
   String note_label(Object note) {
     return 'Note: $note';
   }
+
+  @override
+  String get weight => 'Weight (kg)';
+
+  @override
+  String get dimensions => 'Dimensions (cm)';
+
+  @override
+  String get length => 'Length';
+
+  @override
+  String get width => 'Width';
+
+  @override
+  String get height => 'Height';
+
+  @override
+  String get delivery_instructions => 'Delivery Instructions (Optional)';
+
+  @override
+  String get optional => 'Optional';
+
+  @override
+  String get images => 'Images';
+
+  @override
+  String get add_image => 'Add Image';
 }

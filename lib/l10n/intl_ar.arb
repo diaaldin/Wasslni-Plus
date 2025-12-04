@@ -106,5 +106,14 @@
   "status_label": "الحالة: {status}",
   "delivery_fee": "رسوم التوصيل",
   "history": "السجل",
-  "note_label": "ملاحظة: {note}"
+  "note_label": "ملاحظة: {note}",
+  "weight": "الوزن (كجم)",
+  "dimensions": "الأبعاد (سم)",
+  "length": "الطول",
+  "width": "العرض",
+  "height": "الارتفاع",
+  "delivery_instructions": "تعليمات التوصيل (اختياري)",
+  "optional": "اختياري",
+  "images": "الصور",
+  "add_image": "إضافة صورة"
 }
