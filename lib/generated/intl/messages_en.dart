@@ -184,6 +184,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "morning": MessageLookupByLibrary.simpleMessage("Morning (9AM - 12PM)"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "no": MessageLookupByLibrary.simpleMessage("No"),
+    "no_data_available": MessageLookupByLibrary.simpleMessage(
+      "No data available",
+    ),
     "no_internet_connection": MessageLookupByLibrary.simpleMessage(
       "⚠ No internet connection",
     ),
@@ -264,6 +267,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "submit": MessageLookupByLibrary.simpleMessage("Submit"),
     "success": MessageLookupByLibrary.simpleMessage("Success"),
     "success_rate": MessageLookupByLibrary.simpleMessage("Success Rate"),
+    "success_rate_trend": MessageLookupByLibrary.simpleMessage(
+      "Success Rate Trend",
+    ),
     "successful_deliveries": MessageLookupByLibrary.simpleMessage(
       "Successful Deliveries",
     ),
@@ -298,6 +304,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please enter your phone number",
     ),
     "view_all": MessageLookupByLibrary.simpleMessage("View All"),
+    "weekly_success_rate": MessageLookupByLibrary.simpleMessage(
+      "Weekly Success Rate",
+    ),
     "weight": MessageLookupByLibrary.simpleMessage("Weight (kg)"),
     "welcome_to_app": MessageLookupByLibrary.simpleMessage(
       "Welcome to Wasslni Plus",

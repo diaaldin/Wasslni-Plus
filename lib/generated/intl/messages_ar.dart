@@ -176,6 +176,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "morning": MessageLookupByLibrary.simpleMessage("صباحاً (9ص - 12م)"),
     "name": MessageLookupByLibrary.simpleMessage("الاسم"),
     "no": MessageLookupByLibrary.simpleMessage("لا"),
+    "no_data_available": MessageLookupByLibrary.simpleMessage(
+      "لا توجد بيانات متاحة",
+    ),
     "no_internet_connection": MessageLookupByLibrary.simpleMessage(
       "⚠ لا يوجد اتصال بالإنترنت",
     ),
@@ -250,6 +253,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "submit": MessageLookupByLibrary.simpleMessage("إرسال"),
     "success": MessageLookupByLibrary.simpleMessage("نجاح"),
     "success_rate": MessageLookupByLibrary.simpleMessage("معدل النجاح"),
+    "success_rate_trend": MessageLookupByLibrary.simpleMessage(
+      "اتجاه معدل النجاح",
+    ),
     "successful_deliveries": MessageLookupByLibrary.simpleMessage(
       "التوصيلات الناجحة",
     ),
@@ -282,6 +288,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "يرجى إدخال رقم الهاتف",
     ),
     "view_all": MessageLookupByLibrary.simpleMessage("عرض الكل"),
+    "weekly_success_rate": MessageLookupByLibrary.simpleMessage(
+      "معدل النجاح الأسبوعي",
+    ),
     "weight": MessageLookupByLibrary.simpleMessage("الوزن (كجم)"),
     "welcome_to_app": MessageLookupByLibrary.simpleMessage(
       "مرحباً بك في وصلني بلس",

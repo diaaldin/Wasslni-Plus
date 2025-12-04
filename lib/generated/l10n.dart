@@ -1383,6 +1383,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Success Rate Trend`
+  String get success_rate_trend {
+    return Intl.message(
+      'Success Rate Trend',
+      name: 'success_rate_trend',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Weekly Success Rate`
+  String get weekly_success_rate {
+    return Intl.message(
+      'Weekly Success Rate',
+      name: 'weekly_success_rate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No data available`
+  String get no_data_available {
+    return Intl.message(
+      'No data available',
+      name: 'no_data_available',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

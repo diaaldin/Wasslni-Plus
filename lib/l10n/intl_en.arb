@@ -160,5 +160,8 @@
   "success_rate": "Success Rate",
   "average_delivery_time": "Average Delivery Time",
   "total_revenue": "Total Revenue",
-  "delivery_fees_collected": "Delivery Fees Collected"
+  "delivery_fees_collected": "Delivery Fees Collected",
+  "success_rate_trend": "Success Rate Trend",
+  "weekly_success_rate": "Weekly Success Rate",
+  "no_data_available": "No data available"
 }

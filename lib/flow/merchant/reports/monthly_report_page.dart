@@ -101,6 +101,10 @@ class _MonthlyReportPageState extends State<MonthlyReportPage> {
                   _buildRevenueByRegion(tr),
                   const SizedBox(height: 24),
 
+                  // Success Rate Trend Chart
+                  _buildSuccessRateChart(tr),
+                  const SizedBox(height: 24),
+
                   // Performance Metrics
                   _buildPerformanceMetrics(tr),
                 ],
@@ -518,6 +522,172 @@ class _MonthlyReportPageState extends State<MonthlyReportPage> {
           ],
         ),
       ],
+    );
+  }
+
+  Widget _buildSuccessRateChart(S tr) {
+    // Group parcels by week
+    final weeklyData = <int, Map<String, int>>{};
+
+    for (var parcel in _parcels) {
+      final weekNumber = ((parcel.createdAt.day - 1) / 7).floor() + 1;
+
+      if (!weeklyData.containsKey(weekNumber)) {
+        weeklyData[weekNumber] = {'total': 0, 'successful': 0};
+      }
+
+      weeklyData[weekNumber]!['total'] = weeklyData[weekNumber]!['total']! + 1;
+
+      if (parcel.status == ParcelStatus.delivered) {
+        weeklyData[weekNumber]!['successful'] =
+            weeklyData[weekNumber]!['successful']! + 1;
+      }
+    }
+
+    if (weeklyData.isEmpty) {
+      return Card(
+        child: Padding(
+          padding: const EdgeInsets.all(32),
+          child: Center(child: Text(tr.no_data_available)),
+        ),
+      );
+    }
+
+    // Calculate success rate for each week
+    final spots = <FlSpot>[];
+    final sortedWeeks = weeklyData.keys.toList()..sort();
+
+    for (var week in sortedWeeks) {
+      final total = weeklyData[week]!['total']!;
+      final successful = weeklyData[week]!['successful']!;
+      final rate = total > 0 ? (successful / total * 100) : 0.0;
+      spots.add(FlSpot(week.toDouble(), rate));
+    }
+
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              tr.success_rate_trend,
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 20),
+            SizedBox(
+              height: 200,
+              child: LineChart(
+                LineChartData(
+                  gridData: FlGridData(
+                    show: true,
+                    drawVerticalLine: true,
+                    horizontalInterval: 20,
+                    verticalInterval: 1,
+                    getDrawingHorizontalLine: (value) {
+                      return FlLine(
+                        color: Colors.grey[300]!,
+                        strokeWidth: 1,
+                      );
+                    },
+                    getDrawingVerticalLine: (value) {
+                      return FlLine(
+                        color: Colors.grey[300]!,
+                        strokeWidth: 1,
+                      );
+                    },
+                  ),
+                  titlesData: FlTitlesData(
+                    show: true,
+                    bottomTitles: AxisTitles(
+                      sideTitles: SideTitles(
+                        showTitles: true,
+                        reservedSize: 30,
+                        getTitlesWidget: (value, meta) {
+                          return Text(
+                            'W${value.toInt()}',
+                            style: const TextStyle(fontSize: 10),
+                          );
+                        },
+                      ),
+                    ),
+                    leftTitles: AxisTitles(
+                      sideTitles: SideTitles(
+                        showTitles: true,
+                        reservedSize: 40,
+                        getTitlesWidget: (value, meta) {
+                          return Text(
+                            '${value.toInt()}%',
+                            style: const TextStyle(fontSize: 10),
+                          );
+                        },
+                      ),
+                    ),
+                    topTitles: const AxisTitles(
+                      sideTitles: SideTitles(showTitles: false),
+                    ),
+                    rightTitles: const AxisTitles(
+                      sideTitles: SideTitles(showTitles: false),
+                    ),
+                  ),
+                  borderData: FlBorderData(
+                    show: true,
+                    border: Border.all(color: Colors.grey[300]!),
+                  ),
+                  minX: 1,
+                  maxX: 5,
+                  minY: 0,
+                  maxY: 100,
+                  lineBarsData: [
+                    LineChartBarData(
+                      spots: spots,
+                      isCurved: true,
+                      color: Colors.green,
+                      barWidth: 3,
+                      isStrokeCapRound: true,
+                      dotData: FlDotData(
+                        show: true,
+                        getDotPainter: (spot, percent, barData, index) {
+                          return FlDotCirclePainter(
+                            radius: 4,
+                            color: Colors.green,
+                            strokeWidth: 2,
+                            strokeColor: Colors.white,
+                          );
+                        },
+                      ),
+                      belowBarData: BarAreaData(
+                        show: true,
+                        color: Colors.green.withOpacity(0.1),
+                      ),
+                    ),
+                  ],
+                  lineTouchData: LineTouchData(
+                    touchTooltipData: LineTouchTooltipData(
+                      getTooltipItems: (touchedSpots) {
+                        return touchedSpots.map((spot) {
+                          return LineTooltipItem(
+                            'Week ${spot.x.toInt()}\n${spot.y.toStringAsFixed(1)}%',
+                            const TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          );
+                        }).toList();
+                      },
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 12),
+            Text(
+              tr.weekly_success_rate,
+              style: TextStyle(fontSize: 12, color: Colors.grey[600]),
+            ),
+          ],
+        ),
+      ),
     );
   }
 

@@ -514,4 +514,13 @@ class SEn extends S {
 
   @override
   String get delivery_fees_collected => 'Delivery Fees Collected';
+
+  @override
+  String get success_rate_trend => 'Success Rate Trend';
+
+  @override
+  String get weekly_success_rate => 'Weekly Success Rate';
+
+  @override
+  String get no_data_available => 'No data available';
 }

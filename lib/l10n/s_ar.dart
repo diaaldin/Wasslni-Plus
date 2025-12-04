@@ -511,4 +511,13 @@ class SAr extends S {
 
   @override
   String get delivery_fees_collected => 'رسوم التوصيل المحصلة';
+
+  @override
+  String get success_rate_trend => 'اتجاه معدل النجاح';
+
+  @override
+  String get weekly_success_rate => 'معدل النجاح الأسبوعي';
+
+  @override
+  String get no_data_available => 'لا توجد بيانات متاحة';
 }

@@ -1068,6 +1068,24 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Delivery Fees Collected'**
   String get delivery_fees_collected;
+
+  /// No description provided for @success_rate_trend.
+  ///
+  /// In en, this message translates to:
+  /// **'Success Rate Trend'**
+  String get success_rate_trend;
+
+  /// No description provided for @weekly_success_rate.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly Success Rate'**
+  String get weekly_success_rate;
+
+  /// No description provided for @no_data_available.
+  ///
+  /// In en, this message translates to:
+  /// **'No data available'**
+  String get no_data_available;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {
