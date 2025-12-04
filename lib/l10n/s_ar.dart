@@ -466,4 +466,49 @@ class SAr extends S {
 
   @override
   String get parcels_imported => 'تم استيراد الطرود';
+
+  @override
+  String get reports => 'التقارير';
+
+  @override
+  String get analytics => 'التحليلات';
+
+  @override
+  String get monthly_report => 'التقرير الشهري';
+
+  @override
+  String get delivery_statistics => 'إحصائيات التوصيل';
+
+  @override
+  String get revenue_overview => 'نظرة عامة على الإيرادات';
+
+  @override
+  String get performance_metrics => 'مقاييس الأداء';
+
+  @override
+  String get select_month => 'اختر الشهر';
+
+  @override
+  String get total_deliveries => 'إجمالي التوصيلات';
+
+  @override
+  String get successful_deliveries => 'التوصيلات الناجحة';
+
+  @override
+  String get failed_deliveries => 'التوصيلات الفاشلة';
+
+  @override
+  String get pending_deliveries => 'التوصيلات المعلقة';
+
+  @override
+  String get success_rate => 'معدل النجاح';
+
+  @override
+  String get average_delivery_time => 'متوسط وقت التوصيل';
+
+  @override
+  String get total_revenue => 'إجمالي الإيرادات';
+
+  @override
+  String get delivery_fees_collected => 'رسوم التوصيل المحصلة';
 }

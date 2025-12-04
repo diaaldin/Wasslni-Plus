@@ -978,6 +978,96 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Parcels imported'**
   String get parcels_imported;
+
+  /// No description provided for @reports.
+  ///
+  /// In en, this message translates to:
+  /// **'Reports'**
+  String get reports;
+
+  /// No description provided for @analytics.
+  ///
+  /// In en, this message translates to:
+  /// **'Analytics'**
+  String get analytics;
+
+  /// No description provided for @monthly_report.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly Report'**
+  String get monthly_report;
+
+  /// No description provided for @delivery_statistics.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery Statistics'**
+  String get delivery_statistics;
+
+  /// No description provided for @revenue_overview.
+  ///
+  /// In en, this message translates to:
+  /// **'Revenue Overview'**
+  String get revenue_overview;
+
+  /// No description provided for @performance_metrics.
+  ///
+  /// In en, this message translates to:
+  /// **'Performance Metrics'**
+  String get performance_metrics;
+
+  /// No description provided for @select_month.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Month'**
+  String get select_month;
+
+  /// No description provided for @total_deliveries.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Deliveries'**
+  String get total_deliveries;
+
+  /// No description provided for @successful_deliveries.
+  ///
+  /// In en, this message translates to:
+  /// **'Successful Deliveries'**
+  String get successful_deliveries;
+
+  /// No description provided for @failed_deliveries.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed Deliveries'**
+  String get failed_deliveries;
+
+  /// No description provided for @pending_deliveries.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending Deliveries'**
+  String get pending_deliveries;
+
+  /// No description provided for @success_rate.
+  ///
+  /// In en, this message translates to:
+  /// **'Success Rate'**
+  String get success_rate;
+
+  /// No description provided for @average_delivery_time.
+  ///
+  /// In en, this message translates to:
+  /// **'Average Delivery Time'**
+  String get average_delivery_time;
+
+  /// No description provided for @total_revenue.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Revenue'**
+  String get total_revenue;
+
+  /// No description provided for @delivery_fees_collected.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery Fees Collected'**
+  String get delivery_fees_collected;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

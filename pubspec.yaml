@@ -65,6 +65,9 @@ dependencies:
   # Bulk Upload
   file_picker: ^8.0.0
   csv: ^6.0.0
+  
+  # Charts
+  fl_chart: ^0.66.0
 
 dev_dependencies:
   flutter_test:

@@ -145,5 +145,20 @@
   "upload_success": "تم الرفع بنجاح",
   "upload_error": "فشل الرفع",
   "processing_file": "جاري معالجة الملف...",
-  "parcels_imported": "تم استيراد الطرود"
+  "parcels_imported": "تم استيراد الطرود",
+  "reports": "التقارير",
+  "analytics": "التحليلات",
+  "monthly_report": "التقرير الشهري",
+  "delivery_statistics": "إحصائيات التوصيل",
+  "revenue_overview": "نظرة عامة على الإيرادات",
+  "performance_metrics": "مقاييس الأداء",
+  "select_month": "اختر الشهر",
+  "total_deliveries": "إجمالي التوصيلات",
+  "successful_deliveries": "التوصيلات الناجحة",
+  "failed_deliveries": "التوصيلات الفاشلة",
+  "pending_deliveries": "التوصيلات المعلقة",
+  "success_rate": "معدل النجاح",
+  "average_delivery_time": "متوسط وقت التوصيل",
+  "total_revenue": "إجمالي الإيرادات",
+  "delivery_fees_collected": "رسوم التوصيل المحصلة"
 }

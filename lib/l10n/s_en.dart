@@ -469,4 +469,49 @@ class SEn extends S {
 
   @override
   String get parcels_imported => 'Parcels imported';
+
+  @override
+  String get reports => 'Reports';
+
+  @override
+  String get analytics => 'Analytics';
+
+  @override
+  String get monthly_report => 'Monthly Report';
+
+  @override
+  String get delivery_statistics => 'Delivery Statistics';
+
+  @override
+  String get revenue_overview => 'Revenue Overview';
+
+  @override
+  String get performance_metrics => 'Performance Metrics';
+
+  @override
+  String get select_month => 'Select Month';
+
+  @override
+  String get total_deliveries => 'Total Deliveries';
+
+  @override
+  String get successful_deliveries => 'Successful Deliveries';
+
+  @override
+  String get failed_deliveries => 'Failed Deliveries';
+
+  @override
+  String get pending_deliveries => 'Pending Deliveries';
+
+  @override
+  String get success_rate => 'Success Rate';
+
+  @override
+  String get average_delivery_time => 'Average Delivery Time';
+
+  @override
+  String get total_revenue => 'Total Revenue';
+
+  @override
+  String get delivery_fees_collected => 'Delivery Fees Collected';
 }

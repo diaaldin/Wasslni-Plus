@@ -145,5 +145,20 @@
   "upload_success": "Upload completed successfully",
   "upload_error": "Upload failed",
   "processing_file": "Processing file...",
-  "parcels_imported": "Parcels imported"
+  "parcels_imported": "Parcels imported",
+  "reports": "Reports",
+  "analytics": "Analytics",
+  "monthly_report": "Monthly Report",
+  "delivery_statistics": "Delivery Statistics",
+  "revenue_overview": "Revenue Overview",
+  "performance_metrics": "Performance Metrics",
+  "select_month": "Select Month",
+  "total_deliveries": "Total Deliveries",
+  "successful_deliveries": "Successful Deliveries",
+  "failed_deliveries": "Failed Deliveries",
+  "pending_deliveries": "Pending Deliveries",
+  "success_rate": "Success Rate",
+  "average_delivery_time": "Average Delivery Time",
+  "total_revenue": "Total Revenue",
+  "delivery_fees_collected": "Delivery Fees Collected"
 }

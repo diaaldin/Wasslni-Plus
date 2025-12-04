@@ -121,8 +121,8 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [x] Implement mark as read/unread
   - [ ] Create notification settings
 
-- [ ] **Reports & Analytics**
-  - [ ] Create monthly delivery report
+- [  ] **Reports & Analytics**
+  - [x] Create monthly delivery report
   - [ ] Add revenue breakdown by region
   - [ ] Implement delivery success rate chart
   - [ ] Add top customers list

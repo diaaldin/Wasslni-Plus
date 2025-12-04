@@ -42,12 +42,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "alt_phone": MessageLookupByLibrary.simpleMessage(
       "Alternate Phone (Optional)",
     ),
+    "analytics": MessageLookupByLibrary.simpleMessage("Analytics"),
     "anytime": MessageLookupByLibrary.simpleMessage("Any Time"),
     "app_name": MessageLookupByLibrary.simpleMessage("Wasslni Plus"),
     "app_tagline": MessageLookupByLibrary.simpleMessage(
       "Fast & Reliable Delivery",
     ),
     "attach_barcode": MessageLookupByLibrary.simpleMessage("Attach Barcode"),
+    "average_delivery_time": MessageLookupByLibrary.simpleMessage(
+      "Average Delivery Time",
+    ),
     "barcode_label": m0,
     "bulk_upload": MessageLookupByLibrary.simpleMessage("Bulk Upload"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
@@ -90,10 +94,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "delete": MessageLookupByLibrary.simpleMessage("Delete"),
     "delivered": MessageLookupByLibrary.simpleMessage("Delivered"),
     "delivery_fee": MessageLookupByLibrary.simpleMessage("Delivery Fee"),
+    "delivery_fees_collected": MessageLookupByLibrary.simpleMessage(
+      "Delivery Fees Collected",
+    ),
     "delivery_instructions": MessageLookupByLibrary.simpleMessage(
       "Delivery Instructions (Optional)",
     ),
     "delivery_region": MessageLookupByLibrary.simpleMessage("Delivery Region"),
+    "delivery_statistics": MessageLookupByLibrary.simpleMessage(
+      "Delivery Statistics",
+    ),
     "delivery_time_slot": MessageLookupByLibrary.simpleMessage(
       "Preferred Delivery Time",
     ),
@@ -128,6 +138,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "export_pdf": MessageLookupByLibrary.simpleMessage("Export to PDF"),
     "export_success": MessageLookupByLibrary.simpleMessage(
       "Export completed successfully",
+    ),
+    "failed_deliveries": MessageLookupByLibrary.simpleMessage(
+      "Failed Deliveries",
     ),
     "from": MessageLookupByLibrary.simpleMessage("From"),
     "general_serach_hint": MessageLookupByLibrary.simpleMessage("Search..."),
@@ -166,6 +179,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Merchant Dashboard",
     ),
     "message": MessageLookupByLibrary.simpleMessage("Message"),
+    "monthly_report": MessageLookupByLibrary.simpleMessage("Monthly Report"),
     "monthly_revenue": MessageLookupByLibrary.simpleMessage("Monthly Revenue"),
     "morning": MessageLookupByLibrary.simpleMessage("Morning (9AM - 12PM)"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
@@ -204,6 +218,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "parcels_report": MessageLookupByLibrary.simpleMessage("Parcels Report"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "pending": MessageLookupByLibrary.simpleMessage("Pending"),
+    "pending_deliveries": MessageLookupByLibrary.simpleMessage(
+      "Pending Deliveries",
+    ),
+    "performance_metrics": MessageLookupByLibrary.simpleMessage(
+      "Performance Metrics",
+    ),
     "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "print_label": MessageLookupByLibrary.simpleMessage("Print Label"),
     "print_receipt": MessageLookupByLibrary.simpleMessage("Print Receipt"),
@@ -223,13 +243,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "registration_failed": MessageLookupByLibrary.simpleMessage(
       "Registration Failed",
     ),
+    "reports": MessageLookupByLibrary.simpleMessage("Reports"),
     "requires_signature": MessageLookupByLibrary.simpleMessage(
       "Requires Recipient Signature",
+    ),
+    "revenue_overview": MessageLookupByLibrary.simpleMessage(
+      "Revenue Overview",
     ),
     "role": MessageLookupByLibrary.simpleMessage("Role"),
     "save_parcel": MessageLookupByLibrary.simpleMessage("Save Parcel"),
     "scan_to_track": MessageLookupByLibrary.simpleMessage("Scan to Track"),
     "select_file": MessageLookupByLibrary.simpleMessage("Select File"),
+    "select_month": MessageLookupByLibrary.simpleMessage("Select Month"),
     "settings": MessageLookupByLibrary.simpleMessage("Settings"),
     "shipping_label": MessageLookupByLibrary.simpleMessage("Shipping Label"),
     "signature_description": MessageLookupByLibrary.simpleMessage(
@@ -238,15 +263,23 @@ class MessageLookup extends MessageLookupByLibrary {
     "status_label": m3,
     "submit": MessageLookupByLibrary.simpleMessage("Submit"),
     "success": MessageLookupByLibrary.simpleMessage("Success"),
+    "success_rate": MessageLookupByLibrary.simpleMessage("Success Rate"),
+    "successful_deliveries": MessageLookupByLibrary.simpleMessage(
+      "Successful Deliveries",
+    ),
     "sunny_mode": MessageLookupByLibrary.simpleMessage("Sunny Mode"),
     "thank_you": MessageLookupByLibrary.simpleMessage(
       "Thank you for trusting us with your information. We strive to keep your data safe and transparent.",
     ),
     "to": MessageLookupByLibrary.simpleMessage("To"),
+    "total_deliveries": MessageLookupByLibrary.simpleMessage(
+      "Total Deliveries",
+    ),
     "total_parcels": MessageLookupByLibrary.simpleMessage("Total Parcels"),
     "total_price_label": MessageLookupByLibrary.simpleMessage(
       "Total Price (with delivery)",
     ),
+    "total_revenue": MessageLookupByLibrary.simpleMessage("Total Revenue"),
     "unread": MessageLookupByLibrary.simpleMessage("Unread"),
     "update_parcel": MessageLookupByLibrary.simpleMessage("Update Parcel"),
     "upload_csv": MessageLookupByLibrary.simpleMessage("Upload CSV File"),

@@ -1243,6 +1243,146 @@ class S {
       args: [],
     );
   }
+
+  /// `Reports`
+  String get reports {
+    return Intl.message('Reports', name: 'reports', desc: '', args: []);
+  }
+
+  /// `Analytics`
+  String get analytics {
+    return Intl.message('Analytics', name: 'analytics', desc: '', args: []);
+  }
+
+  /// `Monthly Report`
+  String get monthly_report {
+    return Intl.message(
+      'Monthly Report',
+      name: 'monthly_report',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivery Statistics`
+  String get delivery_statistics {
+    return Intl.message(
+      'Delivery Statistics',
+      name: 'delivery_statistics',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Revenue Overview`
+  String get revenue_overview {
+    return Intl.message(
+      'Revenue Overview',
+      name: 'revenue_overview',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Performance Metrics`
+  String get performance_metrics {
+    return Intl.message(
+      'Performance Metrics',
+      name: 'performance_metrics',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Month`
+  String get select_month {
+    return Intl.message(
+      'Select Month',
+      name: 'select_month',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total Deliveries`
+  String get total_deliveries {
+    return Intl.message(
+      'Total Deliveries',
+      name: 'total_deliveries',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Successful Deliveries`
+  String get successful_deliveries {
+    return Intl.message(
+      'Successful Deliveries',
+      name: 'successful_deliveries',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed Deliveries`
+  String get failed_deliveries {
+    return Intl.message(
+      'Failed Deliveries',
+      name: 'failed_deliveries',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pending Deliveries`
+  String get pending_deliveries {
+    return Intl.message(
+      'Pending Deliveries',
+      name: 'pending_deliveries',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Success Rate`
+  String get success_rate {
+    return Intl.message(
+      'Success Rate',
+      name: 'success_rate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Average Delivery Time`
+  String get average_delivery_time {
+    return Intl.message(
+      'Average Delivery Time',
+      name: 'average_delivery_time',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total Revenue`
+  String get total_revenue {
+    return Intl.message(
+      'Total Revenue',
+      name: 'total_revenue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivery Fees Collected`
+  String get delivery_fees_collected {
+    return Intl.message(
+      'Delivery Fees Collected',
+      name: 'delivery_fees_collected',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
