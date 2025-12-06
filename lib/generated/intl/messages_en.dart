@@ -101,6 +101,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Collected data is used solely to enhance app functionality, ensure security, and meet legal obligations.",
     ),
     "date_range": MessageLookupByLibrary.simpleMessage("Date Range"),
+    "days": MessageLookupByLibrary.simpleMessage("days"),
     "delete": MessageLookupByLibrary.simpleMessage("Delete"),
     "delivered": MessageLookupByLibrary.simpleMessage("Delivered"),
     "delivery_fee": MessageLookupByLibrary.simpleMessage("Delivery Fee"),
@@ -118,6 +119,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "delivery_statistics": MessageLookupByLibrary.simpleMessage(
       "Delivery Statistics",
     ),
+    "delivery_success_rate": MessageLookupByLibrary.simpleMessage(
+      "Delivery Success Rate",
+    ),
     "delivery_time_slot": MessageLookupByLibrary.simpleMessage(
       "Preferred Delivery Time",
     ),
@@ -129,7 +133,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "download_template": MessageLookupByLibrary.simpleMessage(
       "Download Template",
     ),
+    "earnings_breakdown": MessageLookupByLibrary.simpleMessage(
+      "Earnings Breakdown",
+    ),
     "earnings_today": MessageLookupByLibrary.simpleMessage("Earnings Today"),
+    "earnings_trend": MessageLookupByLibrary.simpleMessage("Earnings Trend"),
     "edit_parcel": MessageLookupByLibrary.simpleMessage("Edit Parcel"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "enter_address": MessageLookupByLibrary.simpleMessage(
@@ -156,6 +164,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "export_success": MessageLookupByLibrary.simpleMessage(
       "Export completed successfully",
     ),
+    "failed": MessageLookupByLibrary.simpleMessage("Failed"),
     "failed_deliveries": MessageLookupByLibrary.simpleMessage(
       "Failed Deliveries",
     ),
@@ -164,6 +173,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "height": MessageLookupByLibrary.simpleMessage("Height"),
     "hide_route": MessageLookupByLibrary.simpleMessage("Hide Route"),
     "history": MessageLookupByLibrary.simpleMessage("History"),
+    "hours": MessageLookupByLibrary.simpleMessage("hours"),
     "images": MessageLookupByLibrary.simpleMessage("Images"),
     "in_transit": MessageLookupByLibrary.simpleMessage("In Transit"),
     "invalid_email": MessageLookupByLibrary.simpleMessage(
@@ -199,6 +209,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Merchant Dashboard",
     ),
     "message": MessageLookupByLibrary.simpleMessage("Message"),
+    "minutes": MessageLookupByLibrary.simpleMessage("minutes"),
+    "monthly_earnings": MessageLookupByLibrary.simpleMessage(
+      "Monthly Earnings",
+    ),
     "monthly_report": MessageLookupByLibrary.simpleMessage("Monthly Report"),
     "monthly_revenue": MessageLookupByLibrary.simpleMessage("Monthly Revenue"),
     "morning": MessageLookupByLibrary.simpleMessage("Morning (9AM - 12PM)"),
@@ -261,6 +275,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Pending Deliveries",
     ),
     "pending_pickup": MessageLookupByLibrary.simpleMessage("Pending Pickup"),
+    "performance": MessageLookupByLibrary.simpleMessage("Performance"),
     "performance_metrics": MessageLookupByLibrary.simpleMessage(
       "Performance Metrics",
     ),
@@ -309,6 +324,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Courier must collect signature on delivery",
     ),
     "start_delivery": MessageLookupByLibrary.simpleMessage("Start Delivery"),
+    "statistics": MessageLookupByLibrary.simpleMessage("Statistics"),
     "status_label": m3,
     "submit": MessageLookupByLibrary.simpleMessage("Submit"),
     "success": MessageLookupByLibrary.simpleMessage("Success"),
@@ -329,14 +345,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "thank_you": MessageLookupByLibrary.simpleMessage(
       "Thank you for trusting us with your information. We strive to keep your data safe and transparent.",
     ),
+    "this_month": MessageLookupByLibrary.simpleMessage("This Month"),
+    "this_week": MessageLookupByLibrary.simpleMessage("This Week"),
     "to": MessageLookupByLibrary.simpleMessage("To"),
     "todays_deliveries": MessageLookupByLibrary.simpleMessage(
       "Today\'s Deliveries",
+    ),
+    "todays_performance": MessageLookupByLibrary.simpleMessage(
+      "Today\'s Performance",
     ),
     "top_customers": MessageLookupByLibrary.simpleMessage("Top Customers"),
     "total_deliveries": MessageLookupByLibrary.simpleMessage(
       "Total Deliveries",
     ),
+    "total_earnings": MessageLookupByLibrary.simpleMessage("Total Earnings"),
     "total_parcels": MessageLookupByLibrary.simpleMessage("Total Parcels"),
     "total_price_label": MessageLookupByLibrary.simpleMessage(
       "Total Price (with delivery)",
@@ -360,6 +382,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please enter your phone number",
     ),
     "view_all": MessageLookupByLibrary.simpleMessage("View All"),
+    "view_details": MessageLookupByLibrary.simpleMessage("View Details"),
+    "weekly_earnings": MessageLookupByLibrary.simpleMessage("Weekly Earnings"),
     "weekly_success_rate": MessageLookupByLibrary.simpleMessage(
       "Weekly Success Rate",
     ),

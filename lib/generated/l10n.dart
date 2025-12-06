@@ -1668,6 +1668,126 @@ class S {
       args: [],
     );
   }
+
+  /// `Weekly Earnings`
+  String get weekly_earnings {
+    return Intl.message(
+      'Weekly Earnings',
+      name: 'weekly_earnings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Monthly Earnings`
+  String get monthly_earnings {
+    return Intl.message(
+      'Monthly Earnings',
+      name: 'monthly_earnings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total Earnings`
+  String get total_earnings {
+    return Intl.message(
+      'Total Earnings',
+      name: 'total_earnings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Earnings Breakdown`
+  String get earnings_breakdown {
+    return Intl.message(
+      'Earnings Breakdown',
+      name: 'earnings_breakdown',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Today's Performance`
+  String get todays_performance {
+    return Intl.message(
+      'Today\'s Performance',
+      name: 'todays_performance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivery Success Rate`
+  String get delivery_success_rate {
+    return Intl.message(
+      'Delivery Success Rate',
+      name: 'delivery_success_rate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed`
+  String get failed {
+    return Intl.message('Failed', name: 'failed', desc: '', args: []);
+  }
+
+  /// `minutes`
+  String get minutes {
+    return Intl.message('minutes', name: 'minutes', desc: '', args: []);
+  }
+
+  /// `hours`
+  String get hours {
+    return Intl.message('hours', name: 'hours', desc: '', args: []);
+  }
+
+  /// `days`
+  String get days {
+    return Intl.message('days', name: 'days', desc: '', args: []);
+  }
+
+  /// `View Details`
+  String get view_details {
+    return Intl.message(
+      'View Details',
+      name: 'view_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Performance`
+  String get performance {
+    return Intl.message('Performance', name: 'performance', desc: '', args: []);
+  }
+
+  /// `This Week`
+  String get this_week {
+    return Intl.message('This Week', name: 'this_week', desc: '', args: []);
+  }
+
+  /// `This Month`
+  String get this_month {
+    return Intl.message('This Month', name: 'this_month', desc: '', args: []);
+  }
+
+  /// `Earnings Trend`
+  String get earnings_trend {
+    return Intl.message(
+      'Earnings Trend',
+      name: 'earnings_trend',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Statistics`
+  String get statistics {
+    return Intl.message('Statistics', name: 'statistics', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

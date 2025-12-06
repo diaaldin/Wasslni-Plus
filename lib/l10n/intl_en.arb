@@ -194,5 +194,22 @@
   "hide_route": "Hide Route",
   "optimized_route": "Optimized Route",
   "distance": "Distance",
-  "estimated_time": "Estimated Time"
+  "estimated_time": "Estimated Time",
+  "weekly_earnings": "Weekly Earnings",
+  "monthly_earnings": "Monthly Earnings",
+  "total_earnings": "Total Earnings",
+  "earnings_breakdown": "Earnings Breakdown",
+  "todays_performance": "Today's Performance",
+  "delivery_success_rate": "Delivery Success Rate",
+  "average_delivery_time": "Average Delivery Time",
+  "failed": "Failed",
+  "minutes": "minutes",
+  "hours": "hours",
+  "days": "days",
+  "view_details": "View Details",
+  "performance": "Performance",
+  "this_week": "This Week",
+  "this_month": "This Month",
+  "earnings_trend": "Earnings Trend",
+  "statistics": "Statistics"
 }

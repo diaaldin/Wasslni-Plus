@@ -5,6 +5,7 @@ import 'package:wasslni_plus/models/parcel_model.dart';
 import 'package:wasslni_plus/services/auth_service.dart';
 import 'package:wasslni_plus/services/firestore_service.dart';
 import 'package:wasslni_plus/flow/courier/dashboard/courier_route_map.dart';
+import 'package:wasslni_plus/flow/courier/dashboard/courier_statistics_page.dart';
 
 class CourierDashboardPage extends StatefulWidget {
   const CourierDashboardPage({super.key});
@@ -58,6 +59,29 @@ class _CourierDashboardPageState extends State<CourierDashboardPage> {
                 children: [
                   // Daily Statistics Cards
                   _buildStatisticsCards(parcels, tr),
+                  const SizedBox(height: 16),
+
+                  // View Detailed Statistics Button
+                  SizedBox(
+                    width: double.infinity,
+                    child: OutlinedButton.icon(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const CourierStatisticsPage(),
+                          ),
+                        );
+                      },
+                      icon: const Icon(Icons.bar_chart),
+                      label: Text(tr.view_details),
+                      style: OutlinedButton.styleFrom(
+                        foregroundColor: AppStyles.primaryColor,
+                        side: BorderSide(color: AppStyles.primaryColor),
+                        padding: const EdgeInsets.symmetric(vertical: 12),
+                      ),
+                    ),
+                  ),
                   const SizedBox(height: 24),
 
                   // Today's Assignments Header

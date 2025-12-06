@@ -91,6 +91,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "يتم استخدام البيانات التي نجمعها فقط لتحسين وظائف التطبيق لدينا، وضمان الأمان، والامتثال للالتزامات القانونية.",
     ),
     "date_range": MessageLookupByLibrary.simpleMessage("نطاق التاريخ"),
+    "days": MessageLookupByLibrary.simpleMessage("أيام"),
     "delete": MessageLookupByLibrary.simpleMessage("حذف"),
     "delivered": MessageLookupByLibrary.simpleMessage("تم التوصيل"),
     "delivery_fee": MessageLookupByLibrary.simpleMessage("رسوم التوصيل"),
@@ -106,6 +107,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "delivery_statistics": MessageLookupByLibrary.simpleMessage(
       "إحصائيات التوصيل",
     ),
+    "delivery_success_rate": MessageLookupByLibrary.simpleMessage(
+      "معدل نجاح التوصيل",
+    ),
     "delivery_time_slot": MessageLookupByLibrary.simpleMessage(
       "وقت التوصيل المفضل",
     ),
@@ -115,7 +119,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "ليس لديك حساب؟ تسجيل جديد",
     ),
     "download_template": MessageLookupByLibrary.simpleMessage("تنزيل النموذج"),
+    "earnings_breakdown": MessageLookupByLibrary.simpleMessage("تفصيل الأرباح"),
     "earnings_today": MessageLookupByLibrary.simpleMessage("الأرباح اليوم"),
+    "earnings_trend": MessageLookupByLibrary.simpleMessage("اتجاه الأرباح"),
     "edit_parcel": MessageLookupByLibrary.simpleMessage("تعديل الطرد"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "enter_address": MessageLookupByLibrary.simpleMessage(
@@ -142,6 +148,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "export_excel": MessageLookupByLibrary.simpleMessage("تصدير إلى Excel"),
     "export_pdf": MessageLookupByLibrary.simpleMessage("تصدير إلى PDF"),
     "export_success": MessageLookupByLibrary.simpleMessage("تم التصدير بنجاح"),
+    "failed": MessageLookupByLibrary.simpleMessage("فشل"),
     "failed_deliveries": MessageLookupByLibrary.simpleMessage(
       "التوصيلات الفاشلة",
     ),
@@ -150,6 +157,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "height": MessageLookupByLibrary.simpleMessage("الارتفاع"),
     "hide_route": MessageLookupByLibrary.simpleMessage("إخفاء المسار"),
     "history": MessageLookupByLibrary.simpleMessage("السجل"),
+    "hours": MessageLookupByLibrary.simpleMessage("ساعات"),
     "images": MessageLookupByLibrary.simpleMessage("الصور"),
     "in_transit": MessageLookupByLibrary.simpleMessage("قيد التوصيل"),
     "invalid_email": MessageLookupByLibrary.simpleMessage(
@@ -181,6 +189,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "merchant": MessageLookupByLibrary.simpleMessage("تاجر"),
     "merchant_dashboard": MessageLookupByLibrary.simpleMessage("لوحة التاجر"),
     "message": MessageLookupByLibrary.simpleMessage("الرسالة"),
+    "minutes": MessageLookupByLibrary.simpleMessage("دقائق"),
+    "monthly_earnings": MessageLookupByLibrary.simpleMessage("الأرباح الشهرية"),
     "monthly_report": MessageLookupByLibrary.simpleMessage("التقرير الشهري"),
     "monthly_revenue": MessageLookupByLibrary.simpleMessage(
       "الإيرادات الشهرية",
@@ -243,6 +253,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "pending_pickup": MessageLookupByLibrary.simpleMessage(
       "في انتظار الاستلام",
     ),
+    "performance": MessageLookupByLibrary.simpleMessage("الأداء"),
     "performance_metrics": MessageLookupByLibrary.simpleMessage(
       "مقاييس الأداء",
     ),
@@ -289,6 +300,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "يجب على المندوب جمع التوقيع عند التسليم",
     ),
     "start_delivery": MessageLookupByLibrary.simpleMessage("بدء التوصيل"),
+    "statistics": MessageLookupByLibrary.simpleMessage("الإحصائيات"),
     "status_label": m3,
     "submit": MessageLookupByLibrary.simpleMessage("إرسال"),
     "success": MessageLookupByLibrary.simpleMessage("نجاح"),
@@ -309,12 +321,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "thank_you": MessageLookupByLibrary.simpleMessage(
       "نشكرك على ثقتك بنا فيما يتعلق بمعلوماتك. نحن نسعى جاهدين للحفاظ على بياناتك آمنة وشفافة.",
     ),
+    "this_month": MessageLookupByLibrary.simpleMessage("هذا الشهر"),
+    "this_week": MessageLookupByLibrary.simpleMessage("هذا الأسبوع"),
     "to": MessageLookupByLibrary.simpleMessage("إلى"),
     "todays_deliveries": MessageLookupByLibrary.simpleMessage("توصيلات اليوم"),
+    "todays_performance": MessageLookupByLibrary.simpleMessage("أداء اليوم"),
     "top_customers": MessageLookupByLibrary.simpleMessage("أفضل العملاء"),
     "total_deliveries": MessageLookupByLibrary.simpleMessage(
       "إجمالي التوصيلات",
     ),
+    "total_earnings": MessageLookupByLibrary.simpleMessage("إجمالي الأرباح"),
     "total_parcels": MessageLookupByLibrary.simpleMessage("إجمالي الطرود"),
     "total_price_label": MessageLookupByLibrary.simpleMessage(
       "السعر الإجمالي (مع التوصيل)",
@@ -336,6 +352,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "يرجى إدخال رقم الهاتف",
     ),
     "view_all": MessageLookupByLibrary.simpleMessage("عرض الكل"),
+    "view_details": MessageLookupByLibrary.simpleMessage("عرض التفاصيل"),
+    "weekly_earnings": MessageLookupByLibrary.simpleMessage(
+      "الأرباح الأسبوعية",
+    ),
     "weekly_success_rate": MessageLookupByLibrary.simpleMessage(
       "معدل النجاح الأسبوعي",
     ),

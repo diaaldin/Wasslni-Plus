@@ -194,5 +194,22 @@
   "hide_route": "إخفاء المسار",
   "optimized_route": "المسار الأمثل",
   "distance": "المسافة",
-  "estimated_time": "الوقت المتوقع"
+  "estimated_time": "الوقت المتوقع",
+  "weekly_earnings": "الأرباح الأسبوعية",
+  "monthly_earnings": "الأرباح الشهرية",
+  "total_earnings": "إجمالي الأرباح",
+  "earnings_breakdown": "تفصيل الأرباح",
+  "todays_performance": "أداء اليوم",
+  "delivery_success_rate": "معدل نجاح التوصيل",
+  "average_delivery_time": "متوسط وقت التوصيل",
+  "failed": "فشل",
+  "minutes": "دقائق",
+  "hours": "ساعات",
+  "days": "أيام",
+  "view_details": "عرض التفاصيل",
+  "performance": "الأداء",
+  "this_week": "هذا الأسبوع",
+  "this_month": "هذا الشهر",
+  "earnings_trend": "اتجاه الأرباح",
+  "statistics": "الإحصائيات"
 }
