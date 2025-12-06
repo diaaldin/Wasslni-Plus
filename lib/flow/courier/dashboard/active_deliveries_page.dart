@@ -4,6 +4,9 @@ import 'package:wasslni_plus/generated/l10n.dart';
 import 'package:wasslni_plus/models/parcel_model.dart';
 import 'package:wasslni_plus/services/auth_service.dart';
 import 'package:wasslni_plus/services/firestore_service.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:geocoding/geocoding.dart' as geocoding;
+import 'dart:math' show cos, sqrt, asin;
 
 class ActiveDeliveriesPage extends StatefulWidget {
   const ActiveDeliveriesPage({super.key});
@@ -17,6 +20,8 @@ class _ActiveDeliveriesPageState extends State<ActiveDeliveriesPage> {
   final FirestoreService _firestoreService = FirestoreService();
 
   String _filterStatus = 'all';
+  bool _isOptimizing = false;
+  List<String>? _optimizedParcelIds;
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +39,26 @@ class _ActiveDeliveriesPageState extends State<ActiveDeliveriesPage> {
         title: Text(tr.delivery_queue),
         backgroundColor: AppStyles.primaryColor,
         actions: [
+          if (_isOptimizing)
+            const Center(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0),
+                child: SizedBox(
+                  width: 20,
+                  height: 20,
+                  child: CircularProgressIndicator(
+                    strokeWidth: 2,
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                  ),
+                ),
+              ),
+            )
+          else
+            IconButton(
+              icon: const Icon(Icons.route),
+              tooltip: tr.optimized_route,
+              onPressed: _optimizeRoute,
+            ),
           PopupMenuButton<String>(
             icon: const Icon(Icons.filter_list),
             onSelected: (value) {
@@ -103,18 +128,35 @@ class _ActiveDeliveriesPageState extends State<ActiveDeliveriesPage> {
             return isActive;
           }).toList();
 
-          // Sort by priority: out for delivery first, then others
-          activeParcels.sort((a, b) {
-            if (a.status == ParcelStatus.outForDelivery &&
-                b.status != ParcelStatus.outForDelivery) {
-              return -1;
-            }
-            if (a.status != ParcelStatus.outForDelivery &&
-                b.status == ParcelStatus.outForDelivery) {
-              return 1;
-            }
-            return a.createdAt.compareTo(b.createdAt);
-          });
+          // Sort parcels
+          if (_optimizedParcelIds != null && _optimizedParcelIds!.isNotEmpty) {
+            activeParcels.sort((a, b) {
+              final indexA = _optimizedParcelIds!.indexOf(a.id ?? '');
+              final indexB = _optimizedParcelIds!.indexOf(b.id ?? '');
+              // If both are in the optimized list, sort by index
+              if (indexA != -1 && indexB != -1) {
+                return indexA.compareTo(indexB);
+              }
+              // If only one is in the list, prioritize it
+              if (indexA != -1) return -1;
+              if (indexB != -1) return 1;
+              // Fallback to default sort
+              return 0;
+            });
+          } else {
+            // Default sort: out for delivery first, then by date
+            activeParcels.sort((a, b) {
+              if (a.status == ParcelStatus.outForDelivery &&
+                  b.status != ParcelStatus.outForDelivery) {
+                return -1;
+              }
+              if (a.status != ParcelStatus.outForDelivery &&
+                  b.status == ParcelStatus.outForDelivery) {
+                return 1;
+              }
+              return a.createdAt.compareTo(b.createdAt);
+            });
+          }
 
           return RefreshIndicator(
             onRefresh: () async {
@@ -611,4 +653,136 @@ class _ActiveDeliveriesPageState extends State<ActiveDeliveriesPage> {
       ),
     );
   }
+
+  Future<void> _optimizeRoute() async {
+    setState(() {
+      _isOptimizing = true;
+    });
+
+    try {
+      // 1. Get current location
+      final position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high,
+      );
+
+      // 2. Fetch all active parcels to optimize
+      final user = _authService.currentUser;
+      if (user == null) return;
+
+      final snapshot = await _firestoreService
+          .streamCourierParcels(user.uid)
+          .first; // Get current snapshot
+
+      final parcelsToOptimize = snapshot.where((p) {
+        return p.status != ParcelStatus.delivered &&
+            p.status != ParcelStatus.returned &&
+            p.status != ParcelStatus.cancelled;
+      }).toList();
+
+      if (parcelsToOptimize.isEmpty) {
+        setState(() => _isOptimizing = false);
+        return;
+      }
+
+      // 3. Geocode addresses
+      List<_ParcelLocation> locations = [];
+      for (var parcel in parcelsToOptimize) {
+        try {
+          final addresses = await geocoding.locationFromAddress(
+            '${parcel.deliveryAddress}, Palestine',
+          );
+          if (addresses.isNotEmpty) {
+            locations.add(_ParcelLocation(
+              parcelId: parcel.id ?? '',
+              latitude: addresses.first.latitude,
+              longitude: addresses.first.longitude,
+            ));
+          }
+        } catch (e) {
+          debugPrint('Error geocoding ${parcel.barcode}: $e');
+        }
+      }
+
+      // 4. Nearest Neighbor Algorithm
+      List<String> optimizedIds = [];
+      double currentLat = position.latitude;
+      double currentLng = position.longitude;
+
+      while (locations.isNotEmpty) {
+        // Find nearest location to current point
+        _ParcelLocation? nearest;
+        double minDistance = double.infinity;
+        int nearestIndex = -1;
+
+        for (int i = 0; i < locations.length; i++) {
+          final loc = locations[i];
+          final dist = _calculateDistance(
+              currentLat, currentLng, loc.latitude, loc.longitude);
+          if (dist < minDistance) {
+            minDistance = dist;
+            nearest = loc;
+            nearestIndex = i;
+          }
+        }
+
+        if (nearest != null) {
+          optimizedIds.add(nearest.parcelId);
+          currentLat = nearest.latitude;
+          currentLng = nearest.longitude;
+          locations.removeAt(nearestIndex);
+        } else {
+          break; // Should not happen
+        }
+      }
+
+      // Add any remaining parcels (failed geocoding) to the end
+      for (var parcel in parcelsToOptimize) {
+        if (!optimizedIds.contains(parcel.id)) {
+          optimizedIds.add(parcel.id ?? '');
+        }
+      }
+
+      setState(() {
+        _optimizedParcelIds = optimizedIds;
+        _isOptimizing = false;
+      });
+
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(S.of(context).optimized_route)),
+        );
+      }
+    } catch (e) {
+      debugPrint('Error optimizing route: $e');
+      setState(() => _isOptimizing = false);
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Failed to optimize route')),
+        );
+      }
+    }
+  }
+
+  // Haversine formula for distance
+  double _calculateDistance(
+      double lat1, double lon1, double lat2, double lon2) {
+    var p = 0.017453292519943295;
+    var c = cos;
+    var a = 0.5 -
+        c((lat2 - lat1) * p) / 2 +
+        c(lat1 * p) * c(lat2 * p) * (1 - c((lon2 - lon1) * p)) / 2;
+    return 12742 * asin(sqrt(a));
+  }
+}
+
+class _ParcelLocation {
+  final String parcelId;
+  final double latitude;
+  final double longitude;
+
+  _ParcelLocation({
+    required this.parcelId,
+    required this.latitude,
+    required this.longitude,
+  });
 }
