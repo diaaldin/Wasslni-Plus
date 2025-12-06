@@ -130,7 +130,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
 ### 1.5 Courier Dashboard
 
 - [ ] **Courier Main Page**
-  - [ ] Create daily assignment overview
+  - [x] Create daily assignment overview
   - [ ] Display route map with delivery points
   - [ ] Add earnings tracker
   - [ ] Show today's delivery statistics

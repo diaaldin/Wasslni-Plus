@@ -172,5 +172,15 @@
   "promotional_offers": "العروض الترويجية",
   "promotional_offers_desc": "تلقي تحديثات حول الميزات والعروض الجديدة",
   "system_announcements": "إعلانات النظام",
-  "system_announcements_desc": "تحديثات مهمة حول المنصة"
+  "system_announcements_desc": "تحديثات مهمة حول المنصة",
+  "courier_dashboard": "لوحة السائق",
+  "daily_assignments": "المهام اليومية",
+  "todays_deliveries": "توصيلات اليوم",
+  "earnings_today": "الأرباح اليوم",
+  "completed": "مكتمل",
+  "pending_pickup": "في انتظار الاستلام",
+  "in_transit": "قيد التوصيل",
+  "my_route": "مسار التوصيل",
+  "start_delivery": "بدء التوصيل",
+  "no_assignments": "لا توجد مهام لهذا اليوم"
 }

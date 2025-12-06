@@ -281,6 +281,30 @@ class FirestoreService {
             .toList());
   }
 
+  /// Stream parcels for courier with date filtering (for daily assignments)
+  Stream<List<ParcelModel>> streamCourierParcels(
+    String courierId, {
+    DateTime? startDate,
+    DateTime? endDate,
+  }) {
+    Query query = _parcelsCollection
+        .where('courierId', isEqualTo: courierId)
+        .where('isDeleted', isEqualTo: false);
+
+    if (startDate != null) {
+      query = query.where('createdAt',
+          isGreaterThanOrEqualTo: Timestamp.fromDate(startDate));
+    }
+
+    if (endDate != null) {
+      query = query.where('createdAt', isLessThan: Timestamp.fromDate(endDate));
+    }
+
+    return query.snapshots().map((snapshot) =>
+        snapshot.docs.map((doc) => ParcelModel.fromFirestore(doc)).toList()
+          ..sort((a, b) => b.createdAt.compareTo(a.createdAt)));
+  }
+
   /// Get parcels by customer
   Future<List<ParcelModel>> getParcelsByCustomer(String customerId) async {
     try {

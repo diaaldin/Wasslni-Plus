@@ -172,5 +172,15 @@
   "promotional_offers": "Promotional Offers",
   "promotional_offers_desc": "Receive updates about new features and offers",
   "system_announcements": "System Announcements",
-  "system_announcements_desc": "Important updates about the platform"
+  "system_announcements_desc": "Important updates about the platform",
+  "courier_dashboard": "Courier Dashboard",
+  "daily_assignments": "Daily Assignments",
+  "todays_deliveries": "Today's Deliveries",
+  "earnings_today": "Earnings Today",
+  "completed": "Completed",
+  "pending_pickup": "Pending Pickup",
+  "in_transit": "In Transit",
+  "my_route": "My Route",
+  "start_delivery": "Start Delivery",
+  "no_assignments": "No assignments for today"
 }

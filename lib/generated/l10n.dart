@@ -1503,6 +1503,86 @@ class S {
       args: [],
     );
   }
+
+  /// `Courier Dashboard`
+  String get courier_dashboard {
+    return Intl.message(
+      'Courier Dashboard',
+      name: 'courier_dashboard',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Daily Assignments`
+  String get daily_assignments {
+    return Intl.message(
+      'Daily Assignments',
+      name: 'daily_assignments',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Today's Deliveries`
+  String get todays_deliveries {
+    return Intl.message(
+      'Today\'s Deliveries',
+      name: 'todays_deliveries',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Earnings Today`
+  String get earnings_today {
+    return Intl.message(
+      'Earnings Today',
+      name: 'earnings_today',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Completed`
+  String get completed {
+    return Intl.message('Completed', name: 'completed', desc: '', args: []);
+  }
+
+  /// `Pending Pickup`
+  String get pending_pickup {
+    return Intl.message(
+      'Pending Pickup',
+      name: 'pending_pickup',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My Route`
+  String get my_route {
+    return Intl.message('My Route', name: 'my_route', desc: '', args: []);
+  }
+
+  /// `Start Delivery`
+  String get start_delivery {
+    return Intl.message(
+      'Start Delivery',
+      name: 'start_delivery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No assignments for today`
+  String get no_assignments {
+    return Intl.message(
+      'No assignments for today',
+      name: 'no_assignments',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

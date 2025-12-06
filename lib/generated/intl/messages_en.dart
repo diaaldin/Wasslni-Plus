@@ -64,6 +64,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please select a region",
     ),
     "clear_selection": MessageLookupByLibrary.simpleMessage("Clear selection"),
+    "completed": MessageLookupByLibrary.simpleMessage("Completed"),
     "confirm_cancel_parcel": MessageLookupByLibrary.simpleMessage(
       "Are you sure you want to cancel this parcel?",
     ),
@@ -71,7 +72,13 @@ class MessageLookup extends MessageLookupByLibrary {
       "For more details, feel free to contact our support team.",
     ),
     "courier": MessageLookupByLibrary.simpleMessage("Courier"),
+    "courier_dashboard": MessageLookupByLibrary.simpleMessage(
+      "Courier Dashboard",
+    ),
     "customer": MessageLookupByLibrary.simpleMessage("Customer"),
+    "daily_assignments": MessageLookupByLibrary.simpleMessage(
+      "Daily Assignments",
+    ),
     "dark_mode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
     "dataPolicy": MessageLookupByLibrary.simpleMessage("Data Policy"),
     "data_collection": MessageLookupByLibrary.simpleMessage("Data Collection"),
@@ -114,6 +121,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "download_template": MessageLookupByLibrary.simpleMessage(
       "Download Template",
     ),
+    "earnings_today": MessageLookupByLibrary.simpleMessage("Earnings Today"),
     "edit_parcel": MessageLookupByLibrary.simpleMessage("Edit Parcel"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "enter_address": MessageLookupByLibrary.simpleMessage(
@@ -182,8 +190,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "monthly_report": MessageLookupByLibrary.simpleMessage("Monthly Report"),
     "monthly_revenue": MessageLookupByLibrary.simpleMessage("Monthly Revenue"),
     "morning": MessageLookupByLibrary.simpleMessage("Morning (9AM - 12PM)"),
+    "my_route": MessageLookupByLibrary.simpleMessage("My Route"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "no": MessageLookupByLibrary.simpleMessage("No"),
+    "no_assignments": MessageLookupByLibrary.simpleMessage(
+      "No assignments for today",
+    ),
     "no_data_available": MessageLookupByLibrary.simpleMessage(
       "No data available",
     ),
@@ -234,6 +246,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "pending_deliveries": MessageLookupByLibrary.simpleMessage(
       "Pending Deliveries",
     ),
+    "pending_pickup": MessageLookupByLibrary.simpleMessage("Pending Pickup"),
     "performance_metrics": MessageLookupByLibrary.simpleMessage(
       "Performance Metrics",
     ),
@@ -279,6 +292,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "signature_description": MessageLookupByLibrary.simpleMessage(
       "Courier must collect signature on delivery",
     ),
+    "start_delivery": MessageLookupByLibrary.simpleMessage("Start Delivery"),
     "status_label": m3,
     "submit": MessageLookupByLibrary.simpleMessage("Submit"),
     "success": MessageLookupByLibrary.simpleMessage("Success"),
@@ -300,6 +314,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Thank you for trusting us with your information. We strive to keep your data safe and transparent.",
     ),
     "to": MessageLookupByLibrary.simpleMessage("To"),
+    "todays_deliveries": MessageLookupByLibrary.simpleMessage(
+      "Today\'s Deliveries",
+    ),
     "top_customers": MessageLookupByLibrary.simpleMessage("Top Customers"),
     "total_deliveries": MessageLookupByLibrary.simpleMessage(
       "Total Deliveries",

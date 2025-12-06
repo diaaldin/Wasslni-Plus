@@ -58,6 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "يرجى اختيار المنطقة",
     ),
     "clear_selection": MessageLookupByLibrary.simpleMessage("مسح الاختيار"),
+    "completed": MessageLookupByLibrary.simpleMessage("مكتمل"),
     "confirm_cancel_parcel": MessageLookupByLibrary.simpleMessage(
       "هل أنت متأكد من إلغاء هذا الطرد؟",
     ),
@@ -65,7 +66,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "لمزيد من التفاصيل، لا تتردد في الاتصال بفريق الدعم لدينا.",
     ),
     "courier": MessageLookupByLibrary.simpleMessage("مندوب توصيل"),
+    "courier_dashboard": MessageLookupByLibrary.simpleMessage("لوحة السائق"),
     "customer": MessageLookupByLibrary.simpleMessage("زبون"),
+    "daily_assignments": MessageLookupByLibrary.simpleMessage("المهام اليومية"),
     "dark_mode": MessageLookupByLibrary.simpleMessage("وضع الليل"),
     "dataPolicy": MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),
     "data_collection": MessageLookupByLibrary.simpleMessage("جمع البيانات"),
@@ -108,6 +111,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "ليس لديك حساب؟ تسجيل جديد",
     ),
     "download_template": MessageLookupByLibrary.simpleMessage("تنزيل النموذج"),
+    "earnings_today": MessageLookupByLibrary.simpleMessage("الأرباح اليوم"),
     "edit_parcel": MessageLookupByLibrary.simpleMessage("تعديل الطرد"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "enter_address": MessageLookupByLibrary.simpleMessage(
@@ -141,7 +145,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "height": MessageLookupByLibrary.simpleMessage("الارتفاع"),
     "history": MessageLookupByLibrary.simpleMessage("السجل"),
     "images": MessageLookupByLibrary.simpleMessage("الصور"),
-    "in_transit": MessageLookupByLibrary.simpleMessage("في الطريق"),
+    "in_transit": MessageLookupByLibrary.simpleMessage("قيد التوصيل"),
     "invalid_email": MessageLookupByLibrary.simpleMessage(
       "بريد إلكتروني غير صالح",
     ),
@@ -174,8 +178,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "الإيرادات الشهرية",
     ),
     "morning": MessageLookupByLibrary.simpleMessage("صباحاً (9ص - 12م)"),
+    "my_route": MessageLookupByLibrary.simpleMessage("مسار التوصيل"),
     "name": MessageLookupByLibrary.simpleMessage("الاسم"),
     "no": MessageLookupByLibrary.simpleMessage("لا"),
+    "no_assignments": MessageLookupByLibrary.simpleMessage(
+      "لا توجد مهام لهذا اليوم",
+    ),
     "no_data_available": MessageLookupByLibrary.simpleMessage(
       "لا توجد بيانات متاحة",
     ),
@@ -222,6 +230,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pending_deliveries": MessageLookupByLibrary.simpleMessage(
       "التوصيلات المعلقة",
     ),
+    "pending_pickup": MessageLookupByLibrary.simpleMessage(
+      "في انتظار الاستلام",
+    ),
     "performance_metrics": MessageLookupByLibrary.simpleMessage(
       "مقاييس الأداء",
     ),
@@ -265,6 +276,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "signature_description": MessageLookupByLibrary.simpleMessage(
       "يجب على المندوب جمع التوقيع عند التسليم",
     ),
+    "start_delivery": MessageLookupByLibrary.simpleMessage("بدء التوصيل"),
     "status_label": m3,
     "submit": MessageLookupByLibrary.simpleMessage("إرسال"),
     "success": MessageLookupByLibrary.simpleMessage("نجاح"),
@@ -286,6 +298,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "نشكرك على ثقتك بنا فيما يتعلق بمعلوماتك. نحن نسعى جاهدين للحفاظ على بياناتك آمنة وشفافة.",
     ),
     "to": MessageLookupByLibrary.simpleMessage("إلى"),
+    "todays_deliveries": MessageLookupByLibrary.simpleMessage("توصيلات اليوم"),
     "top_customers": MessageLookupByLibrary.simpleMessage("أفضل العملاء"),
     "total_deliveries": MessageLookupByLibrary.simpleMessage(
       "إجمالي التوصيلات",
