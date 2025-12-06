@@ -165,5 +165,12 @@
   "weekly_success_rate": "معدل النجاح الأسبوعي",
   "no_data_available": "لا توجد بيانات متاحة",
   "top_customers": "أفضل العملاء",
-  "parcels_delivered": "الطرود التي تم توصيلها"
+  "parcels_delivered": "الطرود التي تم توصيلها",
+  "notification_settings": "إعدادات الإشعارات",
+  "parcel_updates": "تحديثات الطرود",
+  "parcel_updates_desc": "احصل على إشعار عند تغيير حالة الطرد",
+  "promotional_offers": "العروض الترويجية",
+  "promotional_offers_desc": "تلقي تحديثات حول الميزات والعروض الجديدة",
+  "system_announcements": "إعلانات النظام",
+  "system_announcements_desc": "تحديثات مهمة حول المنصة"
 }

@@ -275,6 +275,16 @@ class AuthService {
     await _auth.currentUser?.reload();
   }
 
+  /// Update notification settings
+  Future<void> updateNotificationSettings(Map<String, bool> settings) async {
+    final userId = currentUserId;
+    if (userId != null) {
+      await _firestoreService.updateUser(userId, {
+        'notificationSettings': settings,
+      });
+    }
+  }
+
   /// Handle Firebase Auth exceptions
   String _handleAuthException(FirebaseAuthException e) {
     switch (e.code) {

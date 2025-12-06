@@ -5,6 +5,7 @@ import 'package:wasslni_plus/generated/l10n.dart';
 import 'package:wasslni_plus/models/notification_model.dart';
 import 'package:wasslni_plus/services/auth_service.dart';
 import 'package:wasslni_plus/services/firestore_service.dart';
+import 'package:wasslni_plus/flow/merchant/notifications/notification_settings_page.dart';
 import 'package:intl/intl.dart';
 
 class MerchantNotificationsPage extends StatefulWidget {
@@ -34,6 +35,18 @@ class _MerchantNotificationsPageState extends State<MerchantNotificationsPage> {
         title: Text(tr.notifications),
         backgroundColor: AppStyles.primaryColor,
         actions: [
+          IconButton(
+            icon: const Icon(Icons.settings),
+            tooltip: tr.notification_settings,
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const NotificationSettingsPage(),
+                ),
+              );
+            },
+          ),
           IconButton(
             icon: const Icon(Icons.done_all),
             tooltip: tr.mark_all_read,

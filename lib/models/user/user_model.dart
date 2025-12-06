@@ -15,6 +15,7 @@ class UserModel {
   final String? preferredLanguage;
   final bool isDarkMode;
   final String? fcmToken;
+  final Map<String, bool>? notificationSettings;
 
   // Merchant-specific fields
   final String? businessName;
@@ -46,6 +47,7 @@ class UserModel {
     this.preferredLanguage,
     this.isDarkMode = false,
     this.fcmToken,
+    this.notificationSettings,
     // Merchant fields
     this.businessName,
     this.businessAddress,
@@ -76,6 +78,7 @@ class UserModel {
       'preferredLanguage': preferredLanguage,
       'isDarkMode': isDarkMode,
       'fcmToken': fcmToken,
+      'notificationSettings': notificationSettings,
       // Merchant fields
       if (role == UserRole.merchant) ...{
         'businessName': businessName,
@@ -116,6 +119,9 @@ class UserModel {
       preferredLanguage: data['preferredLanguage'],
       isDarkMode: data['isDarkMode'] ?? false,
       fcmToken: data['fcmToken'],
+      notificationSettings: data['notificationSettings'] != null
+          ? Map<String, bool>.from(data['notificationSettings'])
+          : null,
       // Merchant fields
       businessName: data['businessName'],
       businessAddress: data['businessAddress'],
@@ -123,15 +129,15 @@ class UserModel {
       // Courier fields
       vehicleType: data['vehicleType'],
       vehiclePlate: data['vehiclePlate'],
-      workingRegions: data['workingRegions'] != null 
-          ? List<String>.from(data['workingRegions']) 
+      workingRegions: data['workingRegions'] != null
+          ? List<String>.from(data['workingRegions'])
           : null,
       availability: data['availability'],
       rating: data['rating']?.toDouble(),
       totalDeliveries: data['totalDeliveries'],
       // Manager fields
-      managedRegions: data['managedRegions'] != null 
-          ? List<String>.from(data['managedRegions']) 
+      managedRegions: data['managedRegions'] != null
+          ? List<String>.from(data['managedRegions'])
           : null,
       branchId: data['branchId'],
     );
@@ -180,6 +186,7 @@ class UserModel {
     String? preferredLanguage,
     bool? isDarkMode,
     String? fcmToken,
+    Map<String, bool>? notificationSettings,
     String? businessName,
     String? businessAddress,
     String? businessLicense,
@@ -205,6 +212,7 @@ class UserModel {
       preferredLanguage: preferredLanguage ?? this.preferredLanguage,
       isDarkMode: isDarkMode ?? this.isDarkMode,
       fcmToken: fcmToken ?? this.fcmToken,
+      notificationSettings: notificationSettings ?? this.notificationSettings,
       businessName: businessName ?? this.businessName,
       businessAddress: businessAddress ?? this.businessAddress,
       businessLicense: businessLicense ?? this.businessLicense,
@@ -225,7 +233,7 @@ class UserModel {
   bool get isCustomer => role == UserRole.customer;
   bool get isManager => role == UserRole.manager;
   bool get isAdmin => role == UserRole.admin;
-  
+
   bool get isActive => status == UserStatus.active;
   bool get isAvailable => availability == true && isActive;
 }

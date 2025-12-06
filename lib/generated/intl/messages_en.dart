@@ -195,6 +195,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "no_parcels_yet": MessageLookupByLibrary.simpleMessage("No parcels yet"),
     "note_label": m2,
+    "notification_settings": MessageLookupByLibrary.simpleMessage(
+      "Notification Settings",
+    ),
     "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
     "optional": MessageLookupByLibrary.simpleMessage("Optional"),
     "parcel_cancelled_success": MessageLookupByLibrary.simpleMessage(
@@ -213,6 +216,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "parcel_updated_success": MessageLookupByLibrary.simpleMessage(
       "Parcel updated successfully",
+    ),
+    "parcel_updates": MessageLookupByLibrary.simpleMessage("Parcel Updates"),
+    "parcel_updates_desc": MessageLookupByLibrary.simpleMessage(
+      "Get notified when parcel status changes",
     ),
     "parcels": MessageLookupByLibrary.simpleMessage("Parcels"),
     "parcels_delivered": MessageLookupByLibrary.simpleMessage(
@@ -239,6 +246,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "privacy_policy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
     "processing_file": MessageLookupByLibrary.simpleMessage(
       "Processing file...",
+    ),
+    "promotional_offers": MessageLookupByLibrary.simpleMessage(
+      "Promotional Offers",
+    ),
+    "promotional_offers_desc": MessageLookupByLibrary.simpleMessage(
+      "Receive updates about new features and offers",
     ),
     "recent_parcels": MessageLookupByLibrary.simpleMessage("Recent Parcels"),
     "recipient": MessageLookupByLibrary.simpleMessage("Recipient"),
@@ -277,6 +290,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Successful Deliveries",
     ),
     "sunny_mode": MessageLookupByLibrary.simpleMessage("Sunny Mode"),
+    "system_announcements": MessageLookupByLibrary.simpleMessage(
+      "System Announcements",
+    ),
+    "system_announcements_desc": MessageLookupByLibrary.simpleMessage(
+      "Important updates about the platform",
+    ),
     "thank_you": MessageLookupByLibrary.simpleMessage(
       "Thank you for trusting us with your information. We strive to keep your data safe and transparent.",
     ),

@@ -165,5 +165,12 @@
   "weekly_success_rate": "Weekly Success Rate",
   "no_data_available": "No data available",
   "top_customers": "Top Customers",
-  "parcels_delivered": "Parcels Delivered"
+  "parcels_delivered": "Parcels Delivered",
+  "notification_settings": "Notification Settings",
+  "parcel_updates": "Parcel Updates",
+  "parcel_updates_desc": "Get notified when parcel status changes",
+  "promotional_offers": "Promotional Offers",
+  "promotional_offers_desc": "Receive updates about new features and offers",
+  "system_announcements": "System Announcements",
+  "system_announcements_desc": "Important updates about the platform"
 }

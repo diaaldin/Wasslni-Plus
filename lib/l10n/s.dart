@@ -1098,6 +1098,48 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Parcels Delivered'**
   String get parcels_delivered;
+
+  /// No description provided for @notification_settings.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification Settings'**
+  String get notification_settings;
+
+  /// No description provided for @parcel_updates.
+  ///
+  /// In en, this message translates to:
+  /// **'Parcel Updates'**
+  String get parcel_updates;
+
+  /// No description provided for @parcel_updates_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Get notified when parcel status changes'**
+  String get parcel_updates_desc;
+
+  /// No description provided for @promotional_offers.
+  ///
+  /// In en, this message translates to:
+  /// **'Promotional Offers'**
+  String get promotional_offers;
+
+  /// No description provided for @promotional_offers_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Receive updates about new features and offers'**
+  String get promotional_offers_desc;
+
+  /// No description provided for @system_announcements.
+  ///
+  /// In en, this message translates to:
+  /// **'System Announcements'**
+  String get system_announcements;
+
+  /// No description provided for @system_announcements_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Important updates about the platform'**
+  String get system_announcements_desc;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

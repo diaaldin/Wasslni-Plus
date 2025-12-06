@@ -119,7 +119,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [x] Build notification list view
   - [x] Add notification filtering
   - [x] Implement mark as read/unread
-  - [ ] Create notification settings
+  - [x] Create notification settings
 
 - [x] **Reports & Analytics**
   - [x] Create monthly delivery report

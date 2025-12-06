@@ -526,4 +526,26 @@ class SAr extends S {
 
   @override
   String get parcels_delivered => 'الطرود التي تم توصيلها';
+
+  @override
+  String get notification_settings => 'إعدادات الإشعارات';
+
+  @override
+  String get parcel_updates => 'تحديثات الطرود';
+
+  @override
+  String get parcel_updates_desc => 'احصل على إشعار عند تغيير حالة الطرد';
+
+  @override
+  String get promotional_offers => 'العروض الترويجية';
+
+  @override
+  String get promotional_offers_desc =>
+      'تلقي تحديثات حول الميزات والعروض الجديدة';
+
+  @override
+  String get system_announcements => 'إعلانات النظام';
+
+  @override
+  String get system_announcements_desc => 'تحديثات مهمة حول المنصة';
 }

@@ -1433,6 +1433,76 @@ class S {
       args: [],
     );
   }
+
+  /// `Notification Settings`
+  String get notification_settings {
+    return Intl.message(
+      'Notification Settings',
+      name: 'notification_settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Parcel Updates`
+  String get parcel_updates {
+    return Intl.message(
+      'Parcel Updates',
+      name: 'parcel_updates',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get notified when parcel status changes`
+  String get parcel_updates_desc {
+    return Intl.message(
+      'Get notified when parcel status changes',
+      name: 'parcel_updates_desc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Promotional Offers`
+  String get promotional_offers {
+    return Intl.message(
+      'Promotional Offers',
+      name: 'promotional_offers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Receive updates about new features and offers`
+  String get promotional_offers_desc {
+    return Intl.message(
+      'Receive updates about new features and offers',
+      name: 'promotional_offers_desc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `System Announcements`
+  String get system_announcements {
+    return Intl.message(
+      'System Announcements',
+      name: 'system_announcements',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Important updates about the platform`
+  String get system_announcements_desc {
+    return Intl.message(
+      'Important updates about the platform',
+      name: 'system_announcements_desc',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

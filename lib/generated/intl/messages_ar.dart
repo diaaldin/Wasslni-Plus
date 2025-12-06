@@ -185,6 +185,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "no_notifications": MessageLookupByLibrary.simpleMessage("لا توجد إشعارات"),
     "no_parcels_yet": MessageLookupByLibrary.simpleMessage("لا توجد طرود بعد"),
     "note_label": m2,
+    "notification_settings": MessageLookupByLibrary.simpleMessage(
+      "إعدادات الإشعارات",
+    ),
     "notifications": MessageLookupByLibrary.simpleMessage("الإشعارات"),
     "optional": MessageLookupByLibrary.simpleMessage("اختياري"),
     "parcel_cancelled_success": MessageLookupByLibrary.simpleMessage(
@@ -201,6 +204,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "parcel_updated_success": MessageLookupByLibrary.simpleMessage(
       "تم تحديث الطرد بنجاح",
+    ),
+    "parcel_updates": MessageLookupByLibrary.simpleMessage("تحديثات الطرود"),
+    "parcel_updates_desc": MessageLookupByLibrary.simpleMessage(
+      "احصل على إشعار عند تغيير حالة الطرد",
     ),
     "parcels": MessageLookupByLibrary.simpleMessage("الطرود"),
     "parcels_delivered": MessageLookupByLibrary.simpleMessage(
@@ -227,6 +234,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "privacy_policy": MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),
     "processing_file": MessageLookupByLibrary.simpleMessage(
       "جاري معالجة الملف...",
+    ),
+    "promotional_offers": MessageLookupByLibrary.simpleMessage(
+      "العروض الترويجية",
+    ),
+    "promotional_offers_desc": MessageLookupByLibrary.simpleMessage(
+      "تلقي تحديثات حول الميزات والعروض الجديدة",
     ),
     "recent_parcels": MessageLookupByLibrary.simpleMessage("الطرود الأخيرة"),
     "recipient": MessageLookupByLibrary.simpleMessage("المستلم"),
@@ -263,6 +276,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "التوصيلات الناجحة",
     ),
     "sunny_mode": MessageLookupByLibrary.simpleMessage("وضع النهار"),
+    "system_announcements": MessageLookupByLibrary.simpleMessage(
+      "إعلانات النظام",
+    ),
+    "system_announcements_desc": MessageLookupByLibrary.simpleMessage(
+      "تحديثات مهمة حول المنصة",
+    ),
     "thank_you": MessageLookupByLibrary.simpleMessage(
       "نشكرك على ثقتك بنا فيما يتعلق بمعلوماتك. نحن نسعى جاهدين للحفاظ على بياناتك آمنة وشفافة.",
     ),

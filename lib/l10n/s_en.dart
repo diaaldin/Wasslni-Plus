@@ -529,4 +529,27 @@ class SEn extends S {
 
   @override
   String get parcels_delivered => 'Parcels Delivered';
+
+  @override
+  String get notification_settings => 'Notification Settings';
+
+  @override
+  String get parcel_updates => 'Parcel Updates';
+
+  @override
+  String get parcel_updates_desc => 'Get notified when parcel status changes';
+
+  @override
+  String get promotional_offers => 'Promotional Offers';
+
+  @override
+  String get promotional_offers_desc =>
+      'Receive updates about new features and offers';
+
+  @override
+  String get system_announcements => 'System Announcements';
+
+  @override
+  String get system_announcements_desc =>
+      'Important updates about the platform';
 }
