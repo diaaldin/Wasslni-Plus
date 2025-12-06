@@ -1823,6 +1823,86 @@ class S {
   String get call {
     return Intl.message('Call', name: 'call', desc: '', args: []);
   }
+
+  /// `Delivery Checklist`
+  String get delivery_checklist {
+    return Intl.message(
+      'Delivery Checklist',
+      name: 'delivery_checklist',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Complete the following steps to proceed`
+  String get complete_steps_to_proceed {
+    return Intl.message(
+      'Complete the following steps to proceed',
+      name: 'complete_steps_to_proceed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verify Recipient`
+  String get verify_recipient {
+    return Intl.message(
+      'Verify Recipient',
+      name: 'verify_recipient',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Location`
+  String get confirm_location {
+    return Intl.message(
+      'Confirm Location',
+      name: 'confirm_location',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Check Package Condition`
+  String get check_package_condition {
+    return Intl.message(
+      'Check Package Condition',
+      name: 'check_package_condition',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ensure there is no visible damage`
+  String get ensure_no_damage {
+    return Intl.message(
+      'Ensure there is no visible damage',
+      name: 'ensure_no_damage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Collect Payment`
+  String get collect_payment {
+    return Intl.message(
+      'Collect Payment',
+      name: 'collect_payment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Proceed to Proof of Delivery`
+  String get proceed_to_proof {
+    return Intl.message(
+      'Proceed to Proof of Delivery',
+      name: 'proceed_to_proof',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

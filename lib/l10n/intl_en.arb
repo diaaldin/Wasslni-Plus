@@ -215,5 +215,13 @@
   "delivery_queue": "Delivery Queue",
   "no_active_deliveries": "No Active Deliveries",
   "all_caught_up": "You're all caught up!",
-  "call": "Call"
+  "call": "Call",
+  "delivery_checklist": "Delivery Checklist",
+  "complete_steps_to_proceed": "Complete the following steps to proceed",
+  "verify_recipient": "Verify Recipient",
+  "confirm_location": "Confirm Location",
+  "check_package_condition": "Check Package Condition",
+  "ensure_no_damage": "Ensure there is no visible damage",
+  "collect_payment": "Collect Payment",
+  "proceed_to_proof": "Proceed to Proof of Delivery"
 }

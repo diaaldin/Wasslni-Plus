@@ -64,13 +64,23 @@ class MessageLookup extends MessageLookupByLibrary {
       "Cancellation Reason",
     ),
     "cancelled": MessageLookupByLibrary.simpleMessage("Cancelled"),
+    "check_package_condition": MessageLookupByLibrary.simpleMessage(
+      "Check Package Condition",
+    ),
     "choose_region_warning": MessageLookupByLibrary.simpleMessage(
       "Please select a region",
     ),
     "clear_selection": MessageLookupByLibrary.simpleMessage("Clear selection"),
+    "collect_payment": MessageLookupByLibrary.simpleMessage("Collect Payment"),
+    "complete_steps_to_proceed": MessageLookupByLibrary.simpleMessage(
+      "Complete the following steps to proceed",
+    ),
     "completed": MessageLookupByLibrary.simpleMessage("Completed"),
     "confirm_cancel_parcel": MessageLookupByLibrary.simpleMessage(
       "Are you sure you want to cancel this parcel?",
+    ),
+    "confirm_location": MessageLookupByLibrary.simpleMessage(
+      "Confirm Location",
     ),
     "contact_support": MessageLookupByLibrary.simpleMessage(
       "For more details, feel free to contact our support team.",
@@ -108,6 +118,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "days": MessageLookupByLibrary.simpleMessage("days"),
     "delete": MessageLookupByLibrary.simpleMessage("Delete"),
     "delivered": MessageLookupByLibrary.simpleMessage("Delivered"),
+    "delivery_checklist": MessageLookupByLibrary.simpleMessage(
+      "Delivery Checklist",
+    ),
     "delivery_fee": MessageLookupByLibrary.simpleMessage("Delivery Fee"),
     "delivery_fees_collected": MessageLookupByLibrary.simpleMessage(
       "Delivery Fees Collected",
@@ -145,6 +158,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "earnings_trend": MessageLookupByLibrary.simpleMessage("Earnings Trend"),
     "edit_parcel": MessageLookupByLibrary.simpleMessage("Edit Parcel"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "ensure_no_damage": MessageLookupByLibrary.simpleMessage(
+      "Ensure there is no visible damage",
+    ),
     "enter_address": MessageLookupByLibrary.simpleMessage(
       "Enter the address (City - Street)",
     ),
@@ -294,6 +310,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "We are committed to protecting your data privacy and security. This policy explains how we handle your personal information.",
     ),
     "privacy_policy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
+    "proceed_to_proof": MessageLookupByLibrary.simpleMessage(
+      "Proceed to Proof of Delivery",
+    ),
     "processing_file": MessageLookupByLibrary.simpleMessage(
       "Processing file...",
     ),
@@ -388,6 +407,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "validation_phone_required": MessageLookupByLibrary.simpleMessage(
       "Please enter your phone number",
+    ),
+    "verify_recipient": MessageLookupByLibrary.simpleMessage(
+      "Verify Recipient",
     ),
     "view_all": MessageLookupByLibrary.simpleMessage("View All"),
     "view_details": MessageLookupByLibrary.simpleMessage("View Details"),

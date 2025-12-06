@@ -58,14 +58,22 @@ class MessageLookup extends MessageLookupByLibrary {
     "cancel_parcel": MessageLookupByLibrary.simpleMessage("إلغاء الطرد"),
     "cancellation_reason": MessageLookupByLibrary.simpleMessage("سبب الإلغاء"),
     "cancelled": MessageLookupByLibrary.simpleMessage("ملغى"),
+    "check_package_condition": MessageLookupByLibrary.simpleMessage(
+      "فحص حالة الطرد",
+    ),
     "choose_region_warning": MessageLookupByLibrary.simpleMessage(
       "يرجى اختيار المنطقة",
     ),
     "clear_selection": MessageLookupByLibrary.simpleMessage("مسح الاختيار"),
+    "collect_payment": MessageLookupByLibrary.simpleMessage("تحصيل الدفع"),
+    "complete_steps_to_proceed": MessageLookupByLibrary.simpleMessage(
+      "أكمل الخطوات التالية للمتابعة",
+    ),
     "completed": MessageLookupByLibrary.simpleMessage("مكتمل"),
     "confirm_cancel_parcel": MessageLookupByLibrary.simpleMessage(
       "هل أنت متأكد من إلغاء هذا الطرد؟",
     ),
+    "confirm_location": MessageLookupByLibrary.simpleMessage("تأكيد الموقع"),
     "contact_support": MessageLookupByLibrary.simpleMessage(
       "لمزيد من التفاصيل، لا تتردد في الاتصال بفريق الدعم لدينا.",
     ),
@@ -98,6 +106,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "days": MessageLookupByLibrary.simpleMessage("أيام"),
     "delete": MessageLookupByLibrary.simpleMessage("حذف"),
     "delivered": MessageLookupByLibrary.simpleMessage("تم التوصيل"),
+    "delivery_checklist": MessageLookupByLibrary.simpleMessage(
+      "قائمة التحقق من التوصيل",
+    ),
     "delivery_fee": MessageLookupByLibrary.simpleMessage("رسوم التوصيل"),
     "delivery_fees_collected": MessageLookupByLibrary.simpleMessage(
       "رسوم التوصيل المحصلة",
@@ -129,6 +140,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "earnings_trend": MessageLookupByLibrary.simpleMessage("اتجاه الأرباح"),
     "edit_parcel": MessageLookupByLibrary.simpleMessage("تعديل الطرد"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "ensure_no_damage": MessageLookupByLibrary.simpleMessage(
+      "تأكد من عدم وجود تلف ظاهر",
+    ),
     "enter_address": MessageLookupByLibrary.simpleMessage(
       "أدخل العنوان (مدينة - شارع)",
     ),
@@ -272,6 +286,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "نحن ملتزمون بحماية خصوصية بياناتك وأمانها. توضح سياسة البيانات هذه كيفية تعاملنا مع بياناتك الشخصية.",
     ),
     "privacy_policy": MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),
+    "proceed_to_proof": MessageLookupByLibrary.simpleMessage(
+      "المتابعة إلى إثبات التوصيل",
+    ),
     "processing_file": MessageLookupByLibrary.simpleMessage(
       "جاري معالجة الملف...",
     ),
@@ -358,6 +375,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "validation_phone_required": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال رقم الهاتف",
+    ),
+    "verify_recipient": MessageLookupByLibrary.simpleMessage(
+      "التحقق من المستلم",
     ),
     "view_all": MessageLookupByLibrary.simpleMessage("عرض الكل"),
     "view_details": MessageLookupByLibrary.simpleMessage("عرض التفاصيل"),

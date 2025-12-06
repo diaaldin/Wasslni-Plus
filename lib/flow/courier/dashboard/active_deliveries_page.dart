@@ -8,6 +8,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart' as geocoding;
 import 'dart:math' show cos, sqrt, asin;
 import 'package:url_launcher/url_launcher.dart';
+import 'package:wasslni_plus/flow/courier/dashboard/delivery_checklist_sheet.dart';
 
 class ActiveDeliveriesPage extends StatefulWidget {
   const ActiveDeliveriesPage({super.key});
@@ -563,6 +564,31 @@ class _ActiveDeliveriesPageState extends State<ActiveDeliveriesPage> {
                     ),
                   ],
                 ),
+                const SizedBox(height: 16),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                      _showChecklist(parcel);
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green,
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.all(16),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                    child: const Text(
+                      'Complete Delivery', // TODO: Add to l10n
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           );
@@ -663,6 +689,38 @@ class _ActiveDeliveriesPageState extends State<ActiveDeliveriesPage> {
         );
       }
     }
+  }
+
+  void _showChecklist(ParcelModel parcel) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (context) => DraggableScrollableSheet(
+        initialChildSize: 0.6,
+        minChildSize: 0.4,
+        maxChildSize: 0.9,
+        expand: false,
+        builder: (context, scrollController) {
+          return SingleChildScrollView(
+            controller: scrollController,
+            child: DeliveryChecklistSheet(
+              parcel: parcel,
+              onCompleted: () {
+                Navigator.pop(context);
+                // TODO: Navigate to Proof of Delivery page
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                      content: Text('Proceeding to Proof of Delivery...')),
+                );
+              },
+            ),
+          );
+        },
+      ),
+    );
   }
 
   Future<void> _optimizeRoute() async {

@@ -215,5 +215,13 @@
   "delivery_queue": "قائمة التوصيل",
   "no_active_deliveries": "لا توجد توصيلات نشطة",
   "all_caught_up": "أنت على اطلاع بكل شيء!",
-  "call": "اتصال"
+  "call": "اتصال",
+  "delivery_checklist": "قائمة التحقق من التوصيل",
+  "complete_steps_to_proceed": "أكمل الخطوات التالية للمتابعة",
+  "verify_recipient": "التحقق من المستلم",
+  "confirm_location": "تأكيد الموقع",
+  "check_package_condition": "فحص حالة الطرد",
+  "ensure_no_damage": "تأكد من عدم وجود تلف ظاهر",
+  "collect_payment": "تحصيل الدفع",
+  "proceed_to_proof": "المتابعة إلى إثبات التوصيل"
 }
