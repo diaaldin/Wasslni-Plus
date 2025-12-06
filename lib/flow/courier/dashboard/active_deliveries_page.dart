@@ -9,6 +9,7 @@ import 'package:geocoding/geocoding.dart' as geocoding;
 import 'dart:math' show cos, sqrt, asin;
 import 'package:url_launcher/url_launcher.dart';
 import 'package:wasslni_plus/flow/courier/dashboard/delivery_checklist_sheet.dart';
+import 'package:wasslni_plus/flow/courier/dashboard/proof_of_delivery_page.dart';
 
 class ActiveDeliveriesPage extends StatefulWidget {
   const ActiveDeliveriesPage({super.key});
@@ -710,10 +711,11 @@ class _ActiveDeliveriesPageState extends State<ActiveDeliveriesPage> {
               parcel: parcel,
               onCompleted: () {
                 Navigator.pop(context);
-                // TODO: Navigate to Proof of Delivery page
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                      content: Text('Proceeding to Proof of Delivery...')),
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ProofOfDeliveryPage(parcel: parcel),
+                  ),
                 );
               },
             ),

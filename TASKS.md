@@ -140,7 +140,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [x] Add optimized route view
   - [x] Implement navigation integration (Google Maps/Waze)
   - [x] Create delivery checklist
-  - [ ] Add photo proof of delivery
+  - [x] Add photo proof of delivery
   - [ ] Implement signature capture
 
 - [ ] **Delivery History**

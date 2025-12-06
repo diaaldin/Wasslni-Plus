@@ -223,5 +223,12 @@
   "check_package_condition": "Check Package Condition",
   "ensure_no_damage": "Ensure there is no visible damage",
   "collect_payment": "Collect Payment",
-  "proceed_to_proof": "Proceed to Proof of Delivery"
+  "proceed_to_proof": "Proceed to Proof of Delivery",
+  "proof_of_delivery": "Proof of Delivery",
+  "take_photo_proof": "Take a photo of the delivered package",
+  "take_photo": "Take Photo",
+  "retake": "Retake",
+  "confirm_delivery": "Confirm Delivery",
+  "uploading": "Uploading...",
+  "delivery_completed_successfully": "Delivery completed successfully!"
 }

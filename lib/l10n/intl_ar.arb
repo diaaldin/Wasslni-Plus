@@ -223,5 +223,12 @@
   "check_package_condition": "فحص حالة الطرد",
   "ensure_no_damage": "تأكد من عدم وجود تلف ظاهر",
   "collect_payment": "تحصيل الدفع",
-  "proceed_to_proof": "المتابعة إلى إثبات التوصيل"
+  "proceed_to_proof": "المتابعة إلى إثبات التوصيل",
+  "proof_of_delivery": "إثبات التوصيل",
+  "take_photo_proof": "التقط صورة للطرد الذي تم توصيله",
+  "take_photo": "التقاط صورة",
+  "retake": "إعادة التقاط",
+  "confirm_delivery": "تأكيد التوصيل",
+  "uploading": "جاري الرفع...",
+  "delivery_completed_successfully": "تم التوصيل بنجاح!"
 }

@@ -1903,6 +1903,61 @@ class S {
       args: [],
     );
   }
+
+  /// `Proof of Delivery`
+  String get proof_of_delivery {
+    return Intl.message(
+      'Proof of Delivery',
+      name: 'proof_of_delivery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Take a photo of the delivered package`
+  String get take_photo_proof {
+    return Intl.message(
+      'Take a photo of the delivered package',
+      name: 'take_photo_proof',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Take Photo`
+  String get take_photo {
+    return Intl.message('Take Photo', name: 'take_photo', desc: '', args: []);
+  }
+
+  /// `Retake`
+  String get retake {
+    return Intl.message('Retake', name: 'retake', desc: '', args: []);
+  }
+
+  /// `Confirm Delivery`
+  String get confirm_delivery {
+    return Intl.message(
+      'Confirm Delivery',
+      name: 'confirm_delivery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Uploading...`
+  String get uploading {
+    return Intl.message('Uploading...', name: 'uploading', desc: '', args: []);
+  }
+
+  /// `Delivery completed successfully!`
+  String get delivery_completed_successfully {
+    return Intl.message(
+      'Delivery completed successfully!',
+      name: 'delivery_completed_successfully',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

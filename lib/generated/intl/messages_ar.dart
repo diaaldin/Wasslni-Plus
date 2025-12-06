@@ -73,6 +73,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirm_cancel_parcel": MessageLookupByLibrary.simpleMessage(
       "هل أنت متأكد من إلغاء هذا الطرد؟",
     ),
+    "confirm_delivery": MessageLookupByLibrary.simpleMessage("تأكيد التوصيل"),
     "confirm_location": MessageLookupByLibrary.simpleMessage("تأكيد الموقع"),
     "contact_support": MessageLookupByLibrary.simpleMessage(
       "لمزيد من التفاصيل، لا تتردد في الاتصال بفريق الدعم لدينا.",
@@ -108,6 +109,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "delivered": MessageLookupByLibrary.simpleMessage("تم التوصيل"),
     "delivery_checklist": MessageLookupByLibrary.simpleMessage(
       "قائمة التحقق من التوصيل",
+    ),
+    "delivery_completed_successfully": MessageLookupByLibrary.simpleMessage(
+      "تم التوصيل بنجاح!",
     ),
     "delivery_fee": MessageLookupByLibrary.simpleMessage("رسوم التوصيل"),
     "delivery_fees_collected": MessageLookupByLibrary.simpleMessage(
@@ -298,6 +302,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "promotional_offers_desc": MessageLookupByLibrary.simpleMessage(
       "تلقي تحديثات حول الميزات والعروض الجديدة",
     ),
+    "proof_of_delivery": MessageLookupByLibrary.simpleMessage("إثبات التوصيل"),
     "recent_parcels": MessageLookupByLibrary.simpleMessage("الطرود الأخيرة"),
     "recipient": MessageLookupByLibrary.simpleMessage("المستلم"),
     "recipient_name": MessageLookupByLibrary.simpleMessage("اسم المستلم"),
@@ -309,6 +314,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "requires_signature": MessageLookupByLibrary.simpleMessage(
       "يتطلب توقيع المستلم",
     ),
+    "retake": MessageLookupByLibrary.simpleMessage("إعادة التقاط"),
     "revenue_overview": MessageLookupByLibrary.simpleMessage(
       "نظرة عامة على الإيرادات",
     ),
@@ -343,6 +349,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "system_announcements_desc": MessageLookupByLibrary.simpleMessage(
       "تحديثات مهمة حول المنصة",
     ),
+    "take_photo": MessageLookupByLibrary.simpleMessage("التقاط صورة"),
+    "take_photo_proof": MessageLookupByLibrary.simpleMessage(
+      "التقط صورة للطرد الذي تم توصيله",
+    ),
     "thank_you": MessageLookupByLibrary.simpleMessage(
       "نشكرك على ثقتك بنا فيما يتعلق بمعلوماتك. نحن نسعى جاهدين للحفاظ على بياناتك آمنة وشفافة.",
     ),
@@ -366,6 +376,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "upload_csv": MessageLookupByLibrary.simpleMessage("رفع ملف CSV"),
     "upload_error": MessageLookupByLibrary.simpleMessage("فشل الرفع"),
     "upload_success": MessageLookupByLibrary.simpleMessage("تم الرفع بنجاح"),
+    "uploading": MessageLookupByLibrary.simpleMessage("جاري الرفع..."),
     "user_rights": MessageLookupByLibrary.simpleMessage("حقوق المستخدم"),
     "user_rights_desc": MessageLookupByLibrary.simpleMessage(
       "لديك الحق في الوصول إلى بياناتك وتعديلها وحذفها. يرجى التواصل معنا إذا كانت لديك أي مخاوف أو طلبات.",

@@ -79,6 +79,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirm_cancel_parcel": MessageLookupByLibrary.simpleMessage(
       "Are you sure you want to cancel this parcel?",
     ),
+    "confirm_delivery": MessageLookupByLibrary.simpleMessage(
+      "Confirm Delivery",
+    ),
     "confirm_location": MessageLookupByLibrary.simpleMessage(
       "Confirm Location",
     ),
@@ -120,6 +123,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "delivered": MessageLookupByLibrary.simpleMessage("Delivered"),
     "delivery_checklist": MessageLookupByLibrary.simpleMessage(
       "Delivery Checklist",
+    ),
+    "delivery_completed_successfully": MessageLookupByLibrary.simpleMessage(
+      "Delivery completed successfully!",
     ),
     "delivery_fee": MessageLookupByLibrary.simpleMessage("Delivery Fee"),
     "delivery_fees_collected": MessageLookupByLibrary.simpleMessage(
@@ -322,6 +328,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "promotional_offers_desc": MessageLookupByLibrary.simpleMessage(
       "Receive updates about new features and offers",
     ),
+    "proof_of_delivery": MessageLookupByLibrary.simpleMessage(
+      "Proof of Delivery",
+    ),
     "recent_parcels": MessageLookupByLibrary.simpleMessage("Recent Parcels"),
     "recipient": MessageLookupByLibrary.simpleMessage("Recipient"),
     "recipient_name": MessageLookupByLibrary.simpleMessage("Recipient Name"),
@@ -335,6 +344,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "requires_signature": MessageLookupByLibrary.simpleMessage(
       "Requires Recipient Signature",
     ),
+    "retake": MessageLookupByLibrary.simpleMessage("Retake"),
     "revenue_overview": MessageLookupByLibrary.simpleMessage(
       "Revenue Overview",
     ),
@@ -369,6 +379,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "system_announcements_desc": MessageLookupByLibrary.simpleMessage(
       "Important updates about the platform",
     ),
+    "take_photo": MessageLookupByLibrary.simpleMessage("Take Photo"),
+    "take_photo_proof": MessageLookupByLibrary.simpleMessage(
+      "Take a photo of the delivered package",
+    ),
     "thank_you": MessageLookupByLibrary.simpleMessage(
       "Thank you for trusting us with your information. We strive to keep your data safe and transparent.",
     ),
@@ -398,6 +412,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "upload_success": MessageLookupByLibrary.simpleMessage(
       "Upload completed successfully",
     ),
+    "uploading": MessageLookupByLibrary.simpleMessage("Uploading..."),
     "user_rights": MessageLookupByLibrary.simpleMessage("User Rights"),
     "user_rights_desc": MessageLookupByLibrary.simpleMessage(
       "You have the right to access, modify, and delete your data. Contact us for any concerns or requests.",
