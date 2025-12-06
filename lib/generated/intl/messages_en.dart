@@ -75,6 +75,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "courier_dashboard": MessageLookupByLibrary.simpleMessage(
       "Courier Dashboard",
     ),
+    "current_location": MessageLookupByLibrary.simpleMessage(
+      "Current Location",
+    ),
     "customer": MessageLookupByLibrary.simpleMessage("Customer"),
     "daily_assignments": MessageLookupByLibrary.simpleMessage(
       "Daily Assignments",
@@ -107,6 +110,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "delivery_instructions": MessageLookupByLibrary.simpleMessage(
       "Delivery Instructions (Optional)",
     ),
+    "delivery_location": MessageLookupByLibrary.simpleMessage(
+      "Delivery Location",
+    ),
+    "delivery_points": MessageLookupByLibrary.simpleMessage("Delivery Points"),
     "delivery_region": MessageLookupByLibrary.simpleMessage("Delivery Region"),
     "delivery_statistics": MessageLookupByLibrary.simpleMessage(
       "Delivery Statistics",
@@ -115,6 +122,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Preferred Delivery Time",
     ),
     "dimensions": MessageLookupByLibrary.simpleMessage("Dimensions (cm)"),
+    "distance": MessageLookupByLibrary.simpleMessage("Distance"),
     "dont_have_account": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? Register",
     ),
@@ -139,6 +147,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please enter recipient name",
     ),
     "error_occurred": m1,
+    "estimated_time": MessageLookupByLibrary.simpleMessage("Estimated Time"),
     "evening": MessageLookupByLibrary.simpleMessage("Evening (5PM - 9PM)"),
     "export": MessageLookupByLibrary.simpleMessage("Export"),
     "export_error": MessageLookupByLibrary.simpleMessage("Export failed"),
@@ -153,6 +162,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "from": MessageLookupByLibrary.simpleMessage("From"),
     "general_serach_hint": MessageLookupByLibrary.simpleMessage("Search..."),
     "height": MessageLookupByLibrary.simpleMessage("Height"),
+    "hide_route": MessageLookupByLibrary.simpleMessage("Hide Route"),
     "history": MessageLookupByLibrary.simpleMessage("History"),
     "images": MessageLookupByLibrary.simpleMessage("Images"),
     "in_transit": MessageLookupByLibrary.simpleMessage("In Transit"),
@@ -171,6 +181,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "language": MessageLookupByLibrary.simpleMessage("Language"),
     "length": MessageLookupByLibrary.simpleMessage("Length"),
+    "list_view": MessageLookupByLibrary.simpleMessage("List View"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "login_failed": MessageLookupByLibrary.simpleMessage("Login Failed"),
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
@@ -181,6 +192,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Error logging out. Please try again.",
     ),
     "main": MessageLookupByLibrary.simpleMessage("Main"),
+    "map_view": MessageLookupByLibrary.simpleMessage("Map View"),
     "mark_all_read": MessageLookupByLibrary.simpleMessage("Mark all as read"),
     "merchant": MessageLookupByLibrary.simpleMessage("Merchant"),
     "merchant_dashboard": MessageLookupByLibrary.simpleMessage(
@@ -192,6 +204,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "morning": MessageLookupByLibrary.simpleMessage("Morning (9AM - 12PM)"),
     "my_route": MessageLookupByLibrary.simpleMessage("My Route"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
+    "navigate": MessageLookupByLibrary.simpleMessage("Navigate"),
     "no": MessageLookupByLibrary.simpleMessage("No"),
     "no_assignments": MessageLookupByLibrary.simpleMessage(
       "No assignments for today",
@@ -211,6 +224,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Notification Settings",
     ),
     "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
+    "optimized_route": MessageLookupByLibrary.simpleMessage("Optimized Route"),
     "optional": MessageLookupByLibrary.simpleMessage("Optional"),
     "parcel_cancelled_success": MessageLookupByLibrary.simpleMessage(
       "Parcel cancelled successfully",
@@ -283,12 +297,14 @@ class MessageLookup extends MessageLookupByLibrary {
       "Revenue Overview",
     ),
     "role": MessageLookupByLibrary.simpleMessage("Role"),
+    "route_map": MessageLookupByLibrary.simpleMessage("Route Map"),
     "save_parcel": MessageLookupByLibrary.simpleMessage("Save Parcel"),
     "scan_to_track": MessageLookupByLibrary.simpleMessage("Scan to Track"),
     "select_file": MessageLookupByLibrary.simpleMessage("Select File"),
     "select_month": MessageLookupByLibrary.simpleMessage("Select Month"),
     "settings": MessageLookupByLibrary.simpleMessage("Settings"),
     "shipping_label": MessageLookupByLibrary.simpleMessage("Shipping Label"),
+    "show_route": MessageLookupByLibrary.simpleMessage("Show Route"),
     "signature_description": MessageLookupByLibrary.simpleMessage(
       "Courier must collect signature on delivery",
     ),

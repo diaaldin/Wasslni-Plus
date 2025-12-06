@@ -1140,6 +1140,132 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Important updates about the platform'**
   String get system_announcements_desc;
+
+  /// No description provided for @courier_dashboard.
+  ///
+  /// In en, this message translates to:
+  /// **'Courier Dashboard'**
+  String get courier_dashboard;
+
+  /// No description provided for @daily_assignments.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily Assignments'**
+  String get daily_assignments;
+
+  /// No description provided for @todays_deliveries.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s Deliveries'**
+  String get todays_deliveries;
+
+  /// No description provided for @earnings_today.
+  ///
+  /// In en, this message translates to:
+  /// **'Earnings Today'**
+  String get earnings_today;
+
+  /// No description provided for @completed.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get completed;
+
+  /// No description provided for @pending_pickup.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending Pickup'**
+  String get pending_pickup;
+
+  /// No description provided for @my_route.
+  ///
+  /// In en, this message translates to:
+  /// **'My Route'**
+  String get my_route;
+
+  /// No description provided for @start_delivery.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Delivery'**
+  String get start_delivery;
+
+  /// No description provided for @no_assignments.
+  ///
+  /// In en, this message translates to:
+  /// **'No assignments for today'**
+  String get no_assignments;
+
+  /// No description provided for @route_map.
+  ///
+  /// In en, this message translates to:
+  /// **'Route Map'**
+  String get route_map;
+
+  /// No description provided for @delivery_points.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery Points'**
+  String get delivery_points;
+
+  /// No description provided for @navigate.
+  ///
+  /// In en, this message translates to:
+  /// **'Navigate'**
+  String get navigate;
+
+  /// No description provided for @map_view.
+  ///
+  /// In en, this message translates to:
+  /// **'Map View'**
+  String get map_view;
+
+  /// No description provided for @list_view.
+  ///
+  /// In en, this message translates to:
+  /// **'List View'**
+  String get list_view;
+
+  /// No description provided for @delivery_location.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery Location'**
+  String get delivery_location;
+
+  /// No description provided for @current_location.
+  ///
+  /// In en, this message translates to:
+  /// **'Current Location'**
+  String get current_location;
+
+  /// No description provided for @show_route.
+  ///
+  /// In en, this message translates to:
+  /// **'Show Route'**
+  String get show_route;
+
+  /// No description provided for @hide_route.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide Route'**
+  String get hide_route;
+
+  /// No description provided for @optimized_route.
+  ///
+  /// In en, this message translates to:
+  /// **'Optimized Route'**
+  String get optimized_route;
+
+  /// No description provided for @distance.
+  ///
+  /// In en, this message translates to:
+  /// **'Distance'**
+  String get distance;
+
+  /// No description provided for @estimated_time.
+  ///
+  /// In en, this message translates to:
+  /// **'Estimated Time'**
+  String get estimated_time;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

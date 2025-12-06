@@ -182,5 +182,17 @@
   "in_transit": "قيد التوصيل",
   "my_route": "مسار التوصيل",
   "start_delivery": "بدء التوصيل",
-  "no_assignments": "لا توجد مهام لهذا اليوم"
+  "no_assignments": "لا توجد مهام لهذا اليوم",
+  "route_map": "خريطة المسار",
+  "delivery_points": "نقاط التوصيل",
+  "navigate": "التنقل",
+  "map_view": "عرض الخريطة",
+  "list_view": "عرض القائمة",
+  "delivery_location": "موقع التوصيل",
+  "current_location": "الموقع الحالي",
+  "show_route": "إظهار المسار",
+  "hide_route": "إخفاء المسار",
+  "optimized_route": "المسار الأمثل",
+  "distance": "المسافة",
+  "estimated_time": "الوقت المتوقع"
 }

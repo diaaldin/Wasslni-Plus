@@ -552,4 +552,67 @@ class SEn extends S {
   @override
   String get system_announcements_desc =>
       'Important updates about the platform';
+
+  @override
+  String get courier_dashboard => 'Courier Dashboard';
+
+  @override
+  String get daily_assignments => 'Daily Assignments';
+
+  @override
+  String get todays_deliveries => 'Today\'s Deliveries';
+
+  @override
+  String get earnings_today => 'Earnings Today';
+
+  @override
+  String get completed => 'Completed';
+
+  @override
+  String get pending_pickup => 'Pending Pickup';
+
+  @override
+  String get my_route => 'My Route';
+
+  @override
+  String get start_delivery => 'Start Delivery';
+
+  @override
+  String get no_assignments => 'No assignments for today';
+
+  @override
+  String get route_map => 'Route Map';
+
+  @override
+  String get delivery_points => 'Delivery Points';
+
+  @override
+  String get navigate => 'Navigate';
+
+  @override
+  String get map_view => 'Map View';
+
+  @override
+  String get list_view => 'List View';
+
+  @override
+  String get delivery_location => 'Delivery Location';
+
+  @override
+  String get current_location => 'Current Location';
+
+  @override
+  String get show_route => 'Show Route';
+
+  @override
+  String get hide_route => 'Hide Route';
+
+  @override
+  String get optimized_route => 'Optimized Route';
+
+  @override
+  String get distance => 'Distance';
+
+  @override
+  String get estimated_time => 'Estimated Time';
 }

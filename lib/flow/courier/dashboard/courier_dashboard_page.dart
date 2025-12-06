@@ -4,6 +4,7 @@ import 'package:wasslni_plus/generated/l10n.dart';
 import 'package:wasslni_plus/models/parcel_model.dart';
 import 'package:wasslni_plus/services/auth_service.dart';
 import 'package:wasslni_plus/services/firestore_service.dart';
+import 'package:wasslni_plus/flow/courier/dashboard/courier_route_map.dart';
 
 class CourierDashboardPage extends StatefulWidget {
   const CourierDashboardPage({super.key});
@@ -98,6 +99,30 @@ class _CourierDashboardPageState extends State<CourierDashboardPage> {
                 ],
               ),
             ),
+          );
+        },
+      ),
+      floatingActionButton: StreamBuilder<List<ParcelModel>>(
+        stream: _getTodaysDeliveries(user.uid),
+        builder: (context, snapshot) {
+          final parcels = snapshot.data ?? [];
+
+          if (parcels.isEmpty) {
+            return const SizedBox.shrink();
+          }
+
+          return FloatingActionButton.extended(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => CourierRouteMap(parcels: parcels),
+                ),
+              );
+            },
+            backgroundColor: AppStyles.primaryColor,
+            icon: const Icon(Icons.map),
+            label: Text(tr.route_map),
           );
         },
       ),

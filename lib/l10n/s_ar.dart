@@ -255,7 +255,7 @@ class SAr extends S {
   String get pending => 'قيد الانتظار';
 
   @override
-  String get in_transit => 'في الطريق';
+  String get in_transit => 'قيد التوصيل';
 
   @override
   String get delivered => 'تم التوصيل';
@@ -548,4 +548,67 @@ class SAr extends S {
 
   @override
   String get system_announcements_desc => 'تحديثات مهمة حول المنصة';
+
+  @override
+  String get courier_dashboard => 'لوحة السائق';
+
+  @override
+  String get daily_assignments => 'المهام اليومية';
+
+  @override
+  String get todays_deliveries => 'توصيلات اليوم';
+
+  @override
+  String get earnings_today => 'الأرباح اليوم';
+
+  @override
+  String get completed => 'مكتمل';
+
+  @override
+  String get pending_pickup => 'في انتظار الاستلام';
+
+  @override
+  String get my_route => 'مسار التوصيل';
+
+  @override
+  String get start_delivery => 'بدء التوصيل';
+
+  @override
+  String get no_assignments => 'لا توجد مهام لهذا اليوم';
+
+  @override
+  String get route_map => 'خريطة المسار';
+
+  @override
+  String get delivery_points => 'نقاط التوصيل';
+
+  @override
+  String get navigate => 'التنقل';
+
+  @override
+  String get map_view => 'عرض الخريطة';
+
+  @override
+  String get list_view => 'عرض القائمة';
+
+  @override
+  String get delivery_location => 'موقع التوصيل';
+
+  @override
+  String get current_location => 'الموقع الحالي';
+
+  @override
+  String get show_route => 'إظهار المسار';
+
+  @override
+  String get hide_route => 'إخفاء المسار';
+
+  @override
+  String get optimized_route => 'المسار الأمثل';
+
+  @override
+  String get distance => 'المسافة';
+
+  @override
+  String get estimated_time => 'الوقت المتوقع';
 }

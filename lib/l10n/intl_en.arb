@@ -182,5 +182,17 @@
   "in_transit": "In Transit",
   "my_route": "My Route",
   "start_delivery": "Start Delivery",
-  "no_assignments": "No assignments for today"
+  "no_assignments": "No assignments for today",
+  "route_map": "Route Map",
+  "delivery_points": "Delivery Points",
+  "navigate": "Navigate",
+  "map_view": "Map View",
+  "list_view": "List View",
+  "delivery_location": "Delivery Location",
+  "current_location": "Current Location",
+  "show_route": "Show Route",
+  "hide_route": "Hide Route",
+  "optimized_route": "Optimized Route",
+  "distance": "Distance",
+  "estimated_time": "Estimated Time"
 }

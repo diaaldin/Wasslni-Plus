@@ -1583,6 +1583,91 @@ class S {
       args: [],
     );
   }
+
+  /// `Route Map`
+  String get route_map {
+    return Intl.message('Route Map', name: 'route_map', desc: '', args: []);
+  }
+
+  /// `Delivery Points`
+  String get delivery_points {
+    return Intl.message(
+      'Delivery Points',
+      name: 'delivery_points',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Navigate`
+  String get navigate {
+    return Intl.message('Navigate', name: 'navigate', desc: '', args: []);
+  }
+
+  /// `Map View`
+  String get map_view {
+    return Intl.message('Map View', name: 'map_view', desc: '', args: []);
+  }
+
+  /// `List View`
+  String get list_view {
+    return Intl.message('List View', name: 'list_view', desc: '', args: []);
+  }
+
+  /// `Delivery Location`
+  String get delivery_location {
+    return Intl.message(
+      'Delivery Location',
+      name: 'delivery_location',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Current Location`
+  String get current_location {
+    return Intl.message(
+      'Current Location',
+      name: 'current_location',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show Route`
+  String get show_route {
+    return Intl.message('Show Route', name: 'show_route', desc: '', args: []);
+  }
+
+  /// `Hide Route`
+  String get hide_route {
+    return Intl.message('Hide Route', name: 'hide_route', desc: '', args: []);
+  }
+
+  /// `Optimized Route`
+  String get optimized_route {
+    return Intl.message(
+      'Optimized Route',
+      name: 'optimized_route',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Distance`
+  String get distance {
+    return Intl.message('Distance', name: 'distance', desc: '', args: []);
+  }
+
+  /// `Estimated Time`
+  String get estimated_time {
+    return Intl.message(
+      'Estimated Time',
+      name: 'estimated_time',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

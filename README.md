@@ -13,6 +13,7 @@
 - 🔐 **Multi-role Authentication**: Separate interfaces for Admin, Manager, Merchant, Courier, and Customer
 - 📦 **Package Management**: Create, track, and manage parcels with barcode support
 - 🚚 **Delivery Tracking**: Real-time status updates with progress visualization
+- 🗺️ **Route Map**: Interactive Google Maps integration for couriers to visualize delivery routes
 - 🌍 **Regional Pricing**: Dynamic pricing based on delivery regions (القدس, الضفة, الداخل)
 - 🌐 **Multi-language Support**: Arabic (Primary) and English localization
 - 🌙 **Dark Mode**: Full dark/light theme support
@@ -191,6 +192,40 @@ firebase functions:log
 ```bash
 firebase deploy --only functions
 ```
+
+## 🗺️ Google Maps Setup
+
+The app uses Google Maps to display delivery routes for couriers. To enable this feature:
+
+1. **Get API Keys**
+   - Create a Google Cloud Platform (GCP) project
+   - Enable Maps SDK for Android and iOS
+   - Enable Geocoding API and Directions API
+   - Create separate API keys for Android and iOS
+
+2. **Configure Android**
+   - Add API key to `android/app/src/main/AndroidManifest.xml`
+   - Replace `YOUR_GOOGLE_MAPS_API_KEY_HERE` with your Android API key
+
+3. **Configure iOS**
+   - Add API key to `ios/Runner/AppDelegate.swift`
+   - Add location permissions to `ios/Runner/Info.plist`
+
+4. **Detailed Instructions**
+   - See [GOOGLE_MAPS_SETUP.md](GOOGLE_MAPS_SETUP.md) for complete setup guide
+   - Includes API key restrictions, security best practices, and troubleshooting
+
+### Quick Test
+
+After setting up API keys, test the map feature:
+```bash
+flutter run -d android  # or ios
+```
+
+Log in as a courier and tap the "Route Map" button to view delivery locations.
+
+**Note:** Google Maps has a free tier with $200 monthly credit. Monitor usage in GCP Console.
+
 
 ## 🍎 iOS Development
 

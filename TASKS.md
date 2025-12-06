@@ -131,7 +131,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
 
 - [ ] **Courier Main Page**
   - [x] Create daily assignment overview
-  - [ ] Display route map with delivery points
+  - [x] Display route map with delivery points
   - [ ] Add earnings tracker
   - [ ] Show today's delivery statistics
 
