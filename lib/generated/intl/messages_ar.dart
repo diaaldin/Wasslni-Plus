@@ -65,6 +65,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "يرجى اختيار المنطقة",
     ),
     "clear_selection": MessageLookupByLibrary.simpleMessage("مسح الاختيار"),
+    "clear_signature": MessageLookupByLibrary.simpleMessage("مسح التوقيع"),
     "collect_payment": MessageLookupByLibrary.simpleMessage("تحصيل الدفع"),
     "complete_steps_to_proceed": MessageLookupByLibrary.simpleMessage(
       "أكمل الخطوات التالية للمتابعة",
@@ -75,6 +76,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "confirm_delivery": MessageLookupByLibrary.simpleMessage("تأكيد التوصيل"),
     "confirm_location": MessageLookupByLibrary.simpleMessage("تأكيد الموقع"),
+    "confirm_signature": MessageLookupByLibrary.simpleMessage("تأكيد التوقيع"),
     "contact_support": MessageLookupByLibrary.simpleMessage(
       "لمزيد من التفاصيل، لا تتردد في الاتصال بفريق الدعم لدينا.",
     ),
@@ -284,6 +286,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "مقاييس الأداء",
     ),
     "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "please_sign_below": MessageLookupByLibrary.simpleMessage(
+      "الرجاء التوقيع أدناه",
+    ),
     "print_label": MessageLookupByLibrary.simpleMessage("طباعة الملصق"),
     "print_receipt": MessageLookupByLibrary.simpleMessage("طباعة الإيصال"),
     "privacy_intro": MessageLookupByLibrary.simpleMessage(
@@ -329,6 +334,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "show_route": MessageLookupByLibrary.simpleMessage("إظهار المسار"),
     "signature_description": MessageLookupByLibrary.simpleMessage(
       "يجب على المندوب جمع التوقيع عند التسليم",
+    ),
+    "signature_required": MessageLookupByLibrary.simpleMessage("التوقيع مطلوب"),
+    "signature_uploaded": MessageLookupByLibrary.simpleMessage(
+      "تم رفع التوقيع بنجاح",
     ),
     "start_delivery": MessageLookupByLibrary.simpleMessage("بدء التوصيل"),
     "statistics": MessageLookupByLibrary.simpleMessage("الإحصائيات"),

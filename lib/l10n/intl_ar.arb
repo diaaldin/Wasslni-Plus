@@ -230,5 +230,10 @@
   "retake": "إعادة التقاط",
   "confirm_delivery": "تأكيد التوصيل",
   "uploading": "جاري الرفع...",
-  "delivery_completed_successfully": "تم التوصيل بنجاح!"
+  "delivery_completed_successfully": "تم التوصيل بنجاح!",
+  "signature_required": "التوقيع مطلوب",
+  "please_sign_below": "الرجاء التوقيع أدناه",
+  "clear_signature": "مسح التوقيع",
+  "confirm_signature": "تأكيد التوقيع",
+  "signature_uploaded": "تم رفع التوقيع بنجاح"
 }

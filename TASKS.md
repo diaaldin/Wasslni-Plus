@@ -141,7 +141,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [x] Implement navigation integration (Google Maps/Waze)
   - [x] Create delivery checklist
   - [x] Add photo proof of delivery
-  - [ ] Implement signature capture
+  - [x] Implement signature capture
 
 - [ ] **Delivery History**
   - [ ] Create completed deliveries list

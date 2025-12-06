@@ -230,5 +230,10 @@
   "retake": "Retake",
   "confirm_delivery": "Confirm Delivery",
   "uploading": "Uploading...",
-  "delivery_completed_successfully": "Delivery completed successfully!"
+  "delivery_completed_successfully": "Delivery completed successfully!",
+  "signature_required": "Signature Required",
+  "please_sign_below": "Please sign below",
+  "clear_signature": "Clear Signature",
+  "confirm_signature": "Confirm Signature",
+  "signature_uploaded": "Signature uploaded successfully"
 }

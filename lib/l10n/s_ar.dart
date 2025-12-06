@@ -671,4 +671,49 @@ class SAr extends S {
 
   @override
   String get call => 'اتصال';
+
+  @override
+  String get delivery_checklist => 'قائمة التحقق من التوصيل';
+
+  @override
+  String get complete_steps_to_proceed => 'أكمل الخطوات التالية للمتابعة';
+
+  @override
+  String get verify_recipient => 'التحقق من المستلم';
+
+  @override
+  String get confirm_location => 'تأكيد الموقع';
+
+  @override
+  String get check_package_condition => 'فحص حالة الطرد';
+
+  @override
+  String get ensure_no_damage => 'تأكد من عدم وجود تلف ظاهر';
+
+  @override
+  String get collect_payment => 'تحصيل الدفع';
+
+  @override
+  String get proceed_to_proof => 'المتابعة إلى إثبات التوصيل';
+
+  @override
+  String get proof_of_delivery => 'إثبات التوصيل';
+
+  @override
+  String get take_photo_proof => 'التقط صورة للطرد الذي تم توصيله';
+
+  @override
+  String get take_photo => 'التقاط صورة';
+
+  @override
+  String get retake => 'إعادة التقاط';
+
+  @override
+  String get confirm_delivery => 'تأكيد التوصيل';
+
+  @override
+  String get uploading => 'جاري الرفع...';
+
+  @override
+  String get delivery_completed_successfully => 'تم التوصيل بنجاح!';
 }

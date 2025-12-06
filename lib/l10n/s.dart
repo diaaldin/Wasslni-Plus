@@ -1386,6 +1386,96 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Call'**
   String get call;
+
+  /// No description provided for @delivery_checklist.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery Checklist'**
+  String get delivery_checklist;
+
+  /// No description provided for @complete_steps_to_proceed.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete the following steps to proceed'**
+  String get complete_steps_to_proceed;
+
+  /// No description provided for @verify_recipient.
+  ///
+  /// In en, this message translates to:
+  /// **'Verify Recipient'**
+  String get verify_recipient;
+
+  /// No description provided for @confirm_location.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Location'**
+  String get confirm_location;
+
+  /// No description provided for @check_package_condition.
+  ///
+  /// In en, this message translates to:
+  /// **'Check Package Condition'**
+  String get check_package_condition;
+
+  /// No description provided for @ensure_no_damage.
+  ///
+  /// In en, this message translates to:
+  /// **'Ensure there is no visible damage'**
+  String get ensure_no_damage;
+
+  /// No description provided for @collect_payment.
+  ///
+  /// In en, this message translates to:
+  /// **'Collect Payment'**
+  String get collect_payment;
+
+  /// No description provided for @proceed_to_proof.
+  ///
+  /// In en, this message translates to:
+  /// **'Proceed to Proof of Delivery'**
+  String get proceed_to_proof;
+
+  /// No description provided for @proof_of_delivery.
+  ///
+  /// In en, this message translates to:
+  /// **'Proof of Delivery'**
+  String get proof_of_delivery;
+
+  /// No description provided for @take_photo_proof.
+  ///
+  /// In en, this message translates to:
+  /// **'Take a photo of the delivered package'**
+  String get take_photo_proof;
+
+  /// No description provided for @take_photo.
+  ///
+  /// In en, this message translates to:
+  /// **'Take Photo'**
+  String get take_photo;
+
+  /// No description provided for @retake.
+  ///
+  /// In en, this message translates to:
+  /// **'Retake'**
+  String get retake;
+
+  /// No description provided for @confirm_delivery.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Delivery'**
+  String get confirm_delivery;
+
+  /// No description provided for @uploading.
+  ///
+  /// In en, this message translates to:
+  /// **'Uploading...'**
+  String get uploading;
+
+  /// No description provided for @delivery_completed_successfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery completed successfully!'**
+  String get delivery_completed_successfully;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

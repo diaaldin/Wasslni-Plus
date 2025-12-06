@@ -71,6 +71,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please select a region",
     ),
     "clear_selection": MessageLookupByLibrary.simpleMessage("Clear selection"),
+    "clear_signature": MessageLookupByLibrary.simpleMessage("Clear Signature"),
     "collect_payment": MessageLookupByLibrary.simpleMessage("Collect Payment"),
     "complete_steps_to_proceed": MessageLookupByLibrary.simpleMessage(
       "Complete the following steps to proceed",
@@ -84,6 +85,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "confirm_location": MessageLookupByLibrary.simpleMessage(
       "Confirm Location",
+    ),
+    "confirm_signature": MessageLookupByLibrary.simpleMessage(
+      "Confirm Signature",
     ),
     "contact_support": MessageLookupByLibrary.simpleMessage(
       "For more details, feel free to contact our support team.",
@@ -310,6 +314,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Performance Metrics",
     ),
     "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
+    "please_sign_below": MessageLookupByLibrary.simpleMessage(
+      "Please sign below",
+    ),
     "print_label": MessageLookupByLibrary.simpleMessage("Print Label"),
     "print_receipt": MessageLookupByLibrary.simpleMessage("Print Receipt"),
     "privacy_intro": MessageLookupByLibrary.simpleMessage(
@@ -359,6 +366,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "show_route": MessageLookupByLibrary.simpleMessage("Show Route"),
     "signature_description": MessageLookupByLibrary.simpleMessage(
       "Courier must collect signature on delivery",
+    ),
+    "signature_required": MessageLookupByLibrary.simpleMessage(
+      "Signature Required",
+    ),
+    "signature_uploaded": MessageLookupByLibrary.simpleMessage(
+      "Signature uploaded successfully",
     ),
     "start_delivery": MessageLookupByLibrary.simpleMessage("Start Delivery"),
     "statistics": MessageLookupByLibrary.simpleMessage("Statistics"),

@@ -675,4 +675,51 @@ class SEn extends S {
 
   @override
   String get call => 'Call';
+
+  @override
+  String get delivery_checklist => 'Delivery Checklist';
+
+  @override
+  String get complete_steps_to_proceed =>
+      'Complete the following steps to proceed';
+
+  @override
+  String get verify_recipient => 'Verify Recipient';
+
+  @override
+  String get confirm_location => 'Confirm Location';
+
+  @override
+  String get check_package_condition => 'Check Package Condition';
+
+  @override
+  String get ensure_no_damage => 'Ensure there is no visible damage';
+
+  @override
+  String get collect_payment => 'Collect Payment';
+
+  @override
+  String get proceed_to_proof => 'Proceed to Proof of Delivery';
+
+  @override
+  String get proof_of_delivery => 'Proof of Delivery';
+
+  @override
+  String get take_photo_proof => 'Take a photo of the delivered package';
+
+  @override
+  String get take_photo => 'Take Photo';
+
+  @override
+  String get retake => 'Retake';
+
+  @override
+  String get confirm_delivery => 'Confirm Delivery';
+
+  @override
+  String get uploading => 'Uploading...';
+
+  @override
+  String get delivery_completed_successfully =>
+      'Delivery completed successfully!';
 }

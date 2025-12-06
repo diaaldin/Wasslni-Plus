@@ -1958,6 +1958,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Signature Required`
+  String get signature_required {
+    return Intl.message(
+      'Signature Required',
+      name: 'signature_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please sign below`
+  String get please_sign_below {
+    return Intl.message(
+      'Please sign below',
+      name: 'please_sign_below',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clear Signature`
+  String get clear_signature {
+    return Intl.message(
+      'Clear Signature',
+      name: 'clear_signature',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Signature`
+  String get confirm_signature {
+    return Intl.message(
+      'Confirm Signature',
+      name: 'confirm_signature',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Signature uploaded successfully`
+  String get signature_uploaded {
+    return Intl.message(
+      'Signature uploaded successfully',
+      name: 'signature_uploaded',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
