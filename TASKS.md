@@ -145,7 +145,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
 
 - [ ] **Delivery History**
   - [x] Create completed deliveries list
-  - [ ] Add delivery details view
+  - [x] Add delivery details view
   - [ ] Implement date-based filtering
   - [ ] Add earnings summary
 

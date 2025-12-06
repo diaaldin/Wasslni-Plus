@@ -82,6 +82,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "courier": MessageLookupByLibrary.simpleMessage("مندوب توصيل"),
     "courier_dashboard": MessageLookupByLibrary.simpleMessage("لوحة السائق"),
+    "created_at": MessageLookupByLibrary.simpleMessage("تاريخ الإنشاء"),
     "current_location": MessageLookupByLibrary.simpleMessage("الموقع الحالي"),
     "customer": MessageLookupByLibrary.simpleMessage("زبون"),
     "daily_assignments": MessageLookupByLibrary.simpleMessage("المهام اليومية"),
@@ -109,6 +110,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "days": MessageLookupByLibrary.simpleMessage("أيام"),
     "delete": MessageLookupByLibrary.simpleMessage("حذف"),
     "delivered": MessageLookupByLibrary.simpleMessage("تم التوصيل"),
+    "delivered_at": MessageLookupByLibrary.simpleMessage("تاريخ التوصيل"),
     "delivery_checklist": MessageLookupByLibrary.simpleMessage(
       "قائمة التحقق من التوصيل",
     ),
@@ -247,6 +249,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "no_notifications": MessageLookupByLibrary.simpleMessage("لا توجد إشعارات"),
     "no_parcels_yet": MessageLookupByLibrary.simpleMessage("لا توجد طرود بعد"),
     "note_label": m2,
+    "notes": MessageLookupByLibrary.simpleMessage("ملاحظات"),
     "notification_settings": MessageLookupByLibrary.simpleMessage(
       "إعدادات الإشعارات",
     ),
@@ -340,6 +343,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "settings": MessageLookupByLibrary.simpleMessage("الاعدادات"),
     "shipping_label": MessageLookupByLibrary.simpleMessage("ملصق الشحن"),
     "show_route": MessageLookupByLibrary.simpleMessage("إظهار المسار"),
+    "signature": MessageLookupByLibrary.simpleMessage("التوقيع"),
     "signature_description": MessageLookupByLibrary.simpleMessage(
       "يجب على المندوب جمع التوقيع عند التسليم",
     ),
@@ -375,6 +379,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "this_month": MessageLookupByLibrary.simpleMessage("هذا الشهر"),
     "this_week": MessageLookupByLibrary.simpleMessage("هذا الأسبوع"),
+    "timeline": MessageLookupByLibrary.simpleMessage("الجدول الزمني"),
     "to": MessageLookupByLibrary.simpleMessage("إلى"),
     "todays_deliveries": MessageLookupByLibrary.simpleMessage("توصيلات اليوم"),
     "todays_performance": MessageLookupByLibrary.simpleMessage("أداء اليوم"),

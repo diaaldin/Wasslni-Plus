@@ -2043,6 +2043,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Timeline`
+  String get timeline {
+    return Intl.message('Timeline', name: 'timeline', desc: '', args: []);
+  }
+
+  /// `Created At`
+  String get created_at {
+    return Intl.message('Created At', name: 'created_at', desc: '', args: []);
+  }
+
+  /// `Delivered At`
+  String get delivered_at {
+    return Intl.message(
+      'Delivered At',
+      name: 'delivered_at',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notes`
+  String get notes {
+    return Intl.message('Notes', name: 'notes', desc: '', args: []);
+  }
+
+  /// `Signature`
+  String get signature {
+    return Intl.message('Signature', name: 'signature', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

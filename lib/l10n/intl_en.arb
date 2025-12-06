@@ -239,5 +239,10 @@
   "signature_uploaded": "Signature uploaded successfully",
   "delivery_history": "Delivery History",
   "no_history_found": "No delivery history found",
-  "error_loading_data": "Error loading data"
+  "error_loading_data": "Error loading data",
+  "timeline": "Timeline",
+  "created_at": "Created At",
+  "delivered_at": "Delivered At",
+  "notes": "Notes",
+  "signature": "Signature"
 }

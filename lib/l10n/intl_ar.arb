@@ -239,5 +239,10 @@
   "delivery_history": "سجل التوصيل",
   "no_history_found": "لا يوجد سجل توصيل",
   "error_loading_data": "خطأ في تحميل البيانات",
-  "returned": "مرتجع"
+  "returned": "مرتجع",
+  "timeline": "الجدول الزمني",
+  "created_at": "تاريخ الإنشاء",
+  "delivered_at": "تاريخ التوصيل",
+  "notes": "ملاحظات",
+  "signature": "التوقيع"
 }

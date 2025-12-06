@@ -96,6 +96,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "courier_dashboard": MessageLookupByLibrary.simpleMessage(
       "Courier Dashboard",
     ),
+    "created_at": MessageLookupByLibrary.simpleMessage("Created At"),
     "current_location": MessageLookupByLibrary.simpleMessage(
       "Current Location",
     ),
@@ -125,6 +126,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "days": MessageLookupByLibrary.simpleMessage("days"),
     "delete": MessageLookupByLibrary.simpleMessage("Delete"),
     "delivered": MessageLookupByLibrary.simpleMessage("Delivered"),
+    "delivered_at": MessageLookupByLibrary.simpleMessage("Delivered At"),
     "delivery_checklist": MessageLookupByLibrary.simpleMessage(
       "Delivery Checklist",
     ),
@@ -277,6 +279,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "no_parcels_yet": MessageLookupByLibrary.simpleMessage("No parcels yet"),
     "note_label": m2,
+    "notes": MessageLookupByLibrary.simpleMessage("Notes"),
     "notification_settings": MessageLookupByLibrary.simpleMessage(
       "Notification Settings",
     ),
@@ -374,6 +377,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "settings": MessageLookupByLibrary.simpleMessage("Settings"),
     "shipping_label": MessageLookupByLibrary.simpleMessage("Shipping Label"),
     "show_route": MessageLookupByLibrary.simpleMessage("Show Route"),
+    "signature": MessageLookupByLibrary.simpleMessage("Signature"),
     "signature_description": MessageLookupByLibrary.simpleMessage(
       "Courier must collect signature on delivery",
     ),
@@ -411,6 +415,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "this_month": MessageLookupByLibrary.simpleMessage("This Month"),
     "this_week": MessageLookupByLibrary.simpleMessage("This Week"),
+    "timeline": MessageLookupByLibrary.simpleMessage("Timeline"),
     "to": MessageLookupByLibrary.simpleMessage("To"),
     "todays_deliveries": MessageLookupByLibrary.simpleMessage(
       "Today\'s Deliveries",
