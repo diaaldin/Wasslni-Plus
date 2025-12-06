@@ -4,7 +4,6 @@ import 'package:wasslni_plus/generated/l10n.dart';
 import 'package:wasslni_plus/models/parcel_model.dart';
 import 'package:wasslni_plus/services/auth_service.dart';
 import 'package:wasslni_plus/services/firestore_service.dart';
-import 'package:intl/intl.dart';
 
 class CourierDashboardPage extends StatefulWidget {
   const CourierDashboardPage({super.key});
@@ -123,10 +122,16 @@ class _CourierDashboardPageState extends State<CourierDashboardPage> {
     final totalDeliveries = parcels.length;
     final completedDeliveries =
         parcels.where((p) => p.status == ParcelStatus.delivered).length;
-    final pendingPickup =
-        parcels.where((p) => p.status == ParcelStatus.pending).length;
-    final inTransit =
-        parcels.where((p) => p.status == ParcelStatus.inTransit).length;
+    final pendingPickup = parcels
+        .where((p) =>
+            p.status == ParcelStatus.awaitingLabel ||
+            p.status == ParcelStatus.readyToShip)
+        .length;
+    final inTransit = parcels
+        .where((p) =>
+            p.status == ParcelStatus.outForDelivery ||
+            p.status == ParcelStatus.enRouteDistributor)
+        .length;
 
     // Calculate earnings (sum of delivery fees for completed deliveries)
     final earningsToday = parcels
@@ -235,7 +240,8 @@ class _CourierDashboardPageState extends State<CourierDashboardPage> {
       margin: const EdgeInsets.only(bottom: 12),
       child: ListTile(
         leading: CircleAvatar(
-          backgroundColor: _getStatusColor(parcel.status).withOpacity(0.2),
+          backgroundColor:
+              _getStatusColor(parcel.status).withValues(alpha: 0.2),
           child: Icon(
             _getStatusIcon(parcel.status),
             color: _getStatusColor(parcel.status),
@@ -243,7 +249,7 @@ class _CourierDashboardPageState extends State<CourierDashboardPage> {
           ),
         ),
         title: Text(
-          '#${parcel.trackingNumber}',
+          '#${parcel.barcode}',
           style: const TextStyle(fontWeight: FontWeight.bold),
         ),
         subtitle: Column(
@@ -251,7 +257,7 @@ class _CourierDashboardPageState extends State<CourierDashboardPage> {
           children: [
             const SizedBox(height: 4),
             Text('${tr.recipient}: ${parcel.recipientName}'),
-            Text('📍 ${parcel.deliveryCity}, ${parcel.deliveryRegion}'),
+            Text('📍 ${parcel.deliveryAddress}'),
             Text(
               _getStatusText(parcel.status, tr),
               style: TextStyle(
@@ -278,15 +284,17 @@ class _CourierDashboardPageState extends State<CourierDashboardPage> {
 
   Color _getStatusColor(ParcelStatus status) {
     switch (status) {
-      case ParcelStatus.pending:
+      case ParcelStatus.awaitingLabel:
+      case ParcelStatus.readyToShip:
         return Colors.orange;
-      case ParcelStatus.pickedUp:
+      case ParcelStatus.atWarehouse:
         return Colors.blue;
-      case ParcelStatus.inTransit:
+      case ParcelStatus.outForDelivery:
+      case ParcelStatus.enRouteDistributor:
         return AppStyles.primaryColor;
       case ParcelStatus.delivered:
         return Colors.green;
-      case ParcelStatus.failed:
+      case ParcelStatus.returned:
         return Colors.red;
       case ParcelStatus.cancelled:
         return Colors.grey;
@@ -295,15 +303,17 @@ class _CourierDashboardPageState extends State<CourierDashboardPage> {
 
   IconData _getStatusIcon(ParcelStatus status) {
     switch (status) {
-      case ParcelStatus.pending:
+      case ParcelStatus.awaitingLabel:
+      case ParcelStatus.readyToShip:
         return Icons.schedule;
-      case ParcelStatus.pickedUp:
+      case ParcelStatus.atWarehouse:
         return Icons.inventory_2;
-      case ParcelStatus.inTransit:
+      case ParcelStatus.outForDelivery:
+      case ParcelStatus.enRouteDistributor:
         return Icons.local_shipping;
       case ParcelStatus.delivered:
         return Icons.check_circle;
-      case ParcelStatus.failed:
+      case ParcelStatus.returned:
         return Icons.error;
       case ParcelStatus.cancelled:
         return Icons.cancel;
@@ -312,16 +322,19 @@ class _CourierDashboardPageState extends State<CourierDashboardPage> {
 
   String _getStatusText(ParcelStatus status, S tr) {
     switch (status) {
-      case ParcelStatus.pending:
+      case ParcelStatus.awaitingLabel:
+        return 'Awaiting Label';
+      case ParcelStatus.readyToShip:
         return tr.pending_pickup;
-      case ParcelStatus.pickedUp:
-        return 'Picked Up';
-      case ParcelStatus.inTransit:
+      case ParcelStatus.atWarehouse:
+        return 'At Warehouse';
+      case ParcelStatus.outForDelivery:
+      case ParcelStatus.enRouteDistributor:
         return tr.in_transit;
       case ParcelStatus.delivered:
         return tr.completed;
-      case ParcelStatus.failed:
-        return 'Failed';
+      case ParcelStatus.returned:
+        return 'Returned';
       case ParcelStatus.cancelled:
         return 'Cancelled';
     }
