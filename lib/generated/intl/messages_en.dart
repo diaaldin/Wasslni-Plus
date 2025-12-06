@@ -135,6 +135,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "delivery_fees_collected": MessageLookupByLibrary.simpleMessage(
       "Delivery Fees Collected",
     ),
+    "delivery_history": MessageLookupByLibrary.simpleMessage(
+      "Delivery History",
+    ),
     "delivery_instructions": MessageLookupByLibrary.simpleMessage(
       "Delivery Instructions (Optional)",
     ),
@@ -184,6 +187,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "enter_price": MessageLookupByLibrary.simpleMessage("Please enter a price"),
     "enter_recipient_name": MessageLookupByLibrary.simpleMessage(
       "Please enter recipient name",
+    ),
+    "error_loading_data": MessageLookupByLibrary.simpleMessage(
+      "Error loading data",
     ),
     "error_occurred": m1,
     "estimated_time": MessageLookupByLibrary.simpleMessage("Estimated Time"),
@@ -259,6 +265,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "no_data_available": MessageLookupByLibrary.simpleMessage(
       "No data available",
+    ),
+    "no_history_found": MessageLookupByLibrary.simpleMessage(
+      "No delivery history found",
     ),
     "no_internet_connection": MessageLookupByLibrary.simpleMessage(
       "⚠ No internet connection",
@@ -352,6 +361,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Requires Recipient Signature",
     ),
     "retake": MessageLookupByLibrary.simpleMessage("Retake"),
+    "returned": MessageLookupByLibrary.simpleMessage("Returned"),
     "revenue_overview": MessageLookupByLibrary.simpleMessage(
       "Revenue Overview",
     ),

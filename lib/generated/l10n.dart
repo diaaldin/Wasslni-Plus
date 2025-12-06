@@ -699,6 +699,11 @@ class S {
     return Intl.message('Delivered', name: 'delivered', desc: '', args: []);
   }
 
+  /// `Returned`
+  String get returned {
+    return Intl.message('Returned', name: 'returned', desc: '', args: []);
+  }
+
   /// `Cancelled`
   String get cancelled {
     return Intl.message('Cancelled', name: 'cancelled', desc: '', args: []);
@@ -2004,6 +2009,36 @@ class S {
     return Intl.message(
       'Signature uploaded successfully',
       name: 'signature_uploaded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivery History`
+  String get delivery_history {
+    return Intl.message(
+      'Delivery History',
+      name: 'delivery_history',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No delivery history found`
+  String get no_history_found {
+    return Intl.message(
+      'No delivery history found',
+      name: 'no_history_found',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error loading data`
+  String get error_loading_data {
+    return Intl.message(
+      'Error loading data',
+      name: 'error_loading_data',
       desc: '',
       args: [],
     );

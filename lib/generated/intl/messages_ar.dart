@@ -119,6 +119,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "delivery_fees_collected": MessageLookupByLibrary.simpleMessage(
       "رسوم التوصيل المحصلة",
     ),
+    "delivery_history": MessageLookupByLibrary.simpleMessage("سجل التوصيل"),
     "delivery_instructions": MessageLookupByLibrary.simpleMessage(
       "تعليمات التوصيل (اختياري)",
     ),
@@ -164,6 +165,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "enter_price": MessageLookupByLibrary.simpleMessage("الرجاء إدخال السعر"),
     "enter_recipient_name": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال اسم المستلم",
+    ),
+    "error_loading_data": MessageLookupByLibrary.simpleMessage(
+      "خطأ في تحميل البيانات",
     ),
     "error_occurred": m1,
     "estimated_time": MessageLookupByLibrary.simpleMessage("الوقت المتوقع"),
@@ -233,6 +237,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "no_data_available": MessageLookupByLibrary.simpleMessage(
       "لا توجد بيانات متاحة",
+    ),
+    "no_history_found": MessageLookupByLibrary.simpleMessage(
+      "لا يوجد سجل توصيل",
     ),
     "no_internet_connection": MessageLookupByLibrary.simpleMessage(
       "⚠ لا يوجد اتصال بالإنترنت",
@@ -320,6 +327,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "يتطلب توقيع المستلم",
     ),
     "retake": MessageLookupByLibrary.simpleMessage("إعادة التقاط"),
+    "returned": MessageLookupByLibrary.simpleMessage("مرتجع"),
     "revenue_overview": MessageLookupByLibrary.simpleMessage(
       "نظرة عامة على الإيرادات",
     ),

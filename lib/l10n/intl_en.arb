@@ -79,6 +79,7 @@
   "pending": "Pending",
   "in_transit": "In Transit",
   "delivered": "Delivered",
+  "returned": "Returned",
   "cancelled": "Cancelled",
   "monthly_revenue": "Monthly Revenue",
   "recent_parcels": "Recent Parcels",
@@ -235,5 +236,8 @@
   "please_sign_below": "Please sign below",
   "clear_signature": "Clear Signature",
   "confirm_signature": "Confirm Signature",
-  "signature_uploaded": "Signature uploaded successfully"
+  "signature_uploaded": "Signature uploaded successfully",
+  "delivery_history": "Delivery History",
+  "no_history_found": "No delivery history found",
+  "error_loading_data": "Error loading data"
 }

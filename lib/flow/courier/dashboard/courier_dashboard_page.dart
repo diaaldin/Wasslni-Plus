@@ -6,6 +6,7 @@ import 'package:wasslni_plus/services/auth_service.dart';
 import 'package:wasslni_plus/services/firestore_service.dart';
 import 'package:wasslni_plus/flow/courier/dashboard/courier_route_map.dart';
 import 'package:wasslni_plus/flow/courier/dashboard/courier_statistics_page.dart';
+import 'package:wasslni_plus/flow/courier/history/delivery_history_page.dart';
 
 class CourierDashboardPage extends StatefulWidget {
   const CourierDashboardPage({super.key});
@@ -33,6 +34,20 @@ class _CourierDashboardPageState extends State<CourierDashboardPage> {
       appBar: AppBar(
         title: Text(tr.courier_dashboard),
         backgroundColor: AppStyles.primaryColor,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.history),
+            tooltip: tr.delivery_history,
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const DeliveryHistoryPage(),
+                ),
+              );
+            },
+          ),
+        ],
       ),
       body: StreamBuilder<List<ParcelModel>>(
         stream: _getTodaysDeliveries(user.uid),

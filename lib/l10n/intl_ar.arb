@@ -235,5 +235,9 @@
   "please_sign_below": "الرجاء التوقيع أدناه",
   "clear_signature": "مسح التوقيع",
   "confirm_signature": "تأكيد التوقيع",
-  "signature_uploaded": "تم رفع التوقيع بنجاح"
+  "signature_uploaded": "تم رفع التوقيع بنجاح",
+  "delivery_history": "سجل التوصيل",
+  "no_history_found": "لا يوجد سجل توصيل",
+  "error_loading_data": "خطأ في تحميل البيانات",
+  "returned": "مرتجع"
 }
