@@ -7,6 +7,7 @@ import 'package:wasslni_plus/services/firestore_service.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart' as geocoding;
 import 'dart:math' show cos, sqrt, asin;
+import 'package:url_launcher/url_launcher.dart';
 
 class ActiveDeliveriesPage extends StatefulWidget {
   const ActiveDeliveriesPage({super.key});
@@ -628,30 +629,40 @@ class _ActiveDeliveriesPageState extends State<ActiveDeliveriesPage> {
     );
   }
 
-  void _callRecipient(ParcelModel parcel) {
-    // In production, this would use url_launcher to make a phone call
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('${S.of(context).call} ${parcel.recipientPhone}'),
-        action: SnackBarAction(
-          label: 'OK',
-          onPressed: () {},
-        ),
-      ),
+  Future<void> _callRecipient(ParcelModel parcel) async {
+    final Uri launchUri = Uri(
+      scheme: 'tel',
+      path: parcel.recipientPhone,
     );
+    if (await canLaunchUrl(launchUri)) {
+      await launchUrl(launchUri);
+    } else {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+              content: Text('${S.of(context).call} ${parcel.recipientPhone}')),
+        );
+      }
+    }
   }
 
-  void _navigate(ParcelModel parcel) {
-    // In production, this would open Google Maps or Waze
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('${S.of(context).navigate} to ${parcel.deliveryAddress}'),
-        action: SnackBarAction(
-          label: 'OK',
-          onPressed: () {},
-        ),
-      ),
-    );
+  Future<void> _navigate(ParcelModel parcel) async {
+    // Try to launch Google Maps with navigation intent
+    final query = Uri.encodeComponent('${parcel.deliveryAddress}, Palestine');
+    final googleMapsUrl =
+        Uri.parse('https://www.google.com/maps/dir/?api=1&destination=$query');
+
+    if (await canLaunchUrl(googleMapsUrl)) {
+      await launchUrl(googleMapsUrl, mode: LaunchMode.externalApplication);
+    } else {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+              content:
+                  Text('Could not launch maps for ${parcel.deliveryAddress}')),
+        );
+      }
+    }
   }
 
   Future<void> _optimizeRoute() async {

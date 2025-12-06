@@ -138,7 +138,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
 - [ ] **Active Deliveries**
   - [x] Build delivery queue interface
   - [x] Add optimized route view
-  - [ ] Implement navigation integration (Google Maps/Waze)
+  - [x] Implement navigation integration (Google Maps/Waze)
   - [ ] Create delivery checklist
   - [ ] Add photo proof of delivery
   - [ ] Implement signature capture
