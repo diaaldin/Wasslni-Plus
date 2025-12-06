@@ -468,7 +468,8 @@ class _ActiveDeliveriesPageState extends State<ActiveDeliveriesPage> {
                 _buildDetailSection(
                   tr.parcel_info,
                   [
-                    _buildDetailRow(tr.parcel_description, parcel.description),
+                    _buildDetailRow(
+                        tr.parcel_description, parcel.description ?? 'N/A'),
                     _buildDetailRow(
                       tr.delivery_fee,
                       '₪${parcel.deliveryFee.toStringAsFixed(2)}',
