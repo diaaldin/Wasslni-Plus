@@ -211,5 +211,9 @@
   "this_week": "هذا الأسبوع",
   "this_month": "هذا الشهر",
   "earnings_trend": "اتجاه الأرباح",
-  "statistics": "الإحصائيات"
+  "statistics": "الإحصائيات",
+  "delivery_queue": "قائمة التوصيل",
+  "no_active_deliveries": "لا توجد توصيلات نشطة",
+  "all_caught_up": "أنت على اطلاع بكل شيء!",
+  "call": "اتصال"
 }

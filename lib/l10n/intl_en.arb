@@ -211,5 +211,9 @@
   "this_week": "This Week",
   "this_month": "This Month",
   "earnings_trend": "Earnings Trend",
-  "statistics": "Statistics"
+  "statistics": "Statistics",
+  "delivery_queue": "Delivery Queue",
+  "no_active_deliveries": "No Active Deliveries",
+  "all_caught_up": "You're all caught up!",
+  "call": "Call"
 }

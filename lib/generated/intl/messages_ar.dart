@@ -36,6 +36,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "address": MessageLookupByLibrary.simpleMessage("العنوان, مدينة - شارع"),
     "afternoon": MessageLookupByLibrary.simpleMessage("ظهراً (12م - 5م)"),
     "all": MessageLookupByLibrary.simpleMessage("الكل"),
+    "all_caught_up": MessageLookupByLibrary.simpleMessage(
+      "أنت على اطلاع بكل شيء!",
+    ),
     "already_have_account": MessageLookupByLibrary.simpleMessage(
       "لديك حساب بالفعل؟ تسجيل الدخول",
     ),
@@ -50,6 +53,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "barcode_label": m0,
     "bulk_upload": MessageLookupByLibrary.simpleMessage("رفع جماعي"),
+    "call": MessageLookupByLibrary.simpleMessage("اتصال"),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "cancel_parcel": MessageLookupByLibrary.simpleMessage("إلغاء الطرد"),
     "cancellation_reason": MessageLookupByLibrary.simpleMessage("سبب الإلغاء"),
@@ -103,6 +107,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "delivery_location": MessageLookupByLibrary.simpleMessage("موقع التوصيل"),
     "delivery_points": MessageLookupByLibrary.simpleMessage("نقاط التوصيل"),
+    "delivery_queue": MessageLookupByLibrary.simpleMessage("قائمة التوصيل"),
     "delivery_region": MessageLookupByLibrary.simpleMessage("منطقة التوصيل"),
     "delivery_statistics": MessageLookupByLibrary.simpleMessage(
       "إحصائيات التوصيل",
@@ -200,6 +205,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "name": MessageLookupByLibrary.simpleMessage("الاسم"),
     "navigate": MessageLookupByLibrary.simpleMessage("التنقل"),
     "no": MessageLookupByLibrary.simpleMessage("لا"),
+    "no_active_deliveries": MessageLookupByLibrary.simpleMessage(
+      "لا توجد توصيلات نشطة",
+    ),
     "no_assignments": MessageLookupByLibrary.simpleMessage(
       "لا توجد مهام لهذا اليوم",
     ),

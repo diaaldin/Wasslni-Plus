@@ -36,6 +36,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "address": MessageLookupByLibrary.simpleMessage("Address, City - Street"),
     "afternoon": MessageLookupByLibrary.simpleMessage("Afternoon (12PM - 5PM)"),
     "all": MessageLookupByLibrary.simpleMessage("All"),
+    "all_caught_up": MessageLookupByLibrary.simpleMessage(
+      "You\'re all caught up!",
+    ),
     "already_have_account": MessageLookupByLibrary.simpleMessage(
       "Already have an account? Login",
     ),
@@ -54,6 +57,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "barcode_label": m0,
     "bulk_upload": MessageLookupByLibrary.simpleMessage("Bulk Upload"),
+    "call": MessageLookupByLibrary.simpleMessage("Call"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "cancel_parcel": MessageLookupByLibrary.simpleMessage("Cancel Parcel"),
     "cancellation_reason": MessageLookupByLibrary.simpleMessage(
@@ -115,6 +119,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Delivery Location",
     ),
     "delivery_points": MessageLookupByLibrary.simpleMessage("Delivery Points"),
+    "delivery_queue": MessageLookupByLibrary.simpleMessage("Delivery Queue"),
     "delivery_region": MessageLookupByLibrary.simpleMessage("Delivery Region"),
     "delivery_statistics": MessageLookupByLibrary.simpleMessage(
       "Delivery Statistics",
@@ -220,6 +225,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "navigate": MessageLookupByLibrary.simpleMessage("Navigate"),
     "no": MessageLookupByLibrary.simpleMessage("No"),
+    "no_active_deliveries": MessageLookupByLibrary.simpleMessage(
+      "No Active Deliveries",
+    ),
     "no_assignments": MessageLookupByLibrary.simpleMessage(
       "No assignments for today",
     ),

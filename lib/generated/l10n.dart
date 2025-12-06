@@ -1788,6 +1788,41 @@ class S {
   String get statistics {
     return Intl.message('Statistics', name: 'statistics', desc: '', args: []);
   }
+
+  /// `Delivery Queue`
+  String get delivery_queue {
+    return Intl.message(
+      'Delivery Queue',
+      name: 'delivery_queue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Active Deliveries`
+  String get no_active_deliveries {
+    return Intl.message(
+      'No Active Deliveries',
+      name: 'no_active_deliveries',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You're all caught up!`
+  String get all_caught_up {
+    return Intl.message(
+      'You\'re all caught up!',
+      name: 'all_caught_up',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Call`
+  String get call {
+    return Intl.message('Call', name: 'call', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
