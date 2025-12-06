@@ -14,6 +14,8 @@ class PrintLabelService {
 
     // Try to load font that supports Arabic (if available)
     pw.Font? arabicFont;
+    /*
+    // TODO: Add NotoSansArabic-Regular.ttf to assets/fonts/
     try {
       final fontData =
           await rootBundle.load('assets/fonts/NotoSansArabic-Regular.ttf');
@@ -21,6 +23,7 @@ class PrintLabelService {
     } catch (e) {
       // Font not available, continue without it
     }
+    */
 
     pdf.addPage(
       pw.Page(
@@ -212,6 +215,8 @@ class PrintLabelService {
 
     // Try to load Arabic font
     pw.Font? arabicFont;
+    /*
+    // TODO: Add NotoSansArabic-Regular.ttf to assets/fonts/
     try {
       final fontData =
           await rootBundle.load('assets/fonts/NotoSansArabic-Regular.ttf');
@@ -219,6 +224,7 @@ class PrintLabelService {
     } catch (e) {
       // Font not available, use default
     }
+    */
 
     pdf.addPage(
       pw.Page(
