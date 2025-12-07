@@ -28,6 +28,11 @@ class PrintLabelService {
       pw.Page(
         pageFormat: PdfPageFormat.a6,
         margin: const pw.EdgeInsets.all(16),
+        theme: pw.ThemeData.withFont(
+          base: arabicFont,
+          bold: arabicFont,
+        ),
+        textDirection: pw.TextDirection.rtl,
         build: (context) {
           return pw.Column(
             crossAxisAlignment: pw.CrossAxisAlignment.start,
@@ -55,6 +60,7 @@ class PrintLabelService {
                         font: arabicFont,
                         fontSize: 18,
                         fontWeight: pw.FontWeight.bold,
+                        fontFallback: [if (arabicFont != null) arabicFont],
                       ),
                     ),
                   ],
@@ -172,6 +178,7 @@ class PrintLabelService {
                         style: pw.TextStyle(
                           fontSize: 12,
                           fontWeight: pw.FontWeight.bold,
+                          fontFallback: [if (arabicFont != null) arabicFont],
                         ),
                       ),
                       if (parcel.requiresSignature)
@@ -226,6 +233,11 @@ class PrintLabelService {
       pw.Page(
         pageFormat: PdfPageFormat.roll80,
         margin: const pw.EdgeInsets.all(8),
+        theme: pw.ThemeData.withFont(
+          base: arabicFont,
+          bold: arabicFont,
+        ),
+        textDirection: pw.TextDirection.rtl,
         build: (context) {
           return pw.Column(
             crossAxisAlignment: pw.CrossAxisAlignment.start,
@@ -293,6 +305,7 @@ class PrintLabelService {
                     style: pw.TextStyle(
                       fontSize: 12,
                       fontWeight: pw.FontWeight.bold,
+                      fontFallback: [if (arabicFont != null) arabicFont],
                     ),
                   ),
                 ],
@@ -377,6 +390,11 @@ class PrintLabelService {
       pw.Page(
         pageFormat: PdfPageFormat.a6,
         margin: const pw.EdgeInsets.all(16),
+        theme: pw.ThemeData.withFont(
+          base: arabicFont,
+          bold: arabicFont,
+        ),
+        textDirection: pw.TextDirection.rtl,
         build: (context) {
           return pw.Column(
             crossAxisAlignment: pw.CrossAxisAlignment.start,
@@ -395,6 +413,7 @@ class PrintLabelService {
                       style: pw.TextStyle(
                         fontSize: 18,
                         fontWeight: pw.FontWeight.bold,
+                        fontFallback: [if (arabicFont != null) arabicFont],
                       ),
                     ),
                     pw.Text(
@@ -455,7 +474,10 @@ class PrintLabelService {
                 children: [
                   pw.Text('COD: ₪${parcel.totalPrice.toStringAsFixed(2)}',
                       style: pw.TextStyle(
-                          fontSize: 12, fontWeight: pw.FontWeight.bold)),
+                        fontSize: 12,
+                        fontWeight: pw.FontWeight.bold,
+                        fontFallback: [if (arabicFont != null) arabicFont],
+                      )),
                   pw.Text(_formatDate(parcel.createdAt),
                       style: const pw.TextStyle(fontSize: 10)),
                 ],
