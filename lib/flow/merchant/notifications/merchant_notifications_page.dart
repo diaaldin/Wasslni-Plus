@@ -5,6 +5,8 @@ import 'package:wasslni_plus/generated/l10n.dart';
 import 'package:wasslni_plus/models/notification_model.dart';
 import 'package:wasslni_plus/services/auth_service.dart';
 import 'package:wasslni_plus/flow/merchant/notifications/notification_settings_page.dart';
+import 'package:wasslni_plus/flow/merchant/parcel/parcel_details_page.dart';
+import 'package:wasslni_plus/models/parcel_model.dart';
 import 'package:intl/intl.dart';
 
 class MerchantNotificationsPage extends StatefulWidget {
@@ -233,7 +235,31 @@ class _MerchantNotificationsPageState extends State<MerchantNotificationsPage> {
           .update({'isRead': true});
     }
 
-    // Handle navigation based on relatedParcelId or actionUrl
+    // Handle navigation based on relatedParcelId
+    if (notification.relatedParcelId != null && mounted) {
+      try {
+        final doc = await FirebaseFirestore.instance
+            .collection('parcels')
+            .doc(notification.relatedParcelId)
+            .get();
+
+        if (doc.exists && mounted) {
+          final parcel = ParcelModel.fromFirestore(doc);
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ParcelDetailsPage(parcel: parcel),
+            ),
+          );
+        } else if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Parcel not found')),
+          );
+        }
+      } catch (e) {
+        debugPrint('Error navigating to parcel: $e');
+      }
+    }
   }
 
   Future<void> _markAllAsRead(String userId) async {

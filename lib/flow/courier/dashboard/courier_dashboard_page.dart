@@ -406,20 +406,21 @@ class _CourierDashboardPageState extends State<CourierDashboardPage> {
   String _getStatusText(ParcelStatus status, S tr) {
     switch (status) {
       case ParcelStatus.awaitingLabel:
-        return 'Awaiting Label';
+        return tr.status_awaiting_label;
       case ParcelStatus.readyToShip:
-        return tr.pending_pickup;
+        return tr.status_ready_to_ship;
       case ParcelStatus.atWarehouse:
-        return 'At Warehouse';
+        return tr.status_at_warehouse;
       case ParcelStatus.outForDelivery:
+        return tr.status_out_for_delivery;
       case ParcelStatus.enRouteDistributor:
-        return tr.in_transit;
+        return tr.status_en_route_distributor;
       case ParcelStatus.delivered:
-        return tr.completed;
+        return tr.delivered;
       case ParcelStatus.returned:
-        return 'Returned';
+        return tr.returned;
       case ParcelStatus.cancelled:
-        return 'Cancelled';
+        return tr.cancelled;
     }
   }
 }

@@ -279,10 +279,10 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [x] Implement navigation to Parcel Details page from Dashboard list (currently a TODO)
 
 - [ ] **Notifications**
-  - [ ] Review and address TODOs in `merchant_notifications_page.dart`
+  - [x] Review and address TODOs in `merchant_notifications_page.dart`
 
 - [ ] **Courier Dashboard**
-  - [ ] Review and address TODOs in `courier_dashboard_page.dart`
+  - [x] Review and address TODOs in `courier_dashboard_page.dart`
 
 
 ---
