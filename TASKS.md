@@ -276,7 +276,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [ ] Verify PDF generation with Arabic text
 
 - [ ] **Merchant Dashboard**
-  - [ ] Implement navigation to Parcel Details page from Dashboard list (currently a TODO)
+  - [x] Implement navigation to Parcel Details page from Dashboard list (currently a TODO)
 
 - [ ] **Notifications**
   - [ ] Review and address TODOs in `merchant_notifications_page.dart`

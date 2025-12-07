@@ -5,6 +5,7 @@ import 'package:wasslni_plus/generated/l10n.dart';
 import 'package:wasslni_plus/services/auth_service.dart';
 import 'package:wasslni_plus/models/parcel_model.dart';
 import 'package:wasslni_plus/flow/merchant/reports/monthly_report_page.dart';
+import 'package:wasslni_plus/flow/merchant/parcel/parcel_details_page.dart';
 
 class MerchantDashboardPage extends StatefulWidget {
   const MerchantDashboardPage({super.key});
@@ -386,7 +387,12 @@ class _MerchantDashboardPageState extends State<MerchantDashboardPage> {
         ),
         isThreeLine: true,
         onTap: () {
-          // Navigate to parcel details
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ParcelDetailsPage(parcel: parcel),
+            ),
+          );
         },
       ),
     );
