@@ -51,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "app_tagline": MessageLookupByLibrary.simpleMessage("توصيل سريع وموثوق"),
     "are_you_sure_update_status": m0,
     "attach_barcode": MessageLookupByLibrary.simpleMessage("أرفق باركود"),
+    "availability": MessageLookupByLibrary.simpleMessage("التوفر"),
     "average_delivery_time": MessageLookupByLibrary.simpleMessage(
       "متوسط وقت التوصيل",
     ),
@@ -277,6 +278,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "إعدادات الإشعارات",
     ),
     "notifications": MessageLookupByLibrary.simpleMessage("الإشعارات"),
+    "offline": MessageLookupByLibrary.simpleMessage("غير متصل"),
+    "online": MessageLookupByLibrary.simpleMessage("متصل"),
     "optimized_route": MessageLookupByLibrary.simpleMessage("المسار الأمثل"),
     "optional": MessageLookupByLibrary.simpleMessage("اختياري"),
     "parcel_cancelled_success": MessageLookupByLibrary.simpleMessage(
@@ -337,6 +340,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "processing_file": MessageLookupByLibrary.simpleMessage(
       "جاري معالجة الملف...",
     ),
+    "profile_updated_success": MessageLookupByLibrary.simpleMessage(
+      "تم تحديث الملف الشخصي بنجاح",
+    ),
     "promotional_offers": MessageLookupByLibrary.simpleMessage(
       "العروض الترويجية",
     ),
@@ -364,6 +370,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "role": MessageLookupByLibrary.simpleMessage("الدور"),
     "route_map": MessageLookupByLibrary.simpleMessage("خريطة المسار"),
     "route_optimized": MessageLookupByLibrary.simpleMessage("تم تحسين المسار"),
+    "save_changes": MessageLookupByLibrary.simpleMessage("حفظ التغييرات"),
     "save_parcel": MessageLookupByLibrary.simpleMessage("حفظ الطرد"),
     "scan_to_track": MessageLookupByLibrary.simpleMessage("امسح للتتبع"),
     "select_file": MessageLookupByLibrary.simpleMessage("اختر ملف"),
@@ -453,6 +460,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "validation_phone_required": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال رقم الهاتف",
     ),
+    "validation_required": MessageLookupByLibrary.simpleMessage(
+      "هذا الحقل مطلوب",
+    ),
+    "vehicle_info": MessageLookupByLibrary.simpleMessage("معلومات المركبة"),
+    "vehicle_plate": MessageLookupByLibrary.simpleMessage("رقم اللوحة"),
+    "vehicle_type": MessageLookupByLibrary.simpleMessage("نوع المركبة"),
     "verify_recipient": MessageLookupByLibrary.simpleMessage(
       "التحقق من المستلم",
     ),
@@ -469,6 +482,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "مرحباً بك في وصلني بلس",
     ),
     "width": MessageLookupByLibrary.simpleMessage("العرض"),
+    "working_regions": MessageLookupByLibrary.simpleMessage("مناطق العمل"),
     "yes_cancel": MessageLookupByLibrary.simpleMessage("نعم، إلغاء"),
     "yes_update": MessageLookupByLibrary.simpleMessage("نعم، تحديث"),
   };

@@ -267,5 +267,15 @@
   "status_out_for_delivery": "Out for Delivery",
   "confirm": "Confirm",
   "complete_delivery": "Complete Delivery",
-  "route_optimized": "Route Optimized"
+  "route_optimized": "Route Optimized",
+  "availability": "Availability",
+  "online": "Online",
+  "offline": "Offline",
+  "vehicle_info": "Vehicle Information",
+  "vehicle_type": "Vehicle Type",
+  "vehicle_plate": "Vehicle Plate Number",
+  "working_regions": "Working Regions",
+  "validation_required": "This field is required",
+  "save_changes": "Save Changes",
+  "profile_updated_success": "Profile updated successfully"
 }

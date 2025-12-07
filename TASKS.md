@@ -155,11 +155,11 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [x] Implement failed delivery reason capture
   - [x] Create attempted delivery log
 
-- [ ] **Settings & Profile**
-  - [ ] Add availability toggle
-  - [ ] Create working hours configuration
-  - [ ] Build vehicle information form
-  - [ ] Add service regions selection
+- [x] **Settings & Profile**
+  - [x] Add availability toggle
+  - [x] Create working hours configuration
+  - [x] Build vehicle information form
+  - [x] Add service regions selection
 
 ### 1.6 Customer Dashboard
 

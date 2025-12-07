@@ -267,5 +267,15 @@
   "status_out_for_delivery": "خرج للتوصيل",
   "confirm": "تأكيد",
   "complete_delivery": "إكمال التوصيل",
-  "route_optimized": "تم تحسين المسار"
+  "route_optimized": "تم تحسين المسار",
+  "availability": "التوفر",
+  "online": "متصل",
+  "offline": "غير متصل",
+  "vehicle_info": "معلومات المركبة",
+  "vehicle_type": "نوع المركبة",
+  "vehicle_plate": "رقم اللوحة",
+  "working_regions": "مناطق العمل",
+  "validation_required": "هذا الحقل مطلوب",
+  "save_changes": "حفظ التغييرات",
+  "profile_updated_success": "تم تحديث الملف الشخصي بنجاح"
 }

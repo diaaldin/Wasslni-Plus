@@ -7,6 +7,7 @@ import 'package:wasslni_plus/services/firestore_service.dart';
 import 'package:wasslni_plus/flow/courier/dashboard/courier_route_map.dart';
 import 'package:wasslni_plus/flow/courier/dashboard/courier_statistics_page.dart';
 import 'package:wasslni_plus/flow/courier/history/delivery_history_page.dart';
+import 'package:wasslni_plus/flow/courier/profile/courier_profile_page.dart';
 
 class CourierDashboardPage extends StatefulWidget {
   const CourierDashboardPage({super.key});
@@ -43,6 +44,18 @@ class _CourierDashboardPageState extends State<CourierDashboardPage> {
                 context,
                 MaterialPageRoute(
                   builder: (context) => const DeliveryHistoryPage(),
+                ),
+              );
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.settings),
+            tooltip: tr.settings,
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const CourierProfilePage(),
                 ),
               );
             },

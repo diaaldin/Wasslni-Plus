@@ -2293,6 +2293,96 @@ class S {
       args: [],
     );
   }
+
+  /// `Availability`
+  String get availability {
+    return Intl.message(
+      'Availability',
+      name: 'availability',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Online`
+  String get online {
+    return Intl.message('Online', name: 'online', desc: '', args: []);
+  }
+
+  /// `Offline`
+  String get offline {
+    return Intl.message('Offline', name: 'offline', desc: '', args: []);
+  }
+
+  /// `Vehicle Information`
+  String get vehicle_info {
+    return Intl.message(
+      'Vehicle Information',
+      name: 'vehicle_info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Vehicle Type`
+  String get vehicle_type {
+    return Intl.message(
+      'Vehicle Type',
+      name: 'vehicle_type',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Vehicle Plate Number`
+  String get vehicle_plate {
+    return Intl.message(
+      'Vehicle Plate Number',
+      name: 'vehicle_plate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Working Regions`
+  String get working_regions {
+    return Intl.message(
+      'Working Regions',
+      name: 'working_regions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This field is required`
+  String get validation_required {
+    return Intl.message(
+      'This field is required',
+      name: 'validation_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save Changes`
+  String get save_changes {
+    return Intl.message(
+      'Save Changes',
+      name: 'save_changes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile updated successfully`
+  String get profile_updated_success {
+    return Intl.message(
+      'Profile updated successfully',
+      name: 'profile_updated_success',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

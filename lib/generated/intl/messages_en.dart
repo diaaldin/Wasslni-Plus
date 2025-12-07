@@ -56,6 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "are_you_sure_update_status": m0,
     "attach_barcode": MessageLookupByLibrary.simpleMessage("Attach Barcode"),
+    "availability": MessageLookupByLibrary.simpleMessage("Availability"),
     "average_delivery_time": MessageLookupByLibrary.simpleMessage(
       "Average Delivery Time",
     ),
@@ -314,6 +315,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "Notification Settings",
     ),
     "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
+    "offline": MessageLookupByLibrary.simpleMessage("Offline"),
+    "online": MessageLookupByLibrary.simpleMessage("Online"),
     "optimized_route": MessageLookupByLibrary.simpleMessage("Optimized Route"),
     "optional": MessageLookupByLibrary.simpleMessage("Optional"),
     "parcel_cancelled_success": MessageLookupByLibrary.simpleMessage(
@@ -374,6 +377,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "processing_file": MessageLookupByLibrary.simpleMessage(
       "Processing file...",
     ),
+    "profile_updated_success": MessageLookupByLibrary.simpleMessage(
+      "Profile updated successfully",
+    ),
     "promotional_offers": MessageLookupByLibrary.simpleMessage(
       "Promotional Offers",
     ),
@@ -405,6 +411,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "role": MessageLookupByLibrary.simpleMessage("Role"),
     "route_map": MessageLookupByLibrary.simpleMessage("Route Map"),
     "route_optimized": MessageLookupByLibrary.simpleMessage("Route Optimized"),
+    "save_changes": MessageLookupByLibrary.simpleMessage("Save Changes"),
     "save_parcel": MessageLookupByLibrary.simpleMessage("Save Parcel"),
     "scan_to_track": MessageLookupByLibrary.simpleMessage("Scan to Track"),
     "select_file": MessageLookupByLibrary.simpleMessage("Select File"),
@@ -504,6 +511,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "validation_phone_required": MessageLookupByLibrary.simpleMessage(
       "Please enter your phone number",
     ),
+    "validation_required": MessageLookupByLibrary.simpleMessage(
+      "This field is required",
+    ),
+    "vehicle_info": MessageLookupByLibrary.simpleMessage("Vehicle Information"),
+    "vehicle_plate": MessageLookupByLibrary.simpleMessage(
+      "Vehicle Plate Number",
+    ),
+    "vehicle_type": MessageLookupByLibrary.simpleMessage("Vehicle Type"),
     "verify_recipient": MessageLookupByLibrary.simpleMessage(
       "Verify Recipient",
     ),
@@ -518,6 +533,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Welcome to Wasslni Plus",
     ),
     "width": MessageLookupByLibrary.simpleMessage("Width"),
+    "working_regions": MessageLookupByLibrary.simpleMessage("Working Regions"),
     "yes_cancel": MessageLookupByLibrary.simpleMessage("Yes, Cancel"),
     "yes_update": MessageLookupByLibrary.simpleMessage("Yes, Update"),
   };
