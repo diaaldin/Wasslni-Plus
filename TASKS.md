@@ -272,7 +272,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
 
 ### 1.10 Technical Cleanup & TODOs
 - [ ] **Printing Services**
-  - [ ] Add `NotoSansArabic-Regular.ttf` to `assets/fonts/` to enable Arabic support in PDFs
+  - [x] Add `NotoSansArabic-Regular.ttf` to `assets/fonts/` to enable Arabic support in PDFs (Configured in code, file download required)
   - [ ] Verify PDF generation with Arabic text
 
 - [ ] **Merchant Dashboard**

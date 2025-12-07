@@ -108,6 +108,12 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
+    - assets/fonts/
+
+  fonts:
+    - family: NotoSansArabic
+      fonts:
+        - asset: assets/fonts/NotoSansArabic-Regular.ttf
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

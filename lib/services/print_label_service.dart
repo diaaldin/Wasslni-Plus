@@ -1,4 +1,6 @@
 import 'dart:typed_data';
+import 'package:flutter/services.dart';
+import 'package:flutter/foundation.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
@@ -14,7 +16,13 @@ class PrintLabelService {
 
     // Try to load font that supports Arabic (if available)
     pw.Font? arabicFont;
-    // Font loading removed to prevent 404 errors
+    try {
+      final fontData =
+          await rootBundle.load('assets/fonts/NotoSansArabic-Regular.ttf');
+      arabicFont = pw.Font.ttf(fontData);
+    } catch (e) {
+      debugPrint('Error loading Arabic font: $e');
+    }
 
     pdf.addPage(
       pw.Page(
@@ -206,7 +214,13 @@ class PrintLabelService {
 
     // Try to load Arabic font
     pw.Font? arabicFont;
-    // Font loading removed to prevent 404 errors
+    try {
+      final fontData =
+          await rootBundle.load('assets/fonts/NotoSansArabic-Regular.ttf');
+      arabicFont = pw.Font.ttf(fontData);
+    } catch (e) {
+      debugPrint('Error loading Arabic font: $e');
+    }
 
     pdf.addPage(
       pw.Page(
@@ -350,6 +364,15 @@ class PrintLabelService {
       {String? merchantName}) async {
     final pdf = pw.Document();
 
+    pw.Font? arabicFont;
+    try {
+      final fontData =
+          await rootBundle.load('assets/fonts/NotoSansArabic-Regular.ttf');
+      arabicFont = pw.Font.ttf(fontData);
+    } catch (e) {
+      debugPrint('Error loading Arabic font: $e');
+    }
+
     pdf.addPage(
       pw.Page(
         pageFormat: PdfPageFormat.a6,
@@ -364,12 +387,25 @@ class PrintLabelService {
                   border: pw.Border.all(width: 2),
                   borderRadius: pw.BorderRadius.circular(4),
                 ),
-                child: pw.Text(
-                  'Wasslni Plus',
-                  style: pw.TextStyle(
-                    fontSize: 18,
-                    fontWeight: pw.FontWeight.bold,
-                  ),
+                child: pw.Row(
+                  mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
+                  children: [
+                    pw.Text(
+                      'Wasslni Plus',
+                      style: pw.TextStyle(
+                        fontSize: 18,
+                        fontWeight: pw.FontWeight.bold,
+                      ),
+                    ),
+                    pw.Text(
+                      'وصلني بلس',
+                      style: pw.TextStyle(
+                        font: arabicFont,
+                        fontSize: 18,
+                        fontWeight: pw.FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
               ),
               pw.SizedBox(height: 12),
@@ -397,14 +433,18 @@ class PrintLabelService {
                             fontSize: 10, color: PdfColors.grey700)),
                     pw.Text(parcel.recipientName,
                         style: pw.TextStyle(
-                            fontSize: 14, fontWeight: pw.FontWeight.bold)),
+                            font: arabicFont,
+                            fontSize: 14,
+                            fontWeight: pw.FontWeight.bold)),
                     pw.Text(parcel.recipientPhone,
                         style: const pw.TextStyle(fontSize: 12)),
                     pw.Text(parcel.deliveryAddress,
-                        style: const pw.TextStyle(fontSize: 11)),
+                        style: pw.TextStyle(fontSize: 11, font: arabicFont)),
                     pw.Text(parcel.deliveryRegion,
                         style: pw.TextStyle(
-                            fontSize: 11, fontWeight: pw.FontWeight.bold)),
+                            font: arabicFont,
+                            fontSize: 11,
+                            fontWeight: pw.FontWeight.bold)),
                   ],
                 ),
               ),
