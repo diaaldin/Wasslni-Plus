@@ -186,7 +186,7 @@ class _MerchantDashboardPageState extends State<MerchantDashboardPage> {
                   padding: const EdgeInsets.all(16),
                   child: Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.analytics,
                         size: 32,
                         color: AppStyles.primaryColor,
@@ -348,9 +348,6 @@ class _MerchantDashboardPageState extends State<MerchantDashboardPage> {
         statusColor = Colors.red.shade300;
         statusText = 'Returned';
         break;
-      default:
-        statusColor = Colors.grey;
-        statusText = parcel.status.name;
     }
 
     return Card(
@@ -390,7 +387,6 @@ class _MerchantDashboardPageState extends State<MerchantDashboardPage> {
         isThreeLine: true,
         onTap: () {
           // Navigate to parcel details
-          // TODO: Implement parcel details page
         },
       ),
     );

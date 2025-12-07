@@ -41,9 +41,8 @@ class _AddParcelPageState extends State<AddParcelPage> {
   String _altPhoneCountryCode = '+972';
 
   final ImagePicker _picker = ImagePicker();
-  List<XFile> _selectedImages = [];
+  final List<XFile> _selectedImages = [];
   List<String> _existingImageUrls = [];
-  bool _isUploadingImages = false;
 
   // Delivery time slot options: 'morning', 'afternoon', 'evening', 'anytime'
   String? _selectedTimeSlot;
@@ -359,7 +358,7 @@ class _AddParcelPageState extends State<AddParcelPage> {
         Navigator.pop(context);
       }
     } catch (e) {
-      print('Error submitting parcel: $e'); // Debug log
+      debugPrint('Error submitting parcel: $e'); // Debug log
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
@@ -928,7 +927,7 @@ class _AddParcelPageState extends State<AddParcelPage> {
                         ),
                         child: Text(
                           tr.cancel_parcel,
-                          style: TextStyle(fontSize: 16),
+                          style: const TextStyle(fontSize: 16),
                         ),
                       ),
                     ],

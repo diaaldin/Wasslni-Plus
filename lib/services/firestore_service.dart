@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:wasslni_plus/models/parcel_model.dart';
 import 'package:wasslni_plus/models/user/user_model.dart';
 import 'package:wasslni_plus/models/region_model.dart';
@@ -546,7 +547,7 @@ class FirestoreService {
       if (reviews.isEmpty) return;
 
       final totalRating =
-          reviews.fold(0.0, (sum, review) => sum + review.rating);
+          reviews.fold(0.0, (total, review) => total + review.rating);
       final averageRating = totalRating / reviews.length;
 
       await updateUser(courierId, {
@@ -555,7 +556,7 @@ class FirestoreService {
             FieldValue.increment(0), // Just to ensure field exists
       });
     } catch (e) {
-      print('Error updating courier rating: $e');
+      debugPrint('Error updating courier rating: $e');
     }
   }
 

@@ -261,9 +261,9 @@ class _MonthlyReportPageState extends State<MonthlyReportPage> {
         .length;
 
     if (_parcels.isEmpty) {
-      return Card(
+      return const Card(
         child: Padding(
-          padding: const EdgeInsets.all(32),
+          padding: EdgeInsets.all(32),
           child: Center(child: Text('No data for this month')),
         ),
       );
@@ -441,9 +441,9 @@ class _MonthlyReportPageState extends State<MonthlyReportPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'Revenue by Region',
-              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 20),
             if (deliveredParcels.isEmpty)
@@ -662,7 +662,7 @@ class _MonthlyReportPageState extends State<MonthlyReportPage> {
                       ),
                       belowBarData: BarAreaData(
                         show: true,
-                        color: Colors.green.withOpacity(0.1),
+                        color: Colors.green.withValues(alpha: 0.1),
                       ),
                     ),
                   ],
@@ -753,10 +753,11 @@ class _MonthlyReportPageState extends State<MonthlyReportPage> {
                 final customer = topCustomers[index];
                 return ListTile(
                   leading: CircleAvatar(
-                    backgroundColor: AppStyles.primaryColor.withOpacity(0.1),
+                    backgroundColor:
+                        AppStyles.primaryColor.withValues(alpha: 0.1),
                     child: Text(
                       '${index + 1}',
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: AppStyles.primaryColor,
                         fontWeight: FontWeight.bold,
                       ),
@@ -780,7 +781,7 @@ class _MonthlyReportPageState extends State<MonthlyReportPage> {
                       ),
                       Text(
                         '₪${(customer['totalSpent'] as double).toStringAsFixed(2)}',
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.green,
                           fontSize: 12,
                         ),

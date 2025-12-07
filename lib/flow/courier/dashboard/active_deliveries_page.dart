@@ -331,7 +331,7 @@ class _ActiveDeliveriesPageState extends State<ActiveDeliveriesPage> {
                       label: Text(tr.call),
                       style: OutlinedButton.styleFrom(
                         foregroundColor: AppStyles.primaryColor,
-                        side: BorderSide(color: AppStyles.primaryColor),
+                        side: const BorderSide(color: AppStyles.primaryColor),
                         padding: const EdgeInsets.symmetric(vertical: 8),
                       ),
                     ),
@@ -549,7 +549,7 @@ class _ActiveDeliveriesPageState extends State<ActiveDeliveriesPage> {
                         label: Text(tr.call),
                         style: OutlinedButton.styleFrom(
                           foregroundColor: AppStyles.primaryColor,
-                          side: BorderSide(color: AppStyles.primaryColor),
+                          side: const BorderSide(color: AppStyles.primaryColor),
                           padding: const EdgeInsets.all(16),
                         ),
                       ),
@@ -656,8 +656,8 @@ class _ActiveDeliveriesPageState extends State<ActiveDeliveriesPage> {
               const SizedBox(height: 16),
               if (parcel.status != ParcelStatus.outForDelivery)
                 ListTile(
-                  leading:
-                      Icon(Icons.local_shipping, color: AppStyles.primaryColor),
+                  leading: const Icon(Icons.local_shipping,
+                      color: AppStyles.primaryColor),
                   title: Text(tr.status_out_for_delivery),
                   onTap: () {
                     Navigator.pop(context);

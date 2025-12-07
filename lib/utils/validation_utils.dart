@@ -1,5 +1,3 @@
-import 'package:flutter/foundation.dart';
-
 /// Validation utility class for input validation
 class ValidationUtils {
   /// Validate email format

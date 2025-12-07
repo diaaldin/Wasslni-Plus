@@ -301,7 +301,7 @@ class _CourierStatisticsPageState extends State<CourierStatisticsPage> {
           height: 200,
           child: LineChart(
             LineChartData(
-              gridData: FlGridData(show: true),
+              gridData: const FlGridData(show: true),
               titlesData: FlTitlesData(
                 leftTitles: AxisTitles(
                   sideTitles: SideTitles(
@@ -339,9 +339,9 @@ class _CourierStatisticsPageState extends State<CourierStatisticsPage> {
                   ),
                 ),
                 rightTitles:
-                    AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                    const AxisTitles(sideTitles: SideTitles(showTitles: false)),
                 topTitles:
-                    AxisTitles(sideTitles: SideTitles(showTitles: false)),
+                    const AxisTitles(sideTitles: SideTitles(showTitles: false)),
               ),
               borderData: FlBorderData(show: true),
               lineBarsData: [
@@ -350,7 +350,7 @@ class _CourierStatisticsPageState extends State<CourierStatisticsPage> {
                   isCurved: true,
                   color: AppStyles.primaryColor,
                   barWidth: 3,
-                  dotData: FlDotData(show: true),
+                  dotData: const FlDotData(show: true),
                   belowBarData: BarAreaData(
                     show: true,
                     color: AppStyles.primaryColor.withValues(alpha: 0.2),

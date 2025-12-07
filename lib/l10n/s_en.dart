@@ -262,6 +262,9 @@ class SEn extends S {
   String get delivered => 'Delivered';
 
   @override
+  String get returned => 'Returned';
+
+  @override
   String get cancelled => 'Cancelled';
 
   @override
@@ -722,4 +725,150 @@ class SEn extends S {
   @override
   String get delivery_completed_successfully =>
       'Delivery completed successfully!';
+
+  @override
+  String get signature_required => 'Signature Required';
+
+  @override
+  String get please_sign_below => 'Please sign below';
+
+  @override
+  String get clear_signature => 'Clear Signature';
+
+  @override
+  String get confirm_signature => 'Confirm Signature';
+
+  @override
+  String get signature_uploaded => 'Signature uploaded successfully';
+
+  @override
+  String get delivery_history => 'Delivery History';
+
+  @override
+  String get no_history_found => 'No delivery history found';
+
+  @override
+  String get error_loading_data => 'Error loading data';
+
+  @override
+  String get timeline => 'Timeline';
+
+  @override
+  String get created_at => 'Created At';
+
+  @override
+  String get delivered_at => 'Delivered At';
+
+  @override
+  String get notes => 'Notes';
+
+  @override
+  String get signature => 'Signature';
+
+  @override
+  String get update_status => 'Update Status';
+
+  @override
+  String get select_status => 'Select Status';
+
+  @override
+  String get return_reason => 'Return Reason';
+
+  @override
+  String get failure_reason => 'Failure Reason';
+
+  @override
+  String get mark_as_delivered => 'Mark as Delivered';
+
+  @override
+  String get mark_as_returned => 'Mark as Returned';
+
+  @override
+  String get mark_as_cancelled => 'Mark as Cancelled';
+
+  @override
+  String get mark_as_ready_to_ship => 'Mark as Ready to Ship';
+
+  @override
+  String get mark_as_out_for_delivery => 'Mark as Out for Delivery';
+
+  @override
+  String get mark_as_at_warehouse => 'Mark as At Warehouse';
+
+  @override
+  String get status_updated_successfully => 'Status updated successfully';
+
+  @override
+  String get please_enter_reason => 'Please enter a reason';
+
+  @override
+  String get confirm_status_update => 'Confirm Status Update';
+
+  @override
+  String are_you_sure_update_status(Object status) {
+    return 'Are you sure you want to update the status to $status?';
+  }
+
+  @override
+  String get yes_update => 'Yes, Update';
+
+  @override
+  String get status_awaiting_label => 'Awaiting Label';
+
+  @override
+  String get status_ready_to_ship => 'Ready to Ship';
+
+  @override
+  String get status_at_warehouse => 'At Warehouse';
+
+  @override
+  String get status_en_route_distributor => 'En Route to Distributor';
+
+  @override
+  String get status_out_for_delivery => 'Out for Delivery';
+
+  @override
+  String get confirm => 'Confirm';
+
+  @override
+  String get complete_delivery => 'Complete Delivery';
+
+  @override
+  String get route_optimized => 'Route Optimized';
+
+  @override
+  String get availability => 'Availability';
+
+  @override
+  String get online => 'Online';
+
+  @override
+  String get offline => 'Offline';
+
+  @override
+  String get vehicle_info => 'Vehicle Information';
+
+  @override
+  String get vehicle_type => 'Vehicle Type';
+
+  @override
+  String get vehicle_plate => 'Vehicle Plate Number';
+
+  @override
+  String get working_regions => 'Working Regions';
+
+  @override
+  String get validation_required => 'This field is required';
+
+  @override
+  String get save_changes => 'Save Changes';
+
+  @override
+  String get profile_updated_success => 'Profile updated successfully';
+
+  @override
+  String get active_deliveries => 'Active Deliveries';
+
+  @override
+  String get updated_at => 'Last Updated';
 }

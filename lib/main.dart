@@ -18,7 +18,7 @@ import 'package:wasslni_plus/generated/l10n.dart';
 import 'package:wasslni_plus/flow/merchant/merchant_main.dart';
 import 'package:wasslni_plus/models/user/consts.dart';
 import 'package:wasslni_plus/provider/app_settings_providor.dart';
-import 'package:wasslni_plus/widgets/NetworkAwareWrapper.dart';
+import 'package:wasslni_plus/widgets/network_aware_wrapper.dart';
 import 'package:wasslni_plus/widgets/log_in.dart';
 import 'package:wasslni_plus/widgets/session_timeout_manager.dart';
 
@@ -141,8 +141,6 @@ class AuthenticationHandler extends StatelessWidget {
         return const NetworkAwareWrapper(child: CourierMainScreen());
       case UserRole.customer:
         return const NetworkAwareWrapper(child: CustomerMainScreen());
-      default:
-        return const NetworkAwareWrapper(child: LoginPage());
     }
   }
 }

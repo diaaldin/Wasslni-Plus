@@ -4,7 +4,6 @@ import 'package:wasslni_plus/app_styles.dart';
 import 'package:wasslni_plus/generated/l10n.dart';
 import 'package:wasslni_plus/models/notification_model.dart';
 import 'package:wasslni_plus/services/auth_service.dart';
-import 'package:wasslni_plus/services/firestore_service.dart';
 import 'package:wasslni_plus/flow/merchant/notifications/notification_settings_page.dart';
 import 'package:intl/intl.dart';
 
@@ -18,7 +17,6 @@ class MerchantNotificationsPage extends StatefulWidget {
 
 class _MerchantNotificationsPageState extends State<MerchantNotificationsPage> {
   final AuthService _authService = AuthService();
-  final FirestoreService _firestoreService = FirestoreService();
   bool _showUnreadOnly = false;
 
   @override
@@ -236,7 +234,6 @@ class _MerchantNotificationsPageState extends State<MerchantNotificationsPage> {
     }
 
     // Handle navigation based on relatedParcelId or actionUrl
-    // TODO: Implement navigation to parcel details
   }
 
   Future<void> _markAllAsRead(String userId) async {

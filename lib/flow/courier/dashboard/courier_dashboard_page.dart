@@ -8,6 +8,7 @@ import 'package:wasslni_plus/flow/courier/dashboard/courier_route_map.dart';
 import 'package:wasslni_plus/flow/courier/dashboard/courier_statistics_page.dart';
 import 'package:wasslni_plus/flow/courier/history/delivery_history_page.dart';
 import 'package:wasslni_plus/flow/courier/profile/courier_profile_page.dart';
+import 'package:wasslni_plus/flow/courier/history/delivery_details_page.dart';
 
 class CourierDashboardPage extends StatefulWidget {
   const CourierDashboardPage({super.key});
@@ -105,7 +106,7 @@ class _CourierDashboardPageState extends State<CourierDashboardPage> {
                       label: Text(tr.view_details),
                       style: OutlinedButton.styleFrom(
                         foregroundColor: AppStyles.primaryColor,
-                        side: BorderSide(color: AppStyles.primaryColor),
+                        side: const BorderSide(color: AppStyles.primaryColor),
                         padding: const EdgeInsets.symmetric(vertical: 12),
                       ),
                     ),
@@ -353,7 +354,12 @@ class _CourierDashboardPageState extends State<CourierDashboardPage> {
           ),
         ),
         onTap: () {
-          // TODO: Navigate to delivery details
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DeliveryDetailsPage(parcel: parcel),
+            ),
+          );
         },
       ),
     );

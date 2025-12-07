@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:wasslni_plus/app_styles.dart';
 import 'package:wasslni_plus/generated/l10n.dart';
 import 'package:wasslni_plus/provider/app_settings_providor.dart';
-import 'package:wasslni_plus/flow/common/privacy_policy/PrivacyPolicyPage.dart';
+import 'package:wasslni_plus/flow/common/privacy_policy/privacy_policy_page.dart';
 import 'package:wasslni_plus/widgets/language/language_dropdown.dart';
 import 'package:wasslni_plus/widgets/log_in.dart';
 import 'package:wasslni_plus/widgets/molecules/custom_list_tile.dart';
@@ -69,12 +69,11 @@ class SettingsMainState extends State<SettingsMain> {
       context: context,
       builder: (context) => AlertDialog(
         title: Text(S.of(context).logout),
-        content: Text(S.of(context).logout_confirmation ??
-            'Are you sure you want to logout?'),
+        content: Text(S.of(context).logout_confirmation),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context, false),
-            child: Text(S.of(context).cancel ?? 'Cancel'),
+            child: Text(S.of(context).cancel),
           ),
           TextButton(
             onPressed: () => Navigator.pop(context, true),
@@ -124,8 +123,7 @@ class SettingsMainState extends State<SettingsMain> {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content:
-                Text(S.of(context).logout_error ?? 'Error logging out: $e'),
+            content: Text(S.of(context).logout_error),
             backgroundColor: Colors.red,
           ),
         );

@@ -577,6 +577,12 @@ abstract class S {
   /// **'Delivered'**
   String get delivered;
 
+  /// No description provided for @returned.
+  ///
+  /// In en, this message translates to:
+  /// **'Returned'**
+  String get returned;
+
   /// No description provided for @cancelled.
   ///
   /// In en, this message translates to:
@@ -1476,6 +1482,294 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Delivery completed successfully!'**
   String get delivery_completed_successfully;
+
+  /// No description provided for @signature_required.
+  ///
+  /// In en, this message translates to:
+  /// **'Signature Required'**
+  String get signature_required;
+
+  /// No description provided for @please_sign_below.
+  ///
+  /// In en, this message translates to:
+  /// **'Please sign below'**
+  String get please_sign_below;
+
+  /// No description provided for @clear_signature.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear Signature'**
+  String get clear_signature;
+
+  /// No description provided for @confirm_signature.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Signature'**
+  String get confirm_signature;
+
+  /// No description provided for @signature_uploaded.
+  ///
+  /// In en, this message translates to:
+  /// **'Signature uploaded successfully'**
+  String get signature_uploaded;
+
+  /// No description provided for @delivery_history.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery History'**
+  String get delivery_history;
+
+  /// No description provided for @no_history_found.
+  ///
+  /// In en, this message translates to:
+  /// **'No delivery history found'**
+  String get no_history_found;
+
+  /// No description provided for @error_loading_data.
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading data'**
+  String get error_loading_data;
+
+  /// No description provided for @timeline.
+  ///
+  /// In en, this message translates to:
+  /// **'Timeline'**
+  String get timeline;
+
+  /// No description provided for @created_at.
+  ///
+  /// In en, this message translates to:
+  /// **'Created At'**
+  String get created_at;
+
+  /// No description provided for @delivered_at.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivered At'**
+  String get delivered_at;
+
+  /// No description provided for @notes.
+  ///
+  /// In en, this message translates to:
+  /// **'Notes'**
+  String get notes;
+
+  /// No description provided for @signature.
+  ///
+  /// In en, this message translates to:
+  /// **'Signature'**
+  String get signature;
+
+  /// No description provided for @update_status.
+  ///
+  /// In en, this message translates to:
+  /// **'Update Status'**
+  String get update_status;
+
+  /// No description provided for @select_status.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Status'**
+  String get select_status;
+
+  /// No description provided for @return_reason.
+  ///
+  /// In en, this message translates to:
+  /// **'Return Reason'**
+  String get return_reason;
+
+  /// No description provided for @failure_reason.
+  ///
+  /// In en, this message translates to:
+  /// **'Failure Reason'**
+  String get failure_reason;
+
+  /// No description provided for @mark_as_delivered.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark as Delivered'**
+  String get mark_as_delivered;
+
+  /// No description provided for @mark_as_returned.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark as Returned'**
+  String get mark_as_returned;
+
+  /// No description provided for @mark_as_cancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark as Cancelled'**
+  String get mark_as_cancelled;
+
+  /// No description provided for @mark_as_ready_to_ship.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark as Ready to Ship'**
+  String get mark_as_ready_to_ship;
+
+  /// No description provided for @mark_as_out_for_delivery.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark as Out for Delivery'**
+  String get mark_as_out_for_delivery;
+
+  /// No description provided for @mark_as_at_warehouse.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark as At Warehouse'**
+  String get mark_as_at_warehouse;
+
+  /// No description provided for @status_updated_successfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Status updated successfully'**
+  String get status_updated_successfully;
+
+  /// No description provided for @please_enter_reason.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a reason'**
+  String get please_enter_reason;
+
+  /// No description provided for @confirm_status_update.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Status Update'**
+  String get confirm_status_update;
+
+  /// No description provided for @are_you_sure_update_status.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to update the status to {status}?'**
+  String are_you_sure_update_status(Object status);
+
+  /// No description provided for @yes_update.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes, Update'**
+  String get yes_update;
+
+  /// No description provided for @status_awaiting_label.
+  ///
+  /// In en, this message translates to:
+  /// **'Awaiting Label'**
+  String get status_awaiting_label;
+
+  /// No description provided for @status_ready_to_ship.
+  ///
+  /// In en, this message translates to:
+  /// **'Ready to Ship'**
+  String get status_ready_to_ship;
+
+  /// No description provided for @status_at_warehouse.
+  ///
+  /// In en, this message translates to:
+  /// **'At Warehouse'**
+  String get status_at_warehouse;
+
+  /// No description provided for @status_en_route_distributor.
+  ///
+  /// In en, this message translates to:
+  /// **'En Route to Distributor'**
+  String get status_en_route_distributor;
+
+  /// No description provided for @status_out_for_delivery.
+  ///
+  /// In en, this message translates to:
+  /// **'Out for Delivery'**
+  String get status_out_for_delivery;
+
+  /// No description provided for @confirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm'**
+  String get confirm;
+
+  /// No description provided for @complete_delivery.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete Delivery'**
+  String get complete_delivery;
+
+  /// No description provided for @route_optimized.
+  ///
+  /// In en, this message translates to:
+  /// **'Route Optimized'**
+  String get route_optimized;
+
+  /// No description provided for @availability.
+  ///
+  /// In en, this message translates to:
+  /// **'Availability'**
+  String get availability;
+
+  /// No description provided for @online.
+  ///
+  /// In en, this message translates to:
+  /// **'Online'**
+  String get online;
+
+  /// No description provided for @offline.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline'**
+  String get offline;
+
+  /// No description provided for @vehicle_info.
+  ///
+  /// In en, this message translates to:
+  /// **'Vehicle Information'**
+  String get vehicle_info;
+
+  /// No description provided for @vehicle_type.
+  ///
+  /// In en, this message translates to:
+  /// **'Vehicle Type'**
+  String get vehicle_type;
+
+  /// No description provided for @vehicle_plate.
+  ///
+  /// In en, this message translates to:
+  /// **'Vehicle Plate Number'**
+  String get vehicle_plate;
+
+  /// No description provided for @working_regions.
+  ///
+  /// In en, this message translates to:
+  /// **'Working Regions'**
+  String get working_regions;
+
+  /// No description provided for @validation_required.
+  ///
+  /// In en, this message translates to:
+  /// **'This field is required'**
+  String get validation_required;
+
+  /// No description provided for @save_changes.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Changes'**
+  String get save_changes;
+
+  /// No description provided for @profile_updated_success.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile updated successfully'**
+  String get profile_updated_success;
+
+  /// No description provided for @active_deliveries.
+  ///
+  /// In en, this message translates to:
+  /// **'Active Deliveries'**
+  String get active_deliveries;
+
+  /// No description provided for @updated_at.
+  ///
+  /// In en, this message translates to:
+  /// **'Last Updated'**
+  String get updated_at;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

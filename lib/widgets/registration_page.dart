@@ -118,7 +118,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
               ),
               const SizedBox(height: 16),
               DropdownButtonFormField<UserRole>(
-                value: _selectedRole,
+                key: ValueKey(_selectedRole),
+                initialValue: _selectedRole,
                 decoration: InputDecoration(
                   labelText: s.role,
                   border: const OutlineInputBorder(),

@@ -173,7 +173,7 @@ class _DeliveryChecklistSheetState extends State<DeliveryChecklistSheet> {
           borderRadius: BorderRadius.circular(8),
           side: BorderSide(
             color: value
-                ? AppStyles.primaryColor.withOpacity(0.5)
+                ? AppStyles.primaryColor.withValues(alpha: 0.5)
                 : Colors.grey[300]!,
           ),
         ),

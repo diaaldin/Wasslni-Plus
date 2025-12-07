@@ -106,7 +106,7 @@ class _CourierProfilePageState extends State<CourierProfilePage> {
                       ),
                     ),
                     value: _availability,
-                    activeColor: Colors.green,
+                    activeThumbColor: Colors.green,
                     onChanged: (value) {
                       setState(() {
                         _availability = value;
@@ -118,7 +118,7 @@ class _CourierProfilePageState extends State<CourierProfilePage> {
 
                   Text(
                     tr.vehicle_info,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: AppStyles.primaryColor,
@@ -160,7 +160,7 @@ class _CourierProfilePageState extends State<CourierProfilePage> {
 
                   Text(
                     tr.working_regions,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: AppStyles.primaryColor,

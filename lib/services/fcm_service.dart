@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:wasslni_plus/services/firestore_service.dart';
 import 'package:wasslni_plus/services/auth_service.dart';
@@ -5,7 +6,7 @@ import 'package:wasslni_plus/services/auth_service.dart';
 /// Background message handler - must be top-level function
 @pragma('vm:entry-point')
 Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  print('Handling background message: ${message.messageId}');
+  debugPrint('Handling background message: ${message.messageId}');
   // Handle background message here if needed
 }
 
@@ -35,13 +36,13 @@ class FCMService {
         sound: true,
       );
 
-      print('FCM Permission granted: ${settings.authorizationStatus}');
+      debugPrint('FCM Permission granted: ${settings.authorizationStatus}');
 
       if (settings.authorizationStatus == AuthorizationStatus.authorized ||
           settings.authorizationStatus == AuthorizationStatus.provisional) {
         // Get FCM token
         _fcmToken = await _messaging.getToken();
-        print('FCM Token: $_fcmToken');
+        debugPrint('FCM Token: $_fcmToken');
 
         // Save token to Firestore if user is authenticated
         if (_authService.isAuthenticated() && _fcmToken != null) {
@@ -54,7 +55,7 @@ class FCMService {
         // Listen for token refresh
         _messaging.onTokenRefresh.listen((newToken) {
           _fcmToken = newToken;
-          print('FCM Token refreshed: $newToken');
+          debugPrint('FCM Token refreshed: $newToken');
 
           // Update token in Firestore
           if (_authService.isAuthenticated()) {
@@ -68,10 +69,10 @@ class FCMService {
         // Set up message handlers
         _setupMessageHandlers();
       } else {
-        print('FCM Permission denied');
+        debugPrint('FCM Permission denied');
       }
     } catch (e) {
-      print('Error initializing FCM: $e');
+      debugPrint('Error initializing FCM: $e');
     }
   }
 
@@ -79,20 +80,20 @@ class FCMService {
   void _setupMessageHandlers() {
     // Handle foreground messages
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-      print('Foreground message received: ${message.messageId}');
+      debugPrint('Foreground message received: ${message.messageId}');
       _handleMessage(message, isBackground: false);
     });
 
     // Handle background messages (when app is in background but not terminated)
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
-      print('Background message opened: ${message.messageId}');
+      debugPrint('Background message opened: ${message.messageId}');
       _handleMessage(message, isBackground: true);
     });
 
     // Handle notification tap when app was terminated
     _messaging.getInitialMessage().then((RemoteMessage? message) {
       if (message != null) {
-        print('App opened from terminated state: ${message.messageId}');
+        debugPrint('App opened from terminated state: ${message.messageId}');
         _handleMessage(message, isBackground: true);
       }
     });
@@ -100,11 +101,11 @@ class FCMService {
 
   /// Handle incoming message
   void _handleMessage(RemoteMessage message, {required bool isBackground}) {
-    print('Message data: ${message.data}');
+    debugPrint('Message data: ${message.data}');
 
     if (message.notification != null) {
-      print('Message notification: ${message.notification!.title}');
-      print('Message body: ${message.notification!.body}');
+      debugPrint('Message notification: ${message.notification!.title}');
+      debugPrint('Message body: ${message.notification!.body}');
     }
 
     // Handle different notification types based on data
@@ -128,14 +129,14 @@ class FCMService {
         _handleSystemAnnouncement(message.data);
         break;
       default:
-        print('Unknown notification type: $type');
+        debugPrint('Unknown notification type: $type');
     }
   }
 
   /// Handle parcel status update notification
   void _handleParcelStatusUpdate(String? parcelId, Map<String, dynamic> data) {
     if (parcelId == null) return;
-    print('Parcel $parcelId status updated');
+    debugPrint('Parcel $parcelId status updated');
     // Navigate to parcel details or refresh parcel list
     // This will be implemented in the UI layer
   }
@@ -143,26 +144,26 @@ class FCMService {
   /// Handle new parcel assignment notification (for couriers)
   void _handleNewParcelAssignment(String? parcelId, Map<String, dynamic> data) {
     if (parcelId == null) return;
-    print('New parcel assigned: $parcelId');
+    debugPrint('New parcel assigned: $parcelId');
     // Navigate to parcel details or refresh courier dashboard
   }
 
   /// Handle delivery reminder notification
   void _handleDeliveryReminder(String? parcelId, Map<String, dynamic> data) {
     if (parcelId == null) return;
-    print('Delivery reminder for parcel: $parcelId');
+    debugPrint('Delivery reminder for parcel: $parcelId');
     // Show reminder dialog or navigate to parcel
   }
 
   /// Handle promotional notification
   void _handlePromotionalNotification(Map<String, dynamic> data) {
-    print('Promotional notification received');
+    debugPrint('Promotional notification received');
     // Navigate to promotional page or show dialog
   }
 
   /// Handle system announcement
   void _handleSystemAnnouncement(Map<String, dynamic> data) {
-    print('System announcement received');
+    debugPrint('System announcement received');
     // Show announcement dialog or banner
   }
 
@@ -170,9 +171,9 @@ class FCMService {
   Future<void> subscribeToTopic(String topic) async {
     try {
       await _messaging.subscribeToTopic(topic);
-      print('Subscribed to topic: $topic');
+      debugPrint('Subscribed to topic: $topic');
     } catch (e) {
-      print('Error subscribing to topic $topic: $e');
+      debugPrint('Error subscribing to topic $topic: $e');
     }
   }
 
@@ -180,9 +181,9 @@ class FCMService {
   Future<void> unsubscribeFromTopic(String topic) async {
     try {
       await _messaging.unsubscribeFromTopic(topic);
-      print('Unsubscribed from topic: $topic');
+      debugPrint('Unsubscribed from topic: $topic');
     } catch (e) {
-      print('Error unsubscribing from topic $topic: $e');
+      debugPrint('Error unsubscribing from topic $topic: $e');
     }
   }
 
@@ -220,9 +221,9 @@ class FCMService {
     try {
       await _messaging.deleteToken();
       _fcmToken = null;
-      print('FCM token deleted');
+      debugPrint('FCM token deleted');
     } catch (e) {
-      print('Error deleting FCM token: $e');
+      debugPrint('Error deleting FCM token: $e');
     }
   }
 }

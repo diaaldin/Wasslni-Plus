@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wasslni_plus/app_styles.dart';
-import 'package:wasslni_plus/generated/l10n.dart';
+
 import 'package:wasslni_plus/widgets/login_form.dart';
 
 class LoginPage extends StatelessWidget {
@@ -8,8 +8,6 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final s = S.of(context);
-
     return const Scaffold(
       backgroundColor: AppStyles.primaryColor,
       body: SafeArea(

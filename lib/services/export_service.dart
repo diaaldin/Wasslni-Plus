@@ -5,7 +5,6 @@ import 'package:printing/printing.dart';
 import 'package:wasslni_plus/models/parcel_model.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:flutter/foundation.dart';
 
 class ExportService {
   /// Export parcels to PDF and share/print

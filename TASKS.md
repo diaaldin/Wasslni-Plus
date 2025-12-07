@@ -270,6 +270,21 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [ ] Add retry mechanisms
   - [ ] Implement user-friendly error messages
 
+### 1.10 Technical Cleanup & TODOs
+- [ ] **Printing Services**
+  - [ ] Add `NotoSansArabic-Regular.ttf` to `assets/fonts/` to enable Arabic support in PDFs
+  - [ ] Verify PDF generation with Arabic text
+
+- [ ] **Merchant Dashboard**
+  - [ ] Implement navigation to Parcel Details page from Dashboard list (currently a TODO)
+
+- [ ] **Notifications**
+  - [ ] Review and address TODOs in `merchant_notifications_page.dart`
+
+- [ ] **Courier Dashboard**
+  - [ ] Review and address TODOs in `courier_dashboard_page.dart`
+
+
 ---
 
 ## 🔥 Phase 2: Firebase Integration

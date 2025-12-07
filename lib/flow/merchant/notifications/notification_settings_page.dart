@@ -124,7 +124,7 @@ class _NotificationSettingsPageState extends State<NotificationSettingsPage> {
       subtitle: Text(subtitle),
       value: value,
       onChanged: onChanged,
-      activeColor: AppStyles.primaryColor,
+      activeThumbColor: AppStyles.primaryColor,
     );
   }
 }

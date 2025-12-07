@@ -261,6 +261,9 @@ class SAr extends S {
   String get delivered => 'تم التوصيل';
 
   @override
+  String get returned => 'مرتجع';
+
+  @override
   String get cancelled => 'ملغى';
 
   @override
@@ -697,7 +700,7 @@ class SAr extends S {
   String get proceed_to_proof => 'المتابعة إلى إثبات التوصيل';
 
   @override
-  String get proof_of_delivery => 'إثبات التوصيل';
+  String get proof_of_delivery => 'إثبات التسليم';
 
   @override
   String get take_photo_proof => 'التقط صورة للطرد الذي تم توصيله';
@@ -716,4 +719,150 @@ class SAr extends S {
 
   @override
   String get delivery_completed_successfully => 'تم التوصيل بنجاح!';
+
+  @override
+  String get signature_required => 'التوقيع مطلوب';
+
+  @override
+  String get please_sign_below => 'الرجاء التوقيع أدناه';
+
+  @override
+  String get clear_signature => 'مسح التوقيع';
+
+  @override
+  String get confirm_signature => 'تأكيد التوقيع';
+
+  @override
+  String get signature_uploaded => 'تم رفع التوقيع بنجاح';
+
+  @override
+  String get delivery_history => 'سجل التوصيل';
+
+  @override
+  String get no_history_found => 'لا يوجد سجل توصيل';
+
+  @override
+  String get error_loading_data => 'خطأ في تحميل البيانات';
+
+  @override
+  String get timeline => 'الجدول الزمني';
+
+  @override
+  String get created_at => 'تاريخ الإنشاء';
+
+  @override
+  String get delivered_at => 'تاريخ التوصيل';
+
+  @override
+  String get notes => 'ملاحظات';
+
+  @override
+  String get signature => 'التوقيع';
+
+  @override
+  String get update_status => 'تحديث الحالة';
+
+  @override
+  String get select_status => 'اختر الحالة';
+
+  @override
+  String get return_reason => 'سبب الإرجاع';
+
+  @override
+  String get failure_reason => 'سبب الفشل';
+
+  @override
+  String get mark_as_delivered => 'تحديد كتم التوصيل';
+
+  @override
+  String get mark_as_returned => 'تحديد كمرتجع';
+
+  @override
+  String get mark_as_cancelled => 'تحديد كملغى';
+
+  @override
+  String get mark_as_ready_to_ship => 'تحديد كجاهز للشحن';
+
+  @override
+  String get mark_as_out_for_delivery => 'تحديد كخارج للتوصيل';
+
+  @override
+  String get mark_as_at_warehouse => 'تحديد كفي المخزن';
+
+  @override
+  String get status_updated_successfully => 'تم تحديث الحالة بنجاح';
+
+  @override
+  String get please_enter_reason => 'الرجاء إدخال سبب';
+
+  @override
+  String get confirm_status_update => 'تأكيد تحديث الحالة';
+
+  @override
+  String are_you_sure_update_status(Object status) {
+    return 'هل أنت متأكد من تحديث الحالة إلى $status؟';
+  }
+
+  @override
+  String get yes_update => 'نعم، تحديث';
+
+  @override
+  String get status_awaiting_label => 'بانتظار الملصق';
+
+  @override
+  String get status_ready_to_ship => 'جاهز للشحن';
+
+  @override
+  String get status_at_warehouse => 'في المخزن';
+
+  @override
+  String get status_en_route_distributor => 'في الطريق للموزع';
+
+  @override
+  String get status_out_for_delivery => 'خرج للتوصيل';
+
+  @override
+  String get confirm => 'تأكيد';
+
+  @override
+  String get complete_delivery => 'إكمال التوصيل';
+
+  @override
+  String get route_optimized => 'تم تحسين المسار';
+
+  @override
+  String get availability => 'التوفر';
+
+  @override
+  String get online => 'متصل';
+
+  @override
+  String get offline => 'غير متصل';
+
+  @override
+  String get vehicle_info => 'معلومات المركبة';
+
+  @override
+  String get vehicle_type => 'نوع المركبة';
+
+  @override
+  String get vehicle_plate => 'رقم اللوحة';
+
+  @override
+  String get working_regions => 'مناطق العمل';
+
+  @override
+  String get validation_required => 'هذا الحقل مطلوب';
+
+  @override
+  String get save_changes => 'حفظ التغييرات';
+
+  @override
+  String get profile_updated_success => 'تم تحديث الملف الشخصي بنجاح';
+
+  @override
+  String get active_deliveries => 'التوصيلات النشطة';
+
+  @override
+  String get updated_at => 'آخر تحديث';
 }

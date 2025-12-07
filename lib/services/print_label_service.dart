@@ -3,7 +3,7 @@ import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 import 'package:wasslni_plus/models/parcel_model.dart';
-import 'package:flutter/services.dart' show rootBundle;
+
 import 'package:barcode/barcode.dart';
 
 class PrintLabelService {
@@ -15,7 +15,6 @@ class PrintLabelService {
     // Try to load font that supports Arabic (if available)
     pw.Font? arabicFont;
     // Font loading removed to prevent 404 errors
-    // TODO: Add NotoSansArabic-Regular.ttf to assets/fonts/ to enable Arabic support
 
     pdf.addPage(
       pw.Page(
@@ -208,7 +207,6 @@ class PrintLabelService {
     // Try to load Arabic font
     pw.Font? arabicFont;
     // Font loading removed to prevent 404 errors
-    // TODO: Add NotoSansArabic-Regular.ttf to assets/fonts/ to enable Arabic support
 
     pdf.addPage(
       pw.Page(

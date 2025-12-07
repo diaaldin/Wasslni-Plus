@@ -29,7 +29,7 @@ class _DeliveryHistoryPageState extends State<DeliveryHistoryPage> {
       builder: (context, child) {
         return Theme(
           data: Theme.of(context).copyWith(
-            colorScheme: ColorScheme.light(
+            colorScheme: const ColorScheme.light(
               primary: AppStyles.primaryColor,
               onPrimary: Colors.white,
               onSurface: Colors.black,
@@ -134,12 +134,12 @@ class _DeliveryHistoryPageState extends State<DeliveryHistoryPage> {
                   color: Colors.grey[100],
                   child: Row(
                     children: [
-                      Icon(Icons.filter_alt,
+                      const Icon(Icons.filter_alt,
                           size: 16, color: AppStyles.primaryColor),
                       const SizedBox(width: 8),
                       Text(
                         '${DateFormat('MMM d').format(_selectedDateRange!.start)} - ${DateFormat('MMM d').format(_selectedDateRange!.end)}',
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: AppStyles.primaryColor,
                           fontWeight: FontWeight.bold,
                         ),
@@ -147,7 +147,8 @@ class _DeliveryHistoryPageState extends State<DeliveryHistoryPage> {
                       const Spacer(),
                       InkWell(
                         onTap: _clearFilter,
-                        child: Icon(Icons.close, size: 18, color: Colors.grey),
+                        child: const Icon(Icons.close,
+                            size: 18, color: Colors.grey),
                       ),
                     ],
                   ),
@@ -205,7 +206,7 @@ class _DeliveryHistoryPageState extends State<DeliveryHistoryPage> {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 8,
             offset: const Offset(0, 4),
           ),
@@ -216,7 +217,8 @@ class _DeliveryHistoryPageState extends State<DeliveryHistoryPage> {
         children: [
           _buildSummaryItem(tr.total_deliveries, count.toString(),
               Icons.local_shipping, Colors.white),
-          Container(height: 40, width: 1, color: Colors.white.withOpacity(0.3)),
+          Container(
+              height: 40, width: 1, color: Colors.white.withValues(alpha: 0.3)),
           _buildSummaryItem(
               tr.total_earnings,
               '₪${earnings.toStringAsFixed(2)}',
@@ -244,7 +246,7 @@ class _DeliveryHistoryPageState extends State<DeliveryHistoryPage> {
         Text(
           label,
           style: TextStyle(
-            color: color.withOpacity(0.8),
+            color: color.withValues(alpha: 0.8),
             fontSize: 12,
           ),
         ),
@@ -307,7 +309,7 @@ class _DeliveryHistoryPageState extends State<DeliveryHistoryPage> {
                     padding:
                         const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     decoration: BoxDecoration(
-                      color: statusColor.withOpacity(0.1),
+                      color: statusColor.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(color: statusColor),
                     ),

@@ -8,11 +8,11 @@ class SessionTimeoutManager extends StatefulWidget {
   final VoidCallback? onTimeout;
 
   const SessionTimeoutManager({
-    Key? key,
+    super.key,
     required this.child,
     this.timeoutDuration = const Duration(minutes: 30), // Default 30 minutes
     this.onTimeout,
-  }) : super(key: key);
+  });
 
   @override
   State<SessionTimeoutManager> createState() => _SessionTimeoutManagerState();

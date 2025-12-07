@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wasslni_plus/generated/l10n.dart';
-import '../../../widgets/InfoSection .dart';
+import '../../../widgets/info_section.dart';
 
 class PrivacyPolicyPage extends StatelessWidget {
   const PrivacyPolicyPage({super.key});
