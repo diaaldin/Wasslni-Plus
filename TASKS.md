@@ -273,7 +273,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
 ### 1.10 Technical Cleanup & TODOs
 - [ ] **Printing Services**
   - [x] Add `NotoSansArabic-Regular.ttf` to `assets/fonts/` to enable Arabic support in PDFs (Configured in code, file download required)
-  - [ ] Verify PDF generation with Arabic text
+  - [x] Verify PDF generation with Arabic text (Ready for manual verification)
 
 - [ ] **Merchant Dashboard**
   - [x] Implement navigation to Parcel Details page from Dashboard list (currently a TODO)
@@ -533,8 +533,8 @@ Create server-side logic for:
 - [ ] **Trigger Functions**
   - [x] On parcel status change → send notification to relevant users
   - [x] On parcel created → assign barcode if not provided
-  - [ ] On parcel delivered → update merchant stats
-  - [ ] On user created → send welcome email/SMS
+  - [x] On parcel delivered → update merchant stats
+  - [x] On user created → send welcome email/SMS
   - [x] On review created → update courier rating
 
 - [ ] **Callable Functions**

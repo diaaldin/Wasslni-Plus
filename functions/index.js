@@ -71,6 +71,51 @@ exports.onParcelStatusChange = onDocumentUpdated("parcels/{parcelId}", async (ev
 });
 
 /**
+ * Trigger: On Parcel Delivered
+ * Updates merchant and courier statistics when a parcel is marked as delivered.
+ */
+exports.onParcelDelivered = onDocumentUpdated("parcels/{parcelId}", async (event) => {
+    const parcelId = event.params.parcelId;
+    const oldData = event.data.before.data();
+    const newData = event.data.after.data();
+
+    // Check if status changed to 'delivered'
+    if (oldData.status !== 'delivered' && newData.status === 'delivered') {
+        const merchantId = newData.merchantId;
+        const courierId = newData.courierId;
+        const deliveryFee = newData.deliveryFee || 0;
+        const parcelPrice = newData.parcelPrice || 0;
+
+        const promises = [];
+
+        // Update Merchant Stats
+        if (merchantId) {
+            const merchantRef = db.collection('users').doc(merchantId);
+            promises.push(merchantRef.update({
+                totalDelivered: admin.firestore.FieldValue.increment(1),
+                totalRevenue: admin.firestore.FieldValue.increment(parcelPrice), // Assuming revenue is parcel price for merchant
+                totalDeliveryFees: admin.firestore.FieldValue.increment(deliveryFee)
+            }));
+        }
+
+        // Update Courier Stats
+        if (courierId) {
+            const courierRef = db.collection('users').doc(courierId);
+            promises.push(courierRef.update({
+                totalDeliveries: admin.firestore.FieldValue.increment(1),
+                // Courier revenue might be a percentage of delivery fee or fixed. 
+                // For now, just increment delivery count.
+            }));
+        }
+
+        await Promise.all(promises);
+        logger.info(`Updated stats for parcel ${parcelId} (Merchant: ${merchantId}, Courier: ${courierId})`);
+    }
+
+    return null;
+});
+
+/**
  * Trigger: On Parcel Created
  * Assigns a unique barcode if one wasn't provided.
  */
@@ -141,6 +186,34 @@ exports.onReviewCreated = onDocumentCreated("reviews/{reviewId}", async (event) 
 // ==========================================
 // CALLABLE FUNCTIONS
 // ==========================================
+
+/**
+ * Trigger: On User Created
+ * Sends a welcome notification to the new user.
+ */
+exports.onUserCreated = onDocumentCreated("users/{userId}", async (event) => {
+    const userId = event.params.userId;
+    const userData = event.data.data();
+
+    logger.info(`New user created: ${userId} (${userData.role})`);
+
+    // Only proceed if we have a token (might be set on registration)
+    if (userData.fcmToken) {
+        const payload = {
+            notification: {
+                title: 'Welcome to Wasslni Plus!',
+                body: `Hello ${userData.name}, we are glad to have you as a ${userData.role}.`,
+            },
+            data: {
+                type: 'welcome',
+                click_action: 'FLUTTER_NOTIFICATION_CLICK',
+            }
+        };
+        await sendNotificationToUser(userId, payload);
+    }
+
+    return null;
+});
 
 const { onCall, HttpsError } = require("firebase-functions/v2/https");
 
