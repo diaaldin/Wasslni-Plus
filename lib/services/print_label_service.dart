@@ -1,5 +1,3 @@
-import 'dart:typed_data';
-import 'package:flutter/services.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
@@ -12,16 +10,20 @@ class PrintLabelService {
   /// Generates and prints a shipping label for a parcel
   static Future<void> printShippingLabel(ParcelModel parcel,
       {String? merchantName}) async {
+    // Load fonts using PdfGoogleFonts
     final pdf = pw.Document();
 
-    // Try to load font that supports Arabic (if available)
-    pw.Font? arabicFont;
+    // Default fallback to standard font if google fonts fail (though they shouldn't in connected env)
+    pw.Font fontBase;
+    pw.Font fontArabic;
     try {
-      final fontData =
-          await rootBundle.load('assets/fonts/NotoSansArabic-Regular.ttf');
-      arabicFont = pw.Font.ttf(fontData);
+      fontBase = await PdfGoogleFonts.notoSansRegular();
+      fontArabic = await PdfGoogleFonts.notoSansArabicRegular();
     } catch (e) {
-      debugPrint('Error loading Arabic font: $e');
+      debugPrint('Error loading Google fonts: $e');
+      // Fallback to standard if offline (might still fail for unicode but prevents crash)
+      fontBase = pw.Font.courier();
+      fontArabic = pw.Font.courier();
     }
 
     pdf.addPage(
@@ -29,8 +31,9 @@ class PrintLabelService {
         pageFormat: PdfPageFormat.a6,
         margin: const pw.EdgeInsets.all(16),
         theme: pw.ThemeData.withFont(
-          base: arabicFont,
-          bold: arabicFont,
+          base: fontBase,
+          bold: fontBase,
+          fontFallback: [fontArabic],
         ),
         textDirection: pw.TextDirection.rtl,
         build: (context) {
@@ -57,10 +60,8 @@ class PrintLabelService {
                     pw.Text(
                       'وصلني بلس',
                       style: pw.TextStyle(
-                        font: arabicFont,
                         fontSize: 18,
                         fontWeight: pw.FontWeight.bold,
-                        fontFallback: [if (arabicFont != null) arabicFont],
                       ),
                     ),
                   ],
@@ -92,8 +93,7 @@ class PrintLabelService {
                   children: [
                     pw.Text(
                       'TO / إلى',
-                      style: pw.TextStyle(
-                        font: arabicFont,
+                      style: const pw.TextStyle(
                         fontSize: 10,
                         color: PdfColors.grey700,
                       ),
@@ -102,7 +102,6 @@ class PrintLabelService {
                     pw.Text(
                       parcel.recipientName,
                       style: pw.TextStyle(
-                        font: arabicFont,
                         fontSize: 14,
                         fontWeight: pw.FontWeight.bold,
                       ),
@@ -114,15 +113,13 @@ class PrintLabelService {
                     pw.SizedBox(height: 4),
                     pw.Text(
                       parcel.deliveryAddress,
-                      style: pw.TextStyle(
-                        font: arabicFont,
+                      style: const pw.TextStyle(
                         fontSize: 11,
                       ),
                     ),
                     pw.Text(
                       parcel.deliveryRegion,
                       style: pw.TextStyle(
-                        font: arabicFont,
                         fontSize: 11,
                         fontWeight: pw.FontWeight.bold,
                       ),
@@ -146,8 +143,7 @@ class PrintLabelService {
                     children: [
                       pw.Text(
                         'FROM / من',
-                        style: pw.TextStyle(
-                          font: arabicFont,
+                        style: const pw.TextStyle(
                           fontSize: 10,
                           color: PdfColors.grey700,
                         ),
@@ -155,7 +151,6 @@ class PrintLabelService {
                       pw.Text(
                         merchantName,
                         style: pw.TextStyle(
-                          font: arabicFont,
                           fontSize: 12,
                           fontWeight: pw.FontWeight.bold,
                         ),
@@ -178,7 +173,6 @@ class PrintLabelService {
                         style: pw.TextStyle(
                           fontSize: 12,
                           fontWeight: pw.FontWeight.bold,
-                          fontFallback: [if (arabicFont != null) arabicFont],
                         ),
                       ),
                       if (parcel.requiresSignature)
@@ -219,14 +213,16 @@ class PrintLabelService {
       {String? merchantName}) async {
     final pdf = pw.Document();
 
-    // Try to load Arabic font
-    pw.Font? arabicFont;
+    // Load fonts
+
+    pw.Font fontBase;
+    pw.Font fontArabic;
     try {
-      final fontData =
-          await rootBundle.load('assets/fonts/NotoSansArabic-Regular.ttf');
-      arabicFont = pw.Font.ttf(fontData);
+      fontBase = await PdfGoogleFonts.notoSansRegular();
+      fontArabic = await PdfGoogleFonts.notoSansArabicRegular();
     } catch (e) {
-      debugPrint('Error loading Arabic font: $e');
+      fontBase = pw.Font.courier();
+      fontArabic = pw.Font.courier();
     }
 
     pdf.addPage(
@@ -234,8 +230,9 @@ class PrintLabelService {
         pageFormat: PdfPageFormat.roll80,
         margin: const pw.EdgeInsets.all(8),
         theme: pw.ThemeData.withFont(
-          base: arabicFont,
-          bold: arabicFont,
+          base: fontBase,
+          bold: fontBase,
+          fontFallback: [fontArabic],
         ),
         textDirection: pw.TextDirection.rtl,
         build: (context) {
@@ -255,8 +252,7 @@ class PrintLabelService {
               pw.Center(
                 child: pw.Text(
                   'Receipt / إيصال',
-                  style: pw.TextStyle(
-                    font: arabicFont,
+                  style: const pw.TextStyle(
                     fontSize: 12,
                   ),
                 ),
@@ -278,17 +274,17 @@ class PrintLabelService {
               pw.Divider(),
 
               // Parcel Details
-              _buildReceiptRow('Recipient', parcel.recipientName, arabicFont),
-              _buildReceiptRow('Phone', parcel.recipientPhone, arabicFont),
-              _buildReceiptRow('Region', parcel.deliveryRegion, arabicFont),
-              _buildReceiptRow('Address', parcel.deliveryAddress, arabicFont),
+              _buildReceiptRow('Recipient', parcel.recipientName),
+              _buildReceiptRow('Phone', parcel.recipientPhone),
+              _buildReceiptRow('Region', parcel.deliveryRegion),
+              _buildReceiptRow('Address', parcel.deliveryAddress),
               pw.Divider(),
 
               // Pricing
-              _buildReceiptRow('Parcel Price',
-                  '₪${parcel.parcelPrice.toStringAsFixed(2)}', arabicFont),
-              _buildReceiptRow('Delivery Fee',
-                  '₪${parcel.deliveryFee.toStringAsFixed(2)}', arabicFont),
+              _buildReceiptRow(
+                  'Parcel Price', '₪${parcel.parcelPrice.toStringAsFixed(2)}'),
+              _buildReceiptRow(
+                  'Delivery Fee', '₪${parcel.deliveryFee.toStringAsFixed(2)}'),
               pw.SizedBox(height: 4),
               pw.Row(
                 mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
@@ -305,7 +301,6 @@ class PrintLabelService {
                     style: pw.TextStyle(
                       fontSize: 12,
                       fontWeight: pw.FontWeight.bold,
-                      fontFallback: [if (arabicFont != null) arabicFont],
                     ),
                   ),
                 ],
@@ -324,8 +319,7 @@ class PrintLabelService {
               pw.Center(
                 child: pw.Text(
                   'Thank you! شكراً',
-                  style: pw.TextStyle(
-                    font: arabicFont,
+                  style: const pw.TextStyle(
                     fontSize: 10,
                   ),
                 ),
@@ -342,8 +336,7 @@ class PrintLabelService {
     );
   }
 
-  static pw.Widget _buildReceiptRow(
-      String label, String value, pw.Font? arabicFont) {
+  static pw.Widget _buildReceiptRow(String label, String value) {
     return pw.Padding(
       padding: const pw.EdgeInsets.symmetric(vertical: 2),
       child: pw.Row(
@@ -356,8 +349,7 @@ class PrintLabelService {
           pw.Expanded(
             child: pw.Text(
               value,
-              style: pw.TextStyle(
-                font: arabicFont,
+              style: const pw.TextStyle(
                 fontSize: 10,
               ),
               textAlign: pw.TextAlign.right,
@@ -377,13 +369,16 @@ class PrintLabelService {
       {String? merchantName}) async {
     final pdf = pw.Document();
 
-    pw.Font? arabicFont;
+    // Load fonts
+
+    pw.Font fontBase;
+    pw.Font fontArabic;
     try {
-      final fontData =
-          await rootBundle.load('assets/fonts/NotoSansArabic-Regular.ttf');
-      arabicFont = pw.Font.ttf(fontData);
+      fontBase = await PdfGoogleFonts.notoSansRegular();
+      fontArabic = await PdfGoogleFonts.notoSansArabicRegular();
     } catch (e) {
-      debugPrint('Error loading Arabic font: $e');
+      fontBase = pw.Font.courier();
+      fontArabic = pw.Font.courier();
     }
 
     pdf.addPage(
@@ -391,8 +386,9 @@ class PrintLabelService {
         pageFormat: PdfPageFormat.a6,
         margin: const pw.EdgeInsets.all(16),
         theme: pw.ThemeData.withFont(
-          base: arabicFont,
-          bold: arabicFont,
+          base: fontBase,
+          bold: fontBase,
+          fontFallback: [fontArabic],
         ),
         textDirection: pw.TextDirection.rtl,
         build: (context) {
@@ -413,13 +409,11 @@ class PrintLabelService {
                       style: pw.TextStyle(
                         fontSize: 18,
                         fontWeight: pw.FontWeight.bold,
-                        fontFallback: [if (arabicFont != null) arabicFont],
                       ),
                     ),
                     pw.Text(
                       'وصلني بلس',
                       style: pw.TextStyle(
-                        font: arabicFont,
                         fontSize: 18,
                         fontWeight: pw.FontWeight.bold,
                       ),
@@ -452,18 +446,14 @@ class PrintLabelService {
                             fontSize: 10, color: PdfColors.grey700)),
                     pw.Text(parcel.recipientName,
                         style: pw.TextStyle(
-                            font: arabicFont,
-                            fontSize: 14,
-                            fontWeight: pw.FontWeight.bold)),
+                            fontSize: 14, fontWeight: pw.FontWeight.bold)),
                     pw.Text(parcel.recipientPhone,
                         style: const pw.TextStyle(fontSize: 12)),
                     pw.Text(parcel.deliveryAddress,
-                        style: pw.TextStyle(fontSize: 11, font: arabicFont)),
+                        style: const pw.TextStyle(fontSize: 11)),
                     pw.Text(parcel.deliveryRegion,
                         style: pw.TextStyle(
-                            font: arabicFont,
-                            fontSize: 11,
-                            fontWeight: pw.FontWeight.bold)),
+                            fontSize: 11, fontWeight: pw.FontWeight.bold)),
                   ],
                 ),
               ),
@@ -476,7 +466,6 @@ class PrintLabelService {
                       style: pw.TextStyle(
                         fontSize: 12,
                         fontWeight: pw.FontWeight.bold,
-                        fontFallback: [if (arabicFont != null) arabicFont],
                       )),
                   pw.Text(_formatDate(parcel.createdAt),
                       style: const pw.TextStyle(fontSize: 10)),
