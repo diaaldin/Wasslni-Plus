@@ -33,6 +33,9 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "acceptPolicyStart": MessageLookupByLibrary.simpleMessage("أوافق على "),
+    "active_deliveries": MessageLookupByLibrary.simpleMessage(
+      "التوصيلات النشطة",
+    ),
     "add_image": MessageLookupByLibrary.simpleMessage("إضافة صورة"),
     "add_parcel": MessageLookupByLibrary.simpleMessage("إضافة طرد"),
     "address": MessageLookupByLibrary.simpleMessage("العنوان, مدينة - شارع"),
@@ -349,7 +352,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "promotional_offers_desc": MessageLookupByLibrary.simpleMessage(
       "تلقي تحديثات حول الميزات والعروض الجديدة",
     ),
-    "proof_of_delivery": MessageLookupByLibrary.simpleMessage("إثبات التوصيل"),
+    "proof_of_delivery": MessageLookupByLibrary.simpleMessage("إثبات التسليم"),
     "recent_parcels": MessageLookupByLibrary.simpleMessage("الطرود الأخيرة"),
     "recipient": MessageLookupByLibrary.simpleMessage("المستلم"),
     "recipient_name": MessageLookupByLibrary.simpleMessage("اسم المستلم"),
@@ -446,6 +449,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "unread": MessageLookupByLibrary.simpleMessage("غير مقروء"),
     "update_parcel": MessageLookupByLibrary.simpleMessage("تحديث الطرد"),
     "update_status": MessageLookupByLibrary.simpleMessage("تحديث الحالة"),
+    "updated_at": MessageLookupByLibrary.simpleMessage("آخر تحديث"),
     "upload_csv": MessageLookupByLibrary.simpleMessage("رفع ملف CSV"),
     "upload_error": MessageLookupByLibrary.simpleMessage("فشل الرفع"),
     "upload_success": MessageLookupByLibrary.simpleMessage("تم الرفع بنجاح"),

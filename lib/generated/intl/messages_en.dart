@@ -34,6 +34,9 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "acceptPolicyStart": MessageLookupByLibrary.simpleMessage("I accept the "),
+    "active_deliveries": MessageLookupByLibrary.simpleMessage(
+      "Active Deliveries",
+    ),
     "add_image": MessageLookupByLibrary.simpleMessage("Add Image"),
     "add_parcel": MessageLookupByLibrary.simpleMessage("Add Parcel"),
     "address": MessageLookupByLibrary.simpleMessage("Address, City - Street"),
@@ -495,6 +498,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "unread": MessageLookupByLibrary.simpleMessage("Unread"),
     "update_parcel": MessageLookupByLibrary.simpleMessage("Update Parcel"),
     "update_status": MessageLookupByLibrary.simpleMessage("Update Status"),
+    "updated_at": MessageLookupByLibrary.simpleMessage("Last Updated"),
     "upload_csv": MessageLookupByLibrary.simpleMessage("Upload CSV File"),
     "upload_error": MessageLookupByLibrary.simpleMessage("Upload failed"),
     "upload_success": MessageLookupByLibrary.simpleMessage(

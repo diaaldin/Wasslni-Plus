@@ -277,5 +277,8 @@
   "working_regions": "Working Regions",
   "validation_required": "This field is required",
   "save_changes": "Save Changes",
-  "profile_updated_success": "Profile updated successfully"
+  "profile_updated_success": "Profile updated successfully",
+  "active_deliveries": "Active Deliveries",
+  "updated_at": "Last Updated",
+  "proof_of_delivery": "Proof of Delivery"
 }

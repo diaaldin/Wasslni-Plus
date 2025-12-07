@@ -277,5 +277,8 @@
   "working_regions": "مناطق العمل",
   "validation_required": "هذا الحقل مطلوب",
   "save_changes": "حفظ التغييرات",
-  "profile_updated_success": "تم تحديث الملف الشخصي بنجاح"
+  "profile_updated_success": "تم تحديث الملف الشخصي بنجاح",
+  "active_deliveries": "التوصيلات النشطة",
+  "updated_at": "آخر تحديث",
+  "proof_of_delivery": "إثبات التسليم"
 }

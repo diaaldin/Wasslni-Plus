@@ -163,21 +163,21 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
 
 ### 1.6 Customer Dashboard
 
-- [ ] **Customer Main Page**
-  - [ ] Create active deliveries view
-  - [ ] Display delivery tracking map
-  - [ ] Add expected delivery time
-  - [ ] Show courier contact information
+- [x] **Customer Main Page**
+  - [x] Create active deliveries view
+  - [x] Display delivery tracking map
+  - [x] Add expected delivery time
+  - [x] Show courier contact information
 
-- [ ] **Order Tracking**
-  - [ ] Build detailed tracking timeline
-  - [ ] Add real-time location updates on map
+- [x] **Order Tracking**
+  - [x] Build detailed tracking timeline
+  - [x] Add real-time location updates on map
   - [ ] Implement push notifications for status changes
-  - [ ] Create estimated arrival countdown
+  - [x] Create estimated arrival countdown
 
 - [ ] **Order History**
-  - [ ] Build past deliveries list
-  - [ ] Add order details view
+  - [x] Build past deliveries list
+  - [x] Add order details view
   - [ ] Implement search and filters
   - [ ] Create reorder functionality
 

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:wasslni_plus/generated/l10n.dart';
 
+import 'package:wasslni_plus/flow/customer/history/order_history_page.dart';
+import 'package:wasslni_plus/flow/customer/dashboard/active_deliveries_view.dart';
+
 class CustomerMainScreen extends StatefulWidget {
   const CustomerMainScreen({super.key});
 
@@ -12,8 +15,8 @@ class _CustomerMainScreenState extends State<CustomerMainScreen> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = const [
-    Center(child: Text('Customer Main page')),
-    Center(child: Text('Customer Pckages pages')),
+    ActiveDeliveriesView(),
+    OrderHistoryPage(),
     Center(child: Text('Customer Settings page')),
   ];
 

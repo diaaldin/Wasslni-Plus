@@ -2383,6 +2383,21 @@ class S {
       args: [],
     );
   }
+
+  /// `Active Deliveries`
+  String get active_deliveries {
+    return Intl.message(
+      'Active Deliveries',
+      name: 'active_deliveries',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Last Updated`
+  String get updated_at {
+    return Intl.message('Last Updated', name: 'updated_at', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
