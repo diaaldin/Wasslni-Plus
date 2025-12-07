@@ -2218,6 +2218,81 @@ class S {
   String get yes_update {
     return Intl.message('Yes, Update', name: 'yes_update', desc: '', args: []);
   }
+
+  /// `Awaiting Label`
+  String get status_awaiting_label {
+    return Intl.message(
+      'Awaiting Label',
+      name: 'status_awaiting_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ready to Ship`
+  String get status_ready_to_ship {
+    return Intl.message(
+      'Ready to Ship',
+      name: 'status_ready_to_ship',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `At Warehouse`
+  String get status_at_warehouse {
+    return Intl.message(
+      'At Warehouse',
+      name: 'status_at_warehouse',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `En Route to Distributor`
+  String get status_en_route_distributor {
+    return Intl.message(
+      'En Route to Distributor',
+      name: 'status_en_route_distributor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Out for Delivery`
+  String get status_out_for_delivery {
+    return Intl.message(
+      'Out for Delivery',
+      name: 'status_out_for_delivery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm`
+  String get confirm {
+    return Intl.message('Confirm', name: 'confirm', desc: '', args: []);
+  }
+
+  /// `Complete Delivery`
+  String get complete_delivery {
+    return Intl.message(
+      'Complete Delivery',
+      name: 'complete_delivery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Route Optimized`
+  String get route_optimized {
+    return Intl.message(
+      'Route Optimized',
+      name: 'route_optimized',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

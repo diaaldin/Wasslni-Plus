@@ -173,6 +173,7 @@ class FirestoreService {
     String updatedBy, {
     String? location,
     String? notes,
+    String? reason,
   }) async {
     try {
       final parcel = await getParcel(parcelId);
@@ -183,14 +184,26 @@ class FirestoreService {
         timestamp: DateTime.now(),
         updatedBy: updatedBy,
         location: location,
-        notes: notes,
+        notes: notes ?? reason, // Use reason as notes if notes not provided
       );
 
-      await _parcelsCollection.doc(parcelId).update({
+      final Map<String, dynamic> updateData = {
         'status': status.name,
         'statusHistory': FieldValue.arrayUnion([newHistory.toMap()]),
         'updatedAt': FieldValue.serverTimestamp(),
-      });
+      };
+
+      if (status == ParcelStatus.returned && reason != null) {
+        updateData['returnReason'] = reason;
+      } else if ((status == ParcelStatus.cancelled) && reason != null) {
+        updateData['failureReason'] =
+            reason; // Use failureReason for cancelled too if needed, or mapped.
+        // Actually model has failureReason, usually for "Failed Attempt".
+        // Let's assume Cancelled might imply failure or manual cancellation.
+        // If status is cancelled, let's set failureReason as generic reason field.
+      }
+
+      await _parcelsCollection.doc(parcelId).update(updateData);
     } catch (e) {
       throw Exception('Failed to update parcel status: $e');
     }

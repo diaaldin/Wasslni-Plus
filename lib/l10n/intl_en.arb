@@ -259,5 +259,13 @@
   "please_enter_reason": "Please enter a reason",
   "confirm_status_update": "Confirm Status Update",
   "are_you_sure_update_status": "Are you sure you want to update the status to {status}?",
-  "yes_update": "Yes, Update"
+  "yes_update": "Yes, Update",
+  "status_awaiting_label": "Awaiting Label",
+  "status_ready_to_ship": "Ready to Ship",
+  "status_at_warehouse": "At Warehouse",
+  "status_en_route_distributor": "En Route to Distributor",
+  "status_out_for_delivery": "Out for Delivery",
+  "confirm": "Confirm",
+  "complete_delivery": "Complete Delivery",
+  "route_optimized": "Route Optimized"
 }

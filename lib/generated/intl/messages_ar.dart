@@ -70,10 +70,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "clear_selection": MessageLookupByLibrary.simpleMessage("مسح الاختيار"),
     "clear_signature": MessageLookupByLibrary.simpleMessage("مسح التوقيع"),
     "collect_payment": MessageLookupByLibrary.simpleMessage("تحصيل الدفع"),
+    "complete_delivery": MessageLookupByLibrary.simpleMessage("إكمال التوصيل"),
     "complete_steps_to_proceed": MessageLookupByLibrary.simpleMessage(
       "أكمل الخطوات التالية للمتابعة",
     ),
     "completed": MessageLookupByLibrary.simpleMessage("مكتمل"),
+    "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
     "confirm_cancel_parcel": MessageLookupByLibrary.simpleMessage(
       "هل أنت متأكد من إلغاء هذا الطرد؟",
     ),
@@ -361,6 +363,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "role": MessageLookupByLibrary.simpleMessage("الدور"),
     "route_map": MessageLookupByLibrary.simpleMessage("خريطة المسار"),
+    "route_optimized": MessageLookupByLibrary.simpleMessage("تم تحسين المسار"),
     "save_parcel": MessageLookupByLibrary.simpleMessage("حفظ الطرد"),
     "scan_to_track": MessageLookupByLibrary.simpleMessage("امسح للتتبع"),
     "select_file": MessageLookupByLibrary.simpleMessage("اختر ملف"),
@@ -379,7 +382,18 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "start_delivery": MessageLookupByLibrary.simpleMessage("بدء التوصيل"),
     "statistics": MessageLookupByLibrary.simpleMessage("الإحصائيات"),
+    "status_at_warehouse": MessageLookupByLibrary.simpleMessage("في المخزن"),
+    "status_awaiting_label": MessageLookupByLibrary.simpleMessage(
+      "بانتظار الملصق",
+    ),
+    "status_en_route_distributor": MessageLookupByLibrary.simpleMessage(
+      "في الطريق للموزع",
+    ),
     "status_label": m4,
+    "status_out_for_delivery": MessageLookupByLibrary.simpleMessage(
+      "خرج للتوصيل",
+    ),
+    "status_ready_to_ship": MessageLookupByLibrary.simpleMessage("جاهز للشحن"),
     "status_updated_successfully": MessageLookupByLibrary.simpleMessage(
       "تم تحديث الحالة بنجاح",
     ),

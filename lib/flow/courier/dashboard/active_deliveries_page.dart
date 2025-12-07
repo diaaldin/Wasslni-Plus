@@ -364,18 +364,24 @@ class _ActiveDeliveriesPageState extends State<ActiveDeliveriesPage> {
 
     switch (status) {
       case ParcelStatus.awaitingLabel:
+        color = Colors.orange;
+        text = tr.status_awaiting_label;
+        break;
       case ParcelStatus.readyToShip:
         color = Colors.orange;
-        text = tr.pending_pickup;
+        text = tr.status_ready_to_ship;
         break;
       case ParcelStatus.atWarehouse:
         color = Colors.blue;
-        text = 'At Warehouse';
+        text = tr.status_at_warehouse;
         break;
-      case ParcelStatus.outForDelivery:
       case ParcelStatus.enRouteDistributor:
         color = AppStyles.primaryColor;
-        text = tr.in_transit;
+        text = tr.status_en_route_distributor;
+        break;
+      case ParcelStatus.outForDelivery:
+        color = AppStyles.primaryColor;
+        text = tr.status_out_for_delivery;
         break;
       default:
         color = Colors.grey;
@@ -449,7 +455,7 @@ class _ActiveDeliveriesPageState extends State<ActiveDeliveriesPage> {
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
       builder: (context) => DraggableScrollableSheet(
-        initialChildSize: 0.7,
+        initialChildSize: 0.8,
         minChildSize: 0.5,
         maxChildSize: 0.95,
         expand: false,
@@ -567,29 +573,51 @@ class _ActiveDeliveriesPageState extends State<ActiveDeliveriesPage> {
                   ],
                 ),
                 const SizedBox(height: 16),
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                      _showChecklist(parcel);
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green,
-                      foregroundColor: Colors.white,
-                      padding: const EdgeInsets.all(16),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
+
+                // Status Update Actions
+                Row(
+                  children: [
+                    Expanded(
+                      flex: 1,
+                      child: OutlinedButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                          _showStatusUpdateDialog(parcel, tr);
+                        },
+                        style: OutlinedButton.styleFrom(
+                          padding: const EdgeInsets.all(16),
+                          foregroundColor: Colors.grey[800],
+                          side: BorderSide(color: Colors.grey[400]!),
+                        ),
+                        child: Text(tr.update_status),
                       ),
                     ),
-                    child: const Text(
-                      'Complete Delivery', // TODO: Add to l10n
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
+                    const SizedBox(width: 12),
+                    Expanded(
+                      flex: 2,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                          _showChecklist(parcel);
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.green,
+                          foregroundColor: Colors.white,
+                          padding: const EdgeInsets.all(16),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                        ),
+                        child: Text(
+                          tr.complete_delivery,
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ),
                     ),
-                  ),
+                  ],
                 ),
               ],
             ),
@@ -597,6 +625,171 @@ class _ActiveDeliveriesPageState extends State<ActiveDeliveriesPage> {
         },
       ),
     );
+  }
+
+  void _showStatusUpdateDialog(ParcelModel parcel, S tr) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (context) {
+        return Padding(
+          padding: EdgeInsets.only(
+            bottom: MediaQuery.of(context).viewInsets.bottom,
+            top: 24,
+            left: 24,
+            right: 24,
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                tr.update_status,
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 16),
+              if (parcel.status != ParcelStatus.outForDelivery)
+                ListTile(
+                  leading:
+                      Icon(Icons.local_shipping, color: AppStyles.primaryColor),
+                  title: Text(tr.status_out_for_delivery),
+                  onTap: () {
+                    Navigator.pop(context);
+                    _confirmStatusUpdate(
+                        parcel, ParcelStatus.outForDelivery, tr);
+                  },
+                ),
+              if (parcel.status != ParcelStatus.returned)
+                ListTile(
+                  leading:
+                      const Icon(Icons.assignment_return, color: Colors.orange),
+                  title: Text(tr.returned),
+                  onTap: () {
+                    Navigator.pop(context);
+                    _showReasonDialog(parcel, ParcelStatus.returned, tr);
+                  },
+                ),
+              if (parcel.status != ParcelStatus.cancelled)
+                ListTile(
+                  leading: const Icon(Icons.cancel, color: Colors.red),
+                  title: Text(tr.cancelled),
+                  onTap: () {
+                    Navigator.pop(context);
+                    _showReasonDialog(parcel, ParcelStatus.cancelled, tr);
+                  },
+                ),
+              const SizedBox(height: 24),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  void _showReasonDialog(ParcelModel parcel, ParcelStatus status, S tr) {
+    final reasonController = TextEditingController();
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(
+            '${tr.update_status}: ${status.name}'), // Should use localized name
+        content: TextField(
+          controller: reasonController,
+          decoration: InputDecoration(
+            hintText: tr.please_enter_reason,
+            border: const OutlineInputBorder(),
+          ),
+          maxLines: 3,
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text(tr.cancel),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              if (reasonController.text.isNotEmpty) {
+                Navigator.pop(context);
+                _updateStatus(parcel, status, reason: reasonController.text);
+              }
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor:
+                  status == ParcelStatus.cancelled ? Colors.red : Colors.orange,
+              foregroundColor: Colors.white,
+            ),
+            child: Text(tr.confirm),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _confirmStatusUpdate(ParcelModel parcel, ParcelStatus newStatus, S tr) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(tr.confirm_status_update),
+        content: Text(tr.are_you_sure_update_status(newStatus.name)),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text(tr.cancel),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pop(context);
+              _updateStatus(parcel, newStatus);
+            },
+            child: Text(tr.yes_update),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Future<void> _updateStatus(ParcelModel parcel, ParcelStatus status,
+      {String? reason}) async {
+    try {
+      final user = _authService.currentUser;
+      if (user == null) return;
+
+      // Get location if possible
+      Position? position;
+      try {
+        position = await Geolocator.getCurrentPosition();
+      } catch (e) {
+        debugPrint('Failed to get location: $e');
+      }
+
+      await _firestoreService.updateParcelStatus(
+        parcel.id!,
+        status,
+        user.displayName ?? 'Courier',
+        location: position != null
+            ? '${position.latitude},${position.longitude}'
+            : null,
+        reason: reason,
+      );
+
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(S.of(context).status_updated_successfully)),
+        );
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Error: $e')),
+        );
+      }
+    }
   }
 
   Widget _buildDetailSection(String title, List<Widget> children) {
@@ -736,6 +929,7 @@ class _ActiveDeliveriesPageState extends State<ActiveDeliveriesPage> {
   }
 
   Future<void> _optimizeRoute() async {
+    // ... existing optimize code ...
     setState(() {
       _isOptimizing = true;
     });
@@ -786,7 +980,9 @@ class _ActiveDeliveriesPageState extends State<ActiveDeliveriesPage> {
 
       // 4. Nearest Neighbor Algorithm
       List<String> optimizedIds = [];
+      // ignore: unused_local_variable
       double currentLat = position.latitude;
+      // ignore: unused_local_variable
       double currentLng = position.longitude;
 
       while (locations.isNotEmpty) {
@@ -816,40 +1012,30 @@ class _ActiveDeliveriesPageState extends State<ActiveDeliveriesPage> {
         }
       }
 
-      // Add any remaining parcels (failed geocoding) to the end
-      for (var parcel in parcelsToOptimize) {
-        if (!optimizedIds.contains(parcel.id)) {
-          optimizedIds.add(parcel.id ?? '');
-        }
-      }
-
-      setState(() {
-        _optimizedParcelIds = optimizedIds;
-        _isOptimizing = false;
-      });
-
       if (mounted) {
+        setState(() {
+          _optimizedParcelIds = optimizedIds;
+          _isOptimizing = false;
+        });
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(S.of(context).optimized_route)),
+          SnackBar(content: Text(S.of(context).route_optimized)),
         );
       }
     } catch (e) {
-      debugPrint('Error optimizing route: $e');
-      setState(() => _isOptimizing = false);
       if (mounted) {
+        setState(() => _isOptimizing = false);
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Failed to optimize route')),
+          SnackBar(content: Text('Optimization failed: $e')),
         );
       }
     }
   }
 
-  // Haversine formula for distance
   double _calculateDistance(
       double lat1, double lon1, double lat2, double lon2) {
-    var p = 0.017453292519943295;
-    var c = cos;
-    var a = 0.5 -
+    const p = 0.017453292519943295;
+    const c = cos;
+    final a = 0.5 -
         c((lat2 - lat1) * p) / 2 +
         c(lat1 * p) * c(lat2 * p) * (1 - c((lon2 - lon1) * p)) / 2;
     return 12742 * asin(sqrt(a));

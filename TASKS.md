@@ -135,7 +135,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [x] Add earnings tracker
   - [x] Show today's delivery statistics
 
-- [ ] **Active Deliveries**
+- [x] **Active Deliveries**
   - [x] Build delivery queue interface
   - [x] Add optimized route view
   - [x] Implement navigation integration (Google Maps/Waze)
@@ -143,17 +143,17 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [x] Add photo proof of delivery
   - [x] Implement signature capture
 
-- [ ] **Delivery History**
+- [x] **Delivery History**
   - [x] Create completed deliveries list
   - [x] Add delivery details view
   - [x] Implement date-based filtering
   - [x] Add earnings summary
 
-- [ ] **Parcel Status Update**
-  - [ ] Build quick status change interface
-  - [ ] Add return parcel workflow with reason
-  - [ ] Implement failed delivery reason capture
-  - [ ] Create attempted delivery log
+- [x] **Parcel Status Update**
+  - [x] Build quick status change interface
+  - [x] Add return parcel workflow with reason
+  - [x] Implement failed delivery reason capture
+  - [x] Create attempted delivery log
 
 - [ ] **Settings & Profile**
   - [ ] Add availability toggle

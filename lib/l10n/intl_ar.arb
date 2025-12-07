@@ -264,5 +264,8 @@
   "status_ready_to_ship": "جاهز للشحن",
   "status_at_warehouse": "في المخزن",
   "status_en_route_distributor": "في الطريق للموزع",
-  "status_out_for_delivery": "خرج للتوصيل"
+  "status_out_for_delivery": "خرج للتوصيل",
+  "confirm": "تأكيد",
+  "complete_delivery": "إكمال التوصيل",
+  "route_optimized": "تم تحسين المسار"
 }

@@ -77,10 +77,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "clear_selection": MessageLookupByLibrary.simpleMessage("Clear selection"),
     "clear_signature": MessageLookupByLibrary.simpleMessage("Clear Signature"),
     "collect_payment": MessageLookupByLibrary.simpleMessage("Collect Payment"),
+    "complete_delivery": MessageLookupByLibrary.simpleMessage(
+      "Complete Delivery",
+    ),
     "complete_steps_to_proceed": MessageLookupByLibrary.simpleMessage(
       "Complete the following steps to proceed",
     ),
     "completed": MessageLookupByLibrary.simpleMessage("Completed"),
+    "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
     "confirm_cancel_parcel": MessageLookupByLibrary.simpleMessage(
       "Are you sure you want to cancel this parcel?",
     ),
@@ -400,6 +404,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "role": MessageLookupByLibrary.simpleMessage("Role"),
     "route_map": MessageLookupByLibrary.simpleMessage("Route Map"),
+    "route_optimized": MessageLookupByLibrary.simpleMessage("Route Optimized"),
     "save_parcel": MessageLookupByLibrary.simpleMessage("Save Parcel"),
     "scan_to_track": MessageLookupByLibrary.simpleMessage("Scan to Track"),
     "select_file": MessageLookupByLibrary.simpleMessage("Select File"),
@@ -420,7 +425,20 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "start_delivery": MessageLookupByLibrary.simpleMessage("Start Delivery"),
     "statistics": MessageLookupByLibrary.simpleMessage("Statistics"),
+    "status_at_warehouse": MessageLookupByLibrary.simpleMessage("At Warehouse"),
+    "status_awaiting_label": MessageLookupByLibrary.simpleMessage(
+      "Awaiting Label",
+    ),
+    "status_en_route_distributor": MessageLookupByLibrary.simpleMessage(
+      "En Route to Distributor",
+    ),
     "status_label": m4,
+    "status_out_for_delivery": MessageLookupByLibrary.simpleMessage(
+      "Out for Delivery",
+    ),
+    "status_ready_to_ship": MessageLookupByLibrary.simpleMessage(
+      "Ready to Ship",
+    ),
     "status_updated_successfully": MessageLookupByLibrary.simpleMessage(
       "Status updated successfully",
     ),
