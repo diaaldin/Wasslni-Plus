@@ -226,6 +226,11 @@ class DeliveryDetailsPage extends StatelessWidget {
 
   Widget _buildTimelineCard(BuildContext context, S tr) {
     final dateFormat = DateFormat('MMM d, yyyy h:mm a');
+
+    // Sort history by timestamp (newest first for UI usually, or oldest first for timeline flow)
+    final history = List<StatusHistory>.from(parcel.statusHistory)
+      ..sort((a, b) => b.timestamp.compareTo(a.timestamp));
+
     return Card(
       elevation: 2,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -242,15 +247,122 @@ class DeliveryDetailsPage extends StatelessWidget {
               ),
             ),
             const Divider(),
-            _buildDetailRow(Icons.create, tr.created_at,
-                dateFormat.format(parcel.createdAt)),
-            if (parcel.actualDeliveryTime != null)
-              _buildDetailRow(Icons.check_circle_outline, tr.delivered_at,
-                  dateFormat.format(parcel.actualDeliveryTime!)),
+            if (history.isEmpty) ...[
+              _buildDetailRow(Icons.create, tr.created_at,
+                  dateFormat.format(parcel.createdAt)),
+              if (parcel.actualDeliveryTime != null)
+                _buildDetailRow(Icons.check_circle_outline, tr.delivered_at,
+                    dateFormat.format(parcel.actualDeliveryTime!)),
+            ] else
+              ListView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: history.length,
+                itemBuilder: (context, index) {
+                  final item = history[index];
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: 12),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Column(
+                          children: [
+                            Icon(
+                              _getStatusIcon(item.status),
+                              color: AppStyles.primaryColor,
+                              size: 20,
+                            ),
+                            if (index < history.length - 1)
+                              Container(
+                                width: 2,
+                                height: 30,
+                                color: Colors.grey[300],
+                                margin: const EdgeInsets.symmetric(vertical: 4),
+                              ),
+                          ],
+                        ),
+                        const SizedBox(width: 12),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                _getStatusText(item.status, tr),
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                ),
+                              ),
+                              Text(
+                                dateFormat.format(item.timestamp),
+                                style: TextStyle(
+                                  color: Colors.grey[600],
+                                  fontSize: 12,
+                                ),
+                              ),
+                              if (item.notes != null && item.notes!.isNotEmpty)
+                                Text(
+                                  item.notes!,
+                                  style: TextStyle(
+                                    color: Colors.grey[800],
+                                    fontStyle: FontStyle.italic,
+                                    fontSize: 13,
+                                  ),
+                                ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
           ],
         ),
       ),
     );
+  }
+
+  IconData _getStatusIcon(ParcelStatus status) {
+    switch (status) {
+      case ParcelStatus.delivered:
+        return Icons.check_circle;
+      case ParcelStatus.returned:
+        return Icons.assignment_return;
+      case ParcelStatus.cancelled:
+        return Icons.cancel;
+      case ParcelStatus.outForDelivery:
+        return Icons.local_shipping;
+      case ParcelStatus.atWarehouse:
+        return Icons.warehouse;
+      case ParcelStatus.enRouteDistributor:
+        return Icons.transfer_within_a_station;
+      case ParcelStatus.readyToShip:
+        return Icons.inventory_2;
+      case ParcelStatus.awaitingLabel:
+        return Icons.pending;
+    }
+  }
+
+  String _getStatusText(ParcelStatus status, S tr) {
+    switch (status) {
+      case ParcelStatus.delivered:
+        return tr.delivered;
+      case ParcelStatus.returned:
+        return tr.returned;
+      case ParcelStatus.cancelled:
+        return tr.cancelled;
+      case ParcelStatus.outForDelivery:
+        return tr.status_out_for_delivery;
+      case ParcelStatus.awaitingLabel:
+        return tr.status_awaiting_label;
+      case ParcelStatus.readyToShip:
+        return tr.status_ready_to_ship;
+      case ParcelStatus.enRouteDistributor:
+        return tr.status_en_route_distributor;
+      case ParcelStatus.atWarehouse:
+        return tr.status_at_warehouse;
+    }
   }
 
   Widget _buildNotesCard(BuildContext context, S tr) {

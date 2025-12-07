@@ -17,6 +17,41 @@ class DeliveryHistoryPage extends StatefulWidget {
 class _DeliveryHistoryPageState extends State<DeliveryHistoryPage> {
   final FirestoreService _firestoreService = FirestoreService();
   final AuthService _authService = AuthService();
+  DateTimeRange? _selectedDateRange;
+
+  Future<void> _selectDateRange(BuildContext context) async {
+    final DateTime now = DateTime.now();
+    final DateTimeRange? picked = await showDateRangePicker(
+      context: context,
+      firstDate: DateTime(2024),
+      lastDate: now,
+      initialDateRange: _selectedDateRange,
+      builder: (context, child) {
+        return Theme(
+          data: Theme.of(context).copyWith(
+            colorScheme: ColorScheme.light(
+              primary: AppStyles.primaryColor,
+              onPrimary: Colors.white,
+              onSurface: Colors.black,
+            ),
+          ),
+          child: child!,
+        );
+      },
+    );
+
+    if (picked != null) {
+      setState(() {
+        _selectedDateRange = picked;
+      });
+    }
+  }
+
+  void _clearFilter() {
+    setState(() {
+      _selectedDateRange = null;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +68,19 @@ class _DeliveryHistoryPageState extends State<DeliveryHistoryPage> {
       appBar: AppBar(
         title: Text(tr.delivery_history),
         backgroundColor: AppStyles.primaryColor,
+        actions: [
+          if (_selectedDateRange != null)
+            IconButton(
+              icon: const Icon(Icons.filter_list_off),
+              tooltip: tr.clear_selection,
+              onPressed: _clearFilter,
+            ),
+          IconButton(
+            icon: const Icon(Icons.date_range),
+            tooltip: tr.date_range,
+            onPressed: () => _selectDateRange(context),
+          ),
+        ],
       ),
       body: StreamBuilder<List<ParcelModel>>(
         stream: _firestoreService.streamCourierParcels(user.uid),
@@ -47,41 +95,160 @@ class _DeliveryHistoryPageState extends State<DeliveryHistoryPage> {
           }
 
           final parcels = snapshot.data ?? [];
-          final historyParcels = parcels.where((p) {
+          var historyParcels = parcels.where((p) {
             return p.status == ParcelStatus.delivered ||
                 p.status == ParcelStatus.returned ||
                 p.status == ParcelStatus.cancelled;
           }).toList();
 
+          // Apply Date Filter
+          if (_selectedDateRange != null) {
+            historyParcels = historyParcels.where((p) {
+              final date = p.createdAt;
+              return date.isAfter(_selectedDateRange!.start
+                      .subtract(const Duration(seconds: 1))) &&
+                  date.isBefore(
+                      _selectedDateRange!.end.add(const Duration(days: 1)));
+            }).toList();
+          }
+
           // Sort by date descending (newest first)
           historyParcels.sort((a, b) => b.createdAt.compareTo(a.createdAt));
 
-          if (historyParcels.isEmpty) {
-            return Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.history, size: 64, color: Colors.grey[400]),
-                  const SizedBox(height: 16),
-                  Text(
-                    tr.no_history_found,
-                    style: TextStyle(fontSize: 18, color: Colors.grey[600]),
-                  ),
-                ],
-              ),
-            );
+          // Calculate Earnings
+          double totalEarnings = 0;
+          int deliveredCount = 0;
+          for (var p in historyParcels) {
+            if (p.status == ParcelStatus.delivered) {
+              totalEarnings += p.deliveryFee;
+              deliveredCount++;
+            }
           }
 
-          return ListView.builder(
-            padding: const EdgeInsets.all(16),
-            itemCount: historyParcels.length,
-            itemBuilder: (context, index) {
-              final parcel = historyParcels[index];
-              return _buildHistoryCard(parcel, tr);
-            },
+          return Column(
+            children: [
+              if (_selectedDateRange != null)
+                Container(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                  color: Colors.grey[100],
+                  child: Row(
+                    children: [
+                      Icon(Icons.filter_alt,
+                          size: 16, color: AppStyles.primaryColor),
+                      const SizedBox(width: 8),
+                      Text(
+                        '${DateFormat('MMM d').format(_selectedDateRange!.start)} - ${DateFormat('MMM d').format(_selectedDateRange!.end)}',
+                        style: TextStyle(
+                          color: AppStyles.primaryColor,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const Spacer(),
+                      InkWell(
+                        onTap: _clearFilter,
+                        child: Icon(Icons.close, size: 18, color: Colors.grey),
+                      ),
+                    ],
+                  ),
+                ),
+
+              // Summary Card
+              _buildSummaryCard(totalEarnings, deliveredCount, tr),
+
+              Expanded(
+                child: historyParcels.isEmpty
+                    ? Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.history,
+                                size: 64, color: Colors.grey[400]),
+                            const SizedBox(height: 16),
+                            Text(
+                              _selectedDateRange != null
+                                  ? tr.no_parcels_yet
+                                  : tr.no_history_found,
+                              style: TextStyle(
+                                  fontSize: 18, color: Colors.grey[600]),
+                            ),
+                            if (_selectedDateRange != null)
+                              TextButton(
+                                onPressed: _clearFilter,
+                                child: Text(tr.clear_selection),
+                              ),
+                          ],
+                        ),
+                      )
+                    : ListView.builder(
+                        padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+                        itemCount: historyParcels.length,
+                        itemBuilder: (context, index) {
+                          final parcel = historyParcels[index];
+                          return _buildHistoryCard(parcel, tr);
+                        },
+                      ),
+              ),
+            ],
           );
         },
       ),
+    );
+  }
+
+  Widget _buildSummaryCard(double earnings, int count, S tr) {
+    return Container(
+      margin: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: AppStyles.primaryColor,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 8,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          _buildSummaryItem(tr.total_deliveries, count.toString(),
+              Icons.local_shipping, Colors.white),
+          Container(height: 40, width: 1, color: Colors.white.withOpacity(0.3)),
+          _buildSummaryItem(
+              tr.total_earnings,
+              '₪${earnings.toStringAsFixed(2)}',
+              Icons.attach_money,
+              Colors.white),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSummaryItem(
+      String label, String value, IconData icon, Color color) {
+    return Column(
+      children: [
+        Icon(icon, color: color, size: 24),
+        const SizedBox(height: 8),
+        Text(
+          value,
+          style: TextStyle(
+            color: color,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        Text(
+          label,
+          style: TextStyle(
+            color: color.withOpacity(0.8),
+            fontSize: 12,
+          ),
+        ),
+      ],
     );
   }
 

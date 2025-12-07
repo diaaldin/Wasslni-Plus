@@ -244,5 +244,20 @@
   "created_at": "Created At",
   "delivered_at": "Delivered At",
   "notes": "Notes",
-  "signature": "Signature"
+  "signature": "Signature",
+  "update_status": "Update Status",
+  "select_status": "Select Status",
+  "return_reason": "Return Reason",
+  "failure_reason": "Failure Reason",
+  "mark_as_delivered": "Mark as Delivered",
+  "mark_as_returned": "Mark as Returned",
+  "mark_as_cancelled": "Mark as Cancelled",
+  "mark_as_ready_to_ship": "Mark as Ready to Ship",
+  "mark_as_out_for_delivery": "Mark as Out for Delivery",
+  "mark_as_at_warehouse": "Mark as At Warehouse",
+  "status_updated_successfully": "Status updated successfully",
+  "please_enter_reason": "Please enter a reason",
+  "confirm_status_update": "Confirm Status Update",
+  "are_you_sure_update_status": "Are you sure you want to update the status to {status}?",
+  "yes_update": "Yes, Update"
 }

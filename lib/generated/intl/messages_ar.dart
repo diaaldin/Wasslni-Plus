@@ -20,13 +20,15 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
-  static String m0(code) => "الباركود: ${code}";
+  static String m0(status) => "هل أنت متأكد من تحديث الحالة إلى ${status}؟";
 
-  static String m1(error) => "حدث خطأ: ${error}";
+  static String m1(code) => "الباركود: ${code}";
 
-  static String m2(note) => "ملاحظة: ${note}";
+  static String m2(error) => "حدث خطأ: ${error}";
 
-  static String m3(status) => "الحالة: ${status}";
+  static String m3(note) => "ملاحظة: ${note}";
+
+  static String m4(status) => "الحالة: ${status}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -47,11 +49,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "anytime": MessageLookupByLibrary.simpleMessage("أي وقت"),
     "app_name": MessageLookupByLibrary.simpleMessage("وصلني بلس"),
     "app_tagline": MessageLookupByLibrary.simpleMessage("توصيل سريع وموثوق"),
+    "are_you_sure_update_status": m0,
     "attach_barcode": MessageLookupByLibrary.simpleMessage("أرفق باركود"),
     "average_delivery_time": MessageLookupByLibrary.simpleMessage(
       "متوسط وقت التوصيل",
     ),
-    "barcode_label": m0,
+    "barcode_label": m1,
     "bulk_upload": MessageLookupByLibrary.simpleMessage("رفع جماعي"),
     "call": MessageLookupByLibrary.simpleMessage("اتصال"),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
@@ -77,6 +80,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirm_delivery": MessageLookupByLibrary.simpleMessage("تأكيد التوصيل"),
     "confirm_location": MessageLookupByLibrary.simpleMessage("تأكيد الموقع"),
     "confirm_signature": MessageLookupByLibrary.simpleMessage("تأكيد التوقيع"),
+    "confirm_status_update": MessageLookupByLibrary.simpleMessage(
+      "تأكيد تحديث الحالة",
+    ),
     "contact_support": MessageLookupByLibrary.simpleMessage(
       "لمزيد من التفاصيل، لا تتردد في الاتصال بفريق الدعم لدينا.",
     ),
@@ -171,7 +177,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "error_loading_data": MessageLookupByLibrary.simpleMessage(
       "خطأ في تحميل البيانات",
     ),
-    "error_occurred": m1,
+    "error_occurred": m2,
     "estimated_time": MessageLookupByLibrary.simpleMessage("الوقت المتوقع"),
     "evening": MessageLookupByLibrary.simpleMessage("مساءً (5م - 9م)"),
     "export": MessageLookupByLibrary.simpleMessage("تصدير"),
@@ -183,6 +189,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "failed_deliveries": MessageLookupByLibrary.simpleMessage(
       "التوصيلات الفاشلة",
     ),
+    "failure_reason": MessageLookupByLibrary.simpleMessage("سبب الفشل"),
     "from": MessageLookupByLibrary.simpleMessage("من"),
     "general_serach_hint": MessageLookupByLibrary.simpleMessage("بحث..."),
     "height": MessageLookupByLibrary.simpleMessage("الارتفاع"),
@@ -217,6 +224,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "main": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "map_view": MessageLookupByLibrary.simpleMessage("عرض الخريطة"),
     "mark_all_read": MessageLookupByLibrary.simpleMessage("تحديد الكل كمقروء"),
+    "mark_as_at_warehouse": MessageLookupByLibrary.simpleMessage(
+      "تحديد كفي المخزن",
+    ),
+    "mark_as_cancelled": MessageLookupByLibrary.simpleMessage("تحديد كملغى"),
+    "mark_as_delivered": MessageLookupByLibrary.simpleMessage(
+      "تحديد كتم التوصيل",
+    ),
+    "mark_as_out_for_delivery": MessageLookupByLibrary.simpleMessage(
+      "تحديد كخارج للتوصيل",
+    ),
+    "mark_as_ready_to_ship": MessageLookupByLibrary.simpleMessage(
+      "تحديد كجاهز للشحن",
+    ),
+    "mark_as_returned": MessageLookupByLibrary.simpleMessage("تحديد كمرتجع"),
     "merchant": MessageLookupByLibrary.simpleMessage("تاجر"),
     "merchant_dashboard": MessageLookupByLibrary.simpleMessage("لوحة التاجر"),
     "message": MessageLookupByLibrary.simpleMessage("الرسالة"),
@@ -248,7 +269,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "no_notifications": MessageLookupByLibrary.simpleMessage("لا توجد إشعارات"),
     "no_parcels_yet": MessageLookupByLibrary.simpleMessage("لا توجد طرود بعد"),
-    "note_label": m2,
+    "note_label": m3,
     "notes": MessageLookupByLibrary.simpleMessage("ملاحظات"),
     "notification_settings": MessageLookupByLibrary.simpleMessage(
       "إعدادات الإشعارات",
@@ -296,6 +317,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "مقاييس الأداء",
     ),
     "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "please_enter_reason": MessageLookupByLibrary.simpleMessage(
+      "الرجاء إدخال سبب",
+    ),
     "please_sign_below": MessageLookupByLibrary.simpleMessage(
       "الرجاء التوقيع أدناه",
     ),
@@ -330,6 +354,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "يتطلب توقيع المستلم",
     ),
     "retake": MessageLookupByLibrary.simpleMessage("إعادة التقاط"),
+    "return_reason": MessageLookupByLibrary.simpleMessage("سبب الإرجاع"),
     "returned": MessageLookupByLibrary.simpleMessage("مرتجع"),
     "revenue_overview": MessageLookupByLibrary.simpleMessage(
       "نظرة عامة على الإيرادات",
@@ -340,6 +365,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "scan_to_track": MessageLookupByLibrary.simpleMessage("امسح للتتبع"),
     "select_file": MessageLookupByLibrary.simpleMessage("اختر ملف"),
     "select_month": MessageLookupByLibrary.simpleMessage("اختر الشهر"),
+    "select_status": MessageLookupByLibrary.simpleMessage("اختر الحالة"),
     "settings": MessageLookupByLibrary.simpleMessage("الاعدادات"),
     "shipping_label": MessageLookupByLibrary.simpleMessage("ملصق الشحن"),
     "show_route": MessageLookupByLibrary.simpleMessage("إظهار المسار"),
@@ -353,7 +379,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "start_delivery": MessageLookupByLibrary.simpleMessage("بدء التوصيل"),
     "statistics": MessageLookupByLibrary.simpleMessage("الإحصائيات"),
-    "status_label": m3,
+    "status_label": m4,
+    "status_updated_successfully": MessageLookupByLibrary.simpleMessage(
+      "تم تحديث الحالة بنجاح",
+    ),
     "submit": MessageLookupByLibrary.simpleMessage("إرسال"),
     "success": MessageLookupByLibrary.simpleMessage("نجاح"),
     "success_rate": MessageLookupByLibrary.simpleMessage("معدل النجاح"),
@@ -395,6 +424,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "total_revenue": MessageLookupByLibrary.simpleMessage("إجمالي الإيرادات"),
     "unread": MessageLookupByLibrary.simpleMessage("غير مقروء"),
     "update_parcel": MessageLookupByLibrary.simpleMessage("تحديث الطرد"),
+    "update_status": MessageLookupByLibrary.simpleMessage("تحديث الحالة"),
     "upload_csv": MessageLookupByLibrary.simpleMessage("رفع ملف CSV"),
     "upload_error": MessageLookupByLibrary.simpleMessage("فشل الرفع"),
     "upload_success": MessageLookupByLibrary.simpleMessage("تم الرفع بنجاح"),
@@ -426,5 +456,6 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "width": MessageLookupByLibrary.simpleMessage("العرض"),
     "yes_cancel": MessageLookupByLibrary.simpleMessage("نعم، إلغاء"),
+    "yes_update": MessageLookupByLibrary.simpleMessage("نعم، تحديث"),
   };
 }

@@ -2073,6 +2073,151 @@ class S {
   String get signature {
     return Intl.message('Signature', name: 'signature', desc: '', args: []);
   }
+
+  /// `Update Status`
+  String get update_status {
+    return Intl.message(
+      'Update Status',
+      name: 'update_status',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Status`
+  String get select_status {
+    return Intl.message(
+      'Select Status',
+      name: 'select_status',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Return Reason`
+  String get return_reason {
+    return Intl.message(
+      'Return Reason',
+      name: 'return_reason',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failure Reason`
+  String get failure_reason {
+    return Intl.message(
+      'Failure Reason',
+      name: 'failure_reason',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mark as Delivered`
+  String get mark_as_delivered {
+    return Intl.message(
+      'Mark as Delivered',
+      name: 'mark_as_delivered',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mark as Returned`
+  String get mark_as_returned {
+    return Intl.message(
+      'Mark as Returned',
+      name: 'mark_as_returned',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mark as Cancelled`
+  String get mark_as_cancelled {
+    return Intl.message(
+      'Mark as Cancelled',
+      name: 'mark_as_cancelled',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mark as Ready to Ship`
+  String get mark_as_ready_to_ship {
+    return Intl.message(
+      'Mark as Ready to Ship',
+      name: 'mark_as_ready_to_ship',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mark as Out for Delivery`
+  String get mark_as_out_for_delivery {
+    return Intl.message(
+      'Mark as Out for Delivery',
+      name: 'mark_as_out_for_delivery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mark as At Warehouse`
+  String get mark_as_at_warehouse {
+    return Intl.message(
+      'Mark as At Warehouse',
+      name: 'mark_as_at_warehouse',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Status updated successfully`
+  String get status_updated_successfully {
+    return Intl.message(
+      'Status updated successfully',
+      name: 'status_updated_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a reason`
+  String get please_enter_reason {
+    return Intl.message(
+      'Please enter a reason',
+      name: 'please_enter_reason',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Status Update`
+  String get confirm_status_update {
+    return Intl.message(
+      'Confirm Status Update',
+      name: 'confirm_status_update',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to update the status to {status}?`
+  String are_you_sure_update_status(Object status) {
+    return Intl.message(
+      'Are you sure you want to update the status to $status?',
+      name: 'are_you_sure_update_status',
+      desc: '',
+      args: [status],
+    );
+  }
+
+  /// `Yes, Update`
+  String get yes_update {
+    return Intl.message('Yes, Update', name: 'yes_update', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

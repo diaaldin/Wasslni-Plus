@@ -20,13 +20,16 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static String m0(code) => "Barcode: ${code}";
+  static String m0(status) =>
+      "Are you sure you want to update the status to ${status}?";
 
-  static String m1(error) => "Error: ${error}";
+  static String m1(code) => "Barcode: ${code}";
 
-  static String m2(note) => "Note: ${note}";
+  static String m2(error) => "Error: ${error}";
 
-  static String m3(status) => "Status: ${status}";
+  static String m3(note) => "Note: ${note}";
+
+  static String m4(status) => "Status: ${status}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -51,11 +54,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "app_tagline": MessageLookupByLibrary.simpleMessage(
       "Fast & Reliable Delivery",
     ),
+    "are_you_sure_update_status": m0,
     "attach_barcode": MessageLookupByLibrary.simpleMessage("Attach Barcode"),
     "average_delivery_time": MessageLookupByLibrary.simpleMessage(
       "Average Delivery Time",
     ),
-    "barcode_label": m0,
+    "barcode_label": m1,
     "bulk_upload": MessageLookupByLibrary.simpleMessage("Bulk Upload"),
     "call": MessageLookupByLibrary.simpleMessage("Call"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
@@ -88,6 +92,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "confirm_signature": MessageLookupByLibrary.simpleMessage(
       "Confirm Signature",
+    ),
+    "confirm_status_update": MessageLookupByLibrary.simpleMessage(
+      "Confirm Status Update",
     ),
     "contact_support": MessageLookupByLibrary.simpleMessage(
       "For more details, feel free to contact our support team.",
@@ -193,7 +200,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "error_loading_data": MessageLookupByLibrary.simpleMessage(
       "Error loading data",
     ),
-    "error_occurred": m1,
+    "error_occurred": m2,
     "estimated_time": MessageLookupByLibrary.simpleMessage("Estimated Time"),
     "evening": MessageLookupByLibrary.simpleMessage("Evening (5PM - 9PM)"),
     "export": MessageLookupByLibrary.simpleMessage("Export"),
@@ -207,6 +214,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "failed_deliveries": MessageLookupByLibrary.simpleMessage(
       "Failed Deliveries",
     ),
+    "failure_reason": MessageLookupByLibrary.simpleMessage("Failure Reason"),
     "from": MessageLookupByLibrary.simpleMessage("From"),
     "general_serach_hint": MessageLookupByLibrary.simpleMessage("Search..."),
     "height": MessageLookupByLibrary.simpleMessage("Height"),
@@ -243,6 +251,24 @@ class MessageLookup extends MessageLookupByLibrary {
     "main": MessageLookupByLibrary.simpleMessage("Main"),
     "map_view": MessageLookupByLibrary.simpleMessage("Map View"),
     "mark_all_read": MessageLookupByLibrary.simpleMessage("Mark all as read"),
+    "mark_as_at_warehouse": MessageLookupByLibrary.simpleMessage(
+      "Mark as At Warehouse",
+    ),
+    "mark_as_cancelled": MessageLookupByLibrary.simpleMessage(
+      "Mark as Cancelled",
+    ),
+    "mark_as_delivered": MessageLookupByLibrary.simpleMessage(
+      "Mark as Delivered",
+    ),
+    "mark_as_out_for_delivery": MessageLookupByLibrary.simpleMessage(
+      "Mark as Out for Delivery",
+    ),
+    "mark_as_ready_to_ship": MessageLookupByLibrary.simpleMessage(
+      "Mark as Ready to Ship",
+    ),
+    "mark_as_returned": MessageLookupByLibrary.simpleMessage(
+      "Mark as Returned",
+    ),
     "merchant": MessageLookupByLibrary.simpleMessage("Merchant"),
     "merchant_dashboard": MessageLookupByLibrary.simpleMessage(
       "Merchant Dashboard",
@@ -278,7 +304,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "No notifications",
     ),
     "no_parcels_yet": MessageLookupByLibrary.simpleMessage("No parcels yet"),
-    "note_label": m2,
+    "note_label": m3,
     "notes": MessageLookupByLibrary.simpleMessage("Notes"),
     "notification_settings": MessageLookupByLibrary.simpleMessage(
       "Notification Settings",
@@ -326,6 +352,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Performance Metrics",
     ),
     "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
+    "please_enter_reason": MessageLookupByLibrary.simpleMessage(
+      "Please enter a reason",
+    ),
     "please_sign_below": MessageLookupByLibrary.simpleMessage(
       "Please sign below",
     ),
@@ -364,6 +393,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Requires Recipient Signature",
     ),
     "retake": MessageLookupByLibrary.simpleMessage("Retake"),
+    "return_reason": MessageLookupByLibrary.simpleMessage("Return Reason"),
     "returned": MessageLookupByLibrary.simpleMessage("Returned"),
     "revenue_overview": MessageLookupByLibrary.simpleMessage(
       "Revenue Overview",
@@ -374,6 +404,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "scan_to_track": MessageLookupByLibrary.simpleMessage("Scan to Track"),
     "select_file": MessageLookupByLibrary.simpleMessage("Select File"),
     "select_month": MessageLookupByLibrary.simpleMessage("Select Month"),
+    "select_status": MessageLookupByLibrary.simpleMessage("Select Status"),
     "settings": MessageLookupByLibrary.simpleMessage("Settings"),
     "shipping_label": MessageLookupByLibrary.simpleMessage("Shipping Label"),
     "show_route": MessageLookupByLibrary.simpleMessage("Show Route"),
@@ -389,7 +420,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "start_delivery": MessageLookupByLibrary.simpleMessage("Start Delivery"),
     "statistics": MessageLookupByLibrary.simpleMessage("Statistics"),
-    "status_label": m3,
+    "status_label": m4,
+    "status_updated_successfully": MessageLookupByLibrary.simpleMessage(
+      "Status updated successfully",
+    ),
     "submit": MessageLookupByLibrary.simpleMessage("Submit"),
     "success": MessageLookupByLibrary.simpleMessage("Success"),
     "success_rate": MessageLookupByLibrary.simpleMessage("Success Rate"),
@@ -435,6 +469,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "total_revenue": MessageLookupByLibrary.simpleMessage("Total Revenue"),
     "unread": MessageLookupByLibrary.simpleMessage("Unread"),
     "update_parcel": MessageLookupByLibrary.simpleMessage("Update Parcel"),
+    "update_status": MessageLookupByLibrary.simpleMessage("Update Status"),
     "upload_csv": MessageLookupByLibrary.simpleMessage("Upload CSV File"),
     "upload_error": MessageLookupByLibrary.simpleMessage("Upload failed"),
     "upload_success": MessageLookupByLibrary.simpleMessage(
@@ -466,5 +501,6 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "width": MessageLookupByLibrary.simpleMessage("Width"),
     "yes_cancel": MessageLookupByLibrary.simpleMessage("Yes, Cancel"),
+    "yes_update": MessageLookupByLibrary.simpleMessage("Yes, Update"),
   };
 }
