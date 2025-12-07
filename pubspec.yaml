@@ -77,6 +77,9 @@ dependencies:
   signature: ^5.4.1
   barcode: ^2.2.9
   path: ^1.9.1
+  bidi: ^2.0.13
+  simple_html_css: ^5.0.0
+  google_fonts: ^6.3.3
 
 dev_dependencies:
   flutter_test:

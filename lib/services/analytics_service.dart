@@ -28,6 +28,13 @@ class AnalyticsService {
 
   /// Initialize Crashlytics
   Future<void> _initializeCrashlytics() async {
+    // Crashlytics is not supported on web, skip initialization
+    if (kIsWeb) {
+      debugPrint(
+          'Crashlytics is not supported on web, skipping initialization');
+      return;
+    }
+
     // Pass all uncaught errors from the framework to Crashlytics
     FlutterError.onError = (errorDetails) {
       FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
@@ -49,7 +56,9 @@ class AnalyticsService {
   Future<void> setUserId(String userId) async {
     try {
       await _analytics.setUserId(id: userId);
-      await FirebaseCrashlytics.instance.setUserIdentifier(userId);
+      if (!kIsWeb) {
+        await FirebaseCrashlytics.instance.setUserIdentifier(userId);
+      }
     } catch (e) {
       debugPrint('Error setting user ID: $e');
     }
@@ -73,10 +82,13 @@ class AnalyticsService {
             name: 'user_language', value: language);
       }
 
-      // Also set for Crashlytics
-      await FirebaseCrashlytics.instance.setCustomKey('user_role', role);
-      if (region != null) {
-        await FirebaseCrashlytics.instance.setCustomKey('user_region', region);
+      // Also set for Crashlytics (not on web)
+      if (!kIsWeb) {
+        await FirebaseCrashlytics.instance.setCustomKey('user_role', role);
+        if (region != null) {
+          await FirebaseCrashlytics.instance
+              .setCustomKey('user_region', region);
+        }
       }
     } catch (e) {
       debugPrint('Error setting user properties: $e');
@@ -87,7 +99,9 @@ class AnalyticsService {
   Future<void> clearUserData() async {
     try {
       await _analytics.setUserId(id: null);
-      await FirebaseCrashlytics.instance.setUserIdentifier('');
+      if (!kIsWeb) {
+        await FirebaseCrashlytics.instance.setUserIdentifier('');
+      }
     } catch (e) {
       debugPrint('Error clearing user data: $e');
     }
@@ -260,6 +274,11 @@ class AnalyticsService {
     String? reason,
     bool fatal = false,
   }) async {
+    if (kIsWeb) {
+      debugPrint(
+          'Error logged (web): $error ${reason != null ? "- $reason" : ""}');
+      return;
+    }
     try {
       await FirebaseCrashlytics.instance.recordError(
         error,
@@ -274,6 +293,10 @@ class AnalyticsService {
 
   /// Log custom message
   Future<void> logMessage(String message) async {
+    if (kIsWeb) {
+      debugPrint('Message logged (web): $message');
+      return;
+    }
     try {
       await FirebaseCrashlytics.instance.log(message);
     } catch (e) {
@@ -283,6 +306,10 @@ class AnalyticsService {
 
   /// Set custom key for crash reports
   Future<void> setCustomKey(String key, dynamic value) async {
+    if (kIsWeb) {
+      debugPrint('Custom key set (web): $key = $value');
+      return;
+    }
     try {
       await FirebaseCrashlytics.instance.setCustomKey(key, value);
     } catch (e) {

@@ -1,29 +1,38 @@
 import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 import 'package:wasslni_plus/models/parcel_model.dart';
-
 import 'package:barcode/barcode.dart';
 
 class PrintLabelService {
+  /// Load Arabic font from assets
+  static Future<pw.Font> _loadArabicFont() async {
+    try {
+      final fontData =
+          await rootBundle.load('assets/fonts/NotoSansArabic-Regular.ttf');
+      return pw.Font.ttf(fontData);
+    } catch (e) {
+      debugPrint('Error loading Arabic font from assets: $e');
+      rethrow;
+    }
+  }
+
   /// Generates and prints a shipping label for a parcel
   static Future<void> printShippingLabel(ParcelModel parcel,
       {String? merchantName}) async {
-    // Load fonts using PdfGoogleFonts
     final pdf = pw.Document();
 
-    // Default fallback to standard font if google fonts fail (though they shouldn't in connected env)
+    // Load fonts from assets for better reliability and Arabic support
     pw.Font fontBase;
     pw.Font fontArabic;
     try {
       fontBase = await PdfGoogleFonts.notoSansRegular();
-      fontArabic = await PdfGoogleFonts.notoSansArabicRegular();
+      fontArabic = await _loadArabicFont();
     } catch (e) {
-      debugPrint('Error loading Google fonts: $e');
-      // Fallback to standard if offline (might still fail for unicode but prevents crash)
-      fontBase = pw.Font.courier();
-      fontArabic = pw.Font.courier();
+      debugPrint('Error loading fonts: $e');
+      throw Exception('Failed to load fonts for PDF generation: $e');
     }
 
     pdf.addPage(
@@ -31,9 +40,9 @@ class PrintLabelService {
         pageFormat: PdfPageFormat.a6,
         margin: const pw.EdgeInsets.all(16),
         theme: pw.ThemeData.withFont(
-          base: fontBase,
-          bold: fontBase,
-          fontFallback: [fontArabic],
+          base: fontArabic, // Use Arabic font as base
+          bold: fontArabic,
+          fontFallback: [fontBase], // English as fallback
         ),
         textDirection: pw.TextDirection.rtl,
         build: (context) {
@@ -62,7 +71,9 @@ class PrintLabelService {
                       style: pw.TextStyle(
                         fontSize: 18,
                         fontWeight: pw.FontWeight.bold,
+                        font: fontArabic,
                       ),
+                      textDirection: pw.TextDirection.rtl,
                     ),
                   ],
                 ),
@@ -93,10 +104,12 @@ class PrintLabelService {
                   children: [
                     pw.Text(
                       'TO / إلى',
-                      style: const pw.TextStyle(
+                      style: pw.TextStyle(
                         fontSize: 10,
                         color: PdfColors.grey700,
+                        font: fontArabic,
                       ),
+                      textDirection: pw.TextDirection.rtl,
                     ),
                     pw.SizedBox(height: 4),
                     pw.Text(
@@ -143,10 +156,12 @@ class PrintLabelService {
                     children: [
                       pw.Text(
                         'FROM / من',
-                        style: const pw.TextStyle(
+                        style: pw.TextStyle(
                           fontSize: 10,
                           color: PdfColors.grey700,
+                          font: fontArabic,
                         ),
+                        textDirection: pw.TextDirection.rtl,
                       ),
                       pw.Text(
                         merchantName,
@@ -213,16 +228,15 @@ class PrintLabelService {
       {String? merchantName}) async {
     final pdf = pw.Document();
 
-    // Load fonts
-
+    // Load fonts from assets
     pw.Font fontBase;
     pw.Font fontArabic;
     try {
       fontBase = await PdfGoogleFonts.notoSansRegular();
-      fontArabic = await PdfGoogleFonts.notoSansArabicRegular();
+      fontArabic = await _loadArabicFont();
     } catch (e) {
-      fontBase = pw.Font.courier();
-      fontArabic = pw.Font.courier();
+      debugPrint('Error loading fonts: $e');
+      throw Exception('Failed to load fonts for PDF generation: $e');
     }
 
     pdf.addPage(
@@ -230,9 +244,9 @@ class PrintLabelService {
         pageFormat: PdfPageFormat.roll80,
         margin: const pw.EdgeInsets.all(8),
         theme: pw.ThemeData.withFont(
-          base: fontBase,
-          bold: fontBase,
-          fontFallback: [fontArabic],
+          base: fontArabic, // Use Arabic font as base
+          bold: fontArabic,
+          fontFallback: [fontBase], // English as fallback
         ),
         textDirection: pw.TextDirection.rtl,
         build: (context) {
@@ -252,9 +266,11 @@ class PrintLabelService {
               pw.Center(
                 child: pw.Text(
                   'Receipt / إيصال',
-                  style: const pw.TextStyle(
+                  style: pw.TextStyle(
                     fontSize: 12,
+                    font: fontArabic,
                   ),
+                  textDirection: pw.TextDirection.rtl,
                 ),
               ),
               pw.Divider(),
@@ -319,9 +335,11 @@ class PrintLabelService {
               pw.Center(
                 child: pw.Text(
                   'Thank you! شكراً',
-                  style: const pw.TextStyle(
+                  style: pw.TextStyle(
                     fontSize: 10,
+                    font: fontArabic,
                   ),
+                  textDirection: pw.TextDirection.rtl,
                 ),
               ),
             ],
@@ -369,16 +387,15 @@ class PrintLabelService {
       {String? merchantName}) async {
     final pdf = pw.Document();
 
-    // Load fonts
-
+    // Load fonts from assets
     pw.Font fontBase;
     pw.Font fontArabic;
     try {
       fontBase = await PdfGoogleFonts.notoSansRegular();
-      fontArabic = await PdfGoogleFonts.notoSansArabicRegular();
+      fontArabic = await _loadArabicFont();
     } catch (e) {
-      fontBase = pw.Font.courier();
-      fontArabic = pw.Font.courier();
+      debugPrint('Error loading fonts: $e');
+      throw Exception('Failed to load fonts for PDF generation: $e');
     }
 
     pdf.addPage(
@@ -386,9 +403,9 @@ class PrintLabelService {
         pageFormat: PdfPageFormat.a6,
         margin: const pw.EdgeInsets.all(16),
         theme: pw.ThemeData.withFont(
-          base: fontBase,
-          bold: fontBase,
-          fontFallback: [fontArabic],
+          base: fontArabic, // Use Arabic font as base
+          bold: fontArabic,
+          fontFallback: [fontBase], // English as fallback
         ),
         textDirection: pw.TextDirection.rtl,
         build: (context) {
@@ -416,7 +433,9 @@ class PrintLabelService {
                       style: pw.TextStyle(
                         fontSize: 18,
                         fontWeight: pw.FontWeight.bold,
+                        font: fontArabic,
                       ),
+                      textDirection: pw.TextDirection.rtl,
                     ),
                   ],
                 ),

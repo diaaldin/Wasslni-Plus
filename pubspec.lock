@@ -58,7 +58,7 @@ packages:
     source: hosted
     version: "2.2.9"
   bidi:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: bidi
       sha256: "77f475165e94b261745cf1032c751e2032b8ed92ccb2bf5716036db79320637d"
@@ -589,6 +589,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.3"
+  google_fonts:
+    dependency: "direct main"
+    description:
+      name: google_fonts
+      sha256: ba03d03bcaa2f6cb7bd920e3b5027181db75ab524f8891c8bc3aa603885b8055
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.3.3"
   google_maps:
     dependency: transitive
     description:
@@ -1037,6 +1045,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.5.0"
+  simple_html_css:
+    dependency: "direct main"
+    description:
+      name: simple_html_css
+      sha256: "93bc59c0565e943abf6674e932f3f8b77bf87290a4f6f3f364c05fad26feb9d7"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.0.0"
   sky_engine:
     dependency: transitive
     description: flutter
