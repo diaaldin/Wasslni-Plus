@@ -2058,6 +2058,12 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Report an Issue'**
   String get report_an_issue;
+
+  /// No description provided for @all_notifications_marked_read.
+  ///
+  /// In en, this message translates to:
+  /// **'All notifications marked as read'**
+  String get all_notifications_marked_read;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

@@ -1021,4 +1021,8 @@ class SEn extends S {
 
   @override
   String get report_an_issue => 'Report an Issue';
+
+  @override
+  String get all_notifications_marked_read =>
+      'All notifications marked as read';
 }

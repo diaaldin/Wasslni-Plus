@@ -1012,4 +1012,8 @@ class SAr extends S {
 
   @override
   String get report_an_issue => 'الإبلاغ عن مشكلة';
+
+  @override
+  String get all_notifications_marked_read =>
+      'تم وضع علامة على جميع الإشعارات كمقروءة';
 }

@@ -175,7 +175,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [ ] Implement push notifications for status changes
   - [x] Create estimated arrival countdown
 
-- [ ] **Order History**
+- [x] **Order History**
   - [x] Build past deliveries list
   - [x] Add order details view
   - [x] Implement search and filters

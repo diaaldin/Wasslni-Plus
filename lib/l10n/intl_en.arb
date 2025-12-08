@@ -328,5 +328,6 @@
   "issue_reported_successfully": "Issue reported successfully. We'll look into it!",
   "issue_report_info": "Your report will be sent to the merchant and our support team. We'll investigate and get back to you soon.",
   "submit_report": "Submit Report",
-  "report_an_issue": "Report an Issue"
+  "report_an_issue": "Report an Issue",
+  "all_notifications_marked_read": "All notifications marked as read"
 }
