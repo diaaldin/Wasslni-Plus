@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:wasslni_plus/generated/l10n.dart';
+import 'package:wasslni_plus/flow/courier/dashboard/courier_dashboard_page.dart';
+import 'package:wasslni_plus/flow/courier/dashboard/active_deliveries_page.dart';
+import 'package:wasslni_plus/flow/courier/profile/courier_profile_page.dart';
 
 class CourierMainScreen extends StatefulWidget {
   const CourierMainScreen({super.key});
@@ -12,9 +15,9 @@ class _CourierMainScreenState extends State<CourierMainScreen> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = const [
-    Center(child: Text('Courier Main page')),
-    Center(child: Text('Courier Pckages pages')),
-    Center(child: Text('Courier Settings page')),
+    CourierDashboardPage(),
+    ActiveDeliveriesPage(),
+    CourierProfilePage(),
   ];
 
   @override
