@@ -8,6 +8,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:wasslni_plus/services/firestore_service.dart';
 import 'package:wasslni_plus/models/user/user_model.dart';
 import 'package:wasslni_plus/flow/customer/feedback/delivery_feedback_page.dart';
+import 'package:wasslni_plus/flow/customer/feedback/report_issue_page.dart';
 
 class TrackingPage extends StatefulWidget {
   final ParcelModel parcel;
@@ -305,6 +306,34 @@ class _TrackingPageState extends State<TrackingPage> {
                 label: Text(tr.leave_feedback),
                 style: FilledButton.styleFrom(
                   backgroundColor: AppStyles.primaryColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+              ),
+            ),
+          ],
+
+          // Report Issue Button (available for most statuses)
+          if (widget.parcel.status != ParcelStatus.cancelled) ...[
+            const SizedBox(height: 12),
+            SizedBox(
+              width: double.infinity,
+              height: 50,
+              child: OutlinedButton.icon(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => ReportIssuePage(parcel: widget.parcel),
+                    ),
+                  );
+                },
+                icon: const Icon(Icons.report_problem),
+                label: Text(tr.report_an_issue),
+                style: OutlinedButton.styleFrom(
+                  foregroundColor: Colors.orange,
+                  side: const BorderSide(color: Colors.orange),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),

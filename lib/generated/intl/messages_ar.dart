@@ -159,6 +159,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "delivery_time_slot": MessageLookupByLibrary.simpleMessage(
       "وقت التوصيل المفضل",
     ),
+    "describe_issue": MessageLookupByLibrary.simpleMessage("وصف المشكلة"),
     "dimensions": MessageLookupByLibrary.simpleMessage("الأبعاد (سم)"),
     "distance": MessageLookupByLibrary.simpleMessage("المسافة"),
     "dont_have_account": MessageLookupByLibrary.simpleMessage(
@@ -226,6 +227,23 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalid_price": MessageLookupByLibrary.simpleMessage(
       "السعر يجب أن يكون رقمًا أكبر من أو يساوي 0",
     ),
+    "issue_damaged_package": MessageLookupByLibrary.simpleMessage("طرد تالف"),
+    "issue_late_delivery": MessageLookupByLibrary.simpleMessage(
+      "تأخير في التوصيل",
+    ),
+    "issue_missing_items": MessageLookupByLibrary.simpleMessage("عناصر مفقودة"),
+    "issue_other": MessageLookupByLibrary.simpleMessage("أخرى"),
+    "issue_poor_service": MessageLookupByLibrary.simpleMessage("خدمة سيئة"),
+    "issue_report_info": MessageLookupByLibrary.simpleMessage(
+      "سيتم إرسال تقريرك إلى التاجر وفريق الدعم لدينا. سنقوم بالتحقيق والرد عليك قريباً.",
+    ),
+    "issue_reported": MessageLookupByLibrary.simpleMessage(
+      "تم الإبلاغ عن المشكلة",
+    ),
+    "issue_reported_successfully": MessageLookupByLibrary.simpleMessage(
+      "تم الإبلاغ عن المشكلة بنجاح. سنقوم بالتحقيق!",
+    ),
+    "issue_wrong_item": MessageLookupByLibrary.simpleMessage("عنصر خاطئ"),
     "joinUs": MessageLookupByLibrary.simpleMessage("انضم إلينا"),
     "joinUsDescription": MessageLookupByLibrary.simpleMessage(
       "هذه الصفحة مخصصة لأصحاب الأعمال الذين يرغبون في الانضمام إلينا.",
@@ -353,8 +371,14 @@ class MessageLookup extends MessageLookupByLibrary {
       "مقاييس الأداء",
     ),
     "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "please_describe_issue": MessageLookupByLibrary.simpleMessage(
+      "يرجى وصف المشكلة",
+    ),
     "please_enter_reason": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال سبب",
+    ),
+    "please_select_issue_type": MessageLookupByLibrary.simpleMessage(
+      "يرجى اختيار نوع المشكلة",
     ),
     "please_select_rating": MessageLookupByLibrary.simpleMessage(
       "الرجاء اختيار تقييم",
@@ -384,6 +408,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "تلقي تحديثات حول الميزات والعروض الجديدة",
     ),
     "proof_of_delivery": MessageLookupByLibrary.simpleMessage("إثبات التسليم"),
+    "provide_details": MessageLookupByLibrary.simpleMessage(
+      "يرجى تقديم تفاصيل حول المشكلة...",
+    ),
     "rate_delivery_experience": MessageLookupByLibrary.simpleMessage(
       "قيّم تجربة التوصيل",
     ),
@@ -404,6 +431,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "اتصل بالتاجر لتقديم طلب جديد بنفس تفاصيل التوصيل",
     ),
     "reorder_parcel": MessageLookupByLibrary.simpleMessage("إعادة طلب الطرد"),
+    "report_an_issue": MessageLookupByLibrary.simpleMessage("الإبلاغ عن مشكلة"),
+    "report_issue": MessageLookupByLibrary.simpleMessage("الإبلاغ عن مشكلة"),
     "reports": MessageLookupByLibrary.simpleMessage("التقارير"),
     "requires_signature": MessageLookupByLibrary.simpleMessage(
       "يتطلب توقيع المستلم",
@@ -424,6 +453,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "البحث بواسطة الباركود أو الاسم...",
     ),
     "select_file": MessageLookupByLibrary.simpleMessage("اختر ملف"),
+    "select_issue_type": MessageLookupByLibrary.simpleMessage(
+      "اختر نوع المشكلة",
+    ),
     "select_month": MessageLookupByLibrary.simpleMessage("اختر الشهر"),
     "select_status": MessageLookupByLibrary.simpleMessage("اختر الحالة"),
     "settings": MessageLookupByLibrary.simpleMessage("الاعدادات"),
@@ -459,6 +491,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "submit": MessageLookupByLibrary.simpleMessage("إرسال"),
     "submit_feedback": MessageLookupByLibrary.simpleMessage("إرسال التقييم"),
+    "submit_report": MessageLookupByLibrary.simpleMessage("إرسال التقرير"),
     "submitting": MessageLookupByLibrary.simpleMessage("جاري الإرسال..."),
     "success": MessageLookupByLibrary.simpleMessage("نجاح"),
     "success_rate": MessageLookupByLibrary.simpleMessage("معدل النجاح"),
@@ -540,6 +573,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "weight": MessageLookupByLibrary.simpleMessage("الوزن (كجم)"),
     "welcome_to_app": MessageLookupByLibrary.simpleMessage(
       "مرحباً بك في وصلني بلس",
+    ),
+    "what_went_wrong": MessageLookupByLibrary.simpleMessage(
+      "ما الذي حدث خطأ في التوصيل؟",
     ),
     "width": MessageLookupByLibrary.simpleMessage("العرض"),
     "working_regions": MessageLookupByLibrary.simpleMessage("مناطق العمل"),

@@ -2668,6 +2668,181 @@ class S {
       args: [],
     );
   }
+
+  /// `Report Issue`
+  String get report_issue {
+    return Intl.message(
+      'Report Issue',
+      name: 'report_issue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Issue Type`
+  String get select_issue_type {
+    return Intl.message(
+      'Select Issue Type',
+      name: 'select_issue_type',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `What went wrong with your delivery?`
+  String get what_went_wrong {
+    return Intl.message(
+      'What went wrong with your delivery?',
+      name: 'what_went_wrong',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Damaged Package`
+  String get issue_damaged_package {
+    return Intl.message(
+      'Damaged Package',
+      name: 'issue_damaged_package',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wrong Item`
+  String get issue_wrong_item {
+    return Intl.message(
+      'Wrong Item',
+      name: 'issue_wrong_item',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Missing Items`
+  String get issue_missing_items {
+    return Intl.message(
+      'Missing Items',
+      name: 'issue_missing_items',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Late Delivery`
+  String get issue_late_delivery {
+    return Intl.message(
+      'Late Delivery',
+      name: 'issue_late_delivery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Poor Service`
+  String get issue_poor_service {
+    return Intl.message(
+      'Poor Service',
+      name: 'issue_poor_service',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Other`
+  String get issue_other {
+    return Intl.message('Other', name: 'issue_other', desc: '', args: []);
+  }
+
+  /// `Describe the Issue`
+  String get describe_issue {
+    return Intl.message(
+      'Describe the Issue',
+      name: 'describe_issue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please provide details about the issue...`
+  String get provide_details {
+    return Intl.message(
+      'Please provide details about the issue...',
+      name: 'provide_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select an issue type`
+  String get please_select_issue_type {
+    return Intl.message(
+      'Please select an issue type',
+      name: 'please_select_issue_type',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please describe the issue`
+  String get please_describe_issue {
+    return Intl.message(
+      'Please describe the issue',
+      name: 'please_describe_issue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Issue Reported`
+  String get issue_reported {
+    return Intl.message(
+      'Issue Reported',
+      name: 'issue_reported',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Issue reported successfully. We'll look into it!`
+  String get issue_reported_successfully {
+    return Intl.message(
+      'Issue reported successfully. We\'ll look into it!',
+      name: 'issue_reported_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your report will be sent to the merchant and our support team. We'll investigate and get back to you soon.`
+  String get issue_report_info {
+    return Intl.message(
+      'Your report will be sent to the merchant and our support team. We\'ll investigate and get back to you soon.',
+      name: 'issue_report_info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit Report`
+  String get submit_report {
+    return Intl.message(
+      'Submit Report',
+      name: 'submit_report',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Report an Issue`
+  String get report_an_issue {
+    return Intl.message(
+      'Report an Issue',
+      name: 'report_an_issue',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

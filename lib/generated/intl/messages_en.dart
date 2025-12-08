@@ -184,6 +184,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "delivery_time_slot": MessageLookupByLibrary.simpleMessage(
       "Preferred Delivery Time",
     ),
+    "describe_issue": MessageLookupByLibrary.simpleMessage(
+      "Describe the Issue",
+    ),
     "dimensions": MessageLookupByLibrary.simpleMessage("Dimensions (cm)"),
     "distance": MessageLookupByLibrary.simpleMessage("Distance"),
     "dont_have_account": MessageLookupByLibrary.simpleMessage(
@@ -257,6 +260,25 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalid_price": MessageLookupByLibrary.simpleMessage(
       "Price must be a number greater than or equal to 0",
     ),
+    "issue_damaged_package": MessageLookupByLibrary.simpleMessage(
+      "Damaged Package",
+    ),
+    "issue_late_delivery": MessageLookupByLibrary.simpleMessage(
+      "Late Delivery",
+    ),
+    "issue_missing_items": MessageLookupByLibrary.simpleMessage(
+      "Missing Items",
+    ),
+    "issue_other": MessageLookupByLibrary.simpleMessage("Other"),
+    "issue_poor_service": MessageLookupByLibrary.simpleMessage("Poor Service"),
+    "issue_report_info": MessageLookupByLibrary.simpleMessage(
+      "Your report will be sent to the merchant and our support team. We\'ll investigate and get back to you soon.",
+    ),
+    "issue_reported": MessageLookupByLibrary.simpleMessage("Issue Reported"),
+    "issue_reported_successfully": MessageLookupByLibrary.simpleMessage(
+      "Issue reported successfully. We\'ll look into it!",
+    ),
+    "issue_wrong_item": MessageLookupByLibrary.simpleMessage("Wrong Item"),
     "joinUs": MessageLookupByLibrary.simpleMessage("Join Us"),
     "joinUsDescription": MessageLookupByLibrary.simpleMessage(
       "This page is for business owners who want to join us.",
@@ -394,8 +416,14 @@ class MessageLookup extends MessageLookupByLibrary {
       "Performance Metrics",
     ),
     "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
+    "please_describe_issue": MessageLookupByLibrary.simpleMessage(
+      "Please describe the issue",
+    ),
     "please_enter_reason": MessageLookupByLibrary.simpleMessage(
       "Please enter a reason",
+    ),
+    "please_select_issue_type": MessageLookupByLibrary.simpleMessage(
+      "Please select an issue type",
     ),
     "please_select_rating": MessageLookupByLibrary.simpleMessage(
       "Please select a rating",
@@ -427,6 +455,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "proof_of_delivery": MessageLookupByLibrary.simpleMessage(
       "Proof of Delivery",
     ),
+    "provide_details": MessageLookupByLibrary.simpleMessage(
+      "Please provide details about the issue...",
+    ),
     "rate_delivery_experience": MessageLookupByLibrary.simpleMessage(
       "Rate Your Delivery Experience",
     ),
@@ -449,6 +480,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "Contact the merchant to place a repeat order with the same delivery details",
     ),
     "reorder_parcel": MessageLookupByLibrary.simpleMessage("Reorder Parcel"),
+    "report_an_issue": MessageLookupByLibrary.simpleMessage("Report an Issue"),
+    "report_issue": MessageLookupByLibrary.simpleMessage("Report Issue"),
     "reports": MessageLookupByLibrary.simpleMessage("Reports"),
     "requires_signature": MessageLookupByLibrary.simpleMessage(
       "Requires Recipient Signature",
@@ -469,6 +502,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Search by barcode or name...",
     ),
     "select_file": MessageLookupByLibrary.simpleMessage("Select File"),
+    "select_issue_type": MessageLookupByLibrary.simpleMessage(
+      "Select Issue Type",
+    ),
     "select_month": MessageLookupByLibrary.simpleMessage("Select Month"),
     "select_status": MessageLookupByLibrary.simpleMessage("Select Status"),
     "settings": MessageLookupByLibrary.simpleMessage("Settings"),
@@ -508,6 +544,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "submit": MessageLookupByLibrary.simpleMessage("Submit"),
     "submit_feedback": MessageLookupByLibrary.simpleMessage("Submit Feedback"),
+    "submit_report": MessageLookupByLibrary.simpleMessage("Submit Report"),
     "submitting": MessageLookupByLibrary.simpleMessage("Submitting..."),
     "success": MessageLookupByLibrary.simpleMessage("Success"),
     "success_rate": MessageLookupByLibrary.simpleMessage("Success Rate"),
@@ -595,6 +632,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "weight": MessageLookupByLibrary.simpleMessage("Weight (kg)"),
     "welcome_to_app": MessageLookupByLibrary.simpleMessage(
       "Welcome to Wasslni Plus",
+    ),
+    "what_went_wrong": MessageLookupByLibrary.simpleMessage(
+      "What went wrong with your delivery?",
     ),
     "width": MessageLookupByLibrary.simpleMessage("Width"),
     "working_regions": MessageLookupByLibrary.simpleMessage("Working Regions"),

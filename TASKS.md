@@ -181,10 +181,10 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [x] Implement search and filters
   - [x] Create reorder functionality
 
-- [ ] **Delivery Feedback**
+- [x] **Delivery Feedback**
   - [x] Build rating and review interface
   - [x] Add tip option for courier
-  - [ ] Create report issue form
+  - [x] Create report issue form
 
 - [ ] **Address Management**
   - [ ] Create saved addresses list
