@@ -9,6 +9,8 @@ import 'package:wasslni_plus/flow/merchant/parcel/merchant_parcels_page.dart';
 import 'package:wasslni_plus/generated/l10n.dart';
 import 'package:wasslni_plus/provider/app_settings_providor.dart';
 import 'package:wasslni_plus/widgets/molecules/bottom_tab_item.dart';
+import 'package:wasslni_plus/services/auth_service.dart';
+import 'package:wasslni_plus/services/firestore_service.dart';
 
 class MerchantMainScreen extends StatefulWidget {
   const MerchantMainScreen({super.key});
@@ -19,6 +21,8 @@ class MerchantMainScreen extends StatefulWidget {
 
 class _MerchantMainScreenState extends State<MerchantMainScreen> {
   int _selectedIndex = 0;
+  final AuthService _authService = AuthService();
+  final FirestoreService _firestoreService = FirestoreService();
 
   void _applyUserSettings() {
     //UserModel user
@@ -65,6 +69,7 @@ class _MerchantMainScreenState extends State<MerchantMainScreen> {
   @override
   Widget build(BuildContext context) {
     final tr = S.of(context);
+    final user = _authService.currentUser;
 
     final List<Widget> tabs = [
       const MerchantDashboardPage(),
@@ -116,13 +121,31 @@ class _MerchantMainScreenState extends State<MerchantMainScreen> {
             ),
             Row(
               children: [
-                BottomTabItem(
-                  index: 2,
-                  selectedIndex: _selectedIndex,
-                  icon: Icons.notifications_none_outlined,
-                  label: tr.notifications,
-                  onTap: () => setState(() => _selectedIndex = 2),
-                ),
+                // Notifications tab with badge
+                if (user != null)
+                  StreamBuilder<int>(
+                    stream: _firestoreService
+                        .streamUnreadNotificationCount(user.uid),
+                    builder: (context, snapshot) {
+                      final unreadCount = snapshot.data ?? 0;
+                      return BottomTabItem(
+                        index: 2,
+                        selectedIndex: _selectedIndex,
+                        icon: Icons.notifications_none_outlined,
+                        label: tr.notifications,
+                        badgeCount: unreadCount,
+                        onTap: () => setState(() => _selectedIndex = 2),
+                      );
+                    },
+                  ),
+                if (user == null)
+                  BottomTabItem(
+                    index: 2,
+                    selectedIndex: _selectedIndex,
+                    icon: Icons.notifications_none_outlined,
+                    label: tr.notifications,
+                    onTap: () => setState(() => _selectedIndex = 2),
+                  ),
                 BottomTabItem(
                   index: 3,
                   selectedIndex: _selectedIndex,

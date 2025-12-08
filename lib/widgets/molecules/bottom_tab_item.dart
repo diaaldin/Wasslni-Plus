@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wasslni_plus/app_styles.dart';
+import 'package:wasslni_plus/widgets/badge_widget.dart';
 
 class BottomTabItem extends StatelessWidget {
   final int index;
@@ -7,6 +8,7 @@ class BottomTabItem extends StatelessWidget {
   final IconData icon;
   final String label;
   final VoidCallback onTap;
+  final int? badgeCount;
 
   const BottomTabItem({
     super.key,
@@ -15,11 +17,25 @@ class BottomTabItem extends StatelessWidget {
     required this.icon,
     required this.label,
     required this.onTap,
+    this.badgeCount,
   });
 
   @override
   Widget build(BuildContext context) {
     final isSelected = selectedIndex == index;
+
+    // Icon widget with optional badge
+    final iconWidget = Icon(
+      icon,
+      color: isSelected ? AppStyles.primaryColor : AppStyles.unSelectedColor,
+    );
+
+    final iconWithBadge = badgeCount != null && badgeCount! > 0
+        ? NotificationBadge(
+            unreadCount: badgeCount!,
+            child: iconWidget,
+          )
+        : iconWidget;
 
     return MaterialButton(
       minWidth: 40,
@@ -28,11 +44,7 @@ class BottomTabItem extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
-            icon,
-            color:
-                isSelected ? AppStyles.primaryColor : AppStyles.unSelectedColor,
-          ),
+          iconWithBadge,
           Text(
             label,
             style: TextStyle(

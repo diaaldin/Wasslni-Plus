@@ -563,6 +563,18 @@ class FirestoreService {
     }
   }
 
+  // ========== NOTIFICATION OPERATIONS ==========
+
+  /// Stream the count of unread notifications for a user
+  Stream<int> streamUnreadNotificationCount(String userId) {
+    return FirebaseFirestore.instance
+        .collection('notifications')
+        .where('userId', isEqualTo: userId)
+        .where('isRead', isEqualTo: false)
+        .snapshots()
+        .map((snapshot) => snapshot.docs.length);
+  }
+
   // ========== ADDRESS OPERATIONS ==========
 
   /// Create a new address
