@@ -262,7 +262,7 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
                   label: Text(tr.reorder),
                   style: OutlinedButton.styleFrom(
                     foregroundColor: AppStyles.primaryColor,
-                    side: BorderSide(color: AppStyles.primaryColor),
+                    side: const BorderSide(color: AppStyles.primaryColor),
                   ),
                 ),
               ),
@@ -320,7 +320,7 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
       builder: (context) => AlertDialog(
         title: Row(
           children: [
-            Icon(Icons.replay, color: AppStyles.primaryColor),
+            const Icon(Icons.replay, color: AppStyles.primaryColor),
             const SizedBox(width: 8),
             Text(tr.reorder_parcel),
           ],

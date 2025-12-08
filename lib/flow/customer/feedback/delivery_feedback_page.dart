@@ -59,9 +59,9 @@ class _DeliveryFeedbackPageState extends State<DeliveryFeedbackPage> {
     try {
       final review = ReviewModel(
         id: '',
-        parcelId: widget.parcel.id,
+        parcelId: widget.parcel.id!,
         customerId: user.uid,
-        courierId: widget.parcel.courierId ?? '',
+        courierId: widget.parcel.courierId!,
         rating: _rating.toDouble(),
         comment: _commentController.text.trim(),
         tip: _tip,
@@ -125,7 +125,7 @@ class _DeliveryFeedbackPageState extends State<DeliveryFeedbackPage> {
                   children: [
                     Row(
                       children: [
-                        Icon(Icons.local_shipping,
+                        const Icon(Icons.local_shipping,
                             color: AppStyles.primaryColor),
                         const SizedBox(width: 8),
                         Text(
@@ -198,7 +198,7 @@ class _DeliveryFeedbackPageState extends State<DeliveryFeedbackPage> {
               Center(
                 child: Text(
                   _getRatingText(_rating, tr),
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: AppStyles.primaryColor,
                     fontWeight: FontWeight.w500,
                   ),
