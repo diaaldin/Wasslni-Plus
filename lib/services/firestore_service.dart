@@ -6,6 +6,7 @@ import 'package:wasslni_plus/models/region_model.dart';
 import 'package:wasslni_plus/models/notification_model.dart';
 import 'package:wasslni_plus/models/review_model.dart';
 import 'package:wasslni_plus/models/analytics_model.dart';
+import 'package:wasslni_plus/models/address_model.dart';
 
 class FirestoreService {
   static final FirestoreService _instance = FirestoreService._internal();
@@ -26,6 +27,8 @@ class FirestoreService {
       _firestore.collection('reviews');
   CollectionReference get _analyticsCollection =>
       _firestore.collection('analytics');
+  CollectionReference get _addressesCollection =>
+      _firestore.collection('addresses');
 
   // ========== USER OPERATIONS ==========
 
@@ -557,6 +560,126 @@ class FirestoreService {
       });
     } catch (e) {
       debugPrint('Error updating courier rating: $e');
+    }
+  }
+
+  // ========== ADDRESS OPERATIONS ==========
+
+  /// Create a new address
+  Future<String> createAddress(AddressModel address) async {
+    try {
+      final docRef = await _addressesCollection.add(address.toMap());
+      return docRef.id;
+    } catch (e) {
+      throw Exception('Failed to create address: $e');
+    }
+  }
+
+  /// Get address by ID
+  Future<AddressModel?> getAddress(String addressId) async {
+    try {
+      final doc = await _addressesCollection.doc(addressId).get();
+      if (doc.exists) {
+        return AddressModel.fromFirestore(doc);
+      }
+      return null;
+    } catch (e) {
+      throw Exception('Failed to get address: $e');
+    }
+  }
+
+  /// Update address
+  Future<void> updateAddress(
+      String addressId, Map<String, dynamic> data) async {
+    try {
+      await _addressesCollection.doc(addressId).update({
+        ...data,
+        'updatedAt': FieldValue.serverTimestamp(),
+      });
+    } catch (e) {
+      throw Exception('Failed to update address: $e');
+    }
+  }
+
+  /// Delete address
+  Future<void> deleteAddress(String addressId) async {
+    try {
+      await _addressesCollection.doc(addressId).delete();
+    } catch (e) {
+      throw Exception('Failed to delete address: $e');
+    }
+  }
+
+  /// Get all addresses for a user
+  Future<List<AddressModel>> getUserAddresses(String userId) async {
+    try {
+      final querySnapshot = await _addressesCollection
+          .where('userId', isEqualTo: userId)
+          .orderBy('createdAt', descending: true)
+          .get();
+
+      return querySnapshot.docs
+          .map((doc) => AddressModel.fromFirestore(doc))
+          .toList();
+    } catch (e) {
+      throw Exception('Failed to get user addresses: $e');
+    }
+  }
+
+  /// Stream user addresses (real-time)
+  Stream<List<AddressModel>> streamUserAddresses(String userId) {
+    return _addressesCollection
+        .where('userId', isEqualTo: userId)
+        .orderBy('createdAt', descending: true)
+        .snapshots()
+        .map((snapshot) => snapshot.docs
+            .map((doc) => AddressModel.fromFirestore(doc))
+            .toList());
+  }
+
+  /// Set address as default (and unset others)
+  Future<void> setDefaultAddress(String userId, String addressId) async {
+    try {
+      final batch = _firestore.batch();
+
+      // First, unset all default addresses for this user
+      final userAddresses = await getUserAddresses(userId);
+      for (var address in userAddresses) {
+        if (address.id != null && address.isDefault) {
+          batch.update(_addressesCollection.doc(address.id!), {
+            'isDefault': false,
+            'updatedAt': FieldValue.serverTimestamp(),
+          });
+        }
+      }
+
+      // Then set the selected address as default
+      batch.update(_addressesCollection.doc(addressId), {
+        'isDefault': true,
+        'updatedAt': FieldValue.serverTimestamp(),
+      });
+
+      await batch.commit();
+    } catch (e) {
+      throw Exception('Failed to set default address: $e');
+    }
+  }
+
+  /// Get default address for a user
+  Future<AddressModel?> getDefaultAddress(String userId) async {
+    try {
+      final querySnapshot = await _addressesCollection
+          .where('userId', isEqualTo: userId)
+          .where('isDefault', isEqualTo: true)
+          .limit(1)
+          .get();
+
+      if (querySnapshot.docs.isNotEmpty) {
+        return AddressModel.fromFirestore(querySnapshot.docs.first);
+      }
+      return null;
+    } catch (e) {
+      throw Exception('Failed to get default address: $e');
     }
   }
 
