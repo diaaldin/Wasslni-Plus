@@ -312,6 +312,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "No notifications",
     ),
     "no_parcels_yet": MessageLookupByLibrary.simpleMessage("No parcels yet"),
+    "no_results_found": MessageLookupByLibrary.simpleMessage(
+      "No results found",
+    ),
     "note_label": m3,
     "notes": MessageLookupByLibrary.simpleMessage("Notes"),
     "notification_settings": MessageLookupByLibrary.simpleMessage(
@@ -322,6 +325,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "online": MessageLookupByLibrary.simpleMessage("Online"),
     "optimized_route": MessageLookupByLibrary.simpleMessage("Optimized Route"),
     "optional": MessageLookupByLibrary.simpleMessage("Optional"),
+    "order_history": MessageLookupByLibrary.simpleMessage("Order History"),
     "parcel_cancelled_success": MessageLookupByLibrary.simpleMessage(
       "Parcel cancelled successfully",
     ),
@@ -417,6 +421,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "save_changes": MessageLookupByLibrary.simpleMessage("Save Changes"),
     "save_parcel": MessageLookupByLibrary.simpleMessage("Save Parcel"),
     "scan_to_track": MessageLookupByLibrary.simpleMessage("Scan to Track"),
+    "search_by_barcode_or_name": MessageLookupByLibrary.simpleMessage(
+      "Search by barcode or name...",
+    ),
     "select_file": MessageLookupByLibrary.simpleMessage("Select File"),
     "select_month": MessageLookupByLibrary.simpleMessage("Select Month"),
     "select_status": MessageLookupByLibrary.simpleMessage("Select Status"),

@@ -16,6 +16,16 @@ class OrderHistoryPage extends StatefulWidget {
 class _OrderHistoryPageState extends State<OrderHistoryPage> {
   final AuthService _authService = AuthService();
   final FirestoreService _firestoreService = FirestoreService();
+  final TextEditingController _searchController = TextEditingController();
+
+  String _searchQuery = '';
+  ParcelStatus? _selectedStatusFilter;
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
 
   Future<List<ParcelModel>> _fetchHistoryParcels(String uid) async {
     final parcels = await _firestoreService.getParcelsByCustomer(uid);
@@ -25,6 +35,27 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
             p.status == ParcelStatus.returned ||
             p.status == ParcelStatus.cancelled)
         .toList();
+  }
+
+  List<ParcelModel> _filterParcels(List<ParcelModel> parcels) {
+    var filtered = parcels;
+
+    // Filter by status
+    if (_selectedStatusFilter != null) {
+      filtered =
+          filtered.where((p) => p.status == _selectedStatusFilter).toList();
+    }
+
+    // Filter by search query (barcode or recipient name)
+    if (_searchQuery.isNotEmpty) {
+      filtered = filtered.where((p) {
+        final query = _searchQuery.toLowerCase();
+        return p.barcode.toLowerCase().contains(query) ||
+            p.recipientName.toLowerCase().contains(query);
+      }).toList();
+    }
+
+    return filtered;
   }
 
   @override
@@ -38,45 +69,151 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(tr.parcels),
+        title: Text(tr.order_history),
         backgroundColor: AppStyles.primaryColor,
       ),
-      body: FutureBuilder<List<ParcelModel>>(
-        future: _fetchHistoryParcels(user.uid),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
-          }
-
-          if (snapshot.hasError) {
-            return Center(
-                child: Text('${tr.error_loading_data}: ${snapshot.error}'));
-          }
-
-          final parcels = snapshot.data ?? [];
-
-          if (parcels.isEmpty) {
-            return Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.history, size: 64, color: Colors.grey[400]),
-                  const SizedBox(height: 16),
-                  Text(tr.no_history_found,
-                      style: TextStyle(color: Colors.grey[600], fontSize: 16)),
-                ],
-              ),
-            );
-          }
-
-          return ListView.builder(
+      body: Column(
+        children: [
+          // Search Bar
+          Padding(
             padding: const EdgeInsets.all(16),
-            itemCount: parcels.length,
-            itemBuilder: (context, index) {
-              return _buildHistoryCard(parcels[index], tr);
-            },
-          );
-        },
+            child: TextField(
+              controller: _searchController,
+              decoration: InputDecoration(
+                hintText: tr.search_by_barcode_or_name,
+                prefixIcon: const Icon(Icons.search),
+                suffixIcon: _searchQuery.isNotEmpty
+                    ? IconButton(
+                        icon: const Icon(Icons.clear),
+                        onPressed: () {
+                          setState(() {
+                            _searchController.clear();
+                            _searchQuery = '';
+                          });
+                        },
+                      )
+                    : null,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                filled: true,
+                fillColor: Colors.grey[100],
+              ),
+              onChanged: (value) {
+                setState(() {
+                  _searchQuery = value;
+                });
+              },
+            ),
+          ),
+
+          // Filter Chips
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Row(
+              children: [
+                FilterChip(
+                  label: Text(tr.all),
+                  selected: _selectedStatusFilter == null,
+                  onSelected: (selected) {
+                    setState(() {
+                      _selectedStatusFilter = null;
+                    });
+                  },
+                  selectedColor: AppStyles.primaryColor.withValues(alpha: 0.3),
+                ),
+                const SizedBox(width: 8),
+                FilterChip(
+                  label: Text(tr.delivered),
+                  selected: _selectedStatusFilter == ParcelStatus.delivered,
+                  onSelected: (selected) {
+                    setState(() {
+                      _selectedStatusFilter =
+                          selected ? ParcelStatus.delivered : null;
+                    });
+                  },
+                  selectedColor: Colors.green.withValues(alpha: 0.3),
+                ),
+                const SizedBox(width: 8),
+                FilterChip(
+                  label: Text(tr.returned),
+                  selected: _selectedStatusFilter == ParcelStatus.returned,
+                  onSelected: (selected) {
+                    setState(() {
+                      _selectedStatusFilter =
+                          selected ? ParcelStatus.returned : null;
+                    });
+                  },
+                  selectedColor: Colors.red.withValues(alpha: 0.3),
+                ),
+                const SizedBox(width: 8),
+                FilterChip(
+                  label: Text(tr.cancelled),
+                  selected: _selectedStatusFilter == ParcelStatus.cancelled,
+                  onSelected: (selected) {
+                    setState(() {
+                      _selectedStatusFilter =
+                          selected ? ParcelStatus.cancelled : null;
+                    });
+                  },
+                  selectedColor: Colors.grey.withValues(alpha: 0.3),
+                ),
+              ],
+            ),
+          ),
+
+          const SizedBox(height: 8),
+
+          // Parcels List
+          Expanded(
+            child: FutureBuilder<List<ParcelModel>>(
+              future: _fetchHistoryParcels(user.uid),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const Center(child: CircularProgressIndicator());
+                }
+
+                if (snapshot.hasError) {
+                  return Center(
+                      child:
+                          Text('${tr.error_loading_data}: ${snapshot.error}'));
+                }
+
+                final allParcels = snapshot.data ?? [];
+                final filteredParcels = _filterParcels(allParcels);
+
+                if (filteredParcels.isEmpty) {
+                  return Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.history, size: 64, color: Colors.grey[400]),
+                        const SizedBox(height: 16),
+                        Text(
+                          _searchQuery.isNotEmpty ||
+                                  _selectedStatusFilter != null
+                              ? tr.no_results_found
+                              : tr.no_history_found,
+                          style:
+                              TextStyle(color: Colors.grey[600], fontSize: 16),
+                        ),
+                      ],
+                    ),
+                  );
+                }
+
+                return ListView.builder(
+                  padding: const EdgeInsets.all(16),
+                  itemCount: filteredParcels.length,
+                  itemBuilder: (context, index) {
+                    return _buildHistoryCard(filteredParcels[index], tr);
+                  },
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }

@@ -275,6 +275,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "no_notifications": MessageLookupByLibrary.simpleMessage("لا توجد إشعارات"),
     "no_parcels_yet": MessageLookupByLibrary.simpleMessage("لا توجد طرود بعد"),
+    "no_results_found": MessageLookupByLibrary.simpleMessage(
+      "لم يتم العثور على نتائج",
+    ),
     "note_label": m3,
     "notes": MessageLookupByLibrary.simpleMessage("ملاحظات"),
     "notification_settings": MessageLookupByLibrary.simpleMessage(
@@ -285,6 +288,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "online": MessageLookupByLibrary.simpleMessage("متصل"),
     "optimized_route": MessageLookupByLibrary.simpleMessage("المسار الأمثل"),
     "optional": MessageLookupByLibrary.simpleMessage("اختياري"),
+    "order_history": MessageLookupByLibrary.simpleMessage("سجل الطلبات"),
     "parcel_cancelled_success": MessageLookupByLibrary.simpleMessage(
       "تم إلغاء الطرد بنجاح",
     ),
@@ -376,6 +380,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "save_changes": MessageLookupByLibrary.simpleMessage("حفظ التغييرات"),
     "save_parcel": MessageLookupByLibrary.simpleMessage("حفظ الطرد"),
     "scan_to_track": MessageLookupByLibrary.simpleMessage("امسح للتتبع"),
+    "search_by_barcode_or_name": MessageLookupByLibrary.simpleMessage(
+      "البحث بواسطة الباركود أو الاسم...",
+    ),
     "select_file": MessageLookupByLibrary.simpleMessage("اختر ملف"),
     "select_month": MessageLookupByLibrary.simpleMessage("اختر الشهر"),
     "select_status": MessageLookupByLibrary.simpleMessage("اختر الحالة"),

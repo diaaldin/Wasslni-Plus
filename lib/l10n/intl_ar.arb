@@ -280,5 +280,8 @@
   "profile_updated_success": "تم تحديث الملف الشخصي بنجاح",
   "active_deliveries": "التوصيلات النشطة",
   "updated_at": "آخر تحديث",
-  "proof_of_delivery": "إثبات التسليم"
+  "proof_of_delivery": "إثبات التسليم",
+  "order_history": "سجل الطلبات",
+  "search_by_barcode_or_name": "البحث بواسطة الباركود أو الاسم...",
+  "no_results_found": "لم يتم العثور على نتائج"
 }

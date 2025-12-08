@@ -2398,6 +2398,36 @@ class S {
   String get updated_at {
     return Intl.message('Last Updated', name: 'updated_at', desc: '', args: []);
   }
+
+  /// `Order History`
+  String get order_history {
+    return Intl.message(
+      'Order History',
+      name: 'order_history',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search by barcode or name...`
+  String get search_by_barcode_or_name {
+    return Intl.message(
+      'Search by barcode or name...',
+      name: 'search_by_barcode_or_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No results found`
+  String get no_results_found {
+    return Intl.message(
+      'No results found',
+      name: 'no_results_found',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

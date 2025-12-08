@@ -178,7 +178,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
 - [ ] **Order History**
   - [x] Build past deliveries list
   - [x] Add order details view
-  - [ ] Implement search and filters
+  - [x] Implement search and filters
   - [ ] Create reorder functionality
 
 - [ ] **Delivery Feedback**
