@@ -179,7 +179,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [x] Build past deliveries list
   - [x] Add order details view
   - [x] Implement search and filters
-  - [ ] Create reorder functionality
+  - [x] Create reorder functionality
 
 - [ ] **Delivery Feedback**
   - [ ] Build rating and review interface

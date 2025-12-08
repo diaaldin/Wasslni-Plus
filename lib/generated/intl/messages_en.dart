@@ -66,6 +66,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "barcode_label": m1,
     "bulk_upload": MessageLookupByLibrary.simpleMessage("Bulk Upload"),
     "call": MessageLookupByLibrary.simpleMessage("Call"),
+    "call_merchant": MessageLookupByLibrary.simpleMessage("Call Merchant"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "cancel_parcel": MessageLookupByLibrary.simpleMessage("Cancel Parcel"),
     "cancellation_reason": MessageLookupByLibrary.simpleMessage(
@@ -107,6 +108,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "contact_support": MessageLookupByLibrary.simpleMessage(
       "For more details, feel free to contact our support team.",
     ),
+    "copy_number": MessageLookupByLibrary.simpleMessage("Copy Number"),
     "courier": MessageLookupByLibrary.simpleMessage("Courier"),
     "courier_dashboard": MessageLookupByLibrary.simpleMessage(
       "Courier Dashboard",
@@ -281,6 +283,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "merchant_dashboard": MessageLookupByLibrary.simpleMessage(
       "Merchant Dashboard",
     ),
+    "merchant_info": MessageLookupByLibrary.simpleMessage(
+      "Merchant Information",
+    ),
+    "merchant_info_unavailable": MessageLookupByLibrary.simpleMessage(
+      "Merchant information unavailable",
+    ),
     "message": MessageLookupByLibrary.simpleMessage("Message"),
     "minutes": MessageLookupByLibrary.simpleMessage("minutes"),
     "monthly_earnings": MessageLookupByLibrary.simpleMessage(
@@ -326,6 +334,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "optimized_route": MessageLookupByLibrary.simpleMessage("Optimized Route"),
     "optional": MessageLookupByLibrary.simpleMessage("Optional"),
     "order_history": MessageLookupByLibrary.simpleMessage("Order History"),
+    "original_order_details": MessageLookupByLibrary.simpleMessage(
+      "Original Order Details",
+    ),
     "parcel_cancelled_success": MessageLookupByLibrary.simpleMessage(
       "Parcel cancelled successfully",
     ),
@@ -405,6 +416,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "registration_failed": MessageLookupByLibrary.simpleMessage(
       "Registration Failed",
     ),
+    "reorder": MessageLookupByLibrary.simpleMessage("Reorder"),
+    "reorder_instructions": MessageLookupByLibrary.simpleMessage(
+      "Contact the merchant to place a repeat order with the same delivery details",
+    ),
+    "reorder_parcel": MessageLookupByLibrary.simpleMessage("Reorder Parcel"),
     "reports": MessageLookupByLibrary.simpleMessage("Reports"),
     "requires_signature": MessageLookupByLibrary.simpleMessage(
       "Requires Recipient Signature",

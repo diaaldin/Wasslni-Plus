@@ -283,5 +283,13 @@
   "proof_of_delivery": "Proof of Delivery",
   "order_history": "Order History",
   "search_by_barcode_or_name": "Search by barcode or name...",
-  "no_results_found": "No results found"
+  "no_results_found": "No results found",
+  "reorder": "Reorder",
+  "reorder_parcel": "Reorder Parcel",
+  "original_order_details": "Original Order Details",
+  "merchant_info": "Merchant Information",
+  "merchant_info_unavailable": "Merchant information unavailable",
+  "reorder_instructions": "Contact the merchant to place a repeat order with the same delivery details",
+  "call_merchant": "Call Merchant",
+  "copy_number": "Copy Number"
 }

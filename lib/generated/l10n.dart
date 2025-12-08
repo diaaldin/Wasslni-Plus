@@ -2428,6 +2428,76 @@ class S {
       args: [],
     );
   }
+
+  /// `Reorder`
+  String get reorder {
+    return Intl.message('Reorder', name: 'reorder', desc: '', args: []);
+  }
+
+  /// `Reorder Parcel`
+  String get reorder_parcel {
+    return Intl.message(
+      'Reorder Parcel',
+      name: 'reorder_parcel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Original Order Details`
+  String get original_order_details {
+    return Intl.message(
+      'Original Order Details',
+      name: 'original_order_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Merchant Information`
+  String get merchant_info {
+    return Intl.message(
+      'Merchant Information',
+      name: 'merchant_info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Merchant information unavailable`
+  String get merchant_info_unavailable {
+    return Intl.message(
+      'Merchant information unavailable',
+      name: 'merchant_info_unavailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact the merchant to place a repeat order with the same delivery details`
+  String get reorder_instructions {
+    return Intl.message(
+      'Contact the merchant to place a repeat order with the same delivery details',
+      name: 'reorder_instructions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Call Merchant`
+  String get call_merchant {
+    return Intl.message(
+      'Call Merchant',
+      name: 'call_merchant',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Copy Number`
+  String get copy_number {
+    return Intl.message('Copy Number', name: 'copy_number', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

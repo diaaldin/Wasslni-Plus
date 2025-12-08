@@ -283,5 +283,13 @@
   "proof_of_delivery": "إثبات التسليم",
   "order_history": "سجل الطلبات",
   "search_by_barcode_or_name": "البحث بواسطة الباركود أو الاسم...",
-  "no_results_found": "لم يتم العثور على نتائج"
+  "no_results_found": "لم يتم العثور على نتائج",
+  "reorder": "إعادة الطلب",
+  "reorder_parcel": "إعادة طلب الطرد",
+  "original_order_details": "تفاصيل الطلب الأصلي",
+  "merchant_info": "معلومات التاجر",
+  "merchant_info_unavailable": "معلومات التاجر غير متوفرة",
+  "reorder_instructions": "اتصل بالتاجر لتقديم طلب جديد بنفس تفاصيل التوصيل",
+  "call_merchant": "الاتصال بالتاجر",
+  "copy_number": "نسخ الرقم"
 }

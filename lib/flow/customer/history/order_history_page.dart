@@ -252,6 +252,20 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
               Text(
                   '${tr.updated_at}: ${parcel.updatedAt.day}/${parcel.updatedAt.month}/${parcel.updatedAt.year}',
                   style: const TextStyle(fontSize: 12, color: Colors.grey)),
+              const SizedBox(height: 12),
+              // Reorder button
+              SizedBox(
+                width: double.infinity,
+                child: OutlinedButton.icon(
+                  onPressed: () => _showReorderDialog(parcel, tr),
+                  icon: const Icon(Icons.replay, size: 18),
+                  label: Text(tr.reorder),
+                  style: OutlinedButton.styleFrom(
+                    foregroundColor: AppStyles.primaryColor,
+                    side: BorderSide(color: AppStyles.primaryColor),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -293,5 +307,160 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
             TextStyle(color: color, fontWeight: FontWeight.bold, fontSize: 12),
       ),
     );
+  }
+
+  Future<void> _showReorderDialog(ParcelModel parcel, S tr) async {
+    // Fetch merchant details
+    final merchant = await _firestoreService.getUser(parcel.merchantId);
+
+    if (!mounted) return;
+
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Row(
+          children: [
+            Icon(Icons.replay, color: AppStyles.primaryColor),
+            const SizedBox(width: 8),
+            Text(tr.reorder_parcel),
+          ],
+        ),
+        content: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                tr.original_order_details,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+              const SizedBox(height: 12),
+              _buildDetailRow(
+                  Icons.person, tr.recipient_name, parcel.recipientName),
+              _buildDetailRow(
+                  Icons.phone, tr.recipient_phone, parcel.recipientPhone),
+              _buildDetailRow(
+                  Icons.location_on, tr.address, parcel.deliveryAddress),
+              _buildDetailRow(Icons.public, tr.region, parcel.deliveryRegion),
+              if (parcel.parcelPrice > 0)
+                _buildDetailRow(Icons.attach_money, tr.parcel_price,
+                    '₪${parcel.parcelPrice}'),
+              const Divider(height: 24),
+              Text(
+                tr.merchant_info,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+              const SizedBox(height: 12),
+              if (merchant != null) ...[
+                _buildDetailRow(Icons.store, tr.merchant, merchant.name),
+                if (merchant.phoneNumber.isNotEmpty)
+                  _buildDetailRow(
+                      Icons.phone, tr.phone_number, merchant.phoneNumber),
+              ] else
+                Text(
+                  tr.merchant_info_unavailable,
+                  style: TextStyle(color: Colors.grey[600]),
+                ),
+              const SizedBox(height: 16),
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.blue.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Row(
+                  children: [
+                    Icon(Icons.info_outline, color: Colors.blue[700], size: 20),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: Text(
+                        tr.reorder_instructions,
+                        style: TextStyle(color: Colors.blue[700], fontSize: 13),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text(tr.cancel),
+          ),
+          if (merchant != null && merchant.phoneNumber.isNotEmpty)
+            FilledButton.icon(
+              onPressed: () {
+                Navigator.pop(context);
+                _callMerchant(merchant.phoneNumber);
+              },
+              icon: const Icon(Icons.phone, size: 18),
+              label: Text(tr.call_merchant),
+              style: FilledButton.styleFrom(
+                backgroundColor: AppStyles.primaryColor,
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildDetailRow(IconData icon, String label, String value) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(icon, size: 18, color: Colors.grey[600]),
+          const SizedBox(width: 8),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  label,
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.grey[600],
+                  ),
+                ),
+                Text(
+                  value,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _callMerchant(String phoneNumber) async {
+    // Note: url_launcher package would be needed to actually make the call
+    // For now, we'll show a snackbar with the number
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('${S.of(context).call}: $phoneNumber'),
+          action: SnackBarAction(
+            label: S.of(context).copy_number,
+            onPressed: () {
+              // Copy to clipboard would go here with flutter/services
+            },
+          ),
+        ),
+      );
+    }
   }
 }

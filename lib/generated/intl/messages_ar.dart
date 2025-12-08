@@ -61,6 +61,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "barcode_label": m1,
     "bulk_upload": MessageLookupByLibrary.simpleMessage("رفع جماعي"),
     "call": MessageLookupByLibrary.simpleMessage("اتصال"),
+    "call_merchant": MessageLookupByLibrary.simpleMessage("الاتصال بالتاجر"),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "cancel_parcel": MessageLookupByLibrary.simpleMessage("إلغاء الطرد"),
     "cancellation_reason": MessageLookupByLibrary.simpleMessage("سبب الإلغاء"),
@@ -92,6 +93,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "contact_support": MessageLookupByLibrary.simpleMessage(
       "لمزيد من التفاصيل، لا تتردد في الاتصال بفريق الدعم لدينا.",
     ),
+    "copy_number": MessageLookupByLibrary.simpleMessage("نسخ الرقم"),
     "courier": MessageLookupByLibrary.simpleMessage("مندوب توصيل"),
     "courier_dashboard": MessageLookupByLibrary.simpleMessage("لوحة السائق"),
     "created_at": MessageLookupByLibrary.simpleMessage("تاريخ الإنشاء"),
@@ -246,6 +248,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "mark_as_returned": MessageLookupByLibrary.simpleMessage("تحديد كمرتجع"),
     "merchant": MessageLookupByLibrary.simpleMessage("تاجر"),
     "merchant_dashboard": MessageLookupByLibrary.simpleMessage("لوحة التاجر"),
+    "merchant_info": MessageLookupByLibrary.simpleMessage("معلومات التاجر"),
+    "merchant_info_unavailable": MessageLookupByLibrary.simpleMessage(
+      "معلومات التاجر غير متوفرة",
+    ),
     "message": MessageLookupByLibrary.simpleMessage("الرسالة"),
     "minutes": MessageLookupByLibrary.simpleMessage("دقائق"),
     "monthly_earnings": MessageLookupByLibrary.simpleMessage("الأرباح الشهرية"),
@@ -289,6 +295,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "optimized_route": MessageLookupByLibrary.simpleMessage("المسار الأمثل"),
     "optional": MessageLookupByLibrary.simpleMessage("اختياري"),
     "order_history": MessageLookupByLibrary.simpleMessage("سجل الطلبات"),
+    "original_order_details": MessageLookupByLibrary.simpleMessage(
+      "تفاصيل الطلب الأصلي",
+    ),
     "parcel_cancelled_success": MessageLookupByLibrary.simpleMessage(
       "تم إلغاء الطرد بنجاح",
     ),
@@ -364,6 +373,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "region": MessageLookupByLibrary.simpleMessage("المنطقة"),
     "register": MessageLookupByLibrary.simpleMessage("تسجيل جديد"),
     "registration_failed": MessageLookupByLibrary.simpleMessage("فشل التسجيل"),
+    "reorder": MessageLookupByLibrary.simpleMessage("إعادة الطلب"),
+    "reorder_instructions": MessageLookupByLibrary.simpleMessage(
+      "اتصل بالتاجر لتقديم طلب جديد بنفس تفاصيل التوصيل",
+    ),
+    "reorder_parcel": MessageLookupByLibrary.simpleMessage("إعادة طلب الطرد"),
     "reports": MessageLookupByLibrary.simpleMessage("التقارير"),
     "requires_signature": MessageLookupByLibrary.simpleMessage(
       "يتطلب توقيع المستلم",
