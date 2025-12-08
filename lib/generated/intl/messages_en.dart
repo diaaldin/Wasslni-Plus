@@ -37,6 +37,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "active_deliveries": MessageLookupByLibrary.simpleMessage(
       "Active Deliveries",
     ),
+    "add_comment": MessageLookupByLibrary.simpleMessage(
+      "Add Comment (Optional)",
+    ),
     "add_image": MessageLookupByLibrary.simpleMessage("Add Image"),
     "add_parcel": MessageLookupByLibrary.simpleMessage("Add Parcel"),
     "address": MessageLookupByLibrary.simpleMessage("Address, City - Street"),
@@ -113,6 +116,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "courier_dashboard": MessageLookupByLibrary.simpleMessage(
       "Courier Dashboard",
     ),
+    "courier_not_assigned": MessageLookupByLibrary.simpleMessage(
+      "Courier not assigned to this parcel",
+    ),
     "created_at": MessageLookupByLibrary.simpleMessage("Created At"),
     "current_location": MessageLookupByLibrary.simpleMessage(
       "Current Location",
@@ -151,6 +157,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Delivery completed successfully!",
     ),
     "delivery_fee": MessageLookupByLibrary.simpleMessage("Delivery Fee"),
+    "delivery_feedback": MessageLookupByLibrary.simpleMessage(
+      "Delivery Feedback",
+    ),
     "delivery_fees_collected": MessageLookupByLibrary.simpleMessage(
       "Delivery Fees Collected",
     ),
@@ -225,12 +234,18 @@ class MessageLookup extends MessageLookupByLibrary {
       "Failed Deliveries",
     ),
     "failure_reason": MessageLookupByLibrary.simpleMessage("Failure Reason"),
+    "feedback_submitted_successfully": MessageLookupByLibrary.simpleMessage(
+      "Feedback submitted successfully!",
+    ),
     "from": MessageLookupByLibrary.simpleMessage("From"),
     "general_serach_hint": MessageLookupByLibrary.simpleMessage("Search..."),
     "height": MessageLookupByLibrary.simpleMessage("Height"),
     "hide_route": MessageLookupByLibrary.simpleMessage("Hide Route"),
     "history": MessageLookupByLibrary.simpleMessage("History"),
     "hours": MessageLookupByLibrary.simpleMessage("hours"),
+    "how_was_your_delivery": MessageLookupByLibrary.simpleMessage(
+      "How was your delivery?",
+    ),
     "images": MessageLookupByLibrary.simpleMessage("Images"),
     "in_transit": MessageLookupByLibrary.simpleMessage("In Transit"),
     "invalid_email": MessageLookupByLibrary.simpleMessage(
@@ -247,6 +262,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "This page is for business owners who want to join us.",
     ),
     "language": MessageLookupByLibrary.simpleMessage("Language"),
+    "leave_feedback": MessageLookupByLibrary.simpleMessage("Leave Feedback"),
     "length": MessageLookupByLibrary.simpleMessage("Length"),
     "list_view": MessageLookupByLibrary.simpleMessage("List View"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
@@ -323,6 +339,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "no_results_found": MessageLookupByLibrary.simpleMessage(
       "No results found",
     ),
+    "no_tip": MessageLookupByLibrary.simpleMessage("No Tip"),
     "note_label": m3,
     "notes": MessageLookupByLibrary.simpleMessage("Notes"),
     "notification_settings": MessageLookupByLibrary.simpleMessage(
@@ -380,6 +397,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "please_enter_reason": MessageLookupByLibrary.simpleMessage(
       "Please enter a reason",
     ),
+    "please_select_rating": MessageLookupByLibrary.simpleMessage(
+      "Please select a rating",
+    ),
     "please_sign_below": MessageLookupByLibrary.simpleMessage(
       "Please sign below",
     ),
@@ -407,6 +427,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "proof_of_delivery": MessageLookupByLibrary.simpleMessage(
       "Proof of Delivery",
     ),
+    "rate_delivery_experience": MessageLookupByLibrary.simpleMessage(
+      "Rate Your Delivery Experience",
+    ),
+    "rating_excellent": MessageLookupByLibrary.simpleMessage("Excellent!"),
+    "rating_fair": MessageLookupByLibrary.simpleMessage("Fair"),
+    "rating_good": MessageLookupByLibrary.simpleMessage("Good"),
+    "rating_poor": MessageLookupByLibrary.simpleMessage("Poor"),
+    "rating_very_good": MessageLookupByLibrary.simpleMessage("Very Good"),
     "recent_parcels": MessageLookupByLibrary.simpleMessage("Recent Parcels"),
     "recipient": MessageLookupByLibrary.simpleMessage("Recipient"),
     "recipient_name": MessageLookupByLibrary.simpleMessage("Recipient Name"),
@@ -444,6 +472,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "select_month": MessageLookupByLibrary.simpleMessage("Select Month"),
     "select_status": MessageLookupByLibrary.simpleMessage("Select Status"),
     "settings": MessageLookupByLibrary.simpleMessage("Settings"),
+    "share_your_experience": MessageLookupByLibrary.simpleMessage(
+      "Share your experience with this delivery...",
+    ),
     "shipping_label": MessageLookupByLibrary.simpleMessage("Shipping Label"),
     "show_route": MessageLookupByLibrary.simpleMessage("Show Route"),
     "signature": MessageLookupByLibrary.simpleMessage("Signature"),
@@ -476,6 +507,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "Status updated successfully",
     ),
     "submit": MessageLookupByLibrary.simpleMessage("Submit"),
+    "submit_feedback": MessageLookupByLibrary.simpleMessage("Submit Feedback"),
+    "submitting": MessageLookupByLibrary.simpleMessage("Submitting..."),
     "success": MessageLookupByLibrary.simpleMessage("Success"),
     "success_rate": MessageLookupByLibrary.simpleMessage("Success Rate"),
     "success_rate_trend": MessageLookupByLibrary.simpleMessage(
@@ -501,6 +534,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "this_month": MessageLookupByLibrary.simpleMessage("This Month"),
     "this_week": MessageLookupByLibrary.simpleMessage("This Week"),
     "timeline": MessageLookupByLibrary.simpleMessage("Timeline"),
+    "tip_courier": MessageLookupByLibrary.simpleMessage("Tip Your Courier"),
+    "tip_courier_description": MessageLookupByLibrary.simpleMessage(
+      "Show appreciation for great service (optional)",
+    ),
     "to": MessageLookupByLibrary.simpleMessage("To"),
     "todays_deliveries": MessageLookupByLibrary.simpleMessage(
       "Today\'s Deliveries",

@@ -36,6 +36,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "active_deliveries": MessageLookupByLibrary.simpleMessage(
       "التوصيلات النشطة",
     ),
+    "add_comment": MessageLookupByLibrary.simpleMessage(
+      "إضافة تعليق (اختياري)",
+    ),
     "add_image": MessageLookupByLibrary.simpleMessage("إضافة صورة"),
     "add_parcel": MessageLookupByLibrary.simpleMessage("إضافة طرد"),
     "address": MessageLookupByLibrary.simpleMessage("العنوان, مدينة - شارع"),
@@ -96,6 +99,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "copy_number": MessageLookupByLibrary.simpleMessage("نسخ الرقم"),
     "courier": MessageLookupByLibrary.simpleMessage("مندوب توصيل"),
     "courier_dashboard": MessageLookupByLibrary.simpleMessage("لوحة السائق"),
+    "courier_not_assigned": MessageLookupByLibrary.simpleMessage(
+      "لم يتم تعيين سائق لهذا الطرد",
+    ),
     "created_at": MessageLookupByLibrary.simpleMessage("تاريخ الإنشاء"),
     "current_location": MessageLookupByLibrary.simpleMessage("الموقع الحالي"),
     "customer": MessageLookupByLibrary.simpleMessage("زبون"),
@@ -132,6 +138,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "تم التوصيل بنجاح!",
     ),
     "delivery_fee": MessageLookupByLibrary.simpleMessage("رسوم التوصيل"),
+    "delivery_feedback": MessageLookupByLibrary.simpleMessage("تقييم التوصيل"),
     "delivery_fees_collected": MessageLookupByLibrary.simpleMessage(
       "رسوم التوصيل المحصلة",
     ),
@@ -198,12 +205,18 @@ class MessageLookup extends MessageLookupByLibrary {
       "التوصيلات الفاشلة",
     ),
     "failure_reason": MessageLookupByLibrary.simpleMessage("سبب الفشل"),
+    "feedback_submitted_successfully": MessageLookupByLibrary.simpleMessage(
+      "تم إرسال التقييم بنجاح!",
+    ),
     "from": MessageLookupByLibrary.simpleMessage("من"),
     "general_serach_hint": MessageLookupByLibrary.simpleMessage("بحث..."),
     "height": MessageLookupByLibrary.simpleMessage("الارتفاع"),
     "hide_route": MessageLookupByLibrary.simpleMessage("إخفاء المسار"),
     "history": MessageLookupByLibrary.simpleMessage("السجل"),
     "hours": MessageLookupByLibrary.simpleMessage("ساعات"),
+    "how_was_your_delivery": MessageLookupByLibrary.simpleMessage(
+      "كيف كانت تجربة التوصيل؟",
+    ),
     "images": MessageLookupByLibrary.simpleMessage("الصور"),
     "in_transit": MessageLookupByLibrary.simpleMessage("قيد التوصيل"),
     "invalid_email": MessageLookupByLibrary.simpleMessage(
@@ -218,6 +231,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "هذه الصفحة مخصصة لأصحاب الأعمال الذين يرغبون في الانضمام إلينا.",
     ),
     "language": MessageLookupByLibrary.simpleMessage("اللغة"),
+    "leave_feedback": MessageLookupByLibrary.simpleMessage("ترك تقييم"),
     "length": MessageLookupByLibrary.simpleMessage("الطول"),
     "list_view": MessageLookupByLibrary.simpleMessage("عرض القائمة"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
@@ -284,6 +298,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "no_results_found": MessageLookupByLibrary.simpleMessage(
       "لم يتم العثور على نتائج",
     ),
+    "no_tip": MessageLookupByLibrary.simpleMessage("بدون إكرامية"),
     "note_label": m3,
     "notes": MessageLookupByLibrary.simpleMessage("ملاحظات"),
     "notification_settings": MessageLookupByLibrary.simpleMessage(
@@ -341,6 +356,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "please_enter_reason": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال سبب",
     ),
+    "please_select_rating": MessageLookupByLibrary.simpleMessage(
+      "الرجاء اختيار تقييم",
+    ),
     "please_sign_below": MessageLookupByLibrary.simpleMessage(
       "الرجاء التوقيع أدناه",
     ),
@@ -366,6 +384,14 @@ class MessageLookup extends MessageLookupByLibrary {
       "تلقي تحديثات حول الميزات والعروض الجديدة",
     ),
     "proof_of_delivery": MessageLookupByLibrary.simpleMessage("إثبات التسليم"),
+    "rate_delivery_experience": MessageLookupByLibrary.simpleMessage(
+      "قيّم تجربة التوصيل",
+    ),
+    "rating_excellent": MessageLookupByLibrary.simpleMessage("ممتاز!"),
+    "rating_fair": MessageLookupByLibrary.simpleMessage("مقبول"),
+    "rating_good": MessageLookupByLibrary.simpleMessage("جيد"),
+    "rating_poor": MessageLookupByLibrary.simpleMessage("ضعيف"),
+    "rating_very_good": MessageLookupByLibrary.simpleMessage("جيد جداً"),
     "recent_parcels": MessageLookupByLibrary.simpleMessage("الطرود الأخيرة"),
     "recipient": MessageLookupByLibrary.simpleMessage("المستلم"),
     "recipient_name": MessageLookupByLibrary.simpleMessage("اسم المستلم"),
@@ -401,6 +427,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "select_month": MessageLookupByLibrary.simpleMessage("اختر الشهر"),
     "select_status": MessageLookupByLibrary.simpleMessage("اختر الحالة"),
     "settings": MessageLookupByLibrary.simpleMessage("الاعدادات"),
+    "share_your_experience": MessageLookupByLibrary.simpleMessage(
+      "شارك تجربتك مع هذا التوصيل...",
+    ),
     "shipping_label": MessageLookupByLibrary.simpleMessage("ملصق الشحن"),
     "show_route": MessageLookupByLibrary.simpleMessage("إظهار المسار"),
     "signature": MessageLookupByLibrary.simpleMessage("التوقيع"),
@@ -429,6 +458,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "تم تحديث الحالة بنجاح",
     ),
     "submit": MessageLookupByLibrary.simpleMessage("إرسال"),
+    "submit_feedback": MessageLookupByLibrary.simpleMessage("إرسال التقييم"),
+    "submitting": MessageLookupByLibrary.simpleMessage("جاري الإرسال..."),
     "success": MessageLookupByLibrary.simpleMessage("نجاح"),
     "success_rate": MessageLookupByLibrary.simpleMessage("معدل النجاح"),
     "success_rate_trend": MessageLookupByLibrary.simpleMessage(
@@ -454,6 +485,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "this_month": MessageLookupByLibrary.simpleMessage("هذا الشهر"),
     "this_week": MessageLookupByLibrary.simpleMessage("هذا الأسبوع"),
     "timeline": MessageLookupByLibrary.simpleMessage("الجدول الزمني"),
+    "tip_courier": MessageLookupByLibrary.simpleMessage("إكرامية للسائق"),
+    "tip_courier_description": MessageLookupByLibrary.simpleMessage(
+      "أظهر تقديرك للخدمة الممتازة (اختياري)",
+    ),
     "to": MessageLookupByLibrary.simpleMessage("إلى"),
     "todays_deliveries": MessageLookupByLibrary.simpleMessage("توصيلات اليوم"),
     "todays_performance": MessageLookupByLibrary.simpleMessage("أداء اليوم"),

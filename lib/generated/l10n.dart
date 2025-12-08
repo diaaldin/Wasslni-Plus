@@ -2498,6 +2498,176 @@ class S {
   String get copy_number {
     return Intl.message('Copy Number', name: 'copy_number', desc: '', args: []);
   }
+
+  /// `Delivery Feedback`
+  String get delivery_feedback {
+    return Intl.message(
+      'Delivery Feedback',
+      name: 'delivery_feedback',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rate Your Delivery Experience`
+  String get rate_delivery_experience {
+    return Intl.message(
+      'Rate Your Delivery Experience',
+      name: 'rate_delivery_experience',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How was your delivery?`
+  String get how_was_your_delivery {
+    return Intl.message(
+      'How was your delivery?',
+      name: 'how_was_your_delivery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Comment (Optional)`
+  String get add_comment {
+    return Intl.message(
+      'Add Comment (Optional)',
+      name: 'add_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Share your experience with this delivery...`
+  String get share_your_experience {
+    return Intl.message(
+      'Share your experience with this delivery...',
+      name: 'share_your_experience',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tip Your Courier`
+  String get tip_courier {
+    return Intl.message(
+      'Tip Your Courier',
+      name: 'tip_courier',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show appreciation for great service (optional)`
+  String get tip_courier_description {
+    return Intl.message(
+      'Show appreciation for great service (optional)',
+      name: 'tip_courier_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Tip`
+  String get no_tip {
+    return Intl.message('No Tip', name: 'no_tip', desc: '', args: []);
+  }
+
+  /// `Submit Feedback`
+  String get submit_feedback {
+    return Intl.message(
+      'Submit Feedback',
+      name: 'submit_feedback',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submitting...`
+  String get submitting {
+    return Intl.message(
+      'Submitting...',
+      name: 'submitting',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select a rating`
+  String get please_select_rating {
+    return Intl.message(
+      'Please select a rating',
+      name: 'please_select_rating',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Courier not assigned to this parcel`
+  String get courier_not_assigned {
+    return Intl.message(
+      'Courier not assigned to this parcel',
+      name: 'courier_not_assigned',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Feedback submitted successfully!`
+  String get feedback_submitted_successfully {
+    return Intl.message(
+      'Feedback submitted successfully!',
+      name: 'feedback_submitted_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Poor`
+  String get rating_poor {
+    return Intl.message('Poor', name: 'rating_poor', desc: '', args: []);
+  }
+
+  /// `Fair`
+  String get rating_fair {
+    return Intl.message('Fair', name: 'rating_fair', desc: '', args: []);
+  }
+
+  /// `Good`
+  String get rating_good {
+    return Intl.message('Good', name: 'rating_good', desc: '', args: []);
+  }
+
+  /// `Very Good`
+  String get rating_very_good {
+    return Intl.message(
+      'Very Good',
+      name: 'rating_very_good',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Excellent!`
+  String get rating_excellent {
+    return Intl.message(
+      'Excellent!',
+      name: 'rating_excellent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Leave Feedback`
+  String get leave_feedback {
+    return Intl.message(
+      'Leave Feedback',
+      name: 'leave_feedback',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

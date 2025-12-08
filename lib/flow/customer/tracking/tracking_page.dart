@@ -7,6 +7,7 @@ import 'package:wasslni_plus/models/parcel_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:wasslni_plus/services/firestore_service.dart';
 import 'package:wasslni_plus/models/user/user_model.dart';
+import 'package:wasslni_plus/flow/customer/feedback/delivery_feedback_page.dart';
 
 class TrackingPage extends StatefulWidget {
   final ParcelModel parcel;
@@ -281,6 +282,34 @@ class _TrackingPageState extends State<TrackingPage> {
               borderRadius: BorderRadius.circular(12),
               child: Image.network(widget.parcel.proofOfDeliveryUrl!,
                   height: 200, width: double.infinity, fit: BoxFit.cover),
+            ),
+          ],
+
+          // Leave Feedback Button (for delivered parcels)
+          if (widget.parcel.status == ParcelStatus.delivered) ...[
+            const SizedBox(height: 24),
+            SizedBox(
+              width: double.infinity,
+              height: 50,
+              child: FilledButton.icon(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) =>
+                          DeliveryFeedbackPage(parcel: widget.parcel),
+                    ),
+                  );
+                },
+                icon: const Icon(Icons.star_outline),
+                label: Text(tr.leave_feedback),
+                style: FilledButton.styleFrom(
+                  backgroundColor: AppStyles.primaryColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+              ),
             ),
           ],
         ],
