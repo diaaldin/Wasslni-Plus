@@ -819,7 +819,7 @@ class SEn extends S {
   String get status_ready_to_ship => 'Ready to Ship';
 
   @override
-  String get status_at_warehouse => 'At Warehouse';
+  String get status_at_warehouse => 'At Distributor\'s Warehouse';
 
   @override
   String get status_en_route_distributor => 'En Route to Distributor';
@@ -1106,4 +1106,104 @@ class SEn extends S {
 
   @override
   String get address_updated_success => 'Address updated successfully';
+
+  @override
+  String get profile => 'Profile';
+
+  @override
+  String get account => 'Account';
+
+  @override
+  String get edit_profile => 'Edit Profile';
+
+  @override
+  String get update_your_information => 'Update your personal information';
+
+  @override
+  String get change_password => 'Change Password';
+
+  @override
+  String get update_password_security => 'Update your password for security';
+
+  @override
+  String get current_password => 'Current Password';
+
+  @override
+  String get new_password => 'New Password';
+
+  @override
+  String get confirm_password => 'Confirm Password';
+
+  @override
+  String get password_too_short => 'Password must be at least 6 characters';
+
+  @override
+  String get passwords_dont_match => 'Passwords don\'t match';
+
+  @override
+  String get password_changed_success => 'Password changed successfully';
+
+  @override
+  String password_change_failed(Object error) {
+    return 'Password change failed: $error';
+  }
+
+  @override
+  String get danger_zone => 'Danger Zone';
+
+  @override
+  String get delete_account => 'Delete Account';
+
+  @override
+  String get permanently_delete_account => 'Permanently delete your account';
+
+  @override
+  String get delete_account_warning => 'Warning: This action cannot be undone!';
+
+  @override
+  String get delete_account_consequences =>
+      'Deleting your account will:\n• Remove all your data\n• Cancel all pending orders\n• Deactivate your profile\n\nAre you absolutely sure?';
+
+  @override
+  String get manage_notification_preferences =>
+      'Manage your notification preferences';
+
+  @override
+  String get coming_soon => 'Coming Soon';
+
+  @override
+  String get active => 'Active';
+
+  @override
+  String get inactive => 'Inactive';
+
+  @override
+  String get suspended => 'Suspended';
+
+  @override
+  String get admin => 'Admin';
+
+  @override
+  String get manager => 'Manager';
+
+  @override
+  String get parcel_status => 'Parcel Status';
+
+  @override
+  String get status_history => 'Status History';
+
+  @override
+  String get show_details => 'Show Details';
+
+  @override
+  String get hide_details => 'Hide Details';
+
+  @override
+  String get status_delivered => 'Delivered';
+
+  @override
+  String get status_returned => 'Returned';
+
+  @override
+  String get status_cancelled => 'Cancelled';
 }

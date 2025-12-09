@@ -3353,6 +3353,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Current Status`
+  String get current_status {
+    return Intl.message(
+      'Current Status',
+      name: 'current_status',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Status`
+  String get new_status {
+    return Intl.message('New Status', name: 'new_status', desc: '', args: []);
+  }
+
+  /// `Location`
+  String get location {
+    return Intl.message('Location', name: 'location', desc: '', args: []);
+  }
+
+  /// `Enter location`
+  String get enter_location {
+    return Intl.message(
+      'Enter location',
+      name: 'enter_location',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter reason`
+  String get enter_reason {
+    return Intl.message(
+      'Enter reason',
+      name: 'enter_reason',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add notes (optional)`
+  String get add_notes_optional {
+    return Intl.message(
+      'Add notes (optional)',
+      name: 'add_notes_optional',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update`
+  String get update {
+    return Intl.message('Update', name: 'update', desc: '', args: []);
+  }
+
+  /// `Error`
+  String get error {
+    return Intl.message('Error', name: 'error', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

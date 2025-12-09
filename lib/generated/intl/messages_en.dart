@@ -46,6 +46,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Add Comment (Optional)",
     ),
     "add_image": MessageLookupByLibrary.simpleMessage("Add Image"),
+    "add_notes_optional": MessageLookupByLibrary.simpleMessage(
+      "Add notes (optional)",
+    ),
     "add_parcel": MessageLookupByLibrary.simpleMessage("Add Parcel"),
     "add_your_first_address": MessageLookupByLibrary.simpleMessage(
       "Add your first address to make deliveries easier",
@@ -164,6 +167,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "current_password": MessageLookupByLibrary.simpleMessage(
       "Current Password",
     ),
+    "current_status": MessageLookupByLibrary.simpleMessage("Current Status"),
     "customer": MessageLookupByLibrary.simpleMessage("Customer"),
     "daily_assignments": MessageLookupByLibrary.simpleMessage(
       "Daily Assignments",
@@ -265,6 +269,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Enter the address (City - Street)",
     ),
     "enter_email": MessageLookupByLibrary.simpleMessage("Please enter email"),
+    "enter_location": MessageLookupByLibrary.simpleMessage("Enter location"),
     "enter_password": MessageLookupByLibrary.simpleMessage(
       "Please enter password",
     ),
@@ -272,9 +277,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please enter recipient phone",
     ),
     "enter_price": MessageLookupByLibrary.simpleMessage("Please enter a price"),
+    "enter_reason": MessageLookupByLibrary.simpleMessage("Enter reason"),
     "enter_recipient_name": MessageLookupByLibrary.simpleMessage(
       "Please enter recipient name",
     ),
+    "error": MessageLookupByLibrary.simpleMessage("Error"),
     "error_loading_data": MessageLookupByLibrary.simpleMessage(
       "Error loading data",
     ),
@@ -349,6 +356,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "leave_feedback": MessageLookupByLibrary.simpleMessage("Leave Feedback"),
     "length": MessageLookupByLibrary.simpleMessage("Length"),
     "list_view": MessageLookupByLibrary.simpleMessage("List View"),
+    "location": MessageLookupByLibrary.simpleMessage("Location"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "login_failed": MessageLookupByLibrary.simpleMessage("Login Failed"),
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
@@ -405,6 +413,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "navigate": MessageLookupByLibrary.simpleMessage("Navigate"),
     "new_password": MessageLookupByLibrary.simpleMessage("New Password"),
+    "new_status": MessageLookupByLibrary.simpleMessage("New Status"),
     "no": MessageLookupByLibrary.simpleMessage("No"),
     "no_active_deliveries": MessageLookupByLibrary.simpleMessage(
       "No Active Deliveries",
@@ -698,6 +707,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "total_revenue": MessageLookupByLibrary.simpleMessage("Total Revenue"),
     "unread": MessageLookupByLibrary.simpleMessage("Unread"),
+    "update": MessageLookupByLibrary.simpleMessage("Update"),
     "update_address": MessageLookupByLibrary.simpleMessage("Update Address"),
     "update_parcel": MessageLookupByLibrary.simpleMessage("Update Parcel"),
     "update_password_security": MessageLookupByLibrary.simpleMessage(

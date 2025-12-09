@@ -810,16 +810,16 @@ class SAr extends S {
   String get status_awaiting_label => 'بانتظار الملصق';
 
   @override
-  String get status_ready_to_ship => 'جاهز للشحن';
+  String get status_ready_to_ship => 'جاهز للإرسال';
 
   @override
-  String get status_at_warehouse => 'في المخزن';
+  String get status_at_warehouse => 'في مخزن الموزع';
 
   @override
   String get status_en_route_distributor => 'في الطريق للموزع';
 
   @override
-  String get status_out_for_delivery => 'خرج للتوصيل';
+  String get status_out_for_delivery => 'في الطريق للزبون';
 
   @override
   String get confirm => 'تأكيد';
@@ -1094,4 +1094,104 @@ class SAr extends S {
 
   @override
   String get address_updated_success => 'تم تحديث العنوان بنجاح';
+
+  @override
+  String get profile => 'الملف الشخصي';
+
+  @override
+  String get account => 'الحساب';
+
+  @override
+  String get edit_profile => 'تعديل الملف الشخصي';
+
+  @override
+  String get update_your_information => 'تحديث معلوماتك الشخصية';
+
+  @override
+  String get change_password => 'تغيير كلمة المرور';
+
+  @override
+  String get update_password_security => 'تحديث كلمة المرور لمزيد من الأمان';
+
+  @override
+  String get current_password => 'كلمة المرور الحالية';
+
+  @override
+  String get new_password => 'كلمة المرور الجديدة';
+
+  @override
+  String get confirm_password => 'تأكيد كلمة المرور';
+
+  @override
+  String get password_too_short =>
+      'يجب أن تتكون كلمة المرور من 6 أحرف على الأقل';
+
+  @override
+  String get passwords_dont_match => 'كلمات المرور غير متطابقة';
+
+  @override
+  String get password_changed_success => 'تم تغيير كلمة المرور بنجاح';
+
+  @override
+  String password_change_failed(Object error) {
+    return 'فشل تغيير كلمة المرور: $error';
+  }
+
+  @override
+  String get danger_zone => 'منطقة الخطر';
+
+  @override
+  String get delete_account => 'حذف الحساب';
+
+  @override
+  String get permanently_delete_account => 'حذف حسابك نهائياً';
+
+  @override
+  String get delete_account_warning => 'تحذير: لا يمكن التراجع عن هذا الإجراء!';
+
+  @override
+  String get delete_account_consequences =>
+      'سيؤدي حذف حسابك إلى:\n• إزالة جميع بياناتك\n• إلغاء جميع الطلبات المعلقة\n• إلغاء تفعيل ملفك الشخصي\n\nهل أنت متأكد تماماً؟';
+
+  @override
+  String get manage_notification_preferences => 'إدارة إعدادات الإشعارات';
+
+  @override
+  String get coming_soon => 'قريباً';
+
+  @override
+  String get active => 'نشط';
+
+  @override
+  String get inactive => 'غير نشط';
+
+  @override
+  String get suspended => 'موقوف';
+
+  @override
+  String get admin => 'مدير';
+
+  @override
+  String get manager => 'مشرف';
+
+  @override
+  String get parcel_status => 'حالة الطرد';
+
+  @override
+  String get status_history => 'سجل الحالة';
+
+  @override
+  String get show_details => 'عرض التفاصيل';
+
+  @override
+  String get hide_details => 'إخفاء التفاصيل';
+
+  @override
+  String get status_delivered => 'تم التوصيل';
+
+  @override
+  String get status_returned => 'طرد راجع';
+
+  @override
+  String get status_cancelled => 'ملغي';
 }

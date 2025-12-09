@@ -392,5 +392,18 @@
   "status_out_for_delivery": "في الطريق للزبون",
   "status_delivered": "تم التوصيل",
   "status_returned": "طرد راجع",
-  "status_cancelled": "ملغي"
+  "status_cancelled": "ملغي",
+  "update_status": "تحديث الحالة",
+  "current_status": "الحالة الحالية",
+  "new_status": "الحالة الجديدة",
+  "location": "الموقع",
+  "enter_location": "أدخل الموقع",
+  "return_reason": "سبب الإرجاع",
+  "cancellation_reason": "سبب الإلغاء",
+  "enter_reason": "أدخل السبب",
+  "notes": "ملاحظات",
+  "add_notes_optional": "إضافة ملاحظات (اختياري)",
+  "update": "تحديث",
+  "status_updated_successfully": "تم تحديث الحالة بنجاح",
+  "error": "خطأ"
 }

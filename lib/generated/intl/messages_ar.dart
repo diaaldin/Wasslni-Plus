@@ -45,6 +45,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "إضافة تعليق (اختياري)",
     ),
     "add_image": MessageLookupByLibrary.simpleMessage("إضافة صورة"),
+    "add_notes_optional": MessageLookupByLibrary.simpleMessage(
+      "إضافة ملاحظات (اختياري)",
+    ),
     "add_parcel": MessageLookupByLibrary.simpleMessage("إضافة طرد"),
     "add_your_first_address": MessageLookupByLibrary.simpleMessage(
       "أضف عنوانك الأول لتسهيل عمليات التوصيل",
@@ -147,6 +150,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "current_password": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور الحالية",
     ),
+    "current_status": MessageLookupByLibrary.simpleMessage("الحالة الحالية"),
     "customer": MessageLookupByLibrary.simpleMessage("زبون"),
     "daily_assignments": MessageLookupByLibrary.simpleMessage("المهام اليومية"),
     "danger_zone": MessageLookupByLibrary.simpleMessage("منطقة الخطر"),
@@ -238,6 +242,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "enter_email": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال البريد الإلكتروني",
     ),
+    "enter_location": MessageLookupByLibrary.simpleMessage("أدخل الموقع"),
     "enter_password": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال كلمة المرور",
     ),
@@ -245,9 +250,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "الرجاء إدخال رقم المستلم",
     ),
     "enter_price": MessageLookupByLibrary.simpleMessage("الرجاء إدخال السعر"),
+    "enter_reason": MessageLookupByLibrary.simpleMessage("أدخل السبب"),
     "enter_recipient_name": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال اسم المستلم",
     ),
+    "error": MessageLookupByLibrary.simpleMessage("خطأ"),
     "error_loading_data": MessageLookupByLibrary.simpleMessage(
       "خطأ في تحميل البيانات",
     ),
@@ -314,6 +321,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "leave_feedback": MessageLookupByLibrary.simpleMessage("ترك تقييم"),
     "length": MessageLookupByLibrary.simpleMessage("الطول"),
     "list_view": MessageLookupByLibrary.simpleMessage("عرض القائمة"),
+    "location": MessageLookupByLibrary.simpleMessage("الموقع"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "login_failed": MessageLookupByLibrary.simpleMessage("فشل تسجيل الدخول"),
     "logout": MessageLookupByLibrary.simpleMessage("تسجيل خروج"),
@@ -362,6 +370,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "name": MessageLookupByLibrary.simpleMessage("الاسم"),
     "navigate": MessageLookupByLibrary.simpleMessage("التنقل"),
     "new_password": MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
+    "new_status": MessageLookupByLibrary.simpleMessage("الحالة الجديدة"),
     "no": MessageLookupByLibrary.simpleMessage("لا"),
     "no_active_deliveries": MessageLookupByLibrary.simpleMessage(
       "لا توجد توصيلات نشطة",
@@ -643,6 +652,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "total_revenue": MessageLookupByLibrary.simpleMessage("إجمالي الإيرادات"),
     "unread": MessageLookupByLibrary.simpleMessage("غير مقروء"),
+    "update": MessageLookupByLibrary.simpleMessage("تحديث"),
     "update_address": MessageLookupByLibrary.simpleMessage("تحديث العنوان"),
     "update_parcel": MessageLookupByLibrary.simpleMessage("تحديث الطرد"),
     "update_password_security": MessageLookupByLibrary.simpleMessage(

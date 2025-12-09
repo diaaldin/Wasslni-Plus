@@ -392,5 +392,18 @@
   "status_out_for_delivery": "Out for Delivery",
   "status_delivered": "Delivered",
   "status_returned": "Returned",
-  "status_cancelled": "Cancelled"
+  "status_cancelled": "Cancelled",
+  "update_status": "Update Status",
+  "current_status": "Current Status",
+  "new_status": "New Status",
+  "location": "Location",
+  "enter_location": "Enter location",
+  "return_reason": "Return Reason",
+  "cancellation_reason": "Cancellation Reason",
+  "enter_reason": "Enter reason",
+  "notes": "Notes",
+  "add_notes_optional": "Add notes (optional)",
+  "update": "Update",
+  "status_updated_successfully": "Status updated successfully",
+  "error": "Error"
 }

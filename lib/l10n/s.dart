@@ -1666,7 +1666,7 @@ abstract class S {
   /// No description provided for @status_at_warehouse.
   ///
   /// In en, this message translates to:
-  /// **'At Warehouse'**
+  /// **'At Distributor\'s Warehouse'**
   String get status_at_warehouse;
 
   /// No description provided for @status_en_route_distributor.
@@ -2220,6 +2220,198 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Address updated successfully'**
   String get address_updated_success;
+
+  /// No description provided for @profile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profile;
+
+  /// No description provided for @account.
+  ///
+  /// In en, this message translates to:
+  /// **'Account'**
+  String get account;
+
+  /// No description provided for @edit_profile.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Profile'**
+  String get edit_profile;
+
+  /// No description provided for @update_your_information.
+  ///
+  /// In en, this message translates to:
+  /// **'Update your personal information'**
+  String get update_your_information;
+
+  /// No description provided for @change_password.
+  ///
+  /// In en, this message translates to:
+  /// **'Change Password'**
+  String get change_password;
+
+  /// No description provided for @update_password_security.
+  ///
+  /// In en, this message translates to:
+  /// **'Update your password for security'**
+  String get update_password_security;
+
+  /// No description provided for @current_password.
+  ///
+  /// In en, this message translates to:
+  /// **'Current Password'**
+  String get current_password;
+
+  /// No description provided for @new_password.
+  ///
+  /// In en, this message translates to:
+  /// **'New Password'**
+  String get new_password;
+
+  /// No description provided for @confirm_password.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Password'**
+  String get confirm_password;
+
+  /// No description provided for @password_too_short.
+  ///
+  /// In en, this message translates to:
+  /// **'Password must be at least 6 characters'**
+  String get password_too_short;
+
+  /// No description provided for @passwords_dont_match.
+  ///
+  /// In en, this message translates to:
+  /// **'Passwords don\'t match'**
+  String get passwords_dont_match;
+
+  /// No description provided for @password_changed_success.
+  ///
+  /// In en, this message translates to:
+  /// **'Password changed successfully'**
+  String get password_changed_success;
+
+  /// No description provided for @password_change_failed.
+  ///
+  /// In en, this message translates to:
+  /// **'Password change failed: {error}'**
+  String password_change_failed(Object error);
+
+  /// No description provided for @danger_zone.
+  ///
+  /// In en, this message translates to:
+  /// **'Danger Zone'**
+  String get danger_zone;
+
+  /// No description provided for @delete_account.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Account'**
+  String get delete_account;
+
+  /// No description provided for @permanently_delete_account.
+  ///
+  /// In en, this message translates to:
+  /// **'Permanently delete your account'**
+  String get permanently_delete_account;
+
+  /// No description provided for @delete_account_warning.
+  ///
+  /// In en, this message translates to:
+  /// **'Warning: This action cannot be undone!'**
+  String get delete_account_warning;
+
+  /// No description provided for @delete_account_consequences.
+  ///
+  /// In en, this message translates to:
+  /// **'Deleting your account will:\n• Remove all your data\n• Cancel all pending orders\n• Deactivate your profile\n\nAre you absolutely sure?'**
+  String get delete_account_consequences;
+
+  /// No description provided for @manage_notification_preferences.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage your notification preferences'**
+  String get manage_notification_preferences;
+
+  /// No description provided for @coming_soon.
+  ///
+  /// In en, this message translates to:
+  /// **'Coming Soon'**
+  String get coming_soon;
+
+  /// No description provided for @active.
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get active;
+
+  /// No description provided for @inactive.
+  ///
+  /// In en, this message translates to:
+  /// **'Inactive'**
+  String get inactive;
+
+  /// No description provided for @suspended.
+  ///
+  /// In en, this message translates to:
+  /// **'Suspended'**
+  String get suspended;
+
+  /// No description provided for @admin.
+  ///
+  /// In en, this message translates to:
+  /// **'Admin'**
+  String get admin;
+
+  /// No description provided for @manager.
+  ///
+  /// In en, this message translates to:
+  /// **'Manager'**
+  String get manager;
+
+  /// No description provided for @parcel_status.
+  ///
+  /// In en, this message translates to:
+  /// **'Parcel Status'**
+  String get parcel_status;
+
+  /// No description provided for @status_history.
+  ///
+  /// In en, this message translates to:
+  /// **'Status History'**
+  String get status_history;
+
+  /// No description provided for @show_details.
+  ///
+  /// In en, this message translates to:
+  /// **'Show Details'**
+  String get show_details;
+
+  /// No description provided for @hide_details.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide Details'**
+  String get hide_details;
+
+  /// No description provided for @status_delivered.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivered'**
+  String get status_delivered;
+
+  /// No description provided for @status_returned.
+  ///
+  /// In en, this message translates to:
+  /// **'Returned'**
+  String get status_returned;
+
+  /// No description provided for @status_cancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancelled'**
+  String get status_cancelled;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {
