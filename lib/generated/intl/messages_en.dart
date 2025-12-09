@@ -299,6 +299,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "from": MessageLookupByLibrary.simpleMessage("From"),
     "general_serach_hint": MessageLookupByLibrary.simpleMessage("Search..."),
     "height": MessageLookupByLibrary.simpleMessage("Height"),
+    "hide_details": MessageLookupByLibrary.simpleMessage("Hide Details"),
     "hide_route": MessageLookupByLibrary.simpleMessage("Hide Route"),
     "history": MessageLookupByLibrary.simpleMessage("History"),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
@@ -461,6 +462,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "parcel_price": MessageLookupByLibrary.simpleMessage(
       "Parcel Price (without delivery)",
     ),
+    "parcel_status": MessageLookupByLibrary.simpleMessage("Parcel Status"),
     "parcel_updated_success": MessageLookupByLibrary.simpleMessage(
       "Parcel updated successfully",
     ),
@@ -607,6 +609,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Share your experience with this delivery...",
     ),
     "shipping_label": MessageLookupByLibrary.simpleMessage("Shipping Label"),
+    "show_details": MessageLookupByLibrary.simpleMessage("Show Details"),
     "show_route": MessageLookupByLibrary.simpleMessage("Show Route"),
     "signature": MessageLookupByLibrary.simpleMessage("Signature"),
     "signature_description": MessageLookupByLibrary.simpleMessage(
@@ -620,13 +623,18 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "start_delivery": MessageLookupByLibrary.simpleMessage("Start Delivery"),
     "statistics": MessageLookupByLibrary.simpleMessage("Statistics"),
-    "status_at_warehouse": MessageLookupByLibrary.simpleMessage("At Warehouse"),
+    "status_at_warehouse": MessageLookupByLibrary.simpleMessage(
+      "At Distributor\'s Warehouse",
+    ),
     "status_awaiting_label": MessageLookupByLibrary.simpleMessage(
       "Awaiting Label",
     ),
+    "status_cancelled": MessageLookupByLibrary.simpleMessage("Cancelled"),
+    "status_delivered": MessageLookupByLibrary.simpleMessage("Delivered"),
     "status_en_route_distributor": MessageLookupByLibrary.simpleMessage(
       "En Route to Distributor",
     ),
+    "status_history": MessageLookupByLibrary.simpleMessage("Status History"),
     "status_label": m5,
     "status_out_for_delivery": MessageLookupByLibrary.simpleMessage(
       "Out for Delivery",
@@ -634,6 +642,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "status_ready_to_ship": MessageLookupByLibrary.simpleMessage(
       "Ready to Ship",
     ),
+    "status_returned": MessageLookupByLibrary.simpleMessage("Returned"),
     "status_updated_successfully": MessageLookupByLibrary.simpleMessage(
       "Status updated successfully",
     ),

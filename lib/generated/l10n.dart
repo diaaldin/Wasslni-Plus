@@ -2239,10 +2239,10 @@ class S {
     );
   }
 
-  /// `At Warehouse`
+  /// `At Distributor's Warehouse`
   String get status_at_warehouse {
     return Intl.message(
-      'At Warehouse',
+      'At Distributor\'s Warehouse',
       name: 'status_at_warehouse',
       desc: '',
       args: [],
@@ -3282,6 +3282,76 @@ class S {
   /// `Manager`
   String get manager {
     return Intl.message('Manager', name: 'manager', desc: '', args: []);
+  }
+
+  /// `Parcel Status`
+  String get parcel_status {
+    return Intl.message(
+      'Parcel Status',
+      name: 'parcel_status',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Status History`
+  String get status_history {
+    return Intl.message(
+      'Status History',
+      name: 'status_history',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show Details`
+  String get show_details {
+    return Intl.message(
+      'Show Details',
+      name: 'show_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hide Details`
+  String get hide_details {
+    return Intl.message(
+      'Hide Details',
+      name: 'hide_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivered`
+  String get status_delivered {
+    return Intl.message(
+      'Delivered',
+      name: 'status_delivered',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Returned`
+  String get status_returned {
+    return Intl.message(
+      'Returned',
+      name: 'status_returned',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancelled`
+  String get status_cancelled {
+    return Intl.message(
+      'Cancelled',
+      name: 'status_cancelled',
+      desc: '',
+      args: [],
+    );
   }
 }
 

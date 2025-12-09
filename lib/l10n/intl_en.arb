@@ -380,5 +380,17 @@
   "inactive": "Inactive",
   "suspended": "Suspended",
   "admin": "Admin",
-  "manager": "Manager"
+  "manager": "Manager",
+  "parcel_status": "Parcel Status",
+  "status_history": "Status History",
+  "show_details": "Show Details",
+  "hide_details": "Hide Details",
+  "status_awaiting_label": "Awaiting Label",
+  "status_ready_to_ship": "Ready to Ship",
+  "status_en_route_distributor": "En Route to Distributor",
+  "status_at_warehouse": "At Distributor's Warehouse",
+  "status_out_for_delivery": "Out for Delivery",
+  "status_delivered": "Delivered",
+  "status_returned": "Returned",
+  "status_cancelled": "Cancelled"
 }

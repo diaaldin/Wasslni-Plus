@@ -270,6 +270,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "from": MessageLookupByLibrary.simpleMessage("من"),
     "general_serach_hint": MessageLookupByLibrary.simpleMessage("بحث..."),
     "height": MessageLookupByLibrary.simpleMessage("الارتفاع"),
+    "hide_details": MessageLookupByLibrary.simpleMessage("إخفاء التفاصيل"),
     "hide_route": MessageLookupByLibrary.simpleMessage("إخفاء المسار"),
     "history": MessageLookupByLibrary.simpleMessage("السجل"),
     "home": MessageLookupByLibrary.simpleMessage("المنزل"),
@@ -414,6 +415,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "parcel_price": MessageLookupByLibrary.simpleMessage(
       "سعر الطرد (بدون التوصيل)",
     ),
+    "parcel_status": MessageLookupByLibrary.simpleMessage("حالة الطرد"),
     "parcel_updated_success": MessageLookupByLibrary.simpleMessage(
       "تم تحديث الطرد بنجاح",
     ),
@@ -558,6 +560,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "شارك تجربتك مع هذا التوصيل...",
     ),
     "shipping_label": MessageLookupByLibrary.simpleMessage("ملصق الشحن"),
+    "show_details": MessageLookupByLibrary.simpleMessage("عرض التفاصيل"),
     "show_route": MessageLookupByLibrary.simpleMessage("إظهار المسار"),
     "signature": MessageLookupByLibrary.simpleMessage("التوقيع"),
     "signature_description": MessageLookupByLibrary.simpleMessage(
@@ -569,18 +572,26 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "start_delivery": MessageLookupByLibrary.simpleMessage("بدء التوصيل"),
     "statistics": MessageLookupByLibrary.simpleMessage("الإحصائيات"),
-    "status_at_warehouse": MessageLookupByLibrary.simpleMessage("في المخزن"),
+    "status_at_warehouse": MessageLookupByLibrary.simpleMessage(
+      "في مخزن الموزع",
+    ),
     "status_awaiting_label": MessageLookupByLibrary.simpleMessage(
       "بانتظار الملصق",
     ),
+    "status_cancelled": MessageLookupByLibrary.simpleMessage("ملغي"),
+    "status_delivered": MessageLookupByLibrary.simpleMessage("تم التوصيل"),
     "status_en_route_distributor": MessageLookupByLibrary.simpleMessage(
       "في الطريق للموزع",
     ),
+    "status_history": MessageLookupByLibrary.simpleMessage("سجل الحالة"),
     "status_label": m5,
     "status_out_for_delivery": MessageLookupByLibrary.simpleMessage(
-      "خرج للتوصيل",
+      "في الطريق للزبون",
     ),
-    "status_ready_to_ship": MessageLookupByLibrary.simpleMessage("جاهز للشحن"),
+    "status_ready_to_ship": MessageLookupByLibrary.simpleMessage(
+      "جاهز للإرسال",
+    ),
+    "status_returned": MessageLookupByLibrary.simpleMessage("طرد راجع"),
     "status_updated_successfully": MessageLookupByLibrary.simpleMessage(
       "تم تحديث الحالة بنجاح",
     ),

@@ -380,5 +380,17 @@
   "inactive": "غير نشط",
   "suspended": "موقوف",
   "admin": "مدير",
-  "manager": "مشرف"
+  "manager": "مشرف",
+  "parcel_status": "حالة الطرد",
+  "status_history": "سجل الحالة",
+  "show_details": "عرض التفاصيل",
+  "hide_details": "إخفاء التفاصيل",
+  "status_awaiting_label": "بانتظار الملصق",
+  "status_ready_to_ship": "جاهز للإرسال",
+  "status_en_route_distributor": "في الطريق للموزع",
+  "status_at_warehouse": "في مخزن الموزع",
+  "status_out_for_delivery": "في الطريق للزبون",
+  "status_delivered": "تم التوصيل",
+  "status_returned": "طرد راجع",
+  "status_cancelled": "ملغي"
 }

@@ -219,21 +219,21 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
 
 ### 1.8 Parcel Status Flow
 
-- [ ] **Complete Progress Bar Component**
-  - [ ] Add icons for each status
-  - [ ] Implement animations for status changes
-  - [ ] Add timestamp for each stage
-  - [ ] Create expandable details view
+- [x] **Complete Progress Bar Component**
+  - [x] Add icons for each status
+  - [x] Implement animations for status changes
+  - [x] Add timestamp for each stage
+  - [x] Create expandable details view
 
-- [ ] **Parcel Statuses to Implement**
-  - [ ] بانتظار الملصق (Awaiting Label)
-  - [ ] جاهز للارسال (Ready to Ship)
-  - [ ] في الطريق للموزع (En Route to Distributor)
-  - [ ] مخزن الموزع (At Distributor's Warehouse)
-  - [ ] في الطريق للزبون (Out for Delivery)
-  - [ ] تم التوصيل (Delivered)
-  - [ ] طرد راجع (Returned)
-  - [ ] ملغي (Cancelled)
+- [x] **Parcel Statuses to Implement**
+  - [x] بانتظار الملصق (Awaiting Label)
+  - [x] جاهز للارسال (Ready to Ship)
+  - [x] في الطريق للموزع (En Route to Distributor)
+  - [x] مخزن الموزع (At Distributor's Warehouse)
+  - [x] في الطريق للزبون (Out for Delivery)
+  - [x] تم التوصيل (Delivered)
+  - [x] طرد راجع (Returned)
+  - [x] ملغي (Cancelled)
 
 ### 1.9 UI/UX Improvements
 
