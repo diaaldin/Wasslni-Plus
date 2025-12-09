@@ -199,11 +199,11 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [ ] Implement accept/decline flow
   - [ ] Add PDF export option
 
-- [ ] **Settings Page (Enhance)**
-  - [ ] Add profile editing
-  - [ ] Implement password change
-  - [ ] Add notification preferences
-  - [ ] Create account deletion option
+- [x] **Settings Page (Enhance)**
+  - [x] Add profile editing
+  - [x] Implement password change
+  - [x] Add notification preferences
+  - [x] Create account deletion option
 
 - [ ] **Notifications System**
   - [x] Build notification center (Merchant & Customer)

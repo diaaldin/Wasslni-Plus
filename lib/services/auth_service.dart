@@ -206,6 +206,21 @@ class AuthService {
     }
   }
 
+  /// Change password (with re-authentication)
+  Future<void> changePassword(
+    String currentPassword,
+    String newPassword,
+  ) async {
+    try {
+      // Re-authenticate first
+      await reauthenticateWithPassword(currentPassword);
+      // Then update password
+      await updatePassword(newPassword);
+    } on FirebaseAuthException catch (e) {
+      throw _handleAuthException(e);
+    }
+  }
+
   /// Re-authenticate user (required for sensitive operations)
   Future<void> reauthenticateWithPassword(String password) async {
     try {

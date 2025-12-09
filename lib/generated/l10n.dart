@@ -3078,6 +3078,211 @@ class S {
       args: [],
     );
   }
+
+  /// `Profile`
+  String get profile {
+    return Intl.message('Profile', name: 'profile', desc: '', args: []);
+  }
+
+  /// `Account`
+  String get account {
+    return Intl.message('Account', name: 'account', desc: '', args: []);
+  }
+
+  /// `Edit Profile`
+  String get edit_profile {
+    return Intl.message(
+      'Edit Profile',
+      name: 'edit_profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update your personal information`
+  String get update_your_information {
+    return Intl.message(
+      'Update your personal information',
+      name: 'update_your_information',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change Password`
+  String get change_password {
+    return Intl.message(
+      'Change Password',
+      name: 'change_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update your password for security`
+  String get update_password_security {
+    return Intl.message(
+      'Update your password for security',
+      name: 'update_password_security',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Current Password`
+  String get current_password {
+    return Intl.message(
+      'Current Password',
+      name: 'current_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Password`
+  String get new_password {
+    return Intl.message(
+      'New Password',
+      name: 'new_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Password`
+  String get confirm_password {
+    return Intl.message(
+      'Confirm Password',
+      name: 'confirm_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must be at least 6 characters`
+  String get password_too_short {
+    return Intl.message(
+      'Password must be at least 6 characters',
+      name: 'password_too_short',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Passwords don't match`
+  String get passwords_dont_match {
+    return Intl.message(
+      'Passwords don\'t match',
+      name: 'passwords_dont_match',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password changed successfully`
+  String get password_changed_success {
+    return Intl.message(
+      'Password changed successfully',
+      name: 'password_changed_success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password change failed: {error}`
+  String password_change_failed(Object error) {
+    return Intl.message(
+      'Password change failed: $error',
+      name: 'password_change_failed',
+      desc: '',
+      args: [error],
+    );
+  }
+
+  /// `Danger Zone`
+  String get danger_zone {
+    return Intl.message('Danger Zone', name: 'danger_zone', desc: '', args: []);
+  }
+
+  /// `Delete Account`
+  String get delete_account {
+    return Intl.message(
+      'Delete Account',
+      name: 'delete_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Permanently delete your account`
+  String get permanently_delete_account {
+    return Intl.message(
+      'Permanently delete your account',
+      name: 'permanently_delete_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Warning: This action cannot be undone!`
+  String get delete_account_warning {
+    return Intl.message(
+      'Warning: This action cannot be undone!',
+      name: 'delete_account_warning',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Deleting your account will:\n• Remove all your data\n• Cancel all pending orders\n• Deactivate your profile\n\nAre you absolutely sure?`
+  String get delete_account_consequences {
+    return Intl.message(
+      'Deleting your account will:\n• Remove all your data\n• Cancel all pending orders\n• Deactivate your profile\n\nAre you absolutely sure?',
+      name: 'delete_account_consequences',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Manage your notification preferences`
+  String get manage_notification_preferences {
+    return Intl.message(
+      'Manage your notification preferences',
+      name: 'manage_notification_preferences',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Coming Soon`
+  String get coming_soon {
+    return Intl.message('Coming Soon', name: 'coming_soon', desc: '', args: []);
+  }
+
+  /// `Active`
+  String get active {
+    return Intl.message('Active', name: 'active', desc: '', args: []);
+  }
+
+  /// `Inactive`
+  String get inactive {
+    return Intl.message('Inactive', name: 'inactive', desc: '', args: []);
+  }
+
+  /// `Suspended`
+  String get suspended {
+    return Intl.message('Suspended', name: 'suspended', desc: '', args: []);
+  }
+
+  /// `Admin`
+  String get admin {
+    return Intl.message('Admin', name: 'admin', desc: '', args: []);
+  }
+
+  /// `Manager`
+  String get manager {
+    return Intl.message('Manager', name: 'manager', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

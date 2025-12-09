@@ -28,11 +28,15 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m3(note) => "ملاحظة: ${note}";
 
-  static String m4(status) => "الحالة: ${status}";
+  static String m4(error) => "فشل تغيير كلمة المرور: ${error}";
+
+  static String m5(status) => "الحالة: ${status}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "acceptPolicyStart": MessageLookupByLibrary.simpleMessage("أوافق على "),
+    "account": MessageLookupByLibrary.simpleMessage("الحساب"),
+    "active": MessageLookupByLibrary.simpleMessage("نشط"),
     "active_deliveries": MessageLookupByLibrary.simpleMessage(
       "التوصيلات النشطة",
     ),
@@ -66,6 +70,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "تم تحديث العنوان بنجاح",
     ),
     "addresses": MessageLookupByLibrary.simpleMessage("العناوين"),
+    "admin": MessageLookupByLibrary.simpleMessage("مدير"),
     "afternoon": MessageLookupByLibrary.simpleMessage("ظهراً (12م - 5م)"),
     "all": MessageLookupByLibrary.simpleMessage("الكل"),
     "all_caught_up": MessageLookupByLibrary.simpleMessage(
@@ -96,6 +101,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "cancel_parcel": MessageLookupByLibrary.simpleMessage("إلغاء الطرد"),
     "cancellation_reason": MessageLookupByLibrary.simpleMessage("سبب الإلغاء"),
     "cancelled": MessageLookupByLibrary.simpleMessage("ملغى"),
+    "change_password": MessageLookupByLibrary.simpleMessage(
+      "تغيير كلمة المرور",
+    ),
     "check_package_condition": MessageLookupByLibrary.simpleMessage(
       "فحص حالة الطرد",
     ),
@@ -106,6 +114,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "clear_selection": MessageLookupByLibrary.simpleMessage("مسح الاختيار"),
     "clear_signature": MessageLookupByLibrary.simpleMessage("مسح التوقيع"),
     "collect_payment": MessageLookupByLibrary.simpleMessage("تحصيل الدفع"),
+    "coming_soon": MessageLookupByLibrary.simpleMessage("قريباً"),
     "complete_delivery": MessageLookupByLibrary.simpleMessage("إكمال التوصيل"),
     "complete_steps_to_proceed": MessageLookupByLibrary.simpleMessage(
       "أكمل الخطوات التالية للمتابعة",
@@ -117,6 +126,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "confirm_delivery": MessageLookupByLibrary.simpleMessage("تأكيد التوصيل"),
     "confirm_location": MessageLookupByLibrary.simpleMessage("تأكيد الموقع"),
+    "confirm_password": MessageLookupByLibrary.simpleMessage(
+      "تأكيد كلمة المرور",
+    ),
     "confirm_signature": MessageLookupByLibrary.simpleMessage("تأكيد التوقيع"),
     "confirm_status_update": MessageLookupByLibrary.simpleMessage(
       "تأكيد تحديث الحالة",
@@ -132,8 +144,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "created_at": MessageLookupByLibrary.simpleMessage("تاريخ الإنشاء"),
     "current_location": MessageLookupByLibrary.simpleMessage("الموقع الحالي"),
+    "current_password": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور الحالية",
+    ),
     "customer": MessageLookupByLibrary.simpleMessage("زبون"),
     "daily_assignments": MessageLookupByLibrary.simpleMessage("المهام اليومية"),
+    "danger_zone": MessageLookupByLibrary.simpleMessage("منطقة الخطر"),
     "dark_mode": MessageLookupByLibrary.simpleMessage("وضع الليل"),
     "dataPolicy": MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),
     "data_collection": MessageLookupByLibrary.simpleMessage("جمع البيانات"),
@@ -158,6 +174,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "days": MessageLookupByLibrary.simpleMessage("أيام"),
     "default_address": MessageLookupByLibrary.simpleMessage("افتراضي"),
     "delete": MessageLookupByLibrary.simpleMessage("حذف"),
+    "delete_account": MessageLookupByLibrary.simpleMessage("حذف الحساب"),
+    "delete_account_consequences": MessageLookupByLibrary.simpleMessage(
+      "سيؤدي حذف حسابك إلى:\n• إزالة جميع بياناتك\n• إلغاء جميع الطلبات المعلقة\n• إلغاء تفعيل ملفك الشخصي\n\nهل أنت متأكد تماماً؟",
+    ),
+    "delete_account_warning": MessageLookupByLibrary.simpleMessage(
+      "تحذير: لا يمكن التراجع عن هذا الإجراء!",
+    ),
     "delete_address": MessageLookupByLibrary.simpleMessage("حذف العنوان"),
     "delete_address_confirmation": MessageLookupByLibrary.simpleMessage(
       "هل أنت متأكد من حذف هذا العنوان؟",
@@ -204,6 +227,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "earnings_trend": MessageLookupByLibrary.simpleMessage("اتجاه الأرباح"),
     "edit_address": MessageLookupByLibrary.simpleMessage("تعديل العنوان"),
     "edit_parcel": MessageLookupByLibrary.simpleMessage("تعديل الطرد"),
+    "edit_profile": MessageLookupByLibrary.simpleMessage("تعديل الملف الشخصي"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "ensure_no_damage": MessageLookupByLibrary.simpleMessage(
       "تأكد من عدم وجود تلف ظاهر",
@@ -255,6 +279,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "images": MessageLookupByLibrary.simpleMessage("الصور"),
     "in_transit": MessageLookupByLibrary.simpleMessage("قيد التوصيل"),
+    "inactive": MessageLookupByLibrary.simpleMessage("غير نشط"),
     "initialize_regions": MessageLookupByLibrary.simpleMessage("تهيئة المناطق"),
     "invalid_email": MessageLookupByLibrary.simpleMessage(
       "بريد إلكتروني غير صالح",
@@ -298,6 +323,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "خطأ في تسجيل الخروج. يرجى المحاولة مرة أخرى.",
     ),
     "main": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+    "manage_notification_preferences": MessageLookupByLibrary.simpleMessage(
+      "إدارة إعدادات الإشعارات",
+    ),
+    "manager": MessageLookupByLibrary.simpleMessage("مشرف"),
     "map_view": MessageLookupByLibrary.simpleMessage("عرض الخريطة"),
     "mark_all_read": MessageLookupByLibrary.simpleMessage("تحديد الكل كمقروء"),
     "mark_as_at_warehouse": MessageLookupByLibrary.simpleMessage(
@@ -331,6 +360,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "my_route": MessageLookupByLibrary.simpleMessage("مسار التوصيل"),
     "name": MessageLookupByLibrary.simpleMessage("الاسم"),
     "navigate": MessageLookupByLibrary.simpleMessage("التنقل"),
+    "new_password": MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
     "no": MessageLookupByLibrary.simpleMessage("لا"),
     "no_active_deliveries": MessageLookupByLibrary.simpleMessage(
       "لا توجد توصيلات نشطة",
@@ -400,6 +430,16 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "parcels_report": MessageLookupByLibrary.simpleMessage("تقرير الطرود"),
     "password": MessageLookupByLibrary.simpleMessage("الرقم السري"),
+    "password_change_failed": m4,
+    "password_changed_success": MessageLookupByLibrary.simpleMessage(
+      "تم تغيير كلمة المرور بنجاح",
+    ),
+    "password_too_short": MessageLookupByLibrary.simpleMessage(
+      "يجب أن تتكون كلمة المرور من 6 أحرف على الأقل",
+    ),
+    "passwords_dont_match": MessageLookupByLibrary.simpleMessage(
+      "كلمات المرور غير متطابقة",
+    ),
     "pending": MessageLookupByLibrary.simpleMessage("قيد الانتظار"),
     "pending_deliveries": MessageLookupByLibrary.simpleMessage(
       "التوصيلات المعلقة",
@@ -410,6 +450,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "performance": MessageLookupByLibrary.simpleMessage("الأداء"),
     "performance_metrics": MessageLookupByLibrary.simpleMessage(
       "مقاييس الأداء",
+    ),
+    "permanently_delete_account": MessageLookupByLibrary.simpleMessage(
+      "حذف حسابك نهائياً",
     ),
     "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "please_describe_issue": MessageLookupByLibrary.simpleMessage(
@@ -439,6 +482,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "processing_file": MessageLookupByLibrary.simpleMessage(
       "جاري معالجة الملف...",
     ),
+    "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
     "profile_updated_success": MessageLookupByLibrary.simpleMessage(
       "تم تحديث الملف الشخصي بنجاح",
     ),
@@ -532,7 +576,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "status_en_route_distributor": MessageLookupByLibrary.simpleMessage(
       "في الطريق للموزع",
     ),
-    "status_label": m4,
+    "status_label": m5,
     "status_out_for_delivery": MessageLookupByLibrary.simpleMessage(
       "خرج للتوصيل",
     ),
@@ -553,6 +597,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "التوصيلات الناجحة",
     ),
     "sunny_mode": MessageLookupByLibrary.simpleMessage("وضع النهار"),
+    "suspended": MessageLookupByLibrary.simpleMessage("موقوف"),
     "system_announcements": MessageLookupByLibrary.simpleMessage(
       "إعلانات النظام",
     ),
@@ -589,7 +634,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "unread": MessageLookupByLibrary.simpleMessage("غير مقروء"),
     "update_address": MessageLookupByLibrary.simpleMessage("تحديث العنوان"),
     "update_parcel": MessageLookupByLibrary.simpleMessage("تحديث الطرد"),
+    "update_password_security": MessageLookupByLibrary.simpleMessage(
+      "تحديث كلمة المرور لمزيد من الأمان",
+    ),
     "update_status": MessageLookupByLibrary.simpleMessage("تحديث الحالة"),
+    "update_your_information": MessageLookupByLibrary.simpleMessage(
+      "تحديث معلوماتك الشخصية",
+    ),
     "updated_at": MessageLookupByLibrary.simpleMessage("آخر تحديث"),
     "upload_csv": MessageLookupByLibrary.simpleMessage("رفع ملف CSV"),
     "upload_error": MessageLookupByLibrary.simpleMessage("فشل الرفع"),

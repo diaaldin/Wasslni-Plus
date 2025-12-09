@@ -29,11 +29,15 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m3(note) => "Note: ${note}";
 
-  static String m4(status) => "Status: ${status}";
+  static String m4(error) => "Password change failed: ${error}";
+
+  static String m5(status) => "Status: ${status}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "acceptPolicyStart": MessageLookupByLibrary.simpleMessage("I accept the "),
+    "account": MessageLookupByLibrary.simpleMessage("Account"),
+    "active": MessageLookupByLibrary.simpleMessage("Active"),
     "active_deliveries": MessageLookupByLibrary.simpleMessage(
       "Active Deliveries",
     ),
@@ -67,6 +71,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Address updated successfully",
     ),
     "addresses": MessageLookupByLibrary.simpleMessage("Addresses"),
+    "admin": MessageLookupByLibrary.simpleMessage("Admin"),
     "afternoon": MessageLookupByLibrary.simpleMessage("Afternoon (12PM - 5PM)"),
     "all": MessageLookupByLibrary.simpleMessage("All"),
     "all_caught_up": MessageLookupByLibrary.simpleMessage(
@@ -103,6 +108,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Cancellation Reason",
     ),
     "cancelled": MessageLookupByLibrary.simpleMessage("Cancelled"),
+    "change_password": MessageLookupByLibrary.simpleMessage("Change Password"),
     "check_package_condition": MessageLookupByLibrary.simpleMessage(
       "Check Package Condition",
     ),
@@ -113,6 +119,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "clear_selection": MessageLookupByLibrary.simpleMessage("Clear selection"),
     "clear_signature": MessageLookupByLibrary.simpleMessage("Clear Signature"),
     "collect_payment": MessageLookupByLibrary.simpleMessage("Collect Payment"),
+    "coming_soon": MessageLookupByLibrary.simpleMessage("Coming Soon"),
     "complete_delivery": MessageLookupByLibrary.simpleMessage(
       "Complete Delivery",
     ),
@@ -129,6 +136,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "confirm_location": MessageLookupByLibrary.simpleMessage(
       "Confirm Location",
+    ),
+    "confirm_password": MessageLookupByLibrary.simpleMessage(
+      "Confirm Password",
     ),
     "confirm_signature": MessageLookupByLibrary.simpleMessage(
       "Confirm Signature",
@@ -151,10 +161,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "current_location": MessageLookupByLibrary.simpleMessage(
       "Current Location",
     ),
+    "current_password": MessageLookupByLibrary.simpleMessage(
+      "Current Password",
+    ),
     "customer": MessageLookupByLibrary.simpleMessage("Customer"),
     "daily_assignments": MessageLookupByLibrary.simpleMessage(
       "Daily Assignments",
     ),
+    "danger_zone": MessageLookupByLibrary.simpleMessage("Danger Zone"),
     "dark_mode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
     "dataPolicy": MessageLookupByLibrary.simpleMessage("Data Policy"),
     "data_collection": MessageLookupByLibrary.simpleMessage("Data Collection"),
@@ -177,6 +191,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "days": MessageLookupByLibrary.simpleMessage("days"),
     "default_address": MessageLookupByLibrary.simpleMessage("Default"),
     "delete": MessageLookupByLibrary.simpleMessage("Delete"),
+    "delete_account": MessageLookupByLibrary.simpleMessage("Delete Account"),
+    "delete_account_consequences": MessageLookupByLibrary.simpleMessage(
+      "Deleting your account will:\n• Remove all your data\n• Cancel all pending orders\n• Deactivate your profile\n\nAre you absolutely sure?",
+    ),
+    "delete_account_warning": MessageLookupByLibrary.simpleMessage(
+      "Warning: This action cannot be undone!",
+    ),
     "delete_address": MessageLookupByLibrary.simpleMessage("Delete Address"),
     "delete_address_confirmation": MessageLookupByLibrary.simpleMessage(
       "Are you sure you want to delete this address?",
@@ -235,6 +256,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "earnings_trend": MessageLookupByLibrary.simpleMessage("Earnings Trend"),
     "edit_address": MessageLookupByLibrary.simpleMessage("Edit Address"),
     "edit_parcel": MessageLookupByLibrary.simpleMessage("Edit Parcel"),
+    "edit_profile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "ensure_no_damage": MessageLookupByLibrary.simpleMessage(
       "Ensure there is no visible damage",
@@ -286,6 +308,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "images": MessageLookupByLibrary.simpleMessage("Images"),
     "in_transit": MessageLookupByLibrary.simpleMessage("In Transit"),
+    "inactive": MessageLookupByLibrary.simpleMessage("Inactive"),
     "initialize_regions": MessageLookupByLibrary.simpleMessage(
       "Initialize Regions",
     ),
@@ -335,6 +358,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Error logging out. Please try again.",
     ),
     "main": MessageLookupByLibrary.simpleMessage("Main"),
+    "manage_notification_preferences": MessageLookupByLibrary.simpleMessage(
+      "Manage your notification preferences",
+    ),
+    "manager": MessageLookupByLibrary.simpleMessage("Manager"),
     "map_view": MessageLookupByLibrary.simpleMessage("Map View"),
     "mark_all_read": MessageLookupByLibrary.simpleMessage("Mark all as read"),
     "mark_as_at_warehouse": MessageLookupByLibrary.simpleMessage(
@@ -376,6 +403,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "my_route": MessageLookupByLibrary.simpleMessage("My Route"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "navigate": MessageLookupByLibrary.simpleMessage("Navigate"),
+    "new_password": MessageLookupByLibrary.simpleMessage("New Password"),
     "no": MessageLookupByLibrary.simpleMessage("No"),
     "no_active_deliveries": MessageLookupByLibrary.simpleMessage(
       "No Active Deliveries",
@@ -449,6 +477,16 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "parcels_report": MessageLookupByLibrary.simpleMessage("Parcels Report"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "password_change_failed": m4,
+    "password_changed_success": MessageLookupByLibrary.simpleMessage(
+      "Password changed successfully",
+    ),
+    "password_too_short": MessageLookupByLibrary.simpleMessage(
+      "Password must be at least 6 characters",
+    ),
+    "passwords_dont_match": MessageLookupByLibrary.simpleMessage(
+      "Passwords don\'t match",
+    ),
     "pending": MessageLookupByLibrary.simpleMessage("Pending"),
     "pending_deliveries": MessageLookupByLibrary.simpleMessage(
       "Pending Deliveries",
@@ -457,6 +495,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "performance": MessageLookupByLibrary.simpleMessage("Performance"),
     "performance_metrics": MessageLookupByLibrary.simpleMessage(
       "Performance Metrics",
+    ),
+    "permanently_delete_account": MessageLookupByLibrary.simpleMessage(
+      "Permanently delete your account",
     ),
     "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "please_describe_issue": MessageLookupByLibrary.simpleMessage(
@@ -486,6 +527,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "processing_file": MessageLookupByLibrary.simpleMessage(
       "Processing file...",
     ),
+    "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "profile_updated_success": MessageLookupByLibrary.simpleMessage(
       "Profile updated successfully",
     ),
@@ -585,7 +627,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "status_en_route_distributor": MessageLookupByLibrary.simpleMessage(
       "En Route to Distributor",
     ),
-    "status_label": m4,
+    "status_label": m5,
     "status_out_for_delivery": MessageLookupByLibrary.simpleMessage(
       "Out for Delivery",
     ),
@@ -608,6 +650,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Successful Deliveries",
     ),
     "sunny_mode": MessageLookupByLibrary.simpleMessage("Sunny Mode"),
+    "suspended": MessageLookupByLibrary.simpleMessage("Suspended"),
     "system_announcements": MessageLookupByLibrary.simpleMessage(
       "System Announcements",
     ),
@@ -648,7 +691,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "unread": MessageLookupByLibrary.simpleMessage("Unread"),
     "update_address": MessageLookupByLibrary.simpleMessage("Update Address"),
     "update_parcel": MessageLookupByLibrary.simpleMessage("Update Parcel"),
+    "update_password_security": MessageLookupByLibrary.simpleMessage(
+      "Update your password for security",
+    ),
     "update_status": MessageLookupByLibrary.simpleMessage("Update Status"),
+    "update_your_information": MessageLookupByLibrary.simpleMessage(
+      "Update your personal information",
+    ),
     "updated_at": MessageLookupByLibrary.simpleMessage("Last Updated"),
     "upload_csv": MessageLookupByLibrary.simpleMessage("Upload CSV File"),
     "upload_error": MessageLookupByLibrary.simpleMessage("Upload failed"),
