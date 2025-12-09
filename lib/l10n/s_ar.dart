@@ -1016,4 +1016,82 @@ class SAr extends S {
   @override
   String get all_notifications_marked_read =>
       'تم وضع علامة على جميع الإشعارات كمقروءة';
+
+  @override
+  String get no_regions_available => 'لا توجد مناطق توصيل متاحة';
+
+  @override
+  String get regions_initialized => 'تم تهيئة المناطق بنجاح!';
+
+  @override
+  String get initialize_regions => 'تهيئة المناطق';
+
+  @override
+  String get addresses => 'العناوين';
+
+  @override
+  String get add_address => 'إضافة عنوان';
+
+  @override
+  String get edit_address => 'تعديل العنوان';
+
+  @override
+  String get no_addresses => 'لا توجد عناوين بعد';
+
+  @override
+  String get add_your_first_address => 'أضف عنوانك الأول لتسهيل عمليات التوصيل';
+
+  @override
+  String get address_label => 'تسمية العنوان';
+
+  @override
+  String get address_label_hint => 'مثال: المنزل، العمل، منزل الأم';
+
+  @override
+  String get home => 'المنزل';
+
+  @override
+  String get work => 'العمل';
+
+  @override
+  String get other => 'أخرى';
+
+  @override
+  String get city => 'المدينة';
+
+  @override
+  String get address_hint => 'الشارع، رقم المبنى، الطابق، الشقة';
+
+  @override
+  String get set_as_default => 'تعيين كعنوان افتراضي';
+
+  @override
+  String get set_as_default_hint => 'استخدم هذا العنوان كموقع التوصيل الأساسي';
+
+  @override
+  String get default_address => 'افتراضي';
+
+  @override
+  String get address_set_as_default => 'تم تعيين العنوان كافتراضي بنجاح';
+
+  @override
+  String get save_address => 'حفظ العنوان';
+
+  @override
+  String get update_address => 'تحديث العنوان';
+
+  @override
+  String get delete_address => 'حذف العنوان';
+
+  @override
+  String get delete_address_confirmation => 'هل أنت متأكد من حذف هذا العنوان؟';
+
+  @override
+  String get address_deleted => 'تم حذف العنوان بنجاح';
+
+  @override
+  String get address_added_success => 'تمت إضافة العنوان بنجاح';
+
+  @override
+  String get address_updated_success => 'تم تحديث العنوان بنجاح';
 }

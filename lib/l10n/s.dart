@@ -2064,6 +2064,162 @@ abstract class S {
   /// In en, this message translates to:
   /// **'All notifications marked as read'**
   String get all_notifications_marked_read;
+
+  /// No description provided for @no_regions_available.
+  ///
+  /// In en, this message translates to:
+  /// **'No delivery regions available'**
+  String get no_regions_available;
+
+  /// No description provided for @regions_initialized.
+  ///
+  /// In en, this message translates to:
+  /// **'Regions initialized successfully!'**
+  String get regions_initialized;
+
+  /// No description provided for @initialize_regions.
+  ///
+  /// In en, this message translates to:
+  /// **'Initialize Regions'**
+  String get initialize_regions;
+
+  /// No description provided for @addresses.
+  ///
+  /// In en, this message translates to:
+  /// **'Addresses'**
+  String get addresses;
+
+  /// No description provided for @add_address.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Address'**
+  String get add_address;
+
+  /// No description provided for @edit_address.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Address'**
+  String get edit_address;
+
+  /// No description provided for @no_addresses.
+  ///
+  /// In en, this message translates to:
+  /// **'No Addresses Yet'**
+  String get no_addresses;
+
+  /// No description provided for @add_your_first_address.
+  ///
+  /// In en, this message translates to:
+  /// **'Add your first address to make deliveries easier'**
+  String get add_your_first_address;
+
+  /// No description provided for @address_label.
+  ///
+  /// In en, this message translates to:
+  /// **'Address Label'**
+  String get address_label;
+
+  /// No description provided for @address_label_hint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g., Home, Work, Mom\'s House'**
+  String get address_label_hint;
+
+  /// No description provided for @home.
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get home;
+
+  /// No description provided for @work.
+  ///
+  /// In en, this message translates to:
+  /// **'Work'**
+  String get work;
+
+  /// No description provided for @other.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get other;
+
+  /// No description provided for @city.
+  ///
+  /// In en, this message translates to:
+  /// **'City'**
+  String get city;
+
+  /// No description provided for @address_hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Street, building number, floor, apartment'**
+  String get address_hint;
+
+  /// No description provided for @set_as_default.
+  ///
+  /// In en, this message translates to:
+  /// **'Set as Default Address'**
+  String get set_as_default;
+
+  /// No description provided for @set_as_default_hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Use this address as your primary delivery location'**
+  String get set_as_default_hint;
+
+  /// No description provided for @default_address.
+  ///
+  /// In en, this message translates to:
+  /// **'Default'**
+  String get default_address;
+
+  /// No description provided for @address_set_as_default.
+  ///
+  /// In en, this message translates to:
+  /// **'Address set as default successfully'**
+  String get address_set_as_default;
+
+  /// No description provided for @save_address.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Address'**
+  String get save_address;
+
+  /// No description provided for @update_address.
+  ///
+  /// In en, this message translates to:
+  /// **'Update Address'**
+  String get update_address;
+
+  /// No description provided for @delete_address.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Address'**
+  String get delete_address;
+
+  /// No description provided for @delete_address_confirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this address?'**
+  String get delete_address_confirmation;
+
+  /// No description provided for @address_deleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Address deleted successfully'**
+  String get address_deleted;
+
+  /// No description provided for @address_added_success.
+  ///
+  /// In en, this message translates to:
+  /// **'Address added successfully'**
+  String get address_added_success;
+
+  /// No description provided for @address_updated_success.
+  ///
+  /// In en, this message translates to:
+  /// **'Address updated successfully'**
+  String get address_updated_success;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

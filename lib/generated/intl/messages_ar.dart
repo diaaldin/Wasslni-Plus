@@ -36,16 +36,43 @@ class MessageLookup extends MessageLookupByLibrary {
     "active_deliveries": MessageLookupByLibrary.simpleMessage(
       "التوصيلات النشطة",
     ),
+    "add_address": MessageLookupByLibrary.simpleMessage("إضافة عنوان"),
     "add_comment": MessageLookupByLibrary.simpleMessage(
       "إضافة تعليق (اختياري)",
     ),
     "add_image": MessageLookupByLibrary.simpleMessage("إضافة صورة"),
     "add_parcel": MessageLookupByLibrary.simpleMessage("إضافة طرد"),
+    "add_your_first_address": MessageLookupByLibrary.simpleMessage(
+      "أضف عنوانك الأول لتسهيل عمليات التوصيل",
+    ),
     "address": MessageLookupByLibrary.simpleMessage("العنوان, مدينة - شارع"),
+    "address_added_success": MessageLookupByLibrary.simpleMessage(
+      "تمت إضافة العنوان بنجاح",
+    ),
+    "address_deleted": MessageLookupByLibrary.simpleMessage(
+      "تم حذف العنوان بنجاح",
+    ),
+    "address_hint": MessageLookupByLibrary.simpleMessage(
+      "الشارع، رقم المبنى، الطابق، الشقة",
+    ),
+    "address_label": MessageLookupByLibrary.simpleMessage("تسمية العنوان"),
+    "address_label_hint": MessageLookupByLibrary.simpleMessage(
+      "مثال: المنزل، العمل، منزل الأم",
+    ),
+    "address_set_as_default": MessageLookupByLibrary.simpleMessage(
+      "تم تعيين العنوان كافتراضي بنجاح",
+    ),
+    "address_updated_success": MessageLookupByLibrary.simpleMessage(
+      "تم تحديث العنوان بنجاح",
+    ),
+    "addresses": MessageLookupByLibrary.simpleMessage("العناوين"),
     "afternoon": MessageLookupByLibrary.simpleMessage("ظهراً (12م - 5م)"),
     "all": MessageLookupByLibrary.simpleMessage("الكل"),
     "all_caught_up": MessageLookupByLibrary.simpleMessage(
       "أنت على اطلاع بكل شيء!",
+    ),
+    "all_notifications_marked_read": MessageLookupByLibrary.simpleMessage(
+      "تم وضع علامة على جميع الإشعارات كمقروءة",
     ),
     "already_have_account": MessageLookupByLibrary.simpleMessage(
       "لديك حساب بالفعل؟ تسجيل الدخول",
@@ -75,6 +102,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "choose_region_warning": MessageLookupByLibrary.simpleMessage(
       "يرجى اختيار المنطقة",
     ),
+    "city": MessageLookupByLibrary.simpleMessage("المدينة"),
     "clear_selection": MessageLookupByLibrary.simpleMessage("مسح الاختيار"),
     "clear_signature": MessageLookupByLibrary.simpleMessage("مسح التوقيع"),
     "collect_payment": MessageLookupByLibrary.simpleMessage("تحصيل الدفع"),
@@ -128,7 +156,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "date_range": MessageLookupByLibrary.simpleMessage("نطاق التاريخ"),
     "days": MessageLookupByLibrary.simpleMessage("أيام"),
+    "default_address": MessageLookupByLibrary.simpleMessage("افتراضي"),
     "delete": MessageLookupByLibrary.simpleMessage("حذف"),
+    "delete_address": MessageLookupByLibrary.simpleMessage("حذف العنوان"),
+    "delete_address_confirmation": MessageLookupByLibrary.simpleMessage(
+      "هل أنت متأكد من حذف هذا العنوان؟",
+    ),
     "delivered": MessageLookupByLibrary.simpleMessage("تم التوصيل"),
     "delivered_at": MessageLookupByLibrary.simpleMessage("تاريخ التوصيل"),
     "delivery_checklist": MessageLookupByLibrary.simpleMessage(
@@ -169,6 +202,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "earnings_breakdown": MessageLookupByLibrary.simpleMessage("تفصيل الأرباح"),
     "earnings_today": MessageLookupByLibrary.simpleMessage("الأرباح اليوم"),
     "earnings_trend": MessageLookupByLibrary.simpleMessage("اتجاه الأرباح"),
+    "edit_address": MessageLookupByLibrary.simpleMessage("تعديل العنوان"),
     "edit_parcel": MessageLookupByLibrary.simpleMessage("تعديل الطرد"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "ensure_no_damage": MessageLookupByLibrary.simpleMessage(
@@ -214,12 +248,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "height": MessageLookupByLibrary.simpleMessage("الارتفاع"),
     "hide_route": MessageLookupByLibrary.simpleMessage("إخفاء المسار"),
     "history": MessageLookupByLibrary.simpleMessage("السجل"),
+    "home": MessageLookupByLibrary.simpleMessage("المنزل"),
     "hours": MessageLookupByLibrary.simpleMessage("ساعات"),
     "how_was_your_delivery": MessageLookupByLibrary.simpleMessage(
       "كيف كانت تجربة التوصيل؟",
     ),
     "images": MessageLookupByLibrary.simpleMessage("الصور"),
     "in_transit": MessageLookupByLibrary.simpleMessage("قيد التوصيل"),
+    "initialize_regions": MessageLookupByLibrary.simpleMessage("تهيئة المناطق"),
     "invalid_email": MessageLookupByLibrary.simpleMessage(
       "بريد إلكتروني غير صالح",
     ),
@@ -299,6 +335,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "no_active_deliveries": MessageLookupByLibrary.simpleMessage(
       "لا توجد توصيلات نشطة",
     ),
+    "no_addresses": MessageLookupByLibrary.simpleMessage("لا توجد عناوين بعد"),
     "no_assignments": MessageLookupByLibrary.simpleMessage(
       "لا توجد مهام لهذا اليوم",
     ),
@@ -313,6 +350,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "no_notifications": MessageLookupByLibrary.simpleMessage("لا توجد إشعارات"),
     "no_parcels_yet": MessageLookupByLibrary.simpleMessage("لا توجد طرود بعد"),
+    "no_regions_available": MessageLookupByLibrary.simpleMessage(
+      "لا توجد مناطق توصيل متاحة",
+    ),
     "no_results_found": MessageLookupByLibrary.simpleMessage(
       "لم يتم العثور على نتائج",
     ),
@@ -331,6 +371,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "original_order_details": MessageLookupByLibrary.simpleMessage(
       "تفاصيل الطلب الأصلي",
     ),
+    "other": MessageLookupByLibrary.simpleMessage("أخرى"),
     "parcel_cancelled_success": MessageLookupByLibrary.simpleMessage(
       "تم إلغاء الطرد بنجاح",
     ),
@@ -424,6 +465,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "recipient_name": MessageLookupByLibrary.simpleMessage("اسم المستلم"),
     "recipient_phone": MessageLookupByLibrary.simpleMessage("رقم المستلم"),
     "region": MessageLookupByLibrary.simpleMessage("المنطقة"),
+    "regions_initialized": MessageLookupByLibrary.simpleMessage(
+      "تم تهيئة المناطق بنجاح!",
+    ),
     "register": MessageLookupByLibrary.simpleMessage("تسجيل جديد"),
     "registration_failed": MessageLookupByLibrary.simpleMessage("فشل التسجيل"),
     "reorder": MessageLookupByLibrary.simpleMessage("إعادة الطلب"),
@@ -446,6 +490,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "role": MessageLookupByLibrary.simpleMessage("الدور"),
     "route_map": MessageLookupByLibrary.simpleMessage("خريطة المسار"),
     "route_optimized": MessageLookupByLibrary.simpleMessage("تم تحسين المسار"),
+    "save_address": MessageLookupByLibrary.simpleMessage("حفظ العنوان"),
     "save_changes": MessageLookupByLibrary.simpleMessage("حفظ التغييرات"),
     "save_parcel": MessageLookupByLibrary.simpleMessage("حفظ الطرد"),
     "scan_to_track": MessageLookupByLibrary.simpleMessage("امسح للتتبع"),
@@ -458,6 +503,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "select_month": MessageLookupByLibrary.simpleMessage("اختر الشهر"),
     "select_status": MessageLookupByLibrary.simpleMessage("اختر الحالة"),
+    "set_as_default": MessageLookupByLibrary.simpleMessage(
+      "تعيين كعنوان افتراضي",
+    ),
+    "set_as_default_hint": MessageLookupByLibrary.simpleMessage(
+      "استخدم هذا العنوان كموقع التوصيل الأساسي",
+    ),
     "settings": MessageLookupByLibrary.simpleMessage("الاعدادات"),
     "share_your_experience": MessageLookupByLibrary.simpleMessage(
       "شارك تجربتك مع هذا التوصيل...",
@@ -536,6 +587,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "total_revenue": MessageLookupByLibrary.simpleMessage("إجمالي الإيرادات"),
     "unread": MessageLookupByLibrary.simpleMessage("غير مقروء"),
+    "update_address": MessageLookupByLibrary.simpleMessage("تحديث العنوان"),
     "update_parcel": MessageLookupByLibrary.simpleMessage("تحديث الطرد"),
     "update_status": MessageLookupByLibrary.simpleMessage("تحديث الحالة"),
     "updated_at": MessageLookupByLibrary.simpleMessage("آخر تحديث"),
@@ -578,6 +630,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "ما الذي حدث خطأ في التوصيل؟",
     ),
     "width": MessageLookupByLibrary.simpleMessage("العرض"),
+    "work": MessageLookupByLibrary.simpleMessage("العمل"),
     "working_regions": MessageLookupByLibrary.simpleMessage("مناطق العمل"),
     "yes_cancel": MessageLookupByLibrary.simpleMessage("نعم، إلغاء"),
     "yes_update": MessageLookupByLibrary.simpleMessage("نعم، تحديث"),

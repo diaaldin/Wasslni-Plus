@@ -1025,4 +1025,85 @@ class SEn extends S {
   @override
   String get all_notifications_marked_read =>
       'All notifications marked as read';
+
+  @override
+  String get no_regions_available => 'No delivery regions available';
+
+  @override
+  String get regions_initialized => 'Regions initialized successfully!';
+
+  @override
+  String get initialize_regions => 'Initialize Regions';
+
+  @override
+  String get addresses => 'Addresses';
+
+  @override
+  String get add_address => 'Add Address';
+
+  @override
+  String get edit_address => 'Edit Address';
+
+  @override
+  String get no_addresses => 'No Addresses Yet';
+
+  @override
+  String get add_your_first_address =>
+      'Add your first address to make deliveries easier';
+
+  @override
+  String get address_label => 'Address Label';
+
+  @override
+  String get address_label_hint => 'e.g., Home, Work, Mom\'s House';
+
+  @override
+  String get home => 'Home';
+
+  @override
+  String get work => 'Work';
+
+  @override
+  String get other => 'Other';
+
+  @override
+  String get city => 'City';
+
+  @override
+  String get address_hint => 'Street, building number, floor, apartment';
+
+  @override
+  String get set_as_default => 'Set as Default Address';
+
+  @override
+  String get set_as_default_hint =>
+      'Use this address as your primary delivery location';
+
+  @override
+  String get default_address => 'Default';
+
+  @override
+  String get address_set_as_default => 'Address set as default successfully';
+
+  @override
+  String get save_address => 'Save Address';
+
+  @override
+  String get update_address => 'Update Address';
+
+  @override
+  String get delete_address => 'Delete Address';
+
+  @override
+  String get delete_address_confirmation =>
+      'Are you sure you want to delete this address?';
+
+  @override
+  String get address_deleted => 'Address deleted successfully';
+
+  @override
+  String get address_added_success => 'Address added successfully';
+
+  @override
+  String get address_updated_success => 'Address updated successfully';
 }

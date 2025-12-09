@@ -132,6 +132,7 @@ service cloud.firestore {
       allow update, delete: if false;
     }
     
+    
     // Analytics Collection
     match /analytics/{date} {
       // Only admins and managers can read analytics
@@ -139,6 +140,15 @@ service cloud.firestore {
       
       // Only system/cloud functions can write analytics
       allow write: if false;
+    }
+    
+    // Regions Collection
+    match /regions/{regionId} {
+      // All authenticated users can read regions
+      allow read: if isAuthenticated();
+      
+      // Only admins can create, update, or delete regions
+      allow write: if hasRole('admin');
     }
   }
 }

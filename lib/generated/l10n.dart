@@ -2843,6 +2843,241 @@ class S {
       args: [],
     );
   }
+
+  /// `All notifications marked as read`
+  String get all_notifications_marked_read {
+    return Intl.message(
+      'All notifications marked as read',
+      name: 'all_notifications_marked_read',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No delivery regions available`
+  String get no_regions_available {
+    return Intl.message(
+      'No delivery regions available',
+      name: 'no_regions_available',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Regions initialized successfully!`
+  String get regions_initialized {
+    return Intl.message(
+      'Regions initialized successfully!',
+      name: 'regions_initialized',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Initialize Regions`
+  String get initialize_regions {
+    return Intl.message(
+      'Initialize Regions',
+      name: 'initialize_regions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Addresses`
+  String get addresses {
+    return Intl.message('Addresses', name: 'addresses', desc: '', args: []);
+  }
+
+  /// `Add Address`
+  String get add_address {
+    return Intl.message('Add Address', name: 'add_address', desc: '', args: []);
+  }
+
+  /// `Edit Address`
+  String get edit_address {
+    return Intl.message(
+      'Edit Address',
+      name: 'edit_address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Addresses Yet`
+  String get no_addresses {
+    return Intl.message(
+      'No Addresses Yet',
+      name: 'no_addresses',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add your first address to make deliveries easier`
+  String get add_your_first_address {
+    return Intl.message(
+      'Add your first address to make deliveries easier',
+      name: 'add_your_first_address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address Label`
+  String get address_label {
+    return Intl.message(
+      'Address Label',
+      name: 'address_label',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `e.g., Home, Work, Mom's House`
+  String get address_label_hint {
+    return Intl.message(
+      'e.g., Home, Work, Mom\'s House',
+      name: 'address_label_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get home {
+    return Intl.message('Home', name: 'home', desc: '', args: []);
+  }
+
+  /// `Work`
+  String get work {
+    return Intl.message('Work', name: 'work', desc: '', args: []);
+  }
+
+  /// `Other`
+  String get other {
+    return Intl.message('Other', name: 'other', desc: '', args: []);
+  }
+
+  /// `City`
+  String get city {
+    return Intl.message('City', name: 'city', desc: '', args: []);
+  }
+
+  /// `Street, building number, floor, apartment`
+  String get address_hint {
+    return Intl.message(
+      'Street, building number, floor, apartment',
+      name: 'address_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Set as Default Address`
+  String get set_as_default {
+    return Intl.message(
+      'Set as Default Address',
+      name: 'set_as_default',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Use this address as your primary delivery location`
+  String get set_as_default_hint {
+    return Intl.message(
+      'Use this address as your primary delivery location',
+      name: 'set_as_default_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Default`
+  String get default_address {
+    return Intl.message('Default', name: 'default_address', desc: '', args: []);
+  }
+
+  /// `Address set as default successfully`
+  String get address_set_as_default {
+    return Intl.message(
+      'Address set as default successfully',
+      name: 'address_set_as_default',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save Address`
+  String get save_address {
+    return Intl.message(
+      'Save Address',
+      name: 'save_address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update Address`
+  String get update_address {
+    return Intl.message(
+      'Update Address',
+      name: 'update_address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete Address`
+  String get delete_address {
+    return Intl.message(
+      'Delete Address',
+      name: 'delete_address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to delete this address?`
+  String get delete_address_confirmation {
+    return Intl.message(
+      'Are you sure you want to delete this address?',
+      name: 'delete_address_confirmation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address deleted successfully`
+  String get address_deleted {
+    return Intl.message(
+      'Address deleted successfully',
+      name: 'address_deleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address added successfully`
+  String get address_added_success {
+    return Intl.message(
+      'Address added successfully',
+      name: 'address_added_success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address updated successfully`
+  String get address_updated_success {
+    return Intl.message(
+      'Address updated successfully',
+      name: 'address_updated_success',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

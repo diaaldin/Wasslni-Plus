@@ -186,11 +186,11 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [x] Add tip option for courier
   - [x] Create report issue form
 
-- [ ] **Address Management**
-  - [ ] Create saved addresses list
-  - [ ] Add new address form with map picker
-  - [ ] Implement default address selection
-  - [ ] Add address validation
+- [x] **Address Management**
+  - [x] Create saved addresses list
+  - [x] Add new address form with map picker
+  - [x] Implement default address selection
+  - [x] Add address validation
 
 ### 1.7 Shared Components & Pages
 

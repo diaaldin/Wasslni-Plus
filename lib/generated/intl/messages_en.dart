@@ -37,16 +37,43 @@ class MessageLookup extends MessageLookupByLibrary {
     "active_deliveries": MessageLookupByLibrary.simpleMessage(
       "Active Deliveries",
     ),
+    "add_address": MessageLookupByLibrary.simpleMessage("Add Address"),
     "add_comment": MessageLookupByLibrary.simpleMessage(
       "Add Comment (Optional)",
     ),
     "add_image": MessageLookupByLibrary.simpleMessage("Add Image"),
     "add_parcel": MessageLookupByLibrary.simpleMessage("Add Parcel"),
+    "add_your_first_address": MessageLookupByLibrary.simpleMessage(
+      "Add your first address to make deliveries easier",
+    ),
     "address": MessageLookupByLibrary.simpleMessage("Address, City - Street"),
+    "address_added_success": MessageLookupByLibrary.simpleMessage(
+      "Address added successfully",
+    ),
+    "address_deleted": MessageLookupByLibrary.simpleMessage(
+      "Address deleted successfully",
+    ),
+    "address_hint": MessageLookupByLibrary.simpleMessage(
+      "Street, building number, floor, apartment",
+    ),
+    "address_label": MessageLookupByLibrary.simpleMessage("Address Label"),
+    "address_label_hint": MessageLookupByLibrary.simpleMessage(
+      "e.g., Home, Work, Mom\'s House",
+    ),
+    "address_set_as_default": MessageLookupByLibrary.simpleMessage(
+      "Address set as default successfully",
+    ),
+    "address_updated_success": MessageLookupByLibrary.simpleMessage(
+      "Address updated successfully",
+    ),
+    "addresses": MessageLookupByLibrary.simpleMessage("Addresses"),
     "afternoon": MessageLookupByLibrary.simpleMessage("Afternoon (12PM - 5PM)"),
     "all": MessageLookupByLibrary.simpleMessage("All"),
     "all_caught_up": MessageLookupByLibrary.simpleMessage(
       "You\'re all caught up!",
+    ),
+    "all_notifications_marked_read": MessageLookupByLibrary.simpleMessage(
+      "All notifications marked as read",
     ),
     "already_have_account": MessageLookupByLibrary.simpleMessage(
       "Already have an account? Login",
@@ -82,6 +109,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "choose_region_warning": MessageLookupByLibrary.simpleMessage(
       "Please select a region",
     ),
+    "city": MessageLookupByLibrary.simpleMessage("City"),
     "clear_selection": MessageLookupByLibrary.simpleMessage("Clear selection"),
     "clear_signature": MessageLookupByLibrary.simpleMessage("Clear Signature"),
     "collect_payment": MessageLookupByLibrary.simpleMessage("Collect Payment"),
@@ -147,7 +175,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "date_range": MessageLookupByLibrary.simpleMessage("Date Range"),
     "days": MessageLookupByLibrary.simpleMessage("days"),
+    "default_address": MessageLookupByLibrary.simpleMessage("Default"),
     "delete": MessageLookupByLibrary.simpleMessage("Delete"),
+    "delete_address": MessageLookupByLibrary.simpleMessage("Delete Address"),
+    "delete_address_confirmation": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to delete this address?",
+    ),
     "delivered": MessageLookupByLibrary.simpleMessage("Delivered"),
     "delivered_at": MessageLookupByLibrary.simpleMessage("Delivered At"),
     "delivery_checklist": MessageLookupByLibrary.simpleMessage(
@@ -200,6 +233,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "earnings_today": MessageLookupByLibrary.simpleMessage("Earnings Today"),
     "earnings_trend": MessageLookupByLibrary.simpleMessage("Earnings Trend"),
+    "edit_address": MessageLookupByLibrary.simpleMessage("Edit Address"),
     "edit_parcel": MessageLookupByLibrary.simpleMessage("Edit Parcel"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "ensure_no_damage": MessageLookupByLibrary.simpleMessage(
@@ -245,12 +279,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "height": MessageLookupByLibrary.simpleMessage("Height"),
     "hide_route": MessageLookupByLibrary.simpleMessage("Hide Route"),
     "history": MessageLookupByLibrary.simpleMessage("History"),
+    "home": MessageLookupByLibrary.simpleMessage("Home"),
     "hours": MessageLookupByLibrary.simpleMessage("hours"),
     "how_was_your_delivery": MessageLookupByLibrary.simpleMessage(
       "How was your delivery?",
     ),
     "images": MessageLookupByLibrary.simpleMessage("Images"),
     "in_transit": MessageLookupByLibrary.simpleMessage("In Transit"),
+    "initialize_regions": MessageLookupByLibrary.simpleMessage(
+      "Initialize Regions",
+    ),
     "invalid_email": MessageLookupByLibrary.simpleMessage(
       "Invalid email address",
     ),
@@ -342,6 +380,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "no_active_deliveries": MessageLookupByLibrary.simpleMessage(
       "No Active Deliveries",
     ),
+    "no_addresses": MessageLookupByLibrary.simpleMessage("No Addresses Yet"),
     "no_assignments": MessageLookupByLibrary.simpleMessage(
       "No assignments for today",
     ),
@@ -358,6 +397,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "No notifications",
     ),
     "no_parcels_yet": MessageLookupByLibrary.simpleMessage("No parcels yet"),
+    "no_regions_available": MessageLookupByLibrary.simpleMessage(
+      "No delivery regions available",
+    ),
     "no_results_found": MessageLookupByLibrary.simpleMessage(
       "No results found",
     ),
@@ -376,6 +418,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "original_order_details": MessageLookupByLibrary.simpleMessage(
       "Original Order Details",
     ),
+    "other": MessageLookupByLibrary.simpleMessage("Other"),
     "parcel_cancelled_success": MessageLookupByLibrary.simpleMessage(
       "Parcel cancelled successfully",
     ),
@@ -471,6 +514,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "recipient_name": MessageLookupByLibrary.simpleMessage("Recipient Name"),
     "recipient_phone": MessageLookupByLibrary.simpleMessage("Recipient Phone"),
     "region": MessageLookupByLibrary.simpleMessage("Region"),
+    "regions_initialized": MessageLookupByLibrary.simpleMessage(
+      "Regions initialized successfully!",
+    ),
     "register": MessageLookupByLibrary.simpleMessage("Register"),
     "registration_failed": MessageLookupByLibrary.simpleMessage(
       "Registration Failed",
@@ -495,6 +541,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "role": MessageLookupByLibrary.simpleMessage("Role"),
     "route_map": MessageLookupByLibrary.simpleMessage("Route Map"),
     "route_optimized": MessageLookupByLibrary.simpleMessage("Route Optimized"),
+    "save_address": MessageLookupByLibrary.simpleMessage("Save Address"),
     "save_changes": MessageLookupByLibrary.simpleMessage("Save Changes"),
     "save_parcel": MessageLookupByLibrary.simpleMessage("Save Parcel"),
     "scan_to_track": MessageLookupByLibrary.simpleMessage("Scan to Track"),
@@ -507,6 +554,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "select_month": MessageLookupByLibrary.simpleMessage("Select Month"),
     "select_status": MessageLookupByLibrary.simpleMessage("Select Status"),
+    "set_as_default": MessageLookupByLibrary.simpleMessage(
+      "Set as Default Address",
+    ),
+    "set_as_default_hint": MessageLookupByLibrary.simpleMessage(
+      "Use this address as your primary delivery location",
+    ),
     "settings": MessageLookupByLibrary.simpleMessage("Settings"),
     "share_your_experience": MessageLookupByLibrary.simpleMessage(
       "Share your experience with this delivery...",
@@ -593,6 +646,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "total_revenue": MessageLookupByLibrary.simpleMessage("Total Revenue"),
     "unread": MessageLookupByLibrary.simpleMessage("Unread"),
+    "update_address": MessageLookupByLibrary.simpleMessage("Update Address"),
     "update_parcel": MessageLookupByLibrary.simpleMessage("Update Parcel"),
     "update_status": MessageLookupByLibrary.simpleMessage("Update Status"),
     "updated_at": MessageLookupByLibrary.simpleMessage("Last Updated"),
@@ -637,6 +691,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "What went wrong with your delivery?",
     ),
     "width": MessageLookupByLibrary.simpleMessage("Width"),
+    "work": MessageLookupByLibrary.simpleMessage("Work"),
     "working_regions": MessageLookupByLibrary.simpleMessage("Working Regions"),
     "yes_cancel": MessageLookupByLibrary.simpleMessage("Yes, Cancel"),
     "yes_update": MessageLookupByLibrary.simpleMessage("Yes, Update"),
