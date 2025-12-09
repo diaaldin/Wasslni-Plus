@@ -6,6 +6,7 @@ import 'package:wasslni_plus/models/user/consts.dart';
 import 'package:wasslni_plus/services/auth_service.dart';
 import 'package:wasslni_plus/services/firestore_service.dart';
 import 'package:wasslni_plus/widgets/log_in.dart';
+import 'package:wasslni_plus/flow/shared/notification_preferences_page.dart';
 
 class UserSettingsPage extends StatefulWidget {
   const UserSettingsPage({super.key});
@@ -91,9 +92,11 @@ class _UserSettingsPageState extends State<UserSettingsPage> {
                       title: tr.notification_settings,
                       subtitle: tr.manage_notification_preferences,
                       onTap: () {
-                        // Navigate to notification settings if it exists for this user type
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text(tr.coming_soon)),
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => const NotificationPreferencesPage(),
+                          ),
                         );
                       },
                     ),

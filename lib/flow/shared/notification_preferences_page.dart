@@ -3,15 +3,16 @@ import 'package:wasslni_plus/app_styles.dart';
 import 'package:wasslni_plus/generated/l10n.dart';
 import 'package:wasslni_plus/services/auth_service.dart';
 
-class NotificationSettingsPage extends StatefulWidget {
-  const NotificationSettingsPage({super.key});
+class NotificationPreferencesPage extends StatefulWidget {
+  const NotificationPreferencesPage({super.key});
 
   @override
-  State<NotificationSettingsPage> createState() =>
-      _NotificationSettingsPageState();
+  State<NotificationPreferencesPage> createState() =>
+      _NotificationPreferencesPageState();
 }
 
-class _NotificationSettingsPageState extends State<NotificationSettingsPage> {
+class _NotificationPreferencesPageState
+    extends State<NotificationPreferencesPage> {
   final AuthService _authService = AuthService();
   bool _isLoading = true;
 

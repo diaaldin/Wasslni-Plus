@@ -205,11 +205,11 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [x] Add notification preferences
   - [x] Create account deletion option
 
-- [ ] **Notifications System**
+- [x] **Notifications System**
   - [x] Build notification center (Merchant & Customer)
   - [x] Add badge counters
   - [x] Implement notification types (info, warning, success, delivery update)
-  - [ ] Create notification preferences
+  - [x] Create notification preferences
 
 - [ ] **Help & Support**
   - [ ] Create FAQ page

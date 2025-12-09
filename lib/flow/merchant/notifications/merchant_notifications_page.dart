@@ -4,7 +4,7 @@ import 'package:wasslni_plus/app_styles.dart';
 import 'package:wasslni_plus/generated/l10n.dart';
 import 'package:wasslni_plus/models/notification_model.dart';
 import 'package:wasslni_plus/services/auth_service.dart';
-import 'package:wasslni_plus/flow/merchant/notifications/notification_settings_page.dart';
+import 'package:wasslni_plus/flow/shared/notification_preferences_page.dart';
 import 'package:wasslni_plus/flow/merchant/parcel/parcel_details_page.dart';
 import 'package:wasslni_plus/models/parcel_model.dart';
 import 'package:intl/intl.dart';
@@ -42,7 +42,7 @@ class _MerchantNotificationsPageState extends State<MerchantNotificationsPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const NotificationSettingsPage(),
+                  builder: (context) => const NotificationPreferencesPage(),
                 ),
               );
             },
