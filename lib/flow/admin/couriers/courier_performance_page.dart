@@ -4,6 +4,7 @@ import 'package:wasslni_plus/generated/l10n.dart';
 import 'package:wasslni_plus/models/user/user_model.dart';
 import 'package:wasslni_plus/models/review_model.dart';
 import 'package:wasslni_plus/services/firestore_service.dart';
+import 'package:wasslni_plus/flow/admin/couriers/courier_route_page.dart';
 import 'package:intl/intl.dart';
 
 class CourierPerformancePage extends StatefulWidget {
@@ -69,6 +70,30 @@ class _CourierPerformancePageState extends State<CourierPerformancePage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           _buildHeader(context),
+                          const SizedBox(height: 16),
+                          SizedBox(
+                            width: double.infinity,
+                            child: ElevatedButton.icon(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => CourierRoutePage(
+                                      courier: widget.courier,
+                                    ),
+                                  ),
+                                );
+                              },
+                              icon: const Icon(Icons.map),
+                              label: Text(tr.show_route),
+                              style: ElevatedButton.styleFrom(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 12),
+                                backgroundColor: AppStyles.primaryColor,
+                                foregroundColor: Colors.white,
+                              ),
+                            ),
+                          ),
                           const SizedBox(height: 24),
                           Text(
                             tr.metrics,
