@@ -23,6 +23,8 @@ import 'package:wasslni_plus/widgets/network_aware_wrapper.dart';
 import 'package:wasslni_plus/widgets/log_in.dart';
 import 'package:wasslni_plus/widgets/session_timeout_manager.dart';
 
+import 'package:google_fonts/google_fonts.dart';
+
 void main() async {
   // Ensure Flutter binding is initialized
   WidgetsFlutterBinding.ensureInitialized();
@@ -59,6 +61,7 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
+  // Main Application Widget
   const MyApp({super.key});
 
   @override
@@ -71,8 +74,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: AppStyles.primaryColor),
         useMaterial3: true,
+        textTheme: GoogleFonts.cairoTextTheme(),
       ),
-      darkTheme: ThemeData.dark(),
+      darkTheme: ThemeData.dark().copyWith(
+        textTheme: GoogleFonts.cairoTextTheme(ThemeData.dark().textTheme),
+      ),
       themeMode: appSettings.isDarkMode ? ThemeMode.dark : ThemeMode.light,
       navigatorObservers: [
         AnalyticsService().observer,

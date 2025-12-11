@@ -4,6 +4,7 @@ import 'package:wasslni_plus/generated/l10n.dart';
 import 'package:wasslni_plus/models/user/user_model.dart';
 import 'package:wasslni_plus/models/user/consts.dart';
 import 'package:wasslni_plus/services/firestore_service.dart';
+import 'package:wasslni_plus/flow/admin/couriers/courier_performance_page.dart';
 
 class AdminCouriersPage extends StatefulWidget {
   const AdminCouriersPage({super.key});
@@ -179,6 +180,11 @@ class _AdminCouriersPageState extends State<AdminCouriersPage> {
   }
 
   void _showCourierActions(BuildContext context, UserModel courier) {
-    // Placeholder for editing/managing courier
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => CourierPerformancePage(courier: courier),
+      ),
+    );
   }
 }

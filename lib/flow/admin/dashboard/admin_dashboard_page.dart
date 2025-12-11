@@ -1,8 +1,10 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:wasslni_plus/app_styles.dart';
 import 'package:wasslni_plus/generated/l10n.dart';
 import 'package:wasslni_plus/models/parcel_model.dart';
+import 'package:wasslni_plus/provider/app_settings_providor.dart';
 import 'package:wasslni_plus/services/firestore_service.dart';
 
 class AdminDashboardPage extends StatefulWidget {
@@ -18,25 +20,45 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
   @override
   Widget build(BuildContext context) {
     final tr = S.of(context);
+    final appSettings = Provider.of<AppSettingsProvidor>(context);
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(tr.analytics),
+        title: Text(
+          tr.analytics,
+          style: const TextStyle(fontWeight: FontWeight.bold),
+        ),
+        elevation: 0,
+        scrolledUnderElevation: 0,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         actions: [
           IconButton(
-            icon: const Icon(Icons.download),
+            icon: Icon(
+              Icons.language,
+              color: AppStyles.primaryColor,
+            ),
+            onPressed: () {
+              final newLocale = appSettings.locale.languageCode == 'en'
+                  ? const Locale('ar')
+                  : const Locale('en');
+              appSettings.changeLanguage(newLocale);
+            },
+            tooltip: tr.language,
+          ),
+          IconButton(
+            icon: const Icon(Icons.download_rounded),
             tooltip: tr.export,
             onPressed: () {
-              // TODO: Implement export functionality
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: Text(tr.coming_soon)),
               );
             },
           ),
           IconButton(
-            icon: const Icon(Icons.refresh),
+            icon: const Icon(Icons.refresh_rounded),
             onPressed: () => setState(() {}),
           ),
+          const SizedBox(width: 8),
         ],
       ),
       body: StreamBuilder<List<ParcelModel>>(
@@ -73,15 +95,10 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
     final tr = S.of(context);
     final totalParcels = parcels.length;
 
-    // Calculate Total Revenue (sum of totalPrice for delivered parcels)
-    // Assuming 'delivered' status means money is collected/verified.
-    // Or maybe shipping fees? Let's use totalPrice for now as "Revenue" in a loose sense,
-    // or deliveryFee if we strictly mean company revenue. Let's use deliveryFee for Admin view.
     final totalRevenue = parcels
         .where((p) => p.status == ParcelStatus.delivered)
         .fold(0.0, (sum, p) => sum + p.deliveryFee);
 
-    // Calculate Success Rate
     final completedParcels = parcels
         .where((p) =>
             p.status == ParcelStatus.delivered ||
@@ -98,94 +115,116 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
     return LayoutBuilder(
       builder: (context, constraints) {
         final isWide = constraints.maxWidth > 600;
-        return isWide
-            ? Row(
-                children: [
-                  Expanded(
-                      child: _buildMetricCard(
-                          tr.total_revenue,
-                          '${totalRevenue.toStringAsFixed(2)} ₪',
-                          Icons.attach_money,
-                          Colors.green)),
-                  const SizedBox(width: 16),
-                  Expanded(
-                      child: _buildMetricCard(
-                          tr.total_parcels,
-                          totalParcels.toString(),
-                          Icons.local_shipping,
-                          Colors.blue)),
-                  const SizedBox(width: 16),
-                  Expanded(
-                      child: _buildMetricCard(tr.success_rate, '$successRate%',
-                          Icons.check_circle, Colors.orange)),
-                ],
-              )
-            : Column(
-                children: [
-                  _buildMetricCard(
-                      tr.total_revenue,
-                      '${totalRevenue.toStringAsFixed(2)} ₪',
-                      Icons.attach_money,
-                      Colors.green),
-                  const SizedBox(height: 16),
-                  _buildMetricCard(tr.total_parcels, totalParcels.toString(),
-                      Icons.local_shipping, Colors.blue),
-                  const SizedBox(height: 16),
-                  _buildMetricCard(tr.success_rate, '$successRate%',
-                      Icons.check_circle, Colors.orange),
-                ],
-              );
+        final cards = [
+          _buildMetricCard(
+            context,
+            title: tr.total_revenue,
+            value: '${totalRevenue.toStringAsFixed(2)} ₪',
+            icon: Icons.attach_money_rounded,
+            startColor: Colors.green.shade400,
+            endColor: Colors.green.shade700,
+          ),
+          _buildMetricCard(
+            context,
+            title: tr.total_parcels,
+            value: totalParcels.toString(),
+            icon: Icons.local_shipping_rounded,
+            startColor: Colors.blue.shade400,
+            endColor: Colors.blue.shade700,
+          ),
+          _buildMetricCard(
+            context,
+            title: tr.success_rate,
+            value: '$successRate%',
+            icon: Icons.check_circle_rounded,
+            startColor: Colors.orange.shade400,
+            endColor: Colors.orange.shade700,
+          ),
+        ];
+
+        if (isWide) {
+          return Row(
+            children: cards
+                .map((card) => Expanded(
+                        child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: card,
+                    )))
+                .toList(),
+          );
+        } else {
+          return Column(
+            children: cards
+                .map((card) => Padding(
+                      padding: const EdgeInsets.only(bottom: 16.0),
+                      child: card,
+                    ))
+                .toList(),
+          );
+        }
       },
     );
   }
 
   Widget _buildMetricCard(
-      String title, String value, IconData icon, Color color) {
+    BuildContext context, {
+    required String title,
+    required String value,
+    required IconData icon,
+    required Color startColor,
+    required Color endColor,
+  }) {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(20),
+        gradient: LinearGradient(
+          colors: [startColor, endColor],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 10,
-            offset: const Offset(0, 4),
+            color: endColor.withOpacity(0.3),
+            blurRadius: 12,
+            offset: const Offset(0, 6),
           ),
         ],
       ),
-      child: Row(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            padding: const EdgeInsets.all(12),
-            decoration: BoxDecoration(
-              color: color.withOpacity(0.1),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Icon(icon, color: color, size: 28),
-          ),
-          const SizedBox(width: 16),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                title,
-                style: TextStyle(
-                  color: Colors.grey[600],
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.2),
+                  borderRadius: BorderRadius.circular(12),
                 ),
+                child: Icon(icon, color: Colors.white, size: 24),
               ),
-              const SizedBox(height: 4),
-              Text(
-                value,
-                style: const TextStyle(
-                  color: Colors.black87,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              // Optionally add trend icon here
             ],
+          ),
+          const SizedBox(height: 16),
+          Text(
+            value,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 28,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            title,
+            style: TextStyle(
+              color: Colors.white.withOpacity(0.9),
+              fontSize: 14,
+              fontWeight: FontWeight.w500,
+            ),
           ),
         ],
       ),
@@ -286,11 +325,14 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
                   ),
                 ),
                 const SizedBox(width: 8),
-                Text(
-                  status.name
-                      .replaceAll(RegExp(r'(?=[A-Z])'), ' ')
-                      .toUpperCase(),
-                  style: const TextStyle(fontSize: 12),
+                Flexible(
+                  child: Text(
+                    status.name
+                        .replaceAll(RegExp(r'(?=[A-Z])'), ' ')
+                        .toUpperCase(),
+                    style: const TextStyle(fontSize: 12),
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
               ],
             ),

@@ -103,10 +103,13 @@ class FirestoreService {
     return _usersCollection
         .where('role', isEqualTo: role)
         //.where('status', isEqualTo: 'active') // Show all for admin management
-        .orderBy('name')
+        // Removed orderBy to avoid composite index requirement
         .snapshots()
         .map((snapshot) {
-      return snapshot.docs.map((doc) => UserModel.fromFirestore(doc)).toList();
+      final users =
+          snapshot.docs.map((doc) => UserModel.fromFirestore(doc)).toList();
+      users.sort((a, b) => a.name.compareTo(b.name));
+      return users;
     });
   }
 
@@ -786,5 +789,74 @@ class FirestoreService {
     final timestamp = DateTime.now().millisecondsSinceEpoch.toString();
     final random = (100 + DateTime.now().microsecond % 900).toString();
     return timestamp + random;
+  }
+  // ========== COURIER PERFORMANCE ==========
+
+  Future<Map<String, dynamic>> getCourierPerformanceStats(
+      String courierId) async {
+    try {
+      // 1. Get all parcels assigned to this courier
+      final parcelsSnapshot = await _parcelsCollection
+          .where('courierId', isEqualTo: courierId)
+          .get();
+
+      final parcels = parcelsSnapshot.docs
+          .map((doc) => ParcelModel.fromFirestore(doc))
+          .toList();
+
+      final totalAssignments = parcels.length;
+      final delivered =
+          parcels.where((p) => p.status == ParcelStatus.delivered).length;
+      final cancelled =
+          parcels.where((p) => p.status == ParcelStatus.cancelled).length;
+      final returned =
+          parcels.where((p) => p.status == ParcelStatus.returned).length;
+
+      // Calculate average delivery time
+      double totalDurationHours = 0;
+      int deliveredWithTime = 0;
+      for (var p in parcels) {
+        if (p.status == ParcelStatus.delivered &&
+            p.actualDeliveryTime != null) {
+          // If we don't have assignment time, use createdAt as proxy
+          final startTime = p.createdAt;
+          final duration = p.actualDeliveryTime!.difference(startTime);
+          totalDurationHours += duration.inHours;
+          deliveredWithTime++;
+        }
+      }
+      final avgDeliveryTime = deliveredWithTime > 0
+          ? (totalDurationHours / deliveredWithTime)
+          : 0.0;
+
+      // 2. Get reviews
+      final reviewsSnapshot = await _reviewsCollection
+          .where('courierId', isEqualTo: courierId)
+          .get();
+
+      final reviews = reviewsSnapshot.docs
+          .map((doc) => ReviewModel.fromFirestore(doc))
+          .toList();
+
+      double totalRating = 0;
+      for (var r in reviews) {
+        totalRating += r.rating;
+      }
+      final avgRating =
+          reviews.isNotEmpty ? (totalRating / reviews.length) : 0.0;
+
+      return {
+        'totalAssignments': totalAssignments,
+        'delivered': delivered,
+        'cancelled': cancelled,
+        'returned': returned,
+        'avgDeliveryTime': avgDeliveryTime,
+        'avgRating': avgRating,
+        'totalReviews': reviews.length,
+        'reviews': reviews,
+      };
+    } catch (e) {
+      throw Exception('Failed to get courier performance stats: $e');
+    }
   }
 }

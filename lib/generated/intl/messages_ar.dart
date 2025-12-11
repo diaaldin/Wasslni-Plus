@@ -98,12 +98,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "average_delivery_time": MessageLookupByLibrary.simpleMessage(
       "متوسط وقت التوصيل",
     ),
+    "avg_delivery_time": MessageLookupByLibrary.simpleMessage(
+      "متوسط وقت التوصيل",
+    ),
     "barcode_label": m1,
     "bulk_upload": MessageLookupByLibrary.simpleMessage("رفع جماعي"),
     "call": MessageLookupByLibrary.simpleMessage("اتصال"),
     "call_merchant": MessageLookupByLibrary.simpleMessage("الاتصال بالتاجر"),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "cancel_parcel": MessageLookupByLibrary.simpleMessage("إلغاء الطرد"),
+    "cancel_rate": MessageLookupByLibrary.simpleMessage("معدل الإلغاء"),
     "cancellation_reason": MessageLookupByLibrary.simpleMessage("سبب الإلغاء"),
     "cancelled": MessageLookupByLibrary.simpleMessage("ملغى"),
     "change_password": MessageLookupByLibrary.simpleMessage(
@@ -150,6 +154,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "courier_not_assigned": MessageLookupByLibrary.simpleMessage(
       "لم يتم تعيين سائق لهذا الطرد",
     ),
+    "courier_performance": MessageLookupByLibrary.simpleMessage("أداء المندوب"),
     "couriers": MessageLookupByLibrary.simpleMessage("المناديب"),
     "created_at": MessageLookupByLibrary.simpleMessage("تاريخ الإنشاء"),
     "current_location": MessageLookupByLibrary.simpleMessage("الموقع الحالي"),
@@ -369,6 +374,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "معلومات التاجر غير متوفرة",
     ),
     "message": MessageLookupByLibrary.simpleMessage("الرسالة"),
+    "metrics": MessageLookupByLibrary.simpleMessage("المقاييس"),
     "minutes": MessageLookupByLibrary.simpleMessage("دقائق"),
     "monthly_earnings": MessageLookupByLibrary.simpleMessage("الأرباح الشهرية"),
     "monthly_report": MessageLookupByLibrary.simpleMessage("التقرير الشهري"),
@@ -407,6 +413,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "no_results_found": MessageLookupByLibrary.simpleMessage(
       "لم يتم العثور على نتائج",
     ),
+    "no_reviews": MessageLookupByLibrary.simpleMessage("لا توجد مراجعات"),
     "no_tip": MessageLookupByLibrary.simpleMessage("بدون إكرامية"),
     "note_label": m3,
     "notes": MessageLookupByLibrary.simpleMessage("ملاحظات"),
@@ -473,6 +480,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "performance_metrics": MessageLookupByLibrary.simpleMessage(
       "مقاييس الأداء",
     ),
+    "performance_reports": MessageLookupByLibrary.simpleMessage(
+      "تقارير الأداء",
+    ),
     "permanently_delete_account": MessageLookupByLibrary.simpleMessage(
       "حذف حسابك نهائياً",
     ),
@@ -521,6 +531,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "rate_delivery_experience": MessageLookupByLibrary.simpleMessage(
       "قيّم تجربة التوصيل",
     ),
+    "rating": MessageLookupByLibrary.simpleMessage("التقييم"),
     "rating_excellent": MessageLookupByLibrary.simpleMessage("ممتاز!"),
     "rating_fair": MessageLookupByLibrary.simpleMessage("مقبول"),
     "rating_good": MessageLookupByLibrary.simpleMessage("جيد"),
@@ -553,6 +564,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "revenue_overview": MessageLookupByLibrary.simpleMessage(
       "نظرة عامة على الإيرادات",
     ),
+    "reviews": MessageLookupByLibrary.simpleMessage("المراجعات"),
     "role": MessageLookupByLibrary.simpleMessage("الدور"),
     "route_map": MessageLookupByLibrary.simpleMessage("خريطة المسار"),
     "route_optimized": MessageLookupByLibrary.simpleMessage("تم تحسين المسار"),
@@ -654,6 +666,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "todays_deliveries": MessageLookupByLibrary.simpleMessage("توصيلات اليوم"),
     "todays_performance": MessageLookupByLibrary.simpleMessage("أداء اليوم"),
     "top_customers": MessageLookupByLibrary.simpleMessage("أفضل العملاء"),
+    "total_assignments": MessageLookupByLibrary.simpleMessage("إجمالي المهام"),
+    "total_delivered": MessageLookupByLibrary.simpleMessage("إجمالي التوصيل"),
     "total_deliveries": MessageLookupByLibrary.simpleMessage(
       "إجمالي التوصيلات",
     ),

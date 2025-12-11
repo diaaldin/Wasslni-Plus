@@ -414,5 +414,15 @@
   "courier_assigned_success": "Courier assigned successfully",
   "export_report": "Export Report",
   "feature_coming_soon": "This feature is coming soon",
-  "couriers": "Couriers"
+  "couriers": "Couriers",
+  "performance_reports": "Performance Reports",
+  "metrics": "Metrics",
+  "rating": "Rating",
+  "avg_delivery_time": "Avg. Delivery Time",
+  "cancel_rate": "Cancellation Rate",
+  "total_delivered": "Total Delivered",
+  "total_assignments": "Total Assignments",
+  "courier_performance": "Courier Performance",
+  "reviews": "Reviews",
+  "no_reviews": "No reviews yet"
 }

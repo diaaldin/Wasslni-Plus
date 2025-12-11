@@ -83,7 +83,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
 - [x] **Courier Assignment**
   - [x] Create courier assignment interface
   - [x] Build courier availability tracker
-  - [ ] Add courier performance reports
+  - [x] Add courier performance reports
   - [ ] Implement route optimization suggestions
 
 ### 1.3 Regional Analytics (Admin)

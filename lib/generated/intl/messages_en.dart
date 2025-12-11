@@ -103,12 +103,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "average_delivery_time": MessageLookupByLibrary.simpleMessage(
       "Average Delivery Time",
     ),
+    "avg_delivery_time": MessageLookupByLibrary.simpleMessage(
+      "Avg. Delivery Time",
+    ),
     "barcode_label": m1,
     "bulk_upload": MessageLookupByLibrary.simpleMessage("Bulk Upload"),
     "call": MessageLookupByLibrary.simpleMessage("Call"),
     "call_merchant": MessageLookupByLibrary.simpleMessage("Call Merchant"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "cancel_parcel": MessageLookupByLibrary.simpleMessage("Cancel Parcel"),
+    "cancel_rate": MessageLookupByLibrary.simpleMessage("Cancellation Rate"),
     "cancellation_reason": MessageLookupByLibrary.simpleMessage(
       "Cancellation Reason",
     ),
@@ -164,6 +168,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "courier_not_assigned": MessageLookupByLibrary.simpleMessage(
       "Courier not assigned to this parcel",
+    ),
+    "courier_performance": MessageLookupByLibrary.simpleMessage(
+      "Courier Performance",
     ),
     "couriers": MessageLookupByLibrary.simpleMessage("Couriers"),
     "created_at": MessageLookupByLibrary.simpleMessage("Created At"),
@@ -412,6 +419,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Merchant information unavailable",
     ),
     "message": MessageLookupByLibrary.simpleMessage("Message"),
+    "metrics": MessageLookupByLibrary.simpleMessage("Metrics"),
     "minutes": MessageLookupByLibrary.simpleMessage("minutes"),
     "monthly_earnings": MessageLookupByLibrary.simpleMessage(
       "Monthly Earnings",
@@ -454,6 +462,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "no_results_found": MessageLookupByLibrary.simpleMessage(
       "No results found",
     ),
+    "no_reviews": MessageLookupByLibrary.simpleMessage("No reviews yet"),
     "no_tip": MessageLookupByLibrary.simpleMessage("No Tip"),
     "note_label": m3,
     "notes": MessageLookupByLibrary.simpleMessage("Notes"),
@@ -520,6 +529,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "performance_metrics": MessageLookupByLibrary.simpleMessage(
       "Performance Metrics",
     ),
+    "performance_reports": MessageLookupByLibrary.simpleMessage(
+      "Performance Reports",
+    ),
     "permanently_delete_account": MessageLookupByLibrary.simpleMessage(
       "Permanently delete your account",
     ),
@@ -570,6 +582,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "rate_delivery_experience": MessageLookupByLibrary.simpleMessage(
       "Rate Your Delivery Experience",
     ),
+    "rating": MessageLookupByLibrary.simpleMessage("Rating"),
     "rating_excellent": MessageLookupByLibrary.simpleMessage("Excellent!"),
     "rating_fair": MessageLookupByLibrary.simpleMessage("Fair"),
     "rating_good": MessageLookupByLibrary.simpleMessage("Good"),
@@ -604,6 +617,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "revenue_overview": MessageLookupByLibrary.simpleMessage(
       "Revenue Overview",
     ),
+    "reviews": MessageLookupByLibrary.simpleMessage("Reviews"),
     "role": MessageLookupByLibrary.simpleMessage("Role"),
     "route_map": MessageLookupByLibrary.simpleMessage("Route Map"),
     "route_optimized": MessageLookupByLibrary.simpleMessage("Route Optimized"),
@@ -711,6 +725,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Today\'s Performance",
     ),
     "top_customers": MessageLookupByLibrary.simpleMessage("Top Customers"),
+    "total_assignments": MessageLookupByLibrary.simpleMessage(
+      "Total Assignments",
+    ),
+    "total_delivered": MessageLookupByLibrary.simpleMessage("Total Delivered"),
     "total_deliveries": MessageLookupByLibrary.simpleMessage(
       "Total Deliveries",
     ),

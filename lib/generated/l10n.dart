@@ -3488,6 +3488,91 @@ class S {
   String get couriers {
     return Intl.message('Couriers', name: 'couriers', desc: '', args: []);
   }
+
+  /// `Performance Reports`
+  String get performance_reports {
+    return Intl.message(
+      'Performance Reports',
+      name: 'performance_reports',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Metrics`
+  String get metrics {
+    return Intl.message('Metrics', name: 'metrics', desc: '', args: []);
+  }
+
+  /// `Rating`
+  String get rating {
+    return Intl.message('Rating', name: 'rating', desc: '', args: []);
+  }
+
+  /// `Avg. Delivery Time`
+  String get avg_delivery_time {
+    return Intl.message(
+      'Avg. Delivery Time',
+      name: 'avg_delivery_time',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancellation Rate`
+  String get cancel_rate {
+    return Intl.message(
+      'Cancellation Rate',
+      name: 'cancel_rate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total Delivered`
+  String get total_delivered {
+    return Intl.message(
+      'Total Delivered',
+      name: 'total_delivered',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total Assignments`
+  String get total_assignments {
+    return Intl.message(
+      'Total Assignments',
+      name: 'total_assignments',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Courier Performance`
+  String get courier_performance {
+    return Intl.message(
+      'Courier Performance',
+      name: 'courier_performance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reviews`
+  String get reviews {
+    return Intl.message('Reviews', name: 'reviews', desc: '', args: []);
+  }
+
+  /// `No reviews yet`
+  String get no_reviews {
+    return Intl.message(
+      'No reviews yet',
+      name: 'no_reviews',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
