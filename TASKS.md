@@ -217,7 +217,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
 
 - [~] **Help & Support** (In Progress)
   - [x] Create FAQ page
-  - [ ] Add contact support form
+  - [x] Add contact support form
   - [ ] Implement live chat (optional)
   - [ ] Build tutorial guide
 
