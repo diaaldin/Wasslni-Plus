@@ -184,10 +184,10 @@ class S {
     );
   }
 
-  /// `For more details, feel free to contact our support team.`
+  /// `Contact Support`
   String get contact_support {
     return Intl.message(
-      'For more details, feel free to contact our support team.',
+      'Contact Support',
       name: 'contact_support',
       desc: '',
       args: [],
@@ -2754,10 +2754,10 @@ class S {
     return Intl.message('Other', name: 'issue_other', desc: '', args: []);
   }
 
-  /// `Describe the Issue`
+  /// `Describe your issue`
   String get describe_issue {
     return Intl.message(
-      'Describe the Issue',
+      'Describe your issue',
       name: 'describe_issue',
       desc: '',
       args: [],
@@ -2784,10 +2784,10 @@ class S {
     );
   }
 
-  /// `Please describe the issue`
+  /// `Please describe your issue`
   String get please_describe_issue {
     return Intl.message(
-      'Please describe the issue',
+      'Please describe your issue',
       name: 'please_describe_issue',
       desc: '',
       args: [],
@@ -3662,6 +3662,141 @@ class S {
   /// `Accept`
   String get accept {
     return Intl.message('Accept', name: 'accept', desc: '', args: []);
+  }
+
+  /// `Frequently Asked Questions`
+  String get faq {
+    return Intl.message(
+      'Frequently Asked Questions',
+      name: 'faq',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search questions...`
+  String get search_faq {
+    return Intl.message(
+      'Search questions...',
+      name: 'search_faq',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No questions found`
+  String get no_faq_found {
+    return Intl.message(
+      'No questions found',
+      name: 'no_faq_found',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Try a different search term`
+  String get try_different_search {
+    return Intl.message(
+      'Try a different search term',
+      name: 'try_different_search',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Still Have Questions?`
+  String get still_have_questions {
+    return Intl.message(
+      'Still Have Questions?',
+      name: 'still_have_questions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Our support team is here to help you`
+  String get contact_support_team {
+    return Intl.message(
+      'Our support team is here to help you',
+      name: 'contact_support_team',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Support Request`
+  String get support_request {
+    return Intl.message(
+      'Support Request',
+      name: 'support_request',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Subject`
+  String get subject {
+    return Intl.message('Subject', name: 'subject', desc: '', args: []);
+  }
+
+  /// `Enter subject`
+  String get enter_subject {
+    return Intl.message(
+      'Enter subject',
+      name: 'enter_subject',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Attach Screenshot (Optional)`
+  String get attach_screenshot {
+    return Intl.message(
+      'Attach Screenshot (Optional)',
+      name: 'attach_screenshot',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit Request`
+  String get submit_request {
+    return Intl.message(
+      'Submit Request',
+      name: 'submit_request',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Request Submitted`
+  String get request_submitted {
+    return Intl.message(
+      'Request Submitted',
+      name: 'request_submitted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your support request has been submitted successfully. We'll get back to you soon!`
+  String get support_request_success {
+    return Intl.message(
+      'Your support request has been submitted successfully. We\'ll get back to you soon!',
+      name: 'support_request_success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a subject`
+  String get please_enter_subject {
+    return Intl.message(
+      'Please enter a subject',
+      name: 'please_enter_subject',
+      desc: '',
+      args: [],
+    );
   }
 }
 

@@ -100,6 +100,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "assign_courier": MessageLookupByLibrary.simpleMessage("Assign Courier"),
     "assigned": MessageLookupByLibrary.simpleMessage("Assigned"),
     "attach_barcode": MessageLookupByLibrary.simpleMessage("Attach Barcode"),
+    "attach_screenshot": MessageLookupByLibrary.simpleMessage(
+      "Attach Screenshot (Optional)",
+    ),
     "availability": MessageLookupByLibrary.simpleMessage("Availability"),
     "average_delivery_time": MessageLookupByLibrary.simpleMessage(
       "Average Delivery Time",
@@ -156,8 +159,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirm_status_update": MessageLookupByLibrary.simpleMessage(
       "Confirm Status Update",
     ),
-    "contact_support": MessageLookupByLibrary.simpleMessage(
-      "For more details, feel free to contact our support team.",
+    "contact_support": MessageLookupByLibrary.simpleMessage("Contact Support"),
+    "contact_support_team": MessageLookupByLibrary.simpleMessage(
+      "Our support team is here to help you",
     ),
     "copy_number": MessageLookupByLibrary.simpleMessage("Copy Number"),
     "courier": MessageLookupByLibrary.simpleMessage("Courier"),
@@ -264,7 +268,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Preferred Delivery Time",
     ),
     "describe_issue": MessageLookupByLibrary.simpleMessage(
-      "Describe the Issue",
+      "Describe your issue",
     ),
     "dimensions": MessageLookupByLibrary.simpleMessage("Dimensions (cm)"),
     "distance": MessageLookupByLibrary.simpleMessage("Distance"),
@@ -303,6 +307,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "enter_recipient_name": MessageLookupByLibrary.simpleMessage(
       "Please enter recipient name",
     ),
+    "enter_subject": MessageLookupByLibrary.simpleMessage("Enter subject"),
     "error": MessageLookupByLibrary.simpleMessage("Error"),
     "error_loading_data": MessageLookupByLibrary.simpleMessage(
       "Error loading data",
@@ -327,6 +332,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Failed Deliveries",
     ),
     "failure_reason": MessageLookupByLibrary.simpleMessage("Failure Reason"),
+    "faq": MessageLookupByLibrary.simpleMessage("Frequently Asked Questions"),
     "feature_coming_soon": MessageLookupByLibrary.simpleMessage(
       "This feature is coming soon",
     ),
@@ -459,6 +465,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "no_data_available": MessageLookupByLibrary.simpleMessage(
       "No data available",
     ),
+    "no_faq_found": MessageLookupByLibrary.simpleMessage("No questions found"),
     "no_history_found": MessageLookupByLibrary.simpleMessage(
       "No delivery history found",
     ),
@@ -550,10 +557,13 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "please_describe_issue": MessageLookupByLibrary.simpleMessage(
-      "Please describe the issue",
+      "Please describe your issue",
     ),
     "please_enter_reason": MessageLookupByLibrary.simpleMessage(
       "Please enter a reason",
+    ),
+    "please_enter_subject": MessageLookupByLibrary.simpleMessage(
+      "Please enter a subject",
     ),
     "please_select_issue_type": MessageLookupByLibrary.simpleMessage(
       "Please select an issue type",
@@ -624,6 +634,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "report_an_issue": MessageLookupByLibrary.simpleMessage("Report an Issue"),
     "report_issue": MessageLookupByLibrary.simpleMessage("Report Issue"),
     "reports": MessageLookupByLibrary.simpleMessage("Reports"),
+    "request_submitted": MessageLookupByLibrary.simpleMessage(
+      "Request Submitted",
+    ),
     "requires_signature": MessageLookupByLibrary.simpleMessage(
       "Requires Recipient Signature",
     ),
@@ -648,6 +661,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "search_by_barcode_or_name": MessageLookupByLibrary.simpleMessage(
       "Search by barcode or name...",
     ),
+    "search_faq": MessageLookupByLibrary.simpleMessage("Search questions..."),
     "select_courier": MessageLookupByLibrary.simpleMessage("Select Courier"),
     "select_file": MessageLookupByLibrary.simpleMessage("Select File"),
     "select_issue_type": MessageLookupByLibrary.simpleMessage(
@@ -703,9 +717,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "status_updated_successfully": MessageLookupByLibrary.simpleMessage(
       "Status updated successfully",
     ),
+    "still_have_questions": MessageLookupByLibrary.simpleMessage(
+      "Still Have Questions?",
+    ),
+    "subject": MessageLookupByLibrary.simpleMessage("Subject"),
     "submit": MessageLookupByLibrary.simpleMessage("Submit"),
     "submit_feedback": MessageLookupByLibrary.simpleMessage("Submit Feedback"),
     "submit_report": MessageLookupByLibrary.simpleMessage("Submit Report"),
+    "submit_request": MessageLookupByLibrary.simpleMessage("Submit Request"),
     "submitting": MessageLookupByLibrary.simpleMessage("Submitting..."),
     "success": MessageLookupByLibrary.simpleMessage("Success"),
     "success_rate": MessageLookupByLibrary.simpleMessage("Success Rate"),
@@ -716,6 +735,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Successful Deliveries",
     ),
     "sunny_mode": MessageLookupByLibrary.simpleMessage("Sunny Mode"),
+    "support_request": MessageLookupByLibrary.simpleMessage("Support Request"),
+    "support_request_success": MessageLookupByLibrary.simpleMessage(
+      "Your support request has been submitted successfully. We\'ll get back to you soon!",
+    ),
     "suspended": MessageLookupByLibrary.simpleMessage("Suspended"),
     "system_announcements": MessageLookupByLibrary.simpleMessage(
       "System Announcements",
@@ -758,6 +781,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Total Price (with delivery)",
     ),
     "total_revenue": MessageLookupByLibrary.simpleMessage("Total Revenue"),
+    "try_different_search": MessageLookupByLibrary.simpleMessage(
+      "Try a different search term",
+    ),
     "unassigned": MessageLookupByLibrary.simpleMessage("Unassigned"),
     "unread": MessageLookupByLibrary.simpleMessage("Unread"),
     "update": MessageLookupByLibrary.simpleMessage("Update"),

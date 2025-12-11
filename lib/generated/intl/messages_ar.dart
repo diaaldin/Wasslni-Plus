@@ -95,6 +95,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "assign_courier": MessageLookupByLibrary.simpleMessage("تعيين مندوب"),
     "assigned": MessageLookupByLibrary.simpleMessage("تم التعيين"),
     "attach_barcode": MessageLookupByLibrary.simpleMessage("أرفق باركود"),
+    "attach_screenshot": MessageLookupByLibrary.simpleMessage(
+      "إرفاق لقطة شاشة (اختياري)",
+    ),
     "availability": MessageLookupByLibrary.simpleMessage("التوفر"),
     "average_delivery_time": MessageLookupByLibrary.simpleMessage(
       "متوسط وقت التوصيل",
@@ -143,8 +146,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirm_status_update": MessageLookupByLibrary.simpleMessage(
       "تأكيد تحديث الحالة",
     ),
-    "contact_support": MessageLookupByLibrary.simpleMessage(
-      "لمزيد من التفاصيل، لا تتردد في الاتصال بفريق الدعم لدينا.",
+    "contact_support": MessageLookupByLibrary.simpleMessage("اتصل بالدعم"),
+    "contact_support_team": MessageLookupByLibrary.simpleMessage(
+      "فريق الدعم لدينا هنا لمساعدتك",
     ),
     "copy_number": MessageLookupByLibrary.simpleMessage("نسخ الرقم"),
     "courier": MessageLookupByLibrary.simpleMessage("مندوب توصيل"),
@@ -238,7 +242,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "delivery_time_slot": MessageLookupByLibrary.simpleMessage(
       "وقت التوصيل المفضل",
     ),
-    "describe_issue": MessageLookupByLibrary.simpleMessage("وصف المشكلة"),
+    "describe_issue": MessageLookupByLibrary.simpleMessage("صف مشكلتك"),
     "dimensions": MessageLookupByLibrary.simpleMessage("الأبعاد (سم)"),
     "distance": MessageLookupByLibrary.simpleMessage("المسافة"),
     "dont_have_account": MessageLookupByLibrary.simpleMessage(
@@ -274,6 +278,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "enter_recipient_name": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال اسم المستلم",
     ),
+    "enter_subject": MessageLookupByLibrary.simpleMessage("أدخل الموضوع"),
     "error": MessageLookupByLibrary.simpleMessage("خطأ"),
     "error_loading_data": MessageLookupByLibrary.simpleMessage(
       "خطأ في تحميل البيانات",
@@ -296,6 +301,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "التوصيلات الفاشلة",
     ),
     "failure_reason": MessageLookupByLibrary.simpleMessage("سبب الفشل"),
+    "faq": MessageLookupByLibrary.simpleMessage("الأسئلة الشائعة"),
     "feature_coming_soon": MessageLookupByLibrary.simpleMessage(
       "هذه الميزة قادمة قريباً",
     ),
@@ -412,6 +418,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "no_data_available": MessageLookupByLibrary.simpleMessage(
       "لا توجد بيانات متاحة",
     ),
+    "no_faq_found": MessageLookupByLibrary.simpleMessage(
+      "لم يتم العثور على أسئلة",
+    ),
     "no_history_found": MessageLookupByLibrary.simpleMessage(
       "لا يوجد سجل توصيل",
     ),
@@ -501,10 +510,13 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "please_describe_issue": MessageLookupByLibrary.simpleMessage(
-      "يرجى وصف المشكلة",
+      "الرجاء وصف مشكلتك",
     ),
     "please_enter_reason": MessageLookupByLibrary.simpleMessage(
       "الرجاء إدخال سبب",
+    ),
+    "please_enter_subject": MessageLookupByLibrary.simpleMessage(
+      "الرجاء إدخال الموضوع",
     ),
     "please_select_issue_type": MessageLookupByLibrary.simpleMessage(
       "يرجى اختيار نوع المشكلة",
@@ -571,6 +583,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "report_an_issue": MessageLookupByLibrary.simpleMessage("الإبلاغ عن مشكلة"),
     "report_issue": MessageLookupByLibrary.simpleMessage("الإبلاغ عن مشكلة"),
     "reports": MessageLookupByLibrary.simpleMessage("التقارير"),
+    "request_submitted": MessageLookupByLibrary.simpleMessage("تم إرسال الطلب"),
     "requires_signature": MessageLookupByLibrary.simpleMessage(
       "يتطلب توقيع المستلم",
     ),
@@ -595,6 +608,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "search_by_barcode_or_name": MessageLookupByLibrary.simpleMessage(
       "البحث بواسطة الباركود أو الاسم...",
     ),
+    "search_faq": MessageLookupByLibrary.simpleMessage("ابحث عن أسئلة..."),
     "select_courier": MessageLookupByLibrary.simpleMessage("اختر مندوب"),
     "select_file": MessageLookupByLibrary.simpleMessage("اختر ملف"),
     "select_issue_type": MessageLookupByLibrary.simpleMessage(
@@ -648,9 +662,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "status_updated_successfully": MessageLookupByLibrary.simpleMessage(
       "تم تحديث الحالة بنجاح",
     ),
+    "still_have_questions": MessageLookupByLibrary.simpleMessage(
+      "لا تزال لديك أسئلة؟",
+    ),
+    "subject": MessageLookupByLibrary.simpleMessage("الموضوع"),
     "submit": MessageLookupByLibrary.simpleMessage("إرسال"),
     "submit_feedback": MessageLookupByLibrary.simpleMessage("إرسال التقييم"),
     "submit_report": MessageLookupByLibrary.simpleMessage("إرسال التقرير"),
+    "submit_request": MessageLookupByLibrary.simpleMessage("إرسال الطلب"),
     "submitting": MessageLookupByLibrary.simpleMessage("جاري الإرسال..."),
     "success": MessageLookupByLibrary.simpleMessage("نجاح"),
     "success_rate": MessageLookupByLibrary.simpleMessage("معدل النجاح"),
@@ -661,6 +680,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "التوصيلات الناجحة",
     ),
     "sunny_mode": MessageLookupByLibrary.simpleMessage("وضع النهار"),
+    "support_request": MessageLookupByLibrary.simpleMessage("طلب دعم"),
+    "support_request_success": MessageLookupByLibrary.simpleMessage(
+      "تم إرسال طلب الدعم بنجاح. سنتواصل معك قريباً!",
+    ),
     "suspended": MessageLookupByLibrary.simpleMessage("موقوف"),
     "system_announcements": MessageLookupByLibrary.simpleMessage(
       "إعلانات النظام",
@@ -697,6 +720,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "السعر الإجمالي (مع التوصيل)",
     ),
     "total_revenue": MessageLookupByLibrary.simpleMessage("إجمالي الإيرادات"),
+    "try_different_search": MessageLookupByLibrary.simpleMessage(
+      "جرب مصطلح بحث مختلف",
+    ),
     "unassigned": MessageLookupByLibrary.simpleMessage("غير معين"),
     "unread": MessageLookupByLibrary.simpleMessage("غير مقروء"),
     "update": MessageLookupByLibrary.simpleMessage("تحديث"),

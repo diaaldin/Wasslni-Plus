@@ -435,5 +435,22 @@
   "version": "الإصدار",
   "effective_date": "تاريخ السريان",
   "scroll_to_read_all": "يرجى التمرير لقراءة السياسة بأكملها قبل القبول",
-  "accept": "قبول"
+  "accept": "قبول",
+  "faq": "الأسئلة الشائعة",
+  "search_faq": "ابحث عن أسئلة...",
+  "no_faq_found": "لم يتم العثور على أسئلة",
+  "try_different_search": "جرب مصطلح بحث مختلف",
+  "still_have_questions": "لا تزال لديك أسئلة؟",
+  "contact_support_team": "فريق الدعم لدينا هنا لمساعدتك",
+  "contact_support": "اتصل بالدعم",
+  "support_request": "طلب دعم",
+  "subject": "الموضوع",
+  "enter_subject": "أدخل الموضوع",
+  "describe_issue": "صف مشكلتك",
+  "attach_screenshot": "إرفاق لقطة شاشة (اختياري)",
+  "submit_request": "إرسال الطلب",
+  "request_submitted": "تم إرسال الطلب",
+  "support_request_success": "تم إرسال طلب الدعم بنجاح. سنتواصل معك قريباً!",
+  "please_enter_subject": "الرجاء إدخال الموضوع",
+  "please_describe_issue": "الرجاء وصف مشكلتك"
 }

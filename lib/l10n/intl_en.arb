@@ -435,5 +435,22 @@
   "version": "Version",
   "effective_date": "Effective Date",
   "scroll_to_read_all": "Please scroll to read the entire policy before accepting",
-  "accept": "Accept"
+  "accept": "Accept",
+  "faq": "Frequently Asked Questions",
+  "search_faq": "Search questions...",
+  "no_faq_found": "No questions found",
+  "try_different_search": "Try a different search term",
+  "still_have_questions": "Still Have Questions?",
+  "contact_support_team": "Our support team is here to help you",
+  "contact_support": "Contact Support",
+  "support_request": "Support Request",
+  "subject": "Subject",
+  "enter_subject": "Enter subject",
+  "describe_issue": "Describe your issue",
+  "attach_screenshot": "Attach Screenshot (Optional)",
+  "submit_request": "Submit Request",
+  "request_submitted": "Request Submitted",
+  "support_request_success": "Your support request has been submitted successfully. We'll get back to you soon!",
+  "please_enter_subject": "Please enter a subject",
+  "please_describe_issue": "Please describe your issue"
 }
