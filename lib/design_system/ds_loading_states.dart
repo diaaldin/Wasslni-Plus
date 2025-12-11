@@ -133,21 +133,21 @@ class SkeletonList extends StatelessWidget {
 
   /// Predefined list item skeleton
   static Widget listTile() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
+    return const Padding(
+      padding: EdgeInsets.symmetric(
         horizontal: DesignSystem.paddingMedium,
         vertical: DesignSystem.paddingSmall,
       ),
       child: Row(
         children: [
-          const SkeletonLoader.circle(size: 48),
-          const SizedBox(width: DesignSystem.space3),
+          SkeletonLoader.circle(size: 48),
+          SizedBox(width: DesignSystem.space3),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SkeletonLoader.text(width: 200),
-                const SizedBox(height: DesignSystem.space2),
+                SkeletonLoader.text(width: 200),
+                SizedBox(height: DesignSystem.space2),
                 SkeletonLoader(
                   width: 150,
                   height: 12,
@@ -162,17 +162,17 @@ class SkeletonList extends StatelessWidget {
 
   /// Predefined card skeleton
   static Widget card() {
-    return Padding(
-      padding: const EdgeInsets.all(DesignSystem.paddingMedium),
+    return const Padding(
+      padding: EdgeInsets.all(DesignSystem.paddingMedium),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SkeletonLoader.card(height: 200),
-          const SizedBox(height: DesignSystem.space3),
-          const SkeletonLoader.text(width: 250),
-          const SizedBox(height: DesignSystem.space2),
+          SkeletonLoader.card(height: 200),
+          SizedBox(height: DesignSystem.space3),
+          SkeletonLoader.text(width: 250),
+          SizedBox(height: DesignSystem.space2),
           SkeletonLoader(width: 180, height: 12),
-          const SizedBox(height: DesignSystem.space2),
+          SizedBox(height: DesignSystem.space2),
           SkeletonLoader(width: 220, height: 12),
         ],
       ),
@@ -209,7 +209,7 @@ class LoadingOverlay extends StatelessWidget {
         child,
         if (isLoading)
           Container(
-            color: Colors.black.withOpacity(0.5),
+            color: Colors.black.withValues(alpha: 0.5),
             child: Center(
               child: Card(
                 child: Padding(

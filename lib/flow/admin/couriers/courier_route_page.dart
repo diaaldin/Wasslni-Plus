@@ -176,7 +176,7 @@ class _CourierRoutePageState extends State<CourierRoutePage> {
                       child: ListTile(
                         leading: CircleAvatar(
                           backgroundColor:
-                              AppStyles.primaryColor.withOpacity(0.1),
+                              AppStyles.primaryColor.withValues(alpha: 0.1),
                           child: Text(
                             (index + 1).toString(),
                             style: const TextStyle(

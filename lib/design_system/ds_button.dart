@@ -31,10 +31,10 @@ class DSButton extends StatelessWidget {
         ? ElevatedButton.icon(
             onPressed: isLoading ? null : onPressed,
             icon: isLoading
-                ? SizedBox(
+                ? const SizedBox(
                     width: DesignSystem.iconSizeSmall,
                     height: DesignSystem.iconSizeSmall,
-                    child: const CircularProgressIndicator(strokeWidth: 2),
+                    child: CircularProgressIndicator(strokeWidth: 2),
                   )
                 : Icon(icon, size: _getIconSize()),
             label: Text(text, style: textStyle),
@@ -44,10 +44,10 @@ class DSButton extends StatelessWidget {
             onPressed: isLoading ? null : onPressed,
             style: buttonStyle,
             child: isLoading
-                ? SizedBox(
+                ? const SizedBox(
                     width: DesignSystem.iconSizeSmall,
                     height: DesignSystem.iconSizeSmall,
-                    child: const CircularProgressIndicator(strokeWidth: 2),
+                    child: CircularProgressIndicator(strokeWidth: 2),
                   )
                 : Text(text, style: textStyle),
           );
@@ -71,7 +71,7 @@ class DSButton extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: DesignSystem.borderRadiusMedium,
         side: variant == DSButtonVariant.outlined
-            ? BorderSide(color: DesignSystem.primaryColor)
+            ? const BorderSide(color: DesignSystem.primaryColor)
             : BorderSide.none,
       ),
     );
@@ -118,17 +118,17 @@ class DSButton extends StatelessWidget {
   EdgeInsets _getPadding() {
     switch (size) {
       case DSButtonSize.small:
-        return EdgeInsets.symmetric(
+        return const EdgeInsets.symmetric(
           horizontal: DesignSystem.paddingSmall,
           vertical: DesignSystem.paddingXSmall,
         );
       case DSButtonSize.medium:
-        return EdgeInsets.symmetric(
+        return const EdgeInsets.symmetric(
           horizontal: DesignSystem.paddingMedium,
           vertical: DesignSystem.paddingSmall,
         );
       case DSButtonSize.large:
-        return EdgeInsets.symmetric(
+        return const EdgeInsets.symmetric(
           horizontal: DesignSystem.paddingLarge,
           vertical: DesignSystem.paddingMedium,
         );

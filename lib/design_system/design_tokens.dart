@@ -265,7 +265,7 @@ class DesignSystem {
   /// Box Shadow presets
   static List<BoxShadow> get shadowSmall => [
         BoxShadow(
-          color: Colors.black.withOpacity(0.1),
+          color: Colors.black.withValues(alpha: 0.1),
           blurRadius: 4,
           offset: const Offset(0, 2),
         ),
@@ -273,7 +273,7 @@ class DesignSystem {
 
   static List<BoxShadow> get shadowMedium => [
         BoxShadow(
-          color: Colors.black.withOpacity(0.1),
+          color: Colors.black.withValues(alpha: 0.1),
           blurRadius: 8,
           offset: const Offset(0, 4),
         ),
@@ -281,7 +281,7 @@ class DesignSystem {
 
   static List<BoxShadow> get shadowLarge => [
         BoxShadow(
-          color: Colors.black.withOpacity(0.15),
+          color: Colors.black.withValues(alpha: 0.15),
           blurRadius: 16,
           offset: const Offset(0, 8),
         ),
@@ -289,7 +289,7 @@ class DesignSystem {
 
   static List<BoxShadow> get shadowXLarge => [
         BoxShadow(
-          color: Colors.black.withOpacity(0.2),
+          color: Colors.black.withValues(alpha: 0.2),
           blurRadius: 24,
           offset: const Offset(0, 12),
         ),

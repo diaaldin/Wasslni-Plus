@@ -341,7 +341,7 @@ class _ParcelStatusProgressBarState extends State<ParcelStatusProgressBar>
                 ],
               ),
             );
-          }).toList(),
+          }),
         ],
       ),
     );

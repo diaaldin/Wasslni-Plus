@@ -17,10 +17,10 @@ class _AdminMainScreenState extends State<AdminMainScreen> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = [
-    AdminDashboardPage(),
-    AdminParcelsPage(),
-    AdminCouriersPage(),
-    UserSettingsPage(),
+    const AdminDashboardPage(),
+    const AdminParcelsPage(),
+    const AdminCouriersPage(),
+    const UserSettingsPage(),
   ];
 
   @override

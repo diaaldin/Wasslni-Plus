@@ -16,7 +16,7 @@ class _FAQPageState extends State<FAQPage> {
   final _searchController = TextEditingController();
   String _selectedCategory = 'all';
   List<FAQ> _displayedFAQs = [];
-  Map<String, bool> _expandedStates = {};
+  final Map<String, bool> _expandedStates = {};
 
   @override
   void initState() {

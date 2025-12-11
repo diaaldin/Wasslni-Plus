@@ -95,7 +95,7 @@ class EmptyState extends StatelessWidget {
             else
               Container(
                 padding: const EdgeInsets.all(DesignSystem.paddingLarge),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: DesignSystem.neutral100,
                   shape: BoxShape.circle,
                 ),
@@ -239,7 +239,7 @@ class ErrorState extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(DesignSystem.paddingLarge),
               decoration: BoxDecoration(
-                color: (iconColor ?? DesignSystem.error).withOpacity(0.1),
+                color: (iconColor ?? DesignSystem.error).withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
               child: Icon(
@@ -314,7 +314,7 @@ class SuccessState extends StatelessWidget {
             // Success Icon
             Container(
               padding: const EdgeInsets.all(DesignSystem.paddingLarge),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: DesignSystem.successLight,
                 shape: BoxShape.circle,
               ),

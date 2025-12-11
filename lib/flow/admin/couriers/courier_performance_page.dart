@@ -129,7 +129,7 @@ class _CourierPerformancePageState extends State<CourierPerformancePage> {
       children: [
         CircleAvatar(
           radius: 40,
-          backgroundColor: AppStyles.primaryColor.withOpacity(0.1),
+          backgroundColor: AppStyles.primaryColor.withValues(alpha: 0.1),
           backgroundImage: (widget.courier.profilePhotoUrl != null &&
                   widget.courier.profilePhotoUrl!.isNotEmpty)
               ? NetworkImage(widget.courier.profilePhotoUrl!)
@@ -317,7 +317,7 @@ class _CourierPerformancePageState extends State<CourierPerformancePage> {
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           child: ListTile(
             leading: CircleAvatar(
-              backgroundColor: Colors.amber.withOpacity(0.1),
+              backgroundColor: Colors.amber.withValues(alpha: 0.1),
               child: Text(
                 review.rating.toString(),
                 style: const TextStyle(

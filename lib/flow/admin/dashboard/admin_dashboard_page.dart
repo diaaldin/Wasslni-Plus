@@ -33,7 +33,7 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         actions: [
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.language,
               color: AppStyles.primaryColor,
             ),
@@ -185,7 +185,7 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
         ),
         boxShadow: [
           BoxShadow(
-            color: endColor.withOpacity(0.3),
+            color: endColor.withValues(alpha: 0.3),
             blurRadius: 12,
             offset: const Offset(0, 6),
           ),
@@ -200,7 +200,7 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.2),
+                  color: Colors.white.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Icon(icon, color: Colors.white, size: 24),
@@ -221,7 +221,7 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
           Text(
             title,
             style: TextStyle(
-              color: Colors.white.withOpacity(0.9),
+              color: Colors.white.withValues(alpha: 0.9),
               fontSize: 14,
               fontWeight: FontWeight.w500,
             ),

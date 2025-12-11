@@ -78,24 +78,24 @@ class DSTextField extends StatelessWidget {
                 enabled ? DesignSystem.surfaceLight : DesignSystem.neutral100,
             border: OutlineInputBorder(
               borderRadius: DesignSystem.borderRadiusMedium,
-              borderSide: BorderSide(color: DesignSystem.neutral300),
+              borderSide: const BorderSide(color: DesignSystem.neutral300),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: DesignSystem.borderRadiusMedium,
-              borderSide: BorderSide(color: DesignSystem.neutral300),
+              borderSide: const BorderSide(color: DesignSystem.neutral300),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: DesignSystem.borderRadiusMedium,
               borderSide:
-                  BorderSide(color: DesignSystem.primaryColor, width: 2),
+                  const BorderSide(color: DesignSystem.primaryColor, width: 2),
             ),
             errorBorder: OutlineInputBorder(
               borderRadius: DesignSystem.borderRadiusMedium,
-              borderSide: BorderSide(color: DesignSystem.error),
+              borderSide: const BorderSide(color: DesignSystem.error),
             ),
             focusedErrorBorder: OutlineInputBorder(
               borderRadius: DesignSystem.borderRadiusMedium,
-              borderSide: BorderSide(color: DesignSystem.error, width: 2),
+              borderSide: const BorderSide(color: DesignSystem.error, width: 2),
             ),
             contentPadding: _getContentPadding(),
           ),
@@ -174,7 +174,7 @@ class DSDropdown<T> extends StatelessWidget {
           const SizedBox(height: DesignSystem.space2),
         ],
         DropdownButtonFormField<T>(
-          value: value,
+          initialValue: value,
           items: items
               .map((item) => DropdownMenuItem<T>(
                     value: item.value,
@@ -197,16 +197,16 @@ class DSDropdown<T> extends StatelessWidget {
             fillColor: DesignSystem.surfaceLight,
             border: OutlineInputBorder(
               borderRadius: DesignSystem.borderRadiusMedium,
-              borderSide: BorderSide(color: DesignSystem.neutral300),
+              borderSide: const BorderSide(color: DesignSystem.neutral300),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: DesignSystem.borderRadiusMedium,
-              borderSide: BorderSide(color: DesignSystem.neutral300),
+              borderSide: const BorderSide(color: DesignSystem.neutral300),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: DesignSystem.borderRadiusMedium,
               borderSide:
-                  BorderSide(color: DesignSystem.primaryColor, width: 2),
+                  const BorderSide(color: DesignSystem.primaryColor, width: 2),
             ),
             contentPadding: const EdgeInsets.symmetric(
               horizontal: DesignSystem.paddingMedium,

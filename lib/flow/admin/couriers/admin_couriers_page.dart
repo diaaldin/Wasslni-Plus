@@ -112,7 +112,7 @@ class _AdminCouriersPageState extends State<AdminCouriersPage> {
         leading: Stack(
           children: [
             CircleAvatar(
-              backgroundColor: AppStyles.primaryColor.withOpacity(0.1),
+              backgroundColor: AppStyles.primaryColor.withValues(alpha: 0.1),
               backgroundImage: (courier.profilePhotoUrl != null &&
                       courier.profilePhotoUrl!.isNotEmpty)
                   ? NetworkImage(courier.profilePhotoUrl!)
@@ -156,8 +156,8 @@ class _AdminCouriersPageState extends State<AdminCouriersPage> {
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
           decoration: BoxDecoration(
             color: isActive
-                ? Colors.green.withOpacity(0.1)
-                : Colors.red.withOpacity(0.1),
+                ? Colors.green.withValues(alpha: 0.1)
+                : Colors.red.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(20),
           ),
           child: Text(

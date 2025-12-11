@@ -107,8 +107,8 @@ class _EnhancedPrivacyPolicyPageState extends State<EnhancedPrivacyPolicyPage> {
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: const Text('An error occurred'),
+          const SnackBar(
+            content: Text('An error occurred'),
             backgroundColor: Colors.red,
           ),
         );
@@ -158,8 +158,8 @@ class _EnhancedPrivacyPolicyPageState extends State<EnhancedPrivacyPolicyPage> {
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: const Text('An error occurred'),
+          const SnackBar(
+            content: Text('An error occurred'),
             backgroundColor: Colors.red,
           ),
         );
@@ -210,8 +210,8 @@ class _EnhancedPrivacyPolicyPageState extends State<EnhancedPrivacyPolicyPage> {
       debugPrint('Error exporting to PDF: $e');
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: const Text('An error occurred'),
+          const SnackBar(
+            content: Text('An error occurred'),
             backgroundColor: Colors.red,
           ),
         );

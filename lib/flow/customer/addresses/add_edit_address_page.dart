@@ -192,7 +192,7 @@ class _AddEditAddressPageState extends State<AddEditAddressPage> {
 
             // Region dropdown
             DropdownButtonFormField<String>(
-              value: _selectedRegion,
+              initialValue: _selectedRegion,
               decoration: InputDecoration(
                 labelText: tr.region,
                 border: const OutlineInputBorder(),
