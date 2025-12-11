@@ -15,7 +15,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
 - [x] **Rename App to "Wasslni Plus"**
   - [x] Update `pubspec.yaml`: Change `name` from `turoudi` to `wasslni_plus`
   - [x] Update package name in all import statements
-  - [ ] Rename project folder from `turoudi` to `wasslni_plus` (optional but recommended)
+  - [x] Rename project folder from `turoudi` to `wasslni_plus` (optional but recommended)
   - [x] Update `AndroidManifest.xml`: Change `android:label` to "Wasslni Plus"
   - [x] Update iOS `Info.plist`: Change `CFBundleDisplayName` to "Wasslni Plus"
   - [x] Update iOS `Runner.xcodeproj`: Change product name
@@ -77,13 +77,17 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [x] Add examples of good Arabic/English translations
 
 
-- [ ] **Courier Management**
-  - [ ] Create courier assignment interface
+## 📱 Phase 1: Core Application Features
+
+### 1.2 Courier Management (Admin)
+- [x] **Courier Assignment**
+  - [x] Create courier assignment interface
   - [ ] Build courier availability tracker
   - [ ] Add courier performance reports
   - [ ] Implement route optimization suggestions
 
-- [ ] **Regional Analytics**
+### 1.3 Regional Analytics (Admin)
+- [ ] **Analytics Dashboard**
   - [ ] Build delivery success rate charts
   - [ ] Add time-based analytics
   - [ ] Create regional comparison views
@@ -553,7 +557,7 @@ Create server-side logic for:
 ### 2.8 Push Notifications (FCM)
 
 - [x] **Setup**
-  - [ ] Configure FCM for Android (requires google-services.json)
+  - [x] Configure FCM for Android (requires google-services.json)
   - [ ] Configure FCM for iOS (requires GoogleService-Info.plist & APNs)
   - [x] Handle foreground notifications
   - [x] Handle background notifications
@@ -702,16 +706,22 @@ Create server-side logic for:
 ## 📊 Progress Tracking
 
 ### Current Status
-- **Phase 1 (UI Completion)**: ~30% Complete
+- **Phase 1 (UI Completion)**: ~60% Complete
   - ✅ Basic merchant dashboard structure
   - ✅ Parcel creation form
   - ✅ Parcel list view
   - ✅ Settings page structure
-  - ⚠️ Most other screens are placeholders
+  - ✅ Customer Order History & Tracking
+  - ✅ Authentication UI
+  - ⚠️ Admin/Manager screens are pending
 
-- **Phase 2 (Firebase Integration)**: 0% Complete
-  - ❌ No Firebase integration yet
-  - ❌ Using mock data throughout
+- **Phase 2 (Firebase Integration)**: ~90% Complete
+  - ✅ Firebase Setup & Configuration
+  - ✅ Authentication Implementation
+  - ✅ Database Structure & CRUD
+  - ✅ Cloud Storage & Functions
+  - ✅ Notifications & Analytics
+  - ⚠️ Final Integration Tests pending
 
 - **Phase 3 (Security & Optimization)**: 0% Complete
 
@@ -740,7 +750,7 @@ For a functional MVP, prioritize these tasks:
 9. Design and create Firestore database structure
 10. Implement user registration and login - **Translate all form labels (AR/EN)**
 11. Complete merchant parcel creation with Firestore - **Translate all fields (AR/EN)**
-12. Complete courier parcel assignment interface - **Translate all UI text (AR/EN)**
+12. [x] Complete courier parcel assignment interface - **Translate all UI text (AR/EN)**
 13. Implement parcel status update functionality - **Translate status names (AR/EN)**
 14. Add real-time parcel tracking - **Translate tracking messages (AR/EN)**
 

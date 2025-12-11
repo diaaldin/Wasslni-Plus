@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wasslni_plus/flow/admin/parcels/admin_parcels_page.dart';
 import 'package:wasslni_plus/generated/l10n.dart';
 
 class AdminMainScreen extends StatefulWidget {
@@ -13,7 +14,7 @@ class _AdminMainScreenState extends State<AdminMainScreen> {
 
   final List<Widget> _pages = const [
     Center(child: Text('Admin Main page')),
-    Center(child: Text('Admin Pckages pages')),
+    AdminParcelsPage(),
     Center(child: Text('Admin Settings page')),
   ];
 

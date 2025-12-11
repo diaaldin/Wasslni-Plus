@@ -269,6 +269,19 @@ class FirestoreService {
     });
   }
 
+  /// Stream all parcels (Admin)
+  Stream<List<ParcelModel>> streamAllParcels() {
+    return _parcelsCollection
+        .where('isDeleted', isEqualTo: false)
+        .snapshots()
+        .map((snapshot) {
+      final parcels =
+          snapshot.docs.map((doc) => ParcelModel.fromFirestore(doc)).toList();
+      parcels.sort((a, b) => b.createdAt.compareTo(a.createdAt));
+      return parcels;
+    });
+  }
+
   /// Get parcels by courier
   Future<List<ParcelModel>> getParcelsByCourier(String courierId) async {
     try {

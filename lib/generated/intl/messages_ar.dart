@@ -91,6 +91,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "app_name": MessageLookupByLibrary.simpleMessage("وصلني بلس"),
     "app_tagline": MessageLookupByLibrary.simpleMessage("توصيل سريع وموثوق"),
     "are_you_sure_update_status": m0,
+    "assign_courier": MessageLookupByLibrary.simpleMessage("تعيين مندوب"),
+    "assigned": MessageLookupByLibrary.simpleMessage("تم التعيين"),
     "attach_barcode": MessageLookupByLibrary.simpleMessage("أرفق باركود"),
     "availability": MessageLookupByLibrary.simpleMessage("التوفر"),
     "average_delivery_time": MessageLookupByLibrary.simpleMessage(
@@ -141,6 +143,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "copy_number": MessageLookupByLibrary.simpleMessage("نسخ الرقم"),
     "courier": MessageLookupByLibrary.simpleMessage("مندوب توصيل"),
+    "courier_assigned_success": MessageLookupByLibrary.simpleMessage(
+      "تم تعيين المندوب بنجاح",
+    ),
     "courier_dashboard": MessageLookupByLibrary.simpleMessage("لوحة السائق"),
     "courier_not_assigned": MessageLookupByLibrary.simpleMessage(
       "لم يتم تعيين سائق لهذا الطرد",
@@ -379,6 +384,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "no_assignments": MessageLookupByLibrary.simpleMessage(
       "لا توجد مهام لهذا اليوم",
     ),
+    "no_couriers_found": MessageLookupByLibrary.simpleMessage("لا يوجد مناديب"),
     "no_data_available": MessageLookupByLibrary.simpleMessage(
       "لا توجد بيانات متاحة",
     ),
@@ -552,6 +558,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "search_by_barcode_or_name": MessageLookupByLibrary.simpleMessage(
       "البحث بواسطة الباركود أو الاسم...",
     ),
+    "select_courier": MessageLookupByLibrary.simpleMessage("اختر مندوب"),
     "select_file": MessageLookupByLibrary.simpleMessage("اختر ملف"),
     "select_issue_type": MessageLookupByLibrary.simpleMessage(
       "اختر نوع المشكلة",
@@ -651,6 +658,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "السعر الإجمالي (مع التوصيل)",
     ),
     "total_revenue": MessageLookupByLibrary.simpleMessage("إجمالي الإيرادات"),
+    "unassigned": MessageLookupByLibrary.simpleMessage("غير معين"),
     "unread": MessageLookupByLibrary.simpleMessage("غير مقروء"),
     "update": MessageLookupByLibrary.simpleMessage("تحديث"),
     "update_address": MessageLookupByLibrary.simpleMessage("تحديث العنوان"),

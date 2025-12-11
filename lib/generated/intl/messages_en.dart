@@ -96,6 +96,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "Fast & Reliable Delivery",
     ),
     "are_you_sure_update_status": m0,
+    "assign_courier": MessageLookupByLibrary.simpleMessage("Assign Courier"),
+    "assigned": MessageLookupByLibrary.simpleMessage("Assigned"),
     "attach_barcode": MessageLookupByLibrary.simpleMessage("Attach Barcode"),
     "availability": MessageLookupByLibrary.simpleMessage("Availability"),
     "average_delivery_time": MessageLookupByLibrary.simpleMessage(
@@ -154,6 +156,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "copy_number": MessageLookupByLibrary.simpleMessage("Copy Number"),
     "courier": MessageLookupByLibrary.simpleMessage("Courier"),
+    "courier_assigned_success": MessageLookupByLibrary.simpleMessage(
+      "Courier assigned successfully",
+    ),
     "courier_dashboard": MessageLookupByLibrary.simpleMessage(
       "Courier Dashboard",
     ),
@@ -422,6 +427,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "no_assignments": MessageLookupByLibrary.simpleMessage(
       "No assignments for today",
     ),
+    "no_couriers_found": MessageLookupByLibrary.simpleMessage(
+      "No couriers found",
+    ),
     "no_data_available": MessageLookupByLibrary.simpleMessage(
       "No data available",
     ),
@@ -601,6 +609,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "search_by_barcode_or_name": MessageLookupByLibrary.simpleMessage(
       "Search by barcode or name...",
     ),
+    "select_courier": MessageLookupByLibrary.simpleMessage("Select Courier"),
     "select_file": MessageLookupByLibrary.simpleMessage("Select File"),
     "select_issue_type": MessageLookupByLibrary.simpleMessage(
       "Select Issue Type",
@@ -706,6 +715,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Total Price (with delivery)",
     ),
     "total_revenue": MessageLookupByLibrary.simpleMessage("Total Revenue"),
+    "unassigned": MessageLookupByLibrary.simpleMessage("Unassigned"),
     "unread": MessageLookupByLibrary.simpleMessage("Unread"),
     "update": MessageLookupByLibrary.simpleMessage("Update"),
     "update_address": MessageLookupByLibrary.simpleMessage("Update Address"),

@@ -3413,6 +3413,56 @@ class S {
   String get error {
     return Intl.message('Error', name: 'error', desc: '', args: []);
   }
+
+  /// `Assign Courier`
+  String get assign_courier {
+    return Intl.message(
+      'Assign Courier',
+      name: 'assign_courier',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Courier`
+  String get select_courier {
+    return Intl.message(
+      'Select Courier',
+      name: 'select_courier',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unassigned`
+  String get unassigned {
+    return Intl.message('Unassigned', name: 'unassigned', desc: '', args: []);
+  }
+
+  /// `Assigned`
+  String get assigned {
+    return Intl.message('Assigned', name: 'assigned', desc: '', args: []);
+  }
+
+  /// `No couriers found`
+  String get no_couriers_found {
+    return Intl.message(
+      'No couriers found',
+      name: 'no_couriers_found',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Courier assigned successfully`
+  String get courier_assigned_success {
+    return Intl.message(
+      'Courier assigned successfully',
+      name: 'courier_assigned_success',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -405,5 +405,11 @@
   "add_notes_optional": "إضافة ملاحظات (اختياري)",
   "update": "تحديث",
   "status_updated_successfully": "تم تحديث الحالة بنجاح",
-  "error": "خطأ"
+  "error": "خطأ",
+  "assign_courier": "تعيين مندوب",
+  "select_courier": "اختر مندوب",
+  "unassigned": "غير معين",
+  "assigned": "تم التعيين",
+  "no_couriers_found": "لا يوجد مناديب",
+  "courier_assigned_success": "تم تعيين المندوب بنجاح"
 }

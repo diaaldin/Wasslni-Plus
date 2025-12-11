@@ -405,5 +405,11 @@
   "add_notes_optional": "Add notes (optional)",
   "update": "Update",
   "status_updated_successfully": "Status updated successfully",
-  "error": "Error"
+  "error": "Error",
+  "assign_courier": "Assign Courier",
+  "select_courier": "Select Courier",
+  "unassigned": "Unassigned",
+  "assigned": "Assigned",
+  "no_couriers_found": "No couriers found",
+  "courier_assigned_success": "Courier assigned successfully"
 }
