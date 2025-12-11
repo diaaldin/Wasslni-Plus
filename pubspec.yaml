@@ -81,6 +81,7 @@ dependencies:
   bidi: ^2.0.13
   simple_html_css: ^5.0.0
   google_fonts: ^6.3.3
+  flutter_markdown: ^0.7.4+1
 
 dev_dependencies:
   flutter_test:

@@ -424,5 +424,16 @@
   "total_assignments": "إجمالي المهام",
   "courier_performance": "أداء المندوب",
   "reviews": "المراجعات",
-  "no_reviews": "لا توجد مراجعات"
+  "no_reviews": "لا توجد مراجعات",
+  "privacy_policy_accepted": "تم قبول سياسة الخصوصية بنجاح",
+  "decline_privacy_policy": "رفض سياسة الخصوصية",
+  "decline_privacy_policy_message": "يجب قبول سياسة الخصوصية لمتابعة استخدام التطبيق. الرفض سيتطلب تسجيل الخروج.",
+  "decline": "رفض",
+  "export_to_pdf": "تصدير إلى PDF",
+  "error_loading_privacy_policy": "خطأ في تحميل سياسة الخصوصية",
+  "retry": "إعادة المحاولة",
+  "version": "الإصدار",
+  "effective_date": "تاريخ السريان",
+  "scroll_to_read_all": "يرجى التمرير لقراءة السياسة بأكملها قبل القبول",
+  "accept": "قبول"
 }

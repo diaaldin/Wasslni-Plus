@@ -198,10 +198,10 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
 
 ### 1.7 Shared Components & Pages
 
-- [ ] **Privacy Policy Page (Enhance)**
-  - [ ] Add version tracking
-  - [ ] Implement accept/decline flow
-  - [ ] Add PDF export option
+- [x] **Privacy Policy Page (Enhance)**
+  - [x] Add version tracking
+  - [x] Implement accept/decline flow
+  - [x] Add PDF export option
 
 - [x] **Settings Page (Enhance)**
   - [x] Add profile editing
@@ -215,7 +215,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [x] Implement notification types (info, warning, success, delivery update)
   - [x] Create notification preferences
 
-- [ ] **Help & Support**
+- [~] **Help & Support** (In Progress)
   - [ ] Create FAQ page
   - [ ] Add contact support form
   - [ ] Implement live chat (optional)

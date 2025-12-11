@@ -3573,6 +3573,96 @@ class S {
       args: [],
     );
   }
+
+  /// `Privacy policy accepted successfully`
+  String get privacy_policy_accepted {
+    return Intl.message(
+      'Privacy policy accepted successfully',
+      name: 'privacy_policy_accepted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Decline Privacy Policy`
+  String get decline_privacy_policy {
+    return Intl.message(
+      'Decline Privacy Policy',
+      name: 'decline_privacy_policy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You must accept the privacy policy to continue using the app. Declining will require you to log out.`
+  String get decline_privacy_policy_message {
+    return Intl.message(
+      'You must accept the privacy policy to continue using the app. Declining will require you to log out.',
+      name: 'decline_privacy_policy_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Decline`
+  String get decline {
+    return Intl.message('Decline', name: 'decline', desc: '', args: []);
+  }
+
+  /// `Export to PDF`
+  String get export_to_pdf {
+    return Intl.message(
+      'Export to PDF',
+      name: 'export_to_pdf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error loading privacy policy`
+  String get error_loading_privacy_policy {
+    return Intl.message(
+      'Error loading privacy policy',
+      name: 'error_loading_privacy_policy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Retry`
+  String get retry {
+    return Intl.message('Retry', name: 'retry', desc: '', args: []);
+  }
+
+  /// `Version`
+  String get version {
+    return Intl.message('Version', name: 'version', desc: '', args: []);
+  }
+
+  /// `Effective Date`
+  String get effective_date {
+    return Intl.message(
+      'Effective Date',
+      name: 'effective_date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please scroll to read the entire policy before accepting`
+  String get scroll_to_read_all {
+    return Intl.message(
+      'Please scroll to read the entire policy before accepting',
+      name: 'scroll_to_read_all',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Accept`
+  String get accept {
+    return Intl.message('Accept', name: 'accept', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

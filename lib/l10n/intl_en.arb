@@ -424,5 +424,16 @@
   "total_assignments": "Total Assignments",
   "courier_performance": "Courier Performance",
   "reviews": "Reviews",
-  "no_reviews": "No reviews yet"
+  "no_reviews": "No reviews yet",
+  "privacy_policy_accepted": "Privacy policy accepted successfully",
+  "decline_privacy_policy": "Decline Privacy Policy",
+  "decline_privacy_policy_message": "You must accept the privacy policy to continue using the app. Declining will require you to log out.",
+  "decline": "Decline",
+  "export_to_pdf": "Export to PDF",
+  "error_loading_privacy_policy": "Error loading privacy policy",
+  "retry": "Retry",
+  "version": "Version",
+  "effective_date": "Effective Date",
+  "scroll_to_read_all": "Please scroll to read the entire policy before accepting",
+  "accept": "Accept"
 }

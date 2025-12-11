@@ -35,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "accept": MessageLookupByLibrary.simpleMessage("Accept"),
     "acceptPolicyStart": MessageLookupByLibrary.simpleMessage("I accept the "),
     "account": MessageLookupByLibrary.simpleMessage("Account"),
     "active": MessageLookupByLibrary.simpleMessage("Active"),
@@ -206,6 +207,13 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "date_range": MessageLookupByLibrary.simpleMessage("Date Range"),
     "days": MessageLookupByLibrary.simpleMessage("days"),
+    "decline": MessageLookupByLibrary.simpleMessage("Decline"),
+    "decline_privacy_policy": MessageLookupByLibrary.simpleMessage(
+      "Decline Privacy Policy",
+    ),
+    "decline_privacy_policy_message": MessageLookupByLibrary.simpleMessage(
+      "You must accept the privacy policy to continue using the app. Declining will require you to log out.",
+    ),
     "default_address": MessageLookupByLibrary.simpleMessage("Default"),
     "delete": MessageLookupByLibrary.simpleMessage("Delete"),
     "delete_account": MessageLookupByLibrary.simpleMessage("Delete Account"),
@@ -274,6 +282,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "edit_address": MessageLookupByLibrary.simpleMessage("Edit Address"),
     "edit_parcel": MessageLookupByLibrary.simpleMessage("Edit Parcel"),
     "edit_profile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
+    "effective_date": MessageLookupByLibrary.simpleMessage("Effective Date"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "ensure_no_damage": MessageLookupByLibrary.simpleMessage(
       "Ensure there is no visible damage",
@@ -298,6 +307,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "error_loading_data": MessageLookupByLibrary.simpleMessage(
       "Error loading data",
     ),
+    "error_loading_privacy_policy": MessageLookupByLibrary.simpleMessage(
+      "Error loading privacy policy",
+    ),
     "error_occurred": m2,
     "estimated_time": MessageLookupByLibrary.simpleMessage("Estimated Time"),
     "evening": MessageLookupByLibrary.simpleMessage("Evening (5PM - 9PM)"),
@@ -309,6 +321,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "export_success": MessageLookupByLibrary.simpleMessage(
       "Export completed successfully",
     ),
+    "export_to_pdf": MessageLookupByLibrary.simpleMessage("Export to PDF"),
     "failed": MessageLookupByLibrary.simpleMessage("Failed"),
     "failed_deliveries": MessageLookupByLibrary.simpleMessage(
       "Failed Deliveries",
@@ -557,6 +570,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "We are committed to protecting your data privacy and security. This policy explains how we handle your personal information.",
     ),
     "privacy_policy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
+    "privacy_policy_accepted": MessageLookupByLibrary.simpleMessage(
+      "Privacy policy accepted successfully",
+    ),
     "proceed_to_proof": MessageLookupByLibrary.simpleMessage(
       "Proceed to Proof of Delivery",
     ),
@@ -612,6 +628,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Requires Recipient Signature",
     ),
     "retake": MessageLookupByLibrary.simpleMessage("Retake"),
+    "retry": MessageLookupByLibrary.simpleMessage("Retry"),
     "return_reason": MessageLookupByLibrary.simpleMessage("Return Reason"),
     "returned": MessageLookupByLibrary.simpleMessage("Returned"),
     "revenue_overview": MessageLookupByLibrary.simpleMessage(
@@ -625,6 +642,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "save_changes": MessageLookupByLibrary.simpleMessage("Save Changes"),
     "save_parcel": MessageLookupByLibrary.simpleMessage("Save Parcel"),
     "scan_to_track": MessageLookupByLibrary.simpleMessage("Scan to Track"),
+    "scroll_to_read_all": MessageLookupByLibrary.simpleMessage(
+      "Please scroll to read the entire policy before accepting",
+    ),
     "search_by_barcode_or_name": MessageLookupByLibrary.simpleMessage(
       "Search by barcode or name...",
     ),
@@ -778,6 +798,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "verify_recipient": MessageLookupByLibrary.simpleMessage(
       "Verify Recipient",
     ),
+    "version": MessageLookupByLibrary.simpleMessage("Version"),
     "view_all": MessageLookupByLibrary.simpleMessage("View All"),
     "view_details": MessageLookupByLibrary.simpleMessage("View Details"),
     "weekly_earnings": MessageLookupByLibrary.simpleMessage("Weekly Earnings"),

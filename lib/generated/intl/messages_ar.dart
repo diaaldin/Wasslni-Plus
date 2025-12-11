@@ -34,6 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "accept": MessageLookupByLibrary.simpleMessage("قبول"),
     "acceptPolicyStart": MessageLookupByLibrary.simpleMessage("أوافق على "),
     "account": MessageLookupByLibrary.simpleMessage("الحساب"),
     "active": MessageLookupByLibrary.simpleMessage("نشط"),
@@ -187,6 +188,13 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "date_range": MessageLookupByLibrary.simpleMessage("نطاق التاريخ"),
     "days": MessageLookupByLibrary.simpleMessage("أيام"),
+    "decline": MessageLookupByLibrary.simpleMessage("رفض"),
+    "decline_privacy_policy": MessageLookupByLibrary.simpleMessage(
+      "رفض سياسة الخصوصية",
+    ),
+    "decline_privacy_policy_message": MessageLookupByLibrary.simpleMessage(
+      "يجب قبول سياسة الخصوصية لمتابعة استخدام التطبيق. الرفض سيتطلب تسجيل الخروج.",
+    ),
     "default_address": MessageLookupByLibrary.simpleMessage("افتراضي"),
     "delete": MessageLookupByLibrary.simpleMessage("حذف"),
     "delete_account": MessageLookupByLibrary.simpleMessage("حذف الحساب"),
@@ -243,6 +251,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "edit_address": MessageLookupByLibrary.simpleMessage("تعديل العنوان"),
     "edit_parcel": MessageLookupByLibrary.simpleMessage("تعديل الطرد"),
     "edit_profile": MessageLookupByLibrary.simpleMessage("تعديل الملف الشخصي"),
+    "effective_date": MessageLookupByLibrary.simpleMessage("تاريخ السريان"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "ensure_no_damage": MessageLookupByLibrary.simpleMessage(
       "تأكد من عدم وجود تلف ظاهر",
@@ -269,6 +278,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "error_loading_data": MessageLookupByLibrary.simpleMessage(
       "خطأ في تحميل البيانات",
     ),
+    "error_loading_privacy_policy": MessageLookupByLibrary.simpleMessage(
+      "خطأ في تحميل سياسة الخصوصية",
+    ),
     "error_occurred": m2,
     "estimated_time": MessageLookupByLibrary.simpleMessage("الوقت المتوقع"),
     "evening": MessageLookupByLibrary.simpleMessage("مساءً (5م - 9م)"),
@@ -278,6 +290,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "export_pdf": MessageLookupByLibrary.simpleMessage("تصدير إلى PDF"),
     "export_report": MessageLookupByLibrary.simpleMessage("تصدير التقرير"),
     "export_success": MessageLookupByLibrary.simpleMessage("تم التصدير بنجاح"),
+    "export_to_pdf": MessageLookupByLibrary.simpleMessage("تصدير إلى PDF"),
     "failed": MessageLookupByLibrary.simpleMessage("فشل"),
     "failed_deliveries": MessageLookupByLibrary.simpleMessage(
       "التوصيلات الفاشلة",
@@ -508,6 +521,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "نحن ملتزمون بحماية خصوصية بياناتك وأمانها. توضح سياسة البيانات هذه كيفية تعاملنا مع بياناتك الشخصية.",
     ),
     "privacy_policy": MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),
+    "privacy_policy_accepted": MessageLookupByLibrary.simpleMessage(
+      "تم قبول سياسة الخصوصية بنجاح",
+    ),
     "proceed_to_proof": MessageLookupByLibrary.simpleMessage(
       "المتابعة إلى إثبات التوصيل",
     ),
@@ -559,6 +575,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "يتطلب توقيع المستلم",
     ),
     "retake": MessageLookupByLibrary.simpleMessage("إعادة التقاط"),
+    "retry": MessageLookupByLibrary.simpleMessage("إعادة المحاولة"),
     "return_reason": MessageLookupByLibrary.simpleMessage("سبب الإرجاع"),
     "returned": MessageLookupByLibrary.simpleMessage("مرتجع"),
     "revenue_overview": MessageLookupByLibrary.simpleMessage(
@@ -572,6 +589,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "save_changes": MessageLookupByLibrary.simpleMessage("حفظ التغييرات"),
     "save_parcel": MessageLookupByLibrary.simpleMessage("حفظ الطرد"),
     "scan_to_track": MessageLookupByLibrary.simpleMessage("امسح للتتبع"),
+    "scroll_to_read_all": MessageLookupByLibrary.simpleMessage(
+      "يرجى التمرير لقراءة السياسة بأكملها قبل القبول",
+    ),
     "search_by_barcode_or_name": MessageLookupByLibrary.simpleMessage(
       "البحث بواسطة الباركود أو الاسم...",
     ),
@@ -713,6 +733,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "verify_recipient": MessageLookupByLibrary.simpleMessage(
       "التحقق من المستلم",
     ),
+    "version": MessageLookupByLibrary.simpleMessage("الإصدار"),
     "view_all": MessageLookupByLibrary.simpleMessage("عرض الكل"),
     "view_details": MessageLookupByLibrary.simpleMessage("عرض التفاصيل"),
     "weekly_earnings": MessageLookupByLibrary.simpleMessage(
