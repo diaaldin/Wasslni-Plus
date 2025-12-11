@@ -2412,6 +2412,54 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Cancelled'**
   String get status_cancelled;
+
+  /// No description provided for @current_status.
+  ///
+  /// In en, this message translates to:
+  /// **'Current Status'**
+  String get current_status;
+
+  /// No description provided for @new_status.
+  ///
+  /// In en, this message translates to:
+  /// **'New Status'**
+  String get new_status;
+
+  /// No description provided for @location.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get location;
+
+  /// No description provided for @enter_location.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter location'**
+  String get enter_location;
+
+  /// No description provided for @enter_reason.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter reason'**
+  String get enter_reason;
+
+  /// No description provided for @add_notes_optional.
+  ///
+  /// In en, this message translates to:
+  /// **'Add notes (optional)'**
+  String get add_notes_optional;
+
+  /// No description provided for @update.
+  ///
+  /// In en, this message translates to:
+  /// **'Update'**
+  String get update;
+
+  /// No description provided for @error.
+  ///
+  /// In en, this message translates to:
+  /// **'Error'**
+  String get error;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

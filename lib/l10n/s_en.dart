@@ -1206,4 +1206,28 @@ class SEn extends S {
 
   @override
   String get status_cancelled => 'Cancelled';
+
+  @override
+  String get current_status => 'Current Status';
+
+  @override
+  String get new_status => 'New Status';
+
+  @override
+  String get location => 'Location';
+
+  @override
+  String get enter_location => 'Enter location';
+
+  @override
+  String get enter_reason => 'Enter reason';
+
+  @override
+  String get add_notes_optional => 'Add notes (optional)';
+
+  @override
+  String get update => 'Update';
+
+  @override
+  String get error => 'Error';
 }

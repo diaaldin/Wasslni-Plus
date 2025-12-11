@@ -7,6 +7,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:wasslni_plus/services/auth_service.dart';
 import 'package:wasslni_plus/services/fcm_service.dart';
 import 'package:wasslni_plus/services/analytics_service.dart';
+import 'package:wasslni_plus/services/performance_monitoring_service.dart';
 import 'package:wasslni_plus/models/user/user_model.dart';
 import 'firebase_options.dart';
 import 'package:wasslni_plus/app_styles.dart';
@@ -26,6 +27,9 @@ void main() async {
   // Ensure Flutter binding is initialized
   WidgetsFlutterBinding.ensureInitialized();
 
+  // Start app startup performance trace
+  await PerformanceMonitoringService().startAppStartupTrace();
+
   // Initialize Firebase
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -40,12 +44,18 @@ void main() async {
   // Initialize Analytics & Crashlytics
   await AnalyticsService().initialize();
 
+  // Initialize Performance Monitoring
+  await PerformanceMonitoringService().initialize();
+
   runApp(
     ChangeNotifierProvider(
       create: (_) => AppSettingsProvidor(),
       child: const MyApp(),
     ),
   );
+
+  // Stop app startup trace after app is ready
+  await PerformanceMonitoringService().stopAppStartupTrace();
 }
 
 class MyApp extends StatelessWidget {

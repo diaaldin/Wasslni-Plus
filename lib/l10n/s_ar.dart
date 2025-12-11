@@ -1194,4 +1194,28 @@ class SAr extends S {
 
   @override
   String get status_cancelled => 'ملغي';
+
+  @override
+  String get current_status => 'الحالة الحالية';
+
+  @override
+  String get new_status => 'الحالة الجديدة';
+
+  @override
+  String get location => 'الموقع';
+
+  @override
+  String get enter_location => 'أدخل الموقع';
+
+  @override
+  String get enter_reason => 'أدخل السبب';
+
+  @override
+  String get add_notes_optional => 'إضافة ملاحظات (اختياري)';
+
+  @override
+  String get update => 'تحديث';
+
+  @override
+  String get error => 'خطأ';
 }

@@ -581,11 +581,11 @@ Create server-side logic for:
   - [x] Monitor crash-free users
   - [x] Set up crash alerts
 
-- [ ] **Performance Monitoring**
-  - [ ] Enable Performance Monitoring
-  - [ ] Track network requests
-  - [ ] Monitor app startup time
-  - [ ] Track custom traces
+- [x] **Performance Monitoring**
+  - [x] Enable Performance Monitoring
+  - [x] Track network requests
+  - [x] Monitor app startup time
+  - [x] Track custom traces
 
 ---
 
