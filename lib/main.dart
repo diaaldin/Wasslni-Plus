@@ -8,6 +8,7 @@ import 'package:wasslni_plus/services/auth_service.dart';
 import 'package:wasslni_plus/services/fcm_service.dart';
 import 'package:wasslni_plus/services/analytics_service.dart';
 import 'package:wasslni_plus/services/performance_monitoring_service.dart';
+import 'package:wasslni_plus/services/notification_navigation_service.dart';
 import 'package:wasslni_plus/models/user/user_model.dart';
 import 'firebase_options.dart';
 import 'package:wasslni_plus/app_styles.dart';
@@ -22,6 +23,7 @@ import 'package:wasslni_plus/provider/app_settings_providor.dart';
 import 'package:wasslni_plus/widgets/network_aware_wrapper.dart';
 import 'package:wasslni_plus/widgets/log_in.dart';
 import 'package:wasslni_plus/widgets/session_timeout_manager.dart';
+import 'package:wasslni_plus/widgets/notification_navigation_listener.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
@@ -71,6 +73,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Wasslni Plus',
       debugShowCheckedModeBanner: false,
+      navigatorKey: NotificationNavigationService().navigatorKey,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: AppStyles.primaryColor),
         useMaterial3: true,
@@ -91,7 +94,9 @@ class MyApp extends StatelessWidget {
       ],
       supportedLocales: S.delegate.supportedLocales,
       locale: appSettings.locale,
-      home: const AuthenticationHandler(),
+      home: const NotificationNavigationListener(
+        child: AuthenticationHandler(),
+      ),
     );
   }
 }

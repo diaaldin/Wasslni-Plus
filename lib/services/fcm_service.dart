@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:wasslni_plus/services/firestore_service.dart';
 import 'package:wasslni_plus/services/auth_service.dart';
+import 'package:wasslni_plus/services/notification_navigation_service.dart';
 
 /// Background message handler - must be top-level function
 @pragma('vm:entry-point')
@@ -18,6 +19,8 @@ class FCMService {
   final FirebaseMessaging _messaging = FirebaseMessaging.instance;
   final FirestoreService _firestoreService = FirestoreService();
   final AuthService _authService = AuthService();
+  final NotificationNavigationService _navigationService =
+      NotificationNavigationService();
 
   String? _fcmToken;
   String? get fcmToken => _fcmToken;
@@ -106,6 +109,20 @@ class FCMService {
     if (message.notification != null) {
       debugPrint('Message notification: ${message.notification!.title}');
       debugPrint('Message body: ${message.notification!.body}');
+    }
+
+    // If app is in foreground, show a SnackBar notification
+    if (!isBackground && message.notification != null) {
+      _navigationService.showForegroundNotification(
+        title: message.notification!.title ?? 'Notification',
+        body: message.notification!.body ?? '',
+        data: message.data,
+      );
+    }
+
+    // If notification was tapped (from background), handle navigation
+    if (isBackground) {
+      _navigationService.handleNotificationTap(message.data);
     }
 
     // Handle different notification types based on data

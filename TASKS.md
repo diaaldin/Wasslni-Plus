@@ -176,7 +176,7 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
 - [x] **Order Tracking**
   - [x] Build detailed tracking timeline
   - [x] Add real-time location updates on map
-  - [ ] Implement push notifications for status changes
+  - [x] Implement push notifications for status changes
   - [x] Create estimated arrival countdown
 
 - [x] **Order History**
