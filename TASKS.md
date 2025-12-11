@@ -215,11 +215,11 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [x] Implement notification types (info, warning, success, delivery update)
   - [x] Create notification preferences
 
-- [~] **Help & Support** (In Progress)
+- [x] **Help & Support**
   - [x] Create FAQ page
   - [x] Add contact support form
   - [ ] Implement live chat (optional)
-  - [ ] Build tutorial guide
+  - [x] Build tutorial guide
 
 ### 1.8 Parcel Status Flow
 
