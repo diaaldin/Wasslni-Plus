@@ -247,16 +247,28 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
   - [x] Standardize spacing and sizing
   - [x] Implement consistent color scheme
 
-- [ ] **Responsive Design**
-  - [ ] Test and optimize for tablets
-  - [ ] Ensure proper layout on different screen sizes
-  - [ ] Add landscape mode support
+- [x] **Responsive Design**
+  - [x] Test and optimize for tablets
+  - [x] Ensure proper layout on different screen sizes
+  - [x] Add landscape mode support
+  - [x] Created comprehensive responsive utilities (`lib/utils/responsive_utils.dart`)
+  - [x] Created responsive design guide (`RESPONSIVE_DESIGN_GUIDE.md`)
+  - [x] Implemented adaptive components (AdaptivePadding, AdaptiveGrid)
+  - [x] Added device detection helpers (isMobile, isTablet, isDesktop)
+  - [x] Added orientation helpers (isLandscape, isPortrait)
 
-- [ ] **Accessibility**
-  - [ ] Add screen reader support
-  - [ ] Implement proper contrast ratios
-  - [ ] Add text scaling support
-  - [ ] Create keyboard navigation support
+- [x] **Accessibility**
+  - [x] Add screen reader support
+  - [x] Implement proper contrast ratios
+  - [x] Add text scaling support
+  - [x] Create keyboard navigation support
+  - [x] Created comprehensive accessibility utilities (`lib/utils/accessibility_utils.dart`)
+  - [x] Created accessibility guide (`ACCESSIBILITY_GUIDE.md`)
+  - [x] Implemented semantic labels and ARIA support
+  - [x] Added WCAG 2.1 contrast checking utilities
+  - [x] Implemented touch target sizing helpers
+  - [x] Added focus management utilities
+  - [x] Support for TalkBack, VoiceOver, and web screen readers
 
 - [x] **Loading States**
   - [x] Create skeleton loaders
@@ -770,6 +782,120 @@ For a functional MVP, prioritize these tasks:
 19. Tips and reviews system
 20. Multi-language full support
 21. Offline mode enhancements
+
+---
+
+## ♻️ Phase 6: Code Refactoring & Optimization
+
+### 6.1 Responsive Design Integration
+
+**Purpose**: Apply the responsive utilities created in Phase 1.9 to existing pages
+
+- [ ] **Admin Pages**
+  - [ ] Refactor Admin Dashboard to use ResponsiveUtils
+  - [ ] Update analytics charts with responsive layouts
+  - [ ] Apply adaptive padding and spacing
+  - [ ] Test on mobile, tablet, and desktop sizes
+
+- [ ] **Merchant Pages**
+  - [ ] Refactor Merchant Dashboard with responsive grid
+  - [ ] Update parcels list with adaptive layouts
+  - [ ] Apply responsive padding throughout
+  - [ ] Test all merchant flows on different screen sizes
+
+- [ ] **Courier Pages**
+  - [ ] Refactor Courier Dashboard with responsive components
+  - [ ] Update active deliveries with adaptive layouts
+  - [ ] Apply responsive spacing and sizing
+  - [ ] Test courier workflows on various devices
+
+- [ ] **Customer Pages**
+  - [ ] Refactor Customer Dashboard with responsive design
+  - [ ] Update order tracking with adaptive layouts
+  - [ ] Apply responsive components
+  - [ ] Test customer flows on all screen sizes
+
+- [ ] **Shared Components**
+  - [ ] Update common dialogs with responsive sizing
+  - [ ] Refactor forms with adaptive layouts
+  - [ ] Apply responsive utilities to navigation
+  - [ ] Update settings pages with responsive design
+
+### 6.2 Accessibility Integration
+
+**Purpose**: Apply the accessibility utilities created in Phase 1.9 to existing pages
+
+- [ ] **Screen Reader Support**
+  - [ ] Add semantic labels to all buttons and icons
+  - [ ] Add proper ARIA labels to interactive elements
+  - [ ] Ensure all images have descriptive labels
+  - [ ] Add semantic headers to all pages
+
+- [ ] **Touch Targets**
+  - [ ] Apply AccessibleTouchTarget to all small buttons
+  - [ ] Ensure minimum 48dp touch targets throughout
+  - [ ] Fix overlapping touch targets
+  - [ ] Test with touch interaction
+
+- [ ] **Focus Management**
+  - [ ] Add proper focus order to all forms
+  - [ ] Implement keyboard navigation on web
+  - [ ] Add focus indicators
+  - [ ] Test tab navigation throughout app
+
+- [ ] **Text Scaling**
+  - [ ] Apply ClampedTextScale where needed
+  - [ ] Test all pages at 200% text scale
+  - [ ] Fix any overflow issues
+  - [ ] Ensure text remains readable
+
+- [ ] **Announcements**
+  - [ ] Add screen reader announcements for success messages
+  - [ ] Announce errors to screen readers
+  - [ ] Announce navigation changes
+  - [ ] Test with TalkBack and VoiceOver
+
+### 6.3 Code Quality Improvements
+
+- [ ] **Remove Deprecated Code**
+  - [ ] Fix deprecated `textScaleFactor` usage (use `textScaler`)
+  - [ ] Fix deprecated color APIs (`color.red` → modern API)
+  - [ ] Fix deprecated Radio widget APIs
+  - [ ] Fix deprecated BuildContext async usage
+
+- [ ] **Performance Optimization**
+  - [ ] Add const constructors where possible
+  - [ ] Optimize widget rebuilds
+  - [ ] Implement proper caching
+  - [ ] Profile and optimize slow screens
+
+- [ ] **Code Consistency**
+  - [ ] Standardize naming conventions
+  - [ ] Use design tokens instead of hard-coded values
+  - [ ] Apply consistent error handling
+  - [ ] Ensure consistent loading states
+
+### 6.4 Testing
+
+- [ ] **Responsive Testing**
+  - [ ] Test on mobile devices (360x640, 375x812, 414x896)
+  - [ ] Test on tablets (768x1024, 1024x1366)
+  - [ ] Test on desktop (1280x720, 1920x1080, 2560x1440)
+  - [ ] Test landscape and portrait orientations
+
+- [ ] **Accessibility Testing**
+  - [ ] Test with TalkBack (Android)
+  - [ ] Test with VoiceOver (iOS)
+  - [ ] Test with screen readers on web
+  - [ ] Test keyboard navigation
+  - [ ] Verify contrast ratios
+  - [ ] Test at 200% text scaling
+
+- [ ] **Cross-browser Testing** (Web only)
+  - [ ] Test on Chrome
+  - [ ] Test on Firefox
+  - [ ] Test on Safari
+  - [ ] Test on Edge
 
 ---
 

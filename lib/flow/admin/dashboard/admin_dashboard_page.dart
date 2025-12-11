@@ -33,10 +33,8 @@ class _AdminDashboardPageState extends State<AdminDashboardPage> {
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         actions: [
           IconButton(
-            icon: const Icon(
-              Icons.language,
-              color: AppStyles.primaryColor,
-            ),
+            icon: const Icon(Icons.language),
+            color: AppStyles.primaryColor,
             onPressed: () {
               final newLocale = appSettings.locale.languageCode == 'en'
                   ? const Locale('ar')
