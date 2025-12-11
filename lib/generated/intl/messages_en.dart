@@ -165,6 +165,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "courier_not_assigned": MessageLookupByLibrary.simpleMessage(
       "Courier not assigned to this parcel",
     ),
+    "couriers": MessageLookupByLibrary.simpleMessage("Couriers"),
     "created_at": MessageLookupByLibrary.simpleMessage("Created At"),
     "current_location": MessageLookupByLibrary.simpleMessage(
       "Current Location",
@@ -297,6 +298,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "export_error": MessageLookupByLibrary.simpleMessage("Export failed"),
     "export_excel": MessageLookupByLibrary.simpleMessage("Export to Excel"),
     "export_pdf": MessageLookupByLibrary.simpleMessage("Export to PDF"),
+    "export_report": MessageLookupByLibrary.simpleMessage("Export Report"),
     "export_success": MessageLookupByLibrary.simpleMessage(
       "Export completed successfully",
     ),
@@ -305,6 +307,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Failed Deliveries",
     ),
     "failure_reason": MessageLookupByLibrary.simpleMessage("Failure Reason"),
+    "feature_coming_soon": MessageLookupByLibrary.simpleMessage(
+      "This feature is coming soon",
+    ),
     "feedback_submitted_successfully": MessageLookupByLibrary.simpleMessage(
       "Feedback submitted successfully!",
     ),

@@ -150,6 +150,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "courier_not_assigned": MessageLookupByLibrary.simpleMessage(
       "لم يتم تعيين سائق لهذا الطرد",
     ),
+    "couriers": MessageLookupByLibrary.simpleMessage("المناديب"),
     "created_at": MessageLookupByLibrary.simpleMessage("تاريخ الإنشاء"),
     "current_location": MessageLookupByLibrary.simpleMessage("الموقع الحالي"),
     "current_password": MessageLookupByLibrary.simpleMessage(
@@ -270,12 +271,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "export_error": MessageLookupByLibrary.simpleMessage("فشل التصدير"),
     "export_excel": MessageLookupByLibrary.simpleMessage("تصدير إلى Excel"),
     "export_pdf": MessageLookupByLibrary.simpleMessage("تصدير إلى PDF"),
+    "export_report": MessageLookupByLibrary.simpleMessage("تصدير التقرير"),
     "export_success": MessageLookupByLibrary.simpleMessage("تم التصدير بنجاح"),
     "failed": MessageLookupByLibrary.simpleMessage("فشل"),
     "failed_deliveries": MessageLookupByLibrary.simpleMessage(
       "التوصيلات الفاشلة",
     ),
     "failure_reason": MessageLookupByLibrary.simpleMessage("سبب الفشل"),
+    "feature_coming_soon": MessageLookupByLibrary.simpleMessage(
+      "هذه الميزة قادمة قريباً",
+    ),
     "feedback_submitted_successfully": MessageLookupByLibrary.simpleMessage(
       "تم إرسال التقييم بنجاح!",
     ),

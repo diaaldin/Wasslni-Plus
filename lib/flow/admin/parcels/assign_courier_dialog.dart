@@ -118,10 +118,12 @@ class _AssignCourierDialogState extends State<AssignCourierDialog> {
                     return ListTile(
                       contentPadding: EdgeInsets.zero,
                       leading: CircleAvatar(
-                        backgroundImage: courier.profilePhotoUrl != null
+                        backgroundImage: (courier.profilePhotoUrl != null &&
+                                courier.profilePhotoUrl!.isNotEmpty)
                             ? NetworkImage(courier.profilePhotoUrl!)
                             : null,
-                        child: courier.profilePhotoUrl == null
+                        child: (courier.profilePhotoUrl == null ||
+                                courier.profilePhotoUrl!.isEmpty)
                             ? const Icon(Icons.person)
                             : null,
                       ),

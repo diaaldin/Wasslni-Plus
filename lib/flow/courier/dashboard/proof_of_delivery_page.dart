@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:wasslni_plus/app_styles.dart';
@@ -26,7 +27,7 @@ class _ProofOfDeliveryPageState extends State<ProofOfDeliveryPage> {
   final FirestoreService _firestoreService = FirestoreService();
   final AuthService _authService = AuthService();
 
-  File? _imageFile;
+  XFile? _imageXFile;
   bool _isUploading = false;
 
   Future<void> _takePhoto() async {
@@ -38,7 +39,7 @@ class _ProofOfDeliveryPageState extends State<ProofOfDeliveryPage> {
 
       if (photo != null) {
         setState(() {
-          _imageFile = File(photo.path);
+          _imageXFile = photo;
         });
       }
     } catch (e) {
@@ -52,7 +53,7 @@ class _ProofOfDeliveryPageState extends State<ProofOfDeliveryPage> {
   }
 
   Future<void> _confirmDelivery() async {
-    if (_imageFile == null) return;
+    if (_imageXFile == null) return;
 
     final user = _authService.currentUser;
     if (user == null) {
@@ -70,7 +71,7 @@ class _ProofOfDeliveryPageState extends State<ProofOfDeliveryPage> {
       // 1. Upload photo
       final String downloadUrl = await _storageService.uploadProofOfDelivery(
         widget.parcel.id ?? 'unknown',
-        _imageFile!,
+        _imageXFile!,
       );
 
       // 2. Update parcel status
@@ -131,11 +132,16 @@ class _ProofOfDeliveryPageState extends State<ProofOfDeliveryPage> {
             child: Container(
               width: double.infinity,
               color: Colors.black,
-              child: _imageFile != null
-                  ? Image.file(
-                      _imageFile!,
-                      fit: BoxFit.contain,
-                    )
+              child: _imageXFile != null
+                  ? kIsWeb
+                      ? Image.network(
+                          _imageXFile!.path,
+                          fit: BoxFit.contain,
+                        )
+                      : Image.file(
+                          File(_imageXFile!.path),
+                          fit: BoxFit.contain,
+                        )
                   : Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -171,7 +177,7 @@ class _ProofOfDeliveryPageState extends State<ProofOfDeliveryPage> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                if (_imageFile == null)
+                if (_imageXFile == null)
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton.icon(

@@ -82,16 +82,16 @@ This document outlines all tasks required to complete the **Wasslni Plus** packa
 ### 1.2 Courier Management (Admin)
 - [x] **Courier Assignment**
   - [x] Create courier assignment interface
-  - [ ] Build courier availability tracker
+  - [x] Build courier availability tracker
   - [ ] Add courier performance reports
   - [ ] Implement route optimization suggestions
 
 ### 1.3 Regional Analytics (Admin)
-- [ ] **Analytics Dashboard**
-  - [ ] Build delivery success rate charts
-  - [ ] Add time-based analytics
-  - [ ] Create regional comparison views
-  - [ ] Implement export functionality for reports
+- [x] **Analytics Dashboard**
+  - [x] Build delivery success rate charts
+  - [x] Add time-based analytics
+  - [x] Create regional comparison views
+  - [x] Implement export functionality for reports
 
 ### 1.4 Merchant Dashboard (Enhance Existing)
 

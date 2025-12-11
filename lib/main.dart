@@ -27,13 +27,13 @@ void main() async {
   // Ensure Flutter binding is initialized
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Start app startup performance trace
-  await PerformanceMonitoringService().startAppStartupTrace();
-
   // Initialize Firebase
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  // Start app startup performance trace (must be after Firebase init)
+  await PerformanceMonitoringService().startAppStartupTrace();
 
   // Set up background message handler
   FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);

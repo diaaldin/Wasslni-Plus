@@ -8,7 +8,7 @@ class PerformanceMonitoringService {
   factory PerformanceMonitoringService() => _instance;
   PerformanceMonitoringService._internal();
 
-  final FirebasePerformance _performance = FirebasePerformance.instance;
+  FirebasePerformance get _performance => FirebasePerformance.instance;
 
   // Track active traces
   final Map<String, Trace> _activeTraces = {};

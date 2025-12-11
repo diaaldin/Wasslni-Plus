@@ -1,6 +1,6 @@
-import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:path/path.dart' as path;
+import 'package:image_picker/image_picker.dart';
 
 class StorageService {
   final FirebaseStorage _storage = FirebaseStorage.instance;
@@ -8,7 +8,7 @@ class StorageService {
   /// Upload a file to Firebase Storage
   /// Returns the download URL
   Future<String> uploadFile({
-    required File file,
+    required XFile file,
     required String path,
     String? contentType,
     Map<String, String>? customMetadata,
@@ -23,7 +23,8 @@ class StorageService {
         },
       );
 
-      final uploadTask = await ref.putFile(file, metadata);
+      final bytes = await file.readAsBytes();
+      final uploadTask = await ref.putData(bytes, metadata);
       return await uploadTask.ref.getDownloadURL();
     } catch (e) {
       throw Exception('Error uploading file: $e');
@@ -32,7 +33,7 @@ class StorageService {
 
   /// Upload profile photo
   /// Path: users/{userId}/profile.{ext}
-  Future<String> uploadProfilePhoto(String userId, File file) async {
+  Future<String> uploadProfilePhoto(String userId, XFile file) async {
     final extension = path.extension(file.path);
     final filePath = 'users/$userId/profile$extension';
     return await uploadFile(
@@ -44,7 +45,7 @@ class StorageService {
 
   /// Upload parcel image
   /// Path: parcels/{parcelId}/images/{timestamp}_{filename}
-  Future<String> uploadParcelImage(String parcelId, File file) async {
+  Future<String> uploadParcelImage(String parcelId, XFile file) async {
     final fileName =
         '${DateTime.now().millisecondsSinceEpoch}_${path.basename(file.path)}';
     final filePath = 'parcels/$parcelId/images/$fileName';
@@ -58,7 +59,7 @@ class StorageService {
 
   /// Upload proof of delivery
   /// Path: parcels/{parcelId}/proof_of_delivery/{timestamp}_{filename}
-  Future<String> uploadProofOfDelivery(String parcelId, File file) async {
+  Future<String> uploadProofOfDelivery(String parcelId, XFile file) async {
     final fileName =
         '${DateTime.now().millisecondsSinceEpoch}_proof_${path.basename(file.path)}';
     final filePath = 'parcels/$parcelId/proof_of_delivery/$fileName';
@@ -71,7 +72,7 @@ class StorageService {
 
   /// Upload signature
   /// Path: parcels/{parcelId}/signature/{timestamp}_{filename}
-  Future<String> uploadSignature(String parcelId, File file) async {
+  Future<String> uploadSignature(String parcelId, XFile file) async {
     final fileName =
         '${DateTime.now().millisecondsSinceEpoch}_signature_${path.basename(file.path)}';
     final filePath = 'parcels/$parcelId/signature/$fileName';
@@ -84,7 +85,7 @@ class StorageService {
 
   /// Upload business license
   /// Path: users/{userId}/documents/license.{ext}
-  Future<String> uploadBusinessLicense(String userId, File file) async {
+  Future<String> uploadBusinessLicense(String userId, XFile file) async {
     final extension = path.extension(file.path);
     final filePath = 'users/$userId/documents/license$extension';
     return await uploadFile(

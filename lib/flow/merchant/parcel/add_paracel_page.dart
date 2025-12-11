@@ -12,6 +12,7 @@ import 'package:wasslni_plus/flow/common/barcode_scanner_page.dart';
 import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 class AddParcelPage extends StatefulWidget {
   final ParcelModel? parcel;
@@ -106,7 +107,13 @@ class _AddParcelPageState extends State<AddParcelPage> {
             .child('parcel_images')
             .child('${DateTime.now().millisecondsSinceEpoch}_${image.name}');
 
-        await ref.putFile(File(image.path));
+        final metadata = SettableMetadata(
+          contentType: 'image/jpeg',
+          customMetadata: {'picked-file-path': image.path},
+        );
+
+        final bytes = await image.readAsBytes();
+        await ref.putData(bytes, metadata);
         final url = await ref.getDownloadURL();
         uploadedUrls.add(url);
       } catch (e) {
@@ -767,8 +774,10 @@ class _AddParcelPageState extends State<AddParcelPage> {
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(8),
                                       image: DecorationImage(
-                                        image:
-                                            FileImage(File(entry.value.path)),
+                                        image: kIsWeb
+                                            ? NetworkImage(entry.value.path)
+                                            : FileImage(File(entry.value.path))
+                                                as ImageProvider,
                                         fit: BoxFit.cover,
                                       ),
                                     ),

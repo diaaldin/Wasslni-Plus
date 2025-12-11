@@ -411,5 +411,8 @@
   "unassigned": "Unassigned",
   "assigned": "Assigned",
   "no_couriers_found": "No couriers found",
-  "courier_assigned_success": "Courier assigned successfully"
+  "courier_assigned_success": "Courier assigned successfully",
+  "export_report": "Export Report",
+  "feature_coming_soon": "This feature is coming soon",
+  "couriers": "Couriers"
 }

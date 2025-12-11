@@ -1,8 +1,7 @@
-import 'dart:io';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:signature/signature.dart';
-import 'package:path_provider/path_provider.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:wasslni_plus/app_styles.dart';
 import 'package:wasslni_plus/generated/l10n.dart';
 import 'package:wasslni_plus/models/parcel_model.dart';
@@ -45,13 +44,15 @@ class _SignaturePageState extends State<SignaturePage> {
       final Uint8List? data = await _controller.toPngBytes();
       if (data == null) return;
 
-      final tempDir = await getTemporaryDirectory();
-      final file = await File('${tempDir.path}/signature.png').create();
-      await file.writeAsBytes(data);
+      final xfile = XFile.fromData(
+        data,
+        name: 'signature.png',
+        mimeType: 'image/png',
+      );
 
       final url = await _storageService.uploadSignature(
         widget.parcel.id ?? 'unknown',
-        file,
+        xfile,
       );
 
       await _firestoreService.updateParcel(

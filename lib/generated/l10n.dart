@@ -3463,6 +3463,31 @@ class S {
       args: [],
     );
   }
+
+  /// `Export Report`
+  String get export_report {
+    return Intl.message(
+      'Export Report',
+      name: 'export_report',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This feature is coming soon`
+  String get feature_coming_soon {
+    return Intl.message(
+      'This feature is coming soon',
+      name: 'feature_coming_soon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Couriers`
+  String get couriers {
+    return Intl.message('Couriers', name: 'couriers', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

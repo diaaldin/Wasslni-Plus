@@ -1218,4 +1218,31 @@ class SAr extends S {
 
   @override
   String get error => 'خطأ';
+
+  @override
+  String get assign_courier => 'تعيين مندوب';
+
+  @override
+  String get select_courier => 'اختر مندوب';
+
+  @override
+  String get unassigned => 'غير معين';
+
+  @override
+  String get assigned => 'تم التعيين';
+
+  @override
+  String get no_couriers_found => 'لا يوجد مناديب';
+
+  @override
+  String get courier_assigned_success => 'تم تعيين المندوب بنجاح';
+
+  @override
+  String get export_report => 'تصدير التقرير';
+
+  @override
+  String get feature_coming_soon => 'هذه الميزة قادمة قريباً';
+
+  @override
+  String get couriers => 'المناديب';
 }

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:wasslni_plus/flow/admin/parcels/admin_parcels_page.dart';
 import 'package:wasslni_plus/generated/l10n.dart';
+import 'package:wasslni_plus/flow/shared/user_settings_page.dart';
+import 'package:wasslni_plus/flow/admin/dashboard/admin_dashboard_page.dart';
+
+import 'package:wasslni_plus/flow/admin/couriers/admin_couriers_page.dart';
 
 class AdminMainScreen extends StatefulWidget {
   const AdminMainScreen({super.key});
@@ -12,10 +16,11 @@ class AdminMainScreen extends StatefulWidget {
 class _AdminMainScreenState extends State<AdminMainScreen> {
   int _selectedIndex = 0;
 
-  final List<Widget> _pages = const [
-    Center(child: Text('Admin Main page')),
+  final List<Widget> _pages = [
+    AdminDashboardPage(),
     AdminParcelsPage(),
-    Center(child: Text('Admin Settings page')),
+    AdminCouriersPage(),
+    UserSettingsPage(),
   ];
 
   @override
@@ -26,6 +31,7 @@ class _AdminMainScreenState extends State<AdminMainScreen> {
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
+        type: BottomNavigationBarType.fixed, // Added for >3 items
         onTap: (index) => setState(() => _selectedIndex = index),
         items: [
           BottomNavigationBarItem(
@@ -35,6 +41,10 @@ class _AdminMainScreenState extends State<AdminMainScreen> {
           BottomNavigationBarItem(
             icon: const Icon(Icons.local_shipping_outlined),
             label: tr.parcels,
+          ),
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.people_outline),
+            label: tr.couriers,
           ),
           BottomNavigationBarItem(
             icon: const Icon(Icons.settings),

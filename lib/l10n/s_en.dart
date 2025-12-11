@@ -1230,4 +1230,31 @@ class SEn extends S {
 
   @override
   String get error => 'Error';
+
+  @override
+  String get assign_courier => 'Assign Courier';
+
+  @override
+  String get select_courier => 'Select Courier';
+
+  @override
+  String get unassigned => 'Unassigned';
+
+  @override
+  String get assigned => 'Assigned';
+
+  @override
+  String get no_couriers_found => 'No couriers found';
+
+  @override
+  String get courier_assigned_success => 'Courier assigned successfully';
+
+  @override
+  String get export_report => 'Export Report';
+
+  @override
+  String get feature_coming_soon => 'This feature is coming soon';
+
+  @override
+  String get couriers => 'Couriers';
 }

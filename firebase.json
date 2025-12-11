@@ -51,6 +51,23 @@
     }
   ],
   "storage": {
-    "rules": "storage.rules"
+    "target": "main",
+    "rules": "storage.rules",
+    "cors": [
+      {
+        "origin": [
+          "*"
+        ],
+        "method": [
+          "GET",
+          "PUT",
+          "POST",
+          "DELETE",
+          "HEAD",
+          "OPTIONS"
+        ],
+        "maxAgeSeconds": 3600
+      }
+    ]
   }
 }

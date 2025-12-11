@@ -411,5 +411,8 @@
   "unassigned": "غير معين",
   "assigned": "تم التعيين",
   "no_couriers_found": "لا يوجد مناديب",
-  "courier_assigned_success": "تم تعيين المندوب بنجاح"
+  "courier_assigned_success": "تم تعيين المندوب بنجاح",
+  "export_report": "تصدير التقرير",
+  "feature_coming_soon": "هذه الميزة قادمة قريباً",
+  "couriers": "المناديب"
 }

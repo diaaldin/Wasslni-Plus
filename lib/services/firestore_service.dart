@@ -98,6 +98,18 @@ class FirestoreService {
     }
   }
 
+  /// Stream users by role
+  Stream<List<UserModel>> streamUsersByRole(String role) {
+    return _usersCollection
+        .where('role', isEqualTo: role)
+        //.where('status', isEqualTo: 'active') // Show all for admin management
+        .orderBy('name')
+        .snapshots()
+        .map((snapshot) {
+      return snapshot.docs.map((doc) => UserModel.fromFirestore(doc)).toList();
+    });
+  }
+
   /// Update FCM token
   Future<void> updateUserFcmToken(String uid, String token) async {
     try {

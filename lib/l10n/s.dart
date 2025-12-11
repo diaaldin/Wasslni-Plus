@@ -2460,6 +2460,60 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Error'**
   String get error;
+
+  /// No description provided for @assign_courier.
+  ///
+  /// In en, this message translates to:
+  /// **'Assign Courier'**
+  String get assign_courier;
+
+  /// No description provided for @select_courier.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Courier'**
+  String get select_courier;
+
+  /// No description provided for @unassigned.
+  ///
+  /// In en, this message translates to:
+  /// **'Unassigned'**
+  String get unassigned;
+
+  /// No description provided for @assigned.
+  ///
+  /// In en, this message translates to:
+  /// **'Assigned'**
+  String get assigned;
+
+  /// No description provided for @no_couriers_found.
+  ///
+  /// In en, this message translates to:
+  /// **'No couriers found'**
+  String get no_couriers_found;
+
+  /// No description provided for @courier_assigned_success.
+  ///
+  /// In en, this message translates to:
+  /// **'Courier assigned successfully'**
+  String get courier_assigned_success;
+
+  /// No description provided for @export_report.
+  ///
+  /// In en, this message translates to:
+  /// **'Export Report'**
+  String get export_report;
+
+  /// No description provided for @feature_coming_soon.
+  ///
+  /// In en, this message translates to:
+  /// **'This feature is coming soon'**
+  String get feature_coming_soon;
+
+  /// No description provided for @couriers.
+  ///
+  /// In en, this message translates to:
+  /// **'Couriers'**
+  String get couriers;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

@@ -29,14 +29,14 @@ service firebase.storage {
     }
     
     // User profile photos
-    match /users/{userId}/profile.{extension} {
+    match /users/{userId}/{fileName} {
       allow read: if isAuthenticated();
       allow write: if isOwner(userId) && isImage() && isValidImageSize();
       allow delete: if isOwner(userId);
     }
     
     // User business licenses (merchants only)
-    match /users/{userId}/documents/license.{extension} {
+    match /users/{userId}/documents/{fileName} {
       allow read: if isOwner(userId);
       allow write: if isOwner(userId) && isDocument() && isValidDocumentSize();
       allow delete: if isOwner(userId);
