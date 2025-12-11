@@ -31,7 +31,6 @@ class _FAQPageState extends State<FAQPage> {
   }
 
   void _loadFAQs() {
-    final languageCode = Localizations.localeOf(context).languageCode;
     setState(() {
       if (_selectedCategory == 'all') {
         _displayedFAQs = _faqService.getAllFAQs();

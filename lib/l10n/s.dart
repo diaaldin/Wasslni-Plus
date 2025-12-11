@@ -184,7 +184,7 @@ abstract class S {
   /// No description provided for @contact_support.
   ///
   /// In en, this message translates to:
-  /// **'For more details, feel free to contact our support team.'**
+  /// **'Contact Support'**
   String get contact_support;
 
   /// No description provided for @merchant_dashboard.
@@ -2008,7 +2008,7 @@ abstract class S {
   /// No description provided for @describe_issue.
   ///
   /// In en, this message translates to:
-  /// **'Describe the Issue'**
+  /// **'Describe your issue'**
   String get describe_issue;
 
   /// No description provided for @provide_details.
@@ -2026,7 +2026,7 @@ abstract class S {
   /// No description provided for @please_describe_issue.
   ///
   /// In en, this message translates to:
-  /// **'Please describe the issue'**
+  /// **'Please describe your issue'**
   String get please_describe_issue;
 
   /// No description provided for @issue_reported.
@@ -2640,6 +2640,90 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Accept'**
   String get accept;
+
+  /// No description provided for @faq.
+  ///
+  /// In en, this message translates to:
+  /// **'Frequently Asked Questions'**
+  String get faq;
+
+  /// No description provided for @search_faq.
+  ///
+  /// In en, this message translates to:
+  /// **'Search questions...'**
+  String get search_faq;
+
+  /// No description provided for @no_faq_found.
+  ///
+  /// In en, this message translates to:
+  /// **'No questions found'**
+  String get no_faq_found;
+
+  /// No description provided for @try_different_search.
+  ///
+  /// In en, this message translates to:
+  /// **'Try a different search term'**
+  String get try_different_search;
+
+  /// No description provided for @still_have_questions.
+  ///
+  /// In en, this message translates to:
+  /// **'Still Have Questions?'**
+  String get still_have_questions;
+
+  /// No description provided for @contact_support_team.
+  ///
+  /// In en, this message translates to:
+  /// **'Our support team is here to help you'**
+  String get contact_support_team;
+
+  /// No description provided for @support_request.
+  ///
+  /// In en, this message translates to:
+  /// **'Support Request'**
+  String get support_request;
+
+  /// No description provided for @subject.
+  ///
+  /// In en, this message translates to:
+  /// **'Subject'**
+  String get subject;
+
+  /// No description provided for @enter_subject.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter subject'**
+  String get enter_subject;
+
+  /// No description provided for @attach_screenshot.
+  ///
+  /// In en, this message translates to:
+  /// **'Attach Screenshot (Optional)'**
+  String get attach_screenshot;
+
+  /// No description provided for @submit_request.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit Request'**
+  String get submit_request;
+
+  /// No description provided for @request_submitted.
+  ///
+  /// In en, this message translates to:
+  /// **'Request Submitted'**
+  String get request_submitted;
+
+  /// No description provided for @support_request_success.
+  ///
+  /// In en, this message translates to:
+  /// **'Your support request has been submitted successfully. We\'ll get back to you soon!'**
+  String get support_request_success;
+
+  /// No description provided for @please_enter_subject.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a subject'**
+  String get please_enter_subject;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

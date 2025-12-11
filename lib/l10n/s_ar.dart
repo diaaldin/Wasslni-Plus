@@ -58,8 +58,7 @@ class SAr extends S {
       'نشكرك على ثقتك بنا فيما يتعلق بمعلوماتك. نحن نسعى جاهدين للحفاظ على بياناتك آمنة وشفافة.';
 
   @override
-  String get contact_support =>
-      'لمزيد من التفاصيل، لا تتردد في الاتصال بفريق الدعم لدينا.';
+  String get contact_support => 'اتصل بالدعم';
 
   @override
   String get merchant_dashboard => 'لوحة التاجر';
@@ -985,7 +984,7 @@ class SAr extends S {
   String get issue_other => 'أخرى';
 
   @override
-  String get describe_issue => 'وصف المشكلة';
+  String get describe_issue => 'صف مشكلتك';
 
   @override
   String get provide_details => 'يرجى تقديم تفاصيل حول المشكلة...';
@@ -994,7 +993,7 @@ class SAr extends S {
   String get please_select_issue_type => 'يرجى اختيار نوع المشكلة';
 
   @override
-  String get please_describe_issue => 'يرجى وصف المشكلة';
+  String get please_describe_issue => 'الرجاء وصف مشكلتك';
 
   @override
   String get issue_reported => 'تم الإبلاغ عن المشكلة';
@@ -1310,4 +1309,47 @@ class SAr extends S {
 
   @override
   String get accept => 'قبول';
+
+  @override
+  String get faq => 'الأسئلة الشائعة';
+
+  @override
+  String get search_faq => 'ابحث عن أسئلة...';
+
+  @override
+  String get no_faq_found => 'لم يتم العثور على أسئلة';
+
+  @override
+  String get try_different_search => 'جرب مصطلح بحث مختلف';
+
+  @override
+  String get still_have_questions => 'لا تزال لديك أسئلة؟';
+
+  @override
+  String get contact_support_team => 'فريق الدعم لدينا هنا لمساعدتك';
+
+  @override
+  String get support_request => 'طلب دعم';
+
+  @override
+  String get subject => 'الموضوع';
+
+  @override
+  String get enter_subject => 'أدخل الموضوع';
+
+  @override
+  String get attach_screenshot => 'إرفاق لقطة شاشة (اختياري)';
+
+  @override
+  String get submit_request => 'إرسال الطلب';
+
+  @override
+  String get request_submitted => 'تم إرسال الطلب';
+
+  @override
+  String get support_request_success =>
+      'تم إرسال طلب الدعم بنجاح. سنتواصل معك قريباً!';
+
+  @override
+  String get please_enter_subject => 'الرجاء إدخال الموضوع';
 }

@@ -252,7 +252,7 @@ You have the right to:
 ## Contact Us
 For questions about this policy, contact us at:
 Email: privacy@wasslniplus.com
-Phone: 00972-0543596300
+Phone: 00972-0526041850
 ''';
   }
 }

@@ -58,8 +58,7 @@ class SEn extends S {
       'Thank you for trusting us with your information. We strive to keep your data safe and transparent.';
 
   @override
-  String get contact_support =>
-      'For more details, feel free to contact our support team.';
+  String get contact_support => 'Contact Support';
 
   @override
   String get merchant_dashboard => 'Merchant Dashboard';
@@ -994,7 +993,7 @@ class SEn extends S {
   String get issue_other => 'Other';
 
   @override
-  String get describe_issue => 'Describe the Issue';
+  String get describe_issue => 'Describe your issue';
 
   @override
   String get provide_details => 'Please provide details about the issue...';
@@ -1003,7 +1002,7 @@ class SEn extends S {
   String get please_select_issue_type => 'Please select an issue type';
 
   @override
-  String get please_describe_issue => 'Please describe the issue';
+  String get please_describe_issue => 'Please describe your issue';
 
   @override
   String get issue_reported => 'Issue Reported';
@@ -1322,4 +1321,47 @@ class SEn extends S {
 
   @override
   String get accept => 'Accept';
+
+  @override
+  String get faq => 'Frequently Asked Questions';
+
+  @override
+  String get search_faq => 'Search questions...';
+
+  @override
+  String get no_faq_found => 'No questions found';
+
+  @override
+  String get try_different_search => 'Try a different search term';
+
+  @override
+  String get still_have_questions => 'Still Have Questions?';
+
+  @override
+  String get contact_support_team => 'Our support team is here to help you';
+
+  @override
+  String get support_request => 'Support Request';
+
+  @override
+  String get subject => 'Subject';
+
+  @override
+  String get enter_subject => 'Enter subject';
+
+  @override
+  String get attach_screenshot => 'Attach Screenshot (Optional)';
+
+  @override
+  String get submit_request => 'Submit Request';
+
+  @override
+  String get request_submitted => 'Request Submitted';
+
+  @override
+  String get support_request_success =>
+      'Your support request has been submitted successfully. We\'ll get back to you soon!';
+
+  @override
+  String get please_enter_subject => 'Please enter a subject';
 }

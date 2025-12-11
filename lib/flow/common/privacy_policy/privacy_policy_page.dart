@@ -47,7 +47,7 @@ class PrivacyPolicyPage extends StatelessWidget {
               InfoSection(
                 icon: Icons.phone,
                 title: s.phone_number,
-                text: '00972-0543596300',
+                text: '00972-0526041850',
               ),
               InfoSection(
                 icon: Icons.verified_user,
