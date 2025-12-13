@@ -11,7 +11,8 @@ class SecurityService {
   SecurityService._internal();
 
   /// Constants for regex patterns
-  static const String _emailPattern = r'^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+';
+  static const String _emailPattern =
+      r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$';
   static const String _phonePattern = r'^\+?[0-9]{10,14}$';
 
   /// Validates that a string is a valid email
