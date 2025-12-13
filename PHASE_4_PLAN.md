@@ -5,12 +5,12 @@ This document outlines the detailed steps for implementing Phase 4 (Testing) of 
 ## 4.1 Unit Testing 🧪
 
 ### 4.1.1 Model Serialization Tests
-- [ ] **UserModel**: Test `fromFirestore` and `toMap`.
-- [ ] **ParcelModel**: Test `fromFirestore` and `toMap`.
+- [x] **UserModel**: Test `fromFirestore` and `toMap`.
+- [x] **ParcelModel**: Test `fromFirestore` and `toMap`.
 - [ ] **SyncRequest**: Test Hive adapter serialization.
 
 ### 4.1.2 Service Logic Tests
-- [ ] **SecurityService**:
+- [x] **SecurityService**:
   - Test `isValidEmail`
   - Test `isValidPhone`
   - Test `sanitizeInput`
@@ -18,7 +18,7 @@ This document outlines the detailed steps for implementing Phase 4 (Testing) of 
   - Test queue logic (mocking storage).
   
 ### 4.1.3 Utility Tests
-- [ ] **Formatters**: Test date/currency formatters.
+- [x] **Formatters**: Test date/currency formatters (`ValidationUtils`, `ArabicTextHelper`).
 
 ## 4.2 Widget Testing 📱
 
@@ -29,7 +29,7 @@ This document outlines the detailed steps for implementing Phase 4 (Testing) of 
 
 ### 4.2.2 Shared Components
 - [ ] **NetworkAwareWrapper**: Test offline banner visibility.
-- [ ] **Custom Fields**: Test `EditableField` behavior.
+- [x] **Custom Fields**: Test `EditableField` behavior.
 
 ## 4.3 Integration Testing 🔄
 
