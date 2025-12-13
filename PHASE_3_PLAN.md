@@ -5,28 +5,28 @@ This document outlines the detailed steps for implementing Phase 3 of Wasslni Pl
 ## 3.1 Security Hardening 🔒
 
 ### 3.1.1 Network Security
-- [ ] **Enforce HTTPS**: Ensure all external API calls use HTTPS.
+- [x] **Enforce HTTPS**: Ensure all external API calls use HTTPS.
 - [ ] **Certificate Pinning**: Implement SSL pinning for critical endpoints (optional but recommended for high security).
 - [ ] **Secure Headers**: Verify Cloud Functions set appropriate security headers.
 
 ### 3.1.2 Data Security
-- [ ] **Local Encryption**: Encrypt sensitive data stored locally (Hive/SharedPreferences).
+- [x] **Local Encryption**: Encrypt sensitive data stored locally (Hive/SharedPreferences).
   - Use `flutter_secure_storage` for tokens/keys.
   - Encrypt Hive boxes containing user PII.
-- [ ] **Input Validation**: Centralize input validation logic.
+- [x] **Input Validation**: Centralize input validation logic.
   - Validate all form inputs.
   - Sanitize data before sending to Firestore.
 
 ### 3.1.3 Firestore Security Rules Audit
-- [ ] **Review Rules**: Audit current `firestore.rules`.
-- [ ] **Role-based Access**: strict enforcement of roles (merchant, courier, admin).
+- [x] **Review Rules**: Audit current `firestore.rules`.
+- [x] **Role-based Access**: strict enforcement of roles (merchant, courier, admin).
 - [ ] **Data Validation in Rules**: Ensure data types and structures are validated serverside.
 
 ## 3.2 Optimization & Performance ⚡
 
 ### 3.2.1 Offline Support (Local-First Architecture)
-- [ ] **Local Database**: Set up Hive or Isar for local caching.
-- [ ] **Sync Engine**: Create a sync service to handle offline mutations.
+- [x] **Local Database**: Set up Hive or Isar for local caching.
+- [x] **Sync Engine**: Create a sync service to handle offline mutations.
   - Queue actions when offline.
   - Process queue when online.
   - Handle conflict resolution (server-wins or merge).
@@ -42,8 +42,8 @@ This document outlines the detailed steps for implementing Phase 3 of Wasslni Pl
 ## 3.3 Network Handling 📶
 
 ### 3.3.1 Network Detection
-- [ ] **Connectivity Service**: Enhance `connectivity_plus` implementation.
-- [ ] **Offline UI**: Design and implement global offline indicators (SnackBar/Banner).
+- [x] **Connectivity Service**: Enhance `connectivity_plus` implementation.
+- [x] **Offline UI**: Design and implement global offline indicators (SnackBar/Banner).
 
 ---
 

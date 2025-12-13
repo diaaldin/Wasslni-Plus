@@ -6,6 +6,8 @@ import 'package:wasslni_plus/models/region_model.dart';
 import 'package:wasslni_plus/models/notification_model.dart';
 import 'package:wasslni_plus/models/review_model.dart';
 import 'package:wasslni_plus/models/analytics_model.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:wasslni_plus/services/sync_service.dart';
 import 'package:wasslni_plus/models/address_model.dart';
 
 class FirestoreService {
@@ -29,6 +31,39 @@ class FirestoreService {
       _firestore.collection('analytics');
   CollectionReference get _addressesCollection =>
       _firestore.collection('addresses');
+
+  /// Helper to perform writes safely (Offline Queue or Direct)
+  Future<void> _safeWrite({
+    required String collection,
+    String? docId,
+    required Map<String, dynamic> data,
+    required String action,
+  }) async {
+    final connectivityResult = await Connectivity().checkConnectivity();
+    if (connectivityResult == ConnectivityResult.none) {
+      await SyncService().addToQueue(
+        collection: collection,
+        documentId: docId,
+        data: data,
+        action: action,
+      );
+    } else {
+      final colRef = _firestore.collection(collection);
+      if (action == 'create') {
+        if (docId != null) {
+          await colRef.doc(docId).set(data);
+        } else {
+          await colRef.add(data);
+        }
+      } else if (action == 'set') {
+        await colRef.doc(docId).set(data);
+      } else if (action == 'update') {
+        await colRef.doc(docId).update(data);
+      } else if (action == 'delete') {
+        await colRef.doc(docId).delete();
+      }
+    }
+  }
 
   // ========== USER OPERATIONS ==========
 
@@ -125,10 +160,21 @@ class FirestoreService {
   // ========== PARCEL OPERATIONS ==========
 
   /// Create a new parcel
+  /// Create a new parcel with offline support
   Future<String> createParcel(ParcelModel parcel) async {
     try {
-      final docRef = await _parcelsCollection.add(parcel.toMap());
-      return docRef.id;
+      // Generate ID locally for consistent return value even offline
+      // We use the collection reference to generate an auto-ID
+      final docRef = _parcelsCollection.doc();
+      final id = docRef.id;
+
+      await _safeWrite(
+        collection: 'parcels',
+        docId: id,
+        data: parcel.toMap(),
+        action: 'set',
+      );
+      return id;
     } catch (e) {
       throw Exception('Failed to create parcel: $e');
     }

@@ -13,6 +13,8 @@ import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:wasslni_plus/services/security_service.dart';
+import 'package:wasslni_plus/services/performance_monitoring_service.dart';
 
 class AddParcelPage extends StatefulWidget {
   final ParcelModel? parcel;
@@ -243,6 +245,7 @@ class _AddParcelPageState extends State<AddParcelPage> {
     setState(() => _isLoading = true);
 
     try {
+      await PerformanceMonitoringService().startParcelCreationTrace();
       final user = FirebaseAuth.instance.currentUser;
       if (user == null) {
         throw Exception('User not logged in');
@@ -284,6 +287,7 @@ class _AddParcelPageState extends State<AddParcelPage> {
       }
 
       final finalImageUrls = [..._existingImageUrls, ...newImageUrls];
+      final security = SecurityService();
 
       // Calculate estimated delivery time based on time slot
       DateTime? estimatedDeliveryTime;
@@ -314,21 +318,24 @@ class _AddParcelPageState extends State<AddParcelPage> {
         id: widget.parcel?.id,
         barcode: parcelBarcode,
         merchantId: user.uid,
-        recipientName: _nameController.text,
-        recipientPhone:
-            _phoneCountryCode + formatPhoneNumber(_phoneController.text),
+        recipientName: security.sanitizeInput(_nameController.text),
+        recipientPhone: _phoneCountryCode +
+            formatPhoneNumber(security.sanitizeInput(_phoneController.text)),
         recipientAltPhone: _altPhoneController.text.isNotEmpty
-            ? _altPhoneCountryCode + formatPhoneNumber(_altPhoneController.text)
+            ? _altPhoneCountryCode +
+                formatPhoneNumber(
+                    security.sanitizeInput(_altPhoneController.text))
             : null,
-        deliveryAddress: _addressController.text,
+        deliveryAddress: security.sanitizeInput(_addressController.text),
         deliveryRegion: selectedRegion!,
-        description:
-            _descController.text.isNotEmpty ? _descController.text : null,
+        description: _descController.text.isNotEmpty
+            ? security.sanitizeInput(_descController.text)
+            : null,
         weight: weight,
         dimensions: dimensions,
         imageUrls: finalImageUrls,
         deliveryInstructions: _deliveryInstructionsController.text.isNotEmpty
-            ? _deliveryInstructionsController.text
+            ? security.sanitizeInput(_deliveryInstructionsController.text)
             : null,
         estimatedDeliveryTime: estimatedDeliveryTime,
         requiresSignature: _requiresSignature,
@@ -376,6 +383,7 @@ class _AddParcelPageState extends State<AddParcelPage> {
         );
       }
     } finally {
+      await PerformanceMonitoringService().stopParcelCreationTrace();
       if (mounted) {
         setState(() => _isLoading = false);
       }
