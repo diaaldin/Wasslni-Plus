@@ -387,6 +387,100 @@ exports.sendBulkNotifications = onCall(async (request) => {
     }
 });
 
+/**
+ * Callable: Calculate Route Optimization
+ * Calculates the optimal delivery route for a courier's assigned parcels.
+ */
+exports.calculateRouteOptimization = onCall(async (request) => {
+    if (!request.auth) {
+        throw new HttpsError('unauthenticated', 'The function must be called while authenticated.');
+    }
+
+    const uid = request.auth.uid;
+    const userDoc = await db.collection('users').doc(uid).get();
+    const userData = userDoc.data();
+
+    // Only couriers can optimize their routes
+    if (userData.role !== 'courier') {
+        throw new HttpsError('permission-denied', 'Only couriers can optimize routes.');
+    }
+
+    const { parcelIds } = request.data;
+    logger.info(`Calculating route optimization for courier ${uid} with ${parcelIds ? parcelIds.length : 0} parcels`);
+
+    // Fetch all assigned parcels for the courier if parcelIds not provided
+    let parcelsToOptimize = [];
+
+    if (parcelIds && parcelIds.length > 0) {
+        // Fetch specific parcels
+        const parcelsPromises = parcelIds.map(id => db.collection('parcels').doc(id).get());
+        const parcelDocs = await Promise.all(parcelsPromises);
+        parcelsToOptimize = parcelDocs
+            .filter(doc => doc.exists)
+            .map(doc => ({ id: doc.id, ...doc.data() }));
+    } else {
+        // Fetch all active parcels assigned to this courier
+        const snapshot = await db.collection('parcels')
+            .where('courierId', '==', uid)
+            .where('status', 'in', ['assigned', 'picked_up', 'out_for_delivery'])
+            .get();
+
+        parcelsToOptimize = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    }
+
+    if (parcelsToOptimize.length === 0) {
+        return { success: false, message: 'No parcels to optimize.' };
+    }
+
+    // Group parcels by region
+    const parcelsByRegion = {};
+    parcelsToOptimize.forEach(parcel => {
+        const region = parcel.deliveryRegion || 'unknown';
+        if (!parcelsByRegion[region]) {
+            parcelsByRegion[region] = [];
+        }
+        parcelsByRegion[region].push(parcel);
+    });
+
+    // Sort within each region by address (simple alphabetical sort)
+    // In a real implementation, you would use geolocation and routing APIs
+    const optimizedRoute = [];
+    Object.keys(parcelsByRegion).sort().forEach(region => {
+        const regionParcels = parcelsByRegion[region].sort((a, b) => {
+            const addressA = a.deliveryAddress || '';
+            const addressB = b.deliveryAddress || '';
+            return addressA.localeCompare(addressB);
+        });
+        optimizedRoute.push(...regionParcels);
+    });
+
+    // Prepare response with ordered parcel IDs and summary
+    const optimizedParcelIds = optimizedRoute.map(p => p.id);
+    const routeSummary = Object.keys(parcelsByRegion).map(region => ({
+        region: region,
+        count: parcelsByRegion[region].length
+    }));
+
+    logger.info(`Route optimized for courier ${uid}: ${optimizedParcelIds.length} parcels across ${routeSummary.length} regions`);
+
+    return {
+        success: true,
+        optimizedRoute: optimizedParcelIds,
+        summary: {
+            totalParcels: optimizedParcelIds.length,
+            regions: routeSummary
+        },
+        details: optimizedRoute.map(p => ({
+            id: p.id,
+            barcode: p.barcode,
+            recipientName: p.recipientName,
+            deliveryAddress: p.deliveryAddress,
+            deliveryRegion: p.deliveryRegion,
+            status: p.status
+        }))
+    };
+});
+
 // ==========================================
 // SCHEDULED FUNCTIONS
 // ==========================================
@@ -513,6 +607,137 @@ exports.sendDeliveryReminders = onSchedule("every day 08:00", async (event) => {
 
     await Promise.all(promises);
     logger.info(`Sent reminders for ${snapshot.size} parcels.`);
+});
+
+/**
+ * Scheduled: Generate Performance Reports
+ * Runs every Monday at 6 AM to generate weekly performance reports for admin/managers.
+ */
+exports.generatePerformanceReports = onSchedule("every monday 06:00", async (event) => {
+    logger.info("Generating weekly performance reports...");
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const lastWeek = new Date(today);
+    lastWeek.setDate(lastWeek.getDate() - 7);
+
+    // Fetch all parcels from the past week
+    const parcelsSnapshot = await db.collection('parcels')
+        .where('createdAt', '>=', admin.firestore.Timestamp.fromDate(lastWeek))
+        .where('createdAt', '<', admin.firestore.Timestamp.fromDate(today))
+        .get();
+
+    // Aggregate statistics
+    const stats = {
+        totalParcels: parcelsSnapshot.size,
+        statusBreakdown: {},
+        regionBreakdown: {},
+        courierPerformance: {},
+        merchantStats: {},
+        totalRevenue: 0,
+        successRate: 0
+    };
+
+    let deliveredCount = 0;
+
+    parcelsSnapshot.forEach(doc => {
+        const data = doc.data();
+
+        // Status breakdown
+        const status = data.status || 'unknown';
+        stats.statusBreakdown[status] = (stats.statusBreakdown[status] || 0) + 1;
+
+        // Region breakdown
+        const region = data.deliveryRegion || 'unknown';
+        if (!stats.regionBreakdown[region]) {
+            stats.regionBreakdown[region] = { count: 0, revenue: 0 };
+        }
+        stats.regionBreakdown[region].count++;
+        stats.regionBreakdown[region].revenue += (data.deliveryFee || 0);
+
+        // Courier performance
+        if (data.courierId) {
+            if (!stats.courierPerformance[data.courierId]) {
+                stats.courierPerformance[data.courierId] = {
+                    totalAssigned: 0,
+                    delivered: 0,
+                    failed: 0,
+                    revenue: 0
+                };
+            }
+            stats.courierPerformance[data.courierId].totalAssigned++;
+            if (status === 'delivered') {
+                stats.courierPerformance[data.courierId].delivered++;
+                deliveredCount++;
+            } else if (status === 'failed' || status === 'returned') {
+                stats.courierPerformance[data.courierId].failed++;
+            }
+            stats.courierPerformance[data.courierId].revenue += (data.deliveryFee || 0);
+        }
+
+        // Merchant stats
+        if (data.merchantId) {
+            if (!stats.merchantStats[data.merchantId]) {
+                stats.merchantStats[data.merchantId] = {
+                    totalParcels: 0,
+                    delivered: 0,
+                    revenue: 0
+                };
+            }
+            stats.merchantStats[data.merchantId].totalParcels++;
+            if (status === 'delivered') {
+                stats.merchantStats[data.merchantId].delivered++;
+            }
+            stats.merchantStats[data.merchantId].revenue += (data.totalPrice || data.parcelPrice || 0);
+        }
+
+        // Total revenue
+        stats.totalRevenue += (data.deliveryFee || 0);
+    });
+
+    // Calculate success rate
+    stats.successRate = stats.totalParcels > 0
+        ? ((deliveredCount / stats.totalParcels) * 100).toFixed(2)
+        : 0;
+
+    // Save the report
+    const reportRef = db.collection('reports').doc();
+    await reportRef.set({
+        type: 'weekly_performance',
+        period: {
+            start: lastWeek,
+            end: today
+        },
+        stats: stats,
+        generatedAt: admin.firestore.FieldValue.serverTimestamp(),
+        createdBy: 'system'
+    });
+
+    logger.info(`Weekly performance report generated: ${stats.totalParcels} parcels, ${stats.successRate}% success rate, $${stats.totalRevenue} revenue.`);
+
+    // Notify admins about the new report
+    const adminsSnapshot = await db.collection('users')
+        .where('role', 'in', ['admin', 'manager'])
+        .get();
+
+    const notificationPromises = [];
+    adminsSnapshot.forEach(doc => {
+        const payload = {
+            notification: {
+                title: 'Weekly Performance Report Available',
+                body: `New report: ${stats.totalParcels} parcels, ${stats.successRate}% success rate`,
+            },
+            data: {
+                type: 'performance_report',
+                reportId: reportRef.id,
+                click_action: 'FLUTTER_NOTIFICATION_CLICK',
+            }
+        };
+        notificationPromises.push(sendNotificationToUser(doc.id, payload));
+    });
+
+    await Promise.all(notificationPromises);
+    logger.info(`Notified ${adminsSnapshot.size} admins/managers about the new report.`);
 });
 
 /**
