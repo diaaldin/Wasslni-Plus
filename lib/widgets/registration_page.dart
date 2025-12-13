@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wasslni_plus/generated/l10n.dart';
 import 'package:wasslni_plus/models/user/consts.dart';
 import 'package:wasslni_plus/services/auth_service.dart';
+import 'package:wasslni_plus/services/security_service.dart';
 import 'package:wasslni_plus/widgets/primary_buttom.dart';
 
 class RegistrationPage extends StatefulWidget {
@@ -34,11 +35,13 @@ class _RegistrationPageState extends State<RegistrationPage> {
     if (_formKey.currentState!.validate()) {
       setState(() => _isLoading = true);
       try {
+        final security = SecurityService();
         await _authService.registerWithEmailPassword(
-          email: _emailController.text.trim(),
-          password: _passwordController.text.trim(),
-          name: _nameController.text.trim(),
-          phoneNumber: _phoneController.text.trim(),
+          email: security.sanitizeInput(_emailController.text),
+          password: _passwordController.text
+              .trim(), // Don't sanitize password characters
+          name: security.sanitizeInput(_nameController.text),
+          phoneNumber: security.sanitizeInput(_phoneController.text),
           role: _selectedRole,
         );
         if (mounted) {
@@ -62,6 +65,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
   @override
   Widget build(BuildContext context) {
     final s = S.of(context);
+    final security = SecurityService();
+
     return Scaffold(
       appBar: AppBar(title: Text(s.register)),
       body: SingleChildScrollView(
@@ -78,7 +83,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   border: const OutlineInputBorder(),
                   prefixIcon: const Icon(Icons.person),
                 ),
-                validator: (v) => v?.isEmpty == true ? s.name : null,
+                validator: (v) => v?.trim().isEmpty == true ? s.name : null,
               ),
               const SizedBox(height: 16),
               TextFormField(
@@ -89,8 +94,12 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   prefixIcon: const Icon(Icons.phone),
                 ),
                 keyboardType: TextInputType.phone,
-                validator: (v) =>
-                    v?.length != 10 ? s.validation_phone_invalid : null,
+                validator: (v) {
+                  if (v == null || v.isEmpty) return s.validation_phone_invalid;
+                  if (!security.isValidPhone(v))
+                    return s.validation_phone_invalid;
+                  return null;
+                },
               ),
               const SizedBox(height: 16),
               TextFormField(
@@ -101,8 +110,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   prefixIcon: const Icon(Icons.email),
                 ),
                 keyboardType: TextInputType.emailAddress,
-                validator: (v) =>
-                    v?.contains('@') != true ? s.invalid_email : null,
+                validator: (v) {
+                  if (v == null || v.isEmpty) return s.invalid_email;
+                  if (!security.isValidEmail(v)) return s.invalid_email;
+                  return null;
+                },
               ),
               const SizedBox(height: 16),
               TextFormField(

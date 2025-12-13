@@ -142,13 +142,13 @@ service cloud.firestore {
       allow write: if false;
     }
     
-    // Regions Collection
-    match /regions/{regionId} {
-      // All authenticated users can read regions
-      allow read: if isAuthenticated();
+    // Reports Collection (NEW)
+    match /reports/{reportId} {
+      // Only admins and managers can read reports
+      allow read: if hasRole('admin') || hasRole('manager');
       
-      // Only admins can create, update, or delete regions
-      allow write: if hasRole('admin');
+      // Only system/cloud functions can write reports
+      allow write: if false;
     }
   }
 }

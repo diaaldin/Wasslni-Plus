@@ -10,6 +10,9 @@ import 'package:wasslni_plus/services/analytics_service.dart';
 import 'package:wasslni_plus/services/performance_monitoring_service.dart';
 import 'package:wasslni_plus/services/notification_navigation_service.dart';
 import 'package:wasslni_plus/models/user/user_model.dart';
+import 'package:wasslni_plus/services/security_service.dart';
+import 'package:wasslni_plus/services/local_database_service.dart';
+import 'package:wasslni_plus/services/sync_service.dart';
 import 'firebase_options.dart';
 import 'package:wasslni_plus/app_styles.dart';
 import 'package:wasslni_plus/flow/admin/admin_main.dart';
@@ -38,6 +41,15 @@ void main() async {
 
   // Start app startup performance trace (must be after Firebase init)
   await PerformanceMonitoringService().startAppStartupTrace();
+
+  // Initialize Security Service
+  SecurityService().enableStrictHttpPolicing();
+
+  // Initialize Local Database
+  await LocalDatabaseService().initialize();
+
+  // Initialize Sync Service (Offline Queue)
+  await SyncService().initialize();
 
   // Set up background message handler
   FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
