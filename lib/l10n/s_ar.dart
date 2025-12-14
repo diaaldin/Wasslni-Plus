@@ -1,0 +1,1355 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+import 's.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for Arabic (`ar`).
+class SAr extends S {
+  SAr([String locale = 'ar']) : super(locale);
+
+  @override
+  String get privacy_policy => 'سياسة الخصوصية';
+
+  @override
+  String get privacy_intro =>
+      'نحن ملتزمون بحماية خصوصية بياناتك وأمانها. توضح سياسة البيانات هذه كيفية تعاملنا مع بياناتك الشخصية.';
+
+  @override
+  String get data_collection => 'جمع البيانات';
+
+  @override
+  String get data_collection_desc =>
+      'نقوم بجمع البيانات لتوفير خدماتنا وتحسينها، وتخصيص تجربتك، وإبقاءك على اطلاع بالتحديثات.';
+
+  @override
+  String get data_usage => 'استخدام البيانات';
+
+  @override
+  String get data_usage_desc =>
+      'يتم استخدام البيانات التي نجمعها فقط لتحسين وظائف التطبيق لدينا، وضمان الأمان، والامتثال للالتزامات القانونية.';
+
+  @override
+  String get data_sharing => 'مشاركة البيانات';
+
+  @override
+  String get data_sharing_desc =>
+      'لن يتم مشاركة بياناتك مع أي طرف ثالث إلا إذا كان ذلك ضرورياً لأغراض قانونية.';
+
+  @override
+  String get data_retention => 'الاحتفاظ بالبيانات';
+
+  @override
+  String get data_retention_desc =>
+      'نحتفظ ببياناتك طالما تستخدم خدماتنا أو حسبما يقتضيه القانون. يمكنك طلب حذف البيانات عن طريق الاتصال بنا.';
+
+  @override
+  String get phone_number => 'رقم الهاتف';
+
+  @override
+  String get user_rights => 'حقوق المستخدم';
+
+  @override
+  String get user_rights_desc =>
+      'لديك الحق في الوصول إلى بياناتك وتعديلها وحذفها. يرجى التواصل معنا إذا كانت لديك أي مخاوف أو طلبات.';
+
+  @override
+  String get thank_you =>
+      'نشكرك على ثقتك بنا فيما يتعلق بمعلوماتك. نحن نسعى جاهدين للحفاظ على بياناتك آمنة وشفافة.';
+
+  @override
+  String get contact_support => 'اتصل بالدعم';
+
+  @override
+  String get merchant_dashboard => 'لوحة التاجر';
+
+  @override
+  String get dark_mode => 'وضع الليل';
+
+  @override
+  String get sunny_mode => 'وضع النهار';
+
+  @override
+  String get language => 'اللغة';
+
+  @override
+  String get main => 'الرئيسية';
+
+  @override
+  String get parcels => 'الطرود';
+
+  @override
+  String get settings => 'الاعدادات';
+
+  @override
+  String get notifications => 'الإشعارات';
+
+  @override
+  String get general_serach_hint => 'بحث...';
+
+  @override
+  String get clear_selection => 'مسح الاختيار';
+
+  @override
+  String get add_parcel => 'إضافة طرد';
+
+  @override
+  String get recipient_name => 'اسم المستلم';
+
+  @override
+  String get recipient_phone => 'رقم المستلم';
+
+  @override
+  String get alt_phone => 'رقم بديل (اختياري)';
+
+  @override
+  String get region => 'المنطقة';
+
+  @override
+  String get address => 'العنوان, مدينة - شارع';
+
+  @override
+  String get parcel_price => 'سعر الطرد (بدون التوصيل)';
+
+  @override
+  String get parcel_description => 'وصف الطرد';
+
+  @override
+  String get attach_barcode => 'أرفق باركود';
+
+  @override
+  String barcode_label(Object code) {
+    return 'الباركود: $code';
+  }
+
+  @override
+  String get total_price_label => 'السعر الإجمالي (مع التوصيل)';
+
+  @override
+  String get save_parcel => 'حفظ الطرد';
+
+  @override
+  String get choose_region_warning => 'يرجى اختيار المنطقة';
+
+  @override
+  String get invalid_price => 'السعر يجب أن يكون رقمًا أكبر من أو يساوي 0';
+
+  @override
+  String get enter_price => 'الرجاء إدخال السعر';
+
+  @override
+  String get enter_recipient_name => 'الرجاء إدخال اسم المستلم';
+
+  @override
+  String get enter_phone => 'الرجاء إدخال رقم المستلم';
+
+  @override
+  String get invalid_phone => 'رقم غير صالح';
+
+  @override
+  String get enter_address => 'أدخل العنوان (مدينة - شارع)';
+
+  @override
+  String get password => 'الرقم السري';
+
+  @override
+  String get login => 'تسجيل الدخول';
+
+  @override
+  String get joinUs => 'انضم إلينا';
+
+  @override
+  String get joinUsDescription =>
+      'هذه الصفحة مخصصة لأصحاب الأعمال الذين يرغبون في الانضمام إلينا.';
+
+  @override
+  String get acceptPolicyStart => 'أوافق على ';
+
+  @override
+  String get dataPolicy => 'سياسة الخصوصية';
+
+  @override
+  String get name => 'الاسم';
+
+  @override
+  String get message => 'الرسالة';
+
+  @override
+  String get submit => 'إرسال';
+
+  @override
+  String get logout => 'تسجيل خروج';
+
+  @override
+  String get validation_phone_required => 'يرجى إدخال رقم الهاتف';
+
+  @override
+  String get no_internet_connection => '⚠ لا يوجد اتصال بالإنترنت';
+
+  @override
+  String get validation_phone_invalid =>
+      'يجب أن يتكون الرقم من 10 أرقام إنجليزية';
+
+  @override
+  String get app_name => 'وصلني بلس';
+
+  @override
+  String get app_tagline => 'توصيل سريع وموثوق';
+
+  @override
+  String get welcome_to_app => 'مرحباً بك في وصلني بلس';
+
+  @override
+  String get email => 'البريد الإلكتروني';
+
+  @override
+  String get enter_email => 'الرجاء إدخال البريد الإلكتروني';
+
+  @override
+  String get invalid_email => 'بريد إلكتروني غير صالح';
+
+  @override
+  String get enter_password => 'الرجاء إدخال كلمة المرور';
+
+  @override
+  String get register => 'تسجيل جديد';
+
+  @override
+  String get role => 'الدور';
+
+  @override
+  String get merchant => 'تاجر';
+
+  @override
+  String get courier => 'مندوب توصيل';
+
+  @override
+  String get customer => 'زبون';
+
+  @override
+  String get login_failed => 'فشل تسجيل الدخول';
+
+  @override
+  String get registration_failed => 'فشل التسجيل';
+
+  @override
+  String get success => 'نجاح';
+
+  @override
+  String get already_have_account => 'لديك حساب بالفعل؟ تسجيل الدخول';
+
+  @override
+  String get dont_have_account => 'ليس لديك حساب؟ تسجيل جديد';
+
+  @override
+  String get logout_confirmation => 'هل أنت متأكد من تسجيل الخروج؟';
+
+  @override
+  String get cancel => 'إلغاء';
+
+  @override
+  String get logout_error => 'خطأ في تسجيل الخروج. يرجى المحاولة مرة أخرى.';
+
+  @override
+  String get pending => 'قيد الانتظار';
+
+  @override
+  String get in_transit => 'قيد التوصيل';
+
+  @override
+  String get delivered => 'تم التوصيل';
+
+  @override
+  String get returned => 'مرتجع';
+
+  @override
+  String get cancelled => 'ملغى';
+
+  @override
+  String get monthly_revenue => 'الإيرادات الشهرية';
+
+  @override
+  String get recent_parcels => 'الطرود الأخيرة';
+
+  @override
+  String get view_all => 'عرض الكل';
+
+  @override
+  String get no_parcels_yet => 'لا توجد طرود بعد';
+
+  @override
+  String get recipient => 'المستلم';
+
+  @override
+  String get delivery_region => 'منطقة التوصيل';
+
+  @override
+  String get mark_all_read => 'تحديد الكل كمقروء';
+
+  @override
+  String get no_notifications => 'لا توجد إشعارات';
+
+  @override
+  String get all => 'الكل';
+
+  @override
+  String get unread => 'غير مقروء';
+
+  @override
+  String get delete => 'حذف';
+
+  @override
+  String get edit_parcel => 'تعديل الطرد';
+
+  @override
+  String get update_parcel => 'تحديث الطرد';
+
+  @override
+  String get cancel_parcel => 'إلغاء الطرد';
+
+  @override
+  String get confirm_cancel_parcel => 'هل أنت متأكد من إلغاء هذا الطرد؟';
+
+  @override
+  String get cancellation_reason => 'سبب الإلغاء';
+
+  @override
+  String get yes_cancel => 'نعم، إلغاء';
+
+  @override
+  String get no => 'لا';
+
+  @override
+  String get parcel_updated_success => 'تم تحديث الطرد بنجاح';
+
+  @override
+  String get parcel_created_success => 'تم إنشاء الطرد بنجاح';
+
+  @override
+  String get parcel_cancelled_success => 'تم إلغاء الطرد بنجاح';
+
+  @override
+  String error_occurred(Object error) {
+    return 'حدث خطأ: $error';
+  }
+
+  @override
+  String get parcel_details => 'تفاصيل الطرد';
+
+  @override
+  String status_label(Object status) {
+    return 'الحالة: $status';
+  }
+
+  @override
+  String get delivery_fee => 'رسوم التوصيل';
+
+  @override
+  String get history => 'السجل';
+
+  @override
+  String note_label(Object note) {
+    return 'ملاحظة: $note';
+  }
+
+  @override
+  String get weight => 'الوزن (كجم)';
+
+  @override
+  String get dimensions => 'الأبعاد (سم)';
+
+  @override
+  String get length => 'الطول';
+
+  @override
+  String get width => 'العرض';
+
+  @override
+  String get height => 'الارتفاع';
+
+  @override
+  String get delivery_instructions => 'تعليمات التوصيل (اختياري)';
+
+  @override
+  String get optional => 'اختياري';
+
+  @override
+  String get images => 'الصور';
+
+  @override
+  String get add_image => 'إضافة صورة';
+
+  @override
+  String get delivery_time_slot => 'وقت التوصيل المفضل';
+
+  @override
+  String get morning => 'صباحاً (9ص - 12م)';
+
+  @override
+  String get afternoon => 'ظهراً (12م - 5م)';
+
+  @override
+  String get evening => 'مساءً (5م - 9م)';
+
+  @override
+  String get anytime => 'أي وقت';
+
+  @override
+  String get requires_signature => 'يتطلب توقيع المستلم';
+
+  @override
+  String get signature_description => 'يجب على المندوب جمع التوقيع عند التسليم';
+
+  @override
+  String get print_label => 'طباعة الملصق';
+
+  @override
+  String get print_receipt => 'طباعة الإيصال';
+
+  @override
+  String get shipping_label => 'ملصق الشحن';
+
+  @override
+  String get from => 'من';
+
+  @override
+  String get to => 'إلى';
+
+  @override
+  String get parcel_info => 'معلومات الطرد';
+
+  @override
+  String get scan_to_track => 'امسح للتتبع';
+
+  @override
+  String get export => 'تصدير';
+
+  @override
+  String get export_pdf => 'تصدير إلى PDF';
+
+  @override
+  String get export_excel => 'تصدير إلى Excel';
+
+  @override
+  String get export_success => 'تم التصدير بنجاح';
+
+  @override
+  String get export_error => 'فشل التصدير';
+
+  @override
+  String get parcels_report => 'تقرير الطرود';
+
+  @override
+  String get total_parcels => 'إجمالي الطرود';
+
+  @override
+  String get date_range => 'نطاق التاريخ';
+
+  @override
+  String get bulk_upload => 'رفع جماعي';
+
+  @override
+  String get upload_csv => 'رفع ملف CSV';
+
+  @override
+  String get download_template => 'تنزيل النموذج';
+
+  @override
+  String get select_file => 'اختر ملف';
+
+  @override
+  String get upload_success => 'تم الرفع بنجاح';
+
+  @override
+  String get upload_error => 'فشل الرفع';
+
+  @override
+  String get processing_file => 'جاري معالجة الملف...';
+
+  @override
+  String get parcels_imported => 'تم استيراد الطرود';
+
+  @override
+  String get reports => 'التقارير';
+
+  @override
+  String get analytics => 'التحليلات';
+
+  @override
+  String get monthly_report => 'التقرير الشهري';
+
+  @override
+  String get delivery_statistics => 'إحصائيات التوصيل';
+
+  @override
+  String get revenue_overview => 'نظرة عامة على الإيرادات';
+
+  @override
+  String get performance_metrics => 'مقاييس الأداء';
+
+  @override
+  String get select_month => 'اختر الشهر';
+
+  @override
+  String get total_deliveries => 'إجمالي التوصيلات';
+
+  @override
+  String get successful_deliveries => 'التوصيلات الناجحة';
+
+  @override
+  String get failed_deliveries => 'التوصيلات الفاشلة';
+
+  @override
+  String get pending_deliveries => 'التوصيلات المعلقة';
+
+  @override
+  String get success_rate => 'معدل النجاح';
+
+  @override
+  String get average_delivery_time => 'متوسط وقت التوصيل';
+
+  @override
+  String get total_revenue => 'إجمالي الإيرادات';
+
+  @override
+  String get delivery_fees_collected => 'رسوم التوصيل المحصلة';
+
+  @override
+  String get success_rate_trend => 'اتجاه معدل النجاح';
+
+  @override
+  String get weekly_success_rate => 'معدل النجاح الأسبوعي';
+
+  @override
+  String get no_data_available => 'لا توجد بيانات متاحة';
+
+  @override
+  String get top_customers => 'أفضل العملاء';
+
+  @override
+  String get parcels_delivered => 'الطرود التي تم توصيلها';
+
+  @override
+  String get notification_settings => 'إعدادات الإشعارات';
+
+  @override
+  String get parcel_updates => 'تحديثات الطرود';
+
+  @override
+  String get parcel_updates_desc => 'احصل على إشعار عند تغيير حالة الطرد';
+
+  @override
+  String get promotional_offers => 'العروض الترويجية';
+
+  @override
+  String get promotional_offers_desc =>
+      'تلقي تحديثات حول الميزات والعروض الجديدة';
+
+  @override
+  String get system_announcements => 'إعلانات النظام';
+
+  @override
+  String get system_announcements_desc => 'تحديثات مهمة حول المنصة';
+
+  @override
+  String get courier_dashboard => 'لوحة السائق';
+
+  @override
+  String get daily_assignments => 'المهام اليومية';
+
+  @override
+  String get todays_deliveries => 'توصيلات اليوم';
+
+  @override
+  String get earnings_today => 'الأرباح اليوم';
+
+  @override
+  String get completed => 'مكتمل';
+
+  @override
+  String get pending_pickup => 'في انتظار الاستلام';
+
+  @override
+  String get my_route => 'مسار التوصيل';
+
+  @override
+  String get start_delivery => 'بدء التوصيل';
+
+  @override
+  String get no_assignments => 'لا توجد مهام لهذا اليوم';
+
+  @override
+  String get route_map => 'خريطة المسار';
+
+  @override
+  String get delivery_points => 'نقاط التوصيل';
+
+  @override
+  String get navigate => 'التنقل';
+
+  @override
+  String get map_view => 'عرض الخريطة';
+
+  @override
+  String get list_view => 'عرض القائمة';
+
+  @override
+  String get delivery_location => 'موقع التوصيل';
+
+  @override
+  String get current_location => 'الموقع الحالي';
+
+  @override
+  String get show_route => 'إظهار المسار';
+
+  @override
+  String get hide_route => 'إخفاء المسار';
+
+  @override
+  String get optimized_route => 'المسار الأمثل';
+
+  @override
+  String get distance => 'المسافة';
+
+  @override
+  String get estimated_time => 'الوقت المتوقع';
+
+  @override
+  String get weekly_earnings => 'الأرباح الأسبوعية';
+
+  @override
+  String get monthly_earnings => 'الأرباح الشهرية';
+
+  @override
+  String get total_earnings => 'إجمالي الأرباح';
+
+  @override
+  String get earnings_breakdown => 'تفصيل الأرباح';
+
+  @override
+  String get todays_performance => 'أداء اليوم';
+
+  @override
+  String get delivery_success_rate => 'معدل نجاح التوصيل';
+
+  @override
+  String get failed => 'فشل';
+
+  @override
+  String get minutes => 'دقائق';
+
+  @override
+  String get hours => 'ساعات';
+
+  @override
+  String get days => 'أيام';
+
+  @override
+  String get view_details => 'عرض التفاصيل';
+
+  @override
+  String get performance => 'الأداء';
+
+  @override
+  String get this_week => 'هذا الأسبوع';
+
+  @override
+  String get this_month => 'هذا الشهر';
+
+  @override
+  String get earnings_trend => 'اتجاه الأرباح';
+
+  @override
+  String get statistics => 'الإحصائيات';
+
+  @override
+  String get delivery_queue => 'قائمة التوصيل';
+
+  @override
+  String get no_active_deliveries => 'لا توجد توصيلات نشطة';
+
+  @override
+  String get all_caught_up => 'أنت على اطلاع بكل شيء!';
+
+  @override
+  String get call => 'اتصال';
+
+  @override
+  String get delivery_checklist => 'قائمة التحقق من التوصيل';
+
+  @override
+  String get complete_steps_to_proceed => 'أكمل الخطوات التالية للمتابعة';
+
+  @override
+  String get verify_recipient => 'التحقق من المستلم';
+
+  @override
+  String get confirm_location => 'تأكيد الموقع';
+
+  @override
+  String get check_package_condition => 'فحص حالة الطرد';
+
+  @override
+  String get ensure_no_damage => 'تأكد من عدم وجود تلف ظاهر';
+
+  @override
+  String get collect_payment => 'تحصيل الدفع';
+
+  @override
+  String get proceed_to_proof => 'المتابعة إلى إثبات التوصيل';
+
+  @override
+  String get proof_of_delivery => 'إثبات التسليم';
+
+  @override
+  String get take_photo_proof => 'التقط صورة للطرد الذي تم توصيله';
+
+  @override
+  String get take_photo => 'التقاط صورة';
+
+  @override
+  String get retake => 'إعادة التقاط';
+
+  @override
+  String get confirm_delivery => 'تأكيد التوصيل';
+
+  @override
+  String get uploading => 'جاري الرفع...';
+
+  @override
+  String get delivery_completed_successfully => 'تم التوصيل بنجاح!';
+
+  @override
+  String get signature_required => 'التوقيع مطلوب';
+
+  @override
+  String get please_sign_below => 'الرجاء التوقيع أدناه';
+
+  @override
+  String get clear_signature => 'مسح التوقيع';
+
+  @override
+  String get confirm_signature => 'تأكيد التوقيع';
+
+  @override
+  String get signature_uploaded => 'تم رفع التوقيع بنجاح';
+
+  @override
+  String get delivery_history => 'سجل التوصيل';
+
+  @override
+  String get no_history_found => 'لا يوجد سجل توصيل';
+
+  @override
+  String get error_loading_data => 'خطأ في تحميل البيانات';
+
+  @override
+  String get timeline => 'الجدول الزمني';
+
+  @override
+  String get created_at => 'تاريخ الإنشاء';
+
+  @override
+  String get delivered_at => 'تاريخ التوصيل';
+
+  @override
+  String get notes => 'ملاحظات';
+
+  @override
+  String get signature => 'التوقيع';
+
+  @override
+  String get update_status => 'تحديث الحالة';
+
+  @override
+  String get select_status => 'اختر الحالة';
+
+  @override
+  String get return_reason => 'سبب الإرجاع';
+
+  @override
+  String get failure_reason => 'سبب الفشل';
+
+  @override
+  String get mark_as_delivered => 'تحديد كتم التوصيل';
+
+  @override
+  String get mark_as_returned => 'تحديد كمرتجع';
+
+  @override
+  String get mark_as_cancelled => 'تحديد كملغى';
+
+  @override
+  String get mark_as_ready_to_ship => 'تحديد كجاهز للشحن';
+
+  @override
+  String get mark_as_out_for_delivery => 'تحديد كخارج للتوصيل';
+
+  @override
+  String get mark_as_at_warehouse => 'تحديد كفي المخزن';
+
+  @override
+  String get status_updated_successfully => 'تم تحديث الحالة بنجاح';
+
+  @override
+  String get please_enter_reason => 'الرجاء إدخال سبب';
+
+  @override
+  String get confirm_status_update => 'تأكيد تحديث الحالة';
+
+  @override
+  String are_you_sure_update_status(Object status) {
+    return 'هل أنت متأكد من تحديث الحالة إلى $status؟';
+  }
+
+  @override
+  String get yes_update => 'نعم، تحديث';
+
+  @override
+  String get status_awaiting_label => 'بانتظار الملصق';
+
+  @override
+  String get status_ready_to_ship => 'جاهز للإرسال';
+
+  @override
+  String get status_at_warehouse => 'في مخزن الموزع';
+
+  @override
+  String get status_en_route_distributor => 'في الطريق للموزع';
+
+  @override
+  String get status_out_for_delivery => 'في الطريق للزبون';
+
+  @override
+  String get confirm => 'تأكيد';
+
+  @override
+  String get complete_delivery => 'إكمال التوصيل';
+
+  @override
+  String get route_optimized => 'تم تحسين المسار';
+
+  @override
+  String get availability => 'التوفر';
+
+  @override
+  String get online => 'متصل';
+
+  @override
+  String get offline => 'غير متصل';
+
+  @override
+  String get vehicle_info => 'معلومات المركبة';
+
+  @override
+  String get vehicle_type => 'نوع المركبة';
+
+  @override
+  String get vehicle_plate => 'رقم اللوحة';
+
+  @override
+  String get working_regions => 'مناطق العمل';
+
+  @override
+  String get validation_required => 'هذا الحقل مطلوب';
+
+  @override
+  String get save_changes => 'حفظ التغييرات';
+
+  @override
+  String get profile_updated_success => 'تم تحديث الملف الشخصي بنجاح';
+
+  @override
+  String get active_deliveries => 'التوصيلات النشطة';
+
+  @override
+  String get updated_at => 'آخر تحديث';
+
+  @override
+  String get order_history => 'سجل الطلبات';
+
+  @override
+  String get search_by_barcode_or_name => 'البحث بواسطة الباركود أو الاسم...';
+
+  @override
+  String get no_results_found => 'لم يتم العثور على نتائج';
+
+  @override
+  String get reorder => 'إعادة الطلب';
+
+  @override
+  String get reorder_parcel => 'إعادة طلب الطرد';
+
+  @override
+  String get original_order_details => 'تفاصيل الطلب الأصلي';
+
+  @override
+  String get merchant_info => 'معلومات التاجر';
+
+  @override
+  String get merchant_info_unavailable => 'معلومات التاجر غير متوفرة';
+
+  @override
+  String get reorder_instructions =>
+      'اتصل بالتاجر لتقديم طلب جديد بنفس تفاصيل التوصيل';
+
+  @override
+  String get call_merchant => 'الاتصال بالتاجر';
+
+  @override
+  String get copy_number => 'نسخ الرقم';
+
+  @override
+  String get delivery_feedback => 'تقييم التوصيل';
+
+  @override
+  String get rate_delivery_experience => 'قيّم تجربة التوصيل';
+
+  @override
+  String get how_was_your_delivery => 'كيف كانت تجربة التوصيل؟';
+
+  @override
+  String get add_comment => 'إضافة تعليق (اختياري)';
+
+  @override
+  String get share_your_experience => 'شارك تجربتك مع هذا التوصيل...';
+
+  @override
+  String get tip_courier => 'إكرامية للسائق';
+
+  @override
+  String get tip_courier_description => 'أظهر تقديرك للخدمة الممتازة (اختياري)';
+
+  @override
+  String get no_tip => 'بدون إكرامية';
+
+  @override
+  String get submit_feedback => 'إرسال التقييم';
+
+  @override
+  String get submitting => 'جاري الإرسال...';
+
+  @override
+  String get please_select_rating => 'الرجاء اختيار تقييم';
+
+  @override
+  String get courier_not_assigned => 'لم يتم تعيين سائق لهذا الطرد';
+
+  @override
+  String get feedback_submitted_successfully => 'تم إرسال التقييم بنجاح!';
+
+  @override
+  String get rating_poor => 'ضعيف';
+
+  @override
+  String get rating_fair => 'مقبول';
+
+  @override
+  String get rating_good => 'جيد';
+
+  @override
+  String get rating_very_good => 'جيد جداً';
+
+  @override
+  String get rating_excellent => 'ممتاز!';
+
+  @override
+  String get leave_feedback => 'ترك تقييم';
+
+  @override
+  String get report_issue => 'الإبلاغ عن مشكلة';
+
+  @override
+  String get select_issue_type => 'اختر نوع المشكلة';
+
+  @override
+  String get what_went_wrong => 'ما الذي حدث خطأ في التوصيل؟';
+
+  @override
+  String get issue_damaged_package => 'طرد تالف';
+
+  @override
+  String get issue_wrong_item => 'عنصر خاطئ';
+
+  @override
+  String get issue_missing_items => 'عناصر مفقودة';
+
+  @override
+  String get issue_late_delivery => 'تأخير في التوصيل';
+
+  @override
+  String get issue_poor_service => 'خدمة سيئة';
+
+  @override
+  String get issue_other => 'أخرى';
+
+  @override
+  String get describe_issue => 'صف مشكلتك';
+
+  @override
+  String get provide_details => 'يرجى تقديم تفاصيل حول المشكلة...';
+
+  @override
+  String get please_select_issue_type => 'يرجى اختيار نوع المشكلة';
+
+  @override
+  String get please_describe_issue => 'الرجاء وصف مشكلتك';
+
+  @override
+  String get issue_reported => 'تم الإبلاغ عن المشكلة';
+
+  @override
+  String get issue_reported_successfully =>
+      'تم الإبلاغ عن المشكلة بنجاح. سنقوم بالتحقيق!';
+
+  @override
+  String get issue_report_info =>
+      'سيتم إرسال تقريرك إلى التاجر وفريق الدعم لدينا. سنقوم بالتحقيق والرد عليك قريباً.';
+
+  @override
+  String get submit_report => 'إرسال التقرير';
+
+  @override
+  String get report_an_issue => 'الإبلاغ عن مشكلة';
+
+  @override
+  String get all_notifications_marked_read =>
+      'تم وضع علامة على جميع الإشعارات كمقروءة';
+
+  @override
+  String get no_regions_available => 'لا توجد مناطق توصيل متاحة';
+
+  @override
+  String get regions_initialized => 'تم تهيئة المناطق بنجاح!';
+
+  @override
+  String get initialize_regions => 'تهيئة المناطق';
+
+  @override
+  String get addresses => 'العناوين';
+
+  @override
+  String get add_address => 'إضافة عنوان';
+
+  @override
+  String get edit_address => 'تعديل العنوان';
+
+  @override
+  String get no_addresses => 'لا توجد عناوين بعد';
+
+  @override
+  String get add_your_first_address => 'أضف عنوانك الأول لتسهيل عمليات التوصيل';
+
+  @override
+  String get address_label => 'تسمية العنوان';
+
+  @override
+  String get address_label_hint => 'مثال: المنزل، العمل، منزل الأم';
+
+  @override
+  String get home => 'المنزل';
+
+  @override
+  String get work => 'العمل';
+
+  @override
+  String get other => 'أخرى';
+
+  @override
+  String get city => 'المدينة';
+
+  @override
+  String get address_hint => 'الشارع، رقم المبنى، الطابق، الشقة';
+
+  @override
+  String get set_as_default => 'تعيين كعنوان افتراضي';
+
+  @override
+  String get set_as_default_hint => 'استخدم هذا العنوان كموقع التوصيل الأساسي';
+
+  @override
+  String get default_address => 'افتراضي';
+
+  @override
+  String get address_set_as_default => 'تم تعيين العنوان كافتراضي بنجاح';
+
+  @override
+  String get save_address => 'حفظ العنوان';
+
+  @override
+  String get update_address => 'تحديث العنوان';
+
+  @override
+  String get delete_address => 'حذف العنوان';
+
+  @override
+  String get delete_address_confirmation => 'هل أنت متأكد من حذف هذا العنوان؟';
+
+  @override
+  String get address_deleted => 'تم حذف العنوان بنجاح';
+
+  @override
+  String get address_added_success => 'تمت إضافة العنوان بنجاح';
+
+  @override
+  String get address_updated_success => 'تم تحديث العنوان بنجاح';
+
+  @override
+  String get profile => 'الملف الشخصي';
+
+  @override
+  String get account => 'الحساب';
+
+  @override
+  String get edit_profile => 'تعديل الملف الشخصي';
+
+  @override
+  String get update_your_information => 'تحديث معلوماتك الشخصية';
+
+  @override
+  String get change_password => 'تغيير كلمة المرور';
+
+  @override
+  String get update_password_security => 'تحديث كلمة المرور لمزيد من الأمان';
+
+  @override
+  String get current_password => 'كلمة المرور الحالية';
+
+  @override
+  String get new_password => 'كلمة المرور الجديدة';
+
+  @override
+  String get confirm_password => 'تأكيد كلمة المرور';
+
+  @override
+  String get password_too_short =>
+      'يجب أن تتكون كلمة المرور من 6 أحرف على الأقل';
+
+  @override
+  String get passwords_dont_match => 'كلمات المرور غير متطابقة';
+
+  @override
+  String get password_changed_success => 'تم تغيير كلمة المرور بنجاح';
+
+  @override
+  String password_change_failed(Object error) {
+    return 'فشل تغيير كلمة المرور: $error';
+  }
+
+  @override
+  String get danger_zone => 'منطقة الخطر';
+
+  @override
+  String get delete_account => 'حذف الحساب';
+
+  @override
+  String get permanently_delete_account => 'حذف حسابك نهائياً';
+
+  @override
+  String get delete_account_warning => 'تحذير: لا يمكن التراجع عن هذا الإجراء!';
+
+  @override
+  String get delete_account_consequences =>
+      'سيؤدي حذف حسابك إلى:\n• إزالة جميع بياناتك\n• إلغاء جميع الطلبات المعلقة\n• إلغاء تفعيل ملفك الشخصي\n\nهل أنت متأكد تماماً؟';
+
+  @override
+  String get manage_notification_preferences => 'إدارة إعدادات الإشعارات';
+
+  @override
+  String get coming_soon => 'قريباً';
+
+  @override
+  String get active => 'نشط';
+
+  @override
+  String get inactive => 'غير نشط';
+
+  @override
+  String get suspended => 'موقوف';
+
+  @override
+  String get admin => 'مدير';
+
+  @override
+  String get manager => 'مشرف';
+
+  @override
+  String get parcel_status => 'حالة الطرد';
+
+  @override
+  String get status_history => 'سجل الحالة';
+
+  @override
+  String get show_details => 'عرض التفاصيل';
+
+  @override
+  String get hide_details => 'إخفاء التفاصيل';
+
+  @override
+  String get status_delivered => 'تم التوصيل';
+
+  @override
+  String get status_returned => 'طرد راجع';
+
+  @override
+  String get status_cancelled => 'ملغي';
+
+  @override
+  String get current_status => 'الحالة الحالية';
+
+  @override
+  String get new_status => 'الحالة الجديدة';
+
+  @override
+  String get location => 'الموقع';
+
+  @override
+  String get enter_location => 'أدخل الموقع';
+
+  @override
+  String get enter_reason => 'أدخل السبب';
+
+  @override
+  String get add_notes_optional => 'إضافة ملاحظات (اختياري)';
+
+  @override
+  String get update => 'تحديث';
+
+  @override
+  String get error => 'خطأ';
+
+  @override
+  String get assign_courier => 'تعيين مندوب';
+
+  @override
+  String get select_courier => 'اختر مندوب';
+
+  @override
+  String get unassigned => 'غير معين';
+
+  @override
+  String get assigned => 'تم التعيين';
+
+  @override
+  String get no_couriers_found => 'لا يوجد مناديب';
+
+  @override
+  String get courier_assigned_success => 'تم تعيين المندوب بنجاح';
+
+  @override
+  String get export_report => 'تصدير التقرير';
+
+  @override
+  String get feature_coming_soon => 'هذه الميزة قادمة قريباً';
+
+  @override
+  String get couriers => 'المناديب';
+
+  @override
+  String get performance_reports => 'تقارير الأداء';
+
+  @override
+  String get metrics => 'المقاييس';
+
+  @override
+  String get rating => 'التقييم';
+
+  @override
+  String get avg_delivery_time => 'متوسط وقت التوصيل';
+
+  @override
+  String get cancel_rate => 'معدل الإلغاء';
+
+  @override
+  String get total_delivered => 'إجمالي التوصيل';
+
+  @override
+  String get total_assignments => 'إجمالي المهام';
+
+  @override
+  String get courier_performance => 'أداء المندوب';
+
+  @override
+  String get reviews => 'المراجعات';
+
+  @override
+  String get no_reviews => 'لا توجد مراجعات';
+
+  @override
+  String get privacy_policy_accepted => 'تم قبول سياسة الخصوصية بنجاح';
+
+  @override
+  String get decline_privacy_policy => 'رفض سياسة الخصوصية';
+
+  @override
+  String get decline_privacy_policy_message =>
+      'يجب قبول سياسة الخصوصية لمتابعة استخدام التطبيق. الرفض سيتطلب تسجيل الخروج.';
+
+  @override
+  String get decline => 'رفض';
+
+  @override
+  String get export_to_pdf => 'تصدير إلى PDF';
+
+  @override
+  String get error_loading_privacy_policy => 'خطأ في تحميل سياسة الخصوصية';
+
+  @override
+  String get retry => 'إعادة المحاولة';
+
+  @override
+  String get version => 'الإصدار';
+
+  @override
+  String get effective_date => 'تاريخ السريان';
+
+  @override
+  String get scroll_to_read_all =>
+      'يرجى التمرير لقراءة السياسة بأكملها قبل القبول';
+
+  @override
+  String get accept => 'قبول';
+
+  @override
+  String get faq => 'الأسئلة الشائعة';
+
+  @override
+  String get search_faq => 'ابحث عن أسئلة...';
+
+  @override
+  String get no_faq_found => 'لم يتم العثور على أسئلة';
+
+  @override
+  String get try_different_search => 'جرب مصطلح بحث مختلف';
+
+  @override
+  String get still_have_questions => 'لا تزال لديك أسئلة؟';
+
+  @override
+  String get contact_support_team => 'فريق الدعم لدينا هنا لمساعدتك';
+
+  @override
+  String get support_request => 'طلب دعم';
+
+  @override
+  String get subject => 'الموضوع';
+
+  @override
+  String get enter_subject => 'أدخل الموضوع';
+
+  @override
+  String get attach_screenshot => 'إرفاق لقطة شاشة (اختياري)';
+
+  @override
+  String get submit_request => 'إرسال الطلب';
+
+  @override
+  String get request_submitted => 'تم إرسال الطلب';
+
+  @override
+  String get support_request_success =>
+      'تم إرسال طلب الدعم بنجاح. سنتواصل معك قريباً!';
+
+  @override
+  String get please_enter_subject => 'الرجاء إدخال الموضوع';
+}
