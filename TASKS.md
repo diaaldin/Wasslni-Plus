@@ -640,28 +640,28 @@ Create server-side logic for:
 
 ### 4.1 Unit Tests
 
-- [ ] Test user authentication flows
+- [x] Test user authentication flows
 - [x] Test CRUD operations (Models)
 - [x] Test data validation logic
-- [ ] Test utility functions
-- [ ] Test business logic
+- [x] Test utility functions
+- [x] Test business logic
 
 ### 4.2 Widget Tests
 
-- [ ] Test login page
-- [ ] Test registration flow
-- [ ] Test parcel creation form
-- [ ] Test parcel list views
-- [ ] Test status update workflows
-- [ ] Test navigation flows
+- [x] Test login page
+- [x] Test registration flow
+- [x] Test parcel creation form (created as integration test)
+- [x] Test parcel list views
+- [x] Test status update workflows
+- [x] Test navigation flows
 
 ### 4.3 Integration Tests
 
-- [ ] Test end-to-end parcel creation flow
-- [ ] Test parcel tracking flow
-- [ ] Test courier assignment flow
-- [ ] Test delivery completion flow
-- [ ] Test notification delivery
+- [x] Test end-to-end parcel creation flow
+- [x] Test parcel tracking flow
+- [x] Test courier assignment flow (covered in parcel creation)
+- [x] Test delivery completion flow (covered in integration tests)
+- [x] Test notification delivery
 
 ### 4.4 Firebase Testing
 
@@ -669,7 +669,7 @@ Create server-side logic for:
 - [ ] Test Cloud Functions locally
 - [ ] Test Cloud Functions in production
 - [ ] Test push notifications
-- [ ] Test offline scenarios
+- [x] Test offline scenarios (covered in sync service tests)
 
 ---
 
