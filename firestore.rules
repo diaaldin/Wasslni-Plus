@@ -28,6 +28,9 @@ service cloud.firestore {
       // Anyone can read their own user document
       allow read: if isOwner(userId);
       
+      // Merchants can read courier profiles (for assignment purposes)
+      allow read: if isAuthenticated() && hasRole('merchant') && resource.data.role == 'courier';
+      
       // Users can update their own profile (except role and status)
       allow update: if isOwner(userId) 
                     && !request.resource.data.diff(resource.data).affectedKeys().hasAny(['role', 'status']);
@@ -67,10 +70,14 @@ service cloud.firestore {
       );
       
       // Merchants can update their own parcels (if not assigned to courier yet)
+      // Merchants can also assign couriers to their own parcels
       // Couriers can update parcels assigned to them (status, delivery details)
       // Admins and managers can update any parcel
       allow update: if isActive() && (
-        (hasRole('merchant') && resource.data.merchantId == request.auth.uid && resource.data.courierId == null) ||
+        (hasRole('merchant') && resource.data.merchantId == request.auth.uid && (
+          resource.data.courierId == null ||
+          request.resource.data.diff(resource.data).affectedKeys().hasOnly(['courierId'])
+        )) ||
         (hasRole('courier') && resource.data.courierId == request.auth.uid) ||
         hasRole('admin') ||
         hasRole('manager')
@@ -149,6 +156,15 @@ service cloud.firestore {
       
       // Only system/cloud functions can write reports
       allow write: if false;
+    }
+    
+    // Settings Collection (NEW)
+    match /settings/{settingId} {
+      // All authenticated users can read settings
+      allow read: if isAuthenticated();
+      
+      // Only admins can write settings
+      allow write: if hasRole('admin');
     }
   }
 }

@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:wasslni_plus/app_styles.dart';
 import 'package:wasslni_plus/generated/l10n.dart';
 import 'package:wasslni_plus/services/auth_service.dart';
+import 'package:wasslni_plus/services/settings_service.dart';
 import 'package:wasslni_plus/models/parcel_model.dart';
 import 'package:wasslni_plus/flow/merchant/reports/monthly_report_page.dart';
 import 'package:wasslni_plus/flow/merchant/parcel/parcel_details_page.dart';
@@ -172,54 +173,68 @@ class _MerchantDashboardPageState extends State<MerchantDashboardPage> {
             ),
             const SizedBox(height: 20),
 
-            // Reports & Analytics Button
-            Card(
-              elevation: 2,
-              child: InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (_) => const MonthlyReportPage()),
-                  );
-                },
-                child: Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Row(
-                    children: [
-                      const Icon(
-                        Icons.analytics,
-                        size: 32,
-                        color: AppStyles.primaryColor,
-                      ),
-                      const SizedBox(width: 16),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              tr.reports,
-                              style: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
+            // Reports & Analytics Button (Conditional - only for admin merchants)
+            StreamBuilder<bool>(
+              stream: SettingsService().merchantAdminStream,
+              builder: (context, snapshot) {
+                final isMerchantAdmin = snapshot.data ?? false;
+                print(
+                    '🔍 DEBUG: MerchantAdmin value = $isMerchantAdmin, hasData = ${snapshot.hasData}');
+
+                // Only show reports for merchant admins
+                if (!isMerchantAdmin) {
+                  return const SizedBox.shrink();
+                }
+
+                return Card(
+                  elevation: 2,
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const MonthlyReportPage()),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: Row(
+                        children: [
+                          const Icon(
+                            Icons.analytics,
+                            size: 32,
+                            color: AppStyles.primaryColor,
+                          ),
+                          const SizedBox(width: 16),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  tr.reports,
+                                  style: const TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  tr.monthly_report,
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: Colors.grey[600],
+                                  ),
+                                ),
+                              ],
                             ),
-                            const SizedBox(height: 4),
-                            Text(
-                              tr.monthly_report,
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.grey[600],
-                              ),
-                            ),
-                          ],
-                        ),
+                          ),
+                          const Icon(Icons.chevron_right),
+                        ],
                       ),
-                      const Icon(Icons.chevron_right),
-                    ],
+                    ),
                   ),
-                ),
-              ),
+                );
+              },
             ),
             const SizedBox(height: 24),
 

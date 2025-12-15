@@ -7,6 +7,8 @@ import 'package:wasslni_plus/generated/l10n.dart';
 import 'package:wasslni_plus/models/parcel_model.dart';
 import 'package:wasslni_plus/widgets/fields/read_only_field.dart';
 import 'package:wasslni_plus/services/print_label_service.dart';
+import 'package:wasslni_plus/services/settings_service.dart';
+import 'package:wasslni_plus/flow/admin/parcels/assign_courier_dialog.dart';
 
 class ParcelDetailsPage extends StatelessWidget {
   final ParcelModel parcel;
@@ -92,6 +94,39 @@ class ParcelDetailsPage extends StatelessWidget {
                 );
               },
             ),
+          // Assign Courier button (only for merchant admins)
+          StreamBuilder<bool>(
+            stream: SettingsService().merchantAdminStream,
+            builder: (context, snapshot) {
+              final isMerchantAdmin = snapshot.data ?? false;
+
+              // Only show for merchant admins
+              if (!isMerchantAdmin) return const SizedBox.shrink();
+
+              // Don't show if parcel is delivered/cancelled/returned
+              if (parcel.status == ParcelStatus.delivered ||
+                  parcel.status == ParcelStatus.cancelled ||
+                  parcel.status == ParcelStatus.returned) {
+                return const SizedBox.shrink();
+              }
+
+              return IconButton(
+                icon: const Icon(Icons.person_add),
+                tooltip: 'Assign Courier',
+                onPressed: () async {
+                  final result = await showDialog<bool>(
+                    context: context,
+                    builder: (context) => AssignCourierDialog(
+                      parcelId: parcel.id!,
+                    ),
+                  );
+                  if (result == true && context.mounted) {
+                    Navigator.of(context).pop();
+                  }
+                },
+              );
+            },
+          ),
         ],
       ),
       body: SingleChildScrollView(
