@@ -75,7 +75,6 @@ class SyncService {
     if (_isProcessing || (_queueBox?.isEmpty ?? true)) return;
 
     _isProcessing = true;
-    print('SyncService: Processing ${_queueBox!.length} items in queue...');
 
     // Get all items to process (keys to delete later)
     // We create a copy to iterate because we delete as we go (or delete after success)
@@ -88,10 +87,7 @@ class SyncService {
       try {
         await _performFirestoreAction(request);
         await _queueBox!.delete(key);
-        print(
-            'SyncService: Processed item $key (${request.action} ${request.collection})');
       } catch (e) {
-        print('SyncService: Error processing item $key: $e');
         // Keep in queue for retry
       }
     }

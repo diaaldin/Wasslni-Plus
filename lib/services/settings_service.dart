@@ -7,30 +7,22 @@ class SettingsService {
   /// Stream that listens to the merchant_admin setting
   /// Returns true if merchants should have admin access, false otherwise
   Stream<bool> get merchantAdminStream {
-    print('📡 SettingsService: Creating stream for settings/app_settings');
     return _firestore
         .collection('settings')
         .doc('app_settings')
         .snapshots()
         .map((snapshot) {
-      print('📄 Firestore snapshot received: exists=${snapshot.exists}');
-
       if (!snapshot.exists) {
-        print('❌ Document does not exist at settings/app_settings');
         return false; // Default to false if document doesn't exist
       }
 
       final data = snapshot.data();
-      print('📊 Document data: $data');
-
       if (data == null) {
-        print('⚠️ Document exists but data is null');
         return false;
       }
 
       // Get merchant_admin field, default to false if not present
       final merchantAdmin = data['merchant_admin'] as bool? ?? false;
-      print('✅ merchant_admin value: $merchantAdmin');
       return merchantAdmin;
     });
   }

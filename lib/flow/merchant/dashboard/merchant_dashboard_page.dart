@@ -178,8 +178,6 @@ class _MerchantDashboardPageState extends State<MerchantDashboardPage> {
               stream: SettingsService().merchantAdminStream,
               builder: (context, snapshot) {
                 final isMerchantAdmin = snapshot.data ?? false;
-                print(
-                    '🔍 DEBUG: MerchantAdmin value = $isMerchantAdmin, hasData = ${snapshot.hasData}');
 
                 // Only show reports for merchant admins
                 if (!isMerchantAdmin) {
