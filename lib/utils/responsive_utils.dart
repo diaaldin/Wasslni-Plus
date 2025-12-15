@@ -352,9 +352,9 @@ class AdaptivePadding extends StatelessWidget {
   Widget build(BuildContext context) {
     final padding = ResponsiveUtils.value<EdgeInsets>(
       context: context,
-      mobile: mobile ?? EdgeInsets.all(DesignSystem.paddingMedium),
-      tablet: tablet ?? EdgeInsets.all(DesignSystem.paddingLarge),
-      desktop: desktop ?? EdgeInsets.all(DesignSystem.paddingXLarge),
+      mobile: mobile ?? const EdgeInsets.all(DesignSystem.paddingMedium),
+      tablet: tablet ?? const EdgeInsets.all(DesignSystem.paddingLarge),
+      desktop: desktop ?? const EdgeInsets.all(DesignSystem.paddingXLarge),
     );
 
     return Padding(

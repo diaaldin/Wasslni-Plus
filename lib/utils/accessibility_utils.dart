@@ -45,7 +45,7 @@ class AccessibilityUtils {
 
   /// Get current text scale factor
   static double getTextScaleFactor(BuildContext context) {
-    return MediaQuery.of(context).textScaleFactor;
+    return MediaQuery.of(context).textScaler.scale(1.0);
   }
 
   /// Check if text scaling is enabled (factor > 1.0)
@@ -161,7 +161,7 @@ class AccessibilityUtils {
     BuildContext context, {
     double max = maxTextScaleFactor,
   }) {
-    final scaleFactor = MediaQuery.of(context).textScaleFactor;
+    final scaleFactor = MediaQuery.of(context).textScaler.scale(1.0);
     return scaleFactor.clamp(1.0, max);
   }
 
@@ -171,9 +171,9 @@ class AccessibilityUtils {
     double max = maxTextScaleFactor,
   }) {
     final data = MediaQuery.of(context);
-    final clampedScale = data.textScaleFactor.clamp(1.0, max);
+    final clampedScale = data.textScaler.scale(1.0).clamp(1.0, max);
 
-    return data.copyWith(textScaleFactor: clampedScale);
+    return data.copyWith(textScaler: TextScaler.linear(clampedScale));
   }
 
   /// Wrap a widget with clamped text scaling
@@ -203,9 +203,9 @@ class AccessibilityUtils {
   /// Calculate relative luminance of a color (WCAG standard)
   static double calculateLuminance(Color color) {
     // WCAG 2.0 formula
-    double r = color.red / 255.0;
-    double g = color.green / 255.0;
-    double b = color.blue / 255.0;
+    double r = (color.r * 255.0).round().clamp(0, 255) / 255.0;
+    double g = (color.g * 255.0).round().clamp(0, 255) / 255.0;
+    double b = (color.b * 255.0).round().clamp(0, 255) / 255.0;
 
     r = r <= 0.03928 ? r / 12.92 : pow((r + 0.055) / 1.055, 2.4);
     g = g <= 0.03928 ? g / 12.92 : pow((g + 0.055) / 1.055, 2.4);
@@ -226,19 +226,19 @@ class AccessibilityUtils {
   }
 
   /// Check if contrast ratio meets WCAG AA standard (4.5:1 for normal text)
-  static bool meetsWCAG_AA(Color foreground, Color background) {
+  static bool meetsWcagAA(Color foreground, Color background) {
     final ratio = calculateContrastRatio(foreground, background);
     return ratio >= 4.5;
   }
 
   /// Check if contrast ratio meets WCAG AAA standard (7:1 for normal text)
-  static bool meetsWCAG_AAA(Color foreground, Color background) {
+  static bool meetsWcagAAA(Color foreground, Color background) {
     final ratio = calculateContrastRatio(foreground, background);
     return ratio >= 7.0;
   }
 
   /// Check if contrast ratio meets WCAG AA for large text (3:1)
-  static bool meetsWCAG_AA_LargeText(Color foreground, Color background) {
+  static bool meetsWcagAALargeText(Color foreground, Color background) {
     final ratio = calculateContrastRatio(foreground, background);
     return ratio >= 3.0;
   }
@@ -253,16 +253,20 @@ class AccessibilityUtils {
   /// ```dart
   /// AccessibilityUtils.announce(context, 'Parcel added successfully');
   /// ```
+  // ignore: deprecated_member_use
   static void announce(BuildContext context, String message) {
+    // ignore: deprecated_member_use
     SemanticsService.announce(message, TextDirection.ltr);
   }
 
   /// Announce with specific text direction (for RTL support)
+  // ignore: deprecated_member_use
   static void announceWithDirection(
     BuildContext context,
     String message,
     TextDirection direction,
   ) {
+    // ignore: deprecated_member_use
     SemanticsService.announce(message, direction);
   }
 

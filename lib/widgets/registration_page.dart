@@ -95,9 +95,12 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 ),
                 keyboardType: TextInputType.phone,
                 validator: (v) {
-                  if (v == null || v.isEmpty) return s.validation_phone_invalid;
-                  if (!security.isValidPhone(v))
+                  if (v == null || v.isEmpty) {
                     return s.validation_phone_invalid;
+                  }
+                  if (!security.isValidPhone(v)) {
+                    return s.validation_phone_invalid;
+                  }
                   return null;
                 },
               ),
